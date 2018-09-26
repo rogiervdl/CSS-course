@@ -5,6 +5,13 @@
   <title>Webtechnology &mdash; CSS Syntax</title>
   <meta name="author" content="Rogier van der Linde - odisee.be">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <link rel="stylesheet" href="fonts/droidsans/webfont.css">
+  <link rel="stylesheet" href="fonts/lato/webfont.css">
+  <link rel="stylesheet" href="fonts/leaguegothic/webfont.css">
+  <link rel="stylesheet" href="vendor/reveal/css/reveal.css">
+  <link rel="stylesheet" href="vendor/reveal/css/theme/beige.css">
+  <link rel="stylesheet" href="vendor/highlight/styles/vs.css">
+  <link rel="stylesheet" href="css/reveal-mods.css">
   <link rel="stylesheet" href="css/common.css">
 </head>
 
@@ -79,31 +86,17 @@
           </ul>
         </section>
         <section>
-          <h2>External stylesheet</h2>
-          <ul>
+          <h2>Inline styles</h2>
+          <ul class="no-style">
             <li>
-              External stylesheet (index.html):
-              <pre class="bigger"><code class="language-html">...
-&lt;head&gt;
-  ...
-  &lt;link rel="stylesheet" href="css/styles.css" /&gt;
-  ...
-&lt;/head&gt;
+              Inline styles (index.html):
+              <pre class="bigger"><code class="language-html wrong">...
+&lt;body style="background-color: #f7ba5a"&gt;
+&lt;p style="font-size: 18px; margin-left: 20px"&gt;
 ...</code></pre>
+              <div class="demolink"><a href="demos/01_syntax/01_add_stylesheets/inline.html">demo</a></div>
             </li>
-            <li>
-              Example (styles.css):
-              <pre class="bigger"><code contenteditable class="language-css" data-subject="slide" data-step="1">...
-p {
-  font-size: 18px;
-  margin-left: 20px;
-}
-body {
-  background-color: #f7ba5a;
-}
-...</code></pre>
-              <div class="demolink"><a href="demos/01_syntax/01_add_stylesheets/extern.html">demo</a></div>
-            </li>
+            <li class="no-style"><span class="warning">&rarr; don't use inline styles; it breaks separation of HTML / CSS</span></i></li>
           </ul>
         </section>
         <section>
@@ -111,7 +104,7 @@ body {
           <ul>
             <li>
               Internal stylesheet (index.html):
-              <pre class="bigger"><code class="language-html">...
+              <pre class="bigger"><code class="language-html wrong">...
 &lt;head&gt;
   ...
   &lt;style&gt;
@@ -127,33 +120,38 @@ body {
 ...</code></pre>
               <div class="demolink"><a href="demos/01_syntax/01_add_stylesheets/intern.html">demo</a></div>
             </li>
+            <li class="no-style"><span class="warning">&rarr; don't use internal styles; it still breaks separation of HTML / CSS</span></i></li>
           </ul>
         </section>
         <section>
-          <h2>Inline styles</h2>
-          <ul class="no-style">
+          <h2>External stylesheet</h2>
+          <ul>
             <li>
-              Inline styles (index.html):
-              <pre class="bigger"><code class="language-html">...
-&lt;body style="background-color: #f7ba5a"&gt;
-&lt;p style="font-size: 18px; margin-left: 20px"&gt;
+              External stylesheet (index.html):
+              <pre class="bigger"><code class="language-html right">...
+&lt;head&gt;
+  ...
+  &lt;link rel="stylesheet" href="css/styles.css" /&gt;
+  ...
+&lt;/head&gt;
 ...</code></pre>
-              <div class="demolink"><a href="demos/01_syntax/01_add_stylesheets/inline.html">demo</a></div>
             </li>
-            <li class="no-style fragment">&rarr; <i>external, internal or inline?</i></li>
+            <li>
+              Example (styles.css):
+              <pre class="bigger"><code contenteditable class="language-css right" data-subject="slide" data-step="1">p {
+  font-size: 18px;
+  margin-left: 20px;
+}
+body {
+  background-color: #f7ba5a;
+}</code></pre>
+              <div class="demolink"><a href="demos/01_syntax/01_add_stylesheets/extern.html">demo</a></div>
+            </li>
           </ul>
         </section>
         <section data-toc-title="Organise your CSS">
           <h2>Organise your CSS (1)</h2>
           <ul>
-            <li>
-              rule of thumb:
-              <ul>
-                <li class="x-style">never <i>ever</i> use inline styles</li>
-                <li class="x-style">avoid using internal styles</li>
-                <li class="v-style">only use external stylesheets</li>
-              </ul>
-            </li>
             <li>
               you may use multiple stylesheets for better organisation:
               <pre class="bigger"><code class="language-html">...
@@ -213,6 +211,7 @@ body {
             </li>
           </ul>
         </section>
+<!--        
         <section data-toc-title="">
           <h2>Organise your CSS (4)</h2>
           <ul>
@@ -260,7 +259,7 @@ body {
             </li>
           </ul>
         </section>
-<!--         <section data-toc-title="Alternate stylesheets">
+        <section data-toc-title="Alternate stylesheets">
           <h2>Alternate stylesheets (1)</h2>
           <ul>
             <li>
@@ -370,10 +369,8 @@ body {
               <pre class="bigger"><code class="language-html">...
 &lt;head&gt;
   ...
-  &lt;link rel="stylesheet" href="css/screen.css"
-        media="screen"&gt;
-  &lt;link rel="stylesheet" href="css/print.css"
-        media="print"&gt;
+  &lt;link rel="stylesheet" href="css/screen.css" media="screen"&gt;
+  &lt;link rel="stylesheet" href="css/print.css" media="print"&gt;
 &lt;/head&gt;
 ...</code></pre>
             </li>
@@ -419,8 +416,7 @@ body {
               </div>
             </li>
             <li class="no-style smaller">
-              &rarr; <a href="http://caniuse.com/#search=med">not supported</a> in IE8 or lower (a <a href="https://code.google.com/p/css3-mediaqueries-js/">fix</a> exists, but who cares)<br />
-              &rarr; we'll get back to media queries later when we talk about responsive design
+              &rarr; we'll get back to media queries later for responsive design
             </li>
           </ul>
         </section>
@@ -445,7 +441,7 @@ p {
       <section>
         <section>
           <h1>CSS</h1>
-          <h2>CSS1 selectors</h2>
+          <h2>Selectors</h2>
           <ul class="chapterlist">
             <!-- to be filled by Javascript -->
           </ul>
@@ -600,185 +596,7 @@ p.formpar {
       <section>
         <section>
           <h1>CSS</h1>
-          <h2>CSS2.1 selectors</h2>
-          <ul class="chapterlist">
-            <!-- to be filled by Javascript -->
-          </ul>
-        </section>
-        <section>
-          <h2>Universal selector</h2>
-          <ul>
-            <li>
-              The <em>universal</em> selector selects all elements:
-              <pre class="bigger"><code class="language-css">* {
-  /* ... */
-}</code></pre>
-            </li>
-            <li class="no-style smaller">
-              &rarr; the universal selector is slow, but you won't notice unless you have tons of CSS
-            </li>
-          </ul>
-          <div class="tooltip">
-            <div>
-              ...just don't add CPU intensive styles like shadows and animations to every single element in your page, but this is common sense...
-            </div>
-          </div>
-        </section>
-        <section>
-          <h2>More contextual selectors</h2>
-          <ul>
-            <li>
-               Element directly nested inside another element:
-              <pre class="bigger"><code class="language-css">header > p {
-  /* styles for &lt;p&gt;'s where &lt;header&gt; is direct parent */
-}
-</code></pre>
-            </li>
-            <li>
-               Element directly following another element:
-              <pre class="bigger"><code class="language-css">h2 + p {
-  /* styles for &lt;p&gt;'s directly following a &lt;h2&gt; */
-}
-</code></pre>
-            </li>
-          </ul>
-        </section>
-        <section data-toc-title="More pseudo class selectors">
-          <h2>More pseudo class selectors (1)</h2>
-          <ul>
-            <li>
-              CSS2 defines <code>:focus</code> and <code>:first-child</code>:
-              <pre class="bigger"><code class="language-css">input:focus {
-  /* selects every input receiving focus */
-}
-
-tr:first-child {
-  /* selects the first child of every &lt;tr&gt; */
-}
-</code></pre>
-            </li>
-          </ul>
-        </section>
-        <section data-toc-title="">
-          <h2>More pseudo class selectors (2)</h2>
-          <ul>
-            <li>
-              CSS2 allows <code>:hover</code> and <code>:active</code> for non-links too:
-              <div class="codescrollpanel"><pre class="bigger"><code class="language-html overlayrun" contenteditable style="height:200px">&lt;!doctype html&gt;
-&lt;html&gt;
-&lt;head&gt;
-  &lt;title&gt;testpage&lt;/title&gt;
-  &lt;meta charset="utf-8" /&gt;
-  &lt;style&gt;
-    input[type=button] {
-      background-color: #999;
-    }
-    input[type=button]:hover {
-      background-color: #ccc;
-    }
-    input[type=button]:active {
-      background-color: #eee;
-    }
-  &lt;/style&gt;
-&lt;/head&gt;
-&lt;body&gt;
-  &lt;form action="#"&gt;
-    &lt;input type="button" value="click me" /&gt;
-  &lt;/form&gt;
-&lt;/body&gt;
-&lt;/html&gt;</code></pre></div>
-            </li>
-            <li class="no-style smaller">
-              &rarr; many more pseudo class selectors in CSS3 (see <a href="../html5/03_css.html#/">presentation</a>)
-              &rarr; also check this <a href="demos/01_syntax/target.html">demo using :target</a>
-            </li>
-          </ul>
-        </section>
-        <section>
-          <h2>More pseudo element selectors</h2>
-          <ul>
-            <li>
-              CSS2 defines <code>::before</code> and <code>::after</code>:
-              <div class="codescrollpanel"><pre class="bigger"><code class="language-html overlayrun" contenteditable style="height:200px">&lt;!doctype html&gt;
-&lt;html&gt;
-&lt;head&gt;
-  &lt;title&gt;testpage&lt;/title&gt;
-  &lt;meta charset="utf-8" /&gt;
-  &lt;style&gt;
-    li {
-      list-style: none;
-    }
-    li::before {
-      content: "♣ ";
-      color: blue;
-    }
-    blockquote {
-      position: relative;
-    }
-    blockquote::before {
-      content: "“";
-      font-size: 60px;
-      position: absolute;
-      left: -34px;
-      top: -22px;
-      color: #999;
-    }
-    blockquote::after {
-      content: "”";
-      font-size: 60px;
-      position: absolute;
-      right: -34px;
-      top: -22px;
-      color: #999;
-    }
-  &lt;/style&gt;
-&lt;/head&gt;
-&lt;body&gt;
-  &lt;ul&gt;
-    &lt;li&gt;item 1&lt;/li&gt;
-    &lt;li&gt;item 2&lt;/li&gt;
-    &lt;li&gt;item 3&lt;/li&gt;
-  &lt;/ul&gt;
-  &lt;blockquote&gt;
-    We've heard that a million monkeys at a million keyboards could produce the complete works of Shakespeare; now, thanks to the Internet, we know that is not true.
-  &lt;/blockquote&gt;
-&lt;/body&gt;
-&lt;/html&gt;</code></pre></div>
-            </li>
-            <li class="no-style smaller">
-              &rarr; puts and styles any content before or after the selected elements<br />
-              &rarr; many more pseudo element selectors are defined in CSS3 (see <a href="17_html5_css.html">this presentation</a>)
-            </li>
-          </ul>
-        </section>
-        <section>
-          <h2>Attribute selectors</h2>
-          <ul>
-            <li>
-              An <em>attribute selector</em> selects elements by attribute:
-              <pre class="bigger"><code class="language-css">select[multiple] {
-  /* &lt;select&gt; contains multiple attribute */
-}
-input[type=button] {
-  /* &lt;input&gt; type attribute is exactly 'button' */
-}
-a[title~=flower] {
-  /* &lt;a&gt; title attribute contains 'flower' */
-}
-img[src|=http://www.ikdoeict.be] {
-  /* &lt;img&gt; src attribute starts with 'http://www.ikdoeict.be' */
-}</code></pre>
-            </li>
-            <li class="no-style smaller">
-              &rarr; more attribute selectors are defined in CSS3 (see <a href="17_html5_css.html">this presentation</a>)
-            </li>
-          </ul>
-        </section>
-      </section>
-      <section>
-        <section>
-          <h1>CSS</h1>
-          <h2>CSS properties</h2>
+          <h2>Properties</h2>
           <ul class="chapterlist">
             <!-- to be filled by Javascript -->
           </ul>
@@ -960,6 +778,7 @@ color: #c39;
             </div>
           </div>
         </section>
+<!--        
         <section data-toc-title="Exercise 1">
           <h2>Exercise 1 &mdash; assignment</h2>
           <ul>
@@ -1209,6 +1028,180 @@ li:hover, li.active {
               <div class="demolink">
                 <a href="demos/01_syntax/03_try_it_out/solution2b.html">solution b</a>
               </div>
+            </li>
+          </ul>
+        </section>
+-->        
+      </section>
+      <section>
+        <section>
+          <h1>CSS</h1>
+          <h2>CSS2.1 selectors</h2>
+          <ul class="chapterlist">
+            <!-- to be filled by Javascript -->
+          </ul>
+        </section>
+        <section>
+          <h2>Universal selector</h2>
+          <ul>
+            <li>
+              The <em>universal</em> selector selects all elements:
+              <pre class="bigger"><code class="language-css">* {
+  /* ... */
+}</code></pre>
+            </li>
+            <li class="no-style smaller">
+              <span class="warning">&rarr; the universal selector is slow, use inheritance instead (see further)</span>
+            </li>
+          </ul>
+        </section>
+        <section>
+          <h2>More contextual selectors</h2>
+          <ul>
+            <li>
+               Element directly nested inside another element:
+              <pre class="bigger"><code class="language-css">header > p {
+  /* styles for &lt;p&gt;'s where &lt;header&gt; is direct parent */
+}
+</code></pre>
+            </li>
+            <li>
+               Element directly following another element:
+              <pre class="bigger"><code class="language-css">h2 + p {
+  /* styles for &lt;p&gt;'s directly following a &lt;h2&gt; */
+}
+</code></pre>
+            </li>
+          </ul>
+        </section>
+        <section data-toc-title="More pseudo class selectors">
+          <h2>More pseudo class selectors (1)</h2>
+          <ul>
+            <li>
+              CSS2 defines <code>:focus</code> and <code>:first-child</code>:
+              <pre class="bigger"><code class="language-css">input:focus {
+  /* selects every input receiving focus */
+}
+
+tr:first-child {
+  /* selects the first child of every &lt;tr&gt; */
+}
+</code></pre>
+            </li>
+          </ul>
+        </section>
+        <section data-toc-title="">
+          <h2>More pseudo class selectors (2)</h2>
+          <ul>
+            <li>
+              CSS2 allows <code>:hover</code> and <code>:active</code> for non-links too:
+              <div class="codescrollpanel"><pre class="bigger"><code class="language-html overlayrun" contenteditable style="height:200px">&lt;!doctype html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;title&gt;testpage&lt;/title&gt;
+  &lt;meta charset="utf-8" /&gt;
+  &lt;style&gt;
+    input[type=button] {
+      background-color: #999;
+    }
+    input[type=button]:hover {
+      background-color: #ccc;
+    }
+    input[type=button]:active {
+      background-color: #eee;
+    }
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;form action="#"&gt;
+    &lt;input type="button" value="click me" /&gt;
+  &lt;/form&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre></div>
+            </li>
+            <li class="no-style smaller">
+              &rarr; many more pseudo class selectors in CSS3 (see <a href="../html5/03_css.html#/">presentation</a>)
+              &rarr; also check this <a href="demos/01_syntax/target.html">demo using :target</a>
+            </li>
+          </ul>
+        </section>
+        <section>
+          <h2>More pseudo element selectors</h2>
+          <ul>
+            <li>
+              CSS2 defines <code>::before</code> and <code>::after</code>:
+              <div class="codescrollpanel"><pre class="bigger"><code class="language-html overlayrun" contenteditable style="height:200px">&lt;!doctype html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;title&gt;testpage&lt;/title&gt;
+  &lt;meta charset="utf-8" /&gt;
+  &lt;style&gt;
+    li {
+      list-style: none;
+    }
+    li::before {
+      content: "♣ ";
+      color: blue;
+    }
+    blockquote {
+      position: relative;
+    }
+    blockquote::before {
+      content: "“";
+      font-size: 60px;
+      position: absolute;
+      left: -34px;
+      top: -22px;
+      color: #999;
+    }
+    blockquote::after {
+      content: "”";
+      font-size: 60px;
+      position: absolute;
+      right: -34px;
+      top: -22px;
+      color: #999;
+    }
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;ul&gt;
+    &lt;li&gt;item 1&lt;/li&gt;
+    &lt;li&gt;item 2&lt;/li&gt;
+    &lt;li&gt;item 3&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;blockquote&gt;
+    We've heard that a million monkeys at a million keyboards could produce the complete works of Shakespeare; now, thanks to the Internet, we know that is not true.
+  &lt;/blockquote&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre></div>
+            </li>
+            <li class="no-style smaller">
+              &rarr; puts and styles any content before or after the selected elements<br />
+              &rarr; many more pseudo element selectors are defined in CSS3 (see <a href="17_html5_css.html">this presentation</a>)
+            </li>
+          </ul>
+        </section>
+        <section>
+          <h2>Attribute selectors</h2>
+          <ul>
+            <li>
+              An <em>attribute selector</em> selects elements by attribute:
+              <pre class="bigger"><code class="language-css">select[multiple] {
+  /* &lt;select&gt; contains multiple attribute */
+}
+input[type=button] {
+  /* &lt;input&gt; type attribute is exactly 'button' */
+}
+a[title~=flower] {
+  /* &lt;a&gt; title attribute contains 'flower' */
+}
+img[src|=http://www.ikdoeict.be] {
+  /* &lt;img&gt; src attribute starts with 'http://www.ikdoeict.be' */
+}</code></pre>
+            </li>
+            <li class="no-style smaller">
+              &rarr; more attribute selectors are defined in CSS3 (see <a href="17_html5_css.html">this presentation</a>)
             </li>
           </ul>
         </section>
@@ -1562,9 +1555,9 @@ div#wrapper {
   <script src="vendor/reveal/js/reveal.js"></script>
   <script src="vendor/highlight/highlight.pack.js"></script>
   <script src="vendor/incrementable.js"></script>
+  <script src="vendor/prefixfree.js"></script>
   <script src="vendor/css-snippets.js"></script>
   <script src="vendor/css-edit.js"></script>
-  <!-- <script src="vendor/prefixfree.js"></script> -->
   <script src="js/main.js"></script>
 
 </body>
