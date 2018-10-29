@@ -1,2 +1,6 @@
-# Ignore _old dir
+# Ignores
+.DS_Store
 /_old/*
+.gitignore
+.gitattributes
+LICENSE
