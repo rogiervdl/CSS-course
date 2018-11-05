@@ -47,6 +47,7 @@
         </section>
         <section id="units_overview">
           <h2>Overview</h2>
+          <p>Units used in this course:</p>
           <table id="units">
             <tr>
               <th>Unit</th>
@@ -75,29 +76,17 @@
             <tr>
               <td>%</td>
               <td>percentage</td>
-              <td>parent element dimension or font size</td>
+              <td>parent dimension or font size</td>
               <td>.left {width: 20%}</td>
-            </tr>
-            <tr>
-              <td>vw, vh</td>
-              <td>percentage</td>
-              <td>viewport width &amp; height</td>
-              <td>img {max-height: 50vh}</td>
-            </tr>
-            <tr>
-              <td>vmin</td>
-              <td>percentage</td>
-              <td>minimum of viewport width &amp; height</td>
-              <td>img {max-height: 75vmin}</td>
             </tr>
           </table>
           <ul class="arrow">
-            <li>vmax also exists but it is unsupported by <a href="http://caniuse.com/#search=vmax">any IE version</a></li>
-            <li>more units exist (ex, pt, pc, cm, in...) but none is useful in websites</li>
+            <li>more advanced units (not used in this course): vmin, vmax, vw, vh</li>
+            <li>even more units exist (ex, pt, pc, cm, in...) but none is useful in websites</li>
           </ul>
         </section>
-        <section data-toc-title="PX" id="units_px_1">
-          <h2>px (1)</h2>
+        <section>
+          <h2>px &mdash; definition</h2>
           <ul>
             <li>
               pi(cture) el(ement).
@@ -114,11 +103,11 @@
             </div>
           </div>
         </section>
-        <section data-toc-title="" id="units_px_2">
-          <h2>px (2)</h2>
+        <section>
+          <h2>px &mdash; when to use</h2>
           <ul>
             <li>
-              In CSS px is used for sizes that should not scale or scale stepwise, like borders and small icons:
+              px is a <em>fixed unit</em>, used for sizes that <em>do not scale</em>, like borders and small icons:
               <pre class="bigger"><code class="language-css">input[type=submit] {
   border: 2px solid #666;
 }
@@ -127,20 +116,19 @@ img.icon_social {
   heigt: 22px;
 }</code></pre>
             </li>
-          </ul>
-          <ul class="arrow">
-            <li>
-              although you can use px everywhere (and many still do), it will make the step to responsive CSS much harder
+            <li class="arrow">
+              use <code>px</code> for fixed sizes
             </li>
           </ul>
           <div class="tooltip">
             <div>
-              <p>small images like icons may become ugly when scaled continuously</p>
+              <p>Small images like icons may become ugly when scaled continuously, so there using <code>px</code> makes sense</p>
+              <p>Note: although some use pixels everywhere, this makes responsive CSS much harder. For anything that should shrink or grow depending on screen size, use other units, like <code>em</code>, <code>rem</code> or <code>%</code></p>
             </div>
           </div>
         </section>
-        <section data-toc-title="EM" id="units_em_1">
-          <h2>Em (1)</h2>
+        <section data-toc-title="EM definition">
+          <h2>Em &mdash; definition (1)</h2>
           <ul>
             <li>
               in ancient times defined as the height of metal letter bodies, which was square for the letter M:
@@ -159,11 +147,11 @@ img.icon_social {
             </li>
           </ul>
         </section>
-        <section data-toc-title="EM" id="units_em_2">
-          <h2>Em (2)</h2>
+        <section data-toc-title="">
+          <h2>Em &mdash; definition (2)</h2>
           <ul>
             <li>
-              in digital fonts, the actual height may be a little more than 1em:
+              in digital fonts with serifs (the little ornaments at the end of letters), the actual height may be a little more than <code>1em</code>:
             </li>
             <li class="no-style">
               <div class="clearfix" style="width: 100%">
@@ -175,11 +163,11 @@ img.icon_social {
             </li>
           </ul>
         </section>
-        <section data-toc-title="EM" id="units_em_3">
-          <h2>Em (3)</h2>
+        <section data-toc-title="">
+          <h2>Em &mdash; definition (3)</h2>
           <ul>
             <li>
-              to prevent overlap, the line height should be > 1em (default 1.2em)
+              to prevent overlap, the line height should be > <code>1em</code> (default <code>1.2em</code>)
             </li>
             <li class="no-style">
               <div class="clearfix" style="width: 100%">
@@ -196,173 +184,99 @@ img.icon_social {
             </div>
           </div>
         </section>
-        <section data-toc-title="EM" id="units_em_4">
-          <h2>Em (4)</h2>
+        <section data-toc-title="">
+          <h2>Em &mdash; definition (4)</h2>
           <ul>
             <li>
-              In CSS, em means <em>percentage of parent font size</em>
-              <pre class="bigger"><code class="language-html overlayrun">&lt;html&gt;
+              in CSS, <code>em</code> means <em>percentage of parent font size</em>
+            </li>
+            <li>
+              to know the <code>px</code> value, multiply with the parent font size or browser default:
+              <pre class="bigger"><code class="language-html overlayrun" style="max-height: 250px" contenteditable>&lt;html&gt;
 &lt;head&gt;
-  &lt;style&gt;
-    /* html has default font size of 16px */
-    body { font-size: 0.875em; /* size: 0.875 * 16px = 14px */ }
-    h1 { font-size: 1.4em; /* size: 1.4 * 14px = 19.6px */ }
-    footer { font-size: 0.8em; /* size: 0.8 * 14px = 11.2px */ }
-    footer a { font-size: 1.1em; /* size: 1.1 * 11.2px = 12.32px */ }
+  &lt;style&gt;    
+    html { font-size: 1em; } /* 1 x browser default font size = 16px */
+    body { font-size: 0.875em; /* 0.875 x html font size = 14px */ }
+    h1 { font-size: 1.4em; /* 1.4 x body font size = 19.6px */ }
+    article { 
+      width: 30em; /* 30 x body font size = 420px */ 
+      font-size: 1.2em; /* 1.2 x body font size = 16.8px */
+    }
+    a { font-size: 1.1em; /* 1.1 x parent font size */ }
   &lt;/style&gt;
 &lt;/head&gt;
 &lt;body&gt;
-  &lt;h1&gt;&lt;a href="#"&gt;My page&lt;/a&gt;&lt;/h1&gt;
-  &lt;p&gt;this is the second paragraph&lt;/p&gt;
-  &lt;footer&gt;also read &lt;a href="#"&gt;this&lt;/a&gt; &lt;/footer&gt;
+  &lt;h1&gt;Articles about &lt;a href="#"&gt;this topic&lt;/a&gt;&lt;/h1&gt;
+  &lt;article&gt;
+    &lt;p&gt;Wie werkten meestal men menigte bersawa. Om monopolies ad nu mislukking interesten verscholen smeltovens. Brandhout mee snelleren geschiedt bezorgden aandeelen den are. Dat treffen gomboom zekeren tot fortuin gelaten stellen. Het ziet niet lage deze het per zes ipoh.&lt;/p&gt;
+    &lt;p&gt;also read &lt;a href="#"&gt;this article&lt;/a&gt;&lt;/p&gt;
+  &lt;/article&gt;
 &lt;/body&gt;
 &lt;/html&gt;
 </code></pre>
             </li>
           </ul>
         </section>
-        <section data-toc-title="" id="units_em_5">
-          <h2>Em (5)</h2>
+        <section data-toc-title="">
+          <h2>Em &mdash; definition (5)</h2>
           <ul>
             <li>
-              The &lt;html&gt;'s &ldquo;parent&rdquo; is the browser, which usually has 16px default font size, see settings:
-              <img src="img/02_design/em.jpg" alt="em change" />
+              for <code>&lt;html&gt;</code>, the reference is the default font size set the browser, which usually 16px, see settings:
             </li>
           </ul>
+          <p style="text-align: center;"><img src="img/02_design/em.jpg" alt="em change" style="max-width: 40%" /></p>
         </section>
-        <section data-toc-title="EM" id="units_em_6">
-          <h2>Em (6)</h2>
+        <section data-toc-title="em &mdash; when to use">
+          <h2>em &mdash; when to use (1)</h2>
           <ul>
             <li>
-              em is ideal for components that should be able to scale independently, like widgets
+              <code>em</code> is a <em>relative unit</em>, used for <em>components that scale with parent font size</em>, e.g. widgets or other independent components
             </li>
             <li>
               try changing the widget container font size in this demo (and note how em is used everywhere in the widget):
-              <a href="demos/02_design/01_units/em/index.html"><img src="img/02_design/widgetdemo.png" alt="em change" style="width: 400px; display: block; margin: 0 auto; margin-top: 10px" /></a>
-              <div class="demolink">
-                <a href="demos/02_design/01_units/em/index.html">demo</a>
-              </div>
+            </li>
+          </ul>
+          <p><a href="demos/02_design/01_units/em/index.html"><img src="img/02_design/widgetdemo.png" alt="em change" style="width: 400px; display: block; margin: 0 auto; margin-top: 10px" /></a></p>
+          <div class="demolink">
+            <a href="demos/02_design/01_units/em/index.html">demo</a>
+          </div>
+        </section>
+        <section data-toc-title="">
+          <h2>em &mdash; when to use (2)</h2>
+          <ul>
+            <li>
+              <code>em</code> has one distinct advantage:
+              <ul class="v-style">
+                <li>
+                  you can rescale a whole component by changing the parent font size
+                </li>
+              </ul> 
+            </li>
+            <li>
+              <code>em</code> has a few serious drawbacks:
+              <ul class="x-style">
+                <li>
+                  the final size is the result of a chain of calculations, which can quickly become complicated
+                </li>
+                <li>
+                  the numbers you use aren't very intuitive
+                </li>
+                <li>
+                  most designers still think in pixel sizes, not in relative units
+                </li>
+              </ul> 
+            </li>
+            <li class="arrow">
+              I use <code>em</code> rarely; mostly for widgets
             </li>
           </ul>
         </section>
-        <section data-toc-title="" id="units_em_7">
-          <h2>Em (7)</h2>
+        <section>
+          <h2>% &mdash; definition</h2>
           <ul>
             <li>
-              Some web developers think you should <i>always</i> use em.
-            </li>
-            <li>
-              Designers still mostly think in pixels though
-            </li>
-            <li>
-              This can lead to complex and confusing calculations:
-              <pre class="bigger"><code class="language-html overlayrun">&lt;html&gt;
-&lt;head&gt;
-  &lt;style&gt;
-    body { font-size: 0.875em; /* 14px = 16px * 0.875 */ }
-    h1 { font-size: 1.42857em; /* 20px = 14px * 1.42857 */ }
-    footer { font-size: 0.78571em; /* 11px = 14px * 0.78571 */ }
-    footer a { font-size: 1.0909em; /* 12px = 11px * 1.0909 */ }
-  &lt;/style&gt;
-&lt;/head&gt;
-&lt;body&gt;
-  &lt;h1&gt;&lt;a href="#"&gt;My page&lt;/a&gt;&lt;/h1&gt;
-  &lt;p&gt;this is the second paragraph&lt;/p&gt;
-  &lt;footer&gt;also read &lt;a href="#"&gt;this&lt;/a&gt; &lt;/footer&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-</code></pre>
-            </li>
-          </ul>
-        </section>
-        <section data-toc-title="REM" id="units_rem_1">
-          <h2>Rem (1)</h2>
-          <ul>
-            <li>
-              The <em>rem</em> (<i>root em</i>) is like <code>em</code> but relative to the <code>&lt;html&gt;</code> element.
-            </li>
-            <li>
-              Just devide all px values by 16:
-              <pre class="bigger"><code class="language-html overlayrun">&lt;body&gt;
-&lt;head&gt;
-  &lt;style&gt;
-    body { font-size: 0.875rem; /* = 14/16 */ }
-    h1 { font-size: 1.25rem; /* = 20/16 */ }
-    footer { font-size: 0.6875rem; /* = 11/16 */ }
-    footer a { font-size: 0.75rem; /* = 12/16 */ }
-  &lt;/style&gt;
-&lt;/head&gt;
-&lt;body&gt;
-  &lt;h1&gt;&lt;a href="#"&gt;My page&lt;/a&gt;&lt;/h1&gt;
-  &lt;p&gt;this is the second paragraph&lt;/p&gt;
-  &lt;footer&gt;also read &lt;a href="#"&gt;this&lt;/a&gt; &lt;/footer&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-</code></pre>
-            </li>
-            <li>
-              This leads to easier calculations and slightly easier numbers, but still not very intuitive though...
-            </li>
-          </ul>
-        </section>
-        <section data-toc-title="" id="units_rem_2">
-          <h2>Rem (2)</h2>
-          <ul>
-            <li>
-              The trick is to change the font size of the html to 10px:
-              <pre class="bigger"><code class="language-html overlayrun">&lt;body&gt;
-&lt;head&gt;
-  &lt;style&gt;
-    html { font-size: 62.5%; } /* 16px * 0.625 = 10px */
-    body { font-size: 1.4rem; /* = 1.4 * 10px */ }
-    h1 { font-size: 2rem; /* = 2 * 10px */ }
-    footer { font-size: 1.1rem; /* = 1.1 * 10px */ }
-    footer a { font-size: 1.2rem; /* = 1.2 * 10px */ }
-  &lt;/style&gt;
-&lt;/head&gt;
-&lt;body&gt;
-  &lt;h1&gt;&lt;a href="#"&gt;My page&lt;/a&gt;&lt;/h1&gt;
-  &lt;p&gt;this is the second paragraph&lt;/p&gt;
-  &lt;footer&gt;also read &lt;a href="#"&gt;this&lt;/a&gt; &lt;/footer&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-</code></pre>
-            </li>
-            <li>
-              Now you can just devide all pixel values by 10
-            </li>
-          </ul>
-        </section>
-        <section data-toc-title="" id="units_rem_3">
-          <h2>Rem (3)</h2>
-          <ul>
-            <li>
-              Recently introduced in CSS3, but supported by all major browsers and IE9+.
-            </li>
-            <li>
-              As easy as px, but we can still rescale the whole page by changing the 62.5% (<a href="demos/02_design/01_units/em/index.html">try it out</a>)
-            </li>
-            <li>
-              For small values that should not scale or scale stepwise, you should still use px
-            </li>
-            <li>
-              For independent components, you may still consider em
-            </li>
-          </ul>
-        </section>
-        <section data-toc-title="%" id="units_rem_percentage">
-          <h2>percentage %</h2>
-          <ul>
-            <li>
-              For fonts it is identical to em:
-              <pre class="bigger"><code class="language-css">p {
-  font-size: 80%; /* same as 0.8em */
-}
-</code></pre>
-            </li>
-            <li>
-              For <code>width</code> and <code>height</code> it refers to the parent dimensions:
-              <pre class="bigger"><code class="language-html">img {
+              used for setting <code>width</code> and <code>height</code> as a percentage of the parent dimensions:
+              <pre class="bigger"><code class="language-css">img {
   width: 80%; /* 80% of the parent's width */
   max-width: 600px;
 }
@@ -372,464 +286,915 @@ img.icon_social {
               </div>
             </li>
           </ul>
-          <ul class="arrow">
-            <li>to avoid confusion, we'll use <code>em</code> for fonts, and <code>%</code> for dimensions that scale with device width</li>
-          </ul>
         </section>
-        <section data-toc-title="%" id="units_vwvh">
-          <h2>vw / vh / vmin</h2>
+        <section>
+          <h2>% &mdash; when to use</h2>
           <ul>
             <li>
-              Percentage of viewport (= visible browser area) width / height / minimum of both
+              <code>%</code> is also a <em>relative unit</em>
             </li>
             <li>
-              Example 1: font rescaling (also used in this presentation; try rescaling the browser):
-              <pre class="bigger"><code class="language-css">p {
-  font-size: 2vw; /* ± 80 characters per line */
-}</code></pre>
-              <div class="demolink">
-                <a href="demos/02_design/vw-vh-text.html">(slightly different) demo</a>
-              </div>
+              used for <em>components that scale with parent width</em>, e.g. columns, images...
             </li>
-            <li>
-              Example 2: keeping an image visible
-              <pre class="bigger"><code class="language-html">img {
-  max-width: 90vw;
-  max-height: 90vh;
-}
-</code></pre>
-              <div class="demolink">
-                <a href="demos/02_design/01_units/vw/index.html">demo</a>
-              </div>
-            </li>
-          </ul>
-          <ul class="arrow">
-            <li>vw/vh/vmin is the <i>only</i> way to smoothly rescale fonts</li>
           </ul>
         </section>
-        <section id="units_best_practices">
-          <h2>Best practices</h2>
+        <section data-toc-title="Rem &mdash; definition">
+          <h2>Rem &mdash; definition (1)</h2>
+          <ul>
+            <li>
+              <code>rem</code> or <i>&ldquo;root em</i>&rdquo; is like <code>em</code> but relative to the <code>&lt;html&gt;</code> element
+            </li>
+            <li>
+              to know the <code>px</code> value, multiply with the <code>&lt;html&gt;</code> font size:
+              <pre class="bigger"><code class="language-html overlayrun" style="height: 200px">&lt;html&gt;
+&lt;head&gt;
+  &lt;style&gt;
+    html { font-size: 1em; /* 1 x browser default font size, usually 16px */ }
+    body { font-size: 0.875rem; /* 0.875 * 16px = 14px */ }
+    h1 { font-size: 1.25rem; /* 1.25rem * 16px = 20px */ }
+    footer { font-size: 0.6875rem; /* 0.6875 * 16px = 11px */ }
+    footer a { font-size: 0.75rem; /* 0.75 * 16px = 12px */ }
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;&lt;a href="#"&gt;My page&lt;/a&gt;&lt;/h1&gt;
+  &lt;p&gt;this is the second paragraph&lt;/p&gt;
+  &lt;footer&gt;also read &lt;a href="#"&gt;this&lt;/a&gt; &lt;/footer&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+            </li>
+            <li class="arrow">
+              calculations are very easy: <code>px</code> = <code>rem</code> * 16 
+            </li>
+          </ul>
+        </section>
+        <section data-toc-title="Rem &mdash; definition">
+          <h2>Rem &mdash; definition (2)</h2>
+          <ul>
+            <li>
+              it becomes even easier if we set <code>&lt;html&gt;</code> font size to 0.625em:
+              <pre class="bigger"><code class="language-html overlayrun" style="height: 200px">&lt;html&gt;
+&lt;head&gt;
+  &lt;style&gt;
+    html { font-size: 0.625em; } /* 16px * 0.625 = 10px */
+    body { font-size: 1.4rem; /* 1.4 * 10px = 14px */ }
+    h1 { font-size: 2rem; /* 2.0 * 10px = 20px */ }
+    footer { font-size: 1.1rem; /* 1.1 * 10px = 11px */ }
+    footer a { font-size: 1.2rem; /* 1.2 * 10px = 12px */ }
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;&lt;a href="#"&gt;My page&lt;/a&gt;&lt;/h1&gt;
+  &lt;p&gt;this is the second paragraph&lt;/p&gt;
+  &lt;footer&gt;also read &lt;a href="#"&gt;this&lt;/a&gt; &lt;/footer&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+            </li>
+            <li class="arrow">
+              calculations are even easier: <code>px</code> = <code>rem</code> * 10!
+            </li>
+          </ul>
+        </section>
+        <section>
+          <h2>Rem &mdash; when to use</h2>
+          <ul>
+            <li>
+              <code>rem</code> is both <em>fixed</em> (independent of parent) and <em>relative</em> (to &lt;<code>html</code>&gt; font size)
+            </li>
+            <li>
+              use <code>rem</code> as <em>your default unit</em> except where <code>px</code>, <em</code> or <code>%</code> is needed
+            </li>
+            <li>
+              make life easier: set <code>&lt;html&gt;</code> font size to 0.625em; then <code>10px</code> = <code>1rem</code>
+            </li>
+            <li>
+              as intuitive as px, but we can still rescale the whole page by changing the &lt;<code>html</code>&gt; font size (<a href="demos/02_design/01_units/em/index.html">try it out</a> &mdash; use your inspector)
+            </li>
+          </ul>
+        </section>
+        <section>
+          <h2>Units &mdash; summary</h2>
           <ul>
             <li>
               When to use which unit:
               <ul>
-                <li>by default, use rem</li>
-                <li>consider em for self-contained components like widgets</li>
-                <li>use vw/vh for dimensions you'd like to scale with device width or height</li>
-                <li>use % for dimensions you'd like to scale with parent width</li>
-                <li>use px for small values that scale bad, like border widths or small icons</li>
+                <li>by default, use <em><code>rem</code></em>; set html font size to 0.625rem first, so that 10px = 1rem</li>
+                <li>consider <code><em>em</em></code> for self-contained components like widgets</li>
+                <li>use <em><code>%</code></em> for dimensions you'd like to scale with parent width like columns</li>
+                <li>use <em><code>px</code></em> for small values that scale bad, like border widths or small icons</li>
               </ul>
             </li>
           </ul>
         </section>
       </section>
       <section>
-        <section id="boxmodel">
+        <section>
           <h1>CSS</h1>
-          <h2>Box model</h2>
+          <h2>Fonts &amp; Text</h2>
           <ul class="chapterlist">
             <!-- to be filled by Javascript -->
           </ul>
         </section>
-        <section id="boxmodel_model">
-          <h2>The model</h2>
+        <section>
+          <h2>What is a font</h2>
           <ul>
             <li>
-              Model for borders, margins and paddings:
-              <img src="img/02_design/boxmodel.png" alt="box model" />
+              A <em>font</em> is a graphical representation of text. Properties:
+              <ul>
+                <li><b>font-family</b>: <span style="font-family: Arial">Arial</span>, <span style="font-family: Courier New">Courier New</span>, <span style="font-family: Times New Roman">Times New Roman</span>...</li>
+                <li><b>font-size</b>: <span style="font-size: 8px">8px</span>, <span style="font-size: 12px">12px</span>, <span style="font-size: 18px">18px</span>...</li>
+                <li><b>font-weight</b>: <span style="font-weight: 200">lighter</span>, normal, <span style="font-weight: bold">bold</span>...; <span style="font-weight: 100">100</span>, <span style="font-weight: 300">300</span>, <span style="font-weight: 500">500</span>, <span style="font-weight: 700">700</span>, <span style="font-weight: 900">900</span></li>
+                <li><b>font-style</b>: <span style="font-style: italic;">italic</span>, normal</li>
+                <li><b>color</b>: <span style="color:#900">#900</span>, <span style="color:Navy">Navy</span>, <span style="color:rgba(100, 50, 25, 0.7)">rgba(100, 50, 25, 0.7)</span>...</li>
+              </ul>
             </li>
           </ul>
         </section>
-        <section id="boxmodel_demo" data-toc-title="Example">
-          <h2>Example (1)</h2>
+        <section id="font-family">
+          <h2>Font properties</h2>
           <ul>
             <li>
-              Code fragment (for simplicity we'll use <code>px</code>):
-              <pre class="bigger"><code class="language-css" contenteditable data-selector="#boxmodel_demo">p {
-  margin: 10px;
-  border: 2px solid black;
-  padding: 10px;
-  width: 250px;
-  background-color: #ccc;
+              Code example in CSS (try and change the values):
+              <pre class="bigger"><code style="height: 170px" class="language-css" contenteditable data-selector="#text-properties">p {
+  color: #5a4c34;
+  background-color: #f0ede3;
+  font-size: 14px;
+  font-family: Lato, Arial, sans-serif; /* provide several alternatives */
+  font-weight: bold; /* default: normal */
+  font-style: normal; /* also try italic */
+  letter-spacing: 2px; /* add 2px extra space between letters */
+  line-height: 1.6; /* 160% of character height */
+  padding: 5px 10px;
+  text-shadow: 2px 2px 15px #666;
+  text-transform: capitalize;
 }
-</code></pre>
-              <div class="demolink">
-                <a href="demos/02_design/02_boxmodel/firebug.html">demo</a> (analyze with Chrome Inspector)
-              </div>
-            </li>
-          </ul>
-          <p>
-             Lorem Ipsum
-          </p>
-          <div class="tooltip">
-            <div>
-              Tip: this codepanel is editable; try it out! You can even increment numbers by clicking and using the arrow keys.
-            </div>
-          </div>
-        </section>
-        <section id="boxmodel_demo2" data-toc-title="">
-          <h2>Example (2)</h2>
-          <ul>
-            <li>
-              By default, <code>width</code> applies to content only, without borders and paddings.
-            </li>
-            <li>
-              If you set the width to 150px, border to 1px and padding to 5px, the total width actually is 162px:<br />
-              <img src="img/02_design/boxmodel2.png" alt="box model" />
-            </li>
-          </ul>
-        </section>
-        <section data-toc-title="Box sizing" id="boxmodel_sizing_1">
-          <h2>Box sizing (1)</h2>
-          <ul>
-            <li>
-              The box model can lead to undesired results. In this fragment for example scrollbars will appear:
-              <pre class="bigger"><code class="language-css">body, html {
-  padding: 0;
-  margin: 0;
-  width: 100%;
-  height: 100%;
+a {
+  text-decoration: none; /* underline or not; only works with links */
+  color: #aa8938;
 }
-body {
-  border: 10px solid gray;
+a:hover {
+  text-decoration: underline; 
 }</code></pre>
-              <div class="demolink">
-                <a href="demos/02_design/02_boxmodel/scrollbars.html">demo</a>
+              <div id="text-properties">
+                <p class="demo" style="margin: 0">In friendship <a href="">diminution instrument</a> so. Son sure paid door with say them. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec iaculis malesuada mi, nec pharetra elit vehicula et. Donec <a href="">consectetur porttitor</a> mauris mollis facilisis. Phasellus et lorem augue, eget eleifend quam. Sed ac bibendum lorem. Praesent molestie lobortis elementum. Nam sed magna eget quam ullamcorper semper. Ut molestie faucibus accumsan. Donec sodales rhoncus augue ac aliquam. In hac habitasse platea dictumst.</p>
               </div>
             </li>
           </ul>
         </section>
-        <section data-toc-title="" id="boxmodel_sizing_2">
-          <h2>Box sizing (2)</h2>
+        <section>
+          <h2>Commercial fonts</h2>
           <ul>
             <li>
-              With <code>box-sizing: border-box</code> the size is measured including borders and paddings:
-            </li>
-            <li class="no-style">
-              <pre class="bigger"><code class="language-css" contenteditable data-selector=".reveal #boxsizedemo">.box {
-  border: 10px solid #999;
-  padding: 20px;
-  box-sizing: content-box; /* change to border-box */
-  width: 50%;
-}
-</code></pre>
-              <div id="boxsizedemo" class="clearfix" style="margin-top: 30px; width: 598px; border: 1px dotted #999">
-                <div class="box" style="background-color: #eee; float: left; height: 50px"></div>
-                <div class="box" style="background-color: #eee; float: left; height: 50px"></div>
-              </div>
+              Fonts are often hand-crafted, character by character:<br>
+              <img src="img/02_design/fonts.jpg" alt="" class="border" style="max-width: 500px;" /><br>
+              <ul style="margin-left: 0">
+                <li class="arrow">
+                  think of all the letters, punctuation, numbers, capitals / lowercase, with or without accents, ... that need to be created in all languages, and in all weights and styles!
+                </li>
+                <li class="arrow">
+                  for obvious reasons, high-quality commercial fonts are expensive
+                </li>
+              </ul>
             </li>
           </ul>
         </section>
-        <section id="boxmodel_prefixes">
-          <h2>Vendor prefixes</h2>
+        <section>
+          <h2>Embedding fonts</h2>
           <ul>
             <li>
-              CSS3 experimental features lshould be prefixed to allow browser vendors to experiment with their own implementation. You might run across code like this:
+              You can embed fonts manually:
+              <pre class="bigger"><code class="language-css">@font-face {
+   font-family: 'Droid Sans';
+   src: url(Droid_Sans.woff2);
+}</code></pre>
+              <span style="font-size: smaller">&rarr; just make sure you have the web font version, not the desktop version</span>
             </li>
-            <li class="no-style">
-              <pre class="bigger"><code class="language-css">.box {
-  -webkit-box-sizing: content-box; /* Chrome and Safari */
-  -moz-box-sizing: content-box; /* Firefox */
-  -o-box-sizing: content-box; /* Opera */
-  -ms-box-sizing: content-box; /* Internet Explorer */
-  box-sizing: content-box; /* generic */
-}
+          </ul>
+        </section>
+        <section>
+          <h2>Linking fonts</h2>
+          <ul>
+            <li>
+              Google has a <a href="https://fonts.google.com/">great collection of free fonts</a> you can just link and use. Just select your font, and include a single line in your <code>&lt;head&gt;</code>:
+              <pre class="bigger"><code class="language-html overlayrun" style="max-height: 250px" contenteditable>&lt;html&gt;
+&lt;head&gt;
+  &lt;!-- copy-paste the Google Font link here --&gt;    
+  &lt;link href="https://fonts.googleapis.com/css?family=Spicy+Rice" rel="stylesheet"&gt;    
+  &lt;style&gt;
+    p {
+      font-family: 'Spicy Rice', sans-serif; /* use your new font here */
+      font-size: 30px;
+      line-height: 1.8;
+    }
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;p&gt;Wie werkten meestal men menigte bersawa. Om monopolies ad nu mislukking interesten verscholen smeltovens. Brandhout mee snelleren geschiedt bezorgden aandeelen den are. Dat treffen gomboom zekeren tot fortuin gelaten stellen. Het ziet niet lage deze het per zes ipoh.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
 </code></pre>
             </li>
+          </ul>
+        </section>
+        <section>
+          <h2>Help! My font doesn't load</h2>
+          <ul>
             <li>
-              Once consensus is reached on the implementation, the browser prefixes can be omitted. Actualized list see <a href="http://shouldiprefix.com/">shouldiprefix.com/</a>
+              Things that can go wrong:
+              <ul>
+                <li>a font must <b>contain all characters</b> you want to use</li>
+                <li>a font must <b>contain all variations</b> (boldness, style...) you need</li>
+                <li>a font that isn't embedded or linked correctly, will fall back to the ugly <span style="font-family: Times New Roman">Times New Roman</span> default</li>
+              </ul>
+            </li>
+            <li>
+              You can always check the rendered font with your good ol' Chrome inspector (see bottom right, tab &lsquo;Computed&rsquo;, under &lsquo;Rendered fonts&rsquo;):<br>
+              <img src="img/02_design/font-inspector.png" alt="" class="border" style="width: 70%">
             </li>
           </ul>
         </section>
       </section>
       <section>
-        <section id="margincollapsing">
+        <section>
           <h1>CSS</h1>
-          <h2>Margin collapsing</h2>
+          <h2>Colors &amp; backgrounds</h2>
           <ul class="chapterlist">
             <!-- to be filled by Javascript -->
           </ul>
         </section>
-        <section id="margincollapsing_horizontal">
-          <h2>Horizontal margins</h2>
+        <section id="hexadecimal-notation">
+          <h2>Hexadecimal notation</h2>
           <ul>
             <li>
-              Horizontal margins add up:
-              <pre class="bigger"><code class="language-html">  ...
-&lt;style&gt;
-    a, span {
-      margin: 0 30px;
-    }
-  &lt;/style&gt;
-&lt;/head&gt;
-&lt;body&gt;
-  &lt;p&gt;
-    Lorem ipsum &lt;span&gt;dolor&lt;/span&gt; &lt;a&gt;sit amet&lt;/a&gt;, consect..
-  &lt;/p&gt;
-  &lt;p&gt;
-    Lorem ipsum dolor sit amet, consectetur adipisicing ...
-  &lt;/p&gt;
-&lt;/body&gt;
-&lt;/html&gt;
+              The most commonly used color notation is #RRGGBB hexadecimal:
+              <pre class="bigger"><code class="language-css" contenteditable data-selector="#hexadecimal-notation">p {
+  color: #d2003c;
+  background-color: #ffcccc;
+}</code></pre>
+              <p style="margin: 30px 0 20px 0; width: 150px; height: 40px; line-height: 40px; text-align: center; font-size: 20px; font-weight: bold">Lorem Ipsum</p>
+              &rarr; hexadecimal shorthand:
+              <pre class="bigger"><code class="language-css">p{
+  color: #c09; /* #cc0099 */
+  background-color: #fcc; /* #ffcccc */
+}</code></pre>
+            </li>
+          </ul>
+        </section>
+        <section style="background-image: url(img/02_design/lapland.jpg); background-size: cover; background-position: center center" id="rgba-hsla">
+          <h2>RGBA() &amp; HSLA() notation</h2>
+          <ul>
+            <li>
+              RGBA (red-green-blue-alpha) &amp; HSLA (hue-saturation-luminosity-alpha) notations (a = alpha channel = opacity):
+              <pre class="bigger"><code class="language-css" contenteditable data-selector="#rgba-hsla" data-step="10" style="background-color: white">p {
+  background-color: hsla(128, 75%, 33%, 0.5);
+  color: rgba(50, 44, 150, 1);
+}</code></pre>
+              <p id="colordemo" style="margin: 30px 0; width: 600px; height: 80px; line-height: 80px; text-align: center; font-size: 60px; font-weight: bold">APLHA EXAMPLE</p>
+            </li>
+          </ul>
+        </section>
+        <section id="mnemonic-notation">
+          <h2>Mnemonic notation</h2>
+          <ul>
+            <li>
+              mnemonic notation:
+              <pre class="bigger"><code class="language-css wrong" contenteditable data-selector="#mnemonic-notation">p {
+  color: Maroon; /* whatever the fuck that color is */
+  background-color: MistyRose; /* what the hell are misty roses? */
+}</code></pre>
+              <p style="margin: 30px 0 20px 0; width: 150px; height: 40px; line-height: 40px; text-align: center; font-size: 20px; font-weight: bold">Lorem Ipsum</p>
+              &rarr; mnemonic notation is for wussies
+            </li>
+          </ul>
+        </section>
+        <section id="color-examples">
+          <h2>Color examples</h2>
+          <ul>
+            <li>
+              Some typical properties where you would use colors:
+            </li>
+            <li class="no-style">
+              <pre class="bigger"><code class="language-css" contenteditable data-selector="#color-examples" data-step="2">p {
+  color: #009;
+  background-color: rgba(200, 200, 200, 0.7);
+  border-color: #090;
+}</code></pre>
+              <p style="margin-top: 30px; margin-bottom: 30px; width: 400px; height: 80px; line-height: 80px; text-align: center; font-size: 24px; border-width: 4px; border-style: solid">GRADIENT EXAMPLE</p>
+            </li>
+          </ul>
+        </section>
+        <section>
+          <h2>Chrome color picker</h2>
+          <ul>
+            <li>
+              Chrome has a great built-in color picker with live preview:
+            </li>
+          </ul>
+          <p><img src="img/02_design/chrome-colorpicker.png" alt="" class="border" style="max-width: 500px;" /></p>
+        </section>
+        <section id="gradients">
+          <h2>Gradients</h2>
+          <ul>
+            <li>
+              Gradients:
+            </li>
+            <li class="no-style">
+              <pre class="bigger"><code class="language-css" contenteditable data-selector="#gradients" data-step="2">p {
+  /* change -webkit to -moz, -o or -ms for other browsers */
+  background: -webkit-linear-gradient(bottom,
+     #00abeb 10%,
+     white 30%,
+     yellow 50%,
+     #66cc00 70%
+  )
+}</code></pre>
+              <p style="margin-top: 30px; margin-bottom: 30px; width: 400px; height: 80px; line-height: 80px; text-align: center; font-size: 24px;">GRADIENT EXAMPLE</p>
+            </li>
+          </ul>
+        </section>
+        <section id="background-images">
+          <h2>Background images</h2>
+          <ul>
+            <li>
+              Different ways to fill a container with a background image:
+            </li>
+            <li class="no-style">
+              <pre class="bigger"><code class="language-css" contenteditable data-selector="#background-images" data-step="10">div {
+  background-image: url(img/02_design/grass.png);
+  background-position: left bottom; /* also try center, px px, % %... */
+  background-color: #ccc; /* shown while image is loading */
+  background-repeat: no-repeat; /* also try repeat, repeat-x, repeat-y */
+  background-size: 100% 100% /* also try 100%, cover, contain, auto, px */
+}</code></pre>
+              <div id="backgrounddemo1" style="margin-top: 30px; width: 300px; height: 150px; margin-bottom: 30px; padding: 0"></div>
+            </li>
+          </ul>
+        </section>
+        <section>
+          <h2>Transitions</h2>
+          <ul>
+            <li>
+              Make smooth color (or in fact any CSS property) changes:
+            </li>
+            <li class="no-style">
+              <pre class="bigger"><code class="language-css" contenteditable data-selector="#transitiondemo">div {
+  background-color: #ccc;
+  transition: all 0.3s ease-in-out;
+  width: 200px;
+}
+div:hover {
+  background-color: #ee3c87;
+  border-radius: 0 15px 15px 0;
+  color: white;
+  width: 300px;
+}
 </code></pre>
-              <div class="demolink">
-                <a href="demos/02_design/02_boxmodel/margin_collapsing.html">demo</a>
+              <div id="transitiondemo">
+                <div style="padding: 10px; margin-top: 30px; border: 1px dotted #999">hover me!
+                </div>
               </div>
             </li>
           </ul>
         </section>
-        <section data-toc-title="Vertical margins" id="margincollapsing_vertical_1">
-          <h2>Vertical margins (1)</h2>
+      </section>
+      <section>
+        <section>
+          <h1>CSS</h1>
+          <h2>Borders, paddings &amp; margins</h2>
+          <ul class="chapterlist">
+            <!-- to be filled by Javascript -->
+          </ul>
+        </section>
+        <section>
+          <h2>Borders, paddings &amp; margins</h2>
           <ul>
             <li>
-              For vertical margins, the largest value counts:
-              <pre class="bigger"><code class="language-html">  ...
-  &lt;style&gt;
-    p#par1 {
-      margin: 20px;
-    }
-    p#par2 {
-      margin: 30px;
-    }
-  &lt;/style&gt;
-&lt;/head&gt;
-&lt;body&gt;
-  &lt;p&gt;
-    Lorem ipsum dolor sit amet, consect..
-  &lt;/p&gt;
-  &lt;p&gt;
-    Lorem ipsum dolor sit amet, consectetur adipisicing ...
-  &lt;/p&gt;
-&lt;/body&gt;
-&lt;/html&gt;
+              Definitions (from outside to inside):
+              <ul>
+                <li>the <b>margin</b> is the spacing <i>outside</i> an element</li>
+                <li>the <b>border</b> is a line <i>around</i> an element</li>
+                <li>the <b>padding</b> is the spacing <i>inside</i> an element</li>
+                <li>the <b>content</b> is anything <i>within</i> the padding</li>
+              </ul>
+            </li>
+          </ul>
+          <p><img src="img/02_design/boxmodel.png" alt="box model" /></p>
+        </section>
+        <section data-toc-title="Borders">
+          <h2>Borders (1)</h2>
+          <ul>
+            <li>
+              Let's start with two paragraphs in a div, and add some CSS:
+              <pre class="bigger"><code class="language-html">&lt;div&gt;
+  &lt;p&gt;In friendship diminution instrument so. Son sure paid door with say them.&lt;/p&gt;
+  &lt;p&gt;Fact are size cold why had part. If believing or sweetness otherwise.&lt;/p&gt;
+&lt;/div&gt;
 </code></pre>
-              <div class="demolink">
-                <a href="demos/02_design/02_boxmodel/margin_collapsing2.html">demo</a>
+              
+              <div style="display: flex; flex-flow: row nowrap; justify-content: space-between; align-items: flex-start;margin-top: 20px">
+                <pre class="bigger" style="margin: 0; margin-right: 4%; width: 48%; flex-grow: 1"><code class="language-css" contenteditable data-selector="#modeldemo1">div {
+  background-color: #eee;
+}
+p {
+  background-color: #ccc;
+  font-size: 18px;
+  /* switch off margins for now */
+  margin: 0; 
+}
+</code></pre>
+                <div id="modeldemo1" style="width: 48%">
+                  <div>
+                    <p class="demo">In friendship diminution instrument so. Son sure paid door with say them.</p>
+                    <p class="demo">Fact are size cold why had part. If believing or sweetness otherwise in we forfeited. </p>
+                  </div>
+                </div>
               </div>
             </li>
           </ul>
         </section>
-        <section data-toc-title="" id="margincollapsing_vertical_2">
-          <h2>Vertical margins (2)</h2>
+        <section data-toc-title="">
+          <h2>Borders (2)</h2>
           <ul>
             <li>
-              This is called <em>vertical margin collapsing</em>
-              <img src="img/02_design/verticalmargincollapsing.png" alt="vertical margin collapsing" />
+              Now let's add some borders:
+              <div style="display: flex; flex-flow: row nowrap; justify-content: space-between; align-items: flex-start;margin-top: 20px">
+                <pre class="bigger" style="margin: 0; margin-right: 4%; width: 48%; flex-grow: 1"><code class="language-css" contenteditable data-selector="#modeldemo2">div {
+  background-color: #eee;
+  border: 5px dotted #900; 
+}
+p {
+  background-color: #ccc;
+  border: 1px solid black;
+  font-size: 18px;
+  margin: 0; 
+}
+</code></pre>
+                <div id="modeldemo2" style="width: 48%">
+                  <div>
+                    <p class="demo">In friendship diminution instrument so. Son sure paid door with say them.</p>
+                    <p class="demo">Fact are size cold why had part. If believing or sweetness otherwise in we forfeited. </p>
+                  </div>
+                </div>
+              </div>
             </li>
           </ul>
         </section>
-        <section id="margincollapsing_nested">
-          <h2>Nested elements</h2>
+        <section data-toc-title="">
+          <h2>Borders (3)</h2>
           <ul>
             <li>
-              Also nested elements can margin-collapse, as long as the margins touch each other:
-              <img src="img/02_design/nestedmargincollapsing.png" alt="nested margin collapsing" />
+              Sidenote: you can use different borders for all sides if you wish
+              <div style="display: flex; flex-flow: row nowrap; justify-content: space-between; align-items: flex-start;margin-top: 20px">
+                <pre class="bigger" style="margin: 0; margin-right: 4%; width: 48%; flex-grow: 1"><code class="language-css" contenteditable data-selector="#modeldemo3">div {
+  background-color: #eee;
+  border: 5px dotted #900; 
+  border-left-color: #009;
+  border-right-style: dashed;
+  border-top-width: 2px;
+}
+p {
+  background-color: #ccc;
+  border-bottom: 1px solid black;
+  font-size: 18px;
+  margin: 0; 
+}
+</code></pre>
+                <div id="modeldemo3" style="width: 48%">
+                  <div>
+                    <p class="demo">In friendship diminution instrument so. Son sure paid door with say them.</p>
+                    <p class="demo">Fact are size cold why had part. If believing or sweetness otherwise in we forfeited. </p>
+                  </div>
+                </div>
+              </div>
             </li>
           </ul>
         </section>
-        <section id="margincollapsing_single">
-          <h2>Single elements</h2>
+        <section>
+          <h2>Padding</h2>
           <ul>
             <li>
-              Even a single element can margin-collapse, if it is empty:
-              <img src="img/02_design/emptymargincollapsing.png" alt="empty margin collapsing" />
+              Let's add paddings to paragraphs and the div:
+              <div style="display: flex; flex-flow: row nowrap; justify-content: space-between; align-items: flex-start;margin-top: 20px">
+                <pre class="bigger" style="margin: 0; margin-right: 4%; width: 48%; flex-grow: 1"><code class="language-css" contenteditable data-selector="#modeldemo4">div {
+  background-color: #eee;
+  border: 5px dotted #900; 
+  padding: 20px 40px; /* vert-hor */
+}
+p {
+  background-color: #ccc;
+  border: 1px solid black;
+  font-size: 18px;
+  margin: 0; 
+  padding: 10px;
+}</code></pre>
+                <div id="modeldemo4" style="width: 48%">
+                  <div>
+                    <p class="demo">In friendship diminution instrument so. Son sure paid door with say them.</p>
+                    <p class="demo">Fact are size cold why had part. If believing or sweetness otherwise in we forfeited. </p>
+                  </div>
+                </div>
+
+              </div>
             </li>
           </ul>
         </section>
-        <section data-toc-title="Example" id="margincollapsing_example1_1">
-          <h2>Example (1)</h2>
+        <section>
+          <h2>Margin</h2>
           <ul>
             <li>
-              How can we fix this code fragment?
-              <pre class="bigger"><code class="language-html">  ...
+              Finally, we add a top margin between the paragraphs:
+              <div style="display: flex; flex-flow: row nowrap; justify-content: space-between; align-items: flex-start;margin-top: 20px">
+                <pre class="bigger" style="margin: 0; margin-right: 4%; width: 48%; flex-grow: 1"><code class="language-css" contenteditable data-selector="#modeldemo5">div {
+  background-color: #eee;
+  border: 5px dotted #900; 
+  padding: 20px 40px;
+}
+p {
+  background-color: #ccc;
+  border: 1px solid black;
+  font-size: 18px;
+  margin: 0;
+  padding: 10px;
+}
+p + p {
+  margin-top: 20px;
+}</code></pre>
+                <div id="modeldemo5" class="demo" style="width: 48%">
+                  <div>
+                    <p class="demo">In friendship diminution instrument so. Son sure paid door with say them.</p>
+                    <p class="demo">Fact are size cold why had part. If believing or sweetness otherwise in we forfeited. </p>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </section>
+        <section data-toc-title="Margin collapsing &mdash; bleeding">
+          <h2>Margin bleeding (1)</h2>
+          <ul>
+            <li>
+              If it doesn't meet a border or padding on its way, a vertical margin will &ldquo;bleed&rdquo; out of its parent. Here, the <code>&lt;p&gt;</code> top margin bleeds out of the <code>&lt;header&gt;</code> and pushes it down:
+              <pre class="bigger"><code class="language-html overlayrun" style="max-height: 250px">&lt;html&gt;
+&lt;head&gt;
   &lt;style&gt;
     * { margin: 0; }
-    div#header {
+    header {
       height: 110px;
       background-color: #ccc;
     }
-    p#login { margin: 20px; }
+    #login { margin: 20px; }
   &lt;/style&gt;
 &lt;/head&gt;
 &lt;body&gt;
-  &lt;div id="header"&gt;
+  &lt;header&gt;
     &lt;p id="login"&gt;&lt;a href="#"&gt;klantenzone&lt;/a&gt;&lt;/p&gt;
-  &lt;/div&gt;
+  &lt;/header&gt;
 &lt;/body&gt;
 &lt;/html&gt;
 </code></pre>
-              <div class="demolink">
-                <a href="demos/02_design/02_boxmodel/margin_collapsing3.html">demo</a>
-              </div>
             </li>
           </ul>
         </section>
-        <section data-toc-title="" id="margincollapsing_example1_2">
-          <h2>Example (2)</h2>
+        <section data-toc-title="">
+          <h2>Margin bleeding (2)</h2>
           <ul>
             <li>
-              Avoid touching margins with a border:
-              <pre class="bigger"><code class="language-html">  ...
+              Solve it by replacing the <code>&lt;p&gt;</code> top margin with a <code>&lt;header&gt;</code> top padding:
+              <pre class="bigger"><code class="language-html overlayrun">&lt;html&gt;
+&lt;head&gt;
   &lt;style&gt;
     * { margin: 0; }
-    div#header {
-      height: 108px;
-      background-color: #ccc;
-      border: 1px solid #ccc;
-    }
-    p#login { margin: 20px; }
-  &lt;/style&gt;
-&lt;/head&gt;
-&lt;body&gt;
-  &lt;div id="header"&gt;
-    &lt;p id="login"&gt;&lt;a href="#"&gt;klantenzone&lt;/a&gt;&lt;/p&gt;
-  &lt;/div&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-</code></pre>
-              <div class="demolink">
-                <a href="demos/02_design/02_boxmodel/margin_collapsing3b.html">demo</a>
-              </div>
-            </li>
-          </ul>
-        </section>
-        <section data-toc-title="" id="margincollapsing_example1_3">
-          <h2>Example (3)</h2>
-          <ul>
-            <li>
-              Or replace margins by paddings:
-              <pre class="bigger"><code class="language-html">  ...
-  &lt;style&gt;
-    * { margin: 0; }
-    div#header {
+    header {
       height: 90px;
       background-color: #ccc;
       padding-top: 20px;
     }
-    p#login { margin: 0 20px 20px 20px; }
+    #login { margin: 0 20px 20px 20px; }
   &lt;/style&gt;
 &lt;/head&gt;
 &lt;body&gt;
-  &lt;div id="header"&gt;
+  &lt;header&gt;
     &lt;p id="login"&gt;&lt;a href="#"&gt;klantenzone&lt;/a&gt;&lt;/p&gt;
-  &lt;/div&gt;
+  &lt;/header&gt;
 &lt;/body&gt;
 &lt;/html&gt;
 </code></pre>
-              <div class="demolink">
-                <a href="demos/02_design/02_boxmodel/margin_collapsing3c.html">demo</a>
-              </div>
             </li>
           </ul>
         </section>
+        <section data-toc-title="Margin &amp; padding notes">
+          <h2>Margin &amp; padding notes (1)</h2>
+          <ul>
+            <li>
+              Margins &amp; paddings may behave strange:
+              <ol>
+                <li><b>unpositioned blocklevel elements</b>: horizontal margins add up, but for vertical margins, only the largest value counts</li>
+                <li><b>positioned blocklevel elements</b>: all margins add up</li>
+                <li><b>inline elements</b>: vertical margins are ignored; vertical paddings overlap other content above but underlap below</li>
+              </ol>
+            </li>
+            <li class="no-style">
+              &rarr; see <a href="demos/02_design/margins-paddings.html">this summary demo</a>
+            </li>
+          </ul>
+        </section>
+        <section data-toc-title="">
+          <h2>Margin &amp; padding notes (2)</h2>
+          <ul>
+            <li>
+              You can avoid a lot of troubles by following these guidelines:
+              <ul>
+                <li>don't set vertical paddings or vertical margins on inline elements</li>
+                <li>avoid bleeding margins by using paddings instead where you can</li>
+                <li>above all: <b>use your chrome inspector all the time!</b></li>
+              </ul>
+            </li>
+          </ul>
+          <p style="text-align: right;"><img src="img/02_design/box-model-inspector.png" alt="box model" class="border" style="max-width: 400px" /></p>
+        </section>
       </section>
       <section>
-        <section id="inline">
+        <section>
           <h1>CSS</h1>
-          <h2>Inline elements</h2>
+          <h2>The box model</h2>
           <ul class="chapterlist">
             <!-- to be filled by Javascript -->
           </ul>
         </section>
-        <section id="inline_width_height">
-          <h2>Width and height</h2>
+        <section>
+          <h2>Box model </h2>
           <ul>
             <li>
-              <code>width</code> and <code>height</code> are ignored for inline elements:
-              <pre class="bigger"><code class="language-html">  ...
-  &lt;style&gt;
+              The model we saw earlier is also referred to as the <em>box model</em>
+            </li>
+            <li>
+              By default, the <code>width</code> and <code>height</code> properties refer to the content only, excluding the borders and paddings. 
+              The actual width or height in the below example is not 150px, but 162px:<br />
+            </li>
+          </ul>
+          <div style="display: flex; flex-flow: row nowrap; align-items: flex-start;">
+            <img src="img/02_design/boxmodel2.png" alt="box model" /  >
+            <pre class="bigger" style="margin-top: 16px"><code class="language-css">div {
+  width: 150px; /* total width is 162px */
+  padding: 5px;
+  border: 1px solid black;   
+}</code></pre>
+          </div>
+        </section>
+        <section data-toc-title="Box sizing">
+          <h2>Box model problems</h2>
+          <ul>
+            <li>
+              This model leads to some problems. Let's create a simple horizontal menu of 100% wide, with 4 links 25% wide each:
+              <pre class="bigger"><code class="language-html overlayrun" style="max-height: 250px" contenteditable>&lt;html&gt;
+&lt;head&gt;
+  &lt;style&gt;  
+    /* setting widths, borders and paddings */
+    ul {
+      border: 3px solid black;
+      width: 100%;
+    }
     a {
-      border: 1px solid red;
-      width: 200px;
-      height: 150px;
+      padding: 5px 10px;
+      width: 25%;
+    }
+    li + li a {
+      border-left: 1px solid black;
+    }
+
+    /* other CSS, not important for this slide */
+    div {
+      border: 1px dotted;
+      width: 400px;
+    }  
+    ul {
+      background-color: #ddd;
+      list-style: none;
+      overflow: hidden; /* layout stuff; you'll learn more later */
+      padding: 0;
+    }
+    a {
+      display: block; /* make block level, or setting width won't work */
+      background-color: #ccc;
+      float: left; /* layout stuff; you'll learn more later */
     }
   &lt;/style&gt;
 &lt;/head&gt;
 &lt;body&gt;
-  &lt;p&gt;
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-    sed do eiusmod &lt;a href="#"&gt;tempor&lt;/a&gt; incididunt ut...
-  &lt;/p&gt;
+  &lt;div&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=""&gt;link&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=""&gt;link&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=""&gt;link&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=""&gt;link&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/div&gt;
 &lt;/body&gt;
 &lt;/html&gt;
 </code></pre>
-              <div class="demolink">
-                <a href="demos/02_design/02_boxmodel/inline1.html">demo</a>
-              </div>
+              <ul class="arrow">
+                <li>the <code>ul</code> becomes wider than 100% due to borders</li>
+                <li>the <code>li's</code> become wider than 25% due to borders and paddings</li>
+              </ul>
             </li>
           </ul>
         </section>
-        <section id="inline_padding">
-          <h2>Padding</h2>
+        <section>
+          <h2>Solution 1: calc()</h2>
           <ul>
             <li>
-              With inline elements, only left and right padding push other elements away, top and bottom overlap with other content:
-              <pre class="bigger"><code class="language-html">  ...
-  &lt;style&gt;
+              Solution 1: substract borders and paddings using the <code>calc()</code> function
+              <pre class="bigger"><code class="language-html overlayrun" style="max-height: 250px" contenteditable>&lt;html&gt;
+&lt;head&gt;
+  &lt;style&gt;  
+    /* setting widths, borders and paddings */
+    ul {
+      border: 3px solid black;
+      width: calc(100% - 6px);
+    }
     a {
-      border: 1px solid red;
-      padding: 20px;
-      background-color: lightgray;
+      padding: 5px 10px;
+      width: calc(25% - 20px);
+    }
+    li + li a {
+      border-left: 1px solid black;
+      width: calc(25% - 22px);
+    }
+
+    /* other CSS, not important for this slide */
+    div {
+      border: 1px dotted;
+      width: 400px;
+    }  
+    ul {
+      background-color: #ddd;
+      list-style: none;
+      overflow: hidden; /* layout stuff; you'll learn more later */
+      padding: 0;
+    }
+    a {
+      display: block; /* make block level, or setting width won't work */
+      background-color: #ccc;
+      float: left; /* layout stuff; you'll learn more later */
     }
   &lt;/style&gt;
 &lt;/head&gt;
 &lt;body&gt;
-  &lt;p&gt;
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-    sed do eiusmod &lt;a href="#"&gt;tempor&lt;/a&gt; incididunt ut...
-  &lt;/p&gt;
+  &lt;div&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=""&gt;link&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=""&gt;link&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=""&gt;link&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=""&gt;link&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/div&gt;
 &lt;/body&gt;
 &lt;/html&gt;
 </code></pre>
-              <div class="demolink">
-                <a href="demos/02_design/02_boxmodel/inline2.html">demo</a>
-              </div>
             </li>
           </ul>
         </section>
-        <section id="inline_margins">
-          <h2>Margins</h2>
+        <section>
+          <h2>Solution 2: box-sizing</h2>
           <ul>
             <li>
-              The same happens with margins:
-              <pre class="bigger"><code class="language-html">  ...
-  &lt;style&gt;
+              Solution 2: fix the box model with the <code>box-sizing</code> property
+              <pre class="bigger"><code class="language-html overlayrun" style="max-height: 250px" contenteditable>&lt;html&gt;
+&lt;head&gt;
+  &lt;style&gt;  
+    /* wollah! box model fixed */
+    * {
+      box-sizing: border-box; 
+    }
+
+    /* setting widths, borders and paddings */
+    ul {
+      border: 3px solid black;
+      width: 100%;
+    }
     a {
-      border: 1px solid red;
-      margin: 20px;
+      padding: 5px 10px;
+      width: 25%;
+    }
+    li + li a {
+      border-left: 1px solid black;
+    }
+
+    /* other CSS, not important for this slide */
+    div {
+      border: 1px dotted;
+      width: 400px;
+    }  
+    ul {
+      background-color: #ddd;
+      list-style: none;
+      overflow: hidden; /* layout stuff; you'll learn more later */
+      padding: 0;
+    }
+    a {
+      display: block; /* make block level, or setting width won't work */
+      background-color: #ccc;
+      float: left; /* layout stuff; you'll learn more later */
     }
   &lt;/style&gt;
 &lt;/head&gt;
 &lt;body&gt;
-  &lt;p&gt;
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-    sed do eiusmod &lt;a href="#"&gt;tempor&lt;/a&gt; incididunt ut...
-  &lt;/p&gt;
+  &lt;div&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=""&gt;link&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=""&gt;link&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=""&gt;link&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=""&gt;link&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/div&gt;
 &lt;/body&gt;
 &lt;/html&gt;
 </code></pre>
-              <div class="demolink">
-                <a href="demos/02_design/02_boxmodel/inline3.html">demo</a>
+              &rarr; solves a lot of headaches<br>
+              &rarr; be sure to include this fix in your CSS reset!
+            </li>
+          </ul>
+        </section>
+        <section>
+          <h2>width &amp; height on inline elements</h2>
+          <ul>
+            <li>
+              Important: you <b>can't set <code>width</code> or <code>height</code> on inline elements</b>. If you wish to set the dimensions of e.g. a link, make it blocklevel first:
+              <pre class="bigger"><code style="height: 170px" class="language-css" contenteditable data-selector="#text-properties2">a {                
+  /* make blocklevel, and set width */                
+  display: block;
+  width: 200px; 
+
+  /* rest of button design */
+  background-color: #A2C355;
+  border: 2px solid #A2C355;
+  border-radius: 2px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 16px;
+  line-height: 1.8;
+  padding: 9px 24px;
+  text-align: center;
+  text-decoration: none;  
+  text-transform: uppercase;
+  transition: all 0.3s; /* smooth transition of all properties */
+}
+a:hover {
+  background-color: white;
+  color: #A2C355;
+}
+</code></pre>
+              <div id="text-properties2" style="margin-top: 20px">
+                <a class="demo" style="margin: 0">Buy now!</a>
               </div>
             </li>
           </ul>
         </section>
+        <section>
+          <h2>Box shadow &amp; radius</h2>
+          <ul>
+            <li>
+              Shadow and radius effects:
+              <pre class="bigger"><code class="language-css" contenteditable data-subject="#shadowdemo">box-shadow: 10px 10px 5px #888;
+border-radius: 50px 5px 5px 5px;
+</code></pre>
+              <div id="shadowdemo" style="margin-top: 30px; margin-bottom: 30px; width: 400px; height: 80px; line-height: 80px; text-align: center; font-size: 24px;background-color: #ccc"></div>
+            </li>
+          </ul>
+        </section>
+
       </section>
       <section>
-        <section id="appearance">
+        <section>
           <h1>CSS</h1>
           <h2>Appearance</h2>
           <ul class="chapterlist">
             <!-- to be filled by Javascript -->
           </ul>
         </section>
-        <section id="appearance_visibility">
+        <section>
+          <h2>Opacity</h2>
+          <ul>
+            <li>
+              make an element (partly) transparent:
+              <pre class="bigger"><code class="language-css">a {
+  opacity: 0.8;
+}</code></pre>
+              <div class="demolink">
+                <a href="demos/02_design/03_display_visibility/opacity.html">demo</a>
+              </div>
+            </li>
+          </ul>
+        </section>
+        <section>
           <h2>Visibility</h2>
           <ul>
             <li>
-              Make an element invisible (transparent) with <code>visibility: hidden</code>
+              make an element invisible:
               <pre class="bigger"><code class="language-css">a {
-  visibility: hidden;
+  visibility: hidden; /* same as opacity: 0; still occupies space*/
 }</code></pre>
               <div class="demolink">
                 <a href="demos/02_design/03_display_visibility/visibility.html">demo</a>
@@ -837,16 +1202,13 @@ body {
             </li>
           </ul>
         </section>
-        <section id="appearance_none">
+        <section>
           <h2>Display none</h2>
           <ul>
             <li>
-              Defines how an element is displayed: <code>inline</code>, <code>block</code>, ...
-            </li>
-            <li>
-              Remove an element with <code>display: none</code>
+              remove an element entirely:
               <pre class="bigger"><code class="language-css">a {
-  display: none;
+  display: none; /* it is gone; it doesn't even occupy space anymore */
 }</code></pre>
               <div class="demolink">
                 <a href="demos/02_design/03_display_visibility/display.html">demo</a>
@@ -854,11 +1216,11 @@ body {
             </li>
           </ul>
         </section>
-        <section id="appearance_block">
+        <section>
           <h2>Display block</h2>
           <ul>
             <li>
-              Make an inline element blocklevel with <code>display: block</code>
+              make an inline element blocklevel:
               <pre class="bigger"><code class="language-css">a {
   display: block;
 }</code></pre>
@@ -868,11 +1230,11 @@ body {
             </li>
           </ul>
         </section>
-        <section id="appearance_inline">
+        <section>
           <h2>Display inline</h2>
           <ul>
             <li>
-              Make a blocklevel element inline with <code>display: inline</code>
+              make a blocklevel element inline:
               <pre class="bigger"><code class="language-css">li {
   display: inline;
 }</code></pre>
@@ -881,15 +1243,15 @@ body {
               </div>
             </li>
             <li class="no-style">
-              &rarr; <code>width</code> and <code>height</code> properties won't work anymore
+              &rarr; note: <code>width</code> and <code>height</code> properties won't work anymore
             </li>
           </ul>
         </section>
-        <section id="appearance_inlineblock">
+        <section>
           <h2>Display inline-block</h2>
           <ul>
             <li>
-              Make a blocklevel element but show inline with <code>display: inline-block</code>
+              Make a blocklevel element show inline with <code>display: inline-block</code>
               <pre class="bigger"><code class="language-css">li {
   display: inline-block;
 }</code></pre>
@@ -898,117 +1260,7 @@ body {
               </div>
             </li>
             <li class="no-style">
-              &rarr; <code>width</code> and <code>height</code> properties still work
-            </li>
-          </ul>
-        </section>
-        <section id="appearance_aligning">
-          <h2>Aligning</h2>
-          <ul>
-            <li>Aligning an element within its parent and/or the text within:</li>
-            <li class="no-style">
-              <pre class="bigger"><code class="language-css" contenteditable data-subject="#aligndemo">border: 1px solid;
-padding: 5px;
-background-color: #999;
-width: 200px;
-font-size: 20px;
-/* horizontally center the paragraph */
-margin: 0 auto;
-/* horizontally align inner text; other values: justify, left, right */
-text-align: center;
-/* vertically center inner text */
-height: 100px;
-line-height: 98px; /* same as content height = 100px - 2 x border width */
-</code></pre>
-            </li>
-  				</ul>
-  				<p id="aligndemo">
-  					this is a paragraph
-  				</p>
-          <div class="tooltip">
-            <div>
-              Two remarks:
-              <ul>
-              	<li>Because we use <code>line-height</code>, centering text vertically is only possible with a single line of text</li>
-              	<li>There exists no method to align a block vertically within its parent yet, but <a href="http://www.html5rocks.com/en/tutorials/flexbox/quick/">work on this is in progress</a></li>
-              </ul>
-            </div>
-          </div>
-        </section>
-      </section>
-      <section>
-        <section id="hacksfilters">
-          <h1>CSS</h1>
-          <h2>Hacks and filters</h2>
-          <ul class="chapterlist">
-            <!-- to be filled by Javascript -->
-          </ul>
-        </section>
-        <section id="hacksfilters_ie5boxmodel">
-          <h2>IE5 box model hack</h2>
-          <ul>
-            <li>
-              Hacks are an old-fashioned way to solve poor browser support
-            </li>
-            <li>
-              Mother of all hacks: IE5 box model hack
-              <pre class="bigger"><code class="language-css">#pup {
-  border: 20px solid;
-  padding: 1px;
-  width: 250px; /* voor IE5/Win */
-  voice-family: "\"}\"";
-  voice-family: inherit;
-  width: 208px; /* voor alle andere browsers: */
-}
-/* be nice to Opera 5 */
-html > body #pup {
-  width: 208px;
-}</code></pre>
-            </li>
-            <li>
-              Fixes IE5 box model misinterpretation
-            </li>
-            <li>
-              IE5 and any IE version &lt; 10 can safely be ignored these days
-            </li>
-          </ul>
-        </section>
-        <section id="hacksfilters_ie5escape">
-          <h2>IE5/Win escape filter</h2>
-          <ul>
-            <li>
-              IE5/Win escaped property filter
-              <pre class="bigger"><code class="language-css">#content {
-  w\idth: 100px; /* ignored by IE5/Win */
-}</code></pre>
-            </li>
-            <li>
-              IE6/Win and lower underscore filter
-              <pre class="bigger"><code class="language-css">#content {
-  position: fixed;
-  _position: static; /* only executed by IE6/Win and lower */
-}</code></pre>
-            </li>
-            <li>
-              IE6/Win and lower child selector filter
-              <pre class="bigger"><code class="language-css">html > body {
-  background-image: url(bg.png);
-  /* not executed by IE6/Win and lower */
-}</code></pre>
-            </li>
-          </ul>
-        </section>
-        <section id="hacksfilters_justdont">
-          <h2>Just don't</h2>
-          <ul>
-            <li>
-              Hacks and filters had their role in early CSS times
-            </li>
-            <li>
-              These days: avoid using them at all times
-            </li>
-            <li>
-              Use conditional CSS for IE instead if necessary
+              &rarr; note: <code>width</code> and <code>height</code> properties still work
             </li>
           </ul>
         </section>
@@ -1066,9 +1318,9 @@ html > body #pup {
   <script src="vendor/reveal/js/reveal.js"></script>
   <script src="vendor/highlight/highlight.pack.js"></script>
   <script src="vendor/incrementable.js"></script>
+  <script src="vendor/prefixfree.js"></script>
   <script src="vendor/css-snippets.js"></script>
   <script src="vendor/css-edit.js"></script>
-  <!-- <script src="vendor/prefixfree.js"></script> -->
   <script src="js/main.js"></script>
 
 </body>

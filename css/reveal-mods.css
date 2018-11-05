@@ -26,7 +26,7 @@ body {
   box-shadow: none;
 }
 
-.reveal p {
+.reveal p:not(.demo) {
   margin: 0 0 20px 0;
   line-height: 1.3;
 }
@@ -104,6 +104,10 @@ body {
   line-height: 1.4em;
   margin-left: 40px;
   margin-top: 5px;
+}
+
+.reveal ol ul,
+.reveal ul ul {
   list-style: square;
 }
 
@@ -179,6 +183,7 @@ aside.back {
 
 aside.back nav > p:first-child {
   color: #8b743d;  
+  margin: 0;
 }
 
 .reveal nav {

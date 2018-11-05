@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Margins &amp; paddings behaviour</title>
+    <meta charset="utf-8" />
+    <style>
+    	.note {
+    		font-style: italic;
+    	}
+    	.block-positioned {
+    		overflow: hidden;
+    		width: 250px;
+    	}
+    	div div {
+    		width: 50px;
+    		height: 30px;
+    		border: 1px solid;
+    		margin: 20px;
+    		background-color: #ddd;
+    	}
+    	.block-positioned div {
+    		display: inline-block;
+    	}
+    	.inline-margins {
+    		width: 600px;
+    	}
+    	.inline-margins a {
+    		margin: 20px;
+    	}
+    	.inline-paddings {
+    		width: 600px;
+    	}
+    	.inline-paddings a {
+    		border: 1px solid #ccc;
+    		background-color: #eee;
+    		padding: 20px;
+    	}
+    </style>
+</head>
+<body>
+    <h2>Margins &amp; paddings behaviour</h2>
+    <p class="note">
+    	Note: all margins &amp; paddings are set to 20px in this demo<br>
+    	Note: use your chrome inspector to see the margins
+    </p>
+	<h3>1. Blocklevel, unpositioned: vertical margins "collapse" (i.e. the greatest value of touching margins counts)</h3>
+	<div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+	</div>
+	<h3>2. Blocklevel, positioned: horizontal &amp; vertical margins add up</h3>
+	<div class="block-positioned">
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+	</div>
+	<h3>3. Inline: vertical margins are ignored, horizontal margins add up</h3>
+	<p class="inline-margins">
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit, dolor in reprehenderit in voluptate velit esse cillum.
+		sed do eiusmod <a href="">tempor</a> <a href="">incididunt</a> ut...
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.
+	</p>
+	<h3>4. Inline: vertical paddings overlap above, but underlap below</h3>
+	<p class="inline-paddings">
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit, dolor in reprehenderit in voluptate velit esse cillum.
+		sed do eiusmod <a href="">tempor</a> incididunt ut...
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.
+	</p>
+</body>
+</html>
