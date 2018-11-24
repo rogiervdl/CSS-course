@@ -31,443 +31,147 @@
           <small>use the arrow keys to navigate; press space for slide overview</small>
           <figure>
             <img src="img/03_layout/icon.jpg" alt="" class="border" />
-            <figcaption></figcaption>
           </figure>
           <footer>
-            <a href="http://www.ikdoeict.be/">ikdoeict.be</a> &mdash; <a href="mailto:rogier.vanderlinde@odisee.be">rogier.vanderlinde@odisee.be</a>
+            <a href="http://www.odisee.be/">odisee.be</a> &mdash; <a href="mailto:rogier.vanderlinde@odisee.be">rogier.vanderlinde@odisee.be</a>
           </footer>
         </section>
       </section>
       <section>
         <section>
           <h1>CSS layout</h1>
-          <h2>Intro</h2>
+          <h2>Overview</h2>
           <ul class="chapterlist">
             <!-- to be filled by Javascript -->
           </ul>
         </section>
         <section>
-          <h2>Before you start</h2>
+          <h2>Layout overview</h2>
           <ul>
             <li>
-              This chapter assumes you know CSS design (fonts, colors, margins, paddings...)
-            </li>
-            <li>
-              We also assume you know how to the division in sections, articles, headers, footers etc...
-            </li>
-            <li>
-              We already spoke about <a href="02_design.html#/5/6">aligning</a> and did some minor layout with the <a href="02_design.html#/5/5"><code>display</code> property</a>
-            </li>
-            <li>
-              For serious layout there are two groups of layout techniques: <em>positioning</em> and <em>floating</em>
-            </li>
-          </ul>
-          <div class="tooltip">
-            <div>
-              In this presentation you'll find out that layout with CSS is a little... weird. The reason is that the techniques used were meant for minor things like text wrap or local positioning, not for global page layout. By using these techniques creatively you <i>can</i> do page layout with CSS, but bear in mind that it is not always as straightforward as you might expect. Today, until <a href="http://caniuse.com/#search=flexbox">Flexbox</a> gains wide support, no dedicated layout technique exists.
-            </div>
-          </div>
-        </section>
-        <section>
-          <h2>Overview</h2>
-          <ul>
-            <li>
-              <em>Positioning</em>:
+              Major layout
               <ul>
-                <li>relative positioning</li>
-                <li>absolute positioning</li>
-                <li>fixed positioning</li>
-                <li>absolute-relative positioning</li>
-                <li class="no-style">&rarr; we'll also talk about stacking order and context</li>
+                <li>main <strong>two dimensional</strong> layout (header, columns, footer...): use <em>CSS Grid</em></li>
+                <li>smaller <strong>one dimensional</strong> layout (menu, header items etc...): use <em>CSS Flexbox</em></li>
               </ul>
             </li>
             <li>
-              <em>Floating</em>:
+              Minor layout
               <ul>
-                <li>floating left and right</li>
-                <li>clearing</li>
-                <li class="no-style">&rarr; we'll also talk about clearfix</li>
+                <li><strong>float content</strong> around image or block: use <em>CSS Float</em></li>
+                <li><strong>position elements</strong> absolute, relative or fixed: use <em>CSS Positioning</em></li>
               </ul>
-            </li>
+            </li>  
             <li>
-              <em>Flexbox</em>:
+              Center content
               <ul>
-                <li>parent properties (direction, wrap, align, justify)</li>
-                <li>child properties (order, shrink/grow, align, basis)</li>
+                <li>center text horzontally with <code><em>text-align: center;</em></code></li>
+                <li>center a block horizontally in its parent with <code><em>margin:0 auto;</em></code></li>
               </ul>
-            </li>
+            </li>  
           </ul>
         </section>
       </section>
       <section>
         <section>
-          <h1>CSS layout</h1>
+          <h1>CSS Positioning</h1>
           <h2>Positioning</h2>
           <ul class="chapterlist">
             <!-- to be filled by Javascript -->
           </ul>
         </section>
         <section>
-          <h2>Some start code</h2>
+          <h2>Start code</h2>
           <ul>
             <li>
-              Let's start off with the following code:
+              Let's start from the following code:
             </li>
             <li class="no-style">
-              <pre class="bigger"><code class="language-html">&lt;div class="demowrapper"&gt;
-  &lt;div class="demobox demobox1"&gt;&lt;/div&gt;
-  &lt;div class="demobox demobox2"&gt;&lt;/div&gt;
-  &lt;div class="demobox demobox3"&gt;&lt;/div&gt;
-&lt;/div&gt;
-</code></pre>
-            </li>
-            <li class="no-style">
-              and some CSS:
-            </li>
-            <li class="no-style">
-              <pre class="bigger"><code class="language-css" style="height: 200px">.demobox {
-  border: 2px solid black;
-  font: 12px Verdana;
-  color: #fff;
-  width: 80px;
-  height: 40px;
-  margin-bottom: 10px;
-  margin-right: 10px;
-  padding: 5px;
-}
-.demowrapper {
-  border: 1px dotted black;
-  width: 500px;
-  margin: 10px auto; /* centreert de wrapper op de pagina */
-  padding: 10px;
-}
-.demobox1 {
-  background-color: #ddd;
-}
-.demobox2 {
-  background-color: #888;
-}
-.demobox3 {
-  background-color: #333;
-}
-</code></pre>
-              <div class="demolink"><a href="demos/03_layout/positioning1.html">demo</a></div>
+<p data-height="300" data-theme-id="35230" data-slug-hash="KrRNWK" data-default-tab="css,result" data-user="rogiervanderlinde" data-pen-title="CSS Course 03 layout positioning 1" class="codepen">See the Pen <a href="https://codepen.io/rogiervanderlinde/pen/KrRNWK/">CSS Course 03 layout positioning 1</a> by Rogier van der Linde (<a href="https://codepen.io/rogiervanderlinde">@rogiervanderlinde</a>) on <a href="https://codepen.io">CodePen</a>.</p>
             </li>
           </ul>
         </section>
-        <section id="slidedemorelative">
+        <section>
           <h2>Relative positioning</h2>
           <ul>
             <li>
-              <em>Relative positioning</em> shifts an element from its natural position; other elements remain unchanged:
+              <em>Relative positioning</em> shifts an element from its natural position; other elements stay where they are:
             </li>
             <li class="no-style">
-              <pre class="bigger"><code class="language-css" contenteditable data-selector="#slidedemorelative">.demobox2 {
-  position: relative;
-  top: 30px;
-  left: 30px;
-}</code></pre>
-              <div class="demolink"><a href="demos/03_layout/positioning2.html">demo</a></div>
+<p data-height="300" data-theme-id="35230" data-slug-hash="gQzgGp" data-default-tab="css,result" data-user="rogiervanderlinde" data-pen-title="CSS Course 03 relative positioning" data-editable="true" class="codepen">See the Pen <a href="https://codepen.io/rogiervanderlinde/pen/gQzgGp/">CSS Course 03 relative positioning</a> by Rogier van der Linde (<a href="https://codepen.io/rogiervanderlinde">@rogiervanderlinde</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+            </li>
+            <li class="arrow">
+              don't use relative positioning to correct errors!
             </li>
           </ul>
-          <div class="demowrapper">
-            <div class="demobox demobox1"></div>
-            <div class="demobox demobox2"></div>
-            <div class="demobox demobox3"></div>
-          </div>
-          <div class="tooltip">
-            <div>
-              Try it out! Click the CSS values above and use the arrow keys to increase or decrease.
-            </div>
-          </div>
         </section>
-        <section id="slidedemoabsolute">
-          <h2>Absolute positioning</h2>
+        <section data-toc-title="Absolute positioning">
+          <h2>Absolute positioning (1)</h2>
           <ul>
             <li>
-              <em>Absolute positioning</em> lifts an element out of the page in a separate layer; other elements close the gap:
+              <em>Absolute positioning</em> takes an element out of the flow, and puts it on top (overlap may occur); other elements fill the gap:
             </li>
             <li class="no-style">
-              <pre class="bigger"><code class="language-css" contenteditable data-selector="#slidedemoabsolute">.demobox2 {
-  position: absolute;
-  top: 30px; /* bottom is also possible */
-  left: 30px; /* right is also possible */
-}
-</code></pre>
-              <div class="demolink"><a href="demos/03_layout/positioning3.html">demo</a></div>
+<p data-height="300" data-theme-id="35230" data-slug-hash="oQdBoO" data-default-tab="css,result" data-user="rogiervanderlinde" data-pen-title="CSS Course 03 layout positioning - absolute 1" data-editable="true" class="codepen">See the Pen <a href="https://codepen.io/rogiervanderlinde/pen/oQdBoO/">CSS Course 03 layout positioning - absolute 1</a> by Rogier van der Linde (<a href="https://codepen.io/rogiervanderlinde">@rogiervanderlinde</a>) on <a href="https://codepen.io">CodePen</a>.</p>
             </li>
           </ul>
-          <div class="demowrapper">
-            <div class="demobox demobox1"></div>
-            <div class="demobox demobox2"></div>
-            <div class="demobox demobox3"></div>
-          </div>
+        </section>
+        <section data-toc-title="">
+          <h2>Absolute positioning (2)</h2>
+          <ul>
+            <li>
+              Normally the element is positioned relative to the page border; if a parent is positioned (relative or absolute), it becomes the <span style="border-bottom: 2px dotted red">new reference</span>: 
+            </li>
+            <li class="no-style">
+<p data-height="300" data-theme-id="35230" data-slug-hash="MzGJXQ" data-default-tab="css,result" data-user="rogiervanderlinde" data-pen-title="CSS Course 03 layout positioning - absolute 2" data-editable="true" class="codepen">See the Pen <a href="https://codepen.io/rogiervanderlinde/pen/MzGJXQ/">CSS Course 03 layout positioning - absolute 2</a> by Rogier van der Linde (<a href="https://codepen.io/rogiervanderlinde">@rogiervanderlinde</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+            </li>
+          </ul>
         </section>
         <section id="slidedemorelabs">
-          <h2>Absolute-relative</h2>
+          <h2>Z-index</h2>
           <ul>
             <li>
-              The coordinates are counted from the browser window, or from the <i>closest absolute or relative positioned parent</i>. Positioning the wrapper <code>relative</code> makes it the new reference; this is <em>absolute-relative positioning</em>:
+              Take this example with all boxes absolutely positioned:
+              <ul class="no-style">
+                <li>→ all boxes are taken out of the parent, which is empty now</li>
+                <li>→ the boxes are still positioned relative to the parent, which has <code>position: relative</code></li>
+                <li>→ use <code>z-index</code> to determine stacking order</li>
+                <li>→ note that you can use negative values for coördinates</li>
+              </ul>
             </li>
             <li class="no-style">
-              <pre class="bigger"><code class="language-css" contenteditable data-selector="#slidedemorelabs">.demobox2 {
-  position: absolute;
-  top: 30px; /* bottom is also possible */
-  left: 30px; /* right is also possible */
-}
-.demowrapper {
-  position: relative;
-}
-</code></pre>
-              <div class="demolink"><a href="demos/03_layout/positioning4.html">demo</a></div>
+<p data-height="300" data-theme-id="35230" data-slug-hash="YRLeVe" data-default-tab="css,result" data-user="rogiervanderlinde" data-pen-title="CSS Course 03 z-index" data-editable="true" class="codepen">See the Pen <a href="https://codepen.io/rogiervanderlinde/pen/YRLeVe/">CSS Course 03 z-index</a> by Rogier van der Linde (<a href="https://codepen.io/rogiervanderlinde">@rogiervanderlinde</a>) on <a href="https://codepen.io">CodePen</a>.</p>
             </li>
           </ul>
-          <div class="demowrapper">
-            <div class="demobox demobox1"></div>
-            <div class="demobox demobox2"></div>
-            <div class="demobox demobox3"></div>
-          </div>
         </section>
         <section>
           <h2>Fixed positioning</h2>
           <ul>
             <li>
-              <em>Fixed positioning</em> fixes an element on the browser window, independent of scrolling
+              <em>Fixed positioning</em> fixes an element on the page, independent of scrolling
             </li>
             <li class="no-style">
-              <pre class="bigger"><code class="language-css">#box2 {
-  /*...*/
-  position: fixed;
-  left: 50px;
-  top: 50px;
-}
-</code></pre>
-              <div class="demolink"><a href="demos/03_layout/positioning5.html">demo</a> (scroll page)</div>
-            </li>
-          </ul>
-        </section>
-        <section data-toc-title="Stacking order">
-          <h2>Stacking order (1)</h2>
-          <ul>
-            <li>
-              With positioning overlap can occur
-            </li>
-            <li>
-              Let's start with a paragraph and three boxes:
-            </li>
-            <li class="no-style">
-              <div class="codescrollpanel"><pre class="bigger"><code class="language-html">&lt;div id="wrapper"&gt;
-  &lt;div class="box" id="box1"&gt;&lt;/div&gt;
-  &lt;div class="box" id="box2"&gt;&lt;/div&gt;
-  &lt;div class="box" id="box3"&gt;&lt;/div&gt;
-  &lt;p&gt;
-    But I must explain to you how all this mistaken idea of denouncing pleasure and praising
-    pain was born and I will give you a complete account of the system, and expound the actual teachings of the
-    great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids
-    pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally
-    encounter consequences that are extremely painful.
-    Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain,
-    but because occasionally circumstances occur in which toil and pain can procure him some great pleasure.
-    To take a trivial example, which of us ever undertakes laborious physical exercise, except to obtain some
-    advantage from it? But who has any right to find fault with a man who chooses to enjoy a pleasure that has
-    no annoying consequences, or one who avoids a pain that produces no resultant pleasure?
-  &lt;/p&gt;
-&lt;/div&gt;
-</code></pre></div>
-            </li>
-          </ul>
-        </section>
-        <section data-toc-title="">
-          <h2>Stacking order (2)</h2>
-          <ul>
-            <li>
-              We make the three boxes overlap:
-            </li>
-            <li class="no-style">
-              <div class="codescrollpanel"><pre class="bigger"><code class="language-css">#wrapper {
-  /*...*/
-  position: relative;
-}
-#box1 {
-  /*...*/
-  position: absolute;
-  left: 10px;
-  top: 10px;
-}
-#box2 {
-  /*...*/
-  position: absolute;
-  left: 30px;
-  top: 40px;
-}
-#box3 {
-  /*...*/
-  position: absolute;
-  left: 50px;
-  top: 20px;
-}
-</code></pre></div>
-              <div class="demolink"><a href="demos/03_layout/stacking1.html">demo</a></div>
-            </li>
-          </ul>
-        </section>
-        <section data-toc-title="">
-          <h2>Stacking order (3)</h2>
-          <ul>
-            <li>
-              We can change stacking order with <em><code>z-index:</code></em>
-            </li>
-            <li class="no-style">
-              <pre class="bigger"><code class="language-css">#box1 {
-  /*...*/
-  z-index: -1;
-}
-#box2 {
-  /*...*/
-  z-index: 10;
-}
-#box3 {
-  /*...*/
-  z-index: 5;
-}
-</code></pre>
-              <div class="demolink"><a href="demos/03_layout/stacking2.html">demo</a></div>
-            </li>
-          </ul>
-        </section>
-        <section data-toc-title="">
-          <h2>Stacking order (4)</h2>
-          <ul>
-            <li>
-              The <code>z-index</code> property only works with positioned elements
-            </li>
-            <li>
-              The stacking order is:
-              <ul>
-                <li>positioned elements with index &lt; 0</li>
-                <li>unpositioned elements</li>
-                <li>positioned elements with index >= 0</li>
-              </ul>
-            </li>
-            <li>
-              The exact index numbers are not important, only which one is bigger counts
-            </li>
-          </ul>
-        </section>
-        <section data-toc-title="Stacking context">
-          <h2>Stacking context (1)</h2>
-          <ul>
-            <li>
-              When nested elements have a <code>z-index</code>
-              <ul>
-                <li>the outer elements are stacked first</li>
-                <li>then the stacking within each element is done</li>
-              </ul>
-            </li>
-            <li>
-              Let's start with two wrappers with two boxes each:
-            </li>
-            <li class="no-style">
-              <pre class="bigger"><code class="language-html">&lt;div class="wrapper" id="wrapper1"&gt;
-  &lt;div class="box" id="box1"&gt;&lt;/div&gt;
-  &lt;div class="box" id="box2"&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="wrapper" id="wrapper2"&gt;
-  &lt;div class="box2" id="box3"&gt;&lt;/div&gt;
-  &lt;div class="box2" id="box4"&gt;&lt;/div&gt;
-&lt;/div&gt;
-</code></pre>
-            </li>
-          </ul>
-        </section>
-        <section data-toc-title="">
-          <h2>Stacking context (2)</h2>
-          <ul>
-            <li>
-              Within wrapper 1, we give the two boxes a <code>z-index</code> <br />10 and 20:
-            </li>
-            <li class="no-style">
-              <pre class="bigger"><code class="language-css">#box1 {
-  /*...*/
-  position: absolute;
-  left: 10px;
-  top: 10px;
-  z-index: 10;
-}
-#box2 {
-  /*...*/
-  position: absolute;
-  left: 30px;
-  top: 40px;
-  z-index: 20;
-}
-</code></pre>
-            </li>
-          </ul>
-        </section>
-        <section data-toc-title="">
-          <h2>Stacking context (3)</h2>
-          <ul>
-            <li>
-              Within wrapper 2, we give the two boxes a lower <code>z-index</code> <br />1 and 2:
-            </li>
-            <li class="no-style">
-              <pre class="bigger"><code class="language-css">#box3 {
-  /*...*/
-  position: absolute;
-  left: 10px;
-  top: 10px;
-  z-index: 1;
-}
-#box4 {
-  /*...*/
-  position: absolute;
-  left: 30px;
-  top: 40px;
-  z-index: 2;
-}
-</code></pre>
-            </li>
-          </ul>
-        </section>
-        <section data-toc-title="">
-          <h2>Stacking context (4)</h2>
-          <ul>
-            <li>
-              Now we position wrapper 2 on top of wrapper 1:
-            </li>
-            <li class="no-style">
-              <pre class="bigger"><code class="language-css">.wrapper {
-  /*...*/
-  height: 150px;
-  position: relative;
-}
-#wrapper1 {
-  z-index: 1;
-}
-#wrapper2 {
-  top: -120px;
-  left: 50px;
-  z-index: 2;
-}
-</code></pre>
-              <div class="demolink"><a href="demos/03_layout/context.html">demo</a></div>
-            </li>
-            <li>
-              Box 3 and 4 are placed above box 1 and 2<br />
-              in spite of their lower index, because their <em>stacking context</em> is higher: their parent has a higher <code>z-index</code>
+<p data-height="300" data-theme-id="35230" data-slug-hash="NEMYYb" data-default-tab="html,result" data-user="rogiervanderlinde" data-pen-title="CSS Course 03 layout positioning 1" data-editable="true" class="codepen">See the Pen <a href="https://codepen.io/rogiervanderlinde/pen/NEMYYb/">CSS Course 03 layout positioning 1</a> by Rogier van der Linde (<a href="https://codepen.io/rogiervanderlinde">@rogiervanderlinde</a>) on <a href="https://codepen.io">CodePen</a>.</p>
             </li>
           </ul>
         </section>
         <section>
           <h2>When to use</h2>
           <ul>
-            <li>Positioning enables you to place elements in layers based on coordinates:
+            <li>With recent better techniques like Flexbox or Grid, you don't really need positioning anymore. If you're not sure, it's probably better not to use it.</li>
+            <li>
+              Don't use positioning:
               <ul>
-                <li class="v-style">Perfect for creating HTML5 games</li>
-                <li class="v-style">Useful in regular webpages to layout minor elements within a block (e.g. a logo in a header)</li>
-                <li class="x-style">Less useful in regular webpages for general layout, as exact coordinates and sizes of the larger blocks are often not known due to the flowing nature</li>
-                <li class="x-style">Not suited for <a href="14_webstandards.html#/16">responsive websites</a>, where layout should be fluid</li>
+                <li class="x-style">for general layout like page, menus etc...</li>
+                <li class="x-style">to correct errors</li>
+                <li class="x-style">because you are not comfortable with other (better) solutions</li>
+              </ul>
+            </li>
+            <li>
+              It's ok to use positioning:
+              <ul>
+                <li class="v-style">for HTML5 games where you need images in layers</li>
+                <li class="v-style">in some rare cases like the 'back to top' link</li>
               </ul>
             </li>
           </ul>
@@ -481,96 +185,33 @@
             <!-- to be filled by Javascript -->
           </ul>
         </section>
-        <section data-toc-title="Start code">
-          <h2>Start code (1)</h2>
+        <section>
+          <h2>Default behaviour</h2>
           <ul>
-            <li>The <em>floating</em> technique may be a little strange at first, so pay attention!</li>
-            <li>Let's start of with a new code fragment...</li>
+            <li>By default, block level elements like <code>&lt;h3&gt;</code> and <code>&lt;p&gt;</code> start on a new line:</li>
             <li class="no-style">
-              <div class="codescrollpanel"><pre class="bigger"><code class="language-html">&lt;div id="wrapper"&gt;
-  &lt;p id="par1"&gt;
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt
-    ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-    laboris nisi ut aliquip ex ea commodo consequat.
-  &lt;/p&gt;
-  &lt;p id="par2"&gt;
-    &lt;img src="img/portrait.jpg" alt="foto" /&gt;
-    At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium
-    voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati
-    cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi
-  &lt;/p&gt;
-  &lt;p id="par3"&gt;
-    At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium
-    voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati
-    cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi,
-    id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio.
-  &lt;/p&gt;
-&lt;/div&gt;
-</code></pre></div>
-            </li>
-          </ul>
-        </section>
-        <section data-toc-title="">
-          <h2>Start code (2)</h2>
-          <ul>
-            <li class="no-style">...and some CSS:</li>
-            <li class="no-style">
-              <pre class="bigger"><code class="language-css">img {
-  width: 40px;
-}
-p {
-  margin: 10px;
-  border: 1px dotted;
-}
-#wrapper {
-  width: 500px;
-}
-</code></pre>
-              <div class="demolink"><a href="demos/03_layout/float1.html">demo</a></div>
-            </li>
-            <li>
-              This page has a natural flow of three
-              blocklevel paragraphs placed under each other, and an inline image
+<p data-height="300" data-theme-id="35230" data-slug-hash="MzGGBx" data-default-tab="css,result" data-user="rogiervanderlinde" data-pen-title="CSS Course 03 float 1" data-editable="true" class="codepen">See the Pen <a href="https://codepen.io/rogiervanderlinde/pen/MzGGBx/">CSS Course 03 float 1</a> by Rogier van der Linde (<a href="https://codepen.io/rogiervanderlinde">@rogiervanderlinde</a>) on <a href="https://codepen.io">CodePen</a>.</p>
             </li>
           </ul>
         </section>
         <section>
-          <h2>Text wrap</h2>
+          <h2>Float left or right</h2>
           <ul>
-            <li><em><code>float</code></em> was originally devised to allow text to flow around images:</li>
+            <li><em><code>float: left;</code></em> allows content to flow around an image or block:</li>
             <li class="no-style">
-              <pre class="bigger"><code class="language-css">img {
-  /*...*/
-  float: left;
-}
-</code></pre>
-              <div class="demolink"><a href="demos/03_layout/float2.html">demo</a></div>
-            </li>
-            <li>you can also float right:</li>
-            <li class="no-style">
-              <pre class="bigger"><code class="language-css">img {
-  /*...*/
-  float: right;
-}
-</code></pre>
-              <div class="demolink"><a href="demos/03_layout/float3.html">demo</a></div>
-            </li>
-          </ul>
-        </section>
-        <section>
-          <h2>Parent collapsing</h2>
-          <ul>
-            <li>Let's make the image a little larger:</li>
-            <li class="no-style">
-              <pre class="bigger"><code class="language-css">img {
-  /*...*/
-  width: 130px;
-}
-</code></pre>
-              <div class="demolink"><a href="demos/03_layout/float4.html">demo</a></div>
+<p data-height="300" data-theme-id="35230" data-slug-hash="Rqyyeg" data-default-tab="css,result" data-user="rogiervanderlinde" data-pen-title="CSS Course 03 float 2" data-editable="true" class="codepen">See the Pen <a href="https://codepen.io/rogiervanderlinde/pen/Rqyyeg/">CSS Course 03 float 2</a> by Rogier van der Linde (<a href="https://codepen.io/rogiervanderlinde">@rogiervanderlinde</a>) on <a href="https://codepen.io">CodePen</a>.</p>
             </li>
             <li class="arrow">
-              floated elemets bleed out of their parent, into the next element
+              also try <code>float: right;</code>
+            </li>
+          </ul>
+        </section>
+        <section>
+          <h2>Parent bleeding</h2>
+          <ul>
+            <li>If the floated element doesn't fit its parent, it will bleed out:</li>
+            <li class="no-style">
+<p data-height="300" data-theme-id="35230" data-slug-hash="NEMMZO" data-default-tab="css,result" data-user="rogiervanderlinde" data-pen-title="CSS Course 03 float 3" class="codepen">See the Pen <a href="https://codepen.io/rogiervanderlinde/pen/NEMMZO/">CSS Course 03 float 3</a> by Rogier van der Linde (<a href="https://codepen.io/rogiervanderlinde">@rogiervanderlinde</a>) on <a href="https://codepen.io">CodePen</a>.</p>
             </li>
           </ul>
           <div class="tooltip">
@@ -581,332 +222,69 @@ p {
         <section>
           <h2>Clear</h2>
           <ul>
-            <li>If you don't want a floated element to bleed into the next element, you can use <em><code>clear</code></em>:</li>
+            <li>If you don't want a floated element to bleed into the next element, you can use <em><code>clear: left;</code></em> &mdash; e.g. on the next title:</li>
             <li class="no-style">
-              <pre class="bigger"><code class="language-css">#par3 {
-  clear: both;
-}
-</code></pre>
-              <div class="demolink"><a href="demos/03_layout/clear.html">demo</a></div>
-            </li>
-            <li>
-              Clearing <code>left</code> or <code>right</code> only is also possible
+<p data-height="300" data-theme-id="35230" data-slug-hash="zMjJOy" data-default-tab="css,result" data-user="rogiervanderlinde" data-pen-title="CSS Course 03 clear" data-editable="true" class="codepen">See the Pen <a href="https://codepen.io/rogiervanderlinde/pen/zMjJOy/">CSS Course 03 clear</a> by Rogier van der Linde (<a href="https://codepen.io/rogiervanderlinde">@rogiervanderlinde</a>) on <a href="https://codepen.io">CodePen</a>.</p>
             </li>
           </ul>
         </section>
-        <section data-toc-title="Clearfix">
-          <h2>Clearfix (1)</h2>
+        <section>
+          <h2>Restore parent</h2>
           <ul>
-            <li>
-              The parent is still collapsed. To prevent this, you could use this classic but dirty solution:
-            </li>
-            <li>
-              A classic but dirty solution requires an extra <code>&lt;span&gt;</code>:
-            </li>
+            <li>If you don't want a floated element to bleed out of its parent, you can use <em><code>overflow: hidden;</code></em> on the parent:</li>
             <li class="no-style">
-              <pre class="bigger"><code class="language-html wrong">&lt;div id="wrapper"&gt;
-  ...
-  &lt;span class="clearme"&gt;&lt;/span&gt;
-&lt;/div&gt;
-</code></pre>
-            </li>
-            <li class="no-style">
-              with this CSS:
-            </li>
-            <li class="no-style">
-              <pre class="bigger"><code class="language-css wrong">.clearme {
-  display: block;
-  clear: both;
-}
-</code></pre>
-              <div class="demolink"><a href="demos/03_layout/clearfix_span.html">demo</a></div>
+<p data-height="300" data-theme-id="35230" data-slug-hash="ZmoMeV" data-default-tab="css,result" data-user="rogiervanderlinde" data-pen-title="CSS Course 03 float overflow" data-editable="true" class="codepen">See the Pen <a href="https://codepen.io/rogiervanderlinde/pen/ZmoMeV/">CSS Course 03 float overflow</a> by Rogier van der Linde (<a href="https://codepen.io/rogiervanderlinde">@rogiervanderlinde</a>) on <a href="https://codepen.io">CodePen</a>.</p>
             </li>
           </ul>
         </section>
-        <section data-toc-title="">
-          <h2>Clearfix (2)</h2>
+        <section>
+          <h2>Floating blocks</h2>
           <ul>
-            <li>
-              Another little known and weird solution is setting the <code>overflow</code> property to <code>auto</code> or <code>hidden</code>:
-            </li>
+            <li>Not only images, but all blocks can be floated, like this pull quote:</li>
             <li class="no-style">
-              <pre class="bigger"><code class="language-css">#par2 {
-  overflow: auto;
-}
-</code></pre>
-              <div class="demolink"><a href="demos/03_layout/clearfix_overflow.html">demo</a></div>
-            </li>
-            <li>
-              Bear in mind that <code>overflow</code> is not specifically for floats. Be careful not to hide content or trigger unwanted scrollbars.
+<p data-height="300" data-theme-id="35230" data-slug-hash="QJrVZZ" data-default-tab="css,result" data-user="rogiervanderlinde" data-pen-title="CSS Course 03 pull quote" data-editable="true" class="codepen">See the Pen <a href="https://codepen.io/rogiervanderlinde/pen/QJrVZZ/">CSS Course 03 pull quote</a> by Rogier van der Linde (<a href="https://codepen.io/rogiervanderlinde">@rogiervanderlinde</a>) on <a href="https://codepen.io">CodePen</a>.</p>
             </li>
           </ul>
         </section>
-        <section data-toc-title="">
-          <h2>Clearfix (3)</h2>
+        <section>
+          <h2>hor. menu with floats </h2>
           <ul>
-            <li>
-              The widest used solution is the <em>clearfix</em> method:
-            </li>
+            <li>Float / clear can be and still widely is used for layout, e.g. for a horizontal menu, just float all <code>&lt;li&gt;</code>'s left and set <code>overflow: hidden</code> on <code>&lt;ul&gt;</code>:</li>
             <li class="no-style">
-              <pre class="bigger"><code class="language-html right">&lt;div id="wrapper" class="clearfix"&gt;
-  ...
-&lt;/div&gt;
-</code></pre>
+<p data-height="300" data-theme-id="35230" data-slug-hash="VVxGza" data-default-tab="css,result" data-user="rogiervanderlinde" data-pen-title="VVxGza" data-editable="true" class="codepen">See the Pen <a href="https://codepen.io/rogiervanderlinde/pen/VVxGza/">VVxGza</a> by Rogier van der Linde (<a href="https://codepen.io/rogiervanderlinde">@rogiervanderlinde</a>) on <a href="https://codepen.io">CodePen</a>.</p>
             </li>
-            <li class="no-style">
-              The CSS:
-            </li>
-            <li class="no-style">
-              <pre class="bigger"><code class="language-css right">.clearfix:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-</code></pre>
-              <div class="demolink"><a href="demos/03_layout/clearfix_clearfix.html">demo</a></div>
-            </li>
-          </ul>
-          <ul class="arrow">
-            <li>
-              It's ok if you don't understand this code, as long as you know how to use it
+            <li class="arrow">
+              it is better to use <a href="03_layout.html#/hor-menu-with-flexbox-1">Flexbox for horizontal menus</a>
             </li>
           </ul>
         </section>
-        <section data-toc-title="Adjacent floats">
-          <h2>Adjacent floats (1)</h2>
+        <section>
+          <h2>page layout with floats</h2>
           <ul>
-            <li>Let's start again from our wrapper with three boxes:</li>
+            <li>Full-scale example with header, two columns and footer:</li>
             <li class="no-style">
-              <pre class="bigger"><code class="language-html">&lt;div id="wrapper"&gt;
-  &lt;div class="box" id="box1"&gt;&lt;/div&gt;
-  &lt;div class="box" id="box2"&gt;&lt;/div&gt;
-  &lt;div class="box" id="box3"&gt;&lt;/div&gt;
-&lt;/div&gt;
-</code></pre>
-              <div class="demolink"><a href="demos/03_layout/floatmulti1.html">demo</a></div>
+<p data-height="300" data-theme-id="35230" data-slug-hash="jQxvjd" data-default-tab="css,result" data-user="rogiervanderlinde" data-pen-title="CSS Course 03 float full example" data-editable="true" class="codepen">See the Pen <a href="https://codepen.io/rogiervanderlinde/pen/jQxvjd/">CSS Course 03 float full example</a> by Rogier van der Linde (<a href="https://codepen.io/rogiervanderlinde">@rogiervanderlinde</a>) on <a href="https://codepen.io">CodePen</a>.</p>
             </li>
-          </ul>
-        </section>
-        <section data-toc-title="">
-          <h2>Adjacent floats (2)</h2>
-          <ul>
-            <li>
-              Float the first box:
-            </li>
-            <li class="no-style">
-              <pre class="bigger"><code class="language-css">#box1 {
-  /*...*/
-  float: left;
-}
-</code></pre>
-              <div class="demolink"><a href="demos/03_layout/floatmulti2.html">demo</a></div>
-            </li>
-            <li>
-              Observation:
-              <ul>
-                <li>The second (empty) box has disappeared under the first</li>
-              </ul>
-            </li>
-          </ul>
-        </section>
-        <section data-toc-title="">
-          <h2>Adjacent floats (3)</h2>
-          <ul>
-            <li>
-              Float the second box:
-            </li>
-            <li class="no-style">
-              <pre class="bigger"><code class="language-css">#box2 {
-  /*...*/
-  float: left;
-}
-</code></pre>
-              <div class="demolink"><a href="demos/03_layout/floatmulti3.html">demo</a></div>
-            </li>
-            <li>
-              Observations:
-              <ul>
-                <li>The second box floats next to the first</li>
-                <li>The third (empty) box disappears under the first</li>
-              </ul>
-            </li>
-          </ul>
-        </section>
-        <section data-toc-title="">
-          <h2>Adjacent floats (4)</h2>
-          <ul>
-            <li>
-              Float the last box:
-            </li>
-            <li class="no-style">
-              <pre class="bigger"><code class="language-css">#box3 {
-  /*...*/
-  float: left;
-}
-</code></pre>
-              <div class="demolink"><a href="demos/03_layout/floatmulti4.html">demo</a></div>
-            </li>
-            <li>
-              Observations:
-              <ul>
-                <li>The three boxes are next to each other now</li>
-                <li>The wrapper is left behind empty (collapsed)</li>
-              </ul>
-            </li>
-          </ul>
-        </section>
-        <section data-toc-title="">
-          <h2>Adjacent floats (5)</h2>
-          <ul>
-            <li>
-              To restore the parent, again, use the clearfix method:
-            </li>
-            <li class="no-style">
-              <pre class="bigger"><code class="language-html">&lt;div id="wrapper" class="clearfix"&gt;
-  ...
-&lt;/div&gt;
-</code></pre>
-            </li>
-            </li>
-            <li class="no-style">
-              <pre class="bigger"><code class="language-css">.clearfix:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-</code></pre>
-              <div class="demolink"><a href="demos/03_layout/floatmulti5.html">demo</a></div>
-            </li>
-          </ul>
-        </section>
-        <section data-toc-title="Floating pitfalls">
-          <h2>Floating pitfalls (1)</h2>
-          <ul>
-            <li>
-              If a floated element appears on the next line, your parent element is probably too small
-              <img src="img/03_layout/ss1.png" alt="" />
-            </li>
-          </ul>
-        </section>
-        <section data-toc-title="">
-          <h2>Floating pitfalls (1)</h2>
-          <ul>
-            <li>
-              Floating elements with different sizes may result in an element getting stuck (solution: add some bottom margin)
-              <img src="img/03_layout/ss2.png" alt="" />
-            </li>
-          </ul>
-        </section>
-        <section data-toc-title="">
-          <h2>Floating pitfalls (3)</h2>
-          <ul>
-            <li>
-              If you float right instead of left, the order inverts:
-              <img src="img/03_layout/ss3.png" alt="" />
-            </li>
-          </ul>
-        </section>
-        <section data-toc-title="Alternative: inline-block">
-          <h2>Alternative: inline-block (1)</h2>
-          <ul>
-            <li>
-              We can also use <code>display: inline-block</code> as an alternative for float:
-            </li>
-            <li class="no-style">
-              <pre class="bigger"><code class="language-css">.box {
-  /*...*/
-  display: inline-block;
-}
-</code></pre>
-            </li>
-          </ul>
-        </section>
-        <section data-toc-title="">
-          <h2>Alternative: inline-block (2)</h2>
-          <ul>
-            <li>
-              With <code>inline-block</code> it's easy to make a centered variable-width horizontal menu, which is almost impossible with float:
-            </li>
-            <li class="no-style">
-              <div class="codescrollpanel"><pre class="bigger"><code class="language-html">&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-&lt;head&gt;
-  &lt;title&gt; Floating multiple elements &lt;/title&gt;
-  &lt;meta charset="utf-8" /&gt;
-  &lt;style&gt;
-    * {
-      margin: 0;
-      padding: 0;
-    }
-    .box:first-child {
-      border-left: 2px solid black;
-    }
-    .box {
-      border: 2px solid black;
-      border-left: 0;
-      font: 12px Verdana;
-      height: 20px;
-      line-height: 20px;
-      padding: 5px;
-      display: inline-block;
-    }
-    #wrapper {
-      border: 1px dotted black;
-      width: 500px;
-      margin: 10px auto;
-      padding: 10px;
-      text-align: center;
-    }
-  &lt;/style&gt;
-  &lt;!--[if lte IE 7]&gt;
-  &lt;style&gt;
-    .box {
-      display: inline;
-    }
-  &lt;/style&gt;
-  &lt;![endif]--&gt;
-&lt;/head&gt;
-&lt;body&gt;
-  &lt;div id="wrapper"&gt;
-    &lt;div class="box"&gt;item&lt;/div&gt;&lt;div class="box"&gt;one more item&lt;/div&gt;&lt;div class="box"&gt;last item&lt;/div&gt;
-  &lt;/div&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-</code></pre></div>
-              <div class="demolink"><a href="demos/03_layout/inlineblock.html">demo</a></div>
-            </li>
-          </ul>
-        </section>
-        <section data-toc-title="">
-          <h2>Alternative: inline-block (3)</h2>
-          <ul>
-            <li>
-              You may use <code>inline-block</code>, but it has some quirks:
-              <ul>
-                <li class="x-style">code whitespaces prevent adjacent boxes to touch (difficult to fix unless you change your code layout)</li>
-                <li class="v-style">easier to understand</li>
-                <li class="v-style">can create centered variable width horizontal menu</li>
-              </ul>
-            </li>
-            <li>
-              Floating is usually your best option, although it has some nasty quirks too:
-              <ul>
-                <li class="x-style">a little complicated at first</li>
-                <li class="x-style">parent collapses (easy fix)</li>
-                <li class="v-style">more flexibility, e.g. possibility to float around an element</li>
-              </ul>
+            <li class="arrow">
+              it is better to use <a href="03_layout.html#/page-layout-with-grid">Grid for page layouts</a>
             </li>
           </ul>
         </section>
         <section>
           <h2>When to use</h2>
           <ul>
+            <li>You <i>could</i> use floats for all your layout (and many still do), but recent techniques like CSS Flexbox and CSS Grid are much more flexible.</li>
             <li>
-              To sum things up, my advise:
+              Don't use floating:
               <ul>
-                <li>Use float for general layout (apply clearfix where needed)</li>
-                <li>Use positioning if you need layers or have fixed coordinates (mind stacking order and context)</li>
-                <li>Use inline-block for special cases<br />when messing with the code <br />layout is justified (but beware of code whitespaces)</li>
+                <li class="x-style">for general layout like page, menus etc...</li>
+              </ul>
+            </li>
+            <li>
+              It's ok to use floating:
+              <ul>
+                <li class="v-style">for floating text around images</li>
+                <li class="v-style">for pull quotes</li>
               </ul>
             </li>
           </ul>
@@ -920,56 +298,199 @@ p {
             <!-- to be filled by Javascript -->
           </ul>
         </section>
-        <section data-toc-title="Start code">
-          <h2>Start code (1)</h2>
+        <section>
+          <h2>About flexbox</h2>
           <ul>
-            <li>The <em>floating</em> technique may be a little strange at first, so pay attention!</li>
-            <li>Let's start of with a new code fragment...</li>
+            <li>
+              Use Flexbox to arrange a <em>list of items</em> in a box in a <em>row or column</em>, with or without <em>wrapping</em>
+            </li>
+            <li>The best tutorial on the web and beyond is <a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/">this overview on css-tricks.com</a></li>
+            <li>
+              Flexbox has CSS properties for the box, and for the individual items. In most cases, you'll be using just these box properties:
+              <table class="propstable">
+                <tr class="propstable__section"><td colspan="2">box properties</td></tr>
+                <tr>
+                  <td><code>display: flex</code></td>
+                  <td>make this box a flexbox</td>
+                </tr>
+                <tr>
+                  <td><code>flex-flow: &lt;row|column&gt; &lt;wrap|nowrap&gt;</code></td>
+                  <td>arrange in a row or column, with/without wrapping</td>
+                </tr>
+                <tr>
+                  <td><code>justify-content: &lt;flex-start|center|...&gt;</code></td>
+                  <td>arrange items along main axis (row: horizontal, column: vertical)</td>
+                </tr>
+                <tr>
+                  <td><code>align-items: &lt;flex-start|center|...&gt;</code></td>
+                  <td>arrange items across main axis (row: vertical; column: horizontal)</td>
+                </tr>
+              </table>
+            </li>
+          </ul>
+        </section>
+        <section data-toc-title="Hor. menu with Flexbox">
+          <h2>Hor. menu with Flexbox (1)</h2>
+          <ul>
+            <li>We can rewrite our horizontal menu with Flexbox with just two lines of CSS:</li>
             <li class="no-style">
-              <div class="codescrollpanel"><pre class="bigger"><code class="language-html">&lt;div id="wrapper"&gt;
-  &lt;p id="par1"&gt;
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt
-    ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-    laboris nisi ut aliquip ex ea commodo consequat.
-  &lt;/p&gt;
-  &lt;p id="par2"&gt;
-    &lt;img src="img/portrait.jpg" alt="foto" /&gt;
-    At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium
-    voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati
-    cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi
-  &lt;/p&gt;
-  &lt;p id="par3"&gt;
-    At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium
-    voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati
-    cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi,
-    id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio.
-  &lt;/p&gt;
-&lt;/div&gt;
-</code></pre></div>
+<p data-height="300" data-theme-id="35230" data-slug-hash="VVxgZb" data-default-tab="css,result" data-user="rogiervanderlinde" data-pen-title="CSS Course 03 flexbox menu" data-editable="true" class="codepen">See the Pen <a href="https://codepen.io/rogiervanderlinde/pen/VVxgZb/">CSS Course 03 flexbox menu</a> by Rogier van der Linde (<a href="https://codepen.io/rogiervanderlinde">@rogiervanderlinde</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+            </li>
+          </ul>
+        </section>
+        <section data-toc-title="">
+          <h2>Hor. menu with Flexbox (2)</h2>
+          <ul>
+            <li>Align items horizontally with <code><em>justify-content</em></code> (flex-start, flex-end, center, space-between...):   </li>
+            <li class="no-style">
+
+<p data-height="300" data-theme-id="35230" data-slug-hash="qQYgNr" data-default-tab="css,result" data-user="rogiervanderlinde" data-pen-title="CSS Course 03 flexbox menu 2" data-editable="true" class="codepen">See the Pen <a href="https://codepen.io/rogiervanderlinde/pen/qQYgNr/">CSS Course 03 flexbox menu 2</a> by Rogier van der Linde (<a href="https://codepen.io/rogiervanderlinde">@rogiervanderlinde</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+            </li>
+          </ul>
+        </section>
+        <section>
+          <h2>Grid with Flexbox</h2>
+          <ul>
+            <li>Example of a grid layout with Flexbox:  </li>
+            <li class="no-style">
+<p data-height="300" data-theme-id="35230" data-slug-hash="QJrYvR" data-default-tab="css,result" data-user="rogiervanderlinde" data-pen-title="CSS Course 03 flexbox grid" data-editable="true" class="codepen">See the Pen <a href="https://codepen.io/rogiervanderlinde/pen/QJrYvR/">CSS Course 03 flexbox grid</a> by Rogier van der Linde (<a href="https://codepen.io/rogiervanderlinde">@rogiervanderlinde</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+            </li>
+            <li class="arrow">
+              it is better to use <a href="03_layout.html#/grid-with-css-grid">CSS Grid for grid layouts</a>
+            </li>
+          </ul>
+        </section>
+        <section data-toc-title="Columns with Flexbox">
+          <h2>Columns with Flexbox (1)</h2>
+          <ul>
+            <li>Example of a 3-column layout with Flexbox: </li>
+            <li class="no-style">
+<p data-height="300" data-theme-id="35230" data-slug-hash="bQMzrZ" data-default-tab="css,result" data-user="rogiervanderlinde" data-pen-title="CSS Course 03 flexbox 3-column" data-editable="true" class="codepen">See the Pen <a href="https://codepen.io/rogiervanderlinde/pen/bQMzrZ/">CSS Course 03 flexbox 3-column</a> by Rogier van der Linde (<a href="https://codepen.io/rogiervanderlinde">@rogiervanderlinde</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+            </li>
+          </ul>
+        </section>
+        <section data-toc-title="">
+          <h2>Columns with Flexbox (2)</h2>
+          <ul>
+            <li>You can even re-order items with the <code><em>order</em></code> property: </li>
+            <li class="no-style">
+              <p data-height="300" data-theme-id="35230" data-slug-hash="xQjMYd" data-default-tab="css,result" data-user="rogiervanderlinde" data-pen-title="xQjMYd" data-editable="true" class="codepen">See the Pen <a href="https://codepen.io/rogiervanderlinde/pen/xQjMYd/">xQjMYd</a> by Rogier van der Linde (<a href="https://codepen.io/rogiervanderlinde">@rogiervanderlinde</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+            </li>
+          </ul>
+        </section>
+        <section>
+          <h2>When to use</h2>
+          <ul>
+            <li>CSS Flexbox is used for any one-dimensional layout, vertical or horizontal, with or without wrapping</li>
+            <li>
+              You can use CSS Flexbox:
+              <ul>
+                <li class="v-style">for creating columns, e.g. in the footer</li>
+                <li class="v-style">for horizontal menus</li>
+              </ul>
+            </li>
+            <li>
+              Don't use CSS Flexbox:
+              <ul>
+                <li class="x-style">for floating layouts where CSS Floats are more appropriate</li>
+                <li class="x-style">for highly structured two-dimensional layouts where CSS Grid is more appropriate</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+      </section>
+      <section>
+        <section>
+          <h1>CSS layout</h1>
+          <h2>Grid</h2>
+          <ul class="chapterlist">
+            <!-- to be filled by Javascript -->
+          </ul>
+        </section>
+        <section>
+          <h2>About Grid</h2>
+          <ul>
+            <li>
+              Use Grid for <em>two-dimensional layouts</em> like item grids and page layout
+            </li>
+            <li>The best tutorial on the web is <a href="https://css-tricks.com/snippets/css/complete-guide-grid/#prop-display">this overview on css-tricks.com</a></li>
+            <li>
+              In most cases, you're fine with just these properties:
+              <table class="propstable">
+                <tr class="propstable__section"><td colspan="2">container properties</td></tr>
+                <tr>
+                  <td><code>display: grid</code></td>
+                  <td>make this container a grid</td>
+                </tr>
+                <tr>
+                  <td><code>grid-template-columns</code></td>
+                  <td>define grid column widths</td>
+                </tr>
+                <tr>
+                  <td><code>grid-template-rows</code></td>
+                  <td>define grid row heights</td>
+                </tr>
+                <tr>
+                  <td><code>grid-template-areas</code></td>
+                  <td>create named areas</td>
+                </tr>
+                <tr class="propstable__section"><td colspan="2">item properties</td></tr>
+                <tr>
+                  <td><code>grid-area: &lt;area name&gt;</code></td>
+                  <td>place item in named area</td>
+                </tr>
+              </table>
+            </li>
+          </ul>
+        </section>
+        <section>
+          <h2>page layout with Grid</h2>
+          <ul>
+            <li>Full-scale example with header, two columns and footer:</li>
+            <li class="no-style">
+<p data-height="300" data-theme-id="35230" data-slug-hash="NEMoBQ" data-default-tab="css,result" data-user="rogiervanderlinde" data-pen-title="CSS Course 03 page grid" data-editable="true" class="codepen">See the Pen <a href="https://codepen.io/rogiervanderlinde/pen/NEMoBQ/">CSS Course 03 page grid</a> by Rogier van der Linde (<a href="https://codepen.io/rogiervanderlinde">@rogiervanderlinde</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+            </li>
+            <li class="arrow">
+              note: for the finer layout, e.g. header logo &amp; menu, Flexbox was used
+            </li>
+          </ul>
+        </section>
+        <section>
+          <h2>Grid with CSS Grid</h2>
+          <ul>
+            <li>Example of a grid layout with CSS Grid: </li>
+            <li class="no-style">
+<p data-height="300" data-theme-id="35230" data-slug-hash="eQrXBE" data-default-tab="html,result" data-user="rogiervanderlinde" data-pen-title="CSS Course image grid" data-editable="true" class="codepen">See the Pen <a href="https://codepen.io/rogiervanderlinde/pen/eQrXBE/">CSS Course image grid</a> by Rogier van der Linde (<a href="https://codepen.io/rogiervanderlinde">@rogiervanderlinde</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+            </li>
+          </ul>
+        </section>
+        <section>
+          <h2>When to use</h2>
+          <ul>
+            <li>CSS Grid is used for major two-dimensional layouts that can be modelled in rows and columns</li>
+            <li>
+              Use CSS Grid:
+              <ul>
+                <li class="v-style">for general page layout</li>
+                <li class="v-style">for items displayed in a grid</li>
+              </ul>
+            </li>
+            <li>
+              Don't use CSS Grid:
+              <ul>
+                <li class="x-style">for very fluid layouts where CSS floats are better</li>
+                <li class="x-style">for one-dimensional layout like menus wher Flexbox is better</li>
+              </ul>
             </li>
           </ul>
         </section>
       </section>
 
 
-      <section>
-        <section>
-          <h2>Questions?</h2>
-          <p>
-            <img src="img/03_layout/itsawrap.jpg" alt="it's a wrap" />
-          </p>
-          <div class="tooltip">
-            <div>
-              Things may get a little frustrating when laying out with float, but remember that float was originally meant to allow text flow around images, not for layout. Luckily new techniques are coming up, like <a href="../html5/03_css.html#/19">flexbox</a>. Support is unsufficient today, so we'll need to stick to floats for a while.
-            </div>
-          </div>
-        </section>
-      </section>
-
     </div>
 
     <!-- ikdoeict.be Link -->
-    <a href="http://www.ikdoeict.be/" title="ikdoeict.be" id="ikdoeict">ikdoeict.be</a>
+    <a href="http://www.odisee.be/" title="odisee.be" id="odisee"><img src="img/odisee.png" alt="Odisee logo"></a>
 
     <!-- Index Link -->
     <aside class="back">
@@ -985,10 +506,11 @@ p {
   <script src="vendor/reveal/js/reveal.js"></script>
   <script src="vendor/highlight/highlight.pack.js"></script>
   <script src="vendor/incrementable.js"></script>
+  <script src="vendor/prefixfree.js"></script>
   <script src="vendor/css-snippets.js"></script>
   <script src="vendor/css-edit.js"></script>
-  <!-- <script src="vendor/prefixfree.js"></script> -->
   <script src="js/main.js"></script>
+  <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
 
 </body>
 </html>

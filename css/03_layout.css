@@ -1,26 +1,27 @@
-.demobox {
-  border: 2px solid black;
-  font: 12px Verdana;
-  color: #fff;
-  width: 80px;
-  height: 40px;
-  margin-bottom: 10px;
-  margin-right: 10px;
-  padding: 5px;
+.reveal .cp_embed_wrapper {
+	margin-top: 10px;
 }
-.demowrapper {
-  border: 1px dotted black;
-  width: 400px;
-  margin: 10px auto; /* centreert de wrapper op de pagina */
-  padding: 10px;
-  margin-top: -30px;
+
+.reveal .propstable {
+	width: 100%;
+	border: 2px solid #8b743d;
+	margin-top: 10px;
 }
-.demobox1 {
-  background-color: #ddd;
+
+.reveal .propstable .propstable__section {
+	background-color: #e1d9c0;
 }
-.demobox2 {
-  background-color: #888;
+
+.reveal .propstable td {
+	padding: 10px 15px;
+	font-size: 18px;
 }
-.demobox3 {
-  background-color: #333;
+
+.reveal .propstable td:first-child {
+	width: 60%;
+}
+
+.reveal .propstable .propstable__section td {
+	padding: 5px 15px;
+	text-transform: uppercase;
 }
