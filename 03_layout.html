@@ -58,9 +58,12 @@
             <li>
               You'll use this for most of your layout:
               <ul>
-                <li>smaller <strong>one dimensional</strong> layout (menu, header items etc...): <em>CSS Flexbox</em></li>
-                <li>main <strong>two dimensional</strong> layout (header, columns, footer...): <em>CSS Grid</em></li>
+                <li><strong>one dimensional</strong> layout (menu, header items etc...): <em>CSS Flexbox</em></li>
+                <li><strong>two dimensional</strong> layout (page layout, item grids...): <em>CSS Grid</em></li>
               </ul>
+            </li>
+            <li class="arrow" style="margin-left: 0">
+              for page layout, you can use Flexbox, or Grid, or both
             </li>
           </ul>
         </section>
@@ -385,6 +388,15 @@
             </li>
           </ul>
         </section>
+        <section data-toc-title="">
+          <h2>Page layout with Flexbox</h2>
+          <ul>
+            <li>Example of a page layout with Flexbox (best <a href="https://codepen.io/rogiervanderlinde/pen/jQKOZy">viewed on CodePen</a>): </li>
+            <li class="no-style">
+<p data-height="300" data-theme-id="35230" data-slug-hash="jQKOZy" data-default-tab="css,result" data-user="rogiervanderlinde" data-pen-title="CSS Course 03 flexbox page layout" data-editable="true" class="codepen">See the Pen <a href="https://codepen.io/rogiervanderlinde/pen/jQKOZy/">CSS Course 03 flexbox page layout</a> by Rogier van der Linde (<a href="https://codepen.io/rogiervanderlinde">@rogiervanderlinde</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+            </li>
+          </ul>
+        </section>
         <section>
           <h2>When to use</h2>
           <ul>
@@ -392,15 +404,16 @@
             <li>
               You can use CSS Flexbox:
               <ul>
-                <li class="v-style">for creating columns, e.g. in the footer</li>
                 <li class="v-style">for horizontal menus</li>
+                <li class="v-style">for creating columns, e.g. in the footer</li>
+                <li class="v-style">for page layout</li>
               </ul>
             </li>
             <li>
               Don't use CSS Flexbox:
               <ul>
-                <li class="x-style">for floating layouts where CSS Floats are more appropriate</li>
-                <li class="x-style">for highly structured two-dimensional layouts where CSS Grid is more appropriate</li>
+                <li class="x-style">for fluid designs with floating elements where CSS floats are better</li>
+                <li class="x-style">for two-dimensional grid-like layouts where CSS Grid is more appropriate</li>
               </ul>
             </li>
           </ul>
@@ -444,21 +457,36 @@
                 <tr class="propstable__section"><td colspan="2">item properties</td></tr>
                 <tr>
                   <td><code>grid-area: &lt;area name&gt;</code></td>
-                  <td>place item in named area</td>
+                  <td>place item in area</td>
                 </tr>
               </table>
             </li>
           </ul>
         </section>
         <section>
-          <h2>page layout with Grid</h2>
+          <h2>page layout with Grid (1)</h2>
           <ul>
-            <li>Full-scale example with header, two columns and footer:</li>
+            <li>Full-scale example with header, two columns and footer (best <a href="https://codepen.io/rogiervanderlinde/pen/NEMoBQ">viewed on Codepen</a>):</li>
             <li class="no-style">
 <p data-height="300" data-theme-id="35230" data-slug-hash="NEMoBQ" data-default-tab="css,result" data-user="rogiervanderlinde" data-pen-title="CSS Course 03 page grid" data-editable="true" class="codepen">See the Pen <a href="https://codepen.io/rogiervanderlinde/pen/NEMoBQ/">CSS Course 03 page grid</a> by Rogier van der Linde (<a href="https://codepen.io/rogiervanderlinde">@rogiervanderlinde</a>) on <a href="https://codepen.io">CodePen</a>.</p>
             </li>
             <li class="arrow">
               note: for the finer layout, e.g. header logo &amp; menu, Flexbox was used
+            </li>
+          </ul>
+        </section>
+        <section>
+          <h2>page layout with Grid (2)</h2>
+          <ul>
+            <li>A variation with stretched header and footer (best <a href="https://codepen.io/rogiervanderlinde/pen/NEzWOb">viewed on Codepen</a>):</li>
+            <li class="no-style">
+<p data-height="300" data-theme-id="35230" data-slug-hash="NEzWOb" data-default-tab="css,result" data-user="rogiervanderlinde" data-pen-title="CSS Course 03 grid page layout 2" data-editable="true" class="codepen">See the Pen <a href="https://codepen.io/rogiervanderlinde/pen/NEzWOb/">CSS Course 03 grid page layout 2</a> by Rogier van der Linde (<a href="https://codepen.io/rogiervanderlinde">@rogiervanderlinde</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+            </li>
+            <li class="arrow">
+              note how <code>minmax()</code> was used on the second column to make it flexible
+            </li>
+            <li class="arrow">
+              the full list of ways to define columns is <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template-columns">quite impressive</a>
             </li>
           </ul>
         </section>
@@ -485,7 +513,7 @@
             <li>
               Don't use CSS Grid:
               <ul>
-                <li class="x-style">for very fluid layouts where CSS floats are better</li>
+                <li class="x-style">for fluid designs with floating elements where CSS floats are better</li>
                 <li class="x-style">for one-dimensional layout like menus wher Flexbox is better</li>
               </ul>
             </li>
