@@ -1,0 +1,577 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Webtechnology &mdash; Responsive</title>
+  <meta name="author" content="Rogier van der Linde - odisee.be">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <link rel="stylesheet" href="fonts/droidsans/webfont.css">
+  <link rel="stylesheet" href="fonts/lato/webfont.css">
+  <link rel="stylesheet" href="fonts/leaguegothic/webfont.css">
+  <link rel="stylesheet" href="vendor/reveal/css/reveal.css">
+  <link rel="stylesheet" href="vendor/reveal/css/theme/beige.css">
+  <link rel="stylesheet" href="vendor/highlight/styles/vs.css">
+  <link rel="stylesheet" href="css/reveal-mods.css">
+  <link rel="stylesheet" href="css/common.css">
+</head>
+
+<body>
+
+  <!-- SLIDES -->
+  <div class="reveal">
+
+    <!-- Any section element inside of this container is displayed as a slide -->
+    <div class="slides">
+
+      <!-- 0 : Title -->
+      <section>
+        <section>
+          <h1>Responsive Webdesign</h1>
+          <small>use the arrow keys to navigate; press space for slide overview</small>
+          <figure>
+            <img src="img/04_responsive/icon.jpg" alt="" class="border" />
+          </figure>
+          <footer>
+            <a href="http://www.odisee.be/">odisee.be</a> &mdash; <a href="mailto:rogier.vanderlinde@odisee.be">rogier.vanderlinde@odisee.be</a>
+          </footer>
+        </section>
+      </section>
+      <section>
+        <section>
+          <h1>Responsive Webdesign</h1>
+          <h2>About</h2>
+          <ul class="chapterlist">
+            <!-- to be filled by Javascript -->
+          </ul>
+        </section>
+        <section>
+          <h2>Definition</h2>
+          <blockquote style="margin-top: 2em">
+            Responsive design aims at providing an optimal viewing experience across a wide range of screen resolutions and devices with a single site, codebase and content.
+          </blockquote>
+        </section>
+        <section data-toc-title="How is mobile doing?">
+          <h2>How is mobile doing? (1)</h2>
+          <ul>
+            <li>In 2014, mobile traffic was expected to surpass desktop traffic:</li>
+          </ul>
+          <figure style="margin: 0 auto; width: 700px; position: relative">
+            <img src="img/04_responsive/redcross.png" alt="" style="position: absolute; right: 20%; top: 0" />
+            <img src="img/04_responsive/forecast-20142.jpg" alt="" style="max-width: 100%" />
+            <figcaption>UK stats; source: <a href="http://www.intelligentpositioning.com/blog/2014/01/mobile-and-tablet-traffic-set-to-overtake-desktop-by-mid-2014/">intelligentpositioning.com</a></figcaption>
+          </figure>
+        </section>
+        <section data-toc-title="">
+          <h2>How is mobile doing? (2)</h2>
+          <ul>
+            <li>
+              Observations:
+              <ul>
+                <li>mobile seems to stabilize or even have reached its peak (worldwide; other charts for <a href="img/04_responsive/stats_europe.png">Europe</a>, <a href="img/04_responsive/stats_africa.png">Africa</a>, <a href="img/04_responsive/stats_asia.png">Asia</a>, <a href="img/04_responsive/stats_north_america.png">North-America</a> and <a href="img/04_responsive/stats_belgium.png">Belgium</a>)</li>
+                <li>developing countries are more developed mobilewise</li>
+                <li>is the tablet hype over?</li>
+              </ul>
+            </li>
+          </ul>
+          <figure style="margin: 0 auto; width: 700px;">
+            <img src="img/04_responsive/stats_worldwide.png" alt="" style="max-width: 100%" />
+            <figcaption>Global stats; source: <a href="http://gs.statcounter.com/#all-comparison-ww-monthly-201202-201502">http://gs.statcounter.com/</a></figcaption>
+          </figure>
+        </section>
+        <section data-toc-title="">
+          <h2>How is mobile doing? (3)</h2>
+          <ul>
+            <li>Still, mobile usage hovers around 40%</li>
+            <li>Also for e-commerce it is big business:</li>
+          </ul>
+          <figure style="margin: 0 auto; width: 590px">
+            <img src="img/04_responsive/mobilebusiness.jpg" alt="" style="max-width: 100%" />
+            <figcaption>Extract from infographic; source: <a href="http://www.supermonitoring.com/blog/2013/09/23/state-of-mobile-2013-infographic/">supermonitoring.com</a></figcaption>
+          </figure>
+        </section>
+        <section data-toc-title="Responsive webdesign">
+          <h2>Responsive webdesign (1)</h2>
+          <ul>
+            <li>Responsive webdesign = a single site that adjusts ('responds') optimally to every screen width</li>
+          </ul>
+          <img src="img/04_responsive/responsive.png" alt="" style="max-width: 100%; margin: 20px 0" class="border" />
+          <ul>
+            <li class="arrow" style="font-size: smaller">today every site   </li>
+          </ul>
+        </section>
+        <section data-toc-title="">
+          <h2>Responsive webdesign (2)</h2>
+          <ul>
+            <li>
+              Transition effects on elements (textboxes, graphics, fonts...) between screen sizes is called <em>content choreography</em>:
+              <ul>
+                <li>stretching / compressing elements &rarr; <em>flexibility</em></li>
+                <li>reordering elements &rarr; <em>fluidity</em></li>
+                <li>omitting / adding elements</li>
+                <li>changing elements</li>
+                <li>...</li>
+              </ul>
+            </li>
+            <li>
+              Basically whatever floats your boat
+            </li>
+          </ul>
+        </section>
+        <section data-toc-title="Responsive ≠ mobile only!">
+          <h2>Responsive ≠ mobile only! (1)</h2>
+          <ul>
+            <li>
+              Optimized for all screen sizes means optimized for all screen sizes, not for mobile only
+            </li>
+            <li>
+              A hamburger menu on a 1920x1080 screen is ridiculous:
+            </li>
+          </ul>
+          <img src="img/04_responsive/mobile_only_hamburger_menu.png" alt="" style="max-width: 100%;" class="border" />
+        </section>
+        <section data-toc-title="">
+          <h2>Responsive ≠ mobile only! (2)</h2>
+          <ul>
+            <li>
+              Stretching your content 1920px wide is ridiculous too:
+            </li>
+          </ul>
+          <img src="img/04_responsive/mobile_version_1.png" alt="" style="max-width: 100%;" class="border" />
+        </section>
+        <section data-toc-title="Alternative: an app">
+          <h2>Alternative: an app (1)</h2>
+          <p style="text-align: center">
+            <img src="img/04_responsive/app_nmbs.png" alt="" class="border" />
+          </p>
+        </section>
+        <section data-toc-title="">
+          <h2>Alternative: an app (2)</h2>
+          <ul>
+            <li>
+              Apps are great!
+              <ul class="v-style">
+                <li>easy to download and install</li>
+                <li>work well offline</li>
+                <li>have direct hardware access (GPS, camera, accelerometer...)</li>
+                <li>have good visibility in app stores</li>
+              </ul>
+            </li>
+            <li>
+              But for a regular websites building an app is quite silly:
+              <ul class="x-style">
+                <li>seperate versions needed for Android, iOS, Windows...</li>
+                <li>hard and expensive to develop and maintain</li>
+                <li>customers simply do not download and install websites</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+        <section data-toc-title="Alternative: mobile version">
+          <h2>Alternative: mobile version (1)</h2>
+          <p style="text-align: center">
+            <img src="img/04_responsive/mobileversion.jpg" alt="" style="width: 40%" />
+          </p>
+        </section>
+        <section data-toc-title="">
+          <h2>Alternative: mobile version (2)</h2>
+          <ul>
+            <li>
+              A separate mobile version: sounds like a plan!
+              <ul class="v-style">
+                <li>optimized design and content</li>
+                <li>bandwidth-friendly</li>
+                <li>take advantage of mobile features like geolocation, QR-scanning etc...</li>
+              </ul>
+            </li>
+            <li>
+              But maybe the idea is not so great after all:
+              <ul class="x-style">
+                <li>different links: which one should you share with others?</li>
+                <li>developing and maintaining two separate versions is costly</li>
+                <li>design: still optimized for just two versions... what about tablets? large smartphones? netbooks?</li>
+                <li>bandwidth: should a smartphone on Wifi use the light mobile or the full desktop version? and a tablet on 3G?</li>
+                <li>mobile: is a smartphone at home considered 'mobile' or 'desktop'? what about a laptop in a public area?</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+      </section>
+      <section>
+        <section>
+          <h1>Responsive Webdesign</h1>
+          <h2>Responsive in 7 easy steps</h2>
+          <ul class="chapterlist">
+            <!-- to be filled by Javascript -->
+          </ul>
+        </section>
+        <section>
+          <h2>Responsive in 7 Steps</h2>
+          <ul>
+            <li>
+              First prepare your code:
+              <ul class="v-style">
+                <li>
+                  step 1: make sure you've used em/rem as your default unit
+                </li>
+                <li>
+                  step 2: add the viewport meta tag
+                </li>
+                <li>
+                  step 3: make your layout (wrapper, columns, images, boxes...) flexible
+                </li>
+              </ul>
+            </li>
+            <li>
+              Then make your site responsive:
+              <ul class="v-style">
+                <li>
+                  step 4: choose your breakpoints
+                </li>
+                <li>
+                  step 5: add a media query for each breakpoint
+                </li>
+                <li>
+                  step 6: make your CSS responsive &mdash; move/change CSS inside and outside the media queries until it looks good on all screen widths
+                </li>
+                <li>
+                  step 7: repeat until satisfied
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+        <section>
+          <h2>Step 1: em/rem</h2>
+          <ul>
+            <li>
+              Make sure you've used <em><code>rem</code> or <code>em</code></em> as your default unit, like we've done throughout the course:
+            </li>
+            <li class="no-style">
+              <pre class="bigger"><code class="language-css">/* set default font size to 16px * 0.625 = 10px */
+html {
+  font-size: 0.625em;
+}
+
+/* from now on 10px = 1rem */
+body {
+  font-size: 1.3rem; /* 13px, or whatever default font size you like */
+}
+.wrapper {
+  max-width: 96rem; /* 960px */
+  padding: 0 2rem;  /* 0 20px */
+}
+...
+</code></pre>
+            </li>
+            <li class="arrow smaller">
+              should normally already be ok
+            </li>
+          </ul>
+          <div class="tooltip">
+            <div>
+              You may still use pixels in some occasions, like 1px borders.
+            </div>
+          </div>
+        </section>
+        <section>
+          <h2>Step 2: viewport metatag</h2>
+          <ul>
+            <li>
+              Let your mobile device know that your site is responsive; otherwise it will try and rescale the whole page to squeeze it in the device screen. This is simply done by adding the <em>viewport metatag</em> to your HTML:
+              <pre class="bigger"><code class="language-html right">&lt;head&gt;
+  ...
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+  ...
+&lt;/head&gt;</code></pre>
+            </li>
+            <li>
+              You'll also come across this version, but it does not allow the user to zoom in:
+              <pre class="bigger"><code class="language-html wrong">&lt;meta name="viewport"
+    content="width=device-width, minimum-scale=1.0, maximum-scale=1.0"&gt;
+</code></pre>
+            </li>
+          </ul>
+        </section>
+        <section data-toc-title="step 3: flexible layout">
+          <h2>Step 3: flexible layout</h2>
+          <ul>
+            <li>
+              Make sure your layout is <em>flexible</em>, i.e. it can squeeze or expand with device width. Basic principles:
+              <ol style="list-style:lower-alpha">
+                <li>layout: use <strong>flexbox</strong> and/or <strong>float</strong> &mdash; don't use absolute positioning</li>
+                <li>wrappers: use <strong><code>min-width</code></strong> and <strong><code>max-width</code></strong>, not <code>width</code></li>
+                <li>flexible columns: use <strong>% (percentage)</strong> &mdash; don't use fixed size units</li>
+                <li>flexible rows (e.g. header): don't use <code>height</code></li>
+                <li>flexible boxes and images: use <strong><code>width:100%</code></strong> and <strong><code>max-width</code></strong> &mdash; don't use fixed widths</li>
+              </ol>
+            </li>
+          </ul>
+        </section>
+        <section data-toc-title="">
+          <h2>Step 3: flexible layout (A)</h2>
+          <ul>
+            <li>replace any absolute positioning layout you may have used by flexbox or by float layout, e.g.:
+              <pre class="bigger"><code class="language-css" style="max-height: 200px;">header #logo {
+  <del>position: absolute;</del>
+  <del>top: 2rem;</del>
+  <del>left: 1rem;</del>
+  margin-top: 2rem;
+  margin-left: 1rem;
+  float: left;
+}
+
+header #login {
+  <del>position: absolute;</del>
+  <del>top: 2rem;</del>
+  <del>rigt: 1rem;</del>
+  margin-top: 2rem;
+  margin-right: 1rem;
+  float: right;
+}
+</code></pre>
+            </li>
+            <li class="arrow smaller">
+              should normally already be ok
+            </li>
+          </ul>
+        </section>
+        <section data-toc-title="">
+          <h2>Step 3: flexible layout (B)</h2>
+          <ul>
+            <li>
+              define <code>min-width</code> and <code>max-width</code> for wrappers instead of <code>width</code>:
+              <pre class="bigger"><code class="language-css">.wrapper {
+  <del>width: 96rem;</del>
+  max-width: 96rem;
+  min-width: 32rem;
+}
+</code></pre>
+            </li>
+          </ul>
+        </section>
+        <section data-toc-title="">
+          <h2>Step 3: flexible layout (C)</h2>
+          <ul>
+            <li>use <code>%</code> for flexible columns &mdash; use <code>calc()</code> if needed:
+              <pre class="bigger"><code class="language-css">.leftcol {
+  <del>width: 64rem;</del>
+  width: 67%;
+}
+.rightcol {
+  <del>width: 28rem;</del>
+  margin-left: 4rem;
+  width: calc (33% - 4rem);
+}</code></pre>
+            </li>
+            <li class="arrow smaller">
+              other combinations are possible, e.g. <span style="font-size: smaller">66% + 4% + 30%</span>, or <span style="font-size: smaller">calc(67% - 2rem) + 4rem + calc(33% - 2rem)</span>; just <span style="color: #700">make sure the sum is 100%</span>
+            </li>
+          </ul>
+        </section>
+        <section data-toc-title="">
+          <h2>Step 3: flexible layout (D)</h2>
+          <ul>
+            <li>remove <code>height</code> from vertically flexible parts, e.g. the header, as it will need to stretch for smaller screen sizes when child components shift:
+              <pre class="bigger"><code class="language-css">header {
+  <del>height: 25rem;</del>
+}
+</code></pre>
+            </li>
+          </ul>
+        </section>
+        <section data-toc-title="">
+          <h2>Step 3: flexible layout (E)</h2>
+          <ul>
+            <li>images and other flexible boxes with a maximum width should both have <code>width</code> and <code>max-width</code> set:
+              <pre class="bigger"><code class="language-css">main img {
+  width: 45rem; /* native width */
+  max-width: 100%; /* should not be wider than its parent */
+}
+</code></pre>
+            </li>
+          </ul>
+        </section>
+        <section>
+          <h2>step 4: decide breakpoints</h2>
+          <ul>
+            <li>
+              A <em>breakpoint</em> is the browser width where the CSS transition between large and small version will occur. Deciding on a breakpoint is easy:
+              <ul>
+                <li>open your page in the browser</li>
+                <li>make your browser window smaller (it should already be flexible)</li>
+                <li>the width where your design breaks is your breakpoint</li>
+              </ul>
+            </li>
+            <li>
+              There are no 'recommended' breakpoints; pick whatever fits your design.
+            </li>
+          </ul>
+          <p style="text-align: right">
+            <img src="img/04_responsive/resize.gif" alt="" />
+          </p>
+        </section>
+        <section data-toc-title="step 5. add media queries">
+          <h2>step 5: add media queries (1)</h2>
+          <ul>
+            <li>
+              Suppose you want breakpoints at 600px, 800px and 1000px. Start with the CSS for the smallest screens, and work your way up for larger screen widths with media queries:
+              <pre class="bigger"><code class="language-css" style="max-height: 200px;">/* CSS for smallest screens */
+...
+
+/* ===============
+ Media queries
+ =============== */
+
+@media (min-width: 37.5em) { /* 37.5 * 16 = 600px */
+  /* additional CSS for screens 600px and up */
+  ...
+}
+@media (min-width: 50em) { /* 50 * 16 = 800px  */
+  /* additional CSS for screens 800px and up */
+  ...
+}
+@media (min-width: 62.5em) { /* 62.5 * 16 = 1000px  */
+  /* additional CSS for screens 1000px and up */
+  ...
+}
+</code></pre>
+            </li>
+            <li class="arrow smaller">
+              always put your media queries <strong>at the bottom</strong> of your CSS
+            </li>
+            <li class="arrow smaller">
+              sort your breakpoints <strong>from small to large</strong>
+            </li>
+            <li class="arrow smaller">
+              only use <strong><code>min-width</code></strong>, not <code>max-width</code> or a combination
+            </li>
+          </ul>
+          <div class="tooltip">
+            <div>
+              <p>
+                The general philosopy for responsive CSS is "mobile first", i.e. create your CSS for the smallest screen, and adapt with media queries for larger screens. The alternative, "desktop first", would require you to create CSS for the largest screen, and then adapt it for smaller screens. As the CSS for larger screens is usually more complex than for smaller screens, it is better to start from the smalllest possible CSS and work your way up. This will lead to less complex CSS.
+              </p>
+              <p>
+                Also, note that the breakpoint is defined in <code>em</code> instead of <code>rem</code>. Media queries have no 'root' and thus no rem. Simply devide your breakpoint in px by 16, e.g. 800px / 16px = 50em
+              </p>
+            </div>
+          </div>
+        </section>
+        <section data-toc-title="">
+          <h2>step 6 &amp; 7: responsive CSS</h2>
+          <ul>
+            <li>
+              The rest is basically just shuffling CSS back and forth between media queries and adding new CSS until it looks good on all devices.
+            </li>
+            <li>For a full example check the <a href="#/startcode">step by step demo in next part</a></li>
+          </ul>
+        </section>
+        <section>
+          <h2>Final note: responsive images</h2>
+          <ul>
+            <li>
+              Resizing large images into small screens isn't bandwidth friendly; a <a href="http://www.w3.org/community/respimg/">W3C group</a> has worked out a solution with <code>&lt;picture&gt;</code>:
+                <pre><code>&lt;picture alt="A giant stone face at The Bayon temple in Cambodia"&gt;
+  &lt;source src="small.jpg"&gt;
+  &lt;source src="medium.jpg" media="(min-width: 400px)"&gt;
+  &lt;source src="large.jpg" media="(min-width: 800px)"&gt;
+&lt;/picture&gt;</code></pre>
+            </li>
+            <li class="arrow smaller">
+              browser support is <a href="https://caniuse.com/#search=picture">really good</a>
+            </li>
+          </ul>
+        </section>
+      </section>
+      <section>
+        <section>
+          <h1>Responsive Webdesign</h1>
+          <h2>Step by step demo</h2>
+          <ul class="chapterlist">
+            <!-- to be filled by Javascript -->
+          </ul>
+        </section>
+        <section>
+          <h2>Startcode</h2>
+          <ul>
+            <li>
+              The following layout is px based and has a fixed layout:
+            </li>
+            <li class="no-style">
+<p data-height="300" data-theme-id="35230" data-slug-hash="zyxExp" data-default-tab="html" data-user="rogiervanderlinde" data-pen-title="CSS course 04 demo1" class="codepen">See the Pen <a href="https://codepen.io/rogiervanderlinde/pen/zyxExp/">CSS course 04 demo1</a> by Rogier van der Linde (<a href="https://codepen.io/rogiervanderlinde">@rogiervanderlinde</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+            </li>
+          </ul>
+        </section>
+        <section>
+          <h2>Step 1: em/rem based</h2>
+          <ul>
+            <li>
+              With all px values (except some 1px borders) translated to rem:
+            </li>
+            <li class="no-style">
+<p data-height="300" data-theme-id="35230" data-slug-hash="zyxExp" data-default-tab="css" data-user="rogiervanderlinde" data-pen-title="CSS course 04 demo1" class="codepen">See the Pen <a href="https://codepen.io/rogiervanderlinde/pen/zyxExp/">CSS course 04 demo1</a> by Rogier van der Linde (<a href="https://codepen.io/rogiervanderlinde">@rogiervanderlinde</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+            </li>
+          </ul>
+        </section>
+        <section>
+          <h2>Step 2: flexible</h2>
+          <ul>
+            <li>
+              Changes:
+              <ul>
+                <li>wrapper: used <code>max-width</code> and <code>min-width</code> instead of <code>width</code></li>
+                <li>header: <code>height</code> removed, replaced by <code>padding-bottom</code> </li>
+                <li>left menu and content: absolute widths replaced by percentages</li>
+                <li>content picture and comments: <code>width</code> changed to 100%, <code>max-width</code> set</li>
+              </ul>
+            </li>
+            <li class="no-style">
+<p data-height="300" data-theme-id="35230" data-slug-hash="yGyzPz" data-default-tab="css" data-user="rogiervanderlinde" data-pen-title="CSS Course 04 demo3" data-editable="true" class="codepen">See the Pen <a href="https://codepen.io/rogiervanderlinde/pen/yGyzPz/">CSS Course 04 demo3</a> by Rogier van der Linde (<a href="https://codepen.io/rogiervanderlinde">@rogiervanderlinde</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+            </li>
+          </ul>
+        </section>
+        <section>
+          <h2>Step 3: responsive</h2>
+          <ul>
+            <li>
+              Changes:
+              <ul>
+                <li>media queries added for 480px (30em) and 600px (37.5em)</li>
+                <li>CSS for header layout and aside float moved to first media query</li>
+                <li>CSS for main column layout moved to last media query</li>
+              </ul>
+            </li>
+            <li class="no-style">
+<p data-height="300" data-theme-id="35230" data-slug-hash="XoJexP" data-default-tab="css" data-user="rogiervanderlinde" data-pen-title="CSS Course 04 demo4" data-editable="true" class="codepen">See the Pen <a href="https://codepen.io/rogiervanderlinde/pen/XoJexP/">CSS Course 04 demo4</a> by Rogier van der Linde (<a href="https://codepen.io/rogiervanderlinde">@rogiervanderlinde</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+            </li>
+          </ul>
+        </section>
+      </section>
+
+    </div>
+
+    <!-- odisee.be link -->
+    <a href="http://www.odisee.be/" title="odisee.be" id="odisee"><img src="img/odisee.png" alt="Odisee logo"></a>
+
+    <!-- Index Link -->
+    <aside class="back">
+      <nav>
+        <p><a href="index.html">&larr; Back to index</a></p>
+      </nav>
+    </aside>
+
+  </div>
+
+  <script src="vendor/jquery.min.js"></script>
+  <script src="vendor/reveal/lib/js/head.min.js"></script>
+  <script src="vendor/reveal/js/reveal.js"></script>
+  <script src="vendor/highlight/highlight.pack.js"></script>
+  <script src="vendor/incrementable.js"></script>
+  <script src="vendor/prefixfree.js"></script>
+  <script src="vendor/css-snippets.js"></script>
+  <script src="vendor/css-edit.js"></script>
+  <script src="js/main.js"></script>
+  <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+
+</body>
+</html>
