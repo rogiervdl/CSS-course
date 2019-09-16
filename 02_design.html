@@ -390,6 +390,38 @@ body {
           </ul>
         </section>
         <section>
+          <h2>[vw / vh / vmin / vmax]</h2>
+          <ul>
+            <li>
+              Percentage of viewport (= visible browser area) width / height or minimum / maximum of both
+            </li>
+            <li>
+              Example 1: font rescaling (also used in this course; rescale the browser):
+              <pre class="bigger"><code class="language-css">p {
+  font-size: 2vw; /* ± 80 characters per line */
+}</code></pre>
+              <div class="demolink">
+                <a href="demos/02_design/vw-vh-text.html">(slightly different) demo</a>
+              </div>
+            </li>
+            <li>
+              Example 2: keeping an image visible
+              <pre class="bigger"><code class="language-html">img {
+  max-width: 90vw;
+  max-height: 90vh;
+}
+</code></pre>
+              <div class="demolink">
+                <a href="demos/02_design/01_units/vw/index.html">demo</a>
+              </div>
+            </li>
+          </ul>
+          <ul class="arrow">
+            <li>mostly useful for mobile devices</li>
+            <li>vw/vh/vmin/vmax is the <i>only</i> way to smoothly rescale fonts</li>
+          </ul>
+        </section>
+        <section>
           <h2>Units &mdash; summary</h2>
           <ul>
             <li>
@@ -558,13 +590,17 @@ a:hover {
           </ul>
         </section>
         <section style="background-image: url(img/02_design/lapland.jpg); background-size: cover; background-position: center center" id="rgba-hsla">
-          <h2>RGBA() &amp; HSLA() notation</h2>
+          <h2>Alpha channel</h2>
           <ul>
             <li>
-              RGBA (red-green-blue-alpha) &amp; HSLA (hue-saturation-luminosity-alpha) notations (a = alpha channel = opacity):
+              The <em>aplha</em> channel sets opacity
+            </li>
+            <li>
+              Some notations: RGBA (red-green-blue-alpha), HSLA (hue-saturation-luminosity-alpha) (a = alpha channel = opacity) &amp; hex-alpha notations:
               <pre class="bigger"><code class="language-css" contenteditable data-selector="#rgba-hsla" data-step="10" style="background-color: white">p {
-  background-color: hsla(128, 75%, 33%, 0.5);
-  color: rgba(50, 44, 150, 1);
+  background-color: hsla(128, 75%, 33%, 0.5); /* 50% opacity */
+  border: 4px dashed #FFa500BF; /* #FFA500 = orange, BF = 75% opacity */
+  color: rgba(50, 44, 150, 0.9); /* 90% opacity */
 }</code></pre>
               <p id="colordemo" style="margin: 30px 0; width: 600px; height: 80px; line-height: 80px; text-align: center; font-size: 60px; font-weight: bold">APLHA EXAMPLE</p>
             </li>
@@ -581,22 +617,6 @@ a:hover {
 }</code></pre>
               <p style="margin: 30px 0 20px 0; width: 150px; height: 40px; line-height: 40px; text-align: center; font-size: 20px; font-weight: bold">Lorem Ipsum</p>
               &rarr; mnemonic notation is for wussies
-            </li>
-          </ul>
-        </section>
-        <section id="color-examples">
-          <h2>Color examples</h2>
-          <ul>
-            <li>
-              Some typical properties where you would use colors:
-            </li>
-            <li class="no-style">
-              <pre class="bigger"><code class="language-css" contenteditable data-selector="#color-examples" data-step="2">p {
-  color: #009;
-  background-color: rgba(200, 200, 200, 0.7);
-  border-color: #090;
-}</code></pre>
-              <p style="margin-top: 30px; margin-bottom: 30px; width: 400px; height: 80px; line-height: 80px; text-align: center; font-size: 24px; border-width: 4px; border-style: solid">GRADIENT EXAMPLE</p>
             </li>
           </ul>
         </section>
@@ -617,8 +637,8 @@ a:hover {
             </li>
             <li class="no-style">
               <pre class="bigger"><code class="language-css" contenteditable data-selector="#gradients" data-step="2">p {
-  /* change -webkit to -moz, -o or -ms for other browsers */
-  background: -webkit-linear-gradient(bottom,
+  background: linear-gradient(
+     to bottom,
      #00abeb 10%,
      white 30%,
      yellow 50%,
@@ -1296,14 +1316,14 @@ border-radius: 50px 5px 5px 5px;
               <pre class="bigger"><code class="language-html">&lt;h1&gt;&lt;a href="#"&gt;Your Logo Here&lt;/a&gt;&lt;/h1&gt;
 </code></pre>
               <pre class="bigger"><code class="language-css">h1 a {
-  display: block; /* only block level elements can have width / height */
-  width: 21.4rem; /* stretch link to desired width */
-  height: 16.1rem; /* stretch link to desired height */
-  white-space: nowrap; /* single line of text */
-  text-indent: 100%; /* push text outside */
-  overflow: hidden;  /* hide text outside */
   background-image: url(img/logo.jpg); /* set background image */
   background-size: 100% 100%; /* stretch background image */
+  display: block; /* only block level elements can have width / height */
+  height: 16.1rem; /* stretch link to desired height */
+  overflow: hidden;  /* hide text outside */
+  text-indent: 100%; /* push text outside */
+  white-space: nowrap; /* single line of text */
+  width: 21.4rem; /* stretch link to desired width */
 }
 </code></pre>
               <div class="demolink">
