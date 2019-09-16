@@ -241,7 +241,7 @@
           </ul>
         </section>
         <section>
-          <h2>Step 1: em/rem</h2>
+          <h2>Step 1: use em/rem</h2>
           <ul>
             <li>
               Make sure you've used <em><code>rem</code> or <code>em</code></em> as your default unit, like we've done throughout the course:
@@ -274,7 +274,7 @@ body {
           </div>
         </section>
         <section>
-          <h2>Step 2: viewport metatag</h2>
+          <h2>Step 2: add viewport metatag</h2>
           <ul>
             <li>
               Let your mobile device know that your site is responsive; otherwise it will try and rescale the whole page to squeeze it in the device screen. This is simply done by adding the <em>viewport metatag</em> to your HTML:
@@ -292,8 +292,8 @@ body {
             </li>
           </ul>
         </section>
-        <section data-toc-title="step 3: flexible layout">
-          <h2>Step 3: flexible layout</h2>
+        <section data-toc-title="step 3: make flexible">
+          <h2>Step 3: make flexible</h2>
           <ul>
             <li>
               Make sure your layout is <em>flexible</em>, i.e. it can squeeze or expand with device width. Basic principles:
@@ -307,8 +307,8 @@ body {
             </li>
           </ul>
         </section>
-        <section data-toc-title="">
-          <h2>Step 3: flexible layout (A)</h2>
+        <section data-toc-title="&nbsp;&nbsp;&nbsp;&rarr; flexible layout">
+          <h2>Step 3A: flexible layout</h2>
           <ul>
             <li>replace any absolute positioning layout you may have used by flexbox or by float layout, e.g.:
               <pre class="bigger"><code class="language-css" style="max-height: 200px;">header #logo {
@@ -335,8 +335,8 @@ header #login {
             </li>
           </ul>
         </section>
-        <section data-toc-title="">
-          <h2>Step 3: flexible layout (B)</h2>
+        <section data-toc-title="&nbsp;&nbsp;&nbsp;&rarr; flexible wrapper">
+          <h2>Step 3B: flexible wrapper</h2>
           <ul>
             <li>
               define <code>min-width</code> and <code>max-width</code> for wrappers instead of <code>width</code>:
@@ -349,8 +349,8 @@ header #login {
             </li>
           </ul>
         </section>
-        <section data-toc-title="">
-          <h2>Step 3: flexible layout (C)</h2>
+        <section data-toc-title="&nbsp;&nbsp;&nbsp;&rarr; flexible columns">
+          <h2>Step 3C: flexible columns</h2>
           <ul>
             <li>use <code>%</code> for flexible columns &mdash; use <code>calc()</code> if needed:
               <pre class="bigger"><code class="language-css">.leftcol {
@@ -368,8 +368,8 @@ header #login {
             </li>
           </ul>
         </section>
-        <section data-toc-title="">
-          <h2>Step 3: flexible layout (D)</h2>
+        <section data-toc-title="&nbsp;&nbsp;&nbsp;&rarr; flexible height">
+          <h2>Step 3D: flexible height</h2>
           <ul>
             <li>remove <code>height</code> from vertically flexible parts, e.g. the header, as it will need to stretch for smaller screen sizes when child components shift:
               <pre class="bigger"><code class="language-css">header {
@@ -379,8 +379,8 @@ header #login {
             </li>
           </ul>
         </section>
-        <section data-toc-title="">
-          <h2>Step 3: flexible layout (E)</h2>
+        <section data-toc-title="&nbsp;&nbsp;&nbsp;&rarr; flexible images/boxes">
+          <h2>Step 3E: flexible images/boxes</h2>
           <ul>
             <li>images and other flexible boxes with a maximum width should both have <code>width</code> and <code>max-width</code> set:
               <pre class="bigger"><code class="language-css">main img {

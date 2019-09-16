@@ -329,19 +329,19 @@ img.icon_social {
             </li>
           </ul>
         </section>
-        <section data-toc-title="Rem &mdash; definition">
+        <section data-toc-title="">
           <h2>Rem &mdash; definition (2)</h2>
           <ul>
             <li>
-              it becomes even easier if we set <code>&lt;html&gt;</code> font size to 0.625em:
+              it becomes even easier if we set <code>&lt;html&gt;</code> font size to 62.5%:
               <pre class="bigger"><code class="language-html overlayrun" style="height: 200px">&lt;html&gt;
 &lt;head&gt;
   &lt;style&gt;
-    html { font-size: 0.625em; } /* 16px * 0.625 = 10px */
-    body { font-size: 1.4rem; /* 1.4 * 10px = 14px */ }
-    h1 { font-size: 2rem; /* 2.0 * 10px = 20px */ }
-    footer { font-size: 1.1rem; /* 1.1 * 10px = 11px */ }
-    footer a { font-size: 1.2rem; /* 1.2 * 10px = 12px */ }
+    html { font-size: 62.5%; } /* 16px * 0.625 = 10px */
+    body { font-size: 1.4rem; } /* 1.4 * 10px = 14px */ 
+    h1 { font-size: 2rem; } /* 2.0 * 10px = 20px */
+    footer { font-size: 1.1rem; } /* 1.1 * 10px = 11px */
+    footer a { font-size: 1.2rem; } /* 1.2 * 10px = 12px */
   &lt;/style&gt;
 &lt;/head&gt;
 &lt;body&gt;
@@ -357,6 +357,24 @@ img.icon_social {
             </li>
           </ul>
         </section>
+        <section data-toc-title="">
+          <h2>Rem &mdash; definition (3)</h2>
+          <ul>
+            <li>
+              bottomline: <strong>always</strong> start your site CSS with
+              <pre class="bigger"><code class="language-css">html { 
+  font-size: 62.5%; /* set HTML font size to 62.5%; now 1rem = 10px */
+} 
+body { 
+  font-size: 1.4rem; /* set default font size, e.g. to 14px */ 
+}
+
+/* rest of your CSS follows here */
+/* ... */
+</code></pre>
+            </li>
+          </ul>
+        </section>
         <section>
           <h2>Rem &mdash; when to use</h2>
           <ul>
@@ -365,9 +383,6 @@ img.icon_social {
             </li>
             <li>
               use <code>rem</code> as <em>your default unit</em> except where <code>px</code>, <em</code> or <code>%</code> is needed
-            </li>
-            <li>
-              make life easier: set <code>&lt;html&gt;</code> font size to 0.625em; then <code>10px</code> = <code>1rem</code>
             </li>
             <li>
               as intuitive as px, but we can still rescale the whole page by changing the &lt;<code>html</code>&gt; font size (<a href="demos/02_design/01_units/em/index.html">try it out</a> &mdash; use your inspector)
