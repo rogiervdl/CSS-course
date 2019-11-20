@@ -554,12 +554,14 @@ p:first-line { /* ... */ }
       list-style: none; /* remove standard bullets */
     }
     li::before {
-      content: "👉 ";
-      color: blue;
+      content: "👉";
+      font-size: 12px;
+      margin-right: 5px;
     }
     li::after {
-      content: " 👈";
-      color: blue;
+      content: "👈";
+      font-size: 12px;
+      margin-left: 5px;
     }
   &lt;/style&gt;
 &lt;/head&gt;
@@ -573,6 +575,7 @@ p:first-line { /* ... */ }
 &lt;/html&gt;</code></pre></div>
             </li>
           </ul>
+          <p style="font-size: smaller; font-style: italic;">note: you could also use the <a href="https://www.w3schools.com/cssref/pr_list-style-image.asp"><code>list-style-image</code></a> property to set an image as bullet, but then you won't be able to style your bullet with margins, font sizes etc... like with <code>::after</code></p>
         </section>
         <section data-toc-title="Contextual selector">
           <h2>Contextual selector (1)</h2>
