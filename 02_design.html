@@ -693,6 +693,166 @@ div:hover {
             </li>
           </ul>
         </section>
+        <section>
+          <h2>[Animations]</h2>
+          <ul>
+            <li>
+              Define keyframes, properties and easing:
+            </li>
+            <li class="no-style">
+              <div class="codescrollpanel"><pre class="bigger"><code class="language-html smallpanel">&lt;!DOCTYPE html&gt;
+&lt;head&gt;
+  &lt;meta charset="utf-8" /&gt;
+  &lt;title&gt;Animation&lt;/title&gt;
+  &lt;style&gt;
+    #scene {
+      width: 800px;
+      border: 2px solid #999;
+      margin: 20px auto;
+      height: 200px;
+      overflow: hidden;
+    }
+    #busBig {
+      background-image: url(img/busBig.png);
+      width: 247px;
+      height: 106px;
+      margin-left: -300px;
+      margin-top: 50px;
+      animation: moveBus 3s 1 ease-in-out;
+    }
+    @keyframes moveBus {
+      0% { margin-left: -300px; }
+      50% { margin-left: 70px; }
+      100% { margin-left: 2000px; }
+    }
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;div id="scene"&gt;
+    &lt;div id="busBig" class="layer"&gt;&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre></div>
+              <div class="demolink"><a href="demos/02_design/07_animations/animations1.html">demo</a> (more <a href="demos/02_design/07_animations/animations2.html">elaborated demo</a>)</div>
+            </li>
+          </ul>
+        </section>
+        <section>
+          <h2>[Transforms and animations]</h2>
+          <ul>
+            <li>
+              Transforms and animations combined (Chrome):
+            </li>
+            <li class="no-style">
+              <div class="codescrollpanel"><pre class="bigger"><code class="language-html smallpanel overlayrun">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+  &lt;meta charset="utf-8"&gt;  
+  &lt;title&gt;Morphing Power Cubes&lt;/title&gt;
+  &lt;style&gt;
+    body {
+      background-color: black;
+      background-image: -webkit-gradient(radial, 50% 500, 1, 50% 500, 400,
+        from(rgba(255, 255, 255, 0.3)),
+        to(rgba(255, 255, 255, 0)));
+    }
+    #container {
+      width: 100%;
+      height: 700px;
+      -webkit-perspective: 800; /* For compatibility with iPhone 3.0, we leave off the units here */
+      -webkit-perspective-origin: 50% 0;
+    }
+    #stage {
+      width: 100%;
+      height: 100%;
+      transition: transform 2s;
+      transform-style: preserve-3d;
+    }
+    #cube {
+      position: relative;
+      top: 160px;
+      margin: 0 auto;
+      height: 200px;
+      width: 200px;
+      transform-style: preserve-3d;
+    }
+    .plane {
+      position: absolute;
+      height: 200px;
+      width: 200px;
+      border: 1px solid white;
+      border-radius: 12px;
+      text-align: center;
+      font-size: 124pt;
+      background-color: rgba(255, 255, 255, 0.6);
+      backface-visibility: visible;
+      opacity: 0.5;
+    }
+    #cube.animate {
+      animation: spin 8s infinite linear;
+    }
+    @keyframes spin {
+      from { transform: rotateY(0); }
+      to   { transform: rotateY(-360deg); }
+    }
+    .one {
+      transform: scale3d(1.2, 1.2, 1.2) rotateX(90deg) translateZ(100px);
+    }
+    .two {
+      transform: scale3d(1.2, 1.2, 1.2) translateZ(100px);
+    }
+    .three {
+      transform: scale3d(1.2, 1.2, 1.2) rotateY(90deg) translateZ(100px);
+    }
+    .four {
+      transform: scale3d(1.2, 1.2, 1.2) rotateY(180deg) translateZ(100px);
+    }
+    .five {
+      transform: scale3d(1.2, 1.2, 1.2) rotateY(-90deg) translateZ(100px);
+    }
+    .six {
+      transform: scale3d(1.2, 1.2, 1.2) rotateX(-90deg) translateZ(100px) rotate(180deg);
+    }
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;div id="container"&gt;
+    &lt;div id="stage"&gt;
+      &lt;div id="cube" class="animate"&gt;
+        &lt;div class="plane one"&gt;1&lt;/div&gt;
+        &lt;div class="plane two"&gt;2&lt;/div&gt;
+        &lt;div class="plane three"&gt;3&lt;/div&gt;
+        &lt;div class="plane four"&gt;4&lt;/div&gt;
+        &lt;div class="plane five"&gt;5&lt;/div&gt;
+        &lt;div class="plane six"&gt;6&lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div id="controls"&gt;
+      &lt;p&gt;&lt;input type="range" id="slider" min="0.1" max="20" step="0.1"&gt;&lt;/p&gt;
+      &lt;p&gt;&lt;button id="btnStartStop"&gt;without animation&lt;/button&gt;&lt;/p&gt;     
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;script type="text/javascript"&gt;
+    document.getElementById('slider').addEventListener('input', function() {
+      document.getElementById('cube').style.animationDuration = this.value + 's';   
+    });
+    document.getElementById('btnStartStop').addEventListener('click', function() {
+      if (this.innerHTML == 'without animation') {
+        document.getElementById('cube').classList.remove('animate');
+        this.innerHTML = 'with animation';    
+      } else {
+        document.getElementById('cube').classList.add('animate');
+        this.innerHTML = 'without animation';   
+      }
+    });
+  &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre></div>
+              <div class="demolink"><a href="demos//02_design/07_animations/cube.html">demo</a></div>
+            </li>
+          </ul>
+        </section>
       </section>
       <section>
         <section>
