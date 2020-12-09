@@ -360,11 +360,14 @@ header #login {
 .rightcol {
   <del>width: 28rem;</del>
   margin-left: 4rem;
-  width: calc (33% - 4rem);
+  width: calc(33% - 4rem);
 }</code></pre>
             </li>
             <li class="arrow smaller">
               other combinations are possible, e.g. <span style="font-size: smaller">66% + 4% + 30%</span>, or <span style="font-size: smaller">calc(67% - 2rem) + 4rem + calc(33% - 2rem)</span>; just <span style="color: #700">make sure the sum is 100%</span>
+            </li>
+            <li class="arrow smaller">
+             put a space after a minus or it will be interpreted as a negative value instead of the required operator
             </li>
           </ul>
         </section>
