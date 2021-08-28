@@ -247,7 +247,7 @@
               Make sure you've used <em><code>rem</code> or <code>em</code></em> as your default unit, like we've done throughout the course:
             </li>
             <li class="no-style">
-              <pre class="bigger"><code class="language-css">/* set default font size to 16px * 0.625 = 10px */
+              <pre><code class="language-css">/* set default font size to 16px * 0.625 = 10px */
 html {
   font-size: 0.625em;
 }
@@ -278,7 +278,7 @@ body {
           <ul>
             <li>
               Let your mobile device know that your site is responsive; otherwise it will try and rescale the whole page to squeeze it in the device screen. This is simply done by adding the <em>viewport metatag</em> to your HTML:
-              <pre class="bigger"><code class="language-html right">&lt;head&gt;
+              <pre><code class="language-html right">&lt;head&gt;
   ...
   &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
   ...
@@ -286,7 +286,7 @@ body {
             </li>
             <li>
               You'll also come across this version, but it does not allow the user to zoom in:
-              <pre class="bigger"><code class="language-html wrong">&lt;meta name="viewport"
+              <pre><code class="language-html wrong">&lt;meta name="viewport"
     content="width=device-width, minimum-scale=1.0, maximum-scale=1.0"&gt;
 </code></pre>
             </li>
@@ -311,7 +311,7 @@ body {
           <h2>Step 3A: flexible layout</h2>
           <ul>
             <li>replace any absolute positioning layout you may have used by flexbox or by float layout, e.g.:
-              <pre class="bigger"><code class="language-css" style="max-height: 200px;">header #logo {
+              <pre><code class="language-css" style="max-height: 200px;">header #logo {
   <del>position: absolute;</del>
   <del>top: 2rem;</del>
   <del>left: 1rem;</del>
@@ -340,7 +340,7 @@ header #login {
           <ul>
             <li>
               define <code>min-width</code> and <code>max-width</code> for wrappers instead of <code>width</code>:
-              <pre class="bigger"><code class="language-css">.wrapper {
+              <pre><code class="language-css">.wrapper {
   <del>width: 96rem;</del>
   max-width: 96rem;
   min-width: 32rem;
@@ -353,7 +353,7 @@ header #login {
           <h2>Step 3C: flexible columns</h2>
           <ul>
             <li>use <code>%</code> for flexible columns &mdash; use <code>calc()</code> if needed:
-              <pre class="bigger"><code class="language-css">.leftcol {
+              <pre><code class="language-css">.leftcol {
   <del>width: 64rem;</del>
   width: 67%;
 }
@@ -372,7 +372,7 @@ header #login {
           <h2>Step 3D: flexible height</h2>
           <ul>
             <li>remove <code>height</code> from vertically flexible parts, e.g. the header, as it will need to stretch for smaller screen sizes when child components shift:
-              <pre class="bigger"><code class="language-css">header {
+              <pre><code class="language-css">header {
   <del>height: 25rem;</del>
 }
 </code></pre>
@@ -383,7 +383,7 @@ header #login {
           <h2>Step 3E: flexible images/boxes</h2>
           <ul>
             <li>images and other flexible boxes with a maximum width should both have <code>width</code> and <code>max-width</code> set:
-              <pre class="bigger"><code class="language-css">main img {
+              <pre><code class="language-css">main img {
   width: 45rem; /* native width */
   max-width: 100%; /* should not be wider than its parent */
 }
@@ -415,7 +415,7 @@ header #login {
           <ul>
             <li>
               Suppose you want breakpoints at 600px, 800px and 1000px. Start with the CSS for the smallest screens, and work your way up for larger screen widths with media queries:
-              <pre class="bigger"><code class="language-css" style="max-height: 200px;">/* CSS for smallest screens */
+              <pre><code class="language-css" style="max-height: 200px;">/* CSS for smallest screens */
 ...
 
 /* ===============

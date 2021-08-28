@@ -108,7 +108,7 @@
           <ul>
             <li>
               px is a <em>fixed unit</em>, used for sizes that <em>do not scale</em>, like borders and small icons:
-              <pre class="bigger"><code class="language-css">input[type=submit] {
+              <pre><code class="language-css">input[type=submit] {
   border: 2px solid #666;
 }
 img.icon_social {
@@ -192,7 +192,7 @@ img.icon_social {
             </li>
             <li>
               to know the <code>px</code> value, multiply with the parent font size or browser default:
-              <pre class="bigger"><code class="language-html overlayrun" style="max-height: 250px" contenteditable>&lt;html&gt;
+              <pre><code class="language-html overlayrun" style="max-height: 250px" contenteditable>&lt;html&gt;
 &lt;head&gt;
   &lt;style&gt;    
     html { font-size: 1em; } /* 1 x browser default font size = 16px */
@@ -276,7 +276,7 @@ img.icon_social {
           <ul>
             <li>
               used for setting <code>width</code> and <code>height</code> as a percentage of the parent dimensions:
-              <pre class="bigger"><code class="language-css">img {
+              <pre><code class="language-css">img {
   width: 80%; /* 80% of the parent's width */
   max-width: 600px;
 }
@@ -306,7 +306,7 @@ img.icon_social {
             </li>
             <li>
               to know the <code>px</code> value, multiply with the <code>&lt;html&gt;</code> font size:
-              <pre class="bigger"><code class="language-html overlayrun" style="height: 200px">&lt;html&gt;
+              <pre><code class="language-html overlayrun" style="height: 200px">&lt;html&gt;
 &lt;head&gt;
   &lt;style&gt;
     html { font-size: 1em; /* 1 x browser default font size, usually 16px */ }
@@ -334,7 +334,7 @@ img.icon_social {
           <ul>
             <li>
               it becomes even easier if we set <code>&lt;html&gt;</code> font size to 62.5%:
-              <pre class="bigger"><code class="language-html overlayrun" style="height: 200px">&lt;html&gt;
+              <pre><code class="language-html overlayrun" style="height: 200px">&lt;html&gt;
 &lt;head&gt;
   &lt;style&gt;
     html { font-size: 62.5%; } /* 16px * 0.625 = 10px */
@@ -362,7 +362,7 @@ img.icon_social {
           <ul>
             <li>
               bottomline: <strong>always</strong> start your site CSS with
-              <pre class="bigger"><code class="language-css">html { 
+              <pre><code class="language-css">html { 
   font-size: 62.5%; /* set HTML font size to 62.5%; now 1rem = 10px */
 } 
 body { 
@@ -397,7 +397,7 @@ body {
             </li>
             <li>
               Example 1: font rescaling (also used in this course; rescale the browser):
-              <pre class="bigger"><code class="language-css">p {
+              <pre><code class="language-css">p {
   font-size: 2vw; /* ± 80 characters per line */
 }</code></pre>
               <div class="demolink">
@@ -406,7 +406,7 @@ body {
             </li>
             <li>
               Example 2: keeping an image visible
-              <pre class="bigger"><code class="language-html">img {
+              <pre><code class="language-html">img {
   max-width: 90vw;
   max-height: 90vh;
 }
@@ -464,7 +464,7 @@ body {
           <ul>
             <li>
               Code example in CSS (try and change the values):
-              <pre class="bigger"><code style="height: 170px" class="language-css" contenteditable data-selector="#text-properties">p {
+              <pre><code style="height: 170px" class="language-css" contenteditable data-selector="#text-properties">p {
   color: #5a4c34;
   background-color: #f0ede3;
   font-size: 14px;
@@ -512,7 +512,7 @@ a:hover {
           <ul>
             <li>
               You can embed fonts manually:
-              <pre class="bigger"><code class="language-css">@font-face {
+              <pre><code class="language-css">@font-face {
    font-family: 'Droid Sans';
    src: url(Droid_Sans.woff2);
 }</code></pre>
@@ -525,7 +525,7 @@ a:hover {
           <ul>
             <li>
               Google has a <a href="https://fonts.google.com/">great collection of free fonts</a> you can just link and use. Just select your font, and include a single line in your <code>&lt;head&gt;</code>:
-              <pre class="bigger"><code class="language-html overlayrun" style="max-height: 250px" contenteditable>&lt;html&gt;
+              <pre><code class="language-html overlayrun" style="max-height: 250px" contenteditable>&lt;html&gt;
 &lt;head&gt;
   &lt;!-- copy-paste the Google Font link here --&gt;    
   &lt;link href="https://fonts.googleapis.com/css?family=Spicy+Rice" rel="stylesheet"&gt;    
@@ -576,13 +576,13 @@ a:hover {
           <ul>
             <li>
               The most commonly used color notation is #RRGGBB hexadecimal:
-              <pre class="bigger"><code class="language-css" contenteditable data-selector="#hexadecimal-notation">p {
+              <pre><code class="language-css" contenteditable data-selector="#hexadecimal-notation">p {
   color: #d2003c;
   background-color: #ffcccc;
 }</code></pre>
               <p style="margin: 30px 0 20px 0; width: 150px; height: 40px; line-height: 40px; text-align: center; font-size: 20px; font-weight: bold">Lorem Ipsum</p>
               &rarr; hexadecimal shorthand:
-              <pre class="bigger"><code class="language-css">p {
+              <pre><code class="language-css">p {
   color: #c09; /* #cc0099 */
   background-color: #fcc; /* #ffcccc */
 }</code></pre>
@@ -597,7 +597,7 @@ a:hover {
             </li>
             <li>
               Some notations: RGBA (red-green-blue-alpha), HSLA (hue-saturation-luminosity-alpha) (a = alpha channel = opacity) &amp; hex-alpha notations:
-              <pre class="bigger"><code class="language-css" contenteditable data-selector="#rgba-hsla" data-step="10" style="background-color: white">p {
+              <pre><code class="language-css" contenteditable data-selector="#rgba-hsla" data-step="10" style="background-color: white">p {
   background-color: hsla(128, 75%, 33%, 0.5); /* 50% opacity */
   border: 4px dashed #FFa500BF; /* #FFA500 = orange, BF = 75% opacity */
   color: rgba(50, 44, 150, 0.9); /* 90% opacity */
@@ -611,7 +611,7 @@ a:hover {
           <ul>
             <li>
               mnemonic notation:
-              <pre class="bigger"><code class="language-css wrong" contenteditable data-selector="#mnemonic-notation">p {
+              <pre><code class="language-css wrong" contenteditable data-selector="#mnemonic-notation">p {
   color: Maroon; /* whatever the fuck that color is */
   background-color: MistyRose; /* what the hell are misty roses? */
 }</code></pre>
@@ -636,7 +636,7 @@ a:hover {
               Gradients:
             </li>
             <li class="no-style">
-              <pre class="bigger"><code class="language-css" contenteditable data-selector="#gradients" data-step="2">p {
+              <pre><code class="language-css" contenteditable data-selector="#gradients" data-step="2">p {
   background: linear-gradient(
      to bottom,
      #00abeb 10%,
@@ -656,7 +656,7 @@ a:hover {
               Different ways to fill a container with a background image:
             </li>
             <li class="no-style">
-              <pre class="bigger"><code class="language-css" contenteditable data-selector="#background-images" data-step="10">div {
+              <pre><code class="language-css" contenteditable data-selector="#background-images" data-step="10">div {
   background-image: url(img/02_design/grass.png);
   background-position: left bottom; /* also try center, px px, % %... */
   background-color: #ccc; /* shown while image is loading */
@@ -674,7 +674,7 @@ a:hover {
               Make smooth color (or in fact any CSS property) changes:
             </li>
             <li class="no-style">
-              <pre class="bigger"><code class="language-css" contenteditable data-selector="#transitiondemo">div {
+              <pre><code class="language-css" contenteditable data-selector="#transitiondemo">div {
   background-color: #ccc;
   transition: all 0.3s ease-in-out;
   width: 200px;
@@ -700,7 +700,7 @@ div:hover {
               Define keyframes, properties and easing:
             </li>
             <li class="no-style">
-              <div class="codescrollpanel"><pre class="bigger"><code class="language-html smallpanel">&lt;!DOCTYPE html&gt;
+              <div class="codescrollpanel"><pre><code class="language-html smallpanel">&lt;!DOCTYPE html&gt;
 &lt;head&gt;
   &lt;meta charset="utf-8" /&gt;
   &lt;title&gt;Animation&lt;/title&gt;
@@ -744,7 +744,7 @@ div:hover {
               Transforms and animations combined (Chrome):
             </li>
             <li class="no-style">
-              <div class="codescrollpanel"><pre class="bigger"><code class="language-html smallpanel overlayrun">&lt;!DOCTYPE html&gt;
+              <div class="codescrollpanel"><pre><code class="language-html smallpanel overlayrun">&lt;!DOCTYPE html&gt;
 &lt;html lang="en"&gt;
 &lt;head&gt;
   &lt;meta charset="utf-8"&gt;  
@@ -882,7 +882,7 @@ div:hover {
           <ul>
             <li>
               Let's start with two paragraphs in a div, and add some CSS:
-              <pre class="bigger"><code class="language-html">&lt;div&gt;
+              <pre><code class="language-html">&lt;div&gt;
   &lt;p&gt;In friendship diminution instrument so. Son sure paid door with say them.&lt;/p&gt;
   &lt;p&gt;Fact are size cold why had part. If believing or sweetness otherwise.&lt;/p&gt;
 &lt;/div&gt;
@@ -1031,7 +1031,7 @@ p + p {
           <ul>
             <li>
               If it doesn't meet a border or padding on its way, a vertical margin will &ldquo;bleed&rdquo; out of its parent. Here, the <code>&lt;p&gt;</code> top margin bleeds out of the <code>&lt;header&gt;</code> and pushes it down:
-              <pre class="bigger"><code class="language-html overlayrun" style="max-height: 250px">&lt;html&gt;
+              <pre><code class="language-html overlayrun" style="max-height: 250px">&lt;html&gt;
 &lt;head&gt;
   &lt;style&gt;
     * { margin: 0; }
@@ -1057,7 +1057,7 @@ p + p {
           <ul>
             <li>
               Solve it by replacing the <code>&lt;p&gt;</code> top margin with a <code>&lt;header&gt;</code> top padding:
-              <pre class="bigger"><code class="language-html overlayrun">&lt;html&gt;
+              <pre><code class="language-html overlayrun">&lt;html&gt;
 &lt;head&gt;
   &lt;style&gt;
     * { margin: 0; }
@@ -1143,7 +1143,7 @@ p + p {
           <ul>
             <li>
               This model leads to some problems. Let's create a simple horizontal menu of 100% wide, with 4 links 25% wide each:
-              <pre class="bigger"><code class="language-html overlayrun" style="max-height: 250px" contenteditable>&lt;html&gt;
+              <pre><code class="language-html overlayrun" style="max-height: 250px" contenteditable>&lt;html&gt;
 &lt;head&gt;
   &lt;style&gt;  
     /* setting widths, borders and paddings */
@@ -1201,7 +1201,7 @@ p + p {
           <ul>
             <li>
               Solution 1: substract borders and paddings using the <code>calc()</code> function
-              <pre class="bigger"><code class="language-html overlayrun" style="max-height: 250px" contenteditable>&lt;html&gt;
+              <pre><code class="language-html overlayrun" style="max-height: 250px" contenteditable>&lt;html&gt;
 &lt;head&gt;
   &lt;style&gt;  
     /* setting widths, borders and paddings */
@@ -1256,7 +1256,7 @@ p + p {
           <ul>
             <li>
               Solution 2: fix the box model with the <code>box-sizing</code> property
-              <pre class="bigger"><code class="language-html overlayrun" style="max-height: 250px" contenteditable>&lt;html&gt;
+              <pre><code class="language-html overlayrun" style="max-height: 250px" contenteditable>&lt;html&gt;
 &lt;head&gt;
   &lt;style&gt;  
     /* wollah! box model fixed */
@@ -1317,7 +1317,7 @@ p + p {
           <ul>
             <li>
               Important: you <b>can't set <code>width</code> or <code>height</code> on inline elements</b>. If you wish to set the dimensions of e.g. a link, make it blocklevel first:
-              <pre class="bigger"><code style="height: 170px" class="language-css" contenteditable data-selector="#text-properties2">a {                
+              <pre><code style="height: 170px" class="language-css" contenteditable data-selector="#text-properties2">a {                
   /* make blocklevel, and set width */                
   display: block;
   width: 200px; 
@@ -1352,7 +1352,7 @@ a:hover {
           <ul>
             <li>
               Shadow and radius effects:
-              <pre class="bigger"><code class="language-css" contenteditable data-subject="#shadowdemo">box-shadow: 10px 10px 5px #888;
+              <pre><code class="language-css" contenteditable data-subject="#shadowdemo">box-shadow: 10px 10px 5px #888;
 border-radius: 50px 5px 5px 5px;
 </code></pre>
               <div id="shadowdemo" style="margin-top: 30px; margin-bottom: 30px; width: 400px; height: 80px; line-height: 80px; text-align: center; font-size: 24px;background-color: #ccc"></div>
@@ -1374,7 +1374,7 @@ border-radius: 50px 5px 5px 5px;
           <ul>
             <li>
               make an element (partly) transparent:
-              <pre class="bigger"><code class="language-css">a {
+              <pre><code class="language-css">a {
   opacity: 0.8;
 }</code></pre>
               <div class="demolink">
@@ -1388,7 +1388,7 @@ border-radius: 50px 5px 5px 5px;
           <ul>
             <li>
               make an element invisible:
-              <pre class="bigger"><code class="language-css">a {
+              <pre><code class="language-css">a {
   visibility: hidden; /* same as opacity: 0; still occupies space*/
 }</code></pre>
               <div class="demolink">
@@ -1402,7 +1402,7 @@ border-radius: 50px 5px 5px 5px;
           <ul>
             <li>
               remove an element entirely:
-              <pre class="bigger"><code class="language-css">a {
+              <pre><code class="language-css">a {
   display: none; /* it is gone; it doesn't even occupy space anymore */
 }</code></pre>
               <div class="demolink">
@@ -1416,7 +1416,7 @@ border-radius: 50px 5px 5px 5px;
           <ul>
             <li>
               make an inline element blocklevel:
-              <pre class="bigger"><code class="language-css">a {
+              <pre><code class="language-css">a {
   display: block;
 }</code></pre>
               <div class="demolink">
@@ -1430,7 +1430,7 @@ border-radius: 50px 5px 5px 5px;
           <ul>
             <li>
               make a blocklevel element inline:
-              <pre class="bigger"><code class="language-css">li {
+              <pre><code class="language-css">li {
   display: inline;
 }</code></pre>
               <div class="demolink">
@@ -1447,7 +1447,7 @@ border-radius: 50px 5px 5px 5px;
           <ul>
             <li>
               Make a blocklevel element show inline with <code>display: inline-block</code>
-              <pre class="bigger"><code class="language-css">li {
+              <pre><code class="language-css">li {
   display: inline-block;
 }</code></pre>
               <div class="demolink">
@@ -1473,9 +1473,9 @@ border-radius: 50px 5px 5px 5px;
           <ul>
             <li>
               Replace textual elements like headers, links etc... with graphics:
-              <pre class="bigger"><code class="language-html">&lt;h1&gt;&lt;a href="#"&gt;Your Logo Here&lt;/a&gt;&lt;/h1&gt;
+              <pre><code class="language-html">&lt;h1&gt;&lt;a href="#"&gt;Your Logo Here&lt;/a&gt;&lt;/h1&gt;
 </code></pre>
-              <pre class="bigger"><code class="language-css">h1 a {
+              <pre><code class="language-css">h1 a {
   background-image: url(img/logo.jpg); /* set background image */
   background-size: 100% 100%; /* stretch background image */
   display: block; /* only block level elements can have width / height */

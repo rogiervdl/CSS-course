@@ -53,7 +53,7 @@
             </li>
             <li>
               all css links should be placed in the <code>&lt;head&gt;</code>:
-              <pre class="bigger"><code class="language-html" data-caption="index.html">...
+              <pre><code class="language-html" data-caption="index.html">...
 &lt;head&gt;
   ...
   &lt;link rel="stylesheet" href="css/stylesheet1.css" /&gt;
@@ -70,7 +70,7 @@
           <ul>
             <li>
               common errors / tips:
-              <pre class="bigger"><code class="language-html" data-caption="index.html">...
+              <pre><code class="language-html" data-caption="index.html">...
 &lt;head&gt;
   ...
   &lt;!-- type attribute not needed in HTML5 --&gt;
@@ -90,7 +90,7 @@
           <ul>
             <li>
               minimum suggested stylesheets for e.g. index.html:
-              <pre class="bigger"><code class="language-html" data-caption="index.html">...
+              <pre><code class="language-html" data-caption="index.html">...
 &lt;head&gt;
   ...
   &lt;link rel="stylesheet" href="css/start.css" /&gt;
@@ -133,7 +133,7 @@
           <ul>
             <li>
               sample code used in e.g. lab session 9:
-              <pre class="bigger"><code class="language-css" style="height: 300px" data-caption="start.css">/**
+              <pre><code class="language-css" style="height: 300px" data-caption="start.css">/**
  * Generic styles for site &lt;site-name&gt;
  *
  * @author Rogier van der Linde <rogier.vanderlinde@odisee.be>
@@ -215,7 +215,7 @@ fieldset {
           <ul>
             <li>
               Structure and comment your stylesheet in a consistent way; an example:
-              <pre class="bigger"><code class="language-css" style="height: 250px" data-caption="common.css">/**
+              <pre><code class="language-css" style="height: 250px" data-caption="common.css">/**
  * Common styles for site &lt;site-name&gt;
  *
  * @author Rogier van der Linde <rogier.vanderlinde@odisee.be>
@@ -327,7 +327,7 @@ h1, h2, h3, h4 {
           <ul>
             <li>
               Use the same structure for page-specific styes
-              <pre class="bigger"><code class="language-css" style="height: 250px" data-caption="index.css">/**
+              <pre><code class="language-css" style="height: 250px" data-caption="index.css">/**
  * Page-specific styles for site &lt;site-name&gt;
  *
  * @author Rogier van der Linde <rogier.vanderlinde@odisee.be>
@@ -380,7 +380,7 @@ h1, h2, h3, h4 {
                 <li>space after :</li>
                 <li>whiteline after each block</li>
               </ul>
-              <pre class="bigger"><code class="language-css wrong">p { line-height: 1.3; color: #333 }
+              <pre><code class="language-css wrong">p { line-height: 1.3; color: #333 }
 .box {
   background-color: #666;
   font-size:        1.2rem;
@@ -399,7 +399,7 @@ h1, h2, h3, h4 {
           <ul>
             <li>
               Properly layout your css:
-              <pre class="bigger"><code class="language-css right">p {
+              <pre><code class="language-css right">p {
   line-height: 1.3;
   color: #333;
 }
@@ -541,7 +541,7 @@ h1, h2, h3, h4 {
           <ul>
             <li>
               Selecting elements:
-              <pre class="bigger"><code class="language-css">p {
+              <pre><code class="language-css">p {
   /* tag selector; selects &lt;p&gt; */
 }
 .message {
@@ -564,7 +564,7 @@ h1, h2, h3, h4 {
           <ul>
             <li>
               Selecting elements in a certain state:
-              <pre class="bigger"><code class="language-css">a:hover {
+              <pre><code class="language-css">a:hover {
   /* selects hovered link */
 }
 textarea:focus {
@@ -584,7 +584,7 @@ input:disabled {
           <ul>
             <li>
               Selecting parts of elements:
-              <pre class="bigger"><code class="language-css">a::first-letter {
+              <pre><code class="language-css">a::first-letter {
   /* selects first letter of &lt;a&gt; */
 }
 ::selection {
@@ -606,7 +606,7 @@ li::after {
           <ul>
             <li>
               Combining selectors:
-              <pre class="bigger"><code class="language-css">p.message {
+              <pre><code class="language-css">p.message {
   /* tag-class selector; selects &lt;p class="message"&gt; */
 }
 nav#mainmenu {
@@ -629,7 +629,7 @@ img, .thumb {
           <ul>
             <li>
               Specify element position:
-              <pre class="bigger"><code class="language-css">h1 + p {
+              <pre><code class="language-css">h1 + p {
   /* selects &lt;p&gt; directly following &lt;h1&gt; */
 }
 li + li {
@@ -655,7 +655,7 @@ article:nth-of-type(3n+1) {
           <ul>
             <li>
               Some common mistakes:
-              <pre class="bigger"><code class="language-css" style="height: 250px">p {
+              <pre><code class="language-css" style="height: 250px">p {
   font-size: 1rem /* ERROR: no semicolon */
   color: red;
 }
@@ -695,14 +695,14 @@ p {
           <ul>
             <li>
               Grouped properties:
-              <pre class="bigger"><code class="language-css">p { /* groups font-size and color properties */
+              <pre><code class="language-css">p { /* groups font-size and color properties */
   font-size: 1rem;
   color: red;
 }</code></pre>
             </li>
             <li>
               Grouped values:
-              <pre class="bigger"><code class="language-css">.box {
+              <pre><code class="language-css">.box {
   padding: 1rem 2rem 0 2rem; /* top right bottom left */
   margin: 1rem 2rem; /* top-bottom left-right */
   border: 1px solid #900; /* thickness style color */
@@ -751,7 +751,7 @@ p {
           <ul>
             <li>
               Basic scheme:
-              <pre class="bigger"><code class="language-css">html {
+              <pre><code class="language-css">html {
   font-size: 0.625em; /* resize to 1rem = 10px */
 }
 body {
@@ -774,7 +774,7 @@ body {
             </li>
             <li>
               For flexible building blocks you should use %, e.g.
-              <pre class="bigger"><code class="language-css">.col1 {
+              <pre><code class="language-css">.col1 {
   width: 40%;
   float: left;
 }
@@ -800,7 +800,7 @@ body {
           <ul>
             <li>
               Colors:
-              <pre class="bigger"><code class="language-css">p {
+              <pre><code class="language-css">p {
   color: orange; /* mnemonic notation */
   color: #ffa500; /* hex notation */
   color: rgb(255, 165, 00); /* rgb notation */
@@ -815,7 +815,7 @@ body {
           <ul>
             <li>
               Single covering background:
-              <pre class="bigger"><code class="language-css">.container {
+              <pre><code class="language-css">.container {
   background-image: url(../img/bg_full.png); /* note the ../ */
   background-size: 100% 100%; /* fully stretch horizontal and vertical */
   background-size: cover; /* other option: fully cover but keep aspect ratio */
@@ -824,7 +824,7 @@ body {
             </li>
             <li>
               Single background image:
-              <pre class="bigger"><code class="language-css">.container {
+              <pre><code class="language-css">.container {
   background-image: url(../img/icon.png); /* note the ../ */
   background-repeat: no-repeat;
   background-position: top center; /* horizontal and vertical position */
@@ -834,7 +834,7 @@ body {
             </li>
             <li>
               Repeating background:
-              <pre class="bigger"><code class="language-css">.container {
+              <pre><code class="language-css">.container {
   background-image: url(../img/visual.png);
   background-repeat: repeat-y; /* other options are repeat-x, repeat */
   background-position: center; /* other options are left, right  */
@@ -847,7 +847,7 @@ body {
           <ul>
             <li>
               Simple image replacement:
-              <pre class="bigger"><code class="language-css">a.replace_me {
+              <pre><code class="language-css">a.replace_me {
   display: block;
   width: 20rem;
   height: 10rem;
@@ -866,13 +866,13 @@ body {
           <ul>
             <li>
               Using a generic <code>ir</code> class:
-              <pre class="bigger"><code class="language-html" data-caption>&lt;ul&gt;
+              <pre><code class="language-html" data-caption>&lt;ul&gt;
   &lt;li class="ir facebook"&gt;&lt;a href="#"&gt;facebook&lt;/a&gt;&lt;/li&gt;
   &lt;li class="ir twitter"&gt;&lt;a href="#"&gt;twitter&lt;/a&gt;&lt;/li&gt;
   &lt;li class="ir gplus"&gt;&lt;a href="#"&gt;google+&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </code></pre>
-              <pre class="bigger"><code class="language-css" data-caption="start.css">/* generic part */
+              <pre><code class="language-css" data-caption="start.css">/* generic part */
 .ir {
   display: block;
   white-space: nowrap;
@@ -880,7 +880,7 @@ body {
   overflow: hidden;
   background-size: 100% 100%;
 }</code></pre>
-              <pre class="bigger"><code class="language-css" style="height: 150px" data-caption="styles.css">/* non-generic part */
+              <pre><code class="language-css" style="height: 150px" data-caption="styles.css">/* non-generic part */
 li.facebook a {
   width: 5rem;
   height: 5rem;
@@ -907,7 +907,7 @@ li.gplus a {
           <ul>
             <li>
               Spritesheets:
-              <pre class="bigger"><code class="language-css">a.replace_me {
+              <pre><code class="language-css">a.replace_me {
   ...
   width: 5rem;
   height: 5rem;
@@ -943,7 +943,7 @@ li.gplus a {
           <ul>
             <li>
               To get a total width of e.g. 250px, you need to substract horizontal borders and paddings:
-              <pre class="bigger"><code class="language-css" contenteditable>p {
+              <pre><code class="language-css" contenteditable>p {
   background-color: #ccc;
   border: 2px solid black;
   margin: 10px;
@@ -959,7 +959,7 @@ li.gplus a {
           <ul>
             <li>
               Two 50% columns with fixed with borders/paddings are even impossible with this model:
-              <pre class="bigger"><code class="language-css" contenteditable data-selector=".reveal #boxsizedemo1">.container {
+              <pre><code class="language-css" contenteditable data-selector=".reveal #boxsizedemo1">.container {
   border: 4px dashed blue;
   overflow: hidden; /* cheap clearfix */
 }
@@ -984,7 +984,7 @@ li.gplus a {
           <ul>
             <li>
               You can fix this by setting <code>box-sizing: border-box</code>:
-              <pre class="bigger"><code class="language-css" contenteditable data-selector=".reveal #boxsizedemo2">.container {
+              <pre><code class="language-css" contenteditable data-selector=".reveal #boxsizedemo2">.container {
   border: 4px dashed blue;
   overflow: hidden; /* cheap clearfix */
 }
@@ -1010,7 +1010,7 @@ li.gplus a {
           <ul>
             <li>
               Beware however when aligning a line of text vertically: now you have to substract paddings and borders from line-height (which is unaffected by the box model)
-              <pre class="bigger"><code class="language-css" contenteditable data-selector=".reveal #boxsizedemo3">.box {
+              <pre><code class="language-css" contenteditable data-selector=".reveal #boxsizedemo3">.box {
   border: 5px solid #999;
   box-sizing: border-box; /* default is content-box */
   height: 60px;
@@ -1046,7 +1046,7 @@ li.gplus a {
           <ul>
             <li>
               Center box horizontally:
-              <pre class="bigger"><code class="language-css">.container {
+              <pre><code class="language-css">.container {
   ...
   margin: 0 auto; /* center box horizontally */
 }</code></pre>
@@ -1066,7 +1066,7 @@ li.gplus a {
           <ul>
             <li>
               Center text horizontally:
-              <pre class="bigger"><code class="language-css">.container {
+              <pre><code class="language-css">.container {
   ...
   text-align: center;
 }</code></pre>
@@ -1078,7 +1078,7 @@ li.gplus a {
           <ul>
             <li>
               Only works with single line of text:
-              <pre class="bigger"><code class="language-css">li a {
+              <pre><code class="language-css">li a {
   display: block; /* height only works with blocklevel elements */
   height: 5rem; /* set height */
   line-height: 5rem;
@@ -1092,13 +1092,13 @@ li.gplus a {
           <ul>
             <li>
               basic scheme:
-              <pre class="bigger"><code class="language-html" data-caption>&lt;div class="container clearfix"&gt;
+              <pre><code class="language-html" data-caption>&lt;div class="container clearfix"&gt;
   &lt;div class="box box1"&gt;&lt;/div&gt;
   &lt;div class="box box2"&gt;&lt;/div&gt;
   &lt;div class="box box3"&gt;&lt;/div&gt;
 &lt;/div&gt;
 </code></pre>
-              <pre class="bigger"><code class="language-css" data-caption contenteditable data-selector=".reveal #boxsizedemo4" style="height: 200px;">.container {
+              <pre><code class="language-css" data-caption contenteditable data-selector=".reveal #boxsizedemo4" style="height: 200px;">.container {
   border: 4px dashed blue;
 }
 .box {
@@ -1154,7 +1154,7 @@ li.gplus a {
           <ul>
             <li>
               prevent elements to have floated elements left and / or right:
-              <pre class="bigger"><code class="language-css" data-caption>h1, h2, h3, h4 {
+              <pre><code class="language-css" data-caption>h1, h2, h3, h4 {
   clear: left; /* always start on a new line */
 }
 footer {
@@ -1169,14 +1169,14 @@ footer {
           <ul>
             <li>
               remember to clear the next unfloated element:
-              <pre class="bigger"><code class="language-html" data-caption>&lt;div class="container clearfix"&gt;
+              <pre><code class="language-html" data-caption>&lt;div class="container clearfix"&gt;
   &lt;div class="box box1"&gt;&lt;/div&gt;
   &lt;div class="box box2"&gt;&lt;/div&gt;
   &lt;div class="box box3"&gt;&lt;/div&gt;
   &lt;div class="footerbox"&gt;&lt;/div&gt;
 &lt;/div&gt;
 </code></pre>
-              <pre class="bigger"><code class="language-css" data-caption contenteditable data-selector=".reveal #boxsizedemo4" style="height: 150px;">.container {
+              <pre><code class="language-css" data-caption contenteditable data-selector=".reveal #boxsizedemo4" style="height: 150px;">.container {
   border: 4px dashed blue;
 }
 .footerbox {
@@ -1217,7 +1217,7 @@ footer {
           <ul>
             <li>
               nice example with neat rows of boxes with different heights:
-              <pre class="bigger"><code class="language-html" data-caption>&lt;div class="container clearfix"&gt;
+              <pre><code class="language-html" data-caption>&lt;div class="container clearfix"&gt;
   &lt;div class="box"&gt;&lt;/div&gt;
   &lt;div class="box"&gt;&lt;/div&gt;
   &lt;div class="box"&gt;&lt;/div&gt;
@@ -1233,7 +1233,7 @@ footer {
           <ul>
             <li>
               the CSS:
-              <pre class="bigger"><code class="language-css" data-caption contenteditable data-selector=".reveal #boxsizedemo5" style="height: 200px;">.container {
+              <pre><code class="language-css" data-caption contenteditable data-selector=".reveal #boxsizedemo5" style="height: 200px;">.container {
   border: 2px dashed blue;
   width: 490px;
 }
@@ -1326,7 +1326,7 @@ footer {
           <ul>
             <li>
               example for images in a flexible context:
-              <pre class="bigger"><code class="language-css" data-caption contenteditable data-selector=".reveal #boxsizedemo6" style="height: 200px;">.container {
+              <pre><code class="language-css" data-caption contenteditable data-selector=".reveal #boxsizedemo6" style="height: 200px;">.container {
   border: 2px dashed blue;
   resize: horizontal;
   width: 200px;
@@ -1364,14 +1364,14 @@ footer {
           <ul>
             <li>
               Option 1: download fonts and include them:
-              <pre class="bigger"><code class="language-css">@font-face {
+              <pre><code class="language-css">@font-face {
  font-family: 'LeagueGothic';
  src: url(../fonts/LeagueGothic.otf);
 }</code></pre>
             </li>
             <li>
               Option 2: find online hosted fonts, e.g. <a href="https://www.google.com/fonts/">Google fonts</a>, and include the code in the <code>&lt;head&gt;</code>:
-              <pre class="bigger"><code class="language-html">&lt;head&gt;
+              <pre><code class="language-html">&lt;head&gt;
   ...
   &lt;link rel="stylesheet"
     href="https://fonts.googleapis.com/css?family=Open+Sans:400,600italic,800"&gt;
@@ -1394,7 +1394,7 @@ footer {
               Gradients:
             </li>
             <li class="no-style">
-              <pre class="bigger"><code class="language-css" contenteditable data-subject="#gradientdemo" data-step="2">background: -webkit-linear-gradient(top, #fff 10%, #fff057 90%);
+              <pre><code class="language-css" contenteditable data-subject="#gradientdemo" data-step="2">background: -webkit-linear-gradient(top, #fff 10%, #fff057 90%);
 background: -o-linear-gradient(top, #fff 10%, #fff057 90%);
 background: -moz-linear-gradient(top, #fff 10%, #fff057 90%);
 background: -ms-linear-gradient(top, #fff 10%, #fff057 90%);
@@ -1424,7 +1424,7 @@ background: linear-gradient(top, #fff 10%, #fff057 90%);
               </ul>
             </li>
             <li class="no-style">
-              <pre class="bigger"><code class="language-css" contenteditable data-subject="#shadowdemo">box-shadow: 10px 10px 5px #888;
+              <pre><code class="language-css" contenteditable data-subject="#shadowdemo">box-shadow: 10px 10px 5px #888;
 text-shadow: 2px 2px 5px #008;
 border-radius: 5px 5px 5px 5px;
 </code></pre>
