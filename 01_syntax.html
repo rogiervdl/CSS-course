@@ -27,9 +27,16 @@
       <section>
         <section>
           <h1>CSS Syntax</h1>
-          <small>gebruik pijltjestoetsen om te navigeren</small>
+          <p class="frontslide__subtext">
+            [PB] enkel voor professional bachelor<br>
+            [GR] enkel voor graduaat<br>   
+            [O] optioneel, sterk aanbevolen voor wie wil verdergaan in web
+          </p>
+          <p class="frontslide__subtext">
+            gebruik pijltjestoetsen om te navigeren
+          </p>
           <figure>
-            <img src="img/01_syntax/icon.jpg" alt="" class="border" />
+            <img src="img/01_syntax/icon.jpg" alt="" class="frontslide__icon" />
           </figure>
           <footer>
             <a href="http://www.odisee.be/">odisee.be</a> &mdash; <a href="mailto:rogier.vanderlinde@odisee.be">rogier.vanderlinde@odisee.be</a>
@@ -39,7 +46,7 @@
       <section>
         <section>
           <h1>CSS</h1>
-          <h2>CSS gebruiken</h2>
+          <h2>Stylesheets</h2>
           <ul class="chapterlist">
             <!-- to be filled by Javascript -->
           </ul>
@@ -66,7 +73,7 @@
           </ul>
         </section>
         <section>
-          <h2>Stijlen toevoegen &mdash; inline</h2>
+          <h2>Inline Stijlen</h2>
           <ul>
             <li>
               Je kan stijlen <em>inline</em> toevoegen, dus rechtstreeks in je HTML, via het <code>style</code> attribuut:
@@ -83,7 +90,7 @@
           </ul>
         </section>
         <section>
-         <h2>Stijlen toevoegen &mdash; intern</h2>
+         <h2>Interne stijlen</h2>
          <ul>
             <li>
                Je kan stijlen ook <em>intern</em> toevoegen in een <code>&lt;style&gt;</code> blok in de <code>&lt;head&gt;</code>:
@@ -110,7 +117,7 @@
           </ul>
         </section>
         <section>
-         <h2>Stijlen toevoegen &mdash; extern</h2>
+         <h2>Extern gelinkte stijlen</h2>
           <ul>
             <li>
               De beste methode is een apart CSS bestand of <em>stylesheet</em> linken aan je HTML document:
@@ -147,42 +154,15 @@ body {
               <pre><code class="language-html">...
 &lt;head&gt;
   ...
-  &lt;link rel="stylesheet" href="css/common.css" /&gt;
-  &lt;link rel="stylesheet" href="css/site.css" /&gt;
-  &lt;link rel="stylesheet" href="css/home.css" /&gt;
+  &lt;link rel="stylesheet" href="css/common.css"&gt;
+  &lt;link rel="stylesheet" href="css/site.css"&gt;
+  &lt;link rel="stylesheet" href="css/home.css"&gt;
   ...
 &lt;/head&gt;
 ...</code></pre>
             </li>
             <li class="no-style smallfont">
                &rarr; dit laat toe je CSS te organiseren in meerdere bestanden
-            </li>
-          </ul>
-        </section>
-        <section>
-          <h2>[@import]</h2>
-          <ul>
-            <li>
-              Je kan zelfs stylesheets linken <i>in</i> stylesheets met <code><em>@import</em></code>:
-              <pre><code class="language-html" data-caption="index.html">...
-&lt;head&gt;
-  ...
-  &lt;link rel="stylesheet" href="css/allstyles.css" /&gt;
-  ...
-&lt;/head&gt;
-...</code></pre>
-              <pre><code class="language-css" data-caption="allstyles.css">@import "common.css";
-@import "theme.css";
-@import "layout.css";
-@import "header.css";
-@import "menus.css";
-@import "footer.css";                
-...</code></pre>
-            </li>
-            <li class="no-style smallfont">
-               &rarr; je hebt dan maar één gelinkt CSS bestand meer nodig
-               <br>&rarr; van hieruit worden alle andere CSS bestanden opgeroepen
-               <br>&rarr; het houdt de <code>&lt;head&gt;</code> leesbaar en is vooral besparend bij meerdere HTML pagina's
             </li>
           </ul>
         </section>
@@ -241,7 +221,63 @@ p {
             </li>
           </ul>
         </section>
-      </section>
+        <section data-toc-title="CSS layout">
+          <h2>CSS layout (1)</h2>
+          <ul>
+            <li>
+              Een goede CSS begint bij een <strong>degelijke layout</strong>:
+              <ul>
+                <li>elke property op <strong>aparte regels</strong></li>
+                <li>degelijke <strong>indentatie</strong></li>
+                <li>een <strong>spatie na elk dubbelpunt</strong></li>
+                <li>een <strong>open regel na elk blok</strong></li>
+                <li>properties <strong>alfabetisch gesorteerd</strong></li>
+              </ul>
+            </li>
+            <li>
+              dus niet...
+              <pre><code class="language-css wrong">p { line-height:1.3; color: #333 }
+ .box {
+   background-color: #666;
+   font-size:        1.2rem;
+   padding:          1rem 2rem;
+ }
+ @media (min-width: 50em) {
+ .box {
+   padding: 0;
+ }
+ }</code></pre>
+            </li>
+          </ul>
+        </section>
+        <section data-toc-title="">
+          <h2>CSS layout (2)</h2>
+          <ul>
+            <li class="no-style">
+              ...maar wel:
+              <pre><code class="language-css right">p {
+   color: #333;
+   line-height: 1.3;
+ }
+ 
+ .box {
+   background-color: #666;
+   font-size: 1.2rem;
+   padding: 1rem 2rem;
+ }
+ 
+ @media (min-width: 50em) {
+  .box {
+    padding: 0;
+  }
+ }</code></pre>
+            </li>
+            <li class="arrow smallfont">
+             tip: gebruik <strong>Shift-Alt-F</strong> in VS Code (installeer de <a href="https://rogiervdl.github.io/HTML-course/01_intro.html#/vs-code-extensies">CSS formatter extensie</a>)
+            </li>
+          </ul>
+        </section>
+       </section>
       <section>
         <section>
           <h1>CSS</h1>
@@ -251,188 +287,137 @@ p {
           </ul>
         </section>
         <section>
-          <h2>Tag selector</h2>
+          <h2>Elementen selecteren</h2>
           <ul>
             <li>
-              Een <em>tag selector</em> selecteert elementen op basis van tag naam:
-              <pre><code class="language-css">p { /* alle paragrafen */
-  ...
-}</code></pre>
-            </li>
-          </ul>
-        </section>
-        <section>
-          <h2>Id selector</h2>
-          <ul>
-            <li>
-              Een <em>id selector</em> selecteert een element op basis van het <code>id</code> attribuut:
-              <pre><code class="language-css">#btnLogin { /* element met id="btnLogin" */
-  ...
+              Selecteer elementen op basis van <strong>tagnaam</strong>, <strong>class</strong>- of <strong>id</strong> attribuut, of <strong>alle</strong>:
+              <pre><code class="language-css">p {
+  /* tag selector; selecteert &lt;p&gt; */
+}
+.message {
+  /* class selector; selecteert &lt;... class="message"&gt; */
+}
+.message.error {
+  /* multiple class selector; selecteert &lt;... class="message error"&gt; */
+}
+#lnk-login {
+  /* id selector; selecteert &lt;... id="lnk-login"&gt; */
+}
+* {
+  /* universele selector; selecteert alle elementen */
 }</code></pre>
             </li>
             <li class="arrow smallfont">
-               een <code>id</code> attribuut moet uniek zijn, dus deze selector kan maar één element selecteren
-             </li>
+              een <code>id</code> attribuut moet uniek zijn, dus een id selector kan maar één element selecteren
+            </li>
+            <li class="arrow smallfont">
+              een <code>class</code> attribuut hoeft niet uniek te zijn, dus deze selector kan meerdere elementen selecteren
+            </li>
            </ul>
         </section>
         <section>
-         <h2>Class selector</h2>
-         <ul>
-           <li>
-             Een <em>class selector</em> selecteert elementen op basis van <code>class</code> attribuut:
-             <pre><code class="language-css">.message { /* elementen met class="message" */
- ...
-}</code></pre>
-           </li>
-           <li class="arrow smallfont">
-            een <code>class</code> attribuut hoeft niet uniek te zijn, dus deze selector kan meerdere elementen selecteren
-          </li>
-         </ul>
-       </section>
-       <section>
-        <h2>Universele selector</h2>
-        <ul>
-          <li>
-            De <em>universele selector</em> selecteert alle elementen:
-            <pre><code class="language-css">* { /* alle elementen */
-  ...
-}</code></pre>
-          </li>
-          <li>
-            De universele selector is traag, dus gebruik overerving (zie verder) waar mogelijk, b.v.
-            <pre><code class="language-css wrong">* { 
-  font-size: 12px; /* toegepast op alle elementen = traag */
-}</code></pre>
-            <pre><code class="language-css right">body { 
-  font-size: 12px; /* toegepast op één element en overgeërfd door de rest = snel;  */
-}</code></pre>
-          </li>
-        </ul>
-      </section>
-     <section>
-         <h2>Selectors combineren</h2>
-         <ul>
-           <li>
-             Je kan selectors <em>combineren</em>:
-             <pre><code class="language-css">li.alternate { /* alle list items met class="alternate" */
- ...
-}
-#dialog1.open { /* element met id="dialog1" en class="open" */
- ...
-}
-a.button.green { /* alle links met class="button green" */
- ...
-}</code></pre>
-           </li>
-         </ul>
-       </section>
-      <section>
-          <h2>Pseudo class selector</h2>
+          <h2>Element toestand</h2>
           <ul>
             <li>
-              Een <em>pseudo class selector</em> selecteert elementen in een bepaalde toestand of positie:
-              <pre><code class="language-css">:focus { /* elk element dat de browser focus heeft */ }
-:first-child  { /* elementen die de eerste zijn binnen hun parent */ }
-
-a:hover { /* muispijl is boven de link */ }
-a:active { /* muispijl drukt de link in */ }
-
-li:first-child  { /* eerste item uit een lijst */ }
-tr:nth-of-type(odd)  { /* oneven rijen */ }
-</code></pre>
+              Selecteer elementen in een bepaalde <strong>toestand</strong>:
+              <pre><code class="language-css">a:hover {
+  /* selecteert hovered link */
+}
+textarea:focus {
+  /* selecteert focused &lt;textarea&gt; */
+}
+input[type=email]:invalid {
+  /* selecteert invalid &lt;input type="email"&gt; */
+}
+input:disabled {
+  /* selecteert disabled &lt;input&gt; */
+}</code></pre>
+            </li>
+            <li class="arrow smallfont">
+              men noemt dit ook <em>pseudo-class</em> selectoren
             </li>
           </ul>
         </section>
         <section>
-          <h2>Pseudo element selector</h2>
+          <h2>Element deel</h2>
           <ul>
             <li>
-              Een <em>pseudo element selector</em> selecteert een deel van een element:
-              <pre><code class="language-css">::selection { /* huidige cursor selectie */ }
-
-p::first-letter { /* eerste letter van een paragraaf */ }
-blockquote::first-line { /* eerste regel van een blockquote */ }</code></pre>
+              Selecteer een deel van een element:
+              <pre><code class="language-css">a::first-letter {
+  /* selecteert de eerste letter van &lt;a&gt; */
+}
+::selection {
+  /* selecteert het deel geselecteerd door de gebruiker */
+}
+li::before {
+  content: url(../img/bullet.png); /* injecteer content aan het begin */
+  /* meer properties van de nieuwe content */
+}
+li::after {
+  content: "some text"; /* injecteer content aan het einde */
+  /* meer properties van de nieuwe content */
+}              </code></pre>
+              <div class="demolink">
+                <a href="demos/01_syntax/before-after.html">::before en ::after demo</a>
+              </div>
+            </li>
+            <li class="arrow smallfont">
+              men noemt dit ook <em>pseudo-element</em> selectoren
             </li>
           </ul>
-          <div class="tooltip">
-            <div>
-              De dubbele dubbelpuntnotatie :: werd pas later geïntroduceerd in CSS3 om een onderscheid te maken tussen pseudo class en pseudo element selectors. 
-              Je kan nog steeds de oude enkele dubbelpunt notatie gebruiken:
-              <pre><code>em:first-letter { /* ... */ }
-p:first-line { /* ... */ }
-</code></pre>
-              Voor de duidelijkheid zullen we in deze cursus altijd de :: gebruiken voor pseudo element selectoren.
-            </div>
-          </div>
         </section>
         <section>
-          <h2>::before en ::after</h2>
+          <h2>Element positie</h2>
           <ul>
             <li>
-              Met de pseudo element selectoren <code>::before</code> en <code>::after</code> kan je inhoud injecteren aan het begin of het einde van elementen. Voorbeeld met custom bullets:
-              <div class="codescrollpanel"><pre><code class="language-html overlayrun" contenteditable style="height:200px">&lt;!doctype html&gt;
-&lt;html&gt;
-&lt;head&gt;
-  &lt;title&gt;before and after&lt;/title&gt;
-  &lt;meta charset="utf-8" /&gt;
-  &lt;style&gt;
-    li {
-      list-style: none; /* verwijder standaardbullets */
-    }
-    li::before {
-      content: "👉";
-      font-size: 12px;
-      margin-right: 5px;
-    }
-    li::after {
-      content: "👈";
-      font-size: 12px;
-      margin-left: 5px;
-    }
-  &lt;/style&gt;
-&lt;/head&gt;
-&lt;body&gt;
-  &lt;ul&gt;
-    &lt;li&gt;item 1&lt;/li&gt;
-    &lt;li&gt;item 2&lt;/li&gt;
-    &lt;li&gt;item 3&lt;/li&gt;
-  &lt;/ul&gt;
-&lt;/body&gt;
-&lt;/html&gt;</code></pre></div>
-            </li>
-          </ul>
-        </section>
-        <section data-toc-title="Contextuele selector">
-          <h2>Contextuele selector (1)</h2>
-          <ul>
-            <li>
-              Een <em>contextuele selector</em> selecteert een element ten opzichte van een ander element
-            </li>
-            <li>
-              Een spatie betekent <strong>genest in</strong> (lees van rechts naar links):
-              <pre><code class="language-css smallfont">#leftcol p { /* paragrafen <strong>genest in</strong> het element met id="leftcol" */
-  ...
+              Specifieer de positie van een element:
+              <pre><code class="language-css">h1 + p {
+  /* selecteert &lt;p&gt; direct volgend op een &lt;h1&gt; */
 }
-nav li.active a { /* links <strong>genest in</strong> list items met class="active" <strong>genest in</strong> nav element */
-  ...
+li + li {
+  /* selecteert alle &lt;li&gt;'s behalve de eerste */
+}
+li:first-child {
+  /* selecteert een &lt;li&gt; die de eerste child is van zijn parent */
+}
+#content > section {
+  /* selecteert &lt;section&gt; direct genest in &lt;... id="content"&gt; */
+}
+tr:nth-child(odd) {
+  /* selecteert oneven &lt;tr&gt;'s */
+}
+section:nth-child(3n+1) {
+  /* selecteert &lt;section&gt;'s nummer 1, 4, 7... */
 }</code></pre>
             </li>
           </ul>
         </section>
-        <section data-toc-title="">
-          <h2>Contextuele selector (2)</h2>
+        <section>
+          <h2>Element attribuut</h2>
           <ul>
             <li>
-               Een '>' betekent <strong>direct genest in</strong> (zonder er nog elementen tussen):
-              <pre><code class="language-css">header > p { /* paragrafen direct genest in de header */
-  ...
-}
-</code></pre>
+              Selecteer elementen op basis van een attribuut:
+              <pre><code class="language-css">select[multiple] { ... }    /* "heeft", b.v. &lt;select multiple&gt; */
+input[type=button] { ... }  /* "is", b.v. &lt;input type="button"&gt; */
+a[title*=flower] { ... }    /* "bevat", b.v. &lt;a title="...flower..."&gt; */
+img[src^=https://] { ... }  /* "begint met", b.v. &lt;img src="https://..."&gt; */
+a[href$=".pdf"] { ... }     /* "eindigt met", b.v. &lt;a href="....pdf"&gt; */</code></pre>
             </li>
+          </ul>
+        </section>
+         <section>
+          <h2>Selectors combineren</h2>
+          <ul>
             <li>
-               Een '+' betekent <strong>direct volgend op</strong>:
-              <pre><code class="language-css">h2 + p { /* pagagrafen direct volgend op h2's' */
-  ...
+              Combineer selectors:
+              <pre><code class="language-css">p.message {
+  /* tag-class selector; selecteert &lt;p class="message"&gt; */
+}
+nav#mainmenu {
+  /* tag-id selector; selecteert &lt;nav id="mainmenu"&gt; */
+}
+#mainmenu.open {
+  /* id-class selector; selecteert &lt;... id="mainmenu" class="open"&gt; */
 }
 </code></pre>
             </li>
@@ -443,13 +428,6 @@ nav li.active a { /* links <strong>genest in</strong> list items met class="acti
           <ul>
             <li>
               Groepeer verschillende selectors met dezelfde stijlen in een komma-lijst:
-              <pre><code class="language-css">input, #mainmenu a:hover, p.formpar {
-  color: blue;
-}
-</code></pre>
-            </li>
-            <li class="no-style">
-              &rarr; dit is gelijk aan:
               <pre><code class="language-css">input {
   color: blue;
 }
@@ -460,6 +438,31 @@ p.formpar {
   color: blue;
 }</code></pre>
             </li>
+            <li class="no-style">
+              &rarr; is hetzelfde als:
+              <pre><code class="language-css">input, #mainmenu a:hover, p.formpar {
+  color: blue;
+}</code></pre>
+            </li>
+          </ul>
+        </section>
+        <section>
+          <h2>Selectors nesten</h2>
+          <ul>
+            <li>
+              Een spatie betekent <strong>genest in</strong> (lees van rechts naar links):
+              <pre><code class="language-css">#leftcol p { /* paragrafen <strong>genest in</strong> het element met id="leftcol" */
+  ...
+}
+nav li.active a { /* links <strong>genest in</strong> list items met class="active" <strong>genest in</strong> nav element */
+  ...
+}</code></pre>
+            </li>
+            <li class="arrow" style="font-style: italic;">
+              dit was maar een kort overzicht van selectors; voor een overzicht zie de <a href="            cheatsheet.html            
+              ">CSS cheatsheet</a>
+            </li>
+
           </ul>
         </section>
 
@@ -488,9 +491,6 @@ p.formpar {
    font-size: 10px;
    margin-bottom: 6px;
 }</code></pre>
-            </li>
-            <li class="arrow smallfont">
-              gouden tip: sorteer je properties alfabetisch! zo vind je ze makkelijk terug
             </li>
           </ul>
         </section>
@@ -578,7 +578,7 @@ p.formpar {
           <h2>Prioriteit</h2>
           <ul>
             <li>
-              Het <strong>gewicht</strong> van de selector bepaalt dus de prioriteit. Als vuistregel geldt: eerst inline styles, dan id selectors, daarna class selectors en tenslotte tag selectors. Neem volgend fragment: 
+              Het <strong>gewicht</strong> van de selector bepaalt dus de prioriteit, meer dan de volgorde. Als vuistregel geldt: eerst inline styles, dan id selectors, daarna class selectors en tenslotte tag selectors. Neem volgend fragment: 
               <pre><code class="language-css">div#idtest {
   font-size: 12px;
 }
@@ -626,101 +626,32 @@ div.ctest {
             </li>
           </ul>
         </section>
-      </section>
-      <section>
-        <section>
-          <h1>CSS</h1>
-          <h2>Geavanceerde selectors <sup>[O]</sup></h2>
-          <ul class="chapterlist">
-            <!-- to be filled by Javascript -->
-          </ul>
-        </section>
-        <section>
-          <h2>Attribuut selector <sup>[0]</sup> </h2>
+        <section data-toc-title="sorting">
+          <h2>Tip 1: sorteer je properties</h2>
           <ul>
             <li>
-              Een <em>attribuut selector</em> selecteert elementen op basis van een attribuut:
-              <pre><code class="language-css">select[multiple] { ... }    /* "heeft", b.v. &lt;select multiple&gt; */
-input[type=button] { ... }  /* "is", b.v. &lt;input type="button"&gt; */
-a[title*=flower] { ... }    /* "bevat", b.v. &lt;a title="...flower..."&gt; */
-img[src^=https://] { ... }  /* "begint met", b.v. &lt;img src="https://..."&gt; */
-a[href$=".pdf"] { ... }     /* "eindigt met", b.v. &lt;a href="....pdf"&gt; */</code></pre>
+              Sorteer je properties alfabetisch:
             </li>
-          </ul>
-        </section>
-        <section data-toc-title="Meer pseudo class selectors">
-          <h2>Meer pseudo classes (1) <sup>[0]</h2>
-          <ul>
-            <li>
-              Structurele pseudo class selectors...
-              <div><pre><code class="language-css verysmallpanel">p:first-child { ... }   /* eerste child, als het een paragraaf is */
-p:last-child { ... }    /* laatste child, als het een paragraaf is */
-p:first-of-type { ... } /* eerste paragraph */
-p:last-of-type { ... }  /* laatste paragraph */
-p:nth-of-type(3n+1)     /* paragrafen 1, 4, 7... */
-p:nth-child(4n+2)       /* child 2, 6, 10..., als het een paragraaf is */</code></pre></div>
-            </li>
-          </ul>
-        </section>
-        <section data-toc-title="">
-          <h2>Meer pseudo classes (2) <sup>[0]</h2>
-          <ul>
-            <li>
-              ...en form pseudo class selectors...
-              <div><pre><code class="language-css verysmallpanel">input:enabled { ... }   /* enabled input */
-input:disabled { ... }  /* disabled input */
-input:checked { ... }   /* checked input */
-input:required { ... }  /* vereiste input; zelfde als input[required] */
-input:valid { ... }     /* geldige input */
-input:invalid { ... }   /* ongeldige input */</code></pre></div>
-            </li>
-          </ul>
-        </section>
-        <section data-toc-title="">
-          <h2>Meer pseudo classes (3) <sup>[0]</h2>
-          <ul>
-            <li>
-              ...en nog meer pseudo class selectors:
-              <div><pre><code class="language-css verysmallpanel">:only-of-type { ... }  /* element uniek van dit type in zijn parent */
-:only-child { ... }    /* element uniek in zijn parent */
-:empty { ... }         /* leeg element */
-:target { ... }        /* is target van huidige link */
-:not(.p) { ... }        /* alles behalve een paragraaf */</code></pre></div>
-            </li>
-            <li class="no-style smallfont">
-              &rarr; check ook deze <a href="demos/01_syntax/target.html">:target demo</a><br>
-              &rarr; nog veel meer pseudo classses <a href="https://css4-selectors.com/selectors/">binnenkort in CSS4</a>
-            </li>
-          </ul>
-        </section>
-      </section>
-      <section>
-        <section>
-          <h1>CSS</h1>
-          <h2>CSS tips</h2>
-          <ul class="chapterlist">
-            <!-- to be filled by Javascript -->
-          </ul>
-        </section>
-        <section data-toc-title="CSS reset">
-          <h2>tip 1: gebruik een CSS reset</h2>
-          <ul>
-            <li>
-              Een <em>CSS reset</em> is een stukje CSS waarmee je elke pagina begint om ongewenste browser standaardwaarden te corrigeren.
-            </li>
-            <li><a href="http://www.cssreset.com/">Vele versies bestaan</a>, maar dit is alvast een goed begin:
-              <pre><code class="language-css">* {
-  box-sizing: border-box;
+            <li class="no-style">
+              <pre><code class="language-css">.some-element {
+  /* kijk nog niet teveel naar de CSS; merk op hoe de properties gesorteerd zijn van a-z */
+  background-color: #A2C355;
+  border: 2px solid #A2C355;
+  border-radius: 2px;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 14px;
+  line-height: 18px;
+  padding: 9px 24px;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: background 0.15s, color 0.15s ease-in-out;
 }
-img {
-  max-width: 100%;
-}</code></pre>
+</code></pre>
             </li>
             <li class="arrow smallfont">
-              zet dit aan de top van je CSS
-            </li>
-            <li class="arrow smallfont">
-              je kan het later altijd uitbreiden als je wil
+              dit helpt je properties sneller terug te vinden en maakt de code leesbaarder
             </li>
           </ul>
         </section>
@@ -752,40 +683,424 @@ div#wrapper {
             </li>
           </ul>
         </section>
-        <section data-toc-title="sorting">
-          <h2>Tip 3: sorteer je properties</h2>
-          <ul>
-            <li>
-              Sorteer je properties alfabetisch:
-            </li>
-            <li class="no-style">
-              <pre><code class="language-css">.some-element {
-  /* don't worry about the CSS itself; note how properties are sorted a-z */
-  background-color: #A2C355;
-  border: 2px solid #A2C355;
-  border-radius: 2px;
-  color: #fff;
-  cursor: pointer;
-  display: inline-block;
-  font-size: 14px;
-  line-height: 18px;
-  padding: 9px 24px;
-  text-decoration: none;
-  text-transform: uppercase;
-  transition: background 0.15s, color 0.15s ease-in-out;
-}
-</code></pre>
-            </li>
-            <li class="arrow smallfont">
-              dit helpt je properties sneller terug te vinden en maakt de code leesbaarder
-            </li>
+      </section>
+      <section>
+        <section>
+          <h1>CSS</h1>
+          <h2>Chrome Inspector</h2>
+          <ul class="chapterlist">
+            <!-- to be filled by Javascript -->
           </ul>
         </section>
-        <section data-toc-title="BEM">
-          <h2>Tip 4: gebruik BEM (1) <sup>[0]</sup></h2>
+        <section>
+         <h2>CSS inspecteren</h2>
+         <ul>
+           <li>
+             Inspecteer een element en bekijk de CSS eigenschappen:
+            </li>
+            <li class="no-style">  
+              <img src="img/01_syntax/ss2.png" class="shadowbox" alt="" style="width: 70%">
+           </li>
+         </ul>
+       </section>
+       <section>
+        <h2>Stijl uitschakelen</h2>
+        <ul>
+           <li>
+             Schakel stijlen tijdelijk in en uit met de checkboxes:
+            </li>
+            <li class="no-style">  
+              <img src="img/01_syntax/ss3.png" class="shadowbox" alt="" style="width: 70%">
+           </li>
+         </ul>
+       </section>
+       <section>
+        <h2>Toegepaste stijlen inspecteren</h2>
+         <ul>
+           <li>
+             Ontdek welke stijl uiteindelijk van toepassing is, en waarom:
+          </li>
+          <li class="no-style">  
+            <img src="img/01_syntax/ss4.png" class="shadowbox" alt="" style="width: 70%">
+           </li>
+         </ul>
+       </section>
+       <section>
+        <h2>Element state inschakelen</h2>
+         <ul>
+           <li>
+             Schakel element states als hover en focus in:
+            </li>
+            <li class="no-style">  
+              <img src="img/01_syntax/ss5.png" class="shadowbox" alt="" style="width: 70%">
+           </li>
+         </ul>
+       </section>
+       <section>
+        <h2>Box model inspecteren</h2>
+         <ul>
+           <li>
+             Bekijk afmetingen en diktes van border, margin en padding:
+            </li>
+            <li class="no-style">  
+              <img src="img/01_syntax/ss6.png" class="shadowbox" alt="" style="width: 70%">
+           </li>
+         </ul>
+       </section>
+       <section>
+        <h2>Waarde aanpassen</h2>
+         <ul>
+           <li>
+             Experimenteer door andere property waarden uit te proberen:
+            </li>
+            <li class="no-style">  
+              <img src="img/01_syntax/ss7.png" class="shadowbox" alt="" style="width: 70%">
+           </li>
+         </ul>
+       </section>
+       <section>
+        <h2>Properties filteren</h2>
+         <ul>
+           <li>
+             Vind snel een property via het zoekvenster:
+            </li>
+            <li class="no-style">  
+              <img src="img/01_syntax/ss8.png" class="shadowbox" alt="" style="width: 70%">
+           </li>
+         </ul>
+       </section>
+       <section>
+        <h2>Stijlregel toevoegen</h2>
+         <ul>
+           <li>
+             Experimenteer door nieuwe stijlregels toe te voegen:
+            </li>
+            <li class="no-style">  
+              <img src="img/01_syntax/ss9.png" class="shadowbox" alt="" style="width: 70%">
+           </li>
+         </ul>
+       </section>
+       <section>
+         <h2>HTML node verwijderen</h2>
+         <ul>
+           <li>
+             Debug een fout door een HTML node tijdelijk te verwijderen:
+            </li>
+            <li class="no-style flex-1-1">  
+              <img src="img/01_syntax/ss10a.png" class="shadowbox" alt="" style="width: 49%;">
+              <img src="img/01_syntax/ss10b.png" class="shadowbox" alt="" style="width: 49%;">
+           </li>
+         </ul>
+       </section>
+      </section>
+      <section>
+        <section>
+          <h1>CSS</h1>
+          <h2>Organisatie [PB]</h2>
+          <ul class="chapterlist">
+            <!-- to be filled by Javascript -->
+          </ul>
+        </section>
+       <section>
+         <h2>Meerdere stylesheets</h2>
+         <ul>
+           <li>
+             Een website bestaat uit verschillende HTML pagina's. Splits je CSS over meerdere bestanden. Een suggestie (maar denk gerust na over een andere opdeling):
+             <ul class="arrow">
+               <li>
+                 <code><strong>start.css</strong></code>: alle CSS gemeenschappelijk voor alle sites
+               </li>
+               <li>
+                 <code><strong>common.css</strong></code> alle CSS gemeenschappelijk voor alle pagina's van deze site
+               </li>
+               <li>
+                 <code><strong>index.css</strong>, <strong>contact.css</strong></code>... alle pagina-specifieke CSS
+               </li>
+             </ul>
+             </li>
+             <li>
+               De opdeling voor b.v. een pagina <code>products.html</code> wordt dan:
+             <pre><code class="language-html" data-caption="products.html">...
+&lt;head&gt;
+  ...
+  &lt;link rel="stylesheet" href="css/start.css"&gt;
+  &lt;link rel="stylesheet" href="css/common.css"&gt;
+  &lt;link rel="stylesheet" href="css/products.css"&gt;
+  ...
+&lt;/head&gt;
+...</code></pre>
+           </li>
+           <li class="arrow smallfont">
+               één groot CSS bestand voor een hele site is echt geen optie!
+           </li>
+           <li class="arrow smallfont">
+               vermijd dubbele CSS in de verschillende CSS bestanden!
+           </li>
+         </ul>
+       </section>
+       <section data-toc-title="">
+         <h2>Start.CSS</h2>
+         <ul>
+           <li>
+            <em><code>start.css</code></em> (of <em><code>reset.css</code></em> als je wil) bevat alle universeel herbruikbare CSS; een voorbeeld:
+             <pre><code class="language-css smallpanel" data-caption="start.css">/**
+* Generic styles for site &lt;site-name&gt;
+*
+* @author Rogier van der Linde <rogier.vanderlinde@odisee.be>
+*
+*/
+
+/* nuttig voor alle sites */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+ 
+img {
+  max-width: 100%;
+}
+
+/* enkel nuttig als je met rem eenheden wil werken */
+
+html {
+  font-size: 0.625em;
+}
+
+body {
+  font-size: 1.6em;
+}
+
+</code></pre>
+           </li>
+         </ul>
+       </section>
+       <section data-toc-title="Common CSS">
+         <h2>Common.CSS</h2>
+         <ul>
+           <li>
+             <em><code>common.css</code></em> bevat alle CSS gemeenschappelijk voor alle pagina's:
+             <ul>
+               <li>opmaak voor links, tekst, titels...</li>
+               <li>header met logo, menu...</li>
+               <li>footer</li>
+               <li>algemene media queries</li>
+             </ul>
+           </li>
+           <li>
+             Structureer je stylesheet met commentaar op een consistente manier; voorbeeld:
+             <pre><code class="language-css verysmallpanel" data-caption="common.css">/**
+* Common styles for site &lt;site-name&gt;
+*
+* @author Rogier van der Linde <rogier.vanderlinde@odisee.be>
+*
+*/
+
+/* ===========================================
+  General
+  =========================================== */
+
+/* general layout */
+
+.wrapper {
+ margin: 0 auto;
+ min-width: 32rem;
+ max-width: 96rem;
+ padding: 0 1rem;
+}
+
+/* element styles */
+
+body {
+ font-size: 1.3rem; /* standard font size */
+ font-family: verdana, Arial, Helvetica, sans-serif;
+ /* ... */
+}
+
+a {
+ /* ... */
+}
+
+p {
+ /* ... */
+}
+
+h1, h2, h3, h4 {
+ /* ... */
+}
+
+/* class styles */
+
+.more {
+ /* ... */
+}
+
+.bigger {
+ /* ... */
+}
+
+/* ===========================================
+  Header
+  =========================================== */
+
+/* general */
+/* ... */
+
+/* logo */
+/* ... */
+
+/* main menu */
+/* ... */
+
+/* ===========================================
+  Content
+  =========================================== */
+
+/* ...content styles... */
+
+/* ===========================================
+  Doormat
+  =========================================== */
+
+/* general */
+/* ... */
+
+/* left column */
+/* ... */
+
+/* middle column */
+/* ... */
+
+/* right column */
+/* ... */
+
+/* ===========================================
+  Footer
+  =========================================== */
+
+/* ...footer styles... */
+
+/* ===========================================
+  Media queries
+  =========================================== */
+
+@media (min-width: 30em) { /* 30 * 16 = 480px */
+ /* your media queries here */
+ /* ... */
+}
+
+@media (min-width: 50em) { /* 50 * 16 = 800px */
+ /* your media queries here */
+ /* ... */
+}</code></pre>
+           </li>
+         </ul>
+       </section>
+       <section>
+         <h2>Products.css</h2>
+         <ul>
+           <li>
+             Voor de pagina-specifieke stylesheet, bv. <code>products.css</code>, gebruik je dezelfde structuur:
+             <pre><code class="language-css smallpanel" data-caption="products.css">/**
+* Page-specific styles for the products page
+*
+* @author Rogier van der Linde <rogier.vanderlinde@odisee.be>
+*
+*/
+
+/* ===========================================
+  General
+  =========================================== */
+
+/* general layout */
+/* ... */
+
+/* element styles */
+/* ... */
+
+/* class styles */
+/* ... */
+
+/* ===========================================
+  Content
+  =========================================== */
+
+/* ...content styles... */
+
+/* ===========================================
+  Media queries
+  =========================================== */
+
+@media (min-width: 30em) { /* 30 * 16 = 480px */
+ /* your media queries here */
+ /* ... */
+}
+
+@media (min-width: 50em) { /* 50 * 16 = 800px */
+ /* your media queries here */
+ /* ... */
+}</code></pre>
+           </li>
+         </ul>
+       </section>
+       <section>
+        <h2>Common.css opgesplitst</h2>
+        <ul>
+          <li>
+            Bij grotere sites is het nuttig <code>common.css</code> verder op te splitsen in meer CSS bestanden:
+            <pre><code class="language-html" data-caption="index.html">...
+&lt;head&gt;
+  ...
+  &lt;link rel="stylesheet" href="css/start.css"&gt;
+  &lt;!-- begin common styles --&gt;
+  &lt;link rel="stylesheet" href="css/theme.css"&gt;
+  &lt;link rel="stylesheet" href="css/layout.css"&gt;
+  &lt;link rel="stylesheet" href="css/header.css"&gt;
+  &lt;link rel="stylesheet" href="css/menus.css"&gt;
+  &lt;link rel="stylesheet" href="css/footer.css"&gt;
+  &lt;!-- end common styles --&gt;
+  &lt;link rel="stylesheet" href="css/index.css"&gt;
+  ...
+&lt;/head&gt;
+...</code></pre>
+          </li>
+          <li class="arrow smallfont">
+            voordeel: je vindt de CSS van de verschillende onderdelen veel makkelijker terug
+          </li>
+          <li class="arrow smallfont">
+              (klein) nadeel: er staan nu wel heel veel stylesheet links in de <code>&lt;head&gt;</code>
+          </li>
+      </ul>
+      </section>
+      <section>
+        <h2>common.css met @import</h2>
+        <ul>
+          <li>
+            Je kan de <code>&lt;head&gt;</code> verlichten door <code>common.css</code> te behouden, en van daaruit linken naar de deelbestanden <code>layout.css</code>, <code>header.css</code> enz... met <code><em>@import</em></code>:
+            <pre><code class="language-html" data-caption="index.html">...
+&lt;head&gt;
+  ...
+  &lt;link rel="stylesheet" href="css/start.css"&gt;
+  &lt;link rel="stylesheet" href="css/common.css"&gt;
+  &lt;link rel="stylesheet" href="css/index.css"&gt;
+  ...
+&lt;/head&gt;
+...</code></pre>
+            <pre><code class="language-css" data-caption="common.css">@import "theme.css";
+@import "layout.css";
+@import "header.css";
+@import "menus.css";
+@import "footer.css";                
+...</code></pre>
+          </li>
+        </ul>
+        </section>
+        <section data-toc-title="De BEM notatie">
+          <h2>De BEM notatie (1)</h2>
           <ul>
             <li>
-              Een typisch HTML fragment (b.v. productenpagina):
+              De <em>BEM</em> of <strong>Block-Element-Modifier</strong> notatie biedt een gestructureerde en uniforme manier om met selectoren om te gaan. Vertrekken we van volgend typisch HTML fragment:
               <pre><code class="language-html smallfont">&lt;main&gt;
   ...
   &lt;section&gt;
@@ -809,7 +1124,7 @@ div#wrapper {
           </ul>
         </section>
         <section data-toc-title="">
-          <h2>Tip 4: gebruik BEM (2) <sup>[0]</sup></h2>
+          <h2>De BEM notatie (2)</h2>
           <ul>
             <li>
               ...typisch zou je selectors gebruiken als:
@@ -835,7 +1150,7 @@ div#wrapper {
           </ul>
         </section>
         <section data-toc-title="">
-          <h2>Tip 4: gebruik BEM (3) <sup>[0]</sup></h2>
+          <h2>De BEM notatie (3)</h2>
           <ul>
             <li>
               De meeste CSS is zo geschreven, en dat is oké. 
@@ -861,7 +1176,7 @@ div#wrapper {
           </ul>
         </section>
         <section data-toc-title="">
-          <h2>Tip 4: gebruik BEM (4) <sup>[0]</sup></h2>
+          <h2>De BEM notatie (4)</h2>
           <ul>
             <li>
               De meeste CSS lijdt aan deze problemen:
@@ -902,7 +1217,7 @@ div#wrapper {
           </ul>
         </section>
         <section data-toc-title="">
-          <h2>Tip 4: gebruik BEM (5) <sup>[0]</sup></h2>
+          <h2>De BEM notatie (5)</h2>
           <ul>
             <li>
               Onze BEM-verbeterde HTML:
@@ -929,7 +1244,7 @@ div#wrapper {
           </ul>
         </section>
         <section data-toc-title="">
-          <h2>Tip 4: gebruik BEM (6) <sup>[0]</sup></h2>
+          <h2>De BEM notatie (6)</h2>
           <ul>
             <li>
               ...en BEM CSS:
