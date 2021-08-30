@@ -33,7 +33,8 @@
             [O] optioneel, sterk aanbevolen voor wie wil verdergaan in web
           </p>
           <p class="frontslide__subtext">
-            gebruik pijltjestoetsen om te navigeren
+            gebruik pijltjestoetsen om te navigeren<br>
+            dotted codepanels zijn editeerbaar
           </p>
           <figure>
             <img src="img/01_syntax/icon.jpg" alt="" class="frontslide__icon" />
@@ -342,7 +343,7 @@ input:disabled {
           <h2>Element deel</h2>
           <ul>
             <li>
-              Selecteer een deel van een element:
+              Selecteer een <strong>deel</strong> van een element:
               <pre><code class="language-css">a::first-letter {
   /* selecteert de eerste letter van &lt;a&gt; */
 }
@@ -370,7 +371,7 @@ li::after {
           <h2>Element positie</h2>
           <ul>
             <li>
-              Specifieer de positie van een element:
+              Specifieer de <strong>positie</strong> van een element:
               <pre><code class="language-css">h1 + p {
   /* selecteert &lt;p&gt; direct volgend op een &lt;h1&gt; */
 }
@@ -396,7 +397,7 @@ section:nth-child(3n+1) {
           <h2>Element attribuut</h2>
           <ul>
             <li>
-              Selecteer elementen op basis van een attribuut:
+              Selecteer elementen op basis van een <strong>attribuut</strong>:
               <pre><code class="language-css">select[multiple] { ... }    /* "heeft", b.v. &lt;select multiple&gt; */
 input[type=button] { ... }  /* "is", b.v. &lt;input type="button"&gt; */
 a[title*=flower] { ... }    /* "bevat", b.v. &lt;a title="...flower..."&gt; */
@@ -409,7 +410,7 @@ a[href$=".pdf"] { ... }     /* "eindigt met", b.v. &lt;a href="....pdf"&gt; */</
           <h2>Selectors combineren</h2>
           <ul>
             <li>
-              Combineer selectors:
+              <strong>Combineer</strong> selectors:
               <pre><code class="language-css">p.message {
   /* tag-class selector; selecteert &lt;p class="message"&gt; */
 }
@@ -427,7 +428,7 @@ nav#mainmenu {
           <h2>Selectors groeperen</h2>
           <ul>
             <li>
-              Groepeer verschillende selectors met dezelfde stijlen in een komma-lijst:
+              <strong>Groepeer</strong> verschillende selectors met dezelfde stijlen in een komma-lijst:
               <pre><code class="language-css">input {
   color: blue;
 }

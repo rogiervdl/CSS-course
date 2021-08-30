@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Webtechnology &mdash; CSS design</title>
+  <title>CSS &mdash; design</title>
   <meta name="author" content="Rogier van der Linde - odisee.be">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <link rel="stylesheet" href="fonts/droidsans/webfont.css">
@@ -34,7 +34,8 @@
             [O] optioneel, sterk aanbevolen voor wie wil verdergaan in web
           </p>
           <p class="frontslide__subtext">
-            gebruik pijltjestoetsen om te navigeren
+            gebruik pijltjestoetsen om te navigeren<br>
+            dotted codepanels zijn editeerbaar
           </p>
           <figure>
             <img src="img/02_design/icon.jpg" alt="" class="frontslide__icon" />
@@ -47,98 +48,111 @@
       <section>
         <section id="units">
           <h1>CSS</h1>
-          <h2>Units</h2>
+          <h2>Eenheden</h2>
           <ul class="chapterlist">
             <!-- to be filled by Javascript -->
           </ul>
         </section>
         <section id="units_overview">
-          <h2>Overview</h2>
-          <p>Units used in this course:</p>
+          <h2>Overzicht</h2>
+          <p>Eenheden gebruikt in deze cursus:</p>
           <table id="units">
             <tr>
-              <th>Unit</th>
+              <th>Eenheid</th>
               <th>Type</th>
-              <th>Related to</th>
-              <th>Example</th>
+              <th>Gerelateerd met</th>
+              <th>Voorbeeld</th>
             </tr>
             <tr>
               <td>px</td>
-              <td>absolute</td>
+              <td>absoluut</td>
               <td>screen pixels</td>
               <td>p {font-size: 14px}</td>
             </tr>
             <tr>
-              <td>em</td>
+               <td>%</td>
+               <td>percentage</td>
+               <td>parent afmetingen of font size</td>
+               <td>.left {width: 20%}</td>
+             </tr>
+             <tr>
+              <td>em [PB]</td>
               <td>percentage</td>
               <td>parent element font size</td>
               <td>p {font-size: 1.2em}</td>
             </tr>
             <tr>
-              <td>rem</td>
+              <td>rem [PB]</td>
               <td>percentage</td>
               <td>root element font size</td>
               <td>p {font-size: 0.75rem}</td>
             </tr>
-            <tr>
-              <td>%</td>
-              <td>percentage</td>
-              <td>parent dimension or font size</td>
-              <td>.left {width: 20%}</td>
-            </tr>
           </table>
-          <ul class="arrow">
-            <li>more advanced units (not used in this course): vmin, vmax, vw, vh</li>
-            <li>even more units exist (ex, pt, pc, cm, in...) but none is useful in websites</li>
+          <ul>
+            <li class="arrow smallfont">er zijn nog meer eenheden (vmin, vmax, vw, vh) maar die worden niet gebruikt in deze cursus</li>
           </ul>
         </section>
         <section>
-          <h2>[px &mdash; definition]</h2>
+          <h2>px &mdash; definitie</h2>
           <ul>
             <li>
-              pi(cture) el(ement).
+              De <em>pixel</em> staat voor pi(cture) el(ement), en komt op schermen <i>meestal</i> overeen met <strong>één gekleurde punt</strong> op het scherm (maar niet altijd: bij retina schermen bv. zijn dit er 4 per pixel). 
             </li>
             <li>
-              on normal screens = 1 real pixel, on other devices complicated formula:<br />
-              <img src="img/02_design/px_definition.png" alt="px definition" />
+              De ware definitie is "kijkhoogte van 1/96 inch op gemiddelde armlengte" (ik <a href="http://inamidst.com/stuff/notes/csspx">verzin het niet</a>):<br />
+              <img src="img/02_design/px_definition.png" alt="px definition" width="300px">
+            </li>
+            <li class="arrow smallfont">
+              een pixel is dus eigenlijk een kijkhoek, geen afmeting; de maan is bijvoorbeeld 24.3px
+            </li>
+            <li class="arrow smallfont">
+              voor de praktijk mag je de pixel gelijkstellen aan een beeldschermpixel
             </li>
           </ul>
-          <div class="tooltip">
-            <div>
-              <p>So the pixel is actually an angle, not a size. The moon is 24.3px, for example. </p>
-              <p>A screen pixel is defined as the angle at 71cm distance, being the average arm length of a user. I kid you not. </p>
-            </div>
-          </div>
         </section>
         <section>
-          <h2>px &mdash; when to use</h2>
+          <h2>px &mdash; gebruik</h2>
           <ul>
             <li>
-              px is a <em>fixed unit</em>, used for sizes that <em>do not scale</em>, like borders and small icons:
+              De <em>px</em> wordt gebruikt voor <strong>vaste afmetingen</strong>, zoals borders, kleine afbeeldingen, knoppen...:
               <pre><code class="language-css">input[type=submit] {
   border: 2px solid #666;
 }
-img.icon_social {
+img.hamburger_icon {
+  height: 22px;
   width: 22px;
-  heigt: 22px;
+}
+.button {
+  height: 20px;
+  width: 120px;
 }</code></pre>
             </li>
-            <li class="arrow">
-              use <code>px</code> for fixed sizes
+            <li class="arrow smallfont">
+              gebruik <code>px</code> <strong>niet voor flexibele elementen</strong> (i.e. die moeten meeschalen bij verschillende schermbreedtes) als kolommen, banners, foto's...; daarvoor gebruik je percentages (zie volgende slide) 
             </li>
           </ul>
-          <div class="tooltip">
-            <div>
-              <p>Small images like icons may become ugly when scaled continuously, so there using <code>px</code> makes sense</p>
-              <p>Note: although some use pixels everywhere, this makes responsive CSS much harder. For anything that should shrink or grow depending on screen size, use other units, like <code>em</code>, <code>rem</code> or <code>%</code></p>
-            </div>
-          </div>
         </section>
-        <section data-toc-title="EM definition">
-          <h2>[Em &mdash; definition (1)]</h2>
+        <section>
+          <h2>% &mdash; definitie en gebruik</h2>
           <ul>
             <li>
-              in ancient times defined as the height of metal letter bodies, which was square for the letter M:
+              De <em>%</em> betekent <strong>percentage van parent afmetingen</strong>. Je kan het gebruiken om <code>width</code> en/of <code>height</code> van een child element in te stellen:
+              <pre><code class="language-css">img {
+  max-width: 600px;
+  width: 80%; /* 80% of the parent's width */
+}
+</code></pre>
+              <div class="demolink">
+                <a href="demos/02_design/01_units/percentage.html">demo</a>
+              </div>
+            </li>
+          </ul>
+        </section>
+        <section>
+          <h2>Em &mdash; definitie <sup>[PB]</sup></h2>
+          <ul>
+            <li>
+              Historisch betekent <em>em</em> de hoogte van een zetletter, die vierkant was voor de letter M:
             </li>
             <li class="no-style">
               <div class="clearfix" style="width: 100%">
@@ -154,194 +168,125 @@ img.icon_social {
             </li>
           </ul>
         </section>
-        <section data-toc-title="">
-          <h2>[Em &mdash; definition (2)]</h2>
+        <section>
+          <h2>Em &mdash; definitie en gebruik <sup>[PB]</sup></h2>
           <ul>
             <li>
-              in digital fonts with serifs (the little ornaments at the end of letters), the actual height may be a little more than <code>1em</code>:
-            </li>
-            <li class="no-style">
-              <div class="clearfix" style="width: 100%">
-                <figure style="float: left">
-                  <img src="img/02_design/metrics.png" alt="font metrics" />
-                  <figcaption><a href="http://learn.scannerlicker.net/2014/07/31/so-how-much-is-an-em/">http://learn.scannerlicker.net/2014/07/31/so-how-much-is-an-em/</a></figcaption>
-                </figure>
+              In CSS heeft <em>em</em> de betekenis <strong>percentage van de parent font-size</strong>. Daarmee kan je bepaalde waarden ingesteld op een child laten <strong>meeschalen</strong> met de parent font-size: 
+              <div class="flex-1-1">
+                <div>
+                  <pre><code class="language-html smallfont" data-caption data-selector="#emdemo">&lt;div class="review"&gt;
+   &lt;h3 class="review-title"&gt;Great hotel!&lt;/h3&gt;
+   &lt;p&gt; 
+     In friendship diminution instrument so. 
+     Son sure paid door with say them. Lorem 
+     ipsum dolor sit amet, consectetur 
+     adipiscing elit!
+   &lt;/p&gt;
+   &lt;img src="img/mugshot.jpg" alt="avatar"&gt;
+ &lt;/div&gt;</code></pre>
+                  <div id="emdemo" style="width: 380px;">
+                    <div class="review" style="padding: 5px">
+                      <div class="review-title" style="margin-bottom: 0.5em;">Great hotel!</div>
+                      <p style="margin-bottom: 0;"> 
+                        In friendship diminution instrument so. Son sure paid door with say them. Lorem ipsum dolor sit amet, consectetur adipiscing elit!
+                      </p>
+                      <img src="img/mugshot.jpg" alt="">
+                    </div>
+                  </div>
+                </div>
+                <div>
+<pre><code class="language-css smallfont" data-caption contenteditable data-selector="#emdemo">.review {
+  border: 2px dotted #ccc;
+  font-size: 14px; /* pas deze waarde aan! */
+}
+.review-title {
+  font-size: 1.2em; /* schaalt mee */
+}
+.review p {
+  font-size: 1em; /* schaalt mee */
+}
+.review img {
+  width: 50px; /* schaalt niet mee */
+}</code></pre>
+                </div>
               </div>
             </li>
           </ul>
         </section>
-        <section data-toc-title="">
-          <h2>[Em &mdash; definition (3)]</h2>
+        <section>
+          <h2>em &mdash; gebruik <sup>[PB]</sup></h2>
           <ul>
             <li>
-              to prevent overlap, the line height should be > <code>1em</code> (default <code>1.2em</code>)
-            </li>
-            <li class="no-style">
-              <div class="clearfix" style="width: 100%">
-                <figure style="float: left">
-                  <img src="img/02_design/lineheight.png" alt="line height" />
-                  <figcaption><a href="http://learn.scannerlicker.net/2014/07/31/so-how-much-is-an-em/">http://learn.scannerlicker.net/2014/07/31/so-how-much-is-an-em/</a></figcaption>
-                </figure>
-              </div>
+              De <code>em</code> is dus ideaal voor <strong>componenten die meeschalen met de parent</strong>, zoals widgets of andere onafhankelijke componenten. Probeer in onderstaande demo de font-size van de widget container te veranderen (en merk op hoe <code>em</code> overal gebruikt is in de widget):
             </li>
           </ul>
-          <div class="tooltip">
-            <div>
-              Most browsers will devide the line gap in two, so to have a text touch the top or bottom of a box, you'll have to nudge it a little with <code>position: relative</code>.
-            </div>
-          </div>
-        </section>
-        <section data-toc-title="">
-          <h2>Em &mdash; definition (4)</h2>
-          <ul>
-            <li>
-              in CSS, <code>em</code> means <em>percentage of parent font size</em>
-            </li>
-            <li>
-              to know the <code>px</code> value, multiply with the parent font size or browser default:
-              <pre><code class="language-html overlayrun" style="max-height: 250px" contenteditable>&lt;html&gt;
-&lt;head&gt;
-  &lt;style&gt;    
-    html { font-size: 1em; } /* 1 x browser default font size = 16px */
-    body { font-size: 0.875em; /* 0.875 x html font size = 14px */ }
-    h1 { font-size: 1.4em; /* 1.4 x body font size = 19.6px */ }
-    article { 
-      width: 30em; /* 30 x body font size = 420px */ 
-      font-size: 1.2em; /* 1.2 x body font size = 16.8px */
-    }
-    a { font-size: 1.1em; /* 1.1 x parent font size */ }
-  &lt;/style&gt;
-&lt;/head&gt;
-&lt;body&gt;
-  &lt;h1&gt;Articles about &lt;a href="#"&gt;this topic&lt;/a&gt;&lt;/h1&gt;
-  &lt;article&gt;
-    &lt;p&gt;Wie werkten meestal men menigte bersawa. Om monopolies ad nu mislukking interesten verscholen smeltovens. Brandhout mee snelleren geschiedt bezorgden aandeelen den are. Dat treffen gomboom zekeren tot fortuin gelaten stellen. Het ziet niet lage deze het per zes ipoh.&lt;/p&gt;
-    &lt;p&gt;also read &lt;a href="#"&gt;this article&lt;/a&gt;&lt;/p&gt;
-  &lt;/article&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-</code></pre>
-            </li>
-          </ul>
-        </section>
-        <section data-toc-title="">
-          <h2>Em &mdash; definition (5)</h2>
-          <ul>
-            <li>
-              for <code>&lt;html&gt;</code>, the reference is the default font size set the browser, which usually 16px, see settings:
-            </li>
-          </ul>
-          <p style="text-align: center;"><img src="img/02_design/em.jpg" alt="em change" style="max-width: 40%" /></p>
-        </section>
-        <section data-toc-title="em &mdash; when to use">
-          <h2>em &mdash; when to use (1)</h2>
-          <ul>
-            <li>
-              <code>em</code> is a <em>relative unit</em>, used for <em>components that scale with parent font size</em>, e.g. widgets or other independent components
-            </li>
-            <li>
-              try changing the widget container font size in this demo (and note how em is used everywhere in the widget):
-            </li>
-          </ul>
-          <p><a href="demos/02_design/01_units/em/index.html"><img src="img/02_design/widgetdemo.png" alt="em change" style="width: 400px; display: block; margin: 0 auto; margin-top: 10px" /></a></p>
+          <p><a href="demos/02_design/01_units/em/index.html"><img src="img/02_design/widgetdemo.png" alt="em change" class="shadowbox" style="width: 400px" /></a></p>
           <div class="demolink">
             <a href="demos/02_design/01_units/em/index.html">demo</a>
           </div>
         </section>
-        <section data-toc-title="">
-          <h2>em &mdash; when to use (2)</h2>
-          <ul>
-            <li>
-              <code>em</code> has one distinct advantage:
-              <ul class="v-style">
-                <li>
-                  you can rescale a whole component by changing the parent font size
-                </li>
-              </ul> 
-            </li>
-            <li>
-              <code>em</code> has a few serious drawbacks:
-              <ul class="x-style">
-                <li>
-                  the final size is the result of a chain of calculations, which can quickly become complicated
-                </li>
-                <li>
-                  the numbers you use aren't very intuitive
-                </li>
-                <li>
-                  most designers still think in pixel sizes, not in relative units
-                </li>
-              </ul> 
-            </li>
-            <li class="arrow">
-              I use <code>em</code> rarely; mostly for widgets
-            </li>
-          </ul>
-        </section>
         <section>
-          <h2>% &mdash; definition</h2>
+          <h2>Rem &mdash; definitie <sup>[PB]</sup></h2>
           <ul>
             <li>
-              used for setting <code>width</code> and <code>height</code> as a percentage of the parent dimensions:
-              <pre><code class="language-css">img {
-  width: 80%; /* 80% of the parent's width */
-  max-width: 600px;
-}
-</code></pre>
-              <div class="demolink">
-                <a href="demos/02_design/01_units/percentage.html">demo</a>
+              De <em>rem</em> of <i>&ldquo;root em</i>&rdquo; is net zoals <code>em</code> een relatieve eenheid, maar dan de <strong>percentage van de <code>&lt;html&gt;</code> font-size</strong>. 
+            </li>
+            <li>
+              Standaard is de font-size van <code>&lt;html&gt;</code> 16px, dus dan is 1rem = 16px. Volgende fragmenten zijn dus identiek (deel alle px waarden door 16):
+              <div class="flex-1-1">
+                <pre><code class="language-css">body { font-size: 14px; }
+h1 { font-size: 20px; }
+footer { font-size: 11px; }
+footer a { font-size: 12px; }</code></pre>
+              <pre><code class="language-css">body { font-size: 0.875rem; }
+h1 { font-size: 1.25rem; }
+footer { font-size: 0.6875rem; }
+footer a { font-size: 0.75rem;  }</code></pre>
               </div>
+
+            </li>
+            <li class="arrow smallfont">
+              wat is dan het nut van rem?
+            </li>
+          </ul>
+        </section>
+        <section data-toc-title="Rem &mdash; gebruik">
+          <h2>Rem &mdash; gebruik (1) <sup>[PB]</sup></h2>
+          <ul>
+            <li>
+              Interessant wordt het als je de font-size van <code>&lt;html&gt;</code> instelt op 10px: dan is 1rem = 10px, en zijn de berekeningen veel eenvoudiger. Volgende fragmenten zijn dus identiek: 
+              <div class="flex-1-1">
+                <pre><code class="language-css">html { font-size: 10px; }
+body { font-size: 14px; }
+h1 { font-size: 20px; }
+footer { font-size: 11px; }
+footer a { font-size: 12px; }</code></pre>
+              <pre><code class="language-css">html { font-size: 10px; }
+body { font-size: 1.4rem; }
+h1 { font-size: 2rem; }
+footer { font-size: 1.1rem; }
+footer a { font-size: 1.2rem;  }</code></pre>
+              </div>
+
+            </li>
+            <li class="arrow smallfont">
+              als je overal <code>rem</code> gebruikt ipv <code>px</code>, kan je de hele site herschalen enkel door de html font-size aan te passen!
+            </li>
+            <li class="arrow smallfont">
+              dit kan nuttig zijn als je pagina iets groter of kleiner wil maken (resposive, projectie op grote schermen...)
+            </li>
+            <li class="arrow smallfont">
+              het is weinig extra moeite, dus overweeg zeker om <code>rem</code> te gebruiken i.p.v. <code>px</code>
             </li>
           </ul>
         </section>
         <section>
-          <h2>% &mdash; when to use</h2>
+          <h2>Rem &mdash; gebruik (2) <sup>[PB]</sup></h2>
           <ul>
             <li>
-              <code>%</code> is also a <em>relative unit</em>
-            </li>
-            <li>
-              used for <em>components that scale with parent width</em>, e.g. columns, images...
-            </li>
-          </ul>
-        </section>
-        <section data-toc-title="Rem &mdash; definition">
-          <h2>Rem &mdash; definition (1)</h2>
-          <ul>
-            <li>
-              <code>rem</code> or <i>&ldquo;root em</i>&rdquo; is like <code>em</code> but relative to the <code>&lt;html&gt;</code> element
-            </li>
-            <li>
-              to know the <code>px</code> value, multiply with the <code>&lt;html&gt;</code> font size:
-              <pre><code class="language-html overlayrun" style="height: 200px">&lt;html&gt;
-&lt;head&gt;
-  &lt;style&gt;
-    html { font-size: 1em; /* 1 x browser default font size, usually 16px */ }
-    body { font-size: 0.875rem; /* 0.875 * 16px = 14px */ }
-    h1 { font-size: 1.25rem; /* 1.25rem * 16px = 20px */ }
-    footer { font-size: 0.6875rem; /* 0.6875 * 16px = 11px */ }
-    footer a { font-size: 0.75rem; /* 0.75 * 16px = 12px */ }
-  &lt;/style&gt;
-&lt;/head&gt;
-&lt;body&gt;
-  &lt;h1&gt;&lt;a href="#"&gt;My page&lt;/a&gt;&lt;/h1&gt;
-  &lt;p&gt;this is the second paragraph&lt;/p&gt;
-  &lt;footer&gt;also read &lt;a href="#"&gt;this&lt;/a&gt; &lt;/footer&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-</code></pre>
-            </li>
-            <li class="arrow">
-              calculations are very easy: <code>px</code> = <code>rem</code> * 16 
-            </li>
-          </ul>
-        </section>
-        <section data-toc-title="">
-          <h2>Rem &mdash; definition (2)</h2>
-          <ul>
-            <li>
-              it becomes even easier if we set <code>&lt;html&gt;</code> font size to 62.5%:
-              <pre><code class="language-html overlayrun" style="height: 200px">&lt;html&gt;
+              Om technische redenen stellen we de font-size van <code>&lt;html&gt;</code> in op 62.5% (=10/16) in plaats van 10px. Alles bij elkaar in een praktijkvoorbeeld:
+              <pre><code contenteditable class="language-html overlayrun">&lt;html&gt;
 &lt;head&gt;
   &lt;style&gt;
     html { font-size: 62.5%; } /* 16px * 0.625 = 10px */
@@ -359,21 +304,18 @@ img.icon_social {
 &lt;/html&gt;
 </code></pre>
             </li>
-            <li class="arrow">
-              calculations are even easier: <code>px</code> = <code>rem</code> * 10!
-            </li>
           </ul>
         </section>
         <section data-toc-title="">
-          <h2>Rem &mdash; definition (3)</h2>
+          <h2>Rem &mdash; gebruik (3) <sup>[PB]</sup></h2>
           <ul>
             <li>
-              bottomline: <strong>always</strong> start your site CSS with
+              Wil je <code>rem</code> gebruiken, begin dan je CSS altijd met volgende regels:
               <pre><code class="language-css">html { 
-  font-size: 62.5%; /* set HTML font size to 62.5%; now 1rem = 10px */
+  font-size: 62.5%; /* stel HTML tekstgrootte in op 62.5%; nu is 1rem = 10px */
 } 
 body { 
-  font-size: 1.4rem; /* set default font size, e.g. to 14px */ 
+  font-size: 1.4rem; /* stel de standaard tekstgrootte in, b.v to 14px */ 
 }
 
 /* rest of your CSS follows here */
@@ -383,61 +325,43 @@ body {
           </ul>
         </section>
         <section>
-          <h2>Rem &mdash; when to use</h2>
+          <h2>vw / vh / vmin / vmax <sup>[O]</sup></h2>
           <ul>
             <li>
-              <code>rem</code> is both <em>fixed</em> (independent of parent) and <em>relative</em> (to &lt;<code>html</code>&gt; font size)
+              De <em>vw / vh / vmin / vmax</em> staat voor <strong>percentage viewport width / height / kleinste / grootste</strong>, waarbij <i>&ldquo;viewport&rdquo;</i> het zichtbare browsergedeelte betekent.
             </li>
             <li>
-              use <code>rem</code> as <em>your default unit</em> except where <code>px</code>, <em</code> or <code>%</code> is needed
-            </li>
-            <li>
-              as intuitive as px, but we can still rescale the whole page by changing the &lt;<code>html</code>&gt; font size (<a href="demos/02_design/01_units/em/index.html">try it out</a> &mdash; use your inspector)
-            </li>
-          </ul>
-        </section>
-        <section>
-          <h2>[vw / vh / vmin / vmax]</h2>
-          <ul>
-            <li>
-              Percentage of viewport (= visible browser area) width / height or minimum / maximum of both
-            </li>
-            <li>
-              Example 1: font rescaling (also used in this course; rescale the browser):
+              Voorbeeld 1: smooth font rescaling:
               <pre><code class="language-css">p {
-  font-size: 2vw; /* ± 80 characters per line */
+  font-size: 2vw; /* teksthoogte = 2% viewport width, of ± 80 karakters per regel */
 }</code></pre>
               <div class="demolink">
-                <a href="demos/02_design/vw-vh-text.html">(slightly different) demo</a>
+                <a href="demos/02_design/vw-vh-text.html">(lichtjes andere) demo</a>
               </div>
             </li>
             <li>
-              Example 2: keeping an image visible
-              <pre><code class="language-html">img {
-  max-width: 90vw;
-  max-height: 90vh;
+              Voorbeeld 2: een afbeelding zichtbaar houden
+              <pre><code class="language-css">img {
+  max-height: 90vh; /* max. 90% viewport height */
+  max-width: 90vw; /* max. 90% viewport width */
 }
 </code></pre>
               <div class="demolink">
                 <a href="demos/02_design/01_units/vw/index.html">demo</a>
               </div>
             </li>
-          </ul>
-          <ul class="arrow">
-            <li>mostly useful for mobile devices</li>
-            <li>vw/vh/vmin/vmax is the <i>only</i> way to smoothly rescale fonts</li>
+            <li class="arrow smallfont">hoofdzakelijk nuttig voor mobiele devices</li>
           </ul>
         </section>
         <section>
-          <h2>Units &mdash; summary</h2>
+          <h2>Eenheden &mdash; samengevat</h2>
           <ul>
             <li>
-              When to use which unit:
+              Welke eenheid gebruik je wanneer:
               <ul>
-                <li>by default, use <em><code>rem</code></em>; set html font size to 0.625rem first, so that 10px = 1rem</li>
-                <li>consider <code><em>em</em></code> for self-contained components like widgets</li>
-                <li>use <em><code>%</code></em> for dimensions you'd like to scale with parent width like columns</li>
-                <li>use <em><code>px</code></em> for small values that scale bad, like border widths or small icons</li>
+                <li>gebruik <em><code>px</code></em> of <em><code>rem</code></em> [PB] voor lettergroottes en vaste afmetingen</li>
+                <li>gebruik <em><code>%</code></em> [PB] voor afmetingen die moeten meeschalen met de schermbreedte (kolommen bv.)</li>
+                <li>gebruik <code><em>em</em></code> voor onafhankelijke componenten als widgets</li>
               </ul>
             </li>
           </ul>
@@ -446,22 +370,22 @@ body {
       <section>
         <section>
           <h1>CSS</h1>
-          <h2>Fonts &amp; Text</h2>
+          <h2>Fonts &amp; Tekst</h2>
           <ul class="chapterlist">
             <!-- to be filled by Javascript -->
           </ul>
         </section>
         <section>
-          <h2>What is a font</h2>
+          <h2>Wat is een font</h2>
           <ul>
             <li>
-              A <em>font</em> is a graphical representation of text. Properties:
+              Een <em>font</em> is een grafische weergave van tekst. CSS properties:
               <ul>
-                <li><b>font-family</b>: <span style="font-family: Arial">Arial</span>, <span style="font-family: Courier New">Courier New</span>, <span style="font-family: Times New Roman">Times New Roman</span>...</li>
-                <li><b>font-size</b>: <span style="font-size: 8px">8px</span>, <span style="font-size: 12px">12px</span>, <span style="font-size: 18px">18px</span>...</li>
-                <li><b>font-weight</b>: <span style="font-weight: 200">lighter</span>, normal, <span style="font-weight: bold">bold</span>...; <span style="font-weight: 100">100</span>, <span style="font-weight: 300">300</span>, <span style="font-weight: 500">500</span>, <span style="font-weight: 700">700</span>, <span style="font-weight: 900">900</span></li>
-                <li><b>font-style</b>: <span style="font-style: italic;">italic</span>, normal</li>
-                <li><b>color</b>: <span style="color:#900">#900</span>, <span style="color:Navy">Navy</span>, <span style="color:rgba(100, 50, 25, 0.7)">rgba(100, 50, 25, 0.7)</span>...</li>
+                <li><strong>font-family</strong>: <span style="font-family: Arial">Arial</span>, <span style="font-family: Courier New">Courier New</span>, <span style="font-family: Times New Roman">Times New Roman</span>...</li>
+                <li><strong>font-size</strong>: <span style="font-size: 8px">8px</span>, <span style="font-size: 12px">12px</span>, <span style="font-size: 18px">18px</span>...</li>
+                <li><strong>font-weight</strong>: <span style="font-weight: 200">lighter</span>, normal, <span style="font-weight: bold">bold</span>...; <span style="font-weight: 100">100</span>, <span style="font-weight: 300">300</span>, <span style="font-weight: 500">500</span>, <span style="font-weight: 700">700</span>, <span style="font-weight: 900">900</span></li>
+                <li><strong>font-style</strong>: <span style="font-style: italic;">italic</span>, normal</li>
+                <li><strong>color</strong>: <span style="color:#900">#900</span>, <span style="color:Navy">Navy</span>, <span style="color:rgba(100, 50, 25, 0.7)">rgba(100, 50, 25, 0.7)</span>...</li>
               </ul>
             </li>
           </ul>
@@ -470,7 +394,7 @@ body {
           <h2>Font properties</h2>
           <ul>
             <li>
-              Code example in CSS (try and change the values):
+              Code voorbeeld in CSS:
               <pre><code style="height: 170px" class="language-css" contenteditable data-selector="#text-properties">p {
   color: #5a4c34;
   background-color: #f0ede3;
@@ -485,7 +409,7 @@ body {
   text-transform: capitalize;
 }
 a {
-  text-decoration: none; /* underline or not; only works with links */
+  text-decoration: none; /* onderlijnen of niet; werkt alleen bij links */
   color: #aa8938;
 }
 a:hover {
@@ -498,54 +422,41 @@ a:hover {
           </ul>
         </section>
         <section>
-          <h2>[Commercial fonts]</h2>
+          <h2>Commerciële fonts</h2>
           <ul>
             <li>
-              Fonts are often hand-crafted, character by character:<br>
-              <img src="img/02_design/fonts.jpg" alt="" class="border" style="max-width: 500px;" /><br>
-              <ul style="margin-left: 0">
-                <li class="arrow">
-                  think of all the letters, punctuation, numbers, capitals / lowercase, with or without accents, ... that need to be created in all languages, and in all weights and styles!
-                </li>
-                <li class="arrow">
-                  for obvious reasons, high-quality commercial fonts are expensive
-                </li>
-              </ul>
+              Fonts worden met de hand ontworpen, karakter per karakter:<br>
+              <img src="img/02_design/fonts.jpg" alt="" class="shadowbox" style="max-width: 500px;" /><br>
             </li>
-          </ul>
+            <li class="arrow smallfont">
+              bedenk hoeveel werk dit is: alle letters, getallen, accenten, interpunctie, hoofd- / kleine letters... en dat in alle tallen, alle vetdiktes en stijlen!
+            </li>
+            <li class="arrow smallfont">
+              licenties voor kwaliteitsvolle commerciële fonts zijn daarom vaak zeer duur
+            </li>
+           </ul>
         </section>
         <section>
-          <h2>[Embedding fonts]</h2>
+          <h2>Gratis fonts</h2>
           <ul>
             <li>
-              You can embed fonts manually:
-              <pre><code class="language-css">@font-face {
-   font-family: 'Droid Sans';
-   src: url(Droid_Sans.woff2);
-}</code></pre>
-              <span style="font-size: smaller">&rarr; just make sure you have the web font version, not the desktop version</span>
-            </li>
-          </ul>
-        </section>
-        <section>
-          <h2>Linking fonts</h2>
-          <ul>
-            <li>
-              Google has a <a href="https://fonts.google.com/">great collection of free fonts</a> you can just link and use. Just select your font, and include a single line in your <code>&lt;head&gt;</code>:
-              <pre><code class="language-html overlayrun" style="max-height: 250px" contenteditable>&lt;html&gt;
+              Gelukkig zijn er genoeg gratis en open source lettertypes te vinden. Google heeft een <a href="https://fonts.google.com/">uitstekende collection</a> die je kan downloaden of zelfs gewoon hotlinken. Selecteer je font, en link het met één regel in de <code>&lt;head&gt;</code>:
+              <pre><code class="language-html overlayrun smallfont" contenteditable>&lt;html&gt;
 &lt;head&gt;
-  &lt;!-- copy-paste the Google Font link here --&gt;    
+  &lt;!-- kopieer de Google Font link hier --&gt;    
   &lt;link href="https://fonts.googleapis.com/css?family=Spicy+Rice" rel="stylesheet"&gt;    
   &lt;style&gt;
     p {
-      font-family: 'Spicy Rice', sans-serif; /* use your new font here */
+      font-family: 'Spicy Rice', sans-serif; /* gebruik je nieuw font hier */
       font-size: 30px;
       line-height: 1.8;
     }
   &lt;/style&gt;
 &lt;/head&gt;
 &lt;body&gt;
-  &lt;p&gt;Wie werkten meestal men menigte bersawa. Om monopolies ad nu mislukking interesten verscholen smeltovens. Brandhout mee snelleren geschiedt bezorgden aandeelen den are. Dat treffen gomboom zekeren tot fortuin gelaten stellen. Het ziet niet lage deze het per zes ipoh.&lt;/p&gt;
+  &lt;p&gt;Wie werkten meestal men menigte bersawa. Om monopolies ad nu mislukking interesten verscholen 
+  smeltovens. Brandhout mee snelleren geschiedt bezorgden aandeelen den are. Dat treffen gomboom zekeren 
+  tot fortuin gelaten stellen. Het ziet niet lage deze het per zes ipoh.&lt;/p&gt;
 &lt;/body&gt;
 &lt;/html&gt;
 </code></pre>
@@ -553,19 +464,19 @@ a:hover {
           </ul>
         </section>
         <section>
-          <h2>Help! My font doesn't load</h2>
+          <h2>Help! Mijn font laadt niet</h2>
           <ul>
             <li>
-              Things that can go wrong:
+              Zaken die kunnen foutgaan:
               <ul>
-                <li>a font must <b>contain all characters</b> you want to use</li>
-                <li>a font must <b>contain all variations</b> (boldness, style...) you need</li>
-                <li>a font that isn't embedded or linked correctly, will fall back to the ugly <span style="font-family: Times New Roman">Times New Roman</span> default</li>
+                <li>een font moet <strong>alle karakters bevatten</strong> die je wil gebruiken</li>
+                <li>een font moet <strong>alle weergaves bevatten</strong> (vet, schuin...) die je nodig hebt</li>
+                <li>als je font niet <strong>correct gelinkt</strong> is, valt het terug op een standaardfont, meestal het lelijke <span style="font-family: Times New Roman">Times New Roman</span></li>
               </ul>
             </li>
             <li>
-              You can always check the rendered font with your good ol' Chrome inspector (see bottom right, tab &lsquo;Computed&rsquo;, under &lsquo;Rendered fonts&rsquo;):<br>
-              <img src="img/02_design/font-inspector.png" alt="" class="border" style="width: 70%">
+              Je kan controleren welk font effectief gebruitk wordt via de Chrome inspector (beneden rechts, tab &lsquo;Computed&rsquo;, onder &lsquo;Rendered fonts&rsquo;):<br>
+              <img src="img/02_design/font-inspector.png" alt="" class="shadowbox" style="width: 70%">
             </li>
           </ul>
         </section>
@@ -573,37 +484,50 @@ a:hover {
       <section>
         <section>
           <h1>CSS</h1>
-          <h2>Colors &amp; backgrounds</h2>
+          <h2>Kleuren &amp; achtergronden</h2>
           <ul class="chapterlist">
             <!-- to be filled by Javascript -->
           </ul>
         </section>
         <section id="hexadecimal-notation">
-          <h2>Hexadecimal notation</h2>
+          <h2>Hexadecimale notatie</h2>
           <ul>
             <li>
-              The most commonly used color notation is #RRGGBB hexadecimal:
+              De meest gebruikte kleurnotatie is #RRGGBB hexadecimaal:
               <pre><code class="language-css" contenteditable data-selector="#hexadecimal-notation">p {
-  color: #d2003c;
   background-color: #ffcccc;
+  color: #d2003c;
 }</code></pre>
-              <p style="margin: 30px 0 20px 0; width: 150px; height: 40px; line-height: 40px; text-align: center; font-size: 20px; font-weight: bold">Lorem Ipsum</p>
-              &rarr; hexadecimal shorthand:
+              <p style="margin: 20px 0 10px 0; width: 150px; height: 40px; line-height: 40px; text-align: center; font-size: 20px; font-weight: bold">Lorem Ipsum</p>
+            </li>
+            <li>
+              Als je hexcode #xxyyzz is, kan je de verkorte notatie #xyz gebruiken:
               <pre><code class="language-css">p {
-  color: #c09; /* #cc0099 */
   background-color: #fcc; /* #ffcccc */
+  color: #c09; /* #cc0099 */
 }</code></pre>
             </li>
           </ul>
         </section>
-        <section style="background-image: url(img/02_design/lapland.jpg); background-size: cover; background-position: center center" id="rgba-hsla">
-          <h2>Alpha channel</h2>
+        <section>
+          <h2>Hexcodes lezen</h2>
           <ul>
             <li>
-              The <em>alpha</em> channel sets opacity
+              De hexadecimale kleurnotatie is een combinatie van rood, groen en blauw: <span style="background-color: #d2003c;">#d2003c</span> bijvoorbeeld betekent (d=13)*16 + 2 rood, 0 groen en 3*16 + (c=12) blauw, of (210, 0, 60) in (r, g, b) notatie. Wil je vlot kleurcodes leren lezen? Bekijk dan deze briljante talk op de dotCSS conferentie van 2018 in Parijs:
+            </li>
+            <li class="no-style">
+              <iframe width="560" height="315" src="https://www.youtube.com/embed/eqZqx6lRPe0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </li>
+          </ul>
+        </section>
+        <section style="background-image: url(img/02_design/lapland.jpg); background-size: cover; background-position: center center" id="rgba-hsla">
+          <h2>Alfakanaal <sup>[O]</sup></h2>
+          <ul>
+            <li>
+              Het <em>alfakanaal</em> stelt de transparantie van een kleur voor
             </li>
             <li>
-              Some notations: RGBA (red-green-blue-alpha), HSLA (hue-saturation-luminosity-alpha) (a = alpha channel = opacity) &amp; hex-alpha notations:
+              Enkele notaties met alfa: HSLA (hue-saturation-luminosity-alpha), #RRGGBBAA en RGBA
               <pre><code class="language-css" contenteditable data-selector="#rgba-hsla" data-step="10" style="background-color: white">p {
   background-color: hsla(128, 75%, 33%, 0.5); /* 50% opacity */
   border: 4px dashed #FFa500BF; /* #FFA500 = orange, BF = 75% opacity */
@@ -614,16 +538,19 @@ a:hover {
           </ul>
         </section>
         <section id="mnemonic-notation">
-          <h2>Mnemonic notation</h2>
+          <h2>Mnemonische notatie</h2>
           <ul>
             <li>
-              mnemonic notation:
+              Er bestaat ook zoiets als de weinig professionele en dubbelzinnige <em>mnemonische notatie</em>:
               <pre><code class="language-css wrong" contenteditable data-selector="#mnemonic-notation">p {
-  color: Maroon; /* whatever the fuck that color is */
-  background-color: MistyRose; /* what the hell are misty roses? */
+  background-color: Maroon; /* geen idee welke kleur dit is */
+  border: 2px solid Orange; /* ok, die snap ik nog */
+  color: MistyRose; /* wat in 's hemelsnaam is een misty rose? */
 }</code></pre>
-              <p style="margin: 30px 0 20px 0; width: 150px; height: 40px; line-height: 40px; text-align: center; font-size: 20px; font-weight: bold">Lorem Ipsum</p>
-              &rarr; mnemonic notation is for wussies
+              <p style="margin: 20px 0 10px 0; width: 150px; height: 40px; line-height: 40px; text-align: center; font-size: 20px; font-weight: bold">Lorem Ipsum</p>
+            </li>
+            <li class="arrow smallfont">
+              dit doet allemaal wat denken aan een verfwinkel; mnemonische notatie is voor watjes
             </li>
           </ul>
         </section>
@@ -631,59 +558,39 @@ a:hover {
           <h2>Chrome color picker</h2>
           <ul>
             <li>
-              Chrome has a great built-in color picker with live preview:
+              Chrome heeft een prima ingebouwde colorpicker met live preview:
             </li>
           </ul>
-          <p><img src="img/02_design/chrome-colorpicker.png" alt="" class="border" style="max-width: 500px;" /></p>
-        </section>
-        <section id="gradients">
-          <h2>Gradients</h2>
-          <ul>
-            <li>
-              Gradients:
-            </li>
-            <li class="no-style">
-              <pre><code class="language-css" contenteditable data-selector="#gradients" data-step="2">p {
-  background: linear-gradient(
-     to bottom,
-     #00abeb 10%,
-     white 30%,
-     yellow 50%,
-     #66cc00 70%
-  )
-}</code></pre>
-              <p style="margin-top: 30px; margin-bottom: 30px; width: 400px; height: 80px; line-height: 80px; text-align: center; font-size: 24px;">GRADIENT EXAMPLE</p>
-            </li>
-          </ul>
+          <p><img src="img/02_design/chrome-colorpicker.png" alt="" class="shadowbox" style="max-width: 500px;" /></p>
         </section>
         <section id="background-images">
-          <h2>Background images</h2>
+          <h2>Achtergronden</h2>
           <ul>
             <li>
-              Different ways to fill a container with a background image:
+              Achtergronden maak je met de verschillende properties van <em><code>background</code></em>:
             </li>
             <li class="no-style">
               <pre><code class="language-css" contenteditable data-selector="#background-images" data-step="10">div {
-  background-image: url(img/02_design/grass.png);
-  background-position: left bottom; /* also try center, px px, % %... */
-  background-color: #ccc; /* shown while image is loading */
-  background-repeat: no-repeat; /* also try repeat, repeat-x, repeat-y */
-  background-size: 100% 100% /* also try 100%, cover, contain, auto, px */
+  background-color: #ccc; /* achtergrondkleur */
+  background-image: url(img/02_design/grass.png); /* link naar de afbeelding zelf */
+  background-position: left bottom; /* andere waarden: center, pixels of procenten... */
+  background-size: 100% 100%; /* andere waarden: 100%, cover, contain, auto, pixels... */
+  background-repeat: no-repeat; /* andere waarden: repeat, repeat-x, repeat-y */
 }</code></pre>
               <div id="backgrounddemo1" style="margin-top: 30px; width: 300px; height: 150px; margin-bottom: 30px; padding: 0"></div>
             </li>
           </ul>
         </section>
         <section>
-          <h2>Transitions</h2>
+          <h2>Transities</h2>
           <ul>
             <li>
-              Make smooth color (or in fact any CSS property) changes:
+              Maak CSS overgangen geleidelijk, &ldquo;smooth&rdquo;, met de <em><code>transition</code></em> property:
             </li>
             <li class="no-style">
               <pre><code class="language-css" contenteditable data-selector="#transitiondemo">div {
   background-color: #ccc;
-  transition: all 0.3s ease-in-out;
+  transition: background 0.5s, width 1s; /* transitie voor achtergrond en breedte */
   width: 200px;
 }
 div:hover {
@@ -700,17 +607,85 @@ div:hover {
             </li>
           </ul>
         </section>
-        <section>
-          <h2>[Animations]</h2>
+        <section id="gradients">
+          <h2>Gradiënten <sup>[O]</sup></h2>
           <ul>
             <li>
-              Define keyframes, properties and easing:
+              Gebruik een gradiënt als achtergrond met <em><code>linear-gradient</code></em>:
             </li>
             <li class="no-style">
-              <div class="codescrollpanel"><pre><code class="language-html smallpanel">&lt;!DOCTYPE html&gt;
+              <pre><code class="language-css" contenteditable data-selector="#gradients" data-step="2">p {
+  background: linear-gradient(
+     to bottom,
+     #00abeb 10%,
+     white 30%,
+     yellow 50%,
+     #66cc00 70%
+  )
+}</code></pre>
+              <p style="margin-top: 30px; margin-bottom: 30px; width: 400px; height: 80px; line-height: 80px; text-align: center; font-size: 24px;">GRADIENT EXAMPLE</p>
+            </li>
+          </ul>
+        </section>
+        <section>
+          <h2>Filters <sup>[O]</sup></h2>
+          <ul>
+            <li>
+              CSS biedt met de <em><code>filter</code></em> property een <a href="https://www.w3schools.com/cssref/css3_pr_filter.asp">aantal basisfilters</a> als blur, grayscale, brightness, contrast, sepia. Een voorbeeld met grayscale (hover over de afbeelding):
+            </li>
+            <li class="no-style">
+              <pre><code class="language-css" contenteditable data-selector="#filterdemo">img {
+  cursor: pointer;
+  filter: grayscale(100%);                
+  transition: filter 0.5s;
+}
+img:hover {
+  filter: grayscale(0%);                
+}
+</code></pre>
+              <div id="filterdemo">
+                <img src="img/02_design/filterdemo.jpg" alt="" style="width: 250px;">
+              </div>
+            </li>
+          </ul>
+        </section>
+        <section>
+          <h2>Transformaties <sup>[O]</sup></h2>
+          <ul>
+            <li>
+              Roteer, rek uit en herschaal elementen rond de X, Y en Z-as met de <em><code>transform</code></em> property:
+            </li>
+            <li class="no-style">
+              <pre><code class="language-css" contenteditable data-selector="#transitiondemo">#contactbox {
+  background-color: #eee;
+  transform: rotate(8deg) skewY(15deg);
+  width: 250px;
+}
+</code></pre>
+              <div id="transitiondemo">
+                <div id="contactbox" style="padding: 5px; border: 1px solid #ccc">
+                  <p style="margin-bottom: 0;font-size: 14px">Contacteer me!</p>
+                  <img src="img/02_design/avatar5s.jpg" alt="" style="width: 80px;">
+                  <div style="white-space: nowrap;">
+                    <input type="email" placeholder="jouw email">
+                    <button>OK</button>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </section>
+        <section data-toc-title="Animaties">
+          <h2>Animaties (1) <sup>[O]</sup></h2>
+          <ul>
+            <li>
+              Definieer keyframes, properties en easing (= animatiecurve) met <em><code>@keyframes</code></em>:
+            </li>
+            <li class="no-style">
+              <div class="codescrollpanel"><pre><code contenteditable class="language-html smallpanel">&lt;!DOCTYPE html&gt;
 &lt;head&gt;
   &lt;meta charset="utf-8" /&gt;
-  &lt;title&gt;Animation&lt;/title&gt;
+  &lt;title&gt;Animatie demo&lt;/title&gt;
   &lt;style&gt;
     #scene {
       width: 800px;
@@ -740,15 +715,15 @@ div:hover {
   &lt;/div&gt;
 &lt;/body&gt;
 &lt;/html&gt;</code></pre></div>
-              <div class="demolink"><a href="demos/02_design/07_animations/animations1.html">demo</a> (more <a href="demos/02_design/07_animations/animations2.html">elaborated demo</a>)</div>
+              <div class="demolink"><a href="demos/02_design/07_animations/animations1.html">demo</a> (meer <a href="demos/02_design/07_animations/animations2.html">uitgewerkte demo</a>)</div>
             </li>
           </ul>
         </section>
-        <section>
-          <h2>[Transforms and animations]</h2>
+        <section data-toc-title="">
+          <h2>Animaties (2) <sup>[O]</sup></h2>
           <ul>
             <li>
-              Transforms and animations combined (Chrome):
+              Animaties gecombineerd met transformaties en een beetje Javascript (Chrome):
             </li>
             <li class="no-style">
               <div class="codescrollpanel"><pre><code class="language-html smallpanel overlayrun">&lt;!DOCTYPE html&gt;
@@ -766,7 +741,7 @@ div:hover {
     #container {
       width: 100%;
       height: 700px;
-      -webkit-perspective: 800; /* For compatibility with iPhone 3.0, we leave off the units here */
+      -webkit-perspective: 800; 
       -webkit-perspective-origin: 50% 0;
     }
     #stage {
@@ -864,46 +839,45 @@ div:hover {
       <section>
         <section>
           <h1>CSS</h1>
-          <h2>Borders, paddings &amp; margins</h2>
+          <h2>Border, padding &amp; margin</h2>
           <ul class="chapterlist">
             <!-- to be filled by Javascript -->
           </ul>
         </section>
         <section>
-          <h2>Borders, paddings &amp; margins</h2>
+          <h2>Border, padding &amp; margin</h2>
           <ul>
             <li>
-              Definitions (from outside to inside):
+              Definities (van buiten naar binnen):
               <ul>
-                <li>the <b>margin</b> is the spacing <i>outside</i> an element</li>
-                <li>the <b>border</b> is a line <i>around</i> an element</li>
-                <li>the <b>padding</b> is the spacing <i>inside</i> an element</li>
-                <li>the <b>content</b> is anything <i>within</i> the padding</li>
+                <li><strong>margin</strong>: ruimte <i>buiten</i> een element</li>
+                <li><strong>border</strong>: lijnen <i>rondom</i> een element</li>
+                <li><strong>padding</strong>: ruimte <i>binnen</i> een element</li>
+                <li><strong>content</strong>: de inhoud zelf</li>
               </ul>
             </li>
           </ul>
           <p><img src="img/02_design/boxmodel.png" alt="box model" /></p>
         </section>
         <section data-toc-title="Borders">
-          <h2>Borders (1)</h2>
+          <h2>Border (1)</h2>
           <ul>
             <li>
-              Let's start with two paragraphs in a div, and add some CSS:
-              <pre><code class="language-html">&lt;div&gt;
+              We beginnen met twee paragrafen in een div, met wat CSS:
+              <pre><code class="language-html" style="margin-top: 20px;">&lt;div&gt;
   &lt;p&gt;In friendship diminution instrument so. Son sure paid door with say them.&lt;/p&gt;
   &lt;p&gt;Fact are size cold why had part. If believing or sweetness otherwise.&lt;/p&gt;
 &lt;/div&gt;
 </code></pre>
               
-              <div style="display: flex; flex-flow: row nowrap; justify-content: space-between; align-items: flex-start;margin-top: 20px">
-                <pre class="bigger" style="margin: 0; margin-right: 4%; width: 48%; flex-grow: 1"><code class="language-css" contenteditable data-selector="#modeldemo1">div {
+              <div class="flex-1-1" style="margin-top: 20px;">
+                <pre style="margin-top: 0"><code class="language-css" contenteditable data-selector="#modeldemo1">div {
   background-color: #eee;
 }
 p {
   background-color: #ccc;
   font-size: 18px;
-  /* switch off margins for now */
-  margin: 0; 
+  margin: 0; /* browserdefault uitzetten */
 }
 </code></pre>
                 <div id="modeldemo1" style="width: 48%">
@@ -917,12 +891,12 @@ p {
           </ul>
         </section>
         <section data-toc-title="">
-          <h2>Borders (2)</h2>
+          <h2>Border (2)</h2>
           <ul>
             <li>
-              Now let's add some borders:
-              <div style="display: flex; flex-flow: row nowrap; justify-content: space-between; align-items: flex-start;margin-top: 20px">
-                <pre class="bigger" style="margin: 0; margin-right: 4%; width: 48%; flex-grow: 1"><code class="language-css" contenteditable data-selector="#modeldemo2">div {
+              Voegen we wat borders toe:
+              <div class="flex-1-1" style="margin-top: 20px;">
+                <pre style="margin-top: 0"><code class="language-css" contenteditable data-selector="#modeldemo2">div {
   background-color: #eee;
   border: 5px dotted #900; 
 }
@@ -944,12 +918,12 @@ p {
           </ul>
         </section>
         <section data-toc-title="">
-          <h2>Borders (3)</h2>
+          <h2>Border (3)</h2>
           <ul>
             <li>
-              Sidenote: you can use different borders for all sides if you wish
-              <div style="display: flex; flex-flow: row nowrap; justify-content: space-between; align-items: flex-start;margin-top: 20px">
-                <pre class="bigger" style="margin: 0; margin-right: 4%; width: 48%; flex-grow: 1"><code class="language-css" contenteditable data-selector="#modeldemo3">div {
+              Opmerking: je kan verschillende diktes specifiëren voor de vier kanten
+              <div class="flex-1-1" style="margin-top: 20px;">
+                <pre style="margin-top: 0"><code class="language-css" contenteditable data-selector="#modeldemo3">div {
   background-color: #eee;
   border: 5px dotted #900; 
   border-left-color: #009;
@@ -977,8 +951,8 @@ p {
           <h2>Padding</h2>
           <ul>
             <li>
-              Let's add paddings to paragraphs and the div:
-              <div style="display: flex; flex-flow: row nowrap; justify-content: space-between; align-items: flex-start;margin-top: 20px">
+              Voegen we nu padding toe aan de paragrafen en de div:
+              <div class="flex-1-1" style="margin-top: 20px">
                 <pre class="bigger" style="margin: 0; margin-right: 4%; width: 48%; flex-grow: 1"><code class="language-css" contenteditable data-selector="#modeldemo4">div {
   background-color: #eee;
   border: 5px dotted #900; 
@@ -1006,9 +980,9 @@ p {
           <h2>Margin</h2>
           <ul>
             <li>
-              Finally, we add a top margin between the paragraphs:
-              <div style="display: flex; flex-flow: row nowrap; justify-content: space-between; align-items: flex-start;margin-top: 20px">
-                <pre class="bigger" style="margin: 0; margin-right: 4%; width: 48%; flex-grow: 1"><code class="language-css" contenteditable data-selector="#modeldemo5">div {
+              Tenslotte voegen we een top margin toe tussen de paragrafen:
+              <div class="flex-1-1" style="margin-top: 20px">
+                <pre style="margin: 0"><code class="language-css" contenteditable data-selector="#modeldemo5">div {
   background-color: #eee;
   border: 5px dotted #900; 
   padding: 20px 40px;
@@ -1020,7 +994,7 @@ p {
   margin: 0;
   padding: 10px;
 }
-p + p {
+p + p { /* "paragraaf na paragraaf" */
   margin-top: 20px;
 }</code></pre>
                 <div id="modeldemo5" class="demo" style="width: 48%">
@@ -1033,20 +1007,35 @@ p + p {
             </li>
           </ul>
         </section>
-        <section data-toc-title="Margin collapsing &mdash; bleeding">
-          <h2>Margin bleeding (1)</h2>
+        <section data-toc-title="Lekkende margin">
+          <h2>Lekkende margin (1)</h2>
           <ul>
             <li>
-              If it doesn't meet a border or padding on its way, a vertical margin will &ldquo;bleed&rdquo; out of its parent. Here, the <code>&lt;p&gt;</code> top margin bleeds out of the <code>&lt;header&gt;</code> and pushes it down:
-              <pre><code class="language-html overlayrun" style="max-height: 250px">&lt;html&gt;
+              Waar geen border en geen padding aanwezig is, zal de margin uit de parent &ldquo;lekken&rdquo;. <br>Een voorbeeld; merk op:
+              <ul>
+                <li>
+                  de <code>&lt;header&gt;</code> heeft geen top border of padding; de top margin van <code>&lt;p&gt;</code> lekt er dus uit
+                </li>
+                <li>
+                  de <code>&lt;p&gt;</code> plakt dus tegen de bovenkant
+                </li>
+                <li>
+                  de lekkende topmargin van <code>&lt;p&gt;</code> duwt de <code>&lt;header&gt;</code> naar beneden
+                </li>
+              </ul>
+              <pre><code contenteditable class="language-html overlayrun smallpanel smallfont">&lt;html&gt;
 &lt;head&gt;
   &lt;style&gt;
-    * { margin: 0; }
-    header {
-      height: 110px;
-      background-color: #ccc;
+    * { 
+      margin: 0; 
     }
-    #login { margin: 20px; }
+    header {
+      background-color: #ccc;
+      padding-bottom: 40px;
+    }
+    #login { 
+      margin: 20px; 
+    }
   &lt;/style&gt;
 &lt;/head&gt;
 &lt;body&gt;
@@ -1060,11 +1049,11 @@ p + p {
           </ul>
         </section>
         <section data-toc-title="">
-          <h2>Margin bleeding (2)</h2>
+          <h2>Lekkende margin (2)</h2>
           <ul>
             <li>
-              Solve it by replacing the <code>&lt;p&gt;</code> top margin with a <code>&lt;header&gt;</code> top padding:
-              <pre><code class="language-html overlayrun">&lt;html&gt;
+              Je kan het oplossen door de <code>&lt;p&gt;</code> top margin te vervangen door een <code>&lt;header&gt;</code> top padding:
+              <pre><code contenteditable class="language-html overlayrun">&lt;html&gt;
 &lt;head&gt;
   &lt;style&gt;
     * { margin: 0; }
@@ -1086,171 +1075,135 @@ p + p {
             </li>
           </ul>
         </section>
-        <section data-toc-title="Margin &amp; padding notes">
-          <h2>Margin &amp; padding notes (1)</h2>
+        <section data-toc-title="Rare margins &amp; paddings">
+          <h2>Margin &amp; padding regels (1)</h2>
           <ul>
             <li>
-              Margins &amp; paddings may behave strange:
-              <ol>
-                <li><b>unpositioned blocklevel elements</b>: horizontal margins add up, but for vertical margins, only the largest value counts</li>
-                <li><b>positioned blocklevel elements</b>: all margins add up</li>
-                <li><b>inline elements</b>: vertical margins are ignored; vertical paddings overlap other content above but underlap below</li>
-              </ol>
+              Margins volgen rare regels:
+              <ul>
+                <li><strong>ongepositioneerd, blocklevel</strong>: horizontale margins tellen op, verticale margins niet (de grootste waarde telt)</li>
+                <li><strong>gepositioneerd, blocklevel</strong>: alle margins tellen op</li>
+                <li><strong>inline elementen</strong>: verticale margins worden genegeerd, horizontale tellen op</li>
+              </ul>
+            </li>
+            <li>
+              Ook paddings volgen soms rare regels:
+              <ul>
+                <li><strong>inline elementen</strong>: verticale margins worden genegeerd; verticale paddings overlappen bovenliggende content maar niet onderliggende content</li>
+              </ul>
             </li>
             <li class="no-style">
-              &rarr; see <a href="demos/02_design/margins-paddings.html">this summary demo</a>
+              &rarr; zie <a href="demos/02_design/margins-paddings.html">deze samenvattende demo</a>
             </li>
           </ul>
         </section>
         <section data-toc-title="">
-          <h2>Margin &amp; padding notes (2)</h2>
+          <h2>Margin &amp; padding regels (2)</h2>
           <ul>
             <li>
-              You don't need to remember all paddings and margins rules. Just avoid a lot of troubles by following these guidelines:
+              Gelukkig hoef je al die regels niet te onthouden. Vermijd gewoon problemen met volgende vuistregels:
               <ul>
-                <li>don't set vertical paddings or vertical margins on inline elements</li>
-                <li>avoid bleeding margins by using paddings instead where you can</li>
-                <li>above all: <b>use your chrome inspector all the time!</b></li>
+                <li>stel geen verticale paddings of margins in op  inline elementen</li>
+                <li>vermijd lekkende margins door paddings te gebruiken waar je kan</li>
+                <li>bovenal: <strong>gebruik systematisch de chrome inspector!</strong></li>
               </ul>
             </li>
           </ul>
-          <p style="text-align: right;"><img src="img/02_design/box-model-inspector.png" alt="box model" class="border" style="max-width: 400px" /></p>
+          <p style="text-align: right; margin-top: 10px;"><img src="img/02_design/box-model-inspector.png" alt="box model" class="shadowbox" style="max-width: 400px" /></p>
         </section>
       </section>
       <section>
         <section>
           <h1>CSS</h1>
-          <h2>The box model</h2>
+          <h2>Het box model</h2>
           <ul class="chapterlist">
             <!-- to be filled by Javascript -->
           </ul>
         </section>
         <section>
-          <h2>Box model </h2>
+          <h2>Box model</h2>
           <ul>
             <li>
-              The model we saw earlier is also referred to as the <em>box model</em>
+              Het model met margin-border-padding-content en alle afmetingen noemt men ook wel het <em>box model</em>
             </li>
             <li>
-              By default, the <code>width</code> and <code>height</code> properties refer to the content only, excluding the borders and paddings. 
-              The actual width or height in the below example is not 150px, but 162px:<br />
+              Vreemd genoeg hebben de properties <code>width</code> en <code>height</code> enkel betrekking op de content, zonder borders and paddings. In onderstaand voorbeeld bv. is de uiteindelijke breedte niet de ingestelde 150px, maar 162px (contentbreedte + 2x padding + 2x borderdikte):<br />
             </li>
           </ul>
           <div style="display: flex; flex-flow: row nowrap; align-items: flex-start;">
             <img src="img/02_design/boxmodel2.png" alt="box model" /  >
             <pre class="bigger" style="margin-top: 16px"><code class="language-css">div {
-  width: 150px; /* total width is 162px */
+  width: 150px; /* totale breedte is 162px */
   padding: 5px;
   border: 1px solid black;   
 }</code></pre>
           </div>
         </section>
         <section data-toc-title="Box sizing">
-          <h2>Box model problems</h2>
+          <h2>Box model probleem</h2>
           <ul>
             <li>
-              This model leads to some problems. Let's create a simple horizontal menu of 100% wide, with 4 links 25% wide each:
+              De echte breedte is dus groter dan ingesteld, doordat padding en border erbij geteld worden. Dit kan problemen geven. Neem volgend voorbeeld met twee kolommen van 50%, waarvan de linker een border rechts en een padding heeft:
               <pre><code class="language-html overlayrun" style="max-height: 250px" contenteditable>&lt;html&gt;
 &lt;head&gt;
   &lt;style&gt;  
-    /* setting widths, borders and paddings */
-    ul {
-      border: 3px solid black;
-      width: 100%;
+    .col {
+      width: 50%;
     }
-    a {
-      padding: 5px 10px;
-      width: 25%;
+    .col:first-child {
+      border-right: 4px dotted #999;
+      padding: 0 30px;
     }
-    li + li a {
-      border-left: 1px solid black;
-    }
-
-    /* other CSS, not important for this slide */
-    div {
-      border: 1px dotted;
-      width: 400px;
-    }  
-    ul {
-      background-color: #ddd;
-      list-style: none;
-      overflow: hidden; /* layout stuff; you'll learn more later */
-      padding: 0;
-    }
-    a {
-      display: block; /* make block level, or setting width won't work */
-      background-color: #ccc;
-      float: left; /* layout stuff; you'll learn more later */
+    #wrapper {
+      border: 4px solid #999;
+      display: flex; /* layout met flex, zie volgende les */
+      height: 300px;
+      width: 500px;
     }
   &lt;/style&gt;
 &lt;/head&gt;
 &lt;body&gt;
-  &lt;div&gt;
-    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=""&gt;link&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=""&gt;link&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=""&gt;link&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=""&gt;link&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
+  &lt;div id="wrapper"&gt;
+    &lt;div class="col"&gt;kolom 1&lt;/div&gt;
+    &lt;div class="col"&gt;kolom 2&lt;/div&gt;
   &lt;/div&gt;
 &lt;/body&gt;
 &lt;/html&gt;
 </code></pre>
               <ul class="arrow">
-                <li>the <code>ul</code> becomes wider than 100% due to borders</li>
-                <li>the <code>li's</code> become wider than 25% due to borders and paddings</li>
+                <li>de linkerkolom is breder dan de rechter, hoewel beiden op 50% ingesteld staan</li>
               </ul>
             </li>
           </ul>
         </section>
         <section>
-          <h2>Solution 1: calc()</h2>
+          <h2>Oplossing 1: gebruik calc()</h2>
           <ul>
             <li>
-              Solution 1: substract borders and paddings using the <code>calc()</code> function
+              Oplossing 1: trek borders en paddings af gebruikmakend van de <code>calc()</code> functie:
               <pre><code class="language-html overlayrun" style="max-height: 250px" contenteditable>&lt;html&gt;
 &lt;head&gt;
   &lt;style&gt;  
-    /* setting widths, borders and paddings */
-    ul {
-      border: 3px solid black;
-      width: calc(100% - 6px);
+    .col {
+      width: 50%;
     }
-    a {
-      padding: 5px 10px;
-      width: calc(25% - 20px);
+    .col:first-child {
+      border-right: 4px dotted #999;
+      padding: 0 30px;
+      width: calc(50% - 64px); /* gebruik calc(): 50% - 2x30px - 4px */
     }
-    li + li a {
-      border-left: 1px solid black;
-      width: calc(25% - 22px);
-    }
-
-    /* other CSS, not important for this slide */
-    div {
-      border: 1px dotted;
-      width: 400px;
-    }  
-    ul {
-      background-color: #ddd;
-      list-style: none;
-      overflow: hidden; /* layout stuff; you'll learn more later */
-      padding: 0;
-    }
-    a {
-      display: block; /* make block level, or setting width won't work */
-      background-color: #ccc;
-      float: left; /* layout stuff; you'll learn more later */
+    #wrapper {
+      border: 4px solid #999;
+      display: flex; /* layout met flex, zie volgende les */
+      height: 300px;
+      width: 500px;
     }
   &lt;/style&gt;
 &lt;/head&gt;
 &lt;body&gt;
-  &lt;div&gt;
-    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=""&gt;link&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=""&gt;link&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=""&gt;link&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=""&gt;link&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
+  &lt;div id="wrapper"&gt;
+    &lt;div class="col"&gt;kolom 1&lt;/div&gt;
+    &lt;div class="col"&gt;kolom 2&lt;/div&gt;
   &lt;/div&gt;
 &lt;/body&gt;
 &lt;/html&gt;
@@ -1259,77 +1212,59 @@ p + p {
           </ul>
         </section>
         <section>
-          <h2>Solution 2: box-sizing</h2>
+          <h2>Oplossing 2: gebruik box-sizing</h2>
           <ul>
             <li>
-              Solution 2: fix the box model with the <code>box-sizing</code> property
+              Oplossing 2: corrigeer het box model met de <code>box-sizing</code> property
               <pre><code class="language-html overlayrun" style="max-height: 250px" contenteditable>&lt;html&gt;
 &lt;head&gt;
   &lt;style&gt;  
-    /* wollah! box model fixed */
     * {
-      box-sizing: border-box; 
+      box-sizing: border-box; /* normaal content-box - voila! nu is 50% ook echt 50% */
     }
-
-    /* setting widths, borders and paddings */
-    ul {
-      border: 3px solid black;
-      width: 100%;
+    .col {
+      width: 50%;
     }
-    a {
-      padding: 5px 10px;
-      width: 25%;
+    .col:first-child {
+      border-right: 4px dotted #999;
+      padding: 0 30px;
     }
-    li + li a {
-      border-left: 1px solid black;
-    }
-
-    /* other CSS, not important for this slide */
-    div {
-      border: 1px dotted;
-      width: 400px;
-    }  
-    ul {
-      background-color: #ddd;
-      list-style: none;
-      overflow: hidden; /* layout stuff; you'll learn more later */
-      padding: 0;
-    }
-    a {
-      display: block; /* make block level, or setting width won't work */
-      background-color: #ccc;
-      float: left; /* layout stuff; you'll learn more later */
+    #wrapper {
+      border: 4px solid #999;
+      display: flex; /* layout met flex, zie volgende les */
+      height: 300px;
+      width: 500px;
     }
   &lt;/style&gt;
 &lt;/head&gt;
 &lt;body&gt;
-  &lt;div&gt;
-    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=""&gt;link&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=""&gt;link&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=""&gt;link&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=""&gt;link&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
+  &lt;div id="wrapper"&gt;
+    &lt;div class="col"&gt;kolom 1&lt;/div&gt;
+    &lt;div class="col"&gt;kolom 2&lt;/div&gt;
   &lt;/div&gt;
 &lt;/body&gt;
 &lt;/html&gt;
 </code></pre>
-              &rarr; solves a lot of headaches<br>
-              &rarr; be sure to include this fix in your CSS reset!
+            </li>
+            <li class="arrow smallfont">
+              dit spaart een hoop hoofdbrekens
+            </li>
+            <li class="arrow smallfont ok">
+              zet daarom de <code>box-sizing</code> fix altijd bovenaan je CSS code!
             </li>
           </ul>
         </section>
         <section>
-          <h2>width &amp; height on inline elements</h2>
+          <h2>width &amp; height op inline elements</h2>
           <ul>
             <li>
-              Important: you <b>can't set <code>width</code> or <code>height</code> on inline elements</b>. If you wish to set the dimensions of e.g. a link, make it blocklevel first:
+              Belangrijk: je kan <strong><code>width</code> of <code>height</code> niet instellen op inline elementen</strong>. Eventuele waarden worden genegeerd. Wil je dit toch, dan moet je het eerst blocklevel maken met de <code><em>display</em></code> property. Voorbeeldcode om een (inline) link het uitzicht van een button te geven:
               <pre><code style="height: 170px" class="language-css" contenteditable data-selector="#text-properties2">a {                
-  /* make blocklevel, and set width */                
+  /* maak blocklevel, en stel breedte in */                
   display: block;
   width: 200px; 
 
-  /* rest of button design */
+  /* rest van het button design */
   background-color: #A2C355;
   border: 2px solid #A2C355;
   border-radius: 2px;
@@ -1358,7 +1293,7 @@ a:hover {
           <h2>Box shadow &amp; radius</h2>
           <ul>
             <li>
-              Shadow and radius effects:
+              Schaduw en radius effects:
               <pre><code class="language-css" contenteditable data-subject="#shadowdemo">box-shadow: 10px 10px 5px #888;
 border-radius: 50px 5px 5px 5px;
 </code></pre>
@@ -1371,7 +1306,7 @@ border-radius: 50px 5px 5px 5px;
       <section>
         <section>
           <h1>CSS</h1>
-          <h2>Appearance</h2>
+          <h2>Weergave</h2>
           <ul class="chapterlist">
             <!-- to be filled by Javascript -->
           </ul>
@@ -1380,7 +1315,7 @@ border-radius: 50px 5px 5px 5px;
           <h2>Opacity</h2>
           <ul>
             <li>
-              make an element (partly) transparent:
+              Maak een element (gedeeltelijk) transparant:
               <pre><code class="language-css">a {
   opacity: 0.8;
 }</code></pre>
@@ -1391,26 +1326,12 @@ border-radius: 50px 5px 5px 5px;
           </ul>
         </section>
         <section>
-          <h2>Visibility</h2>
+          <h2>Display: none</h2>
           <ul>
             <li>
-              make an element invisible:
+              Verwijder een element volledig (en het neemt zelfs geen ruimte meer in):
               <pre><code class="language-css">a {
-  visibility: hidden; /* same as opacity: 0; still occupies space*/
-}</code></pre>
-              <div class="demolink">
-                <a href="demos/02_design/03_display_visibility/visibility.html">demo</a>
-              </div>
-            </li>
-          </ul>
-        </section>
-        <section>
-          <h2>Display none</h2>
-          <ul>
-            <li>
-              remove an element entirely:
-              <pre><code class="language-css">a {
-  display: none; /* it is gone; it doesn't even occupy space anymore */
+  display: none; 
 }</code></pre>
               <div class="demolink">
                 <a href="demos/02_design/03_display_visibility/display.html">demo</a>
@@ -1419,10 +1340,10 @@ border-radius: 50px 5px 5px 5px;
           </ul>
         </section>
         <section>
-          <h2>Display block</h2>
+          <h2>Display: block</h2>
           <ul>
             <li>
-              make an inline element blocklevel:
+              Maak een inline element blocklevel:
               <pre><code class="language-css">a {
   display: block;
 }</code></pre>
@@ -1433,10 +1354,10 @@ border-radius: 50px 5px 5px 5px;
           </ul>
         </section>
         <section>
-          <h2>Display inline</h2>
+          <h2>Display: inline</h2>
           <ul>
             <li>
-              make a blocklevel element inline:
+              Maak een blocklevel element inline:
               <pre><code class="language-css">li {
   display: inline;
 }</code></pre>
@@ -1445,15 +1366,15 @@ border-radius: 50px 5px 5px 5px;
               </div>
             </li>
             <li class="no-style">
-              &rarr; note: <code>width</code> and <code>height</code> properties won't work anymore
+              &rarr; merk op: <code>width</code> en <code>height</code> properties zullen niet meer werken
             </li>
           </ul>
         </section>
         <section>
-          <h2>Display inline-block</h2>
+          <h2>Display: inline-block <sup>[O]</sup></h2>
           <ul>
             <li>
-              Make a blocklevel element show inline with <code>display: inline-block</code>
+              Geef een blocklevel element inline weer (maar het blijft blockevel):
               <pre><code class="language-css">li {
   display: inline-block;
 }</code></pre>
@@ -1461,8 +1382,22 @@ border-radius: 50px 5px 5px 5px;
                 <a href="demos/02_design/03_display_visibility/inlineblock.html">demo</a>
               </div>
             </li>
-            <li class="no-style">
-              &rarr; note: <code>width</code> and <code>height</code> properties still work
+            <li class="arrow smallfont">
+              opmerking: <code>width</code> en <code>height</code> properties werken nog steeds
+            </li>
+          </ul>
+        </section>
+        <section>
+          <h2>Visibility <sup>[O]</sup></h2>
+          <ul>
+            <li>
+              Maak een element onzichtbaar (maar het neemt nog wel ruimte in):
+              <pre><code class="language-css">a {
+  visibility: hidden; /* zelfde resultaat als opacity: 0; */
+}</code></pre>
+              <div class="demolink">
+                <a href="demos/02_design/03_display_visibility/visibility.html">demo</a>
+              </div>
             </li>
           </ul>
         </section>
@@ -1470,27 +1405,27 @@ border-radius: 50px 5px 5px 5px;
       <section>
         <section id="ir">
           <h1>CSS</h1>
-          <h2>Image replacement</h2>
+          <h2>Tekst vervangen</h2>
           <ul class="chapterlist">
             <!-- to be filled by Javascript -->
           </ul>
         </section>
         <section id="ir_ir">
-          <h2>Image replacement</h2>
+          <h2>Tekst vervangen</h2>
           <ul>
             <li>
-              Replace textual elements like headers, links etc... with graphics:
+              Soms gebeurt het dat je een tekst in HTML wil vervangen door een afbeelding of grafisch element, bijvoorbeeld een titel, header, link... De werkwijze is als volgt:
               <pre><code class="language-html">&lt;h1&gt;&lt;a href="#"&gt;Your Logo Here&lt;/a&gt;&lt;/h1&gt;
 </code></pre>
               <pre><code class="language-css">h1 a {
-  background-image: url(img/logo.jpg); /* set background image */
-  background-size: 100% 100%; /* stretch background image */
-  display: block; /* only block level elements can have width / height */
-  height: 16.1rem; /* stretch link to desired height */
-  overflow: hidden;  /* hide text outside */
-  text-indent: 100%; /* push text outside */
-  white-space: nowrap; /* single line of text */
-  width: 21.4rem; /* stretch link to desired width */
+  background-image: url(img/logo.jpg); /* stel achtergrondafbeelding in */
+  background-size: 100% 100%; /* maak de afbeelding passend */
+  display: block; /* enkel block elementen kunnen width / height hebben */
+  height: 161px; /* stel in op de hoogte van de afbeelding */
+  overflow: hidden;  /* verberg tekst die uit de container vloeit */
+  text-indent: 100%; /* duw de tekst uit de container */
+  white-space: nowrap; /* vermijd tekstomloop */
+  width: 214px; /* stel in op de breedte van de afbeelding */
 }
 </code></pre>
               <div class="demolink">
