@@ -29,9 +29,7 @@
         <section>
           <h1>CSS Design</h1>
           <p class="frontslide__subtext">
-            [PB] enkel voor professional bachelor<br>
-            [GR] enkel voor graduaat<br>   
-            [O] optioneel, sterk aanbevolen voor wie wil verdergaan in web
+            tussen []: optioneel, sterk aanbevolen voor wie wil verdergaan in web
           </p>
           <p class="frontslide__subtext">
             gebruik pijltjestoetsen om te navigeren<br>
@@ -76,13 +74,13 @@
                <td>.left {width: 20%}</td>
              </tr>
              <tr>
-              <td>em [PB]</td>
+              <td>em</td>
               <td>percentage</td>
               <td>parent element font size</td>
               <td>p {font-size: 1.2em}</td>
             </tr>
             <tr>
-              <td>rem [PB]</td>
+              <td>rem</td>
               <td>percentage</td>
               <td>root element font size</td>
               <td>p {font-size: 0.75rem}</td>
@@ -149,7 +147,7 @@ img.hamburger_icon {
           </ul>
         </section>
         <section>
-          <h2>Em &mdash; definitie <sup>[PB]</sup></h2>
+          <h2>Em &mdash; definitie </h2>
           <ul>
             <li>
               Historisch betekent <em>em</em> de hoogte van een zetletter, die vierkant was voor de letter M:
@@ -169,7 +167,7 @@ img.hamburger_icon {
           </ul>
         </section>
         <section>
-          <h2>Em &mdash; definitie en gebruik <sup>[PB]</sup></h2>
+          <h2>Em &mdash; definitie en gebruik</h2>
           <ul>
             <li>
               In CSS heeft <em>em</em> de betekenis <strong>percentage van de parent font-size</strong>. Daarmee kan je bepaalde waarden ingesteld op een child laten <strong>meeschalen</strong> met de parent font-size: 
@@ -215,7 +213,7 @@ img.hamburger_icon {
           </ul>
         </section>
         <section>
-          <h2>em &mdash; gebruik <sup>[PB]</sup></h2>
+          <h2>em &mdash; gebruik </h2>
           <ul>
             <li>
               De <code>em</code> is dus ideaal voor <strong>componenten die meeschalen met de parent</strong>, zoals widgets of andere onafhankelijke componenten. Probeer in onderstaande demo de font-size van de widget container te veranderen (en merk op hoe <code>em</code> overal gebruikt is in de widget):
@@ -227,7 +225,7 @@ img.hamburger_icon {
           </div>
         </section>
         <section>
-          <h2>Rem &mdash; definitie <sup>[PB]</sup></h2>
+          <h2>Rem &mdash; definitie </h2>
           <ul>
             <li>
               De <em>rem</em> of <i>&ldquo;root em</i>&rdquo; is net zoals <code>em</code> een relatieve eenheid, maar dan de <strong>percentage van de <code>&lt;html&gt;</code> font-size</strong>. 
@@ -252,7 +250,7 @@ footer a { font-size: 0.75rem;  }</code></pre>
           </ul>
         </section>
         <section data-toc-title="Rem &mdash; gebruik">
-          <h2>Rem &mdash; gebruik (1) <sup>[PB]</sup></h2>
+          <h2>Rem &mdash; gebruik (1) </h2>
           <ul>
             <li>
               Interessant wordt het als je de font-size van <code>&lt;html&gt;</code> instelt op 10px: dan is 1rem = 10px, en zijn de berekeningen veel eenvoudiger. Volgende fragmenten zijn dus identiek: 
@@ -282,7 +280,7 @@ footer a { font-size: 1.2rem;  }</code></pre>
           </ul>
         </section>
         <section>
-          <h2>Rem &mdash; gebruik (2) <sup>[PB]</sup></h2>
+          <h2>Rem &mdash; gebruik (2) </h2>
           <ul>
             <li>
               Om technische redenen stellen we de font-size van <code>&lt;html&gt;</code> in op 62.5% (=10/16) in plaats van 10px. Alles bij elkaar in een praktijkvoorbeeld:
@@ -307,7 +305,7 @@ footer a { font-size: 1.2rem;  }</code></pre>
           </ul>
         </section>
         <section data-toc-title="">
-          <h2>Rem &mdash; gebruik (3) <sup>[PB]</sup></h2>
+          <h2>Rem &mdash; gebruik (3) </h2>
           <ul>
             <li>
               Wil je <code>rem</code> gebruiken, begin dan je CSS altijd met volgende regels:
@@ -325,7 +323,7 @@ body {
           </ul>
         </section>
         <section>
-          <h2>vw / vh / vmin / vmax <sup>[O]</sup></h2>
+          <h2>[vw / vh / vmin / vmax]</h2>
           <ul>
             <li>
               De <em>vw / vh / vmin / vmax</em> staat voor <strong>percentage viewport width / height / kleinste / grootste</strong>, waarbij <i>&ldquo;viewport&rdquo;</i> het zichtbare browsergedeelte betekent.
@@ -359,8 +357,8 @@ body {
             <li>
               Welke eenheid gebruik je wanneer:
               <ul>
-                <li>gebruik <em><code>px</code></em> of <em><code>rem</code></em> [PB] voor lettergroottes en vaste afmetingen</li>
-                <li>gebruik <em><code>%</code></em> [PB] voor afmetingen die moeten meeschalen met de schermbreedte (kolommen bv.)</li>
+                <li>gebruik <em><code>px</code></em> of <em><code>rem</code></em> voor lettergroottes en vaste afmetingen</li>
+                <li>gebruik <em><code>%</code></em> voor afmetingen die moeten meeschalen met de schermbreedte (kolommen bv.)</li>
                 <li>gebruik <code><em>em</em></code> voor onafhankelijke componenten als widgets</li>
               </ul>
             </li>
@@ -521,7 +519,7 @@ a:hover {
           </ul>
         </section>
         <section style="background-image: url(img/02_design/lapland.jpg); background-size: cover; background-position: center center" id="rgba-hsla">
-          <h2>Alfakanaal <sup>[O]</sup></h2>
+          <h2>[Alfakanaal]</h2>
           <ul>
             <li>
               Het <em>alfakanaal</em> stelt de transparantie van een kleur voor
@@ -608,7 +606,7 @@ div:hover {
           </ul>
         </section>
         <section id="gradients">
-          <h2>Gradiënten <sup>[O]</sup></h2>
+          <h2>[Gradiënten]</h2>
           <ul>
             <li>
               Gebruik een gradiënt als achtergrond met <em><code>linear-gradient</code></em>:
@@ -628,7 +626,7 @@ div:hover {
           </ul>
         </section>
         <section>
-          <h2>Filters <sup>[O]</sup></h2>
+          <h2>[Filters]</h2>
           <ul>
             <li>
               CSS biedt met de <em><code>filter</code></em> property een <a href="https://www.w3schools.com/cssref/css3_pr_filter.asp">aantal basisfilters</a> als blur, grayscale, brightness, contrast, sepia. Een voorbeeld met grayscale (hover over de afbeelding):
@@ -650,7 +648,7 @@ img:hover {
           </ul>
         </section>
         <section>
-          <h2>Transformaties <sup>[O]</sup></h2>
+          <h2>[Transformaties]</h2>
           <ul>
             <li>
               Roteer, rek uit en herschaal elementen rond de X, Y en Z-as met de <em><code>transform</code></em> property:
@@ -676,7 +674,7 @@ img:hover {
           </ul>
         </section>
         <section data-toc-title="Animaties">
-          <h2>Animaties (1) <sup>[O]</sup></h2>
+          <h2>[Animaties (1)]</h2>
           <ul>
             <li>
               Definieer keyframes, properties en easing (= animatiecurve) met <em><code>@keyframes</code></em>:
@@ -720,7 +718,7 @@ img:hover {
           </ul>
         </section>
         <section data-toc-title="">
-          <h2>Animaties (2) <sup>[O]</sup></h2>
+          <h2>[Animaties (2)]</h2>
           <ul>
             <li>
               Animaties gecombineerd met transformaties en een beetje Javascript (Chrome):
@@ -1371,7 +1369,7 @@ border-radius: 50px 5px 5px 5px;
           </ul>
         </section>
         <section>
-          <h2>Display: inline-block <sup>[O]</sup></h2>
+          <h2>[Display: inline-block]</h2>
           <ul>
             <li>
               Geef een blocklevel element inline weer (maar het blijft blockevel):
@@ -1388,7 +1386,7 @@ border-radius: 50px 5px 5px 5px;
           </ul>
         </section>
         <section>
-          <h2>Visibility <sup>[O]</sup></h2>
+          <h2>[Visibility]</h2>
           <ul>
             <li>
               Maak een element onzichtbaar (maar het neemt nog wel ruimte in):
@@ -1441,12 +1439,8 @@ border-radius: 50px 5px 5px 5px;
     <!-- odisee.be link -->
     <a href="http://www.odisee.be/" title="odisee.be" id="odisee"><img src="img/odisee.png" alt="Odisee logo"></a>
 
-    <!-- Index Link -->
-    <aside class="back">
-      <nav>
-        <p><a href="index.html">&larr; Back to index</a></p>
-      </nav>
-    </aside>
+    <!-- index menu container -->
+    <aside class="back"></aside>
 
   </div>
 
