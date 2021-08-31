@@ -75,6 +75,10 @@
    margin-top: 20px;
  }
  
+ body section .img-3 figure {
+   width: 31%;
+ }
+ 
  body section .img-5 figure {
    width: 18%;
  }

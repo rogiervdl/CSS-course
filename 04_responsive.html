@@ -47,222 +47,112 @@
       <section>
         <section>
           <h1>Responsive Webdesign</h1>
-          <h2>[About]</h2>
+          <h2>Responsive in 7 stappen</h2>
           <ul class="chapterlist">
             <!-- to be filled by Javascript -->
           </ul>
         </section>
         <section>
-          <h2>Definition</h2>
-          <blockquote style="margin-top: 2em">
-            Responsive design aims at providing an optimal viewing experience across a wide range of screen resolutions and devices with a single site, codebase and content.
+          <h2>Definitie</h2>
+          <blockquote class="greenbig" style="margin-top: 2em">
+            Responsive design is gericht op het bieden van een optimale gebruikservaring over een breed gamma aan schermresoluties en toestellen met één enkele site, codebasis en inhoud.
           </blockquote>
         </section>
-        <section data-toc-title="How is mobile doing?">
-          <h2>How is mobile doing? (1)</h2>
-          <ul>
-            <li>In 2014, mobile traffic was expected to surpass desktop traffic:</li>
-          </ul>
-          <figure style="margin: 0 auto; width: 700px; position: relative">
-            <img src="img/04_responsive/redcross.png" alt="" style="position: absolute; right: 20%; top: 0" />
-            <img src="img/04_responsive/forecast-20142.jpg" alt="" style="max-width: 100%" />
-            <figcaption>UK stats; source: <a href="http://www.intelligentpositioning.com/blog/2014/01/mobile-and-tablet-traffic-set-to-overtake-desktop-by-mid-2014/">intelligentpositioning.com</a></figcaption>
-          </figure>
-        </section>
-        <section data-toc-title="">
-          <h2>How is mobile doing? (2)</h2>
-          <ul>
-            <li>
-              Observations:
-              <ul>
-                <li>mobile seems to stabilize or even have reached its peak (worldwide; other charts for <a href="img/04_responsive/stats_europe.png">Europe</a>, <a href="img/04_responsive/stats_africa.png">Africa</a>, <a href="img/04_responsive/stats_asia.png">Asia</a>, <a href="img/04_responsive/stats_north_america.png">North-America</a> and <a href="img/04_responsive/stats_belgium.png">Belgium</a>)</li>
-                <li>developing countries are more developed mobilewise</li>
-                <li>is the tablet hype over?</li>
-              </ul>
-            </li>
-          </ul>
-          <figure style="margin: 0 auto; width: 700px;">
-            <img src="img/04_responsive/stats_worldwide.png" alt="" style="max-width: 100%" />
-            <figcaption>Global stats; source: <a href="http://gs.statcounter.com/#all-comparison-ww-monthly-201202-201502">http://gs.statcounter.com/</a></figcaption>
-          </figure>
-        </section>
-        <section data-toc-title="">
-          <h2>How is mobile doing? (3)</h2>
-          <ul>
-            <li>Still, mobile usage hovers around 40%</li>
-            <li>Also for e-commerce it is big business:</li>
-          </ul>
-          <figure style="margin: 0 auto; width: 590px">
-            <img src="img/04_responsive/mobilebusiness.jpg" alt="" style="max-width: 100%" />
-            <figcaption>Extract from infographic; source: <a href="http://www.supermonitoring.com/blog/2013/09/23/state-of-mobile-2013-infographic/">supermonitoring.com</a></figcaption>
-          </figure>
-        </section>
-        <section data-toc-title="Responsive webdesign">
-          <h2>Responsive webdesign (1)</h2>
-          <ul>
-            <li>Responsive webdesign = a single site that adjusts ('responds') optimally to every screen width</li>
-          </ul>
-          <img src="img/04_responsive/responsive.png" alt="" style="max-width: 100%; margin: 20px 0" class="border" />
-          <ul>
-            <li class="arrow" style="font-size: smaller">today every site   </li>
-          </ul>
-        </section>
-        <section data-toc-title="">
-          <h2>Responsive webdesign (2)</h2>
-          <ul>
-            <li>
-              Transition effects on elements (textboxes, graphics, fonts...) between screen sizes is called <em>content choreography</em>:
-              <ul>
-                <li>stretching / compressing elements &rarr; <em>flexibility</em></li>
-                <li>reordering elements &rarr; <em>fluidity</em></li>
-                <li>omitting / adding elements</li>
-                <li>changing elements</li>
-                <li>...</li>
-              </ul>
-            </li>
-            <li>
-              Basically whatever floats your boat
-            </li>
-          </ul>
-        </section>
-        <section data-toc-title="Responsive ≠ mobile only!">
-          <h2>Responsive ≠ mobile only! (1)</h2>
-          <ul>
-            <li>
-              Optimized for all screen sizes means optimized for all screen sizes, not for mobile only
-            </li>
-            <li>
-              A hamburger menu on a 1920x1080 screen is ridiculous:
-            </li>
-          </ul>
-          <img src="img/04_responsive/mobile_only_hamburger_menu.png" alt="" style="max-width: 100%;" class="border" />
-        </section>
-        <section data-toc-title="">
-          <h2>Responsive ≠ mobile only! (2)</h2>
-          <ul>
-            <li>
-              Stretching your content 1920px wide is ridiculous too:
-            </li>
-          </ul>
-          <img src="img/04_responsive/mobile_version_1.png" alt="" style="max-width: 100%;" class="border" />
-        </section>
-        <section data-toc-title="Alternative: an app">
-          <h2>Alternative: an app (1)</h2>
-          <p style="text-align: center">
-            <img src="img/04_responsive/app_nmbs.png" alt="" class="border" />
-          </p>
-        </section>
-        <section data-toc-title="">
-          <h2>Alternative: an app (2)</h2>
-          <ul>
-            <li>
-              Apps are great!
-              <ul class="v-style">
-                <li>easy to download and install</li>
-                <li>work well offline</li>
-                <li>have direct hardware access (GPS, camera, accelerometer...)</li>
-                <li>have good visibility in app stores</li>
-              </ul>
-            </li>
-            <li>
-              But for a regular websites building an app is quite silly:
-              <ul class="x-style">
-                <li>seperate versions needed for Android, iOS, Windows...</li>
-                <li>hard and expensive to develop and maintain</li>
-                <li>customers simply do not download and install websites</li>
-              </ul>
-            </li>
-          </ul>
-        </section>
-        <section data-toc-title="Alternative: mobile version">
-          <h2>Alternative: mobile version (1)</h2>
-          <p style="text-align: center">
-            <img src="img/04_responsive/mobileversion.jpg" alt="" style="width: 40%" />
-          </p>
-        </section>
-        <section data-toc-title="">
-          <h2>Alternative: mobile version (2)</h2>
-          <ul>
-            <li>
-              A separate mobile version: sounds like a plan!
-              <ul class="v-style">
-                <li>optimized design and content</li>
-                <li>bandwidth-friendly</li>
-                <li>take advantage of mobile features like geolocation, QR-scanning etc...</li>
-              </ul>
-            </li>
-            <li>
-              But maybe the idea is not so great after all:
-              <ul class="x-style">
-                <li>different links: which one should you share with others?</li>
-                <li>developing and maintaining two separate versions is costly</li>
-                <li>design: still optimized for just two versions... what about tablets? large smartphones? netbooks?</li>
-                <li>bandwidth: should a smartphone on Wifi use the light mobile or the full desktop version? and a tablet on 3G?</li>
-                <li>mobile: is a smartphone at home considered 'mobile' or 'desktop'? what about a laptop in a public area?</li>
-              </ul>
-            </li>
-          </ul>
-        </section>
-      </section>
-      <section>
         <section>
-          <h1>Responsive Webdesign</h1>
-          <h2>Responsive in 7 easy steps</h2>
-          <ul class="chapterlist">
-            <!-- to be filled by Javascript -->
-          </ul>
-        </section>
-        <section>
-          <h2>Responsive in 7 Steps</h2>
+           <h2>Responsive webdesign</h2>
+           <ul>
+             <li>De site moet zich dus optimaal aanpassen ('respond') aan <strong>elke schermbreedte</strong>. Je kan in Chrome Inspector verschillende toestellen testen met de device toggle:</li>
+           </ul>
+           <div class="flex-1-1">
+            <figure style="width: 62%;">
+              <img src="img/04_responsive/ss-desktop.png" alt="" class="shadowbox" />
+              <figcaption>desktop</figcaption>
+             </figure>
+             <div style="width: 38%;">
+              <figure>
+                <img src="img/04_responsive/ss-tablet.png" alt="" class="shadowbox" />
+                <figcaption>tablet</figcaption>
+               </figure>
+               <figure>
+                <img src="img/04_responsive/ss-phone.png" alt="" class="shadowbox" />
+                <figcaption>mobiel</figcaption>
+               </figure>
+  
+             </div>
+          </div>
+           <ul>
+             <li class="arrow smallfont">het is dus één site, één code die er op alle toestellen geven goed moet uitzien</li>
+           </ul>
+         </section>
+         <section>
+           <h2>Content choreografie</h2>
+           <ul>
+             <li>
+               Bij smaller wordende schermen zullen elementen (teksten, afbeeldingen, kaders, kolommen...) moeten herschalen / verspringen / verdwijnen. Dit noemt men de <em>content choreografie</em>:
+               <ul>
+                 <li>elementen uitrekken / platduwen &rarr; <em>flexibiliteit</em></li>
+                 <li>elementen herschikken &rarr; <em>fluïditeit</em></li>
+                 <li>elementen toevoegen / verwijderen</li>
+                 <li>elementen aanpassen</li>
+                 <li>...</li>
+               </ul>
+             </li>
+             <li>
+               Er zijn geen echte regels over wat precies wanneer moet gebeuren; dit is geheel aan jou. Probeer bredere / smallere schermen, en kijk wat goed voelt. 
+             </li>
+           </ul>
+         </section>
+         <section>
+          <h2>Responsive in 7 stappen</h2>
           <ul>
             <li>
-              First prepare your code:
+              Bereid eerst je code voor:
               <ul class="v-style">
                 <li>
-                  step 1: make sure you've used em/rem as your default unit
+                  stap 1: gebruik bij voorkeur overal em/rem als standaardheenheid [PB]
                 </li>
                 <li>
-                  step 2: add the viewport meta tag
+                  stap 2: voeg de viewport meta tag toe aan je HTML
                 </li>
                 <li>
-                  step 3: make your layout (wrapper, columns, images, boxes...) flexible
+                  stap 3: maak de layout (wrapper, kolommen, foto's, boxen...) flexibel
                 </li>
               </ul>
             </li>
             <li>
-              Then make your site responsive:
+              Maak dan de site echt responsive:
               <ul class="v-style">
                 <li>
-                  step 4: choose your breakpoints
+                  stap 4: kies je breekpunten
                 </li>
                 <li>
-                  step 5: add a media query for each breakpoint
+                  stap 5: voeg een media query toe voor elk breekpunt
                 </li>
                 <li>
-                  step 6: make your CSS responsive &mdash; move/change CSS inside and outside the media queries until it looks good on all screen widths
+                  stap 6: maak je CSS responsive &mdash; verplaats/verander CSS binnen en buiten de media queries tot het er goed uitziet op elke schermbreedte
                 </li>
                 <li>
-                  step 7: repeat until satisfied
+                  stap 7: herhaal dit proces tot je echt tevreden bent
                 </li>
               </ul>
             </li>
           </ul>
         </section>
         <section>
-          <h2>Step 1: use em/rem</h2>
+          <h2>Stap 1: gebruik em/rem [PB]</h2>
           <ul>
             <li>
-              Make sure you've used <em><code>rem</code> or <code>em</code></em> as your default unit, like we've done throughout the course:
+              Gebruik bij voorkeur <em><code>rem</code> en/of <code>em</code></em> als standaardeenheid (zie <a href="02_design.html#/rem-definitie-pb">deze slide</a>):
             </li>
             <li class="no-style">
-              <pre><code class="language-css">/* set default font size to 16px * 0.625 = 10px */
+              <pre><code class="language-css">/* herschaal de html font size naar 10px */
 html {
-  font-size: 0.625em;
+  font-size: 62.5%;
 }
 
-/* from now on 10px = 1rem */
+/* vanaf hier is 10px = 1rem */
 body {
-  font-size: 1.3rem; /* 13px, or whatever default font size you like */
+  font-size: 1.3rem; /* 13px */
 }
 .wrapper {
   max-width: 96rem; /* 960px */
@@ -271,21 +161,16 @@ body {
 ...
 </code></pre>
             </li>
-            <li class="arrow smaller">
-              should normally already be ok
+            <li class="arrow smallfont">
+              heb je toch pixels gebruikt? dat kan eventueel ook; vervang dan in gedachten in het vervolg van deze presentatie 1rem door 10px
             </li>
           </ul>
-          <div class="tooltip">
-            <div>
-              You may still use pixels in some occasions, like 1px borders.
-            </div>
-          </div>
         </section>
         <section>
-          <h2>Step 2: add viewport metatag</h2>
+          <h2>Stap 2: viewport metatag</h2>
           <ul>
             <li>
-              Let your mobile device know that your site is responsive; otherwise it will try and rescale the whole page to squeeze it in the device screen. This is simply done by adding the <em>viewport metatag</em> to your HTML:
+              Laat je mobiel toestel weten dat de site responsive is, zoniet zal het proberen de desktopversie van de site te herschalen en persen in het kleine scherm. Het is niet meer dan één <em>viewport metatag</em> toevoegen aan je HTML:
               <pre><code class="language-html right">&lt;head&gt;
   ...
   &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
@@ -293,268 +178,1390 @@ body {
 &lt;/head&gt;</code></pre>
             </li>
             <li>
-              You'll also come across this version, but it does not allow the user to zoom in:
-              <pre><code class="language-html wrong">&lt;meta name="viewport"
-    content="width=device-width, minimum-scale=1.0, maximum-scale=1.0"&gt;
-</code></pre>
-            </li>
-          </ul>
-        </section>
-        <section data-toc-title="step 3: make flexible">
-          <h2>Step 3: make flexible</h2>
-          <ul>
-            <li>
-              Make sure your layout is <em>flexible</em>, i.e. it can squeeze or expand with device width. Basic principles:
-              <ol style="list-style:lower-alpha">
-                <li>layout: use <strong>flexbox</strong> and/or <strong>float</strong> &mdash; don't use absolute positioning</li>
-                <li>wrappers: use <strong><code>min-width</code></strong> and <strong><code>max-width</code></strong>, not <code>width</code></li>
-                <li>flexible columns: use <strong>% (percentage)</strong> &mdash; don't use fixed size units</li>
-                <li>flexible rows (e.g. header): <strong>don't use <code>height</code></strong></li>
-                <li>flexible boxes and images: use <strong><code>width:100%</code></strong> and <strong><code>max-width</code></strong> &mdash; don't use fixed widths</li>
-              </ol>
-            </li>
-          </ul>
-        </section>
-        <section data-toc-title="&nbsp;&nbsp;&nbsp;&rarr; flexible layout">
-          <h2>Step 3A: flexible layout</h2>
-          <ul>
-            <li>replace any absolute positioning layout you may have used by flexbox or by float layout, e.g.:
-              <pre><code class="language-css" style="max-height: 200px;">header #logo {
-  <del>position: absolute;</del>
-  <del>top: 2rem;</del>
-  <del>left: 1rem;</del>
-  margin-top: 2rem;
-  margin-left: 1rem;
-  float: left;
-}
-
-header #login {
-  <del>position: absolute;</del>
-  <del>top: 2rem;</del>
-  <del>rigt: 1rem;</del>
-  margin-top: 2rem;
-  margin-right: 1rem;
-  float: right;
-}
-</code></pre>
-            </li>
-            <li class="arrow smaller">
-              should normally already be ok
-            </li>
-          </ul>
-        </section>
-        <section data-toc-title="&nbsp;&nbsp;&nbsp;&rarr; flexible wrapper">
-          <h2>Step 3B: flexible wrapper</h2>
-          <ul>
-            <li>
-              define <code>min-width</code> and <code>max-width</code> for wrappers instead of <code>width</code>:
-              <pre><code class="language-css">.wrapper {
-  <del>width: 96rem;</del>
-  max-width: 96rem;
-  min-width: 32rem;
-}
-</code></pre>
-            </li>
-          </ul>
-        </section>
-        <section data-toc-title="&nbsp;&nbsp;&nbsp;&rarr; flexible columns">
-          <h2>Step 3C: flexible columns</h2>
-          <ul>
-            <li>use <code>%</code> for flexible columns &mdash; use <code>calc()</code> if needed:
-              <pre><code class="language-css">.leftcol {
-  <del>width: 64rem;</del>
-  width: 67%;
-}
-.rightcol {
-  <del>width: 28rem;</del>
-  margin-left: 4rem;
-  width: calc (33% - 4rem);
-}</code></pre>
-            </li>
-            <li class="arrow smaller">
-              other combinations are possible, e.g. <span style="font-size: smaller">66% + 4% + 30%</span>, or <span style="font-size: smaller">calc(67% - 2rem) + 4rem + calc(33% - 2rem)</span>; just <span style="color: #700">make sure the sum is 100%</span>
-            </li>
-          </ul>
-        </section>
-        <section data-toc-title="&nbsp;&nbsp;&nbsp;&rarr; flexible height">
-          <h2>Step 3D: flexible height</h2>
-          <ul>
-            <li>remove <code>height</code> from vertically flexible parts, e.g. the header, as it will need to stretch for smaller screen sizes when child components shift:
-              <pre><code class="language-css">header {
-  <del>height: 25rem;</del>
-}
-</code></pre>
-            </li>
-          </ul>
-        </section>
-        <section data-toc-title="&nbsp;&nbsp;&nbsp;&rarr; flexible images/boxes">
-          <h2>Step 3E: flexible images/boxes</h2>
-          <ul>
-            <li>images and other flexible boxes with a maximum width should both have <code>width</code> and <code>max-width</code> set:
-              <pre><code class="language-css">main img {
-  width: 45rem; /* native width */
-  max-width: 100%; /* should not be wider than its parent */
-}
+              Irritant genoeg kom je ook deze versie tegen, maar die laat de gebruiker niet inzoomen:
+              <pre><code class="language-html wrong">&lt;meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0"&gt;
 </code></pre>
             </li>
           </ul>
         </section>
         <section>
-          <h2>step 4: decide breakpoints</h2>
+          <h2>Stap 3: maak flexibel</h2>
           <ul>
             <li>
-              A <em>breakpoint</em> is the browser width where the CSS transition between large and small version will occur. Deciding on a breakpoint is easy:
+              Maak je layout alvast <em>flexibel</em>, i.e. het kan in de breedte samengeperst of uitgerokken worden naargelang de schermbreedte. De principes:
+              <ol style="list-style:lower-alpha">
+                <li>layout: gebruik zoveel mogelijk <strong>flexbox</strong> en uitzonderlijk <strong>float</strong> &mdash; geen absolute positioning</li>
+                <li>wrappers: gebruik <strong><code>min-width</code></strong> en <strong><code>max-width</code></strong>, dus geen vaste breedte met <code>width</code></li>
+                <li>flexibele kolommen: stel de <strong>breedtes in %</strong> (percentage) in &mdash; geen vaste waarden in <code>px</code> of <code>rem</code></li>
+                <li>flexibele rijen (bv. header): stel <strong>geen hoogte</strong> in</li>
+                <li>flexible boxes and images: gebruik <strong><code>width:100%</code></strong> en <strong><code>max-width</code></strong> &mdash; geen vaste breedtes</li>
+              </ol>
+            </li>
+          </ul>
+        </section>
+        <section data-toc-title="&nbsp;&nbsp;&nbsp;&rarr; flexibele layout">
+          <h2>Stap 3A: flexibele layout</h2>
+          <ul>
+            <li>Gebruik voor layout zoveel mogelijk flexbox, bv.:
+              <div class="flex-1-1">
+              <pre><code class="language-css wrong" style="max-height: 200px;">header #logo {
+  position: absolute;
+  top: 2rem;
+  left: 1rem;
+}
+
+header #login {
+  position: absolute;
+  top: 2rem;
+  right: 1rem;
+}</code></pre>
+            <pre><code class="language-css right" style="max-height: 200px;">header {
+  align-items: flex-start;
+  display: flex;
+  justify-content: space-between;
+  padding: 2rem 1rem;
+}</code></pre>
+              </div>
+            </li>
+            <li class="arrow smallfont">
+              zou normaal gezien al ok moeten zijn
+            </li>
+          </ul>
+        </section>
+        <section data-toc-title="&nbsp;&nbsp;&nbsp;&rarr; flexibele wrapper">
+          <h2>Stap 3B: flexibele wrapper</h2>
+          <ul>
+            <li>
+              Stel <code>min-width</code> en <code>max-width</code> in op wrappers in plaats van <code>width</code>:
+              <div class="flex-1-1">
+                <pre><code class="language-css wrong">.wrapper {
+  width: 96rem;
+}</code></pre>
+<pre><code class="language-css right">.wrapper {
+  max-width: 96rem;
+  min-width: 32rem;
+}</code></pre>
+
+              </div>
+            </li>
+          </ul>
+        </section>
+        <section data-toc-title="&nbsp;&nbsp;&nbsp;&rarr; flexibele kolommen">
+          <h2>Stap 3C: flexibele kolommen</h2>
+          <ul>
+            <li>Gebruik geen <code>rem</code> of <code>px</code> maar <code>%</code> voor kolombreedtes &mdash; gebruik <code>calc()</code> indien nodig:
+              <div class="flex-1-1">
+              <pre><code class="language-css wrong">.leftcol {
+  width: 64rem;
+}
+.rightcol {
+  width: 28rem;
+}</code></pre>
+<pre><code class="language-css right">.leftcol {
+  width: 67%;
+}
+.rightcol {
+  margin-left: 4rem;
+  width: calc (33% - 4rem);
+}</code></pre>
+              </div>
+            </li>
+            <li class="arrow smaller">
+              andere combinaties zijn mogelijk, zolang de som maar 100% is: 67% + 4rem + (33% - 4rem)
+            </li>
+          </ul>
+        </section>
+        <section data-toc-title="&nbsp;&nbsp;&nbsp;&rarr; flexibele hoogtes">
+          <h2>Stap 3d: flexibele hoogtes</h2>
+          <ul>
+            <li>Verwijder <code>height</code> van verticaal flexibele elementen, bv. de header; het zal verticaal moeten kunnen uitrekken bij smalle schermen naarmate child elementen verschuiven:
+              <div class="flex-1-1">
+                <pre><code class="language-css wrong">header {
+  height: 25rem;
+}</code></pre>
+              <pre><code class="language-css right">header {
+
+}
+</code></pre>
+              </div>
+              </li>
+          </ul>
+        </section>
+        <section data-toc-title="&nbsp;&nbsp;&nbsp;&rarr; flexible afbeeldingen/boxen">
+          <h2>Stap 3E: flexible blokken</h2>
+          <ul>
+            <li>Stel voor afbeeldingen en andere flexibele blokken met een maximum breedte de <code>width</code> en <code>max-width</code> properties in:
+              <pre><code class="language-css right">main img {
+  width: 45rem; /* natuurlijke breedte */
+  max-width: 100%; /* mag nooit breder dan de parent zijn */
+}</code></pre>
+            </li>
+          </ul>
+        </section>
+        <section>
+          <h2>stap 4: bepaal breekpunt</h2>
+          <ul>
+            <li>
+              Een <em>breekpunt</em> is de browserbreedte vanaf waar veranderingen aan de CSS nodig zijn. Een breekpunt bepalen is makkelijk:
               <ul>
-                <li>open your page in the browser</li>
-                <li>make your browser window smaller (it should already be flexible)</li>
-                <li>the width where your design breaks is your breakpoint</li>
+                <li>open je pagina in de browser</li>
+                <li>maak je browservenster smaller (het zou al flexibel moeten zijn)</li>
+                <li>de breedte waar het design er niet meer goed uitziet, is je breekputn</li>
               </ul>
             </li>
             <li>
-              There are no 'recommended' breakpoints; pick whatever fits your design.
+              Er zijn geen 'aanbevolen' breekpunten; kies wat past bij je design.
             </li>
           </ul>
           <p style="text-align: right">
             <img src="img/04_responsive/resize.gif" alt="" />
           </p>
         </section>
-        <section data-toc-title="step 5. add media queries">
-          <h2>step 5: add media queries (1)</h2>
+        <section data-toc-title="step 5. media queries toevoegen">
+          <h2>step 5: media queries toevoegen (1)</h2>
           <ul>
             <li>
-              Suppose you want breakpoints at 600px, 800px and 1000px. Start with the CSS for the smallest screens, and work your way up for larger screen widths with media queries:
-              <pre><code class="language-css" style="max-height: 200px;">/* CSS for smallest screens */
+              Stel dat je breekpunten wil op 600px, 800px en 1000px. Begin met de CSS voor het smalste scherm, en werk je op naar bredere schermen met with media queries:
+              <pre><code class="language-css" style="max-height: 200px;">/* CSS voor smalste schermen */
 ...
 
 /* ===============
  Media queries
  =============== */
 
-@media (min-width: 37.5em) { /* 37.5 * 16 = 600px */
-  /* additional CSS for screens 600px and up */
+@media (min-width: 600px) { 
+  /* bijkomende CSS voor breedtes van 600px en hoger */
   ...
 }
-@media (min-width: 50em) { /* 50 * 16 = 800px  */
-  /* additional CSS for screens 800px and up */
+@media (min-width: 800px) { 
+  /* bijkomende CSS voor breedtes van 800px en hoger */
   ...
 }
-@media (min-width: 62.5em) { /* 62.5 * 16 = 1000px  */
-  /* additional CSS for screens 1000px and up */
+@media (min-width: 1000px) { 
+  /* bijkomende CSS voor breedtes van 1000px en hoger */
   ...
 }
 </code></pre>
             </li>
-            <li class="arrow smaller">
-              always put your media queries <strong>at the bottom</strong> of your CSS
+            <li class="arrow smallefont">
+              zet je media queries <strong>op het einde</strong> van je CSS
             </li>
-            <li class="arrow smaller">
-              sort your breakpoints <strong>from small to large</strong>
+            <li class="arrow smallefont">
+              sorteer je breekpunten <strong>van klein naar groot</strong>
             </li>
-            <li class="arrow smaller">
-              only use <strong><code>min-width</code></strong>, not <code>max-width</code> or a combination
+            <li class="arrow smallefont">
+              gebruik enkel <strong><code>min-width</code></strong>, geen <code>max-width</code> of een combinatie
             </li>
           </ul>
           <div class="tooltip">
             <div>
               <p>
-                The general philosopy for responsive CSS is "mobile first", i.e. create your CSS for the smallest screen, and adapt with media queries for larger screens. The alternative, "desktop first", would require you to create CSS for the largest screen, and then adapt it for smaller screens. As the CSS for larger screens is usually more complex than for smaller screens, it is better to start from the smalllest possible CSS and work your way up. This will lead to less complex CSS.
-              </p>
-              <p>
-                Also, note that the breakpoint is defined in <code>em</code> instead of <code>rem</code>. Media queries have no 'root' and thus no rem. Simply devide your breakpoint in px by 16, e.g. 800px / 16px = 50em
+                De algemene filosofie voor responsive CSS is "mobile first", i.e. bouw je CSS voor het smalste scherm, en pas het aan met media queries voor bredere schermen. Het alternatief, "desktop first", zou veronderstellen dat je eerst de CSS schrijft voor het breedste scherm, en het dan aanpast voor smallere schermen. Gezien de CSS voor brede schermen meestal complexer is dan dat voor smalle schermen, is het beter om te werken van kleine schermen naar grote schermen dan omgekeerd. Dit leidt tot minder complexe CSS.
               </p>
             </div>
           </div>
         </section>
         <section data-toc-title="">
-          <h2>step 6 &amp; 7: responsive CSS</h2>
+          <h2>stap 6 &amp; 7: responsive CSS</h2>
           <ul>
             <li>
-              The rest is basically just shuffling CSS back and forth between media queries and adding new CSS until it looks good on all devices.
+              De rest is essentieel niet meer dan wat CSS heen en weer schuiven tussen media queries en nieuwe CSS toevoegen tot het er goed uitziet op alle devices.
             </li>
-            <li>For a full example check the <a href="#/startcode">step by step demo in next part</a></li>
+            <li>Voor een modelvoorbeeld, zie de <a href="#/startcode">stap voor stap demo</a> in het volgende deel.</li>
           </ul>
         </section>
         <section>
-          <h2>Final note: responsive images</h2>
+          <h2>Tot slot: responsive afbeeldingen</h2>
           <ul>
             <li>
-              Resizing large images into small screens isn't bandwidth friendly; a <a href="http://www.w3.org/community/respimg/">W3C group</a> has worked out a solution with <code>&lt;picture&gt;</code>:
-                <pre><code>&lt;picture alt="A giant stone face at The Bayon temple in Cambodia"&gt;
-  &lt;source src="small.jpg"&gt;
-  &lt;source src="medium.jpg" media="(min-width: 400px)"&gt;
-  &lt;source src="large.jpg" media="(min-width: 800px)"&gt;
-&lt;/picture&gt;</code></pre>
+              Een foto bedoeld voor de desktop weergave van een site is meestal veel te groot voor de mobiele versie. Het zou dus handig zijn verschillende versies van een afbeelding te kunnen specifiëren. Gelukkig hebben we daarvoor het <code>&lt;picture&gt;</code> element ter beschikking:
+                <pre><code>&lt;picture alt="Spelend kind, Iran, 2009"&gt;
+  &lt;source srcset="img/photo_large.jpg" media="(min-width: 1000px)"&gt;
+  &lt;source srcset="img/photo_medium.jpg" media="(min-width: 700px)"&gt;
+  &lt;img src="img/photo_small.jpg" alt=""&gt;
+&lt;/picture&gt;
+</code></pre>
+              <div class="demolink"><a href="demos/04_responsive/picture/index.html">demo</a></div>
             </li>
-            <li class="arrow smaller">
-              browser support is <a href="https://caniuse.com/#search=picture">really good</a>
-            </li>
-            <li class="arrow smaller">
-              tip: test optimized image versions online and free at <a href="https://squoosh.app/">Squoosh</a>
-            </li>
-
           </ul>
         </section>
       </section>
       <section>
         <section>
           <h1>Responsive Webdesign</h1>
-          <h2>Step by step demo</h2>
+          <h2>Stap voor stap demo</h2>
           <ul class="chapterlist">
             <!-- to be filled by Javascript -->
           </ul>
         </section>
         <section>
-          <h2>Startcode</h2>
+         <h2>Eindresultaat</h2>
+         <ul>
+           <li>
+             We willen deze pagina responsive maken:
+           </li>
+         </ul>
+         <div style="display: flex;align-items: flex-start;">
+            <figure> 
+               <img src="demos/04_responsive/step-by-step/ss-desktop.png" alt="" class="shadowbox" style="height: 250px;margin-right: 20px;">
+               <figcaption>desktop</figcaption>
+            </figure>
+            <figure> 
+               <img src="demos/04_responsive/step-by-step/ss-tablet.png" alt="" class="shadowbox" style="height: 300px;margin-right: 20px;">
+               <figcaption>tablet</figcaption>
+            </figure>
+            <figure> 
+               <img src="demos/04_responsive/step-by-step/ss-mobile.png" alt="" class="shadowbox" style="height: 400px;">
+               <figcaption>gsm</figcaption>
+            </figure>
+         </div>
+       </section>
+       <section>
+        <h2>De HTML</h2>
+        <ul>
+          <li>
+            De HTML voor deze pagina blijft voor alle versies identiek:
+          </li>
+          <li class="no-style">
+              <pre><code class="language-html smallpanel">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+  &lt;title&gt;Classical Page Layout&lt;/title&gt;
+  &lt;meta charset="utf-8"&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+  &lt;link rel="stylesheet" href="css/styles.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;div id="wrapper"&gt;
+    &lt;header&gt;
+      &lt;h1&gt;&lt;a href="#"&gt;My Blog&lt;/a&gt;&lt;/h1&gt;
+      &lt;p class="header_login"&gt;You are not logged in &ndash; &lt;a href="#"&gt;login&lt;/a&gt;&lt;/p&gt;
+    &lt;/header&gt;
+    &lt;nav id="mainmenu"&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;a href="#"&gt;home&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#"&gt;link1&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#"&gt;link2&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/nav&gt;
+    &lt;main&gt;
+      &lt;nav id="leftmenu"&gt;
+        &lt;h3&gt;Submenu&lt;/h3&gt;
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href="#"&gt;item1&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href="#"&gt;item2&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href="#"&gt;item3&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href="#"&gt;item4&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href="#"&gt;item5&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href="#"&gt;item6&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/nav&gt;
+      &lt;section id="content"&gt;
+        &lt;h3&gt;Lorem Ipsum&lt;/h3&gt;
+        &lt;aside&gt;
+          &lt;section&gt;
+            &lt;p&gt;
+              For further reading, see also this 
+              &lt;a href="#"&gt;more detailed article&lt;/a&gt;
+            &lt;/p&gt;
+          &lt;/section&gt;
+          &lt;article class="ad"&gt;
+            &lt;h1&gt;Advertisement&lt;/h1&gt;
+            &lt;p&gt;Buy our &lt;a href="#"&gt;brand new T-shirt&lt;/a&gt; today!&lt;/p&gt;
+            &lt;img src="img/shirt.png" alt="shirt" class="article_visual"&gt;
+            &lt;p&gt;&copy; &lt;a href="#"&gt;someCompany&lt;/a&gt;&lt;/p&gt;
+          &lt;/article&gt;
+        &lt;/aside&gt;
+        &lt;p class="content_header"&gt;Posted on 2018-11-03 by Bobby Peru&lt;/p&gt;
+        &lt;h4&gt;Part 1&lt;/h4&gt;
+        &lt;p&gt;
+          But I must explain to you how all this mistaken idea of denouncing pleasure
+          and praising pain was born and I will give you a complete account of the 
+          system, and expound the actual teachings of the great explorer of the truth, 
+          the master-builder of human happiness. No one rejects, dislikes, or avoids 
+          pleasure itself, because it is pleasure, but because those who do not know.
+        &lt;/p&gt;
+        &lt;h4&gt;Part 2&lt;/h4&gt;
+        &lt;p&gt;
+          Nor again is there anyone who loves or pursues or desires to obtain pain of 
+          itself, because it is pain, but because occasionally circumstances occur in 
+          which toil and pain can procure him some great pleasure. To take a trivial 
+          example, which of us ever undertakes laborious physical exercise, except to 
+          obtain some advantage from it? But who has any right to find fault with a 
+          man who chooses to enjoy a pleasure that has no annoying consequences, or 
+          one who avoids a pain that produces no resultant pleasure?
+        &lt;/p&gt;	
+        &lt;p&gt;
+          &lt;img src="img/picture.jpg" alt="just some picture" class="content_picture"&gt;
+        &lt;/p&gt;			
+        &lt;h4&gt;Part 3&lt;/h4&gt;
+        &lt;p&gt;
+          On the other hand, we denounce with righteous indignation and dislike men who 
+          are so beguiled and demoralized by the charms of pleasure of the moment, so 
+          blinded by desire, that they cannot foresee the pain and trouble that are 
+          bound to ensue; and equal blame belongs to those who fail in their duty 
+          through weakness of will, which is the same as saying through shrinking from 
+          toil and pain.
+        &lt;/p&gt;
+        &lt;section id="comments"&gt;
+          &lt;h4&gt;Comments&lt;/h4&gt;
+          &lt;article class="comment"&gt;
+            &lt;h5 class="comment_title"&gt;
+              I love Lorem Ipsum &lt;span class="comment_author"&gt;
+              &mdash; Alice, 3 hours ago&lt;/span&gt;
+              &lt;/h5&gt;
+            &lt;p&gt;
+              &ldquo;I personally believe Lorem Ipsum is the most sensitive poem ever 
+              written&rdquo;. As it so contrasted oh estimating instrument. Size like 
+              body some one had. Are conduct viewing boy minutes warrant expense. 
+            &lt;/p&gt;
+          &lt;/article&gt;
+          &lt;article class="comment"&gt;
+            &lt;h5 class="comment_title"
+              &gt;Lorem Ipsum Sucks &lt;span class="comment_author"&gt;
+              &mdash; Bob, 2 hours ago&lt;/span&gt;
+            &lt;/h5&gt;
+            &lt;p&gt;&ldquo;Tolerably behaviour may admitting daughters offending her ask own. 
+            Praise effect wishes change way and any wanted. There, I said it!&rdquo;&lt;/p&gt;
+          &lt;/article&gt;
+        &lt;/section&gt;
+      &lt;/section&gt;
+    &lt;/main&gt;
+    &lt;footer&gt;
+      &lt;p&gt;&copy; Rogier van der Linde, 2010&lt;/p&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;a href="#"&gt;disclaimer&lt;/a&gt;
+        &lt;li&gt;&lt;a href="#"&gt;sitemap&lt;/a&gt;
+        &lt;li&gt;&lt;a href="#"&gt;contact&lt;/a&gt;
+      &lt;/ul&gt;
+    &lt;/footer&gt;
+  &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+          </li>
+         </ul>
+         </section>
+       <section>
+         <h2>CSS startversie</h2>
+         <ul>
+           <li>
+             De volgende CSS versie is px gebaseerd en met een vaste layout:
+           </li>
+           <li class="no-style">
+               <pre><code class="language-css smallpanel">/**
+ *
+ * Styles 
+ * @author Rogier van der Linde
+ *
+ */
+
+
+/* Reset
+/* ============== */
+
+* {
+   box-sizing: border-box; /* corrigeer het box model */
+   margin: 0; /* wis verschillen tussen browsers uit */
+   padding: 0; /* wis verschillen tussen browsers uit */ 
+}
+
+img {
+   border: 0;
+}
+
+/* General
+/* ============== */
+
+body {
+  background-color: #999;
+  font-family: Verdana;
+  font-size: 16px;
+}
+h2, h3, h4, h5 {
+  margin: 1em 0;
+}
+h3 {
+  font-size: 16px;
+  font-weight: normal;
+}
+h4 {
+  font-size: 14px;
+}
+h5 {
+  font-size: 12px;
+  font-weight: normal;
+}
+
+/* site wrapper */
+#wrapper {
+  width: 900px;
+  margin: 0 auto;
+  background-color: white;
+}
+
+
+/* Header
+/* ============== */
+
+header {
+  align-items: flex-start;
+  background-color: #333;
+  color: #ccc;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  height: 100px;
+  padding: 20px;
+  position: relative;
+}
+header h1 a {
+  font-weight: normal;
+  text-decoration: none;
+}
+header a {
+  color: #ddd;
+}
+.header_login {
+  text-align: right;
+}
+.header_login a:hover {
+  color: white;
+}
+
+
+/* Menu
+/* ============== */
+
+/* top menu */
+header + nav {
+  background-color: #666;
+  padding: 10px 20px;
+}
+#mainmenu {
+  display: block;
+}
+#mainmenu li {
+  display: inline-block;
+}
+#mainmenu a {
+  color: #ccc;
+  display: inline-block;
+  height: 28px;
+  line-height: 24px;
+  padding: 2px 5px;
+  text-align: center;
+  width: 50px;
+}
+#mainmenu li + li:before {
+  color: #999;
+  content: '|';
+}
+
+
+/* Main
+/* ============== */
+
+main {
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+/* sub menu */
+#leftmenu {
+  background-color: #FEFF99;
+  padding: 10px 20px;
+  width: 190px;
+}
+#leftmenu ul {
+  list-style: none;
+}
+
+/* content */
+#content {
+  padding: 10px 20px;
+  width: 710px;
+}
+.content_header {
+  font-size: smaller;
+  font-style: italic;
+  margin-bottom: 15px;
+  margin-top: 25px;
+}
+.content_picture {
+  margin: 20px 0;
+  width: 450px;
+}
+
+/* aside */
+main aside {
+  border: 1px solid gray;
+  float: right;
+  font-size: smaller;
+  margin: 15px 0 10px 10px;
+  padding: 10px;
+  width: 160px;
+}
+main aside article {
+  font-size: 12px;
+  margin-top: 10px;
+  text-align: justify;
+}
+.article_visual {
+  display: block;
+  margin: 0 auto;
+  width: 80%;
+}
+main aside article p:last-child {
+  margin-top: 5px;
+}
+main aside article h1 {
+  margin: 10px 0;
+}
+
+/* comments */
+
+#comments {
+  border-top: 1px dotted #ccc;
+  font-size: 12px;
+  margin-top: 40px;
+}
+.comment {
+  width: 500px;
+}
+.comment_title {
+  margin-bottom: 0.5em;
+  font-weight: 600;
+}
+.comment::after {
+  border-top: 1px solid #ccc;
+  content: "";
+  display: block;
+  margin: 10px 0;
+  width: 100px;
+}
+.comment_author {
+  font-style: italic;
+}
+
+
+/* Footer
+/* ============== */
+
+footer {
+  background-color: #666;
+  color: #eee;
+  font-size: smaller;
+  padding: 10px;
+  text-align: center;
+}
+
+footer a {
+  color: #ccc;
+}
+
+footer p, footer ul  {
+  margin: 10px 0;
+}
+
+footer ul {
+  list-style: none;
+  padding: 0;
+}
+
+footer li {
+  display: inline-block;
+}
+
+footer ul a {
+  display: inline;
+  line-height: 24px;
+  padding: 2px 5px;
+}
+footer li + li:before {
+  content: ' | ';
+  color: #999;
+}</code></pre>
+<div class="demolink"><a href="demos/04_responsive/step-by-step/index-start.html">demo</a> of <a href="https://codepen.io/rogiervanderlinde/pen/zyxExp">bekijk op CodePen</a></div>
+           </li>
+         </ul>
+         </section>
+         <section>
+          <h2>Stap 1: gebruik em/rem</h2>
           <ul>
             <li>
-              The following layout is px based and has a fixed layout:
-            </li>
-            <li class="no-style">
-<p data-height="300" data-theme-id="35230" data-slug-hash="zyxExp" data-default-tab="html" data-user="rogiervanderlinde" data-pen-title="CSS course 04 demo1" class="codepen">See the Pen <a href="https://codepen.io/rogiervanderlinde/pen/zyxExp/">CSS course 04 demo1</a> by Rogier van der Linde (<a href="https://codepen.io/rogiervanderlinde">@rogiervanderlinde</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+              Nu met alle px waarden (behalve sommige 1px borders) omgezet naar rem:
+               <pre><code class="language-css smallpanel">/**
+ *
+ * Styles 
+ * @author Rogier van der Linde
+ *
+ */
+
+
+/* Reset
+/* ============== */
+
+html {
+   font-size: 62.5%;  /* 1 rem is nu 10px */
+}
+
+* {
+   box-sizing: border-box; /* corrigeer het box model */
+   margin: 0; /* wis verschillen tussen browsers uit */
+   padding: 0; /* wis verschillen tussen browsers uit */ 
+}
+
+img {
+   border: 0;
+}
+
+/* General
+/* ============== */
+
+body {
+	background-color: #999;
+	font-family: Verdana;
+	font-size: 1.6rem;
+}
+h2, h3, h4, h5 {
+	margin: 1em 0;
+}
+h3 {
+	font-size: 1.6rem;
+	font-weight: normal;
+}
+h4 {
+	font-size: 1.4rem;
+}
+h5 {
+	font-size: 1.2rem;
+	font-weight: normal;
+}
+
+/* site wrapper */
+#wrapper {
+	width: 90rem;
+	margin: 0 auto;
+	background-color: white;
+}
+
+
+/* Header
+/* ============== */
+
+header {
+	align-items: flex-start;
+	background-color: #333;
+	color: #ccc;
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: space-between;
+	height: 10rem;
+	padding: 2rem;
+	position: relative;
+}
+header h1 a {
+	font-weight: normal;
+	text-decoration: none;
+}
+header a {
+	color: #ddd;
+}
+.header_login {
+	text-align: right;
+}
+.header_login a:hover {
+	color: white;
+}
+
+
+/* Menu
+/* ============== */
+
+/* top menu */
+header + nav {
+	background-color: #666;
+	padding: 1rem 2rem;
+}
+#mainmenu {
+	display: block;
+}
+#mainmenu li {
+	display: inline-block;
+}
+#mainmenu a {
+	color: #ccc;
+	display: inline-block;
+	height: 2.8rem;
+	line-height: 2.4rem;
+	padding: 0.2rem 0.5rem;
+	text-align: center;
+	width: 5rem;
+}
+#mainmenu li + li:before {
+	color: #999;
+	content: '|';
+}
+
+
+/* Main
+/* ============== */
+
+main {
+	display: flex;
+	flex-flow: row nowrap;
+}
+
+/* sub menu */
+#leftmenu {
+	background-color: #FEFF99;
+	padding: 1rem 2rem;
+	width: 19rem;
+}
+#leftmenu ul {
+	list-style: none;
+}
+
+/* content */
+#content {
+	padding: 1rem 2rem;
+	width: 71rem;
+}
+.content_header {
+	font-size: smaller;
+	font-style: italic;
+	margin-bottom: 1.5rem;
+	margin-top: 2.5rem;
+}
+.content_picture {
+	margin: 2rem 0;
+	width: 45rem;
+}
+
+/* aside */
+main aside {
+	border: 1px solid gray;
+	float: right;
+	font-size: smaller;
+	margin: 1.5rem 0 1rem 1rem;
+	padding: 1rem;
+	width: 16rem;
+}
+main aside article {
+	font-size: 1.2rem;
+	margin-top: 1rem;
+	text-align: justify;
+}
+.article_visual {
+	display: block;
+	margin: 0 auto;
+	width: 80%;
+}
+main aside article p:last-child {
+	margin-top: 0.5rem;
+}
+main aside article h1 {
+	margin: 1rem 0;
+}
+
+/* comments */
+
+#comments {
+	border-top: 1px dotted #ccc;
+	font-size: 1.2rem;
+	margin-top: 4rem;
+}
+.comment {
+	width: 50rem;
+}
+.comment_title {
+	margin-bottom: 0.5em;
+	font-weight: 600;
+}
+.comment::after {
+	border-top: 1px solid #ccc;
+	content: "";
+	display: block;
+	margin: 1rem 0;
+	width: 10rem;
+}
+.comment_author {
+	font-style: italic;
+}
+
+
+/* Footer
+/* ============== */
+
+footer {
+	background-color: #666;
+	color: #eee;
+	font-size: smaller;
+	padding: 1rem;
+	text-align: center;
+}
+
+footer a {
+	color: #ccc;
+}
+
+footer p, footer ul  {
+	margin: 1rem 0;
+}
+
+footer ul {
+	list-style: none;
+	padding: 0;
+}
+
+footer li {
+	display: inline-block;
+}
+
+footer ul a {
+	display: inline;
+	line-height: 2.4rem;
+	padding: 0.2rem 0.5rem;
+}
+footer li + li:before {
+	content: ' | ';
+	color: #999;
+}</code></pre>
+<div class="demolink"><a href="demos/04_responsive/step-by-step/index-rem.html">demo</a> of <a href="https://codepen.io/rogiervanderlinde/pen/zyxExp">bekijk op CodePen</a></div>
             </li>
           </ul>
         </section>
         <section>
-          <h2>Step 1: em/rem based</h2>
+          <h2>Stap 2: maak flexibel</h2>
           <ul>
             <li>
-              With all px values (except some 1px borders) translated to rem:
-            </li>
-            <li class="no-style">
-<p data-height="300" data-theme-id="35230" data-slug-hash="zyxExp" data-default-tab="css" data-user="rogiervanderlinde" data-pen-title="CSS course 04 demo1" class="codepen">See the Pen <a href="https://codepen.io/rogiervanderlinde/pen/zyxExp/">CSS course 04 demo1</a> by Rogier van der Linde (<a href="https://codepen.io/rogiervanderlinde">@rogiervanderlinde</a>) on <a href="https://codepen.io">CodePen</a>.</p>
-            </li>
-          </ul>
-        </section>
-        <section>
-          <h2>Step 2: flexible</h2>
-          <ul>
-            <li>
-              Changes:
+              Verandeingen:
               <ul>
-                <li>wrapper: used <code>max-width</code> and <code>min-width</code> instead of <code>width</code></li>
-                <li>header: <code>height</code> removed, replaced by <code>padding-bottom</code> </li>
-                <li>left menu and content: absolute widths replaced by percentages</li>
-                <li>content picture and comments: <code>width</code> changed to 100%, <code>max-width</code> set</li>
+                <li>wrapper: <code>max-width</code> en <code>min-width</code> gebruikt i.p.v.<code>width</code></li>
+                <li>header: <code>height</code> verwijderd, vervangen door <code>padding-bottom</code> </li>
+                <li>linkermenu en content: absolute breedtes vervangen door percentages</li>
+                <li>content foto en comments: <code>width</code> veranderd naar 100%, <code>max-width</code> ingesteld</li>
               </ul>
             </li>
             <li class="no-style">
-<p data-height="300" data-theme-id="35230" data-slug-hash="yGyzPz" data-default-tab="css" data-user="rogiervanderlinde" data-pen-title="CSS Course 04 demo3" data-editable="true" class="codepen">See the Pen <a href="https://codepen.io/rogiervanderlinde/pen/yGyzPz/">CSS Course 04 demo3</a> by Rogier van der Linde (<a href="https://codepen.io/rogiervanderlinde">@rogiervanderlinde</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+              <pre><code class="language-css smallpanel">/**
+ *
+ * Styles 
+ * @author Rogier van der Linde
+ *
+ */
+
+/* Reset
+/* ============== */
+
+html {
+  font-size: 62.5%;  /* 1 rem is nu 10px */
+}
+
+* {
+  box-sizing: border-box; /* corrigeer het box model */
+  margin: 0; /* wis verschillen tussen browsers uit */
+  padding: 0; /* wis verschillen tussen browsers uit */ 
+}
+
+img {
+  border: 0;
+}
+
+/* General
+/* ============== */
+
+body {
+  background-color: #999;
+  font-family: Verdana;
+  font-size: 1.6rem;
+}
+h2, h3, h4, h5 {
+  margin: 1em 0;
+}
+h3 {
+  font-size: 1.6rem;
+  font-weight: normal;
+}
+h4 {
+  font-size: 1.4rem;
+}
+h5 {
+  font-size: 1.2rem;
+  font-weight: normal;
+}
+
+/* site wrapper */
+#wrapper {
+  max-width: 90rem;
+  min-width: 24rem;
+  margin: 0 auto;
+  background-color: white;
+}
+
+
+/* Header
+/* ============== */
+
+header {
+  align-items: flex-start;
+  background-color: #333;
+  color: #ccc;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  padding: 2rem;
+  padding-bottom: 4rem;
+  position: relative;
+}
+header h1 a {
+  font-weight: normal;
+  text-decoration: none;
+}
+header a {
+  color: #ddd;
+}
+.header_login {
+  text-align: right;
+}
+.header_login a:hover {
+  color: white;
+}
+
+
+/* Menu
+/* ============== */
+
+/* top menu */
+header + nav {
+  background-color: #666;
+  padding: 1rem 2rem;
+}
+#mainmenu {
+  display: block;
+}
+#mainmenu li {
+  display: inline-block;
+}
+#mainmenu a {
+  color: #ccc;
+  display: inline-block;
+  height: 2.8rem;
+  line-height: 2.4rem;
+  padding: 0.2rem 0.5rem;
+  text-align: center;
+  width: 5rem;
+}
+#mainmenu li + li:before {
+  color: #999;
+  content: '|';
+}
+
+
+/* Main
+/* ============== */
+
+main {
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+/* sub menu */
+#leftmenu {
+  background-color: #FEFF99;
+  padding: 1rem 2rem;
+  width: 21%;
+}
+#leftmenu ul {
+  list-style: none;
+}
+
+/* content */
+#content {
+  padding: 1rem 2rem;
+  width: 79%;
+}
+.content_header {
+  font-size: smaller;
+  font-style: italic;
+  margin-bottom: 1.5rem;
+  margin-top: 2.5rem;
+}
+.content_picture {
+  margin: 2rem 0;
+  max-width: 45rem;
+  width: 100%;
+}
+
+
+/* aside */
+main aside {
+  border: 1px solid gray;
+  float: right;
+  font-size: smaller;
+  margin: 1.5rem 0 1rem 1rem;
+  padding: 1rem;
+  width: 16rem;
+}
+main aside article {
+  font-size: 1.2rem;
+  margin-top: 1rem;
+  text-align: justify;
+}
+.article_visual {
+  display: block;
+  margin: 0 auto;
+  width: 80%;
+}
+main aside article p:last-child {
+  margin-top: 0.5rem;
+}
+main aside article h1 {
+  margin: 1rem 0;
+}
+
+/* comments */
+
+#comments {
+  border-top: 1px dotted #ccc;
+  font-size: 1.2rem;
+  margin-top: 4rem;
+}
+.comment {
+  max-width: 50rem;
+  width: 100%;
+}
+.comment_title {
+  margin-bottom: 0.5em;
+  font-weight: 600;
+}
+.comment::after {
+  border-top: 1px solid #ccc;
+  content: "";
+  display: block;
+  margin: 1rem 0;
+  width: 10rem;
+}
+.comment_author {
+  font-style: italic;
+}
+
+
+/* Footer
+/* ============== */
+
+footer {
+  background-color: #666;
+  color: #eee;
+  font-size: smaller;
+  padding: 1rem;
+  text-align: center;
+}
+
+footer a {
+  color: #ccc;
+}
+
+footer p, footer ul  {
+  margin: 1rem 0;
+}
+
+footer ul {
+  list-style: none;
+  padding: 0;
+}
+
+footer li {
+  display: inline-block;
+}
+
+footer ul a {
+  display: inline;
+  line-height: 2.4rem;
+  padding: 0.2rem 0.5rem;
+}
+footer li + li:before {
+  content: ' | ';
+  color: #999;
+}</code></pre>
+
+              <div class="demolink"><a href="demos/04_responsive/step-by-step/index-flexible.html">demo</a> of <a href="https://codepen.io/rogiervanderlinde/pen/yGyzPz">bekijk op CodePen</a></div>
             </li>
           </ul>
         </section>
         <section>
-          <h2>Step 3: responsive</h2>
+          <h2>Stap 3: media queries</h2>
           <ul>
             <li>
-              Changes:
+              Veranderingen:
               <ul>
-                <li>media queries added for 480px (30em) and 600px (37.5em)</li>
-                <li>CSS for header layout and aside float moved to first media query</li>
-                <li>CSS for main column layout moved to last media query</li>
+                <li>media queries toegevoegd for 480px (30em) en 600px (37.5em)</li>
+                <li>CSS voor header layout en aside float verhuisd naar eerste media query</li>
+                <li>CSS for main content kolom layout verhuisd naar laatste last media query</li>
               </ul>
             </li>
             <li class="no-style">
-<p data-height="300" data-theme-id="35230" data-slug-hash="XoJexP" data-default-tab="css" data-user="rogiervanderlinde" data-pen-title="CSS Course 04 demo4" data-editable="true" class="codepen">See the Pen <a href="https://codepen.io/rogiervanderlinde/pen/XoJexP/">CSS Course 04 demo4</a> by Rogier van der Linde (<a href="https://codepen.io/rogiervanderlinde">@rogiervanderlinde</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+              <pre><code class="language-css smallpanel">/**
+ *
+ * Styles 
+ * @author Rogier van der Linde
+ *
+ */
+
+
+/* Reset
+/* ============== */
+
+html {
+  font-size: 62.5%;  /* 1 rem is nu 10px */
+}
+
+* {
+  box-sizing: border-box; /* corrigeer het box model */
+  margin: 0; /* wis verschillen tussen browsers uit */
+  padding: 0; /* wis verschillen tussen browsers uit */ 
+}
+
+img {
+  border: 0;
+}
+
+/* General
+/* ============== */
+
+body {
+  background-color: #999;
+  font-family: Verdana;
+  font-size: 1.6rem;
+}
+h2, h3, h4, h5 {
+  margin: 1em 0;
+}
+h3 {
+  font-size: 1.6rem;
+  font-weight: normal;
+}
+h4 {
+  font-size: 1.4rem;
+}
+h5 {
+  font-size: 1.2rem;
+  font-weight: normal;
+}
+
+/* site wrapper */
+#wrapper {
+  max-width: 90rem;
+  min-width: 24rem;
+  margin: 0 auto;
+  background-color: white;
+}
+
+
+/* Header
+/* ============== */
+
+header {
+  align-items: flex-start;
+  background-color: #333;
+  color: #ccc;
+  padding: 2rem;
+  position: relative;
+}
+header h1 {
+  margin-bottom: 2rem;
+}
+header h1 a {
+  font-weight: normal;
+  text-decoration: none;
+}
+header a {
+  color: #ddd;
+}
+.header_login {
+  text-align: right;
+}
+.header_login a:hover {
+  color: white;
+}
+
+
+/* Menu
+/* ============== */
+
+/* top menu */
+header + nav {
+  background-color: #666;
+  padding: 1rem 2rem;
+}
+#mainmenu {
+  display: block;
+}
+#mainmenu li {
+  display: inline-block;
+}
+#mainmenu a {
+  color: #ccc;
+  display: inline-block;
+  height: 2.8rem;
+  line-height: 2.4rem;
+  padding: 0.2rem 0.5rem;
+  text-align: center;
+  width: 5rem;
+}
+#mainmenu li + li:before {
+  color: #999;
+  content: '|';
+}
+
+
+/* Main
+/* ============== */
+
+/* sub menu */
+#leftmenu {
+  background-color: #FEFF99;
+  padding: 1rem 2rem;
+}
+#leftmenu ul {
+  list-style: none;
+}
+
+/* content */
+#content {
+  padding: 1rem 2rem;
+}
+.content_header {
+  font-size: smaller;
+  font-style: italic;
+  margin-bottom: 1.5rem;
+  margin-top: 2.5rem;
+}
+.content_picture {
+  margin: 2rem 0;
+  max-width: 45rem;
+  width: 100%;
+}
+
+/* aside */
+main aside {
+  border: 1px solid gray;
+  font-size: smaller;
+  margin: 1.5rem 0 1rem 0;
+  padding: 1rem;
+}
+main aside article {
+  font-size: 1.2rem;
+  margin-top: 1rem;
+  text-align: justify;
+}
+.article_visual {
+  display: block;
+  margin: 0 auto;
+  width: 80%;
+}
+main aside article p:last-child {
+  margin-top: 0.5rem;
+}
+main aside article h1 {
+  margin: 1rem 0;
+}
+
+/* comments */
+
+#comments {
+  border-top: 1px dotted #ccc;
+  font-size: 1.2rem;
+  margin-top: 4rem;
+}
+.comment {
+  max-width: 50rem;
+  width: 100%;
+}
+.comment_title {
+  margin-bottom: 0.5em;
+  font-weight: 600;
+}
+.comment::after {
+  border-top: 1px solid #ccc;
+  content: "";
+  display: block;
+  margin: 1rem 0;
+  width: 10rem;
+}
+.comment_author {
+  font-style: italic;
+}
+
+/* ===========================================
+  Footer
+  =========================================== */
+
+footer {
+  background-color: #666;
+  color: #eee;
+  font-size: smaller;
+  padding: 1rem;
+  text-align: center;
+}
+
+footer a {
+  color: #ccc;
+}
+
+footer p, footer ul  {
+  margin: 1rem 0;
+}
+
+footer ul {
+  list-style: none;
+  padding: 0;
+}
+
+footer li {
+  display: inline-block;
+}
+
+footer ul a {
+  display: inline;
+  line-height: 2.4rem;
+  padding: 0.2rem 0.5rem;
+}
+footer li + li:before {
+  content: ' | ';
+  color: #999;
+}
+
+
+/* Media queries
+/* ============== */
+
+@media (min-width: 30em) {
+  main aside {
+    float: right;
+    margin-left: 1rem;
+    width: 16rem;
+  }
+  header {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;			
+  }
+}
+@media (min-width: 37.5em) {
+  main {
+    display: flex;
+    flex-flow: row nowrap;
+  }
+  #leftmenu {
+    width: 21%;
+  }
+  #content {
+    width: 79%;
+  }
+}</code></pre>              
+<div class="demolink"><a href="demos/04_responsive/step-by-step/index-responsive.html">demo</a> of <a href="https://codepen.io/rogiervanderlinde/pen/XoJexP">bekijk op CodePen</a></div>
             </li>
           </ul>
         </section>
