@@ -47,7 +47,7 @@
       <section>
         <section>
           <h1>Responsive Webdesign</h1>
-          <h2>Responsive in 7 stappen</h2>
+          <h2>Responsive in 4 stappen</h2>
           <ul class="chapterlist">
             <!-- to be filled by Javascript -->
           </ul>
@@ -103,37 +103,31 @@
            </ul>
          </section>
          <section>
-          <h2>Responsive in 7 stappen</h2>
-          <ul>
+          <h2>Responsive in 4 stappen</h2>
+          <ul class="v-style">
             <li>
-              Bereid eerst je code voor:
-              <ul class="v-style">
-                <li>
-                  stap 1: gebruik bij voorkeur overal em/rem als standaardheenheid [PB]
-                </li>
-                <li>
-                  stap 2: voeg de viewport meta tag toe aan je HTML
-                </li>
-                <li>
-                  stap 3: maak de layout (wrapper, kolommen, foto's, boxen...) flexibel
-                </li>
+              stap 1: voeg de <strong>viewport meta</strong> tag toe aan je HTML
+            </li>
+            <li>
+              stap 2: gebruik bij voorkeur overal <strong>em/rem</strong> als standaardheenheid
+            </li>
+            <li>
+              stap 3: maak de <strong>layout flexibel</strong> (wrapper, kolommen, foto's, boxen...)
+              <ul style="list-style: lower-latin;">
+                <li>gebruik zoveel mogelijk <strong>flexbox</strong> voor layout</li>
+                <li>maak de eventuele <strong>wrapper</strong> flexibel: vervang <strong><code>width</code></strong> door <strong><code>min-width</code></strong> en <strong><code>max-width</code></strong></li>
+                <li>maak eventuele <strong>kolommen</strong> flexibel: zet <strong>breedtes in percentages</strong> in plaats van vaste waarden</li>
+                <li>maak de hoogte van <strong>container elementen</strong> flexibel: <strong>verwijder <strong>height</strong></strong></li>
+                <li>maak <strong>kaders en foto's</strong> flexibel: stel <strong><code>width</code> op 100%</strong> en stel eventueel <strong><code>max-width</code></strong> in</li>
               </ul>
             </li>
             <li>
-              Maak dan de site echt responsive:
-              <ul class="v-style">
-                <li>
-                  stap 4: kies je breekpunten
-                </li>
-                <li>
-                  stap 5: voeg een media query toe voor elk breekpunt
-                </li>
-                <li>
-                  stap 6: maak je CSS responsive &mdash; verplaats/verander CSS binnen en buiten de media queries tot het er goed uitziet op elke schermbreedte
-                </li>
-                <li>
-                  stap 7: herhaal dit proces tot je echt tevreden bent
-                </li>
+              stap 4: voeg <strong>media queries</strong> toe
+              <ul style="list-style: lower-latin;">
+                <li>versmal/verbreed het browservenster en <strong>kies een breekpunt</strong></li>
+                <li><strong>voeg een media query toe</strong> voor dit breekpunt (gebruik altijd <code>min-width</code>)</li>
+                <li><strong>voeg responsive CSS toe</strong> aan de media query en verander/verwijder eventueel andere CSS</li>
+                <li><strong>controleer het resultaat</strong> en keer terug naar punt a tot je tevreden bent</li>
               </ul>
             </li>
           </ul>
@@ -181,21 +175,6 @@ body {
               Irritant genoeg kom je ook deze versie tegen, maar die laat de gebruiker niet inzoomen:
               <pre><code class="language-html wrong">&lt;meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0"&gt;
 </code></pre>
-            </li>
-          </ul>
-        </section>
-        <section>
-          <h2>Stap 3: maak flexibel</h2>
-          <ul>
-            <li>
-              Maak je layout alvast <em>flexibel</em>, i.e. het kan in de breedte samengeperst of uitgerokken worden naargelang de schermbreedte. De principes:
-              <ol style="list-style:lower-alpha">
-                <li>layout: gebruik zoveel mogelijk <strong>flexbox</strong> en uitzonderlijk <strong>float</strong> &mdash; geen absolute positioning</li>
-                <li>wrappers: gebruik <strong><code>min-width</code></strong> en <strong><code>max-width</code></strong>, dus geen vaste breedte met <code>width</code></li>
-                <li>flexibele kolommen: stel de <strong>breedtes in %</strong> (percentage) in &mdash; geen vaste waarden in <code>px</code> of <code>rem</code></li>
-                <li>flexibele rijen (bv. header): stel <strong>geen hoogte</strong> in</li>
-                <li>flexible boxes and images: gebruik <strong><code>width:100%</code></strong> en <strong><code>max-width</code></strong> &mdash; geen vaste breedtes</li>
-              </ol>
             </li>
           </ul>
         </section>
@@ -299,7 +278,7 @@ header #login {
           </ul>
         </section>
         <section>
-          <h2>stap 4: bepaal breekpunt</h2>
+          <h2>stap 4A: bepaal breekpunt</h2>
           <ul>
             <li>
               Een <em>breekpunt</em> is de browserbreedte vanaf waar veranderingen aan de CSS nodig zijn. Een breekpunt bepalen is makkelijk:
@@ -317,40 +296,83 @@ header #login {
             <img src="img/04_responsive/resize.gif" alt="" />
           </p>
         </section>
-        <section data-toc-title="step 5. media queries toevoegen">
-          <h2>step 5: media queries toevoegen (1)</h2>
+        <section>
+          <h2>step 4B: voeg media query toe</h2>
           <ul>
             <li>
-              Stel dat je breekpunten wil op 600px, 800px en 1000px. Begin met de CSS voor het smalste scherm, en werk je op naar bredere schermen met with media queries:
-              <pre><code class="language-css" style="max-height: 200px;">/* CSS voor smalste schermen */
+              Stel dat je een overgang wil op 800px, dan komt er onderaan je CSS dit blok bij:
+              <pre><code class="language-css">/* CSS voor smalste schermen */
 ...
 
 /* ===============
  Media queries
  =============== */
 
-@media (min-width: 600px) { 
-  /* bijkomende CSS voor breedtes van 600px en hoger */
+@media (min-width: 800px) { /* deze CSS wordt uitgevoerd vanaf 800px */
+
+}
+</code></pre>
+            </li>
+            <li class="arrow smallfont">
+              zet je media queries <strong>op het einde</strong> van je CSS
+            </li>
+            <li class="arrow smallfont">
+              gebruik altijd <strong><code>min-width</code></strong>, geen <code>max-width</code> of een combinatie
+            </li>
+          </ul>
+        </section>
+        <section>
+          <h2>stap 4C: responsive CSS</h2>
+          <ul>
+            <li>
+              Voeg nu CSS toe aan de media query en pas eventueel andere CSS aan. Wil je bijvoorbeeld een groter lettertype en wat meer ondermarge voor <code>&lt;h2&gt;</code> vanaf 800px?
+              <pre><code class="language-css smallpanel">/* algemene instelling */
+h2 {  
+  font-size: 16px;
+  margin: 10px 0;
+}                
+@media (min-width: 800px) { /* vanaf 800px */
+  h2 {
+    font-size: 20px; /* iets groter lettertype */
+    margin-bottom: 15px; /* wat meer ondermarge */
+  }
+}</code></pre>
+            </li>
+            <li class="arrow smallfont">
+              meer dan dat is het niet! het is even wennen, maar daarna gaat het vanzelf
+            </li>
+          </ul>
+        </section>
+        <section>
+          <h2>step 4D: meer breekpunten</h2>
+          <ul>
+            <li>
+              Controleer je resultaat, en voeg eventueel meer breekpunten toe, van klein naar groot:
+              <pre><code class="language-css smallpanel">/* CSS voor smalste schermen */
+...
+
+/* ===============
+ Media queries
+ =============== */
+@media (min-width: 600px) { /* vanaf 600px */
   ...
 }
-@media (min-width: 800px) { 
-  /* bijkomende CSS voor breedtes van 800px en hoger */
+@media (min-width: 800px) { /* vanaf 800px */
   ...
 }
-@media (min-width: 1000px) { 
-  /* bijkomende CSS voor breedtes van 1000px en hoger */
+@media (min-width: 1000px) { /* vanaf 1000px */
   ...
 }
 </code></pre>
             </li>
-            <li class="arrow smallefont">
+            <li class="arrow smallfont">
               zet je media queries <strong>op het einde</strong> van je CSS
             </li>
-            <li class="arrow smallefont">
+            <li class="arrow smallfont">
               sorteer je breekpunten <strong>van klein naar groot</strong>
             </li>
-            <li class="arrow smallefont">
-              gebruik enkel <strong><code>min-width</code></strong>, geen <code>max-width</code> of een combinatie
+            <li class="arrow smallfont">
+              gebruik enkel <strong><code>min-width</code></strong>, geen <code>max-width</code> of een combinatie, of het wordt een soep!
             </li>
           </ul>
           <div class="tooltip">
@@ -360,15 +382,6 @@ header #login {
               </p>
             </div>
           </div>
-        </section>
-        <section data-toc-title="">
-          <h2>stap 6 &amp; 7: responsive CSS</h2>
-          <ul>
-            <li>
-              De rest is essentieel niet meer dan wat CSS heen en weer schuiven tussen media queries en nieuwe CSS toevoegen tot het er goed uitziet op alle devices.
-            </li>
-            <li>Voor een modelvoorbeeld, zie de <a href="#/startcode">stap voor stap demo</a> in het volgende deel.</li>
-          </ul>
         </section>
         <section>
           <h2>Tot slot: responsive afbeeldingen</h2>
@@ -383,6 +396,8 @@ header #login {
 </code></pre>
               <div class="demolink"><a href="demos/04_responsive/picture/index.html">demo</a></div>
             </li>
+            <li class="arrow smallfont">
+              we werken nu in het volgende deel een <a href="#/eindresultaat">stap voor stap demo</a> uit.</li>
           </ul>
         </section>
       </section>
@@ -395,7 +410,7 @@ header #login {
           </ul>
         </section>
         <section>
-         <h2>Eindresultaat</h2>
+         <h2>Gewenst resultaat</h2>
          <ul>
            <li>
              We willen deze pagina responsive maken:
@@ -417,136 +432,10 @@ header #login {
          </div>
        </section>
        <section>
-        <h2>De HTML</h2>
-        <ul>
-          <li>
-            De HTML voor deze pagina blijft voor alle versies identiek:
-          </li>
-          <li class="no-style">
-              <pre><code class="language-html smallpanel">&lt;!DOCTYPE html&gt;
-&lt;html lang="en"&gt;
-&lt;head&gt;
-  &lt;title&gt;Classical Page Layout&lt;/title&gt;
-  &lt;meta charset="utf-8"&gt;
-  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
-  &lt;link rel="stylesheet" href="css/styles.css"&gt;
-&lt;/head&gt;
-&lt;body&gt;
-  &lt;div id="wrapper"&gt;
-    &lt;header&gt;
-      &lt;h1&gt;&lt;a href="#"&gt;My Blog&lt;/a&gt;&lt;/h1&gt;
-      &lt;p class="header_login"&gt;You are not logged in &ndash; &lt;a href="#"&gt;login&lt;/a&gt;&lt;/p&gt;
-    &lt;/header&gt;
-    &lt;nav id="mainmenu"&gt;
-      &lt;ul&gt;
-        &lt;li&gt;&lt;a href="#"&gt;home&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href="#"&gt;link1&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href="#"&gt;link2&lt;/a&gt;&lt;/li&gt;
-      &lt;/ul&gt;
-    &lt;/nav&gt;
-    &lt;main&gt;
-      &lt;nav id="leftmenu"&gt;
-        &lt;h3&gt;Submenu&lt;/h3&gt;
-        &lt;ul&gt;
-          &lt;li&gt;&lt;a href="#"&gt;item1&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href="#"&gt;item2&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href="#"&gt;item3&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href="#"&gt;item4&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href="#"&gt;item5&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href="#"&gt;item6&lt;/a&gt;&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/nav&gt;
-      &lt;section id="content"&gt;
-        &lt;h3&gt;Lorem Ipsum&lt;/h3&gt;
-        &lt;aside&gt;
-          &lt;section&gt;
-            &lt;p&gt;
-              For further reading, see also this 
-              &lt;a href="#"&gt;more detailed article&lt;/a&gt;
-            &lt;/p&gt;
-          &lt;/section&gt;
-          &lt;article class="ad"&gt;
-            &lt;h1&gt;Advertisement&lt;/h1&gt;
-            &lt;p&gt;Buy our &lt;a href="#"&gt;brand new T-shirt&lt;/a&gt; today!&lt;/p&gt;
-            &lt;img src="img/shirt.png" alt="shirt" class="article_visual"&gt;
-            &lt;p&gt;&copy; &lt;a href="#"&gt;someCompany&lt;/a&gt;&lt;/p&gt;
-          &lt;/article&gt;
-        &lt;/aside&gt;
-        &lt;p class="content_header"&gt;Posted on 2018-11-03 by Bobby Peru&lt;/p&gt;
-        &lt;h4&gt;Part 1&lt;/h4&gt;
-        &lt;p&gt;
-          But I must explain to you how all this mistaken idea of denouncing pleasure
-          and praising pain was born and I will give you a complete account of the 
-          system, and expound the actual teachings of the great explorer of the truth, 
-          the master-builder of human happiness. No one rejects, dislikes, or avoids 
-          pleasure itself, because it is pleasure, but because those who do not know.
-        &lt;/p&gt;
-        &lt;h4&gt;Part 2&lt;/h4&gt;
-        &lt;p&gt;
-          Nor again is there anyone who loves or pursues or desires to obtain pain of 
-          itself, because it is pain, but because occasionally circumstances occur in 
-          which toil and pain can procure him some great pleasure. To take a trivial 
-          example, which of us ever undertakes laborious physical exercise, except to 
-          obtain some advantage from it? But who has any right to find fault with a 
-          man who chooses to enjoy a pleasure that has no annoying consequences, or 
-          one who avoids a pain that produces no resultant pleasure?
-        &lt;/p&gt;	
-        &lt;p&gt;
-          &lt;img src="img/picture.jpg" alt="just some picture" class="content_picture"&gt;
-        &lt;/p&gt;			
-        &lt;h4&gt;Part 3&lt;/h4&gt;
-        &lt;p&gt;
-          On the other hand, we denounce with righteous indignation and dislike men who 
-          are so beguiled and demoralized by the charms of pleasure of the moment, so 
-          blinded by desire, that they cannot foresee the pain and trouble that are 
-          bound to ensue; and equal blame belongs to those who fail in their duty 
-          through weakness of will, which is the same as saying through shrinking from 
-          toil and pain.
-        &lt;/p&gt;
-        &lt;section id="comments"&gt;
-          &lt;h4&gt;Comments&lt;/h4&gt;
-          &lt;article class="comment"&gt;
-            &lt;h5 class="comment_title"&gt;
-              I love Lorem Ipsum &lt;span class="comment_author"&gt;
-              &mdash; Alice, 3 hours ago&lt;/span&gt;
-              &lt;/h5&gt;
-            &lt;p&gt;
-              &ldquo;I personally believe Lorem Ipsum is the most sensitive poem ever 
-              written&rdquo;. As it so contrasted oh estimating instrument. Size like 
-              body some one had. Are conduct viewing boy minutes warrant expense. 
-            &lt;/p&gt;
-          &lt;/article&gt;
-          &lt;article class="comment"&gt;
-            &lt;h5 class="comment_title"
-              &gt;Lorem Ipsum Sucks &lt;span class="comment_author"&gt;
-              &mdash; Bob, 2 hours ago&lt;/span&gt;
-            &lt;/h5&gt;
-            &lt;p&gt;&ldquo;Tolerably behaviour may admitting daughters offending her ask own. 
-            Praise effect wishes change way and any wanted. There, I said it!&rdquo;&lt;/p&gt;
-          &lt;/article&gt;
-        &lt;/section&gt;
-      &lt;/section&gt;
-    &lt;/main&gt;
-    &lt;footer&gt;
-      &lt;p&gt;&copy; Rogier van der Linde, 2010&lt;/p&gt;
-      &lt;ul&gt;
-        &lt;li&gt;&lt;a href="#"&gt;disclaimer&lt;/a&gt;
-        &lt;li&gt;&lt;a href="#"&gt;sitemap&lt;/a&gt;
-        &lt;li&gt;&lt;a href="#"&gt;contact&lt;/a&gt;
-      &lt;/ul&gt;
-    &lt;/footer&gt;
-  &lt;/div&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-</code></pre>
-          </li>
-         </ul>
-         </section>
-       <section>
          <h2>CSS startversie</h2>
          <ul>
            <li>
-             De volgende CSS versie is px gebaseerd en met een vaste layout:
+             We nemen aan dat we al volgende CSS hebben, in px, niet flexibel en niet responsive:
            </li>
            <li class="no-style">
                <pre><code class="language-css smallpanel">/**
@@ -787,7 +676,133 @@ footer li + li:before {
          </ul>
          </section>
          <section>
-          <h2>Stap 1: gebruik em/rem</h2>
+          <h2>Stap 1: viewport meta</h2>
+          <ul>
+            <li>
+              Voeg de viewport metatag toe in de <code>&lt;head&gt;</code>:
+            </li>
+            <li class="no-style">
+                <pre><code class="language-html smallpanel">&lt;!DOCTYPE html&gt;
+  &lt;html lang="en"&gt;
+  &lt;head&gt;
+    &lt;title&gt;Classical Page Layout&lt;/title&gt;
+    &lt;meta charset="utf-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;link rel="stylesheet" href="css/styles.css"&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;div id="wrapper"&gt;
+      &lt;header&gt;
+        &lt;h1&gt;&lt;a href="#"&gt;My Blog&lt;/a&gt;&lt;/h1&gt;
+        &lt;p class="header_login"&gt;You are not logged in &ndash; &lt;a href="#"&gt;login&lt;/a&gt;&lt;/p&gt;
+      &lt;/header&gt;
+      &lt;nav id="mainmenu"&gt;
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href="#"&gt;home&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href="#"&gt;link1&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href="#"&gt;link2&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/nav&gt;
+      &lt;main&gt;
+        &lt;nav id="leftmenu"&gt;
+          &lt;h3&gt;Submenu&lt;/h3&gt;
+          &lt;ul&gt;
+            &lt;li&gt;&lt;a href="#"&gt;item1&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#"&gt;item2&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#"&gt;item3&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#"&gt;item4&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#"&gt;item5&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#"&gt;item6&lt;/a&gt;&lt;/li&gt;
+          &lt;/ul&gt;
+        &lt;/nav&gt;
+        &lt;section id="content"&gt;
+          &lt;h3&gt;Lorem Ipsum&lt;/h3&gt;
+          &lt;aside&gt;
+            &lt;section&gt;
+              &lt;p&gt;
+                For further reading, see also this 
+                &lt;a href="#"&gt;more detailed article&lt;/a&gt;
+              &lt;/p&gt;
+            &lt;/section&gt;
+            &lt;article class="ad"&gt;
+              &lt;h1&gt;Advertisement&lt;/h1&gt;
+              &lt;p&gt;Buy our &lt;a href="#"&gt;brand new T-shirt&lt;/a&gt; today!&lt;/p&gt;
+              &lt;img src="img/shirt.png" alt="shirt" class="article_visual"&gt;
+              &lt;p&gt;&copy; &lt;a href="#"&gt;someCompany&lt;/a&gt;&lt;/p&gt;
+            &lt;/article&gt;
+          &lt;/aside&gt;
+          &lt;p class="content_header"&gt;Posted on 2018-11-03 by Bobby Peru&lt;/p&gt;
+          &lt;h4&gt;Part 1&lt;/h4&gt;
+          &lt;p&gt;
+            But I must explain to you how all this mistaken idea of denouncing pleasure
+            and praising pain was born and I will give you a complete account of the 
+            system, and expound the actual teachings of the great explorer of the truth, 
+            the master-builder of human happiness. No one rejects, dislikes, or avoids 
+            pleasure itself, because it is pleasure, but because those who do not know.
+          &lt;/p&gt;
+          &lt;h4&gt;Part 2&lt;/h4&gt;
+          &lt;p&gt;
+            Nor again is there anyone who loves or pursues or desires to obtain pain of 
+            itself, because it is pain, but because occasionally circumstances occur in 
+            which toil and pain can procure him some great pleasure. To take a trivial 
+            example, which of us ever undertakes laborious physical exercise, except to 
+            obtain some advantage from it? But who has any right to find fault with a 
+            man who chooses to enjoy a pleasure that has no annoying consequences, or 
+            one who avoids a pain that produces no resultant pleasure?
+          &lt;/p&gt;	
+          &lt;p&gt;
+            &lt;img src="img/picture.jpg" alt="just some picture" class="content_picture"&gt;
+          &lt;/p&gt;			
+          &lt;h4&gt;Part 3&lt;/h4&gt;
+          &lt;p&gt;
+            On the other hand, we denounce with righteous indignation and dislike men who 
+            are so beguiled and demoralized by the charms of pleasure of the moment, so 
+            blinded by desire, that they cannot foresee the pain and trouble that are 
+            bound to ensue; and equal blame belongs to those who fail in their duty 
+            through weakness of will, which is the same as saying through shrinking from 
+            toil and pain.
+          &lt;/p&gt;
+          &lt;section id="comments"&gt;
+            &lt;h4&gt;Comments&lt;/h4&gt;
+            &lt;article class="comment"&gt;
+              &lt;h5 class="comment_title"&gt;
+                I love Lorem Ipsum &lt;span class="comment_author"&gt;
+                &mdash; Alice, 3 hours ago&lt;/span&gt;
+                &lt;/h5&gt;
+              &lt;p&gt;
+                &ldquo;I personally believe Lorem Ipsum is the most sensitive poem ever 
+                written&rdquo;. As it so contrasted oh estimating instrument. Size like 
+                body some one had. Are conduct viewing boy minutes warrant expense. 
+              &lt;/p&gt;
+            &lt;/article&gt;
+            &lt;article class="comment"&gt;
+              &lt;h5 class="comment_title"
+                &gt;Lorem Ipsum Sucks &lt;span class="comment_author"&gt;
+                &mdash; Bob, 2 hours ago&lt;/span&gt;
+              &lt;/h5&gt;
+              &lt;p&gt;&ldquo;Tolerably behaviour may admitting daughters offending her ask own. 
+              Praise effect wishes change way and any wanted. There, I said it!&rdquo;&lt;/p&gt;
+            &lt;/article&gt;
+          &lt;/section&gt;
+        &lt;/section&gt;
+      &lt;/main&gt;
+      &lt;footer&gt;
+        &lt;p&gt;&copy; Rogier van der Linde, 2010&lt;/p&gt;
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href="#"&gt;disclaimer&lt;/a&gt;
+          &lt;li&gt;&lt;a href="#"&gt;sitemap&lt;/a&gt;
+          &lt;li&gt;&lt;a href="#"&gt;contact&lt;/a&gt;
+        &lt;/ul&gt;
+      &lt;/footer&gt;
+    &lt;/div&gt;
+  &lt;/body&gt;
+  &lt;/html&gt;
+  </code></pre>
+            </li>
+           </ul>
+           </section>
+           <section>
+          <h2>Stap 2: gebruik em/rem</h2>
           <ul>
             <li>
               Nu met alle px waarden (behalve sommige 1px borders) omgezet naar rem:
@@ -1033,7 +1048,7 @@ footer li + li:before {
           </ul>
         </section>
         <section>
-          <h2>Stap 2: maak flexibel</h2>
+          <h2>Stap 3: maak flexibel</h2>
           <ul>
             <li>
               Verandeingen:
@@ -1291,7 +1306,7 @@ footer li + li:before {
           </ul>
         </section>
         <section>
-          <h2>Stap 3: media queries</h2>
+          <h2>Stap 4: media queries</h2>
           <ul>
             <li>
               Veranderingen:
