@@ -1,4 +1,5 @@
-<!doctype html>
+<!-- [html-validate-disable no-inline-style] -->
+<!DOCTYPE html>
 <html lang="nl">
 <head>
   <meta charset="utf-8">
@@ -35,7 +36,7 @@
             dotted codepanels zijn editeerbaar
           </p>
           <figure>
-            <img src="img/01_syntax/icon.jpg" alt="" class="frontslide__icon" />
+            <img src="img/01_syntax/icon.jpg" alt="" class="frontslide__icon">
           </figure>
           <footer>
             <a href="http://www.odisee.be/">odisee.be</a> &mdash; <a href="mailto:rogier.vanderlinde@odisee.be">rogier.vanderlinde@odisee.be</a>
@@ -54,7 +55,7 @@
           <h2>CSS stijlregel</h2>
           <ul>
             <li>
-              CSS of <strong>Cascaded Style Sheets</strong> bestaat in essentie uit een opsomming van stijlregels met opmaak en layout. Elke <em>stijlregel</em> 
+              CSS of <strong>Cascaded Style Sheets</strong> bestaat in essentie uit een opsomming van stijlregels met opmaak en layout. Elke <em>stijlregel</em>
               bestaat uit een <em>selector</em>, een <em>property</em> en een <em>waarde</em>:
               <pre><code class="language-css"><i>selector</i> {
   <i>property</i>: <i>value</i>;
@@ -238,10 +239,10 @@ p {
               <pre><code class="language-css wrong">p { line-height:1.3; color: #333 }
  .box {
    background-color: #666;
-   font-size:        1.2rem;
-   padding:          1rem 2rem;
+   font-size:        12px;
+   padding:          10px 20px;
  }
- @media (min-width: 50em) {
+ @media (min-width: 800px) {
  .box {
    padding: 0;
  }
@@ -257,19 +258,19 @@ p {
               <pre><code class="language-css right">p {
    color: #333;
    line-height: 1.3;
- }
- 
- .box {
+}
+
+.box {
    background-color: #666;
-   font-size: 1.2rem;
-   padding: 1rem 2rem;
- }
- 
- @media (min-width: 50em) {
+   font-size: 12px;
+   padding: 10px 20px;
+}
+
+@media (min-width: 800px) {
   .box {
     padding: 0;
   }
- }</code></pre>
+}</code></pre>
             </li>
             <li class="arrow smallfont">
              tip: gebruik <strong>Shift-Alt-F</strong> in VS Code (installeer de <a href="https://rogiervdl.github.io/HTML-course/01_intro.html#/vs-code-extensies">CSS formatter extensie</a>)
@@ -379,7 +380,7 @@ li + li {
 li:first-child {
   /* selecteert een &lt;li&gt; die de eerste child is van zijn parent */
 }
-#content > section {
+#content &gt; section {
   /* selecteert &lt;section&gt; direct genest in &lt;... id="content"&gt; */
 }
 tr:nth-child(odd) {
@@ -458,8 +459,7 @@ nav li.active a { /* links <strong>genest in</strong> list items met class="acti
 }</code></pre>
             </li>
             <li class="arrow" style="font-style: italic;">
-              dit was maar een kort overzicht van selectors; voor een overzicht zie de <a href="            cheatsheet.html            
-              ">CSS cheatsheet</a>
+              dit was maar een kort overzicht van selectors; voor een overzicht zie de <a href="cheatsheet.html">CSS cheatsheet</a>
             </li>
 
           </ul>
@@ -577,7 +577,7 @@ nav li.active a { /* links <strong>genest in</strong> list items met class="acti
           <h2>Prioriteit</h2>
           <ul>
             <li>
-              Het <strong>gewicht</strong> van de selector bepaalt dus de prioriteit, meer dan de volgorde. Als vuistregel geldt: eerst inline styles, dan id selectors, daarna class selectors en tenslotte tag selectors. Neem volgend fragment: 
+              Het <strong>gewicht</strong> van de selector bepaalt dus de prioriteit, meer dan de volgorde. Als vuistregel geldt: eerst inline styles, dan id selectors, daarna class selectors en tenslotte tag selectors. Neem volgend fragment:
               <pre><code class="language-css">div#idtest {
   font-size: 12px;
 }
@@ -661,14 +661,14 @@ div.ctest {
               Hou je selectors zo kort mogelijk.
             </li>
             <li class="no-style">
-              <pre><code class="language-css wrong">body header > nav.top ul li a {
+              <pre><code class="language-css wrong">body header &gt; nav.top ul li a {
   ...
 }
 div#wrapper {
   ...
 }
 </code></pre>
-              <pre><code class="language-css right">header > nav a {
+              <pre><code class="language-css right">header &gt; nav a {
   ...
 }
 #wrapper {
@@ -697,7 +697,7 @@ div#wrapper {
            <li>
              Inspecteer een element en bekijk de CSS eigenschappen:
             </li>
-            <li class="no-style">  
+            <li class="no-style">
               <img src="img/01_syntax/ss2.png" class="shadowbox" alt="" style="width: 70%">
            </li>
          </ul>
@@ -708,7 +708,7 @@ div#wrapper {
            <li>
              Schakel stijlen tijdelijk in en uit met de checkboxes:
             </li>
-            <li class="no-style">  
+            <li class="no-style">
               <img src="img/01_syntax/ss3.png" class="shadowbox" alt="" style="width: 70%">
            </li>
          </ul>
@@ -719,7 +719,7 @@ div#wrapper {
            <li>
              Ontdek welke stijl uiteindelijk van toepassing is, en waarom:
           </li>
-          <li class="no-style">  
+          <li class="no-style">
             <img src="img/01_syntax/ss4.png" class="shadowbox" alt="" style="width: 70%">
            </li>
          </ul>
@@ -730,7 +730,7 @@ div#wrapper {
            <li>
              Schakel element states als hover en focus in:
             </li>
-            <li class="no-style">  
+            <li class="no-style">
               <img src="img/01_syntax/ss5.png" class="shadowbox" alt="" style="width: 70%">
            </li>
          </ul>
@@ -741,7 +741,7 @@ div#wrapper {
            <li>
              Bekijk afmetingen en diktes van border, margin en padding:
             </li>
-            <li class="no-style">  
+            <li class="no-style">
               <img src="img/01_syntax/ss6.png" class="shadowbox" alt="" style="width: 70%">
            </li>
          </ul>
@@ -752,7 +752,7 @@ div#wrapper {
            <li>
              Experimenteer door andere property waarden uit te proberen:
             </li>
-            <li class="no-style">  
+            <li class="no-style">
               <img src="img/01_syntax/ss7.png" class="shadowbox" alt="" style="width: 70%">
            </li>
          </ul>
@@ -763,7 +763,7 @@ div#wrapper {
            <li>
              Vind snel een property via het zoekvenster:
             </li>
-            <li class="no-style">  
+            <li class="no-style">
               <img src="img/01_syntax/ss8.png" class="shadowbox" alt="" style="width: 70%">
            </li>
          </ul>
@@ -774,7 +774,7 @@ div#wrapper {
            <li>
              Experimenteer door nieuwe stijlregels toe te voegen:
             </li>
-            <li class="no-style">  
+            <li class="no-style">
               <img src="img/01_syntax/ss9.png" class="shadowbox" alt="" style="width: 70%">
            </li>
          </ul>
@@ -785,7 +785,7 @@ div#wrapper {
            <li>
              Debug een fout door een HTML node tijdelijk te verwijderen:
             </li>
-            <li class="no-style flex-1-1">  
+            <li class="no-style flex-1-1">
               <img src="img/01_syntax/ss10a.png" class="shadowbox" alt="" style="width: 49%;">
               <img src="img/01_syntax/ss10b.png" class="shadowbox" alt="" style="width: 49%;">
            </li>
@@ -856,19 +856,9 @@ div#wrapper {
   padding: 0;
   box-sizing: border-box;
 }
- 
+
 img {
   max-width: 100%;
-}
-
-/* enkel nuttig als je met rem eenheden wil werken */
-
-html {
-  font-size: 0.625em;
-}
-
-body {
-  font-size: 1.6em;
 }
 
 </code></pre>
@@ -904,15 +894,15 @@ body {
 
 .wrapper {
  margin: 0 auto;
- min-width: 32rem;
- max-width: 96rem;
- padding: 0 1rem;
+ min-width: 320px;
+ max-width: 960px;
+ padding: 0 10px;
 }
 
 /* element styles */
 
 body {
- font-size: 1.3rem; /* standard font size */
+ font-size: 13px; /* standard font size */
  font-family: verdana, Arial, Helvetica, sans-serif;
  /* ... */
 }
