@@ -1,4 +1,5 @@
-<!doctype html>
+<!-- [html-validate-disable no-inline-style, prefer-tbody] -->
+<!DOCTYPE html>
 <html lang="nl">
 <head>
   <meta charset="utf-8">
@@ -36,7 +37,7 @@
             dotted codepanels zijn editeerbaar
           </p>
           <figure>
-            <img src="img/02_design/icon.jpg" alt="" class="frontslide__icon" />
+            <img src="img/02_design/icon.jpg" alt="" class="frontslide__icon">
           </figure>
           <footer>
             <a href="http://www.odisee.be/">odisee.be</a> &mdash; <a href="mailto:rogier.vanderlinde@odisee.be">rogier.vanderlinde@odisee.be</a>
@@ -54,12 +55,12 @@
         <section id="units_overview">
           <h2>Overzicht</h2>
           <p>Eenheden gebruikt in deze cursus:</p>
-          <table id="units">
+          <table id="tblunits">
             <tr>
-              <th>Eenheid</th>
-              <th>Type</th>
-              <th>Gerelateerd met</th>
-              <th>Voorbeeld</th>
+              <th scope="col">Eenheid</th>
+              <th scope="col">Type</th>
+              <th scope="col">Gerelateerd met</th>
+              <th scope="col">Voorbeeld</th>
             </tr>
             <tr>
               <td>px</td>
@@ -73,7 +74,13 @@
                <td>parent afmetingen of font size</td>
                <td>.left {width: 20%}</td>
              </tr>
-          </table>
+             <tr>
+               <td>em</td>
+               <td>percentage</td>
+               <td>parent element font size</td>
+               <td>p {font-size: 1.2em}</td>
+             </tr>
+           </table>
           <ul>
             <li class="arrow smallfont">er zijn nog meer eenheden (rem, vmin, vmax, vw, vh) maar die worden niet gebruikt in deze cursus</li>
           </ul>
@@ -82,10 +89,10 @@
           <h2>px &mdash; definitie</h2>
           <ul>
             <li>
-              De <em>pixel</em> staat voor pi(cture) el(ement), en komt op schermen <i>meestal</i> overeen met <strong>één gekleurde punt</strong> op het scherm (maar niet altijd: bij retina schermen bv. zijn dit er 4 per pixel). 
+              De <em>pixel</em> staat voor pi(cture) el(ement), en komt op schermen <i>meestal</i> overeen met <strong>één gekleurde punt</strong> op het scherm (maar niet altijd: bij retina schermen bv. zijn dit er 4 per pixel).
             </li>
             <li>
-              De ware definitie is "kijkhoogte van 1/96 inch op gemiddelde armlengte" (ik <a href="http://inamidst.com/stuff/notes/csspx">verzin het niet</a>):<br />
+              De ware definitie is "kijkhoogte van 1/96 inch op gemiddelde armlengte" (ik <a href="http://inamidst.com/stuff/notes/csspx">verzin het niet</a>):<br>
               <img src="img/02_design/px_definition.png" alt="px definition" width="300px">
             </li>
             <li class="arrow smallfont">
@@ -114,7 +121,7 @@ img.hamburger_icon {
 }</code></pre>
             </li>
             <li class="arrow smallfont">
-              gebruik <code>px</code> <strong>niet voor flexibele elementen</strong> (i.e. die moeten meeschalen bij verschillende schermbreedtes) als kolommen, banners, foto's...; daarvoor gebruik je percentages (zie volgende slide) 
+              gebruik <code>px</code> <strong>niet voor flexibele elementen</strong> (i.e. die moeten meeschalen bij verschillende schermbreedtes) als kolommen, banners, foto's...; daarvoor gebruik je percentages (zie volgende slide)
             </li>
           </ul>
         </section>
@@ -143,11 +150,11 @@ img.hamburger_icon {
             <li class="no-style">
               <div class="clearfix" style="width: 100%">
                 <figure style="float: left">
-                  <img src="img/02_design/em.png" alt="em definition" />
+                  <img src="img/02_design/em.png" alt="em definition">
                   <figcaption><a href="http://www.6picas.com/typography-101/">http://www.6picas.com/typography-101/</a></figcaption>
                 </figure>
                 <figure style="float: right">
-                  <img src="img/02_design/metaltype.jpg" alt="metal type" />
+                  <img src="img/02_design/metaltype.jpg" alt="metal type">
                   <figcaption><a href="http://designwithfontforge.com/en-US/The_EM_Square.html">http://designwithfontforge.com/en-US/The_EM_Square.html</a></figcaption>
                 </figure>
               </div>
@@ -158,15 +165,15 @@ img.hamburger_icon {
           <h2>em &mdash; definitie en gebruik</h2>
           <ul>
             <li>
-              In CSS heeft <em>em</em> de betekenis <strong>percentage van de parent font-size</strong>. Daarmee kan je bepaalde waarden ingesteld op een child laten <strong>meeschalen</strong> met de parent font-size: 
+              In CSS heeft <em>em</em> de betekenis <strong>percentage van de parent font-size</strong>. Daarmee kan je bepaalde waarden ingesteld op een child laten <strong>meeschalen</strong> met de parent font-size:
               <div class="flex-1-1">
                 <div>
                   <pre><code class="language-html smallfont" data-caption data-selector="#emdemo">&lt;div class="review"&gt;
    &lt;h3 class="review-title"&gt;Great hotel!&lt;/h3&gt;
-   &lt;p&gt; 
-     In friendship diminution instrument so. 
-     Son sure paid door with say them. Lorem 
-     ipsum dolor sit amet, consectetur 
+   &lt;p&gt;
+     In friendship diminution instrument so.
+     Son sure paid door with say them. Lorem
+     ipsum dolor sit amet, consectetur
      adipiscing elit!
    &lt;/p&gt;
    &lt;img src="img/mugshot.jpg" alt="avatar"&gt;
@@ -174,7 +181,7 @@ img.hamburger_icon {
                   <div id="emdemo" style="width: 380px;">
                     <div class="review" style="padding: 5px">
                       <div class="review-title" style="margin-bottom: 0.5em;">Great hotel!</div>
-                      <p style="margin-bottom: 0;"> 
+                      <p style="margin-bottom: 0;">
                         In friendship diminution instrument so. Son sure paid door with say them. Lorem ipsum dolor sit amet, consectetur adipiscing elit!
                       </p>
                       <img src="img/mugshot.jpg" alt="">
@@ -207,7 +214,7 @@ img.hamburger_icon {
               De <code>em</code> is dus ideaal voor <strong>componenten die meeschalen met de parent</strong>, zoals widgets of andere onafhankelijke componenten. Probeer in onderstaande demo de font-size van de widget container te veranderen (en merk op hoe <code>em</code> overal gebruikt is in de widget):
             </li>
           </ul>
-          <p><a href="demos/02_design/01_units/em/index.html"><img src="img/02_design/widgetdemo.png" alt="em change" class="shadowbox" style="width: 400px" /></a></p>
+          <p><a href="demos/02_design/01_units/em/index.html"><img src="img/02_design/widgetdemo.png" alt="em change" class="shadowbox" style="width: 400px"></a></p>
           <div class="demolink">
             <a href="demos/02_design/01_units/em/index.html">demo</a>
           </div>
@@ -216,7 +223,7 @@ img.hamburger_icon {
           <h2>[rem &mdash; definitie]</h2>
           <ul>
             <li>
-              De <em>rem</em> of <i>&ldquo;root em</i>&rdquo; is net zoals <code>em</code> een relatieve eenheid, maar dan de <strong>percentage van de <code>&lt;html&gt;</code> font-size</strong>. 
+              De <em>rem</em> of <i>&ldquo;root em</i>&rdquo; is net zoals <code>em</code> een relatieve eenheid, maar dan de <strong>percentage van de <code>&lt;html&gt;</code> font-size</strong>.
             </li>
             <li>
               Standaard is de font-size van <code>&lt;html&gt;</code> 16px, dus dan is 1rem = 16px. Volgende fragmenten zijn dus identiek (deel alle px waarden door 16):
@@ -399,7 +406,7 @@ a {
   color: #aa8938;
 }
 a:hover {
-  text-decoration: underline; 
+  text-decoration: underline;
 }</code></pre>
               <div id="text-properties">
                 <p class="demo" style="margin: 0">In friendship <a href="">diminution instrument</a> so. Son sure paid door with say them. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec iaculis malesuada mi, nec pharetra elit vehicula et. Donec <a href="">consectetur porttitor</a> mauris mollis facilisis. Phasellus et lorem augue, eget eleifend quam. Sed ac bibendum lorem. Praesent molestie lobortis elementum. Nam sed magna eget quam ullamcorper semper. Ut molestie faucibus accumsan. Donec sodales rhoncus augue ac aliquam. In hac habitasse platea dictumst.</p>
@@ -412,7 +419,7 @@ a:hover {
           <ul>
             <li>
               Fonts worden met de hand ontworpen, karakter per karakter:<br>
-              <img src="img/02_design/fonts.jpg" alt="" class="shadowbox" style="max-width: 500px;" /><br>
+              <img src="img/02_design/fonts.jpg" alt="" class="shadowbox" style="max-width: 500px;"><br>
             </li>
             <li class="arrow smallfont">
               bedenk hoeveel werk dit is: alle letters, getallen, accenten, interpunctie, hoofd- / kleine letters... en dat in alle tallen, alle vetdiktes en stijlen!
@@ -429,8 +436,8 @@ a:hover {
               Gelukkig zijn er genoeg gratis en open source lettertypes te vinden. Google heeft een <a href="https://fonts.google.com/">uitstekende collection</a> die je kan downloaden of zelfs gewoon hotlinken. Selecteer je font, en link het met één regel in de <code>&lt;head&gt;</code>:
               <pre><code class="language-html overlayrun smallfont" contenteditable>&lt;html&gt;
 &lt;head&gt;
-  &lt;!-- kopieer de Google Font link hier --&gt;    
-  &lt;link href="https://fonts.googleapis.com/css?family=Spicy+Rice" rel="stylesheet"&gt;    
+  &lt;!-- kopieer de Google Font link hier --&gt;
+  &lt;link href="https://fonts.googleapis.com/css?family=Spicy+Rice" rel="stylesheet"&gt;
   &lt;style&gt;
     p {
       font-family: 'Spicy Rice', sans-serif; /* gebruik je nieuw font hier */
@@ -440,8 +447,8 @@ a:hover {
   &lt;/style&gt;
 &lt;/head&gt;
 &lt;body&gt;
-  &lt;p&gt;Wie werkten meestal men menigte bersawa. Om monopolies ad nu mislukking interesten verscholen 
-  smeltovens. Brandhout mee snelleren geschiedt bezorgden aandeelen den are. Dat treffen gomboom zekeren 
+  &lt;p&gt;Wie werkten meestal men menigte bersawa. Om monopolies ad nu mislukking interesten verscholen
+  smeltovens. Brandhout mee snelleren geschiedt bezorgden aandeelen den are. Dat treffen gomboom zekeren
   tot fortuin gelaten stellen. Het ziet niet lage deze het per zes ipoh.&lt;/p&gt;
 &lt;/body&gt;
 &lt;/html&gt;
@@ -502,7 +509,7 @@ a:hover {
               De hexadecimale kleurnotatie is een combinatie van rood, groen en blauw: <span style="background-color: #d2003c;">#d2003c</span> bijvoorbeeld betekent (d=13)*16 + 2 rood, 0 groen en 3*16 + (c=12) blauw, of (210, 0, 60) in (r, g, b) notatie. Wil je vlot kleurcodes leren lezen? Bekijk dan deze briljante talk op de dotCSS conferentie van 2018 in Parijs:
             </li>
             <li class="no-style">
-              <iframe width="560" height="315" src="https://www.youtube.com/embed/eqZqx6lRPe0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              <iframe width="560" height="315" src="https://www.youtube.com/embed/eqZqx6lRPe0" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </li>
           </ul>
         </section>
@@ -547,7 +554,7 @@ a:hover {
               Chrome heeft een prima ingebouwde colorpicker met live preview:
             </li>
           </ul>
-          <p><img src="img/02_design/chrome-colorpicker.png" alt="" class="shadowbox" style="max-width: 500px;" /></p>
+          <p><img src="img/02_design/chrome-colorpicker.png" alt="" class="shadowbox" style="max-width: 500px;"></p>
         </section>
         <section id="background-images">
           <h2>Achtergronden</h2>
@@ -574,7 +581,7 @@ a:hover {
               Maak CSS overgangen geleidelijk, &ldquo;smooth&rdquo;, met de <em><code>transition</code></em> property:
             </li>
             <li class="no-style">
-              <pre><code class="language-css" contenteditable data-selector="#transitiondemo">div {
+              <pre><code class="language-css" contenteditable data-selector="#transitiondemo2">div {
   background-color: #ccc;
   transition: background 0.5s, width 1s; /* transitie voor achtergrond en breedte */
   width: 200px;
@@ -586,7 +593,7 @@ div:hover {
   width: 300px;
 }
 </code></pre>
-              <div id="transitiondemo">
+              <div id="transitiondemo2">
                 <div style="padding: 10px; margin-top: 30px; border: 1px dotted #999">hover me!
                 </div>
               </div>
@@ -622,11 +629,11 @@ div:hover {
             <li class="no-style">
               <pre><code class="language-css" contenteditable data-selector="#filterdemo">img {
   cursor: pointer;
-  filter: grayscale(100%);                
+  filter: grayscale(100%);
   transition: filter 0.5s;
 }
 img:hover {
-  filter: grayscale(0%);                
+  filter: grayscale(0%);
 }
 </code></pre>
               <div id="filterdemo">
@@ -642,19 +649,19 @@ img:hover {
               Roteer, rek uit en herschaal elementen rond de X, Y en Z-as met de <em><code>transform</code></em> property:
             </li>
             <li class="no-style">
-              <pre><code class="language-css" contenteditable data-selector="#transitiondemo">#contactbox {
+              <pre><code class="language-css" contenteditable data-selector="#transitiondemo1">#contactbox {
   background-color: #eee;
   transform: rotate(8deg) skewY(15deg);
   width: 250px;
 }
 </code></pre>
-              <div id="transitiondemo">
+              <div id="transitiondemo1">
                 <div id="contactbox" style="padding: 5px; border: 1px solid #ccc">
                   <p style="margin-bottom: 0;font-size: 14px">Contacteer me!</p>
                   <img src="img/02_design/avatar5s.jpg" alt="" style="width: 80px;">
                   <div style="white-space: nowrap;">
                     <input type="email" placeholder="jouw email">
-                    <button>OK</button>
+                    <button type="button">OK</button>
                   </div>
                 </div>
               </div>
@@ -715,7 +722,7 @@ img:hover {
               <div class="codescrollpanel"><pre><code class="language-html smallpanel overlayrun">&lt;!DOCTYPE html&gt;
 &lt;html lang="en"&gt;
 &lt;head&gt;
-  &lt;meta charset="utf-8"&gt;  
+  &lt;meta charset="utf-8"&gt;
   &lt;title&gt;Morphing Power Cubes&lt;/title&gt;
   &lt;style&gt;
     body {
@@ -727,7 +734,7 @@ img:hover {
     #container {
       width: 100%;
       height: 700px;
-      -webkit-perspective: 800; 
+      -webkit-perspective: 800;
       -webkit-perspective-origin: 50% 0;
     }
     #stage {
@@ -797,20 +804,20 @@ img:hover {
     &lt;/div&gt;
     &lt;div id="controls"&gt;
       &lt;p&gt;&lt;input type="range" id="slider" min="0.1" max="20" step="0.1"&gt;&lt;/p&gt;
-      &lt;p&gt;&lt;button id="btnStartStop"&gt;without animation&lt;/button&gt;&lt;/p&gt;     
+      &lt;p&gt;&lt;button id="btnStartStop"&gt;without animation&lt;/button&gt;&lt;/p&gt;
     &lt;/div&gt;
   &lt;/div&gt;
   &lt;script type="text/javascript"&gt;
     document.getElementById('slider').addEventListener('input', function() {
-      document.getElementById('cube').style.animationDuration = this.value + 's';   
+      document.getElementById('cube').style.animationDuration = this.value + 's';
     });
     document.getElementById('btnStartStop').addEventListener('click', function() {
       if (this.innerHTML == 'without animation') {
         document.getElementById('cube').classList.remove('animate');
-        this.innerHTML = 'with animation';    
+        this.innerHTML = 'with animation';
       } else {
         document.getElementById('cube').classList.add('animate');
-        this.innerHTML = 'without animation';   
+        this.innerHTML = 'without animation';
       }
     });
   &lt;/script&gt;
@@ -843,7 +850,7 @@ img:hover {
               </ul>
             </li>
           </ul>
-          <p><img src="img/02_design/boxmodel.png" alt="box model" /></p>
+          <p><img src="img/02_design/boxmodel.png" alt="box model"></p>
         </section>
         <section data-toc-title="Borders">
           <h2>Border (1)</h2>
@@ -855,7 +862,6 @@ img:hover {
   &lt;p&gt;Fact are size cold why had part. If believing or sweetness otherwise.&lt;/p&gt;
 &lt;/div&gt;
 </code></pre>
-              
               <div class="flex-1-1" style="margin-top: 20px;">
                 <pre style="margin-top: 0"><code class="language-css" contenteditable data-selector="#modeldemo1">div {
   background-color: #eee;
@@ -884,13 +890,13 @@ p {
               <div class="flex-1-1" style="margin-top: 20px;">
                 <pre style="margin-top: 0"><code class="language-css" contenteditable data-selector="#modeldemo2">div {
   background-color: #eee;
-  border: 5px dotted #900; 
+  border: 5px dotted #900;
 }
 p {
   background-color: #ccc;
   border: 1px solid black;
   font-size: 18px;
-  margin: 0; 
+  margin: 0;
 }
 </code></pre>
                 <div id="modeldemo2" style="width: 48%">
@@ -911,7 +917,7 @@ p {
               <div class="flex-1-1" style="margin-top: 20px;">
                 <pre style="margin-top: 0"><code class="language-css" contenteditable data-selector="#modeldemo3">div {
   background-color: #eee;
-  border: 5px dotted #900; 
+  border: 5px dotted #900;
   border-left-color: #009;
   border-right-style: dashed;
   border-top-width: 2px;
@@ -920,7 +926,7 @@ p {
   background-color: #ccc;
   border-bottom: 1px solid black;
   font-size: 18px;
-  margin: 0; 
+  margin: 0;
 }
 </code></pre>
                 <div id="modeldemo3" style="width: 48%">
@@ -941,14 +947,14 @@ p {
               <div class="flex-1-1" style="margin-top: 20px">
                 <pre class="bigger" style="margin: 0; margin-right: 4%; width: 48%; flex-grow: 1"><code class="language-css" contenteditable data-selector="#modeldemo4">div {
   background-color: #eee;
-  border: 5px dotted #900; 
+  border: 5px dotted #900;
   padding: 20px 40px; /* vert-hor */
 }
 p {
   background-color: #ccc;
   border: 1px solid black;
   font-size: 18px;
-  margin: 0; 
+  margin: 0;
   padding: 10px;
 }</code></pre>
                 <div id="modeldemo4" style="width: 48%">
@@ -970,7 +976,7 @@ p {
               <div class="flex-1-1" style="margin-top: 20px">
                 <pre style="margin: 0"><code class="language-css" contenteditable data-selector="#modeldemo5">div {
   background-color: #eee;
-  border: 5px dotted #900; 
+  border: 5px dotted #900;
   padding: 20px 40px;
 }
 p {
@@ -1012,15 +1018,15 @@ p + p { /* "paragraaf na paragraaf" */
               <pre><code contenteditable class="language-html overlayrun smallpanel smallfont">&lt;html&gt;
 &lt;head&gt;
   &lt;style&gt;
-    * { 
-      margin: 0; 
+    * {
+      margin: 0;
     }
     header {
       background-color: #ccc;
       padding-bottom: 40px;
     }
-    #login { 
-      margin: 20px; 
+    #login {
+      margin: 20px;
     }
   &lt;/style&gt;
 &lt;/head&gt;
@@ -1095,7 +1101,7 @@ p + p { /* "paragraaf na paragraaf" */
               </ul>
             </li>
           </ul>
-          <p style="text-align: right; margin-top: 10px;"><img src="img/02_design/box-model-inspector.png" alt="box model" class="shadowbox" style="max-width: 400px" /></p>
+          <p style="text-align: right; margin-top: 10px;"><img src="img/02_design/box-model-inspector.png" alt="box model" class="shadowbox" style="max-width: 400px"></p>
         </section>
       </section>
       <section>
@@ -1113,15 +1119,15 @@ p + p { /* "paragraaf na paragraaf" */
               Het model met margin-border-padding-content en alle afmetingen noemt men ook wel het <em>box model</em>
             </li>
             <li>
-              Vreemd genoeg hebben de properties <code>width</code> en <code>height</code> enkel betrekking op de content, zonder borders and paddings. In onderstaand voorbeeld bv. is de uiteindelijke breedte niet de ingestelde 150px, maar 162px (contentbreedte + 2x padding + 2x borderdikte):<br />
+              Vreemd genoeg hebben de properties <code>width</code> en <code>height</code> enkel betrekking op de content, zonder borders and paddings. In onderstaand voorbeeld bv. is de uiteindelijke breedte niet de ingestelde 150px, maar 162px (contentbreedte + 2x padding + 2x borderdikte):<br>
             </li>
           </ul>
           <div style="display: flex; flex-flow: row nowrap; align-items: flex-start;">
-            <img src="img/02_design/boxmodel2.png" alt="box model" /  >
+            <img src="img/02_design/boxmodel2.png" alt="box model">
             <pre class="bigger" style="margin-top: 16px"><code class="language-css">div {
   width: 150px; /* totale breedte is 162px */
   padding: 5px;
-  border: 1px solid black;   
+  border: 1px solid black;
 }</code></pre>
           </div>
         </section>
@@ -1132,7 +1138,7 @@ p + p { /* "paragraaf na paragraaf" */
               De echte breedte is dus groter dan ingesteld, doordat padding en border erbij geteld worden. Dit kan problemen geven. Neem volgend voorbeeld met twee kolommen van 50%, waarvan de linker een border rechts en een padding heeft:
               <pre><code class="language-html overlayrun" style="max-height: 250px" contenteditable>&lt;html&gt;
 &lt;head&gt;
-  &lt;style&gt;  
+  &lt;style&gt;
     .col {
       width: 50%;
     }
@@ -1169,7 +1175,7 @@ p + p { /* "paragraaf na paragraaf" */
               Oplossing 1: trek borders en paddings af gebruikmakend van de <code>calc()</code> functie:
               <pre><code class="language-html overlayrun" style="max-height: 250px" contenteditable>&lt;html&gt;
 &lt;head&gt;
-  &lt;style&gt;  
+  &lt;style&gt;
     .col {
       width: 50%;
     }
@@ -1204,7 +1210,7 @@ p + p { /* "paragraaf na paragraaf" */
               Oplossing 2: corrigeer het box model met de <code>box-sizing</code> property
               <pre><code class="language-html overlayrun" style="max-height: 250px" contenteditable>&lt;html&gt;
 &lt;head&gt;
-  &lt;style&gt;  
+  &lt;style&gt;
     * {
       box-sizing: border-box; /* normaal content-box - voila! nu is 50% ook echt 50% */
     }
@@ -1245,10 +1251,10 @@ p + p { /* "paragraaf na paragraaf" */
           <ul>
             <li>
               Belangrijk: je kan <strong><code>width</code> of <code>height</code> niet instellen op inline elementen</strong>. Eventuele waarden worden genegeerd. Wil je dit toch, dan moet je het eerst blocklevel maken met de <code><em>display</em></code> property. Voorbeeldcode om een (inline) link het uitzicht van een button te geven:
-              <pre><code style="height: 170px" class="language-css" contenteditable data-selector="#text-properties2">a {                
-  /* maak blocklevel, en stel breedte in */                
+              <pre><code style="height: 170px" class="language-css" contenteditable data-selector="#text-properties2">a {
+  /* maak blocklevel, en stel breedte in */
   display: block;
-  width: 200px; 
+  width: 200px;
 
   /* rest van het button design */
   background-color: #A2C355;
@@ -1260,7 +1266,7 @@ p + p { /* "paragraaf na paragraaf" */
   line-height: 1.8;
   padding: 9px 24px;
   text-align: center;
-  text-decoration: none;  
+  text-decoration: none;
   text-transform: uppercase;
   transition: all 0.3s; /* smooth transition of all properties */
 }
@@ -1317,7 +1323,7 @@ border-radius: 50px 5px 5px 5px;
             <li>
               Verwijder een element volledig (en het neemt zelfs geen ruimte meer in):
               <pre><code class="language-css">a {
-  display: none; 
+  display: none;
 }</code></pre>
               <div class="demolink">
                 <a href="demos/02_design/03_display_visibility/display.html">demo</a>

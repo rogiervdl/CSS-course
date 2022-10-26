@@ -1080,7 +1080,7 @@ h1, h2, h3, h4 {
 @import "layout.css";
 @import "header.css";
 @import "menus.css";
-@import "footer.css";                
+@import "footer.css";
 ...</code></pre>
           </li>
         </ul>
@@ -1117,7 +1117,7 @@ h1, h2, h3, h4 {
          <ul>
             <li>
               ...typisch zou je selectors gebruiken als:
-              <pre><code class="language-css smallfont">main > section {
+              <pre><code class="language-css smallfont">main &gt; section {
   ...
 }
 #products {
@@ -1127,10 +1127,10 @@ h1, h2, h3, h4 {
   ...
 }
 .visual {
-  ...  
+  ...
 }
 .description {
-  ...  
+  ...
 }
 #products .visual + p {
   ...
@@ -1142,11 +1142,11 @@ h1, h2, h3, h4 {
          <h2>[De BEM notatie (3)]</h2>
          <ul>
             <li>
-              De meeste CSS is zo geschreven, en dat is oké. 
+              De meeste CSS is zo geschreven, en dat is oké.
             </li>
             <li>
               Er zijn een paar nadelen toch:
-              <pre><code class="language-css smallfont smallpanel">main > section { /* als je een div in de HTML tussenvoegt, klopt deze regel niet meer */
+              <pre><code class="language-css smallfont smallpanel">main &gt; section { /* als je een div in de HTML tussenvoegt, klopt deze regel niet meer */
   ...
 }
 #products { /* waar staat dit element? main content, sidebar...? */
@@ -1156,7 +1156,7 @@ h1, h2, h3, h4 {
   ...
 }
 .description { /* te algemeen; andere elementen zouden ook de class="description" kunnen hebben */
-  ...  
+  ...
 }
 #products .visual + p { /* specifiek geneog, maar lange en zware selector */
   ...
@@ -1174,7 +1174,7 @@ h1, h2, h3, h4 {
                   de CSS is te afhankelijk van de precieze HTML structuur
                 </li>
                 <li>
-                  de selectors missen betekenis en context 
+                  de selectors missen betekenis en context
                 </li>
                 <li>
                   de selectors zijn niet uniek genoeg, en kunnen onbedoeld conflicteren met andere elementen
@@ -1250,10 +1250,10 @@ h1, h2, h3, h4 {
   ...
 }
 .product__visual {
-  ...  
+  ...
 }
 .product__description {
-  ...  
+  ...
 }
 .product__price {
   ...

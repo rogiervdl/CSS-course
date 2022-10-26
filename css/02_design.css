@@ -1,39 +1,39 @@
-#units {
+#tblunits {
   font-size: 18px;
   width: 100%;
   border-collapse: collapse;
   margin-bottom: 20px;
 }
 
-#units td, #units th {
+#tblunits td, #tblunits th {
   border: 1px solid;
   padding: 5px 10px;
   line-height: 18px;  
 }
 
-#units th {
+#tblunits th {
   background-color: rgb(79, 129, 189);
   color: white;
   border-color: black;
 }
 
-#units td {
+#tblunits td {
   background-color: rgb(208, 216, 232);
 }
 
-#units td:nth-of-type(1), #units th:nth-of-type(1) {
+#tblunits td:nth-of-type(1), #tblunits th:nth-of-type(1) {
   width: 12%;
 }
 
-#units td:nth-of-type(2), #units th:nth-of-type(2) {
+#tblunits td:nth-of-type(2), #tblunits th:nth-of-type(2) {
   width: 20%;
 }
 
-#units td:nth-of-type(3), #units th:nth-of-type(3) {
+#tblunits td:nth-of-type(3), #tblunits th:nth-of-type(3) {
   width: 38%;
 }
 
-#units td:nth-of-type(4), #units th:nth-of-type(4) {
+#tblunits td:nth-of-type(4), #tblunits th:nth-of-type(4) {
   width: 30%;
 }
 
