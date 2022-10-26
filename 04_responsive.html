@@ -45,7 +45,7 @@
       <section>
         <section>
           <h1>Responsive Webdesign</h1>
-          <h2>Responsive in 4 stappen</h2>
+          <h2>Responsive in 3 stappen</h2>
           <ul class="chapterlist">
             <!-- to be filled by Javascript -->
           </ul>
@@ -101,16 +101,13 @@
            </ul>
          </section>
          <section>
-          <h2>Responsive in 4 stappen</h2>
+          <h2>Responsive in 3 stappen</h2>
           <ul class="v-style">
             <li>
               stap 1: controleer of de <strong>viewport meta</strong> aanwezig is in de <code>&lt;head&gt;</code>
             </li>
             <li>
-              stap 2: gebruik overal <i>of</i> <strong>px</strong> <i>of</i> <strong>rem</strong> als eenheid
-            </li>
-            <li>
-              stap 3: maak de <strong>layout flexibel</strong> (wrapper, kolommen, foto's, boxen...)
+              stap 2: maak de <strong>layout flexibel</strong> (wrapper, kolommen, foto's, boxen...)
               <ul style="list-style: lower-latin;">
                 <li>gebruik zoveel mogelijk <strong>flexbox</strong> voor layout</li>
                 <li>maak de eventuele <strong>wrapper</strong> flexibel: vervang <strong><code>width</code></strong> door <strong><code>min-width</code></strong> en <strong><code>max-width</code></strong></li>
@@ -120,7 +117,7 @@
               </ul>
             </li>
             <li>
-              stap 4: voeg <strong>media queries</strong> toe
+              stap 3: voeg <strong>media queries</strong> toe
               <ul style="list-style: lower-latin;">
                 <li>versmal/verbreed het browservenster en <strong>kies een breekpunt</strong></li>
                 <li><strong>voeg een media query toe</strong> voor dit breekpunt (gebruik altijd <code>min-width</code>)</li>
@@ -148,55 +145,27 @@
             </li>
           </ul>
         </section>
-        <section>
-         <h2>Stap 2: gebruik px of rem</h2>
-         <ul>
-           <li>
-             Je mag kiezen tussen <em><code>px</code></em> en <em><code>rem</code></em> als standaardeenheid (zie <a href="02_design.html#/rem-definitie-pb">deze slide</a>), maar mix beiden best niet. Voor <code>rem</code> ziet de code er als volgt uit:
-           </li>
-           <li class="no-style">
-             <pre><code class="language-css">/* herschaal de html font size naar 10px */
-html {
-   font-size: 62.5%;
-}
-
-/* vanaf hier is 10px = 1rem */
-body {
-   font-size: 1.3rem; /* 13px */
-}
-.wrapper {
-   max-width: 96rem; /* 960px */
-   padding: 0 2rem;  /* 0 20px */
-}
-...
-</code></pre>
-           </li>
-           <li class="arrow smallfont">
-             verderop wordt rem gebruikt; als je pixels gebruikt, bedenk dan gewoon dat in praktijk 1rem = 10px
-           </li>
-         </ul>
-       </section>
         <section data-toc-title="&nbsp;&nbsp;&nbsp;&rarr; flexibele layout">
-          <h2>Stap 3A: flexibele layout</h2>
+          <h2>Stap 2A: flexibele layout</h2>
           <ul>
             <li>Gebruik voor layout zoveel mogelijk flexbox, bv.:
               <div class="flex-1-1">
               <pre><code class="language-css wrong" style="max-height: 200px;">header #logo {
   position: absolute;
-  top: 2rem;
-  left: 1rem;
+  top: 20px;
+  left: 10px;
 }
 
 header #login {
   position: absolute;
-  top: 2rem;
-  right: 1rem;
+  top: 20px;
+  right: 10px;
 }</code></pre>
             <pre><code class="language-css right" style="max-height: 200px;">header {
   align-items: flex-start;
   display: flex;
   justify-content: space-between;
-  padding: 2rem 1rem;
+  padding: 20px 10px;
 }</code></pre>
               </div>
             </li>
@@ -206,17 +175,17 @@ header #login {
           </ul>
         </section>
        <section data-toc-title="&nbsp;&nbsp;&nbsp;&rarr; flexibele wrapper">
-          <h2>Stap 3B: flexibele wrapper</h2>
+          <h2>Stap 2B: flexibele wrapper</h2>
           <ul>
             <li>
               Stel <code>min-width</code> en <code>max-width</code> in op wrappers in plaats van <code>width</code>:
               <div class="flex-1-1">
                 <pre><code class="language-css wrong">.wrapper {
-  width: 96rem;
+  width: 960px;
 }</code></pre>
 <pre><code class="language-css right">.wrapper {
-  max-width: 96rem;
-  min-width: 32rem;
+  max-width: 960px;
+  min-width: 320px;
 }</code></pre>
 
               </div>
@@ -224,37 +193,37 @@ header #login {
           </ul>
         </section>
         <section data-toc-title="&nbsp;&nbsp;&nbsp;&rarr; flexibele kolommen">
-          <h2>Stap 3C: flexibele kolommen</h2>
+          <h2>Stap 2C: flexibele kolommen</h2>
           <ul>
-            <li>Gebruik geen <code>rem</code> of <code>px</code> maar <code>%</code> voor kolombreedtes &mdash; gebruik <code>calc()</code> indien nodig:
+            <li>Gebruik geen <code>px</code> maar <code>%</code> voor kolombreedtes &mdash; gebruik <code>calc()</code> indien nodig:
               <div class="flex-1-1">
               <pre><code class="language-css wrong">.leftcol {
-  width: 64rem;
+  width: 640px;
 }
 .rightcol {
-  width: 28rem;
+  width: 280px;
 }</code></pre>
 <pre><code class="language-css right">.leftcol {
   width: 67%;
 }
 .rightcol {
-  margin-left: 4rem;
-  width: calc (33% - 4rem);
+  margin-left: 40px;
+  width: calc (33% - 40px);
 }</code></pre>
               </div>
             </li>
             <li class="arrow smallfont">
-              andere combinaties zijn mogelijk, zolang de som maar 100% is: 67% + 4rem + (33% - 4rem)
+              andere combinaties zijn mogelijk, zolang de som maar 100% is: 67% + 40px + (33% - 40px)
             </li>
           </ul>
         </section>
         <section data-toc-title="&nbsp;&nbsp;&nbsp;&rarr; flexibele hoogtes">
-          <h2>Stap 3d: flexibele hoogtes</h2>
+          <h2>Stap 2d: flexibele hoogtes</h2>
           <ul>
             <li>Verwijder <code>height</code> van verticaal flexibele elementen, bv. de header; het zal verticaal moeten kunnen uitrekken bij smalle schermen naarmate child elementen verschuiven:
               <div class="flex-1-1">
                 <pre><code class="language-css wrong">header {
-  height: 25rem;
+  height: 250px;
 }</code></pre>
               <pre><code class="language-css right">header {
 
@@ -265,18 +234,18 @@ header #login {
           </ul>
         </section>
         <section data-toc-title="&nbsp;&nbsp;&nbsp;&rarr; flexible afbeeldingen/boxen">
-          <h2>Stap 3E: flexible blokken</h2>
+          <h2>Stap 2E: flexible blokken</h2>
           <ul>
             <li>Stel voor afbeeldingen en andere flexibele blokken met een maximum breedte de <code>width</code> en <code>max-width</code> properties in:
               <pre><code class="language-css right">main img {
-  width: 45rem; /* natuurlijke breedte */
+  width: 450px; /* natuurlijke breedte */
   max-width: 100%; /* mag nooit breder dan de parent zijn */
 }</code></pre>
             </li>
           </ul>
         </section>
         <section>
-          <h2>stap 4A: bepaal breekpunt</h2>
+          <h2>stap 3A: bepaal breekpunt</h2>
           <ul>
             <li>
               Een <em>breekpunt</em> is de browserbreedte vanaf waar veranderingen aan de CSS nodig zijn. Een breekpunt bepalen is makkelijk:
@@ -295,7 +264,7 @@ header #login {
           </p>
         </section>
         <section>
-          <h2>step 4B: voeg media query toe</h2>
+          <h2>step 2B: voeg media query toe</h2>
           <ul>
             <li>
               Stel dat je een overgang wil op 800px, dan komt er onderaan je CSS dit blok bij:
@@ -320,7 +289,7 @@ header #login {
           </ul>
         </section>
         <section>
-          <h2>stap 4C: responsive CSS</h2>
+          <h2>stap 2C: responsive CSS</h2>
           <ul>
             <li>
               Voeg nu CSS toe aan de media query en pas eventueel andere CSS aan. Wil je bijvoorbeeld een groter lettertype en wat meer ondermarge voor <code>&lt;h2&gt;</code> vanaf 800px?
@@ -342,7 +311,7 @@ h2 {
           </ul>
         </section>
         <section>
-          <h2>step 4D: meer breekpunten</h2>
+          <h2>step 2D: meer breekpunten</h2>
           <ul>
             <li>
               Controleer je resultaat, en voeg eventueel meer breekpunten toe, van klein naar groot:
@@ -799,252 +768,6 @@ footer li + li:before {
             </li>
            </ul>
            </section>
-           <section>
-          <h2>Stap 2: px of rem</h2>
-          <ul>
-            <li>
-              Gebruik px of rem, maar niet beiden (behalve sommige 1px borders); voorbeeld in rem:
-               <pre><code class="language-css smallpanel">/**
- *
- * Styles 
- * @author Rogier van der Linde
- *
- */
-
-
-/* Reset
-/* ============== */
-
-html {
-   font-size: 62.5%;  /* 1 rem is nu 10px */
-}
-
-* {
-   box-sizing: border-box; /* corrigeer het box model */
-   margin: 0; /* wis verschillen tussen browsers uit */
-   padding: 0; /* wis verschillen tussen browsers uit */ 
-}
-
-img {
-   border: 0;
-}
-
-/* General
-/* ============== */
-
-body {
-	background-color: #999;
-	font-family: Verdana;
-	font-size: 1.6rem;
-}
-h2, h3, h4, h5 {
-	margin: 1em 0;
-}
-h3 {
-	font-size: 1.6rem;
-	font-weight: normal;
-}
-h4 {
-	font-size: 1.4rem;
-}
-h5 {
-	font-size: 1.2rem;
-	font-weight: normal;
-}
-
-/* site wrapper */
-#wrapper {
-	width: 90rem;
-	margin: 0 auto;
-	background-color: white;
-}
-
-
-/* Header
-/* ============== */
-
-header {
-	align-items: flex-start;
-	background-color: #333;
-	color: #ccc;
-	display: flex;
-	flex-flow: row nowrap;
-	justify-content: space-between;
-	height: 10rem;
-	padding: 2rem;
-	position: relative;
-}
-header h1 a {
-	font-weight: normal;
-	text-decoration: none;
-}
-header a {
-	color: #ddd;
-}
-.header_login {
-	text-align: right;
-}
-.header_login a:hover {
-	color: white;
-}
-
-
-/* Menu
-/* ============== */
-
-/* top menu */
-header + nav {
-	background-color: #666;
-	padding: 1rem 2rem;
-}
-#mainmenu {
-	display: block;
-}
-#mainmenu li {
-	display: inline-block;
-}
-#mainmenu a {
-	color: #ccc;
-	display: inline-block;
-	height: 2.8rem;
-	line-height: 2.4rem;
-	padding: 0.2rem 0.5rem;
-	text-align: center;
-	width: 5rem;
-}
-#mainmenu li + li:before {
-	color: #999;
-	content: '|';
-}
-
-
-/* Main
-/* ============== */
-
-main {
-	display: flex;
-	flex-flow: row nowrap;
-}
-
-/* sub menu */
-#leftmenu {
-	background-color: #FEFF99;
-	padding: 1rem 2rem;
-	width: 19rem;
-}
-#leftmenu ul {
-	list-style: none;
-}
-
-/* content */
-#content {
-	padding: 1rem 2rem;
-	width: 71rem;
-}
-.content_header {
-	font-size: smaller;
-	font-style: italic;
-	margin-bottom: 1.5rem;
-	margin-top: 2.5rem;
-}
-.content_picture {
-	margin: 2rem 0;
-	width: 45rem;
-}
-
-/* aside */
-main aside {
-	border: 1px solid gray;
-	float: right;
-	font-size: smaller;
-	margin: 1.5rem 0 1rem 1rem;
-	padding: 1rem;
-	width: 16rem;
-}
-main aside article {
-	font-size: 1.2rem;
-	margin-top: 1rem;
-	text-align: justify;
-}
-.article_visual {
-	display: block;
-	margin: 0 auto;
-	width: 80%;
-}
-main aside article p:last-child {
-	margin-top: 0.5rem;
-}
-main aside article h1 {
-	margin: 1rem 0;
-}
-
-/* comments */
-
-#comments {
-	border-top: 1px dotted #ccc;
-	font-size: 1.2rem;
-	margin-top: 4rem;
-}
-.comment {
-	width: 50rem;
-}
-.comment_title {
-	margin-bottom: 0.5em;
-	font-weight: 600;
-}
-.comment::after {
-	border-top: 1px solid #ccc;
-	content: "";
-	display: block;
-	margin: 1rem 0;
-	width: 10rem;
-}
-.comment_author {
-	font-style: italic;
-}
-
-
-/* Footer
-/* ============== */
-
-footer {
-	background-color: #666;
-	color: #eee;
-	font-size: smaller;
-	padding: 1rem;
-	text-align: center;
-}
-
-footer a {
-	color: #ccc;
-}
-
-footer p, footer ul  {
-	margin: 1rem 0;
-}
-
-footer ul {
-	list-style: none;
-	padding: 0;
-}
-
-footer li {
-	display: inline-block;
-}
-
-footer ul a {
-	display: inline;
-	line-height: 2.4rem;
-	padding: 0.2rem 0.5rem;
-}
-footer li + li:before {
-	content: ' | ';
-	color: #999;
-}</code></pre>
-<div class="demolink"><a href="demos/04_responsive/step-by-step/index-rem.html">demo</a> of <a href="https://codepen.io/rogiervanderlinde/pen/zyxExp">bekijk op CodePen</a></div>
-            </li>
-          </ul>
-        </section>
         <section>
           <h2>Stap 3: maak flexibel</h2>
           <ul>
@@ -1058,7 +781,7 @@ footer li + li:before {
               </ul>
             </li>
             <li class="no-style">
-              <pre><code class="language-css smallpanel">/**
+              <pre><code class="language-css 2smallpanel">/**
  *
  * Styles 
  * @author Rogier van der Linde
@@ -1067,10 +790,6 @@ footer li + li:before {
 
 /* Reset
 /* ============== */
-
-html {
-  font-size: 62.5%;  /* 1 rem is nu 10px */
-}
 
 * {
   box-sizing: border-box; /* corrigeer het box model */
@@ -1088,27 +807,27 @@ img {
 body {
   background-color: #999;
   font-family: Verdana;
-  font-size: 1.6rem;
+  font-size: 16px;
 }
 h2, h3, h4, h5 {
-  margin: 1em 0;
+  margin: 10px 0;
 }
 h3 {
-  font-size: 1.6rem;
+  font-size: 16px;
   font-weight: normal;
 }
 h4 {
-  font-size: 1.4rem;
+  font-size: 14px;
 }
 h5 {
-  font-size: 1.2rem;
+  font-size: 12px;
   font-weight: normal;
 }
 
 /* site wrapper */
 #wrapper {
-  max-width: 90rem;
-  min-width: 24rem;
+  max-width: 900px;
+  min-width: 240px;
   margin: 0 auto;
   background-color: white;
 }
@@ -1124,8 +843,8 @@ header {
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
-  padding: 2rem;
-  padding-bottom: 4rem;
+  padding: 20px;
+  padding-bottom: 40px;
   position: relative;
 }
 header h1 a {
@@ -1149,7 +868,7 @@ header a {
 /* top menu */
 header + nav {
   background-color: #666;
-  padding: 1rem 2rem;
+  padding: 10px 20px;
 }
 #mainmenu {
   display: block;
@@ -1160,11 +879,11 @@ header + nav {
 #mainmenu a {
   color: #ccc;
   display: inline-block;
-  height: 2.8rem;
-  line-height: 2.4rem;
-  padding: 0.2rem 0.5rem;
+  height: 28px;
+  line-height: 24px;
+  padding: 2px 5px;
   text-align: center;
-  width: 5rem;
+  width: 50px;
 }
 #mainmenu li + li:before {
   color: #999;
@@ -1183,7 +902,7 @@ main {
 /* sub menu */
 #leftmenu {
   background-color: #FEFF99;
-  padding: 1rem 2rem;
+  padding: 10px 20px;
   width: 21%;
 }
 #leftmenu ul {
@@ -1192,18 +911,18 @@ main {
 
 /* content */
 #content {
-  padding: 1rem 2rem;
+  padding: 10px 20px;
   width: 79%;
 }
 .content_header {
   font-size: smaller;
   font-style: italic;
-  margin-bottom: 1.5rem;
-  margin-top: 2.5rem;
+  margin-bottom: 15px;
+  margin-top: 25px;
 }
 .content_picture {
-  margin: 2rem 0;
-  max-width: 45rem;
+  margin: 20px 0;
+  max-width: 450px;
   width: 100%;
 }
 
@@ -1213,13 +932,13 @@ main aside {
   border: 1px solid gray;
   float: right;
   font-size: smaller;
-  margin: 1.5rem 0 1rem 1rem;
-  padding: 1rem;
-  width: 16rem;
+  margin: 15px 0 10px 10px;
+  padding: 10px;
+  width: 160px;
 }
 main aside article {
-  font-size: 1.2rem;
-  margin-top: 1rem;
+  font-size: 12px;
+  margin-top: 10px;
   text-align: justify;
 }
 .article_visual {
@@ -1228,21 +947,21 @@ main aside article {
   width: 80%;
 }
 main aside article p:last-child {
-  margin-top: 0.5rem;
+  margin-top: 5px;
 }
 main aside article h1 {
-  margin: 1rem 0;
+  margin: 10px 0;
 }
 
 /* comments */
 
 #comments {
   border-top: 1px dotted #ccc;
-  font-size: 1.2rem;
-  margin-top: 4rem;
+  font-size: 12px;
+  margin-top: 40px;
 }
 .comment {
-  max-width: 50rem;
+  max-width: 500px;
   width: 100%;
 }
 .comment_title {
@@ -1253,8 +972,8 @@ main aside article h1 {
   border-top: 1px solid #ccc;
   content: "";
   display: block;
-  margin: 1rem 0;
-  width: 10rem;
+  margin: 10px 0;
+  width: 100px;
 }
 .comment_author {
   font-style: italic;
@@ -1268,7 +987,7 @@ footer {
   background-color: #666;
   color: #eee;
   font-size: smaller;
-  padding: 1rem;
+  padding: 10px;
   text-align: center;
 }
 
@@ -1277,7 +996,7 @@ footer a {
 }
 
 footer p, footer ul  {
-  margin: 1rem 0;
+  margin: 10px 0;
 }
 
 footer ul {
@@ -1291,8 +1010,8 @@ footer li {
 
 footer ul a {
   display: inline;
-  line-height: 2.4rem;
-  padding: 0.2rem 0.5rem;
+  line-height: 24px;
+  padding: 2px 5px;
 }
 footer li + li:before {
   content: ' | ';
@@ -1309,9 +1028,9 @@ footer li + li:before {
             <li>
               Veranderingen:
               <ul>
-                <li>media queries toegevoegd for 480px (30em) en 600px (37.5em)</li>
+                <li>media queries toegevoegd voor 480px en 600px</li>
                 <li>CSS voor header layout en aside float verhuisd naar eerste media query</li>
-                <li>CSS for main content kolom layout verhuisd naar laatste last media query</li>
+                <li>CSS voor main content kolom layout verhuisd naar laatste last media query</li>
               </ul>
             </li>
             <li class="no-style">
@@ -1325,10 +1044,6 @@ footer li + li:before {
 
 /* Reset
 /* ============== */
-
-html {
-  font-size: 62.5%;  /* 1 rem is nu 10px */
-}
 
 * {
   box-sizing: border-box; /* corrigeer het box model */
@@ -1346,27 +1061,27 @@ img {
 body {
   background-color: #999;
   font-family: Verdana;
-  font-size: 1.6rem;
+  font-size: 16px;
 }
 h2, h3, h4, h5 {
   margin: 1em 0;
 }
 h3 {
-  font-size: 1.6rem;
+  font-size: 16px;
   font-weight: normal;
 }
 h4 {
-  font-size: 1.4rem;
+  font-size: 14px;
 }
 h5 {
-  font-size: 1.2rem;
+  font-size: 12px;
   font-weight: normal;
 }
 
 /* site wrapper */
 #wrapper {
-  max-width: 90rem;
-  min-width: 24rem;
+  max-width: 900px;
+  min-width: 240px;
   margin: 0 auto;
   background-color: white;
 }
@@ -1379,11 +1094,11 @@ header {
   align-items: flex-start;
   background-color: #333;
   color: #ccc;
-  padding: 2rem;
+  padding: 20px;
   position: relative;
 }
 header h1 {
-  margin-bottom: 2rem;
+  margin-bottom: 20px;
 }
 header h1 a {
   font-weight: normal;
@@ -1406,7 +1121,7 @@ header a {
 /* top menu */
 header + nav {
   background-color: #666;
-  padding: 1rem 2rem;
+  padding: 10px 20px;
 }
 #mainmenu {
   display: block;
@@ -1417,11 +1132,11 @@ header + nav {
 #mainmenu a {
   color: #ccc;
   display: inline-block;
-  height: 2.8rem;
-  line-height: 2.4rem;
-  padding: 0.2rem 0.5rem;
+  height: 28px;
+  line-height: 24px;
+  padding: 2px 5px;
   text-align: center;
-  width: 5rem;
+  width: 50px;
 }
 #mainmenu li + li:before {
   color: #999;
@@ -1435,7 +1150,7 @@ header + nav {
 /* sub menu */
 #leftmenu {
   background-color: #FEFF99;
-  padding: 1rem 2rem;
+  padding: 10px 20px;
 }
 #leftmenu ul {
   list-style: none;
@@ -1443,17 +1158,17 @@ header + nav {
 
 /* content */
 #content {
-  padding: 1rem 2rem;
+  padding: 10px 20px;
 }
 .content_header {
   font-size: smaller;
   font-style: italic;
-  margin-bottom: 1.5rem;
-  margin-top: 2.5rem;
+  margin-bottom: 15px;
+  margin-top: 25px;
 }
 .content_picture {
-  margin: 2rem 0;
-  max-width: 45rem;
+  margin: 20px 0;
+  max-width: 450px;
   width: 100%;
 }
 
@@ -1461,12 +1176,12 @@ header + nav {
 main aside {
   border: 1px solid gray;
   font-size: smaller;
-  margin: 1.5rem 0 1rem 0;
-  padding: 1rem;
+  margin: 15px 0 10px 0;
+  padding: 10px;
 }
 main aside article {
-  font-size: 1.2rem;
-  margin-top: 1rem;
+  font-size: 12px;
+  margin-top: 10px;
   text-align: justify;
 }
 .article_visual {
@@ -1475,21 +1190,21 @@ main aside article {
   width: 80%;
 }
 main aside article p:last-child {
-  margin-top: 0.5rem;
+  margin-top: 5px;
 }
 main aside article h1 {
-  margin: 1rem 0;
+  margin: 10px 0;
 }
 
 /* comments */
 
 #comments {
   border-top: 1px dotted #ccc;
-  font-size: 1.2rem;
-  margin-top: 4rem;
+  font-size: 12px;
+  margin-top: 40px;
 }
 .comment {
-  max-width: 50rem;
+  max-width: 500px;
   width: 100%;
 }
 .comment_title {
@@ -1500,8 +1215,8 @@ main aside article h1 {
   border-top: 1px solid #ccc;
   content: "";
   display: block;
-  margin: 1rem 0;
-  width: 10rem;
+  margin: 10px 0;
+  width: 100px;
 }
 .comment_author {
   font-style: italic;
@@ -1515,7 +1230,7 @@ footer {
   background-color: #666;
   color: #eee;
   font-size: smaller;
-  padding: 1rem;
+  padding: 10px;
   text-align: center;
 }
 
@@ -1524,7 +1239,7 @@ footer a {
 }
 
 footer p, footer ul  {
-  margin: 1rem 0;
+  margin: 10px 0;
 }
 
 footer ul {
@@ -1538,8 +1253,8 @@ footer li {
 
 footer ul a {
   display: inline;
-  line-height: 2.4rem;
-  padding: 0.2rem 0.5rem;
+  line-height: 24px;
+  padding: 2px 5px;
 }
 footer li + li:before {
   content: ' | ';
@@ -1550,11 +1265,11 @@ footer li + li:before {
 /* Media queries
 /* ============== */
 
-@media (min-width: 30em) {
+@media (min-width: 480px) {
   main aside {
     float: right;
-    margin-left: 1rem;
-    width: 16rem;
+    margin-left: 10px;
+    width: 160px;
   }
   header {
     display: flex;
@@ -1562,7 +1277,7 @@ footer li + li:before {
     justify-content: space-between;			
   }
 }
-@media (min-width: 37.5em) {
+@media (min-width: 600px) {
   main {
     display: flex;
     flex-flow: row nowrap;
