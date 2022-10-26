@@ -10,9 +10,9 @@
 /* ============== */
 
 * {
-   box-sizing: border-box; /* width and height include paddings and borders */
-   margin: 0; /* wipe out browser differences */
-   padding: 0; /* wipe out browser differences */ 
+   box-sizing: border-box; /* corrigeer het box model */
+   margin: 0; /* wis verschillen tussen browsers uit */
+   padding: 0; /* wis verschillen tussen browsers uit */ 
 }
 
 img {
@@ -23,30 +23,30 @@ img {
 /* ============== */
 
 body {
-	background-color: #999;
-	font-family: Verdana;
-	font-size: 16px;
+  background-color: #999;
+  font-family: Verdana;
+  font-size: 16px;
 }
 h2, h3, h4, h5 {
-	margin: 1em 0;
+  margin: 1em 0;
 }
 h3 {
-	font-size: 16px;
-	font-weight: normal;
+  font-size: 16px;
+  font-weight: normal;
 }
 h4 {
-	font-size: 14px;
+  font-size: 14px;
 }
 h5 {
-	font-size: 12px;
-	font-weight: normal;
+  font-size: 12px;
+  font-weight: normal;
 }
 
 /* site wrapper */
 #wrapper {
-	width: 900px;
-	margin: 0 auto;
-	background-color: white;
+  width: 900px;
+  margin: 0 auto;
+  background-color: white;
 }
 
 
@@ -54,28 +54,28 @@ h5 {
 /* ============== */
 
 header {
-	align-items: flex-start;
-	background-color: #333;
-	color: #ccc;
-	display: flex;
-	flex-flow: row nowrap;
-	justify-content: space-between;
-	height: 100px;
-	padding: 20px;
-	position: relative;
+  align-items: flex-start;
+  background-color: #333;
+  color: #ccc;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  height: 100px;
+  padding: 20px;
+  position: relative;
 }
 header h1 a {
-	font-weight: normal;
-	text-decoration: none;
+  font-weight: normal;
+  text-decoration: none;
 }
 header a {
-	color: #ddd;
+  color: #ddd;
 }
 .header_login {
-	text-align: right;
+  text-align: right;
 }
 .header_login a:hover {
-	color: white;
+  color: white;
 }
 
 
@@ -84,27 +84,27 @@ header a {
 
 /* top menu */
 header + nav {
-	background-color: #666;
-	padding: 10px 20px;
+  background-color: #666;
+  padding: 10px 20px;
 }
 #mainmenu {
-	display: block;
+  display: block;
 }
 #mainmenu li {
-	display: inline-block;
+  display: inline-block;
 }
 #mainmenu a {
-	color: #ccc;
-	display: inline-block;
-	height: 28px;
-	line-height: 24px;
-	padding: 2px 5px;
-	text-align: center;
-	width: 50px;
+  color: #ccc;
+  display: inline-block;
+  height: 28px;
+  line-height: 24px;
+  padding: 2px 5px;
+  text-align: center;
+  width: 50px;
 }
 #mainmenu li + li:before {
-	color: #999;
-	content: '|';
+  color: #999;
+  content: '|';
 }
 
 
@@ -112,85 +112,85 @@ header + nav {
 /* ============== */
 
 main {
-	display: flex;
-	flex-flow: row nowrap;
+  display: flex;
+  flex-flow: row nowrap;
 }
 
 /* sub menu */
 #leftmenu {
-	background-color: #FEFF99;
-	padding: 10px 20px;
-	width: 190px;
+  background-color: #FEFF99;
+  padding: 10px 20px;
+  width: 190px;
 }
 #leftmenu ul {
-	list-style: none;
+  list-style: none;
 }
 
 /* content */
 #content {
-	padding: 10px 20px;
-	width: 710px;
+  padding: 10px 20px;
+  width: 710px;
 }
 .content_header {
-	font-size: smaller;
-	font-style: italic;
-	margin-bottom: 15px;
-	margin-top: 25px;
+  font-size: smaller;
+  font-style: italic;
+  margin-bottom: 15px;
+  margin-top: 25px;
 }
 .content_picture {
-	margin: 20px 0;
-	width: 450px;
+  margin: 20px 0;
+  width: 450px;
 }
 
 /* aside */
 main aside {
-	border: 1px solid gray;
-	float: right;
-	font-size: smaller;
-	margin: 15px 0 10px 10px;
-	padding: 10px;
-	width: 160px;
+  border: 1px solid gray;
+  float: right;
+  font-size: smaller;
+  margin: 15px 0 10px 10px;
+  padding: 10px;
+  width: 160px;
 }
 main aside article {
-	font-size: 12px;
-	margin-top: 10px;
-	text-align: justify;
+  font-size: 12px;
+  margin-top: 10px;
+  text-align: justify;
 }
 .article_visual {
-	display: block;
-	margin: 0 auto;
-	width: 80%;
+  display: block;
+  margin: 0 auto;
+  width: 80%;
 }
 main aside article p:last-child {
-	margin-top: 5px;
+  margin-top: 5px;
 }
 main aside article h1 {
-	margin: 10px 0;
+  margin: 10px 0;
 }
 
 /* comments */
 
 #comments {
-	border-top: 1px dotted #ccc;
-	font-size: 12px;
-	margin-top: 40px;
+  border-top: 1px dotted #ccc;
+  font-size: 12px;
+  margin-top: 40px;
 }
 .comment {
-	width: 500px;
+  width: 500px;
 }
 .comment_title {
-	margin-bottom: 0.5em;
-	font-weight: 600;
+  margin-bottom: 0.5em;
+  font-weight: 600;
 }
 .comment::after {
-	border-top: 1px solid #ccc;
-	content: "";
-	display: block;
-	margin: 10px 0;
-	width: 100px;
+  border-top: 1px solid #ccc;
+  content: "";
+  display: block;
+  margin: 10px 0;
+  width: 100px;
 }
 .comment_author {
-	font-style: italic;
+  font-style: italic;
 }
 
 
@@ -198,37 +198,36 @@ main aside article h1 {
 /* ============== */
 
 footer {
-	background-color: #666;
-	color: #eee;
-	font-size: smaller;
-	padding: 10px;
-	text-align: center;
+  background-color: #666;
+  color: #eee;
+  font-size: smaller;
+  padding: 10px;
+  text-align: center;
 }
 
 footer a {
-	color: #ccc;
+  color: #ccc;
 }
 
 footer p, footer ul  {
-	margin: 10px 0;
+  margin: 10px 0;
 }
 
 footer ul {
-	list-style: none;
-	padding: 0;
+  list-style: none;
+  padding: 0;
 }
 
 footer li {
-	display: inline-block;
+  display: inline-block;
 }
 
 footer ul a {
-	display: inline;
-	line-height: 24px;
-	padding: 2px 5px;
+  display: inline;
+  line-height: 24px;
+  padding: 2px 5px;
 }
 footer li + li:before {
-	content: ' | ';
-	color: #999;
+  content: ' | ';
+  color: #999;
 }
-
