@@ -338,35 +338,65 @@ input:disabled {
             </li>
           </ul>
         </section>
-        <section>
-          <h2>Element deel</h2>
-          <ul>
-            <li>
-              Selecteer een <strong>deel</strong> van een element:
-              <pre><code class="language-css">a::first-letter {
-  /* selecteert de eerste letter van &lt;a&gt; */
+        <section data-toc-title="Element deel">
+         <h2>Element deel (1)</h2>
+         <ul>
+           <li>
+             Selecteer een <strong>deel</strong> van een element:
+             <pre><code class="language-css">a::first-letter {
+ /* selecteert de eerste letter van &lt;a&gt; */
 }
 ::selection {
-  /* selecteert het deel geselecteerd door de gebruiker */
+ /* selecteert het deel geselecteerd door de gebruiker */
 }
 li::before {
-  content: url(../img/bullet.png); /* injecteer content aan het begin */
-  /* meer properties van de nieuwe content */
+ content: url(../img/bullet.png); /* injecteer een afbelding aan het begin */
+ /* meer properties van de nieuwe content */
 }
 li::after {
-  content: "some text"; /* injecteer content aan het einde */
-  /* meer properties van de nieuwe content */
+ content: "some text"; /* injecteer tekst aan het einde */
+ /* meer properties van de nieuwe content */
 }              </code></pre>
-              <div class="demolink">
-                <a href="demos/01_syntax/before-after.html">::before en ::after demo</a>
-              </div>
-            </li>
-            <li class="arrow smallfont">
-              men noemt dit ook <em>pseudo-element</em> selectoren
-            </li>
-          </ul>
-        </section>
-        <section>
+             <div class="demolink">
+               <a href="demos/01_syntax/before-after.html">::before en ::after demo</a>
+             </div>
+           </li>
+           <li class="arrow smallfont">
+             men noemt dit ook <em>pseudo-element</em> selectoren
+           </li>
+         </ul>
+       </section>
+       <section data-toc-title="">
+         <h2>Element deel (2)</h2>
+         <ul>
+           <li>
+             Een voorbeeld met injectie van 👉 en 👈 aan het begin en einde list items:
+             <pre><code class="language-html">&lt;ul&gt;
+   &lt;li&gt;item 1&lt;/li&gt;
+   &lt;li&gt;item 2&lt;/li&gt;
+   &lt;li&gt;item 3&lt;/li&gt;
+&lt;/ul&gt;
+            </code></pre>
+            <pre><code class="language-css">li {
+   list-style: none; /* verwijder standaardbullets */
+}
+li::before {
+   content: "👉";
+   font-size: 12px;
+   margin-right: 5px;
+}
+li::after {
+   content: "👈";
+   font-size: 12px;
+   margin-left: 5px;
+}</code></pre>
+                         <div class="demolink">
+               <a href="demos/01_syntax/before-after.html">demo</a>
+             </div>
+           </li>
+         </ul>
+       </section>
+       <section>
           <h2>Element positie</h2>
           <ul>
             <li>
