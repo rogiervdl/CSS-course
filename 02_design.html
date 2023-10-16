@@ -856,7 +856,7 @@ img:hover {
           <h2>Border (1)</h2>
           <ul>
             <li>
-              We beginnen met twee paragrafen in een div, met wat CSS:
+              We beginnen met twee paragrafen in een <code>&lt;div&gt;</code>, met wat CSS:
               <pre><code class="language-html" style="margin-top: 20px;">&lt;div&gt;
   &lt;p&gt;In friendship diminution instrument so. Son sure paid door with say them.&lt;/p&gt;
   &lt;p&gt;Fact are size cold why had part. If believing or sweetness otherwise.&lt;/p&gt;
@@ -944,7 +944,7 @@ p {
           <h2>Padding</h2>
           <ul>
             <li>
-              Voegen we nu padding toe binnen de paragrafen en de div:
+              Voegen we nu padding toe binnen de paragrafen en binnen de <code>&lt;div&gt;</code>:
               <div class="flex-1-1" style="margin-top: 20px">
                 <pre class="bigger" style="margin: 0; margin-right: 4%; width: 48%; flex-grow: 1"><code class="language-css" contenteditable data-selector="#modeldemo4">div {
   background-color: #eee;
@@ -1006,7 +1006,7 @@ p:last-child {
          <h2>Margin of padding? (1)</h2>
          <ul>
            <li>
-             In plaats van padding op de div, hadden we ook margin op de p's kunnen gebruiken voor de ruimte tussen de rood gestippelde rand en paragrafen:
+             In plaats van padding op de <code>&lt;div&gt;</code>, hadden we ook margin op de <code>&lt;p&gt;</code>'s kunnen gebruiken voor de ruimte tussen de rood gestippelde rand en paragrafen:
              <div class="flex-1-1" style="margin-top: 20px">
                <pre style="margin: 0"><code class="language-css" contenteditable data-selector="#modeldemo6">div {
  background-color: #eee;
@@ -1044,13 +1044,13 @@ p:last-child {
              Zoals vorig voorbeeld aantoont, kan je soms kiezen tussen margin en padding.
             </li>
             <li>
-             Hoewel het in praktijk niet zoveel uitmaakt wat je kiest &mdash; zolang het maar werkt &mdash; hanteren we om een houvast te geven in deze cursus volgende <em>vuistregels</em>:
-             <ul>
+             In praktijk maakt het niet zoveel uit wat je kiest, zolang het maar werkt. Om een houvast te geven hanteren we in deze cursus volgende <em>vuistregels</em>:
+             <ol>
                <li>denk <strong>standaard aan margins</strong>, dus ruimte <strong>tussen elementen</strong></li>
                <li>denk <strong>enkel aan padding</strong> bij ruimte <strong>binnen elementen</strong>, dus tussen rand en de inhoud</li>
                <li>denk <strong>van buiten naar binnen</strong>: liever margin/padding op de parent, dan margin/padding op de child</li>
                <li>denk <strong>van linksboven naar rechtsonder</strong>: liever margin bottom/right op het eerste element, dan top/left op het tweede</li>
-             </ul>
+             </ol>
            </li>
          </ul>
        </section>
@@ -1058,40 +1058,32 @@ p:last-child {
           <h2>Lekkende margin (1)</h2>
           <ul>
             <li>
-              Waar geen border en geen padding aanwezig is, zal de margin uit de parent &ldquo;lekken&rdquo;. <br>Een voorbeeld; merk op:
-              <ul>
-                <li>
-                  de <code>&lt;header&gt;</code> heeft geen top border of padding; de top margin van <code>&lt;p&gt;</code> lekt er dus uit
-                </li>
-                <li>
-                  de <code>&lt;p&gt;</code> plakt dus tegen de bovenkant
-                </li>
-                <li>
-                  de lekkende topmargin van <code>&lt;p&gt;</code> duwt de <code>&lt;header&gt;</code> naar beneden
-                </li>
-              </ul>
+              Volgens vuistregel 3 stel je dus beter padding op de parent in dan margin op de child. Een raar probleem dat optreedt als je deze regel niet volgt is de zgn. "lekkende margin".
+              <br>Neem volgend voorbeeld (klik op "Toon in popup"):
               <pre><code contenteditable class="language-html overlayrun smallpanel smallfont">&lt;html&gt;
 &lt;head&gt;
   &lt;style&gt;
-    * {
-      margin: 0;
-    }
-    header {
-      background-color: #ccc;
-      padding-bottom: 40px;
-    }
-    #login {
-      margin: 20px;
-    }
+    body { margin: 0; }
+    header { background-color: #ccc; }
+    header p { margin: 20px; }
   &lt;/style&gt;
 &lt;/head&gt;
 &lt;body&gt;
   &lt;header&gt;
-    &lt;p id="login"&gt;&lt;a href="#"&gt;klantenzone&lt;/a&gt;&lt;/p&gt;
+    &lt;p&gt;&lt;a href="#"&gt;klantenzone&lt;/a&gt;&lt;/p&gt;
   &lt;/header&gt;
 &lt;/body&gt;
 &lt;/html&gt;
 </code></pre>
+            </li>
+            <li class="arrow smallfont">
+               de <code>&lt;header&gt;</code> (donkergrijze achtergrond) is naar beneden geduwd!?
+            </li>
+            <li class="arrow smallfont">
+               dit komt door de margin van de <code>&lt;p&gt;</code>, die boven (en onder) uit zijn parent "lekt"
+            </li>
+            <li class="arrow smallfont">
+               in CSS is dit "normaal" gedrag als parents geen border of padding hebben
             </li>
           </ul>
         </section>
@@ -1099,29 +1091,25 @@ p:last-child {
           <h2>Lekkende margin (2)</h2>
           <ul>
             <li>
-              Je kan het oplossen door de <code>&lt;p&gt;</code> top margin te vervangen door een <code>&lt;header&gt;</code> top padding:
-              <pre><code contenteditable class="language-html overlayrun">&lt;html&gt;
+              Je kan het oplossen door de <code>&lt;p&gt;</code> margin te vervangen door <code>&lt;header&gt;</code> padding (klik weer op "Toon in popup"):
+              <pre><code contenteditable class="language-html overlayrun smallpanel smallfont">&lt;html&gt;
 &lt;head&gt;
   &lt;style&gt;
-    * { margin: 0; }
-    header {
-      height: 90px;
-      background-color: #ccc;
-      padding-top: 20px;
-    }
-    #login { margin: 0 20px 20px 20px; }
+    body { margin: 0; }
+    header { background-color: #ccc; padding: 20px; }
+    header p { margin: 0; }
   &lt;/style&gt;
 &lt;/head&gt;
 &lt;body&gt;
   &lt;header&gt;
-    &lt;p id="login"&gt;&lt;a href="#"&gt;klantenzone&lt;/a&gt;&lt;/p&gt;
+    &lt;p&gt;&lt;a href="#"&gt;klantenzone&lt;/a&gt;&lt;/p&gt;
   &lt;/header&gt;
 &lt;/body&gt;
 &lt;/html&gt;
 </code></pre>
             </li>
             <li class="arrow smallfont">
-               denk aan de vuistregels ("van buiten naar binnen"): beter padding op de <code>&lt;header&gt;</code> dan margin op de <code>&lt;p&gt;</code>!
+               denk aan vuistregel 3 ("van buiten naar binnen"): beter padding op de <code>&lt;header&gt;</code> dan margin op de <code>&lt;p&gt;</code>!
              </li>
           </ul>
         </section>
