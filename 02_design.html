@@ -1006,7 +1006,7 @@ p:last-child {
          <h2>Margin of padding? (1)</h2>
          <ul>
            <li>
-             In plaats van padding op de <code>&lt;div&gt;</code>, hadden we ook margin op de <code>&lt;p&gt;</code>'s kunnen gebruiken voor de ruimte tussen de rood gestippelde rand en paragrafen:
+             In plaats van padding op de <code>&lt;div&gt;</code>, hadden we ook margin op de <code>&lt;p&gt;</code>'s kunnen gebruiken voor de ruimte tussen de rood gestippelde rand en paragrafen. Het resultaat is gelijk:
              <div class="flex-1-1" style="margin-top: 20px">
                <pre style="margin: 0"><code class="language-css" contenteditable data-selector="#modeldemo6">div {
  background-color: #eee;
@@ -1045,12 +1045,14 @@ p:last-child {
             </li>
             <li>
              Eigenlijk maakt het niet zoveel uit wat je kiest, zolang het maar werkt, maar om een houvast te geven hanteren we in deze cursus volgende <em>vuistregels</em>:
-             <ol>
-               <li>denk <strong>standaard aan margins</strong>, dus ruimte <strong>tussen elementen</strong></li>
-               <li>denk <strong>enkel aan padding</strong> bij ruimte <strong>binnen elementen</strong>, dus tussen rand en de inhoud</li>
-               <li>denk <strong>van buiten naar binnen</strong>: liever margin/padding op de parent, dan margin/padding op de child</li>
-               <li>denk <strong>van linksboven naar rechtsonder</strong>: liever margin bottom/right op het eerste element, dan top/left op het tweede</li>
-             </ol>
+             <div style="background-color: rgb(125, 215, 179); padding: 10px; margin: 0.5em 0;">
+               <ol>
+                  <li>denk <strong>standaard aan margins</strong>, dus ruimte <strong>tussen elementen</strong></li>
+                  <li>denk <strong>enkel aan padding</strong> bij ruimte <strong>binnen elementen</strong>, dus tussen rand en de inhoud</li>
+                  <li>denk <strong>van buiten naar binnen</strong>: liever margin/padding op de parent, dan margin/padding op de child</li>
+                  <li>denk <strong>van linksboven naar rechtsonder</strong>: liever margin bottom/right op een element, dan top/left op het volgende (dit geldt ook voor borders: b.v. liever een border onder dan boven een element)</li>
+                </ol>
+               </div>
            </li>
            <li>
             Zoals altijd bij vuistregels, zijn er uitzonderingen:
