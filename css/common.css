@@ -49,6 +49,13 @@
  [data-fancybox] {
    cursor: pointer;
  }
+
+ .democaption {
+   font-size: 10px !important;
+   position: absolute;
+   right: 3px;
+   top: -14px;
+ }
  
  /*********************************************
   * IMAGES
@@ -174,13 +181,13 @@
    padding-bottom: 0;
  }
  
- .reveal ul.arrow li:before,
- .reveal li.arrow:before {
+ .reveal ul.arrow li::before,
+ .reveal li.arrow::before {
    content: '→  ';
  }
  
- .reveal ul.arrow li:first-letter,
- .reveal li.arrow:first-letter {
+ .reveal ul.arrow li::first-letter,
+ .reveal li.arrow::first-letter {
      margin-left: -1.25em;
  }
  
@@ -259,7 +266,7 @@
  td span.undertext {
    font-size:smaller; 
    font-style: italic; 
-   white-space: nowrap
+   white-space: nowrap;
  }
  
  /* orientation */
@@ -320,6 +327,7 @@
  
  .reveal .bluetable th {
    border-bottom: 0;
+   color: #fff;
  }
  
  .reveal .bluetable tr {
@@ -340,10 +348,6 @@
  
  .reveal .bluetable tr td p:first-child {
    margin-top: 0 !important;
- }
- 
- .reveal .bluetable th {
-   color: #fff;
  }
  
  .reveal .bluetable td {
@@ -413,9 +417,15 @@
    color: #e1d9c0;
  }
  
- .reveal ul.chapterlist li.active::before, .reveal ul.chapterlist li.active:hover::before {
+ .reveal ul.chapterlist li.active::before, 
+ .reveal ul.chapterlist li.active:hover::before {
    color: #8b743d;
  }
+
+.reveal .slides ul.chapterlist a {
+   text-decoration: none;
+}
+
  
  /*********************************************
   * TOOLTIPS AND INFO
@@ -457,10 +467,6 @@
    border: 2px solid #ccc;
    padding: 10px;
    background-color: #ffc;
-   background-image: -webkit-linear-gradient(rgba(255, 255, 255, .5), rgba(255, 255, 180, 0));
-   background-image: -moz-linear-gradient(rgba(255, 255, 255, .5), rgba(255, 255, 180, 0));
-   background-image: -ms-linear-gradient(rgba(255, 255, 255, .5), rgba(255, 255, 180, 0));
-   background-image: -o-linear-gradient(rgba(255, 255, 255, .5), rgba(255, 255, 180, 0));
    background-image: linear-gradient(rgba(255, 255, 255, .5), rgba(255, 255, 180, 0));
    border-radius: 4px;
    box-shadow: 0 1px 2px rgba(0, 0, 0, .4), 0 1px 0 rgba(255, 255, 255, .5) inset;

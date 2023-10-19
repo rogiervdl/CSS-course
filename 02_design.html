@@ -26,7 +26,7 @@
     <div class="slides">
 
       <!-- 0 : Title -->
-      <section>
+      <section class="cover">
         <section>
           <h1>CSS Design</h1>
           <p class="frontslide__subtext">
@@ -44,7 +44,7 @@
           </footer>
         </section>
       </section>
-      <section>
+      <section class="chapter">
         <section id="units">
           <h1>CSS</h1>
           <h2>Eenheden</h2>
@@ -244,7 +244,7 @@ footer a { font-size: 0.75rem;  }</code></pre>
             </li>
           </ul>
         </section>
-        <!-- <section data-toc-title="rem &mdash; gebruik">
+        <!-- <section data-title="rem &mdash; gebruik">
           <h2>rem &mdash; gebruik (1) </h2>
           <ul>
             <li>
@@ -274,7 +274,7 @@ footer a { font-size: 1.2rem;  }</code></pre>
             </li>
           </ul>
         </section>
-        <section data-toc-title="">
+        <section data-title="">
          <h2>rem &mdash; gebruik (2) </h2>
           <ul>
             <li>
@@ -299,7 +299,7 @@ footer a { font-size: 1.2rem;  }</code></pre>
             </li>
           </ul>
         </section>
-        <section data-toc-title="">
+        <section data-title="">
           <h2>rem &mdash; gebruik (3) </h2>
           <ul>
             <li>
@@ -360,7 +360,7 @@ body {
           </ul>
         </section>
       </section>
-      <section>
+      <section class="chapter">
         <section>
           <h1>CSS</h1>
           <h2>Fonts &amp; Tekst</h2>
@@ -388,7 +388,7 @@ body {
           <ul>
             <li>
               Code voorbeeld in CSS:
-              <pre><code style="height: 170px" class="language-css" contenteditable data-selector="#text-properties">p {
+              <pre><code style="height: 170px" class="language-css" contenteditable data-selector="#text-properties-demo">p {
   color: #5a4c34;
   background-color: #f0ede3;
   font-size: 14px;
@@ -408,7 +408,7 @@ a {
 a:hover {
   text-decoration: underline;
 }</code></pre>
-              <div id="text-properties">
+              <div id="text-properties-demo">
                 <p class="demo" style="margin: 0">In friendship <a href="">diminution instrument</a> so. Son sure paid door with say them. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec iaculis malesuada mi, nec pharetra elit vehicula et. Donec <a href="">consectetur porttitor</a> mauris mollis facilisis. Phasellus et lorem augue, eget eleifend quam. Sed ac bibendum lorem. Praesent molestie lobortis elementum. Nam sed magna eget quam ullamcorper semper. Ut molestie faucibus accumsan. Donec sodales rhoncus augue ac aliquam. In hac habitasse platea dictumst.</p>
               </div>
             </li>
@@ -474,7 +474,7 @@ a:hover {
           </ul>
         </section>
       </section>
-      <section>
+      <section class="chapter">
         <section>
           <h1>CSS</h1>
           <h2>Kleuren &amp; achtergronden</h2>
@@ -570,7 +570,7 @@ a:hover {
   background-size: 100% 100%; /* andere waarden: 100%, cover, contain, auto, pixels... */
   background-repeat: no-repeat; /* andere waarden: repeat, repeat-x, repeat-y */
 }</code></pre>
-              <div id="backgrounddemo1" style="margin-top: 30px; width: 300px; height: 150px; margin-bottom: 30px; padding: 0"></div>
+              <div style="margin-top: 30px; width: 300px; height: 150px; margin-bottom: 30px; padding: 0"></div>
             </li>
           </ul>
         </section>
@@ -668,7 +668,7 @@ img:hover {
             </li>
           </ul>
         </section>
-        <section data-toc-title="Animaties">
+        <section data-title="Animaties">
           <h2>[Animaties (1)]</h2>
           <ul>
             <li>
@@ -712,7 +712,7 @@ img:hover {
             </li>
           </ul>
         </section>
-        <section data-toc-title="">
+        <section data-title="">
           <h2>[Animaties (2)]</h2>
           <ul>
             <li>
@@ -829,7 +829,7 @@ img:hover {
           </ul>
         </section>
       </section>
-      <section>
+      <section class="chapter">
         <section>
           <h1>CSS</h1>
           <h2>Border, padding &amp; margin</h2>
@@ -852,7 +852,7 @@ img:hover {
           </ul>
           <p><img src="img/02_design/boxmodel.png" alt="box model"></p>
         </section>
-        <section data-toc-title="Borders">
+        <section data-title="Borders">
           <h2>Border (1)</h2>
           <ul>
             <li>
@@ -883,7 +883,7 @@ p {
             </li>
           </ul>
         </section>
-        <section data-toc-title="">
+        <section data-title="">
           <h2>Border (2)</h2>
           <ul>
             <li>
@@ -910,7 +910,7 @@ p {
             </li>
           </ul>
         </section>
-        <section data-toc-title="">
+        <section data-title="">
           <h2>Border (3)</h2>
           <ul>
             <li>
@@ -1002,7 +1002,7 @@ p:last-child {
            </li>
          </ul>
        </section>
-       <section data-toc-title="Margin of padding?">
+       <section data-title="Margin of padding?">
          <h2>Margin of padding? (1)</h2>
          <ul>
            <li>
@@ -1037,7 +1037,7 @@ p:last-child {
            </li>
          </ul>
        </section>
-       <section data-toc-title="">
+       <section data-title="">
          <h2>Margin of padding? (2)</h2>
          <ul>
             <li>
@@ -1067,7 +1067,7 @@ p:last-child {
            </li>
          </ul>
        </section>
-       <section data-toc-title="Lekkende margin">
+       <section data-title="Lekkende margin">
           <h2>Lekkende margin (1)</h2>
           <ul>
             <li>
@@ -1100,7 +1100,7 @@ p:last-child {
             </li>
           </ul>
         </section>
-        <section data-toc-title="">
+        <section data-title="">
           <h2>Lekkende margin (2)</h2>
           <ul>
             <li>
@@ -1126,7 +1126,7 @@ p:last-child {
              </li>
           </ul>
         </section>
-        <section data-toc-title="Rare margins &amp; paddings">
+        <section data-title="Rare margins &amp; paddings">
           <h2>Margin &amp; padding regels (1)</h2>
           <ul>
             <li>
@@ -1148,7 +1148,7 @@ p:last-child {
             </li>
           </ul>
         </section>
-        <section data-toc-title="">
+        <section data-title="">
           <h2>Margin &amp; padding regels (2)</h2>
           <ul>
             <li>
@@ -1163,7 +1163,7 @@ p:last-child {
           <p style="text-align: right; margin-top: 10px;"><img src="img/02_design/box-model-inspector.png" alt="box model" class="shadowbox" style="max-width: 400px"></p>
         </section>
       </section>
-      <section>
+      <section class="chapter">
         <section>
           <h1>CSS</h1>
           <h2>Het box model</h2>
@@ -1190,7 +1190,7 @@ p:last-child {
 }</code></pre>
           </div>
         </section>
-        <section data-toc-title="Box sizing">
+        <section data-title="Box sizing">
           <h2>Box model probleem</h2>
           <ul>
             <li>
@@ -1354,7 +1354,7 @@ border-radius: 50px 5px 5px 5px;
         </section>
 
       </section>
-      <section>
+      <section class="chapter">
         <section>
           <h1>CSS</h1>
           <h2>Weergave</h2>
@@ -1363,80 +1363,155 @@ border-radius: 50px 5px 5px 5px;
           </ul>
         </section>
         <section>
-          <h2>Opacity</h2>
-          <ul>
+         <h2>Opacity</h2>
+         <ul>
             <li>
-              Maak een element (gedeeltelijk) transparant:
-              <pre><code class="language-css">a {
-  opacity: 0.8;
+               Maak een element (gedeeltelijk) transparant:
+               <pre><code class="language-css" contenteditable data-selector="#opacity" data-step="0.1">p {
+  background-color: #000;
+  color: #fff;
+  opacity: 0.4; /* verander deze waarde */
 }</code></pre>
-              <div class="demolink">
-                <a href="demos/02_design/03_display_visibility/opacity.html">demo</a>
-              </div>
+            <div class="parent" style="margin-top: 30px; background-color: beige; border: 2px solid #ccc; position: relative; padding: 30px">
+               <div class="democaption"><code>&lt;div id="parent"&gt;</code></div>
+               <p style="position: relative;font-size: smaller; border: 1px solid #ccc;padding: 10px; margin-bottom: 1em;">
+                  <span class="democaption"><code>&lt;p&gt;</code></span>
+                  just some paragraph
+               </p>
+            </div>
             </li>
-          </ul>
+         </ul>
         </section>
+        
+        <section>
+         <h2>Display: default</h2>
+         <ul>
+           <li>
+             Inline elementen gedragen zich in het boxmodel standaard anders dan blocklevel elementen. Vergelijk een link (inline) met een paragraaf (blocklevel):
+             <pre><code class="language-css" contenteditable data-selector="#display-default" data-step="10">a, p {
+  height: 60px; /* werkt niet voor de link */
+  padding: 20px; /* werkt niet goed bij de link: overlapt met andere elementen */
+  width: 40%; /* werkt niet voor de link */
+}</code></pre>
+              <div class="parent" style="margin-top: 30px; background-color: beige; border: 2px solid #ccc; position: relative; padding: 10px">
+                 <div class="democaption"><code>&lt;div id="parent"&gt;</code></div>
+                 <a style="position: relative;font-size: smaller; border: 1px solid #ccc;padding: 10px; background-color: #fff9;margin-bottom: 1em;">
+                    <span class="democaption"><code>&lt;a&gt;</code></span>
+                    just some link
+                 </a>
+                 <p style="position: relative;font-size: smaller; border: 1px solid #ccc;padding: 10px; background-color: #fff9;margin-bottom: 1em;">
+                    <span class="democaption"><code>&lt;p&gt;</code></span>
+                    just some paragraph
+                 </p>
+              </div>
+           </li>
+            <li class="arrow smallfont">op inline elementen kan je geen <strong>hoogte of breedte</strong> instellen</li>
+            <li class="arrow smallfont">op inline elementen werkt <strong>verticale padding of margin</strong> niet goed (overlapt met andere elementen)</li>
+            <li class="arrow smallfont">blockevel elementen nemen standaard de volledige <strong>breedte</strong> in, inline elementen de breedte van de <strong>content</strong></li>
+         </ul>
+       </section>
         <section>
           <h2>Display: none</h2>
           <ul>
             <li>
-              Verwijder een element volledig (en het neemt zelfs geen ruimte meer in):
-              <pre><code class="language-css">a {
-  display: none;
+              Verwijdert een element volledig (en het neemt zelfs geen ruimte meer in):
+              <pre><code class="language-css" contenteditable data-selector="#display-none" data-step="10">a, p {
+   display: none; 
+   padding: 10px; 
+   height: 40px;
+   width: 40%;
 }</code></pre>
-              <div class="demolink">
-                <a href="demos/02_design/03_display_visibility/display.html">demo</a>
-              </div>
+               <div class="parent" style="margin-top: 30px; background-color: beige; border: 2px solid #ccc; position: relative; padding: 10px">
+                  <div class="democaption"><code>&lt;div id="parent"&gt;</code></div>
+                  <a style="position: relative;font-size: smaller; border: 1px solid #ccc;padding: 10px; background-color: #fff9;margin-bottom: 1em;">
+                     <span class="democaption"><code>&lt;a&gt;</code></span>
+                     just some button
+                  </a>
+                  <p style="position: relative;font-size: smaller; border: 1px solid #ccc;padding: 10px; background-color: #fff9;margin-bottom: 1em;">
+                     <span class="democaption"><code>&lt;p&gt;</code></span>
+                     just some paragraph
+                  </p>
+               </div>
             </li>
           </ul>
         </section>
-        <section>
-          <h2>Display: block</h2>
-          <ul>
+       <section>
+         <h2>Display: block</h2>
+         <ul>
             <li>
-              Maak een inline element blocklevel:
-              <pre><code class="language-css">a {
-  display: block;
+               Maakt van een element een blocklevel element:
+               <pre><code class="language-css" contenteditable data-selector="#display-block" data-step="10">a, p {
+   display: block; /* andere waarden: none, inline, inline-block */
+   padding: 10px; 
+   height: 40px;
+   width: 40%;
 }</code></pre>
-              <div class="demolink">
-                <a href="demos/02_design/03_display_visibility/block.html">demo</a>
-              </div>
+               <div class="parent" style="margin-top: 30px; background-color: beige; border: 2px solid #ccc; position: relative; padding: 10px">
+                  <div class="democaption"><code>&lt;div id="parent"&gt;</code></div>
+                  <a style="position: relative;font-size: smaller; border: 1px solid #ccc;padding: 10px; background-color: #fff9;margin-bottom: 1em;">
+                     <span class="democaption"><code>&lt;a&gt;</code></span>
+                     just some button
+                  </a>
+                  <p style="position: relative;font-size: smaller; border: 1px solid #ccc;padding: 10px; background-color: #fff9;margin-bottom: 1em;">
+                     <span class="democaption"><code>&lt;p&gt;</code></span>
+                     just some paragraph
+                  </p>
+               </div>
             </li>
-          </ul>
-        </section>
-        <section>
-          <h2>Display: inline</h2>
-          <ul>
+            <li class="arrow smallfont">je kan nu hoogte, breedte en verticale margins en paddings instellen op de link</li>
+         </ul>
+       </section>
+       <section>
+         <h2>Display: inline</h2>
+         <ul>
             <li>
-              Maak een blocklevel element inline:
-              <pre><code class="language-css">li {
-  display: inline;
+            Omgekeerd kan je van elementen ook inline elementen maken; ze komen dan naast elkaar, net zoals gewone inline elementen:
+               <pre><code class="language-css" contenteditable data-selector="#display-inline" data-step="10">a, p {
+   display: inline; /* andere waarden: none, block, inline-block */
+   padding: 10px; 
+   height: 40px;
+   width: 40%;
 }</code></pre>
-              <div class="demolink">
-                <a href="demos/02_design/03_display_visibility/inline.html">demo</a>
-              </div>
+               <div class="parent" style="margin-top: 30px; background-color: beige; border: 2px solid #ccc; position: relative; padding: 10px">
+                  <div class="democaption"><code>&lt;div id="parent"&gt;</code></div>
+                  <a style="position: relative;font-size: smaller; border: 1px solid #ccc;padding: 10px; background-color: #fff9;margin-bottom: 1em;">
+                     <span class="democaption"><code>&lt;a&gt;</code></span>
+                     just some button
+                  </a>
+                  <p style="position: relative;font-size: smaller; border: 1px solid #ccc;padding: 10px; background-color: #fff9;margin-bottom: 1em;">
+                     <span class="democaption"><code>&lt;p&gt;</code></span>
+                     just some paragraph
+                  </p>
+               </div>
             </li>
-            <li class="no-style">
-              &rarr; merk op: <code>width</code> en <code>height</code> properties zullen niet meer werken
-            </li>
-          </ul>
-        </section>
-        <section>
-          <h2>[Display: inline-block]</h2>
-          <ul>
+            <li class="arrow smallfont">je kan nu geen hoogte, breedte en verticale margins en paddings meer instellen op de paragraaf</li>
+         </ul>
+      </section>
+       <section>
+         <h2>Display: inline-block</h2>
+         <ul>
             <li>
-              Geef een blocklevel element inline weer (maar het blijft blockevel):
-              <pre><code class="language-css">li {
-  display: inline-block;
+               Dit is een combinatie van blocklevel en inline: je kan wel afmetingen, margins en paddings normaal instellen (blocklevel), maar ze kunnen naast elkaar staan en nemen de breedte van de content in (inline): 
+               <pre><code class="language-css" contenteditable data-selector="#display-inlineblock" data-step="10">a, p {
+   display: inline-block; /* andere waarden: none, inline, block */
+   padding: 10px; 
+   height: 40px;
+   width: 40%;
 }</code></pre>
-              <div class="demolink">
-                <a href="demos/02_design/03_display_visibility/inlineblock.html">demo</a>
-              </div>
+               <div class="parent" style="margin-top: 30px; background-color: beige; border: 2px solid #ccc; position: relative; padding: 10px">
+                  <div class="democaption"><code>&lt;div id="parent"&gt;</code></div>
+                  <a style="position: relative;font-size: smaller; border: 1px solid #ccc;padding: 10px; background-color: #fff9;margin-bottom: 1em;">
+                     <span class="democaption"><code>&lt;a&gt;</code></span>
+                     just some button
+                  </a>
+                  <p style="position: relative;font-size: smaller; border: 1px solid #ccc;padding: 10px; background-color: #fff9;margin-bottom: 1em;">
+                     <span class="democaption"><code>&lt;p&gt;</code></span>
+                     just some paragraph
+                  </p>
+               </div>
             </li>
-            <li class="arrow smallfont">
-              opmerking: <code>width</code> en <code>height</code> properties werken nog steeds
-            </li>
-          </ul>
+            <li class="arrow smallfont">je kan nu hoogte, breedte en verticale margins en paddings instellen op de link</li>
+         </ul>
         </section>
         <section>
           <h2>[Visibility]</h2>
@@ -1453,16 +1528,16 @@ border-radius: 50px 5px 5px 5px;
           </ul>
         </section>
       </section>
-      <section>
+      <section class="chapter">
         <section id="ir">
           <h1>CSS</h1>
-          <h2>Tekst vervangen</h2>
+          <h2>[Tekst vervangen]</h2>
           <ul class="chapterlist">
             <!-- to be filled by Javascript -->
           </ul>
         </section>
         <section id="ir_ir">
-          <h2>Tekst vervangen</h2>
+          <h2>[Tekst vervangen]</h2>
           <ul>
             <li>
               Soms gebeurt het dat je een tekst in HTML wil vervangen door een afbeelding of grafisch element, bijvoorbeeld een titel, header, link... De werkwijze is als volgt:
@@ -1493,7 +1568,7 @@ border-radius: 50px 5px 5px 5px;
     <a href="http://www.odisee.be/" title="odisee.be" id="odisee"><img src="img/odisee.png" alt="Odisee logo"></a>
 
     <!-- index menu container -->
-    <aside class="back"></aside>
+    <nav id="navigator"></nav>
 
   </div>
 

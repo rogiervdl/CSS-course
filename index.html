@@ -1,97 +1,54 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="nl">
+
 <head>
-  <meta charset="utf-8">
-  <title>CSS &mdash; introductie voor beginners</title>
-  <meta name="author" content="Rogier van der Linde - odisee.be">
-  <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0">
-  <link rel="stylesheet" href="fonts/droidsans/webfont.css">
-  <link rel="stylesheet" href="fonts/lato/webfont.css">
-  <link rel="stylesheet" href="fonts/leaguegothic/webfont.css">
-  <link rel="stylesheet" href="vendor/reveal/css/reveal.css">
-  <link rel="stylesheet" href="vendor/reveal/css/theme/beige.css">
-  <link rel="stylesheet" href="vendor/highlight/styles/vs.css">
-  <link rel="stylesheet" href="css/reveal-mods.css">
-  <link rel="stylesheet" href="css/common.css">
-  <link rel="stylesheet" href="css/index.css">
+   <meta charset="utf-8">
+   <title>CSS &mdash; introductie voor beginners</title>
+   <meta name="author" content="Rogier van der Linde - odisee.be">
+   <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0">
+   <link rel="stylesheet" href="fonts/droidsans/webfont.css">
+   <link rel="stylesheet" href="fonts/lato/webfont.css">
+   <link rel="stylesheet" href="fonts/leaguegothic/webfont.css">
+   <link rel="stylesheet" href="css/index.css">
 </head>
 
 <body>
-  <div class="wrapper">
-    <header>
-      <a href="http://www.odisee.be/" title="odisee.be" id="odisee"><img src="img/odisee.png" alt="Odisee logo"></a>
-      <h1>CSS</h1>
-      <p>introductie voor beginners</p>
+   <header class="site__header">
+      <a class="header__logo" href="http://www.odisee.be/" title="odisee.be" id="odisee"><img src="img/odisee.png" alt="Odisee logo"></a>
+      <h1 class="header__title">CSS</h1>
+      <p class="header__tagline">introductie voor beginners</p>
+   </header>
+   <main class="site__main">
+      <a href="01_syntax.html" class="main__thumb">
+         <h3 class="thumb__title">01. CSS SYNTAX</h3>
+         <img class="thumb__visual" src="img/01_syntax/icon.jpg" alt="">
+      </a>
+      <a href="02_design.html" class="main__thumb">
+         <h3 class="thumb__title">02. CSS DESIGN</h3>
+         <img class="thumb__visual" src="img/02_design/icon.jpg" alt="">
+      </a>
+      <a href="03_layout.html" class="main__thumb">
+         <h3 class="thumb__title">03. CSS LAYOUT</h3>
+         <img class="thumb__visual" src="img/03_layout/icon.jpg" alt="">
+      </a>
+      <a href="04_responsive.html" class="main__thumb">
+         <h3 class="thumb__title">04. CSS RESPONSIVE</h3>
+         <img class="thumb__visual" src="img/04_responsive/icon.jpg" alt="">
+      </a>
+      <a href="cheatsheet.html" class="main__thumb">
+         <h3 class="thumb__title">CSS CHEATSHEET</h3>
+         <img class="thumb__visual" src="img/cheatsheet/icon.png" alt="">
+      </a>
+   </main>
+   <footer class="site__footer">
       <p>zie ook de cursus <a href="https://rogiervdl.github.io/HTML-course/">HTML</a> en <a href="https://rogiervdl.github.io/JS-course/">Javascript</a></p>
-    </header>
-    <ul class="thumbs">
-      <li>
-        <a href="01_syntax.html">
-          <article>
-            <h1>01. CSS SYNTAX</h1>
-            <img src="img/01_syntax/icon.jpg" alt="" />
-            <footer>
-              <p>Rogier van der Linde</p>
-            </footer>
-          </article>
-        </a>
-      </li>
-      <li>
-        <a href="02_design.html">
-          <article>
-            <h1>02. CSS DESIGN</h1>
-            <img src="img/02_design/icon.jpg" alt="" />
-            <footer>
-              <p>Rogier van der Linde</p>
-            </footer>
-          </article>
-        </a>
-      </li>
-      <li>
-        <a href="03_layout.html">
-          <article>
-            <h1>03. CSS LAYOUT</h1>
-            <img src="img/03_layout/icon.jpg" alt="" />
-            <footer>
-              <p>Rogier van der Linde</p>
-            </footer>
-          </article>
-        </a>
-      </li>
-      <li>
-        <a href="04_responsive.html">
-          <article>
-            <h1>04. CSS RESPONSIVE</h1>
-            <img src="img/04_responsive/icon.jpg" alt="" />
-            <footer>
-              <p>Rogier van der Linde</p>
-            </footer>
-          </article>
-        </a>
-      </li>
-      <li>
-        <a href="cheatsheet.html">
-          <article>
-            <h1>CSS CHEATSHEET</h1>
-            <img src="img/cheatsheet/icon.png" alt="" />
-            <footer>
-              <p>Rogier van der Linde</p>
-            </footer>
-          </article>
-        </a>
-      </li>
-    </ul>
-    <footer>
-      <p>
-         <a href="mailto:rogier.vanderlinde@odisee.be">rogier.vanderlinde@odisee.be</a>
-      </p>
-    </footer>
-    <aside>
-      <p>Dit materiaal werd ontwikkeld door Rogier van der Linde, docent ICT op Odisee.</p>
+   </footer>
+   <aside>
+      <p>Dit materiaal werd ontwikkeld door Rogier van der Linde, docent Toegepaste Informatica op Odisee.</p>
       <p>Het mag vrij gebruikt worden, zolang een credit aan Rogier van der Linde vermeld is en de link rechtsboven naar <a href="http://www.odisee.be/">odisee.be</a> behouden blijft.</p>
       <p>Suggesties en opmerkingen zijn welkom per mail naar <a href="mailto:rogier.vanderlinde@odisee.be">Rogier</a>, of via een <a href="https://github.com/rogiervdl/HTML-course">a pull request op GitHub</a>.</p>
-      <img src="img/qr.png" alt="qr code" id="qr">
-    </aside>
-  </div>
+      <img src="img/me.jpg" alt="foto Rogier van der Linde">
+   </aside>
 </body>
+
 </html>
