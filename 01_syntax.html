@@ -7,14 +7,7 @@
    <title>CSS &mdash; Syntax</title>
    <meta name="author" content="Rogier van der Linde - odisee.be">
    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-   <link rel="stylesheet" href="fonts/droidsans/webfont.css">
-   <link rel="stylesheet" href="fonts/lato/webfont.css">
-   <link rel="stylesheet" href="fonts/leaguegothic/webfont.css">
-   <link rel="stylesheet" href="vendor/reveal/css/reveal.css">
-   <link rel="stylesheet" href="vendor/reveal/css/theme/beige.css">
-   <link rel="stylesheet" href="vendor/highlight/styles/vs.css">
-   <link rel="stylesheet" href="css/reveal-mods.css">
-   <link rel="stylesheet" href="css/common.css">
+   <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
@@ -29,18 +22,16 @@
          <section class="cover">
             <section>
                <h1>CSS Syntax</h1>
-               <p class="frontslide__subtext">
+               <p>
                   tussen []: optioneel, sterk aanbevolen voor wie wil verdergaan in web
                </p>
-               <p class="frontslide__subtext">
+               <p>
                   gebruik pijltjestoetsen om te navigeren<br>
                   dotted codepanels zijn editeerbaar
                </p>
-               <figure>
-                  <img src="img/01_syntax/icon.jpg" alt="" class="frontslide__icon">
-               </figure>
-               <footer>
-                  <a href="http://www.odisee.be/">odisee.be</a> &mdash; <a href="mailto:rogier.vanderlinde@odisee.be">rogier.vanderlinde@odisee.be</a>
+               <img src="img/01_syntax/icon.jpg" alt="" class="cover__visual">
+               <footer class="cover__footer">
+                  <img src="img/me.jpg" alt="" class="cover__me"> <a href="mailto:rogier.vanderlinde@odisee.be">rogier.vanderlinde@odisee.be</a>
                </footer>
             </section>
          </section>
@@ -56,8 +47,7 @@
                <h2>CSS stijlregel</h2>
                <ul>
                   <li>
-                     CSS of <strong>Cascaded Style Sheets</strong> bestaat in essentie uit een opsomming van stijlregels met opmaak en layout. Elke <em>stijlregel</em>
-                     bestaat uit een <em>selector</em>, een <em>property</em> en een <em>waarde</em>:
+                     CSS of <strong>Cascaded Style Sheets</strong> bestaat in essentie uit een opsomming van stijlregels met opmaak en layout. Elke <em>stijlregel</em> bestaat uit een <em>selector</em>, een <em>property</em> en een <em>waarde</em>:
                      <pre><code class="language-css"><i>selector</i> {
   <i>property</i>: <i>value</i>;
 }</code></pre>

@@ -209,6 +209,10 @@ body {
    width: 100%;
 }
 
+.reveal blockquote {
+	width: 100%;
+}
+
 /* subtitle slide */
 
 .reveal .slides>section>section:first-child {

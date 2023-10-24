@@ -1,152 +1,144 @@
 <!-- [html-validate-disable no-inline-style, prefer-tbody] -->
 <!DOCTYPE html>
 <html lang="nl">
+
 <head>
-  <meta charset="utf-8">
-  <title>CSS &mdash; layout</title>
-  <meta name="author" content="Rogier van der Linde - odisee.be">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <link rel="stylesheet" href="fonts/droidsans/webfont.css">
-  <link rel="stylesheet" href="fonts/lato/webfont.css">
-  <link rel="stylesheet" href="fonts/leaguegothic/webfont.css">
-  <link rel="stylesheet" href="vendor/reveal/css/reveal.css">
-  <link rel="stylesheet" href="vendor/reveal/css/theme/beige.css">
-  <link rel="stylesheet" href="vendor/highlight/styles/vs.css">
-  <link rel="stylesheet" href="css/reveal-mods.css">
-  <link rel="stylesheet" href="css/common.css">
-  <link rel="stylesheet" href="css/03_layout.css">
+   <meta charset="utf-8">
+   <title>CSS &mdash; layout</title>
+   <meta name="author" content="Rogier van der Linde - odisee.be">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+   <link rel="stylesheet" href="styles.css">
+   <link rel="stylesheet" href="css/03_layout.css">
 </head>
 
 <body>
 
-  <!-- SLIDES -->
-  <div class="reveal">
+   <!-- SLIDES -->
+   <div class="reveal">
 
-    <!-- Any section element inside of this container is displayed as a slide -->
-    <div class="slides">
+      <!-- Any section element inside of this container is displayed as a slide -->
+      <div class="slides">
 
-      <!-- 0 : Title -->
-      <section class="cover">
-        <section>
-          <h1>CSS Layout</h1>
-          <p class="frontslide__subtext">
-            tussen []: optioneel, sterk aanbevolen voor wie wil verdergaan in web
-          </p>
-          <p class="frontslide__subtext">
-            gebruik pijltjestoetsen om te navigeren<br>
-            dotted codepanels zijn editeerbaar
-          </p>
-          <figure>
-            <img src="img/03_layout/icon.jpg" alt="" class="frontslide__icon">
-          </figure>
-          <footer>
-            <a href="http://www.odisee.be/">odisee.be</a> &mdash; <a href="mailto:rogier.vanderlinde@odisee.be">rogier.vanderlinde@odisee.be</a>
-          </footer>
-        </section>
-      </section>
-      <section class="chapter">
-        <section>
-          <h1>CSS layout</h1>
-          <h2>Overzicht</h2>
-          <ul class="chapterlist">
-            <!-- to be filled by Javascript -->
-          </ul>
-        </section>
-        <section>
-          <h2>Layout technieken</h2>
-          <ul>
-            <li>
-              CSS heeft een lange weg afgelegd; pas met het verdwijnen van Internet Exlorer konden <a href="https://caniuse.com/flexbox">Flexbox</a> en  <a href="https://caniuse.com/grid">Grid</a> gebruikt worden, de eerste echte layout technieken in CSS.
-            </li>
-            <li>
-              Je kan layouttechnieken onderverdelen in ruwweg 5 groepen:
-              <ul>
-                <li><em>alignering</em>: verzamelnaam voor reeks losse technieken voor <strong>horizontale en verticale alignering</strong></li>
-                <li><em>flexbox</em>: bedoeld voor allerhande <strong>horizontale en verticale layouts</strong></li>
-                <li><em>floating</em>: gebruikt om content links of rechts <strong>rond een blok doen vloeien</strong> (bv. foto) </li>
-                <li><em>[grid]</em>: iets complexere methode voor <strong>grid-achtige layout</strong> in rijen en kolommen</li>
-                <li><em>[positionering]</em> (absoluut, relatief, fixed): positionering op basis van coördinaten; niet geschikt voor een modern flexibel responsive ontwerp; vandaag vooral gebruikt in <strong>Javascript games</strong> en enkele uitzonderlijke gevallen</li>
-              </ul>
-            </li>
-            <li class="arrow smallfont" style="margin-left: 0">
-               Je kan layouts vaak met verschillende technieken oplossen, maar <span style="color: #090">Flexbox is je standaardtechniek</span>
-            </li>
-            <li class="arrow smallfont" style="margin-left: 0">
-               bestudeer zeker nog eerst grondig de <a href="02_design.html#/display-default"><code>display</code> property in vorige presentatie</a>; veel kleine layoutproblemen kan je daar al mee oplossen 
-            </li>
-          </ul>
-        </section>
-      </section>
-      <section class="chapter">
-        <section>
-          <h1>CSS layout</h1>
-          <h2>Alignering</h2>
-          <ul class="chapterlist">
-            <!-- to be filled by Javascript -->
-          </ul>
-        </section>
-        <section>
-            <h2>Horizontaal &mdash; content</h2>
-            <ul>
-              <li>
-                Om tekst, afbeeldingen enz... horizontaal te aligneren, gebruik <code><em>text-align</em></code> op de parent:
-                <pre><code class="language-css" contenteditable data-selector="#horizontaal-content" data-step="10">#parent {
+         <!-- 0 : Title -->
+         <section class="cover">
+            <section>
+               <h1>CSS Layout</h1>
+               <p>
+                  tussen []: optioneel, sterk aanbevolen voor wie wil verdergaan in web
+               </p>
+               <p>
+                  gebruik pijltjestoetsen om te navigeren<br>
+                  dotted codepanels zijn editeerbaar
+               </p>
+               <img src="img/03_layout/icon.jpg" alt="" class="cover__visual">
+               <footer class="cover__footer">
+                  <img src="img/me.jpg" alt="" class="cover__me"> <a href="mailto:rogier.vanderlinde@odisee.be">rogier.vanderlinde@odisee.be</a>
+               </footer>
+            </section>
+         </section>
+         <section class="chapter">
+            <section>
+               <h1>CSS layout</h1>
+               <h2>Overzicht</h2>
+               <ul class="chapterlist">
+                  <!-- to be filled by Javascript -->
+               </ul>
+            </section>
+            <section>
+               <h2>Layout technieken</h2>
+               <ul>
+                  <li>
+                     CSS heeft een lange weg afgelegd; pas met het verdwijnen van Internet Exlorer konden <a href="https://caniuse.com/flexbox">Flexbox</a> en <a href="https://caniuse.com/grid">Grid</a> gebruikt worden, de eerste echte layout technieken in CSS.
+                  </li>
+                  <li>
+                     Je kan layouttechnieken onderverdelen in ruwweg 5 groepen:
+                     <ul>
+                        <li><em>alignering</em>: verzamelnaam voor reeks losse technieken voor <strong>horizontale en verticale alignering</strong></li>
+                        <li><em>flexbox</em>: bedoeld voor allerhande <strong>horizontale en verticale layouts</strong></li>
+                        <li><em>floating</em>: gebruikt om content links of rechts <strong>rond een blok doen vloeien</strong> (bv. foto) </li>
+                        <li><em>[grid]</em>: iets complexere methode voor <strong>grid-achtige layout</strong> in rijen en kolommen</li>
+                        <li><em>[positionering]</em> (absoluut, relatief, fixed): positionering op basis van coördinaten; niet geschikt voor een modern flexibel responsive ontwerp; vandaag vooral gebruikt in <strong>Javascript games</strong> en enkele uitzonderlijke gevallen</li>
+                     </ul>
+                  </li>
+                  <li class="arrow smallfont" style="margin-left: 0">
+                     Je kan layouts vaak met verschillende technieken oplossen, maar <span style="color: #090">Flexbox is je standaardtechniek</span>
+                  </li>
+                  <li class="arrow smallfont" style="margin-left: 0">
+                     bestudeer zeker nog eerst grondig de <a href="02_design.html#/display-default"><code>display</code> property in vorige presentatie</a>; veel kleine layoutproblemen kan je daar al mee oplossen
+                  </li>
+               </ul>
+            </section>
+         </section>
+         <section class="chapter">
+            <section>
+               <h1>CSS layout</h1>
+               <h2>Alignering</h2>
+               <ul class="chapterlist">
+                  <!-- to be filled by Javascript -->
+               </ul>
+            </section>
+            <section>
+               <h2>Horizontaal &mdash; content</h2>
+               <ul>
+                  <li>
+                     Om tekst, afbeeldingen enz... horizontaal te aligneren, gebruik <code><em>text-align</em></code> op de parent:
+                     <pre><code class="language-css" contenteditable data-selector="#horizontaal-content" data-step="10">#parent {
   text-align: center; /* probeer ook left, right */
 }</code></pre>
-                <div style="margin-top: 30px; width: 600px; padding: 0">
-                  <div id="parent" style="border: 2px solid #ccc; padding: 20px; position: relative;background-color: beige; font-size: smaller;">
-                    <span class="democaption"><code>&lt;div id="parent"&gt;</code></span>
-                    <p style="position: relative;border: 1px solid #ccc; padding: 5px; background-color: #fff9;">
-                      <span class="democaption"><code>&lt;p&gt;</code></span>
-                      parmesan cheese slices when the cheese comes out everybody's happy cow cheese and wine cheese and biscuits. Roquefort when the cheese comes out...
-                    </p>
-                    <div style="position: relative;display: inline-block;">
-                      <span class="democaption"><code>&lt;img&gt;</code></span>
-                      <img src="img/03_layout/spongebob.webp" alt="" width="80" style="margin: 0;">
-                    </div>
-                  </div>
-                </div>
-              </li>
-              <li class="arrow smallfont">
-                merk op hoe <code>text-align</code> wordt overgeërfd (van <code>&lt;div&gt;</code> naar <code>&lt;p&gt;</code>)
-              </li>
-              <li class="arrow smallfont">
-                dit werkt alleen voor inline content, niet voor blocklevel elementen!
-              </li>
-            </ul>
-          </section>
-          <section>
-            <h2>Horizontaal &mdash; blok</h2>
-            <ul>
-              <li>
-                Om blocklevel content (<code>&lt;div&gt;</code>, <code>&lt;p&gt;</code>...) horizontaal te aligneren, gebruik je de waarde <code>auto</code> voor <code><em>margin-left</em></code> en/of <code><em>margin-right</em></code> op het element zelf:
-                <pre><code class="language-css" contenteditable data-selector="#horizontaal-blok" data-step="10">.child {
+                     <div style="margin-top: 30px; width: 600px; padding: 0">
+                        <div id="parent" style="border: 2px solid #ccc; padding: 20px; position: relative;background-color: beige; font-size: smaller;">
+                           <span class="democaption"><code>&lt;div id="parent"&gt;</code></span>
+                           <p style="position: relative;border: 1px solid #ccc; padding: 5px; background-color: #fff9;">
+                              <span class="democaption"><code>&lt;p&gt;</code></span>
+                              parmesan cheese slices when the cheese comes out everybody's happy cow cheese and wine cheese and biscuits. Roquefort when the cheese comes out...
+                           </p>
+                           <div style="position: relative;display: inline-block;">
+                              <span class="democaption"><code>&lt;img&gt;</code></span>
+                              <img src="img/03_layout/spongebob.webp" alt="" width="80" style="margin: 0;">
+                           </div>
+                        </div>
+                     </div>
+                  </li>
+                  <li class="arrow smallfont">
+                     merk op hoe <code>text-align</code> wordt overgeërfd (van <code>&lt;div&gt;</code> naar <code>&lt;p&gt;</code>)
+                  </li>
+                  <li class="arrow smallfont">
+                     dit werkt alleen voor inline content, niet voor blocklevel elementen!
+                  </li>
+               </ul>
+            </section>
+            <section>
+               <h2>Horizontaal &mdash; blok</h2>
+               <ul>
+                  <li>
+                     Om blocklevel content (<code>&lt;div&gt;</code>, <code>&lt;p&gt;</code>...) horizontaal te aligneren, gebruik je de waarde <code>auto</code> voor <code><em>margin-left</em></code> en/of <code><em>margin-right</em></code> op het element zelf:
+                     <pre><code class="language-css" contenteditable data-selector="#horizontaal-blok" data-step="10">.child {
   margin-left: auto;
   margin-right: auto; /* probeer ook 0px */
   width: 300px;
 }
 </code></pre>
-                <div style="margin-top: 30px; width: 600px; padding: 0;background-color: beige;">
-                  <div style="border: 2px solid #ccc; padding: 20px; position: relative;">
-                    <span class="democaption"><code>&lt;div id="parent"&gt;</code></span>
-                    <div class="child" style="border: 1px solid #ccc; padding: 10px; margin-bottom: 20px; position: relative; background-color: #fff9; height: 150px;font-size: smaller;">
-                      <span class="democaption"><code>&lt;div class="child"&gt;</code></span>
-                      parmesan cheese slices when the cheese comes out everybody's happy cow cheese and wine cheese and biscuits. Roquefort when the cheese comes out...
-                    </div>
-                  </div>
-                </div>
-              </li>
-              <li class="arrow smallfont">
-                dit werkt alleen voor blocklevel elementen, niet voor inline content!
-              </li>
-            </ul>
-          </section>
-          <section>
-            <h2>Verticaal &mdash; één regel</h2>
-            <ul>
-              <li>
-                Een oud trukje om één regel verticaal te centreren is <code><em>height</em></code> en <code><em>line-height</em></code> dezelfde waarde geven:
-                <pre><code class="language-css" contenteditable data-selector="#verticaal-n-regel" data-step="10">.button {
+                     <div style="margin-top: 30px; width: 600px; padding: 0;background-color: beige;">
+                        <div style="border: 2px solid #ccc; padding: 20px; position: relative;">
+                           <span class="democaption"><code>&lt;div id="parent"&gt;</code></span>
+                           <div class="child" style="border: 1px solid #ccc; padding: 10px; margin-bottom: 20px; position: relative; background-color: #fff9; height: 150px;font-size: smaller;">
+                              <span class="democaption"><code>&lt;div class="child"&gt;</code></span>
+                              parmesan cheese slices when the cheese comes out everybody's happy cow cheese and wine cheese and biscuits. Roquefort when the cheese comes out...
+                           </div>
+                        </div>
+                     </div>
+                  </li>
+                  <li class="arrow smallfont">
+                     dit werkt alleen voor blocklevel elementen, niet voor inline content!
+                  </li>
+               </ul>
+            </section>
+            <section>
+               <h2>Verticaal &mdash; één regel</h2>
+               <ul>
+                  <li>
+                     Een oud trukje om één regel verticaal te centreren is <code><em>height</em></code> en <code><em>line-height</em></code> dezelfde waarde geven:
+                     <pre><code class="language-css" contenteditable data-selector="#verticaal-n-regel" data-step="10">.button {
   display: inline-block; /* anders kan je geen hoogte instellen */
   height: 60px;
   line-height: 60px;
@@ -155,46 +147,46 @@
   width: 120px;
 }
 </code></pre>
-                <a class="button" style="margin-top: 20px; background-color: beige; border: 2px solid #ccc; position: relative; font-size: smaller; display: inline-block;cursor: pointer;">
-                    button tekst
-                </a>
-              </li>
-              <li class="arrow smallfont">
-                dit werkt alleen bij één regel, niet bij meerdere regels
-              </li>
-              <li class="arrow smallfont">
-                in bijna alle gevallen is <code>padding</code> gebruiken eenvoudiger (zie volgende slide)
-              </li>
-            </ul>
-          </section>
-          <section data-title="Verticaal &mdash; blok">
-            <h2>Verticaal &mdash; blok (1)</h2>
-            <ul>
-              <li>
-                Als de hoogte er niet toe doet, kan je content eenvoudig verticaal centreren met <code><em>padding</em></code> op de parent:
-                <pre><code class="language-css" contenteditable data-selector="#verticaal-blok-1" data-step="10">.textblock {
+                     <a class="button" style="margin-top: 20px; background-color: beige; border: 2px solid #ccc; position: relative; font-size: smaller; display: inline-block;cursor: pointer;">
+                        button tekst
+                     </a>
+                  </li>
+                  <li class="arrow smallfont">
+                     dit werkt alleen bij één regel, niet bij meerdere regels
+                  </li>
+                  <li class="arrow smallfont">
+                     in bijna alle gevallen is <code>padding</code> gebruiken eenvoudiger (zie volgende slide)
+                  </li>
+               </ul>
+            </section>
+            <section data-title="Verticaal &mdash; blok">
+               <h2>Verticaal &mdash; blok (1)</h2>
+               <ul>
+                  <li>
+                     Als de hoogte er niet toe doet, kan je content eenvoudig verticaal centreren met <code><em>padding</em></code> op de parent:
+                     <pre><code class="language-css" contenteditable data-selector="#verticaal-blok-1" data-step="10">.textblock {
   padding: 50px 20px; /* vert hor */
 }
 </code></pre>
-                <div class="textblock" style="margin-top: 30px; background-color: beige; border: 2px solid #ccc; position: relative;">
-                  <div class="democaption"><code>&lt;div id="textblock"&gt;</code></div>
-                  <div style="position: relative;font-size: smaller;border: 1px solid #ccc;padding: 5px; background-color: #fff9;">
-                    <span class="democaption"><code>&lt;p&gt;</code></span>
-                    parmesan cheese slices when the cheese comes out everybody's happy cow cheese and wine cheese and biscuits. Roquefort when the cheese comes out everybody's happy smelly cheese bocconcini danish
-                  </div>
-                </div>
-              </li>
-              <li class="arrow smallfont">
-                dit werkt niet bij vaste hoogtes van de parent
-              </li>
-            </ul>
-          </section>
-          <section data-title="">
-            <h2>Verticaal &mdash; blok (2)</h2>
-            <ul>
-              <li>
-                Een algemenere methode om blokken te positioneren, b.v. als de hoogte van de parent vast is en je dus geen padding kan gebruiken, is <em>flexbox</em>. Alvast een preview (voor meer zie volgend hoofdstuk):
-                <pre><code class="language-css" contenteditable data-selector="#verticaal-blok-2" data-step="10">.textblock {
+                     <div class="textblock" style="margin-top: 30px; background-color: beige; border: 2px solid #ccc; position: relative;">
+                        <div class="democaption"><code>&lt;div id="textblock"&gt;</code></div>
+                        <div style="position: relative;font-size: smaller;border: 1px solid #ccc;padding: 5px; background-color: #fff9;">
+                           <span class="democaption"><code>&lt;p&gt;</code></span>
+                           parmesan cheese slices when the cheese comes out everybody's happy cow cheese and wine cheese and biscuits. Roquefort when the cheese comes out everybody's happy smelly cheese bocconcini danish
+                        </div>
+                     </div>
+                  </li>
+                  <li class="arrow smallfont">
+                     dit werkt niet bij vaste hoogtes van de parent
+                  </li>
+               </ul>
+            </section>
+            <section data-title="">
+               <h2>Verticaal &mdash; blok (2)</h2>
+               <ul>
+                  <li>
+                     Een algemenere methode om blokken te positioneren, b.v. als de hoogte van de parent vast is en je dus geen padding kan gebruiken, is <em>flexbox</em>. Alvast een preview (voor meer zie volgend hoofdstuk):
+                     <pre><code class="language-css" contenteditable data-selector="#verticaal-blok-2" data-step="10">.textblock {
   display: flex; /* layout content met flexbox */
   flex-direction: column; /* stapel verticaal */
   height: 200px;
@@ -202,507 +194,514 @@
   padding: 20px;
 }
 </code></pre>
-                <div class="textblock" style="margin-top: 30px; background-color: beige; border: 2px solid #ccc; position: relative;">
-                  <div class="democaption"><code>&lt;div id="textblock"&gt;</code></div>
-                  <div style="position: relative;font-size: smaller; border: 1px solid #ccc;padding: 5px; background-color: #fff9;margin-bottom: 1em;">
-                    <span class="democaption"><code>&lt;p&gt;</code></span>
-                    parmesan cheese slices when the cheese comes out everybody's happy cow cheese and wine cheese and biscuits. Roquefort when the cheese comes out everybody's happy smelly cheese bocconcini danish
+                     <div class="textblock" style="margin-top: 30px; background-color: beige; border: 2px solid #ccc; position: relative;">
+                        <div class="democaption"><code>&lt;div id="textblock"&gt;</code></div>
+                        <div style="position: relative;font-size: smaller; border: 1px solid #ccc;padding: 5px; background-color: #fff9;margin-bottom: 1em;">
+                           <span class="democaption"><code>&lt;p&gt;</code></span>
+                           parmesan cheese slices when the cheese comes out everybody's happy cow cheese and wine cheese and biscuits. Roquefort when the cheese comes out everybody's happy smelly cheese bocconcini danish
+                        </div>
+                        <div style="position: relative;font-size: smaller; border: 1px solid #ccc;padding: 5px; background-color: #fff9;">
+                           <span class="democaption"><code>&lt;p&gt;</code></span>
+                           bresaola shank pork loin landjaeger turducken sausage shoulder doner sirloin porchetta kielbasa pastrami pig ham leberkas turducken
+                        </div>
+                     </div>
+                  </li>
+               </ul>
+            </section>
+         </section>
+         <section class="chapter">
+            <section>
+               <h1>CSS layout</h1>
+               <h2>Flexbox</h2>
+               <ul class="chapterlist">
+                  <!-- to be filled by Javascript -->
+               </ul>
+            </section>
+            <section>
+               <h2>Flexbox overzicht</h2>
+               <ul>
+                  <li>
+                     Gebruik Flexbox om in een <em>flex container</em> een reeks <em>flex children</em> <strong>horizontaal of verticaal</strong> te schikken, <strong>met of zonder omloop</strong> (Engels: <i>wrapping</i>)
+                  </li>
+                  <li>De beste tutorial op het web is <a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/">dit overzicht op css-tricks.com</a></li>
+                  <li>
+                     Flexbox heeft aparte CSS properties voor de container en de children. Voor bijna alle gevallen volstaan deze paar properties:
+                     <table class="propstable">
+                        <tr class="propstable__section">
+                           <td colspan="2">container properties</td>
+                        </tr>
+                        <tr>
+                           <td><code><strong>align-items</strong>: &lt;flex-start|center|...&gt;</code></td>
+                           <td>aligneer de children langs de dwarsas (rij: verticaal; kolom: horizontaal)</td>
+                        </tr>
+                        <tr>
+                           <td><code><strong>display</strong>: flex</code></td>
+                           <td>maak deze container een flexbox</td>
+                        </tr>
+                        <tr>
+                           <td>
+                              <code><strong>flex-flow</strong>: &lt;row|column&gt; &lt;wrap|nowrap&gt;</code>
+                              <br><span style="font-size: smaller;">(combinatie van <code><strong>flex-direction</strong></code> en <code><strong>flex-wrap</strong></code>)</span>
+                           </td>
+                           <td>schik de children in een rij of kolom, met of zonder omloop</td>
+                        </tr>
+                        <tr>
+                           <td>
+                              <code><strong>gap</strong>: &lt;pixels&gt; &lt;pixels&gt;</code>
+                              <br><span style="font-size: smaller;">(combinatie van <code><strong>row-gap</strong></code> en <code><strong>column-gap</strong></code>)</span>
+                           </td>
+                           <td>tussenruimte in px</td>
+                        </tr>
+                        <tr>
+                           <td><code><strong>justify-content</strong>: &lt;flex-start|center|...&gt;</code></td>
+                           <td>aligneer de children langs de hoofdas (rij: horizontaal, kolom: verticaal)</td>
+                        </tr>
+                     </table>
+                  </li>
+               </ul>
+            </section>
+            <section data-title="Horizontaal menu">
+               <h2>Horizontaal menu (1)</h2>
+               <ul>
+                  <li>Om een horizontaal menu te maken heb je maar twee CSS properties nodig, <code><em>flex</em></code> en <code><em>flex-flow</em></code> op de container:</li>
+                  <li class="no-style">
+                     <p data-height="300" data-theme-id="35230" data-slug-hash="VVxgZb" data-default-tab="css,result" data-user="rogiervanderlinde" data-pen-title="CSS Course 03 flexbox menu" data-editable="true" class="codepen">See the Pen <a href="https://codepen.io/rogiervanderlinde/pen/VVxgZb/">CSS Course 03 flexbox menu</a> by Rogier van der Linde (<a href="https://codepen.io/rogiervanderlinde">@rogiervanderlinde</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+                  </li>
+               </ul>
+            </section>
+            <section data-title="">
+               <h2>Horizontaal menu (2)</h2>
+               <ul>
+                  <li>De children horizontaal aligneren kan met <code><em>justify-content</em></code> op de container (mogelijke waarden: <code>flex-start</code>, <code>flex-end</code>, <code>center</code>, <code>space-between</code>...): </li>
+                  <li class="no-style">
+
+                     <p data-height="300" data-theme-id="35230" data-slug-hash="qQYgNr" data-default-tab="css,result" data-user="rogiervanderlinde" data-pen-title="CSS Course 03 flexbox menu 2" data-editable="true" class="codepen">See the Pen <a href="https://codepen.io/rogiervanderlinde/pen/qQYgNr/">CSS Course 03 flexbox menu 2</a> by Rogier van der Linde (<a href="https://codepen.io/rogiervanderlinde">@rogiervanderlinde</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+                  </li>
+               </ul>
+            </section>
+            <section data-title="">
+               <h2>Horizontaal menu (3)</h2>
+               <ul>
+                  <li>De children verticaal aligneren kan met <code><em>align-items</em></code> op de container (mogelijke waarden: <code>flex-start</code>, <code>flex-end</code>, <code>center</code>...): </li>
+                  <li class="no-style">
+                     <p data-height="300" data-theme-id="35230" data-slug-hash="ZEyQVNK" data-default-tab="css,result" data-user="rogiervanderlinde" data-pen-title="CSS Course 03 flexbox menu 2" data-editable="true" class="codepen">See the Pen <a href="https://codepen.io/rogiervanderlinde/pen/ZEyQVNK/">CSS Course 03 flexbox menu 3</a> by Rogier van der Linde (<a href="https://codepen.io/rogiervanderlinde">@rogiervanderlinde</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+                  </li>
+               </ul>
+            </section>
+            <section data-title="Rasterweergave">
+               <h2>Rasterweergave (1)</h2>
+               <ul>
+                  <li>Een rasterweergave is niet anders dan een horizontaal menu, maar dan met de <code><em>flex-flow</em></code> property van de container ingesteld op <code>row <strong>wrap</strong></code>: </li>
+                  <li class="no-style">
+                     <p data-height="300" data-theme-id="35230" data-slug-hash="QJrYvR" data-default-tab="css,result" data-user="rogiervanderlinde" data-pen-title="CSS Course 03 flexbox grid" data-editable="true" class="codepen">See the Pen <a href="https://codepen.io/rogiervanderlinde/pen/QJrYvR/">CSS Course 03 flexbox grid</a> by Rogier van der Linde (<a href="https://codepen.io/rogiervanderlinde">@rogiervanderlinde</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+                  </li>
+                  <li class="arrow smallfont">
+                     let er op dat de totale breedte klopt: 3 items * 32% + 2 gaps * 2% = 100%
+                  </li>
+               </ul>
+            </section>
+            <section data-title="">
+               <h2>Rasterweergave (2)</h2>
+               <ul>
+                  <li>Om de totale breedte op 100% te laten uitkomen kan je de calc() functie gebruiken</li>
+                  <li class="no-style">
+                     <p class="codepen" data-height="300" data-default-tab="css,result" data-slug-hash="NWoKbPQ" data-user="rogiervanderlinde" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;"><span>See the Pen <a href="https://codepen.io/rogiervanderlinde/pen/NWoKbPQ">CSS Course 03 flexbox grid 4x</a> by Rogier van der Linde (<a href="https://codepen.io/rogiervanderlinde">@rogiervanderlinde</a>) on <a href="https://codepen.io">CodePen</a>.</span></p>
+                  </li>
+                  <li class="arrow smallfont">
+                     de breedte is 4 items * (96% / 4) + 3 gaps * 2% = 100%
+                  </li>
+               </ul>
+            </section>
+            <section data-title="Kolommen">
+               <h2>Kolommen (1)</h2>
+               <ul>
+                  <li>Een 3-kolom layout is weer als een horizontaal menu, met de drie breedtes ingesteld (som moet zoals steeds 100% zijn) en <em><code>align-items</code></em> van de container ingesteld op <code><strong>stretch</strong></code>: </li>
+                  <li class="no-style">
+                     <p data-height="300" data-theme-id="35230" data-slug-hash="bQMzrZ" data-default-tab="css,result" data-user="rogiervanderlinde" data-pen-title="CSS Course 03 flexbox 3-column" data-editable="true" class="codepen">See the Pen <a href="https://codepen.io/rogiervanderlinde/pen/bQMzrZ/">CSS Course 03 flexbox 3-column</a> by Rogier van der Linde (<a href="https://codepen.io/rogiervanderlinde">@rogiervanderlinde</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+                  </li>
+                  <li class="arrow smallfont">
+                     merk op hoe ook hier weer de calc() functie gebruikt is voor de tweede kolom
+                  </li>
+               </ul>
+            </section>
+            <section data-title="">
+               <h2>Kolommen (2)</h2>
+               <ul>
+                  <li>Je kan in theorie zelfs de volgorde van de children veranderen met de <code><em>order</em></code> property: </li>
+                  <li class="no-style">
+                     <p data-height="300" data-theme-id="35230" data-slug-hash="xQjMYd" data-default-tab="css,result" data-user="rogiervanderlinde" data-pen-title="xQjMYd" data-editable="true" class="codepen">See the Pen <a href="https://codepen.io/rogiervanderlinde/pen/xQjMYd/">xQjMYd</a> by Rogier van der Linde (<a href="https://codepen.io/rogiervanderlinde">@rogiervanderlinde</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+                  </li>
+                  <li class="arrow smallfont">
+                     ik zie niet direct een reden om dit te gebruiken
+                  </li>
+               </ul>
+            </section>
+            <section>
+               <h2>Pagina layout</h2>
+               <ul>
+                  <li>Voorbeeld van een complete pagina layout met Flexbox (bekijk best <a href="https://codepen.io/rogiervanderlinde/pen/jQKOZy">op CodePen</a>): </li>
+                  <li class="no-style">
+                     <p data-height="300" data-theme-id="35230" data-slug-hash="jQKOZy" data-default-tab="css,result" data-user="rogiervanderlinde" data-pen-title="CSS Course 03 flexbox page layout" data-editable="true" class="codepen">See the Pen <a href="https://codepen.io/rogiervanderlinde/pen/jQKOZy/">CSS Course 03 flexbox page layout</a> by Rogier van der Linde (<a href="https://codepen.io/rogiervanderlinde">@rogiervanderlinde</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+                  </li>
+               </ul>
+            </section>
+            <section>
+               <h2>Wanneer gebruiken</h2>
+               <ul>
+                  <li>CSS Flexbox kan gebruikt worden voor elke één- of tweedimensionale layout, verticaal of horizontaal, met of zonder wrapping</li>
+                  <li>
+                     Gebruik CSS Flexbox:
+                     <ul>
+                        <li class="v-style">voor horizontale menus</li>
+                        <li class="v-style">voor kolommen</li>
+                        <li class="v-style">voor pagina layout</li>
+                     </ul>
+                  </li>
+                  <li>
+                     Gebruik CSS Flexbox niet:
+                     <ul>
+                        <li class="x-style">voor fluïde designs met floating elementen waar CSS floats beter zijn</li>
+                        <li class="x-style">for tweedimensionale grid-achtige layouts kan je ook CSS Grid gebruiken</li>
+                     </ul>
+                  </li>
+               </ul>
+            </section>
+         </section>
+         <section class="chapter">
+            <section>
+               <h1>CSS layout</h1>
+               <h2>Floating</h2>
+               <ul class="chapterlist">
+                  <!-- to be filled by Javascript -->
+               </ul>
+            </section>
+            <section>
+               <h2>Standaard gedrag</h2>
+               <ul>
+                  <li>Blocklevel elementen als <code>&lt;h3&gt;</code> en <code>&lt;p&gt;</code> starten standaard op een nieuwe regel:</li>
+                  <li class="no-style">
+                     <p data-height="300" data-theme-id="35230" data-slug-hash="MzGGBx" data-default-tab="css,result" data-user="rogiervanderlinde" data-pen-title="CSS Course 03 float 1" data-editable="true" class="codepen">See the Pen <a href="https://codepen.io/rogiervanderlinde/pen/MzGGBx/">CSS Course 03 float 1</a> by Rogier van der Linde (<a href="https://codepen.io/rogiervanderlinde">@rogiervanderlinde</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+                  </li>
+               </ul>
+            </section>
+            <section>
+               <h2>Afbeeldingen floaten</h2>
+               <ul>
+                  <li>Met <em><code>float: left;</code></em> kan je blocklevel elementen rond een afbeelding laten vloeien:</li>
+                  <li class="no-style">
+                     <p data-height="300" data-theme-id="35230" data-slug-hash="Rqyyeg" data-default-tab="css,result" data-user="rogiervanderlinde" data-pen-title="CSS Course 03 float 2" data-editable="true" class="codepen">See the Pen <a href="https://codepen.io/rogiervanderlinde/pen/Rqyyeg/">CSS Course 03 float 2</a> by Rogier van der Linde (<a href="https://codepen.io/rogiervanderlinde">@rogiervanderlinde</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+                  </li>
+                  <li class="arrow">
+                     probeer ook <code>float: right;</code>
+                  </li>
+               </ul>
+            </section>
+            <section>
+               <h2>Blocklevel floaten</h2>
+               <ul>
+                  <li>Dit werkt niet alleen met afbeeldingen, maar ook met andere blocklevel elementen, zoals deze pull quote:</li>
+                  <li class="no-style">
+                     <p data-height="300" data-theme-id="35230" data-slug-hash="QJrVZZ" data-default-tab="css,result" data-user="rogiervanderlinde" data-pen-title="CSS Course 03 pull quote" data-editable="true" class="codepen">See the Pen <a href="https://codepen.io/rogiervanderlinde/pen/QJrVZZ/">CSS Course 03 pull quote</a> by Rogier van der Linde (<a href="https://codepen.io/rogiervanderlinde">@rogiervanderlinde</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+                  </li>
+               </ul>
+            </section>
+            <section>
+               <h2>Parent bleeding</h2>
+               <ul>
+                  <li>Als een gefloat element niet meer in de parent past, zal het eruit lekken:</li>
+                  <li class="no-style">
+                     <p data-height="300" data-theme-id="35230" data-slug-hash="NEMMZO" data-default-tab="css,result" data-user="rogiervanderlinde" data-pen-title="CSS Course 03 float 3" class="codepen">See the Pen <a href="https://codepen.io/rogiervanderlinde/pen/NEMMZO/">CSS Course 03 float 3</a> by Rogier van der Linde (<a href="https://codepen.io/rogiervanderlinde">@rogiervanderlinde</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+                  </li>
+               </ul>
+               <div class="tooltip">
+                  <div>
+                     Dit lijkt vreemd, maar eigenlijk is het niet onlogisch voor waar floating voor bedoeld was: tekst laten vloeien rond afbeeldingen. Het alternatief is een grote leegte tussen de twee paragrafen.
                   </div>
-                  <div style="position: relative;font-size: smaller; border: 1px solid #ccc;padding: 5px; background-color: #fff9;">
-                    <span class="democaption"><code>&lt;p&gt;</code></span>
-                    bresaola shank pork loin landjaeger turducken sausage shoulder doner sirloin porchetta kielbasa pastrami pig ham leberkas turducken
-                  </div>
-                </div>
-              </li>
-            </ul>
-          </section>
-      </section>
-      <section class="chapter">
-        <section>
-          <h1>CSS layout</h1>
-          <h2>Flexbox</h2>
-          <ul class="chapterlist">
-            <!-- to be filled by Javascript -->
-          </ul>
-        </section>
-        <section>
-          <h2>Flexbox overzicht</h2>
-          <ul>
-            <li>
-              Gebruik Flexbox om in een <em>flex container</em> een reeks <em>flex children</em> <strong>horizontaal of verticaal</strong> te schikken, <strong>met of zonder omloop</strong> (Engels: <i>wrapping</i>)
-            </li>
-            <li>De beste tutorial op het web is <a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/">dit overzicht op css-tricks.com</a></li>
-            <li>
-              Flexbox heeft aparte CSS properties voor de container en de children. Voor bijna alle gevallen volstaan deze paar properties:
-              <table class="propstable">
-                <tr class="propstable__section"><td colspan="2">container properties</td></tr>
-                <tr>
-                  <td><code><strong>align-items</strong>: &lt;flex-start|center|...&gt;</code></td>
-                  <td>aligneer de children langs de dwarsas (rij: verticaal; kolom: horizontaal)</td>
-                </tr>
-                <tr>
-                  <td><code><strong>display</strong>: flex</code></td>
-                  <td>maak deze container een flexbox</td>
-                </tr>
-                <tr>
-                  <td>
-                     <code><strong>flex-flow</strong>: &lt;row|column&gt; &lt;wrap|nowrap&gt;</code>
-                     <br><span style="font-size: smaller;">(combinatie van <code><strong>flex-direction</strong></code> en <code><strong>flex-wrap</strong></code>)</span>
-                  </td>
-                  <td>schik de children in een rij of kolom, met of zonder omloop</td>
-                </tr>
-                <tr>
-                  <td>
-                     <code><strong>gap</strong>: &lt;pixels&gt; &lt;pixels&gt;</code>
-                     <br><span style="font-size: smaller;">(combinatie van <code><strong>row-gap</strong></code> en <code><strong>column-gap</strong></code>)</span>
-                  </td>
-                  <td>tussenruimte in px</td>
-                </tr>
-                <tr>
-                  <td><code><strong>justify-content</strong>: &lt;flex-start|center|...&gt;</code></td>
-                  <td>aligneer de children langs de hoofdas (rij: horizontaal, kolom: verticaal)</td>
-                </tr>
-              </table>
-            </li>
-          </ul>
-        </section>
-        <section data-title="Horizontaal menu">
-          <h2>Horizontaal menu (1)</h2>
-          <ul>
-            <li>Om een horizontaal menu te maken heb je maar twee CSS properties nodig, <code><em>flex</em></code> en <code><em>flex-flow</em></code> op de container:</li>
-            <li class="no-style">
-<p data-height="300" data-theme-id="35230" data-slug-hash="VVxgZb" data-default-tab="css,result" data-user="rogiervanderlinde" data-pen-title="CSS Course 03 flexbox menu" data-editable="true" class="codepen">See the Pen <a href="https://codepen.io/rogiervanderlinde/pen/VVxgZb/">CSS Course 03 flexbox menu</a> by Rogier van der Linde (<a href="https://codepen.io/rogiervanderlinde">@rogiervanderlinde</a>) on <a href="https://codepen.io">CodePen</a>.</p>
-            </li>
-          </ul>
-        </section>
-        <section data-title="">
-          <h2>Horizontaal menu (2)</h2>
-          <ul>
-            <li>De children horizontaal aligneren kan met <code><em>justify-content</em></code> op de container (mogelijke waarden: <code>flex-start</code>, <code>flex-end</code>, <code>center</code>, <code>space-between</code>...):   </li>
-            <li class="no-style">
-
-<p data-height="300" data-theme-id="35230" data-slug-hash="qQYgNr" data-default-tab="css,result" data-user="rogiervanderlinde" data-pen-title="CSS Course 03 flexbox menu 2" data-editable="true" class="codepen">See the Pen <a href="https://codepen.io/rogiervanderlinde/pen/qQYgNr/">CSS Course 03 flexbox menu 2</a> by Rogier van der Linde (<a href="https://codepen.io/rogiervanderlinde">@rogiervanderlinde</a>) on <a href="https://codepen.io">CodePen</a>.</p>
-            </li>
-          </ul>
-        </section>
-        <section data-title="">
-          <h2>Horizontaal menu (3)</h2>
-          <ul>
-            <li>De children verticaal aligneren kan met <code><em>align-items</em></code> op de container (mogelijke waarden: <code>flex-start</code>, <code>flex-end</code>, <code>center</code>...): </li>
-            <li class="no-style">
-<p data-height="300" data-theme-id="35230" data-slug-hash="ZEyQVNK" data-default-tab="css,result" data-user="rogiervanderlinde" data-pen-title="CSS Course 03 flexbox menu 2" data-editable="true" class="codepen">See the Pen <a href="https://codepen.io/rogiervanderlinde/pen/ZEyQVNK/">CSS Course 03 flexbox menu 3</a> by Rogier van der Linde (<a href="https://codepen.io/rogiervanderlinde">@rogiervanderlinde</a>) on <a href="https://codepen.io">CodePen</a>.</p>
-            </li>
-          </ul>
-        </section>
-        <section data-title="Rasterweergave">
-          <h2>Rasterweergave (1)</h2>
-          <ul>
-            <li>Een rasterweergave is niet anders dan een horizontaal menu, maar dan met de <code><em>flex-flow</em></code> property van de container ingesteld op <code>row <strong>wrap</strong></code>: </li>
-            <li class="no-style">
-<p data-height="300" data-theme-id="35230" data-slug-hash="QJrYvR" data-default-tab="css,result" data-user="rogiervanderlinde" data-pen-title="CSS Course 03 flexbox grid" data-editable="true" class="codepen">See the Pen <a href="https://codepen.io/rogiervanderlinde/pen/QJrYvR/">CSS Course 03 flexbox grid</a> by Rogier van der Linde (<a href="https://codepen.io/rogiervanderlinde">@rogiervanderlinde</a>) on <a href="https://codepen.io">CodePen</a>.</p>
-            </li>
-            <li class="arrow smallfont"> 
-              let er op dat de totale breedte klopt: 3 items * 32% + 2 gaps * 2% = 100%
-            </li>
-          </ul>
-        </section>
-        <section data-title="">
-          <h2>Rasterweergave (2)</h2>
-          <ul>
-            <li>Om de totale breedte op 100% te laten uitkomen kan je de calc() functie gebruiken</li>
-            <li class="no-style">
-<p class="codepen" data-height="300" data-default-tab="css,result" data-slug-hash="NWoKbPQ" data-user="rogiervanderlinde" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;"><span>See the Pen <a href="https://codepen.io/rogiervanderlinde/pen/NWoKbPQ">CSS Course 03 flexbox grid 4x</a> by Rogier van der Linde (<a href="https://codepen.io/rogiervanderlinde">@rogiervanderlinde</a>) on <a href="https://codepen.io">CodePen</a>.</span></p>
-            </li>
-            <li class="arrow smallfont"> 
-              de breedte is 4 items * (96% / 4) + 3 gaps * 2% = 100%
-            </li>
-          </ul>
-        </section>
-        <section data-title="Kolommen">
-          <h2>Kolommen (1)</h2>
-          <ul>
-            <li>Een 3-kolom layout is weer als een horizontaal menu, met de drie breedtes ingesteld (som moet zoals steeds 100% zijn) en <em><code>align-items</code></em> van de container ingesteld op <code><strong>stretch</strong></code>: </li>
-            <li class="no-style">
-<p data-height="300" data-theme-id="35230" data-slug-hash="bQMzrZ" data-default-tab="css,result" data-user="rogiervanderlinde" data-pen-title="CSS Course 03 flexbox 3-column" data-editable="true" class="codepen">See the Pen <a href="https://codepen.io/rogiervanderlinde/pen/bQMzrZ/">CSS Course 03 flexbox 3-column</a> by Rogier van der Linde (<a href="https://codepen.io/rogiervanderlinde">@rogiervanderlinde</a>) on <a href="https://codepen.io">CodePen</a>.</p>
-            </li>
-            <li class="arrow smallfont">
-               merk op hoe ook hier weer de calc() functie gebruikt is voor de tweede kolom
-            </li>
-          </ul>
-        </section>
-        <section data-title="">
-          <h2>Kolommen (2)</h2>
-          <ul>
-            <li>Je kan in theorie zelfs de volgorde van de children veranderen met de <code><em>order</em></code> property: </li>
-            <li class="no-style">
-              <p data-height="300" data-theme-id="35230" data-slug-hash="xQjMYd" data-default-tab="css,result" data-user="rogiervanderlinde" data-pen-title="xQjMYd" data-editable="true" class="codepen">See the Pen <a href="https://codepen.io/rogiervanderlinde/pen/xQjMYd/">xQjMYd</a> by Rogier van der Linde (<a href="https://codepen.io/rogiervanderlinde">@rogiervanderlinde</a>) on <a href="https://codepen.io">CodePen</a>.</p>
-            </li>
-            <li class="arrow smallfont">
-               ik zie niet direct een reden om dit te gebruiken
-            </li>
-          </ul>
-        </section>
-        <section>
-          <h2>Pagina layout</h2>
-          <ul>
-            <li>Voorbeeld van een complete pagina layout met Flexbox (bekijk best <a href="https://codepen.io/rogiervanderlinde/pen/jQKOZy">op CodePen</a>): </li>
-            <li class="no-style">
-<p data-height="300" data-theme-id="35230" data-slug-hash="jQKOZy" data-default-tab="css,result" data-user="rogiervanderlinde" data-pen-title="CSS Course 03 flexbox page layout" data-editable="true" class="codepen">See the Pen <a href="https://codepen.io/rogiervanderlinde/pen/jQKOZy/">CSS Course 03 flexbox page layout</a> by Rogier van der Linde (<a href="https://codepen.io/rogiervanderlinde">@rogiervanderlinde</a>) on <a href="https://codepen.io">CodePen</a>.</p>
-            </li>
-          </ul>
-        </section>
-        <section>
-          <h2>Wanneer gebruiken</h2>
-          <ul>
-            <li>CSS Flexbox kan gebruikt worden voor elke één- of tweedimensionale layout, verticaal of horizontaal, met of zonder wrapping</li>
-            <li>
-              Gebruik CSS Flexbox:
-              <ul>
-                <li class="v-style">voor horizontale menus</li>
-                <li class="v-style">voor kolommen</li>
-                <li class="v-style">voor pagina layout</li>
-              </ul>
-            </li>
-            <li>
-              Gebruik CSS Flexbox niet:
-              <ul>
-                <li class="x-style">voor fluïde designs met floating elementen waar CSS floats beter zijn</li>
-                <li class="x-style">for tweedimensionale grid-achtige layouts kan je ook CSS Grid gebruiken</li>
-              </ul>
-            </li>
-          </ul>
-        </section>
-      </section>
-      <section class="chapter">
-        <section>
-          <h1>CSS layout</h1>
-          <h2>Floating</h2>
-          <ul class="chapterlist">
-            <!-- to be filled by Javascript -->
-          </ul>
-        </section>
-        <section>
-          <h2>Standaard gedrag</h2>
-          <ul>
-            <li>Blocklevel elementen als <code>&lt;h3&gt;</code> en <code>&lt;p&gt;</code> starten standaard op een nieuwe regel:</li>
-            <li class="no-style">
-<p data-height="300" data-theme-id="35230" data-slug-hash="MzGGBx" data-default-tab="css,result" data-user="rogiervanderlinde" data-pen-title="CSS Course 03 float 1" data-editable="true" class="codepen">See the Pen <a href="https://codepen.io/rogiervanderlinde/pen/MzGGBx/">CSS Course 03 float 1</a> by Rogier van der Linde (<a href="https://codepen.io/rogiervanderlinde">@rogiervanderlinde</a>) on <a href="https://codepen.io">CodePen</a>.</p>
-            </li>
-          </ul>
-        </section>
-        <section>
-          <h2>Afbeeldingen floaten</h2>
-          <ul>
-            <li>Met <em><code>float: left;</code></em> kan je blocklevel elementen rond een afbeelding laten vloeien:</li>
-            <li class="no-style">
-<p data-height="300" data-theme-id="35230" data-slug-hash="Rqyyeg" data-default-tab="css,result" data-user="rogiervanderlinde" data-pen-title="CSS Course 03 float 2" data-editable="true" class="codepen">See the Pen <a href="https://codepen.io/rogiervanderlinde/pen/Rqyyeg/">CSS Course 03 float 2</a> by Rogier van der Linde (<a href="https://codepen.io/rogiervanderlinde">@rogiervanderlinde</a>) on <a href="https://codepen.io">CodePen</a>.</p>
-            </li>
-            <li class="arrow">
-              probeer ook <code>float: right;</code>
-            </li>
-          </ul>
-        </section>
-        <section>
-          <h2>Blocklevel floaten</h2>
-          <ul>
-            <li>Dit werkt niet alleen met afbeeldingen, maar ook met andere blocklevel elementen, zoals deze pull quote:</li>
-            <li class="no-style">
-<p data-height="300" data-theme-id="35230" data-slug-hash="QJrVZZ" data-default-tab="css,result" data-user="rogiervanderlinde" data-pen-title="CSS Course 03 pull quote" data-editable="true" class="codepen">See the Pen <a href="https://codepen.io/rogiervanderlinde/pen/QJrVZZ/">CSS Course 03 pull quote</a> by Rogier van der Linde (<a href="https://codepen.io/rogiervanderlinde">@rogiervanderlinde</a>) on <a href="https://codepen.io">CodePen</a>.</p>
-            </li>
-          </ul>
-        </section>
-        <section>
-          <h2>Parent bleeding</h2>
-          <ul>
-            <li>Als een gefloat element niet meer in de parent past, zal het eruit lekken:</li>
-            <li class="no-style">
-<p data-height="300" data-theme-id="35230" data-slug-hash="NEMMZO" data-default-tab="css,result" data-user="rogiervanderlinde" data-pen-title="CSS Course 03 float 3" class="codepen">See the Pen <a href="https://codepen.io/rogiervanderlinde/pen/NEMMZO/">CSS Course 03 float 3</a> by Rogier van der Linde (<a href="https://codepen.io/rogiervanderlinde">@rogiervanderlinde</a>) on <a href="https://codepen.io">CodePen</a>.</p>
-            </li>
-          </ul>
-          <div class="tooltip">
-            <div>
-              Dit lijkt vreemd, maar eigenlijk is het niet onlogisch voor waar floating voor bedoeld was: tekst laten vloeien rond afbeeldingen. Het alternatief is een grote leegte tussen de twee paragrafen.
-            </div>
-         </div>
-        </section>
-        <section>
-          <h2>Parent herstellen</h2>
-          <ul>
-            <li>Als je niet wil, kan je de parent herstellen met <em><code>overflow: hidden;</code></em>:</li>
-            <li class="no-style">
-<p data-height="300" data-theme-id="35230" data-slug-hash="ZmoMeV" data-default-tab="css,result" data-user="rogiervanderlinde" data-pen-title="CSS Course 03 float overflow" data-editable="true" class="codepen">See the Pen <a href="https://codepen.io/rogiervanderlinde/pen/ZmoMeV/">CSS Course 03 float overflow</a> by Rogier van der Linde (<a href="https://codepen.io/rogiervanderlinde">@rogiervanderlinde</a>) on <a href="https://codepen.io">CodePen</a>.</p>
-            </li>
-          </ul>
-        </section>
-        <section>
-          <h2>Clear</h2>
-          <ul>
-            <li>Je kan vermijden dat bepaalde elementen naast een gefloat element komen met  <code><em>clear</em></code> (waarden <code>left</code>, <code>right</code> of <code>both</code>), bv. de tweede titel, die nu onder de afbeelding blijft:</li>
-            <li class="no-style">
-<p data-height="300" data-theme-id="35230" data-slug-hash="zMjJOy" data-default-tab="css,result" data-user="rogiervanderlinde" data-pen-title="CSS Course 03 clear" data-editable="true" class="codepen">See the Pen <a href="https://codepen.io/rogiervanderlinde/pen/zMjJOy/">CSS Course 03 clear</a> by Rogier van der Linde (<a href="https://codepen.io/rogiervanderlinde">@rogiervanderlinde</a>) on <a href="https://codepen.io">CodePen</a>.</p>
-            </li>
-          </ul>
-        </section>
-        <section>
-          <h2>Wanneer gebruiken</h2>
-          <ul>
-            <li>
-              Vóór Flexbox algemeen ondersteund werd (lees: tot Internet Explorer verdween), werd float misbruikt voor alle layout (en velen doen het nog zo), maar vandaag beperk je het gebruik best waarvoor het bedoeld is.
-            </li>
-            <li>
-              Gebruik floating:
-              <ul>
-                <li class="v-style">om tekst rond afbeeldingen te laten vloeien</li>
-                <li class="v-style">voor pull quotes</li>
-              </ul>
-            </li>
-            <li>
-              Gebruik floating niet:
-              <ul>
-                <li class="x-style">voor alle andere layout als pagina layout, menus enz...</li>
-              </ul>
-            </li>
-          </ul>
-        </section>
-      </section>
-      <section class="chapter">
-        <section>
-          <h1>CSS Positionering</h1>
-          <h2>[Positionering]</h2>
-          <ul class="chapterlist">
-            <!-- to be filled by Javascript -->
-          </ul>
-        </section>
-        <section>
-          <h2>Startcode</h2>
-          <ul>
-            <li>
-              Positionering bepaalt de plaats van elementen a.h.v. coördinaten. Laat ons starten van volgende code, zonder layout. De natuurlijke positie van de drie blokken is onder elkaar:
-            </li>
-            <li class="no-style">
-<p data-height="300" data-theme-id="35230" data-slug-hash="KrRNWK" data-default-tab="css,result" data-user="rogiervanderlinde" data-pen-title="CSS Course 03 layout positioning 1" class="codepen">See the Pen <a href="https://codepen.io/rogiervanderlinde/pen/KrRNWK/">CSS Course 03 layout positioning 1</a> by Rogier van der Linde (<a href="https://codepen.io/rogiervanderlinde">@rogiervanderlinde</a>) on <a href="https://codepen.io">CodePen</a>.</p>
-            </li>
-          </ul>
-        </section>
-        <section>
-          <h2>Relatief</h2>
-          <ul>
-            <li>
-              <em>Relatieve positionering</em> verschuift een element uit zijn natuurlijke positie; andere elementen blijven waar ze zijn:
-            </li>
-            <li class="no-style">
-<p data-height="300" data-theme-id="35230" data-slug-hash="gQzgGp" data-default-tab="css,result" data-user="rogiervanderlinde" data-pen-title="CSS Course 03 relative positioning" data-editable="true" class="codepen">See the Pen <a href="https://codepen.io/rogiervanderlinde/pen/gQzgGp/">CSS Course 03 relative positioning</a> by Rogier van der Linde (<a href="https://codepen.io/rogiervanderlinde">@rogiervanderlinde</a>) on <a href="https://codepen.io">CodePen</a>.</p>
-            </li>
-            <li class="arrow warning smallfont">
-              gebruik nooit relative positionering om foutjes te corrigeren!
-            </li>
-          </ul>
-        </section>
-        <section data-title="Absoluut">
-          <h2>Absoluut (1)</h2>
-          <ul>
-            <li>
-              <em>Absolute positionering</em> neemt een element uit de pagina, en zet het er bovenop (overlapping is mogelijk); andere elementen vullen de ontstane ruimte:
-            </li>
-            <li class="no-style">
-<p data-height="300" data-theme-id="35230" data-slug-hash="oQdBoO" data-default-tab="css,result" data-user="rogiervanderlinde" data-pen-title="CSS Course 03 layout positioning - absolute 1" data-editable="true" class="codepen">See the Pen <a href="https://codepen.io/rogiervanderlinde/pen/oQdBoO/">CSS Course 03 layout positioning - absolute 1</a> by Rogier van der Linde (<a href="https://codepen.io/rogiervanderlinde">@rogiervanderlinde</a>) on <a href="https://codepen.io">CodePen</a>.</p>
-            </li>
-          </ul>
-        </section>
-        <section data-title="">
-          <h2>Absoluut (2)</h2>
-          <ul>
-            <li>
-              Normaal is de paginarand de referentie voor de coördinaten <code>top</code>, <code>right</code>, <code>bottom</code> en <code>left</code>; als een parent gepositioneerd is (relatief of absoluut), wordt het de <span style="border-bottom: 2px dotted red">nieuwe referentie</span>:
-            </li>
-            <li class="no-style">
-<p data-height="300" data-theme-id="35230" data-slug-hash="MzGJXQ" data-default-tab="css,result" data-user="rogiervanderlinde" data-pen-title="CSS Course 03 layout positioning - absolute 2" data-editable="true" class="codepen">See the Pen <a href="https://codepen.io/rogiervanderlinde/pen/MzGJXQ/">CSS Course 03 layout positioning - absolute 2</a> by Rogier van der Linde (<a href="https://codepen.io/rogiervanderlinde">@rogiervanderlinde</a>) on <a href="https://codepen.io">CodePen</a>.</p>
-            </li>
-          </ul>
-        </section>
-        <section>
-          <h2>Fixed</h2>
-          <ul>
-            <li>
-              <em>Fixed positionering</em> fixeert een element op de pagina, onafhankelijk van het scrollen:
-            </li>
-            <li class="no-style">
-<p data-height="300" data-theme-id="35230" data-slug-hash="NEMYYb" data-default-tab="html,result" data-user="rogiervanderlinde" data-pen-title="CSS Course 03 layout positioning 1" data-editable="true" class="codepen">See the Pen <a href="https://codepen.io/rogiervanderlinde/pen/NEMYYb/">CSS Course 03 layout positioning 1</a> by Rogier van der Linde (<a href="https://codepen.io/rogiervanderlinde">@rogiervanderlinde</a>) on <a href="https://codepen.io">CodePen</a>.</p>
-            </li>
-          </ul>
-        </section>
-        <section id="slidedemorelabs">
-          <h2>Z-index</h2>
-          <ul>
-            <li>
-              Neem dit voorbeeld met alle boxen absoluut gepositioneerd:
-              <ul class="no-style">
-                <li>→ alle boxen zijn uit hun parent gehaald, die leeg achterblijft</li>
-                <li>→ de boxen zijn gepositioneerd relatief t.o.v. de parent, zelf gepositioneerd is met <code>position: relative</code></li>
-                <li>→ gebruik <code><em>z-index</em></code> om de <strong>stapelvolgorde</strong> te bepalen</li>
-                <li>→ merk op dat je negatieve waarden kan gebruiken voor de coördinaten</li>
-              </ul>
-            </li>
-            <li class="no-style">
-<p data-height="300" data-theme-id="35230" data-slug-hash="YRLeVe" data-default-tab="css,result" data-user="rogiervanderlinde" data-pen-title="CSS Course 03 z-index" data-editable="true" class="codepen">See the Pen <a href="https://codepen.io/rogiervanderlinde/pen/YRLeVe/">CSS Course 03 z-index</a> by Rogier van der Linde (<a href="https://codepen.io/rogiervanderlinde">@rogiervanderlinde</a>) on <a href="https://codepen.io">CodePen</a>.</p>
-            </li>
-          </ul>
-        </section>
-        <section>
-          <h2>Wanneer gebruiken</h2>
-          <ul>
-            <li>Voor game programming, waar veel gewerkt wordt met layers (denk aan o.a. een bewegend object tegen een achtergrond), wordt positionering nog gebruikt, maar voor al de rest zijn er betere technieken als Flexbox of Grid, dus in deze cursus heb je positionering eigenlijk niet nodig. </li>
-            <li>
-              Gebruik positionering:
-              <ul>
-                <li class="v-style">voor HTML5 games waar je afbeeldingen moet kunnen stapelen</li>
-                <li class="v-style">in zeldzame gevallen als een 'back to top' link</li>
-              </ul>
-            </li>
-            <li>
-              Gebruik positionering niet:
-              <ul>
-                <li class="x-style">voor layout</li>
-                <li class="x-style">om fouten te corrigeren</li>
-              </ul>
-            </li>
-          </ul>
-        </section>
-      </section>
-      <section class="chapter">
-        <section>
-          <h1>CSS layout</h1>
-          <h2>[Grid]</h2>
-          <ul class="chapterlist">
-            <!-- to be filled by Javascript -->
-          </ul>
-        </section>
-        <section>
-          <h2>Grid overzicht</h2>
-          <ul>
-            <li>
-              Gebruik Grid voor <em>tweedimensionale layouts</em> als item grids en pagina layout
-            </li>
-            <li>De beste tutorial op het web is <a href="https://css-tricks.com/snippets/css/complete-guide-grid/#prop-display">dit overzicht op css-tricks.com</a></li>
-            <li>
-              In de meeste gevallen zit je goed met louter deze  properties:
-              <table class="propstable">
-                <tr class="propstable__section"><td colspan="2">container properties</td></tr>
-                <tr>
-                  <td><code>display: grid</code></td>
-                  <td>maak deze container een grid</td>
-                </tr>
-                <tr>
-                  <td><code>grid-template-columns</code></td>
-                  <td>definieer grid kolombreedtes</td>
-                </tr>
-                <tr>
-                  <td><code>grid-template-rows</code></td>
-                  <td>definieer grid rijhoogtes</td>
-                </tr>
-                <tr>
-                  <td><code>grid-template-areas</code></td>
-                  <td>creëer een gebied met een naam</td>
-                </tr>
-                <tr class="propstable__section"><td colspan="2">child properties</td></tr>
-                <tr>
-                  <td><code>grid-area: &lt;area name&gt;</code></td>
-                  <td>plaats een child in een gebied</td>
-                </tr>
-              </table>
-            </li>
-          </ul>
-        </section>
-        <section>
-          <h2>Pagina layout 1</h2>
-          <ul>
-            <li>Een totaalvoorbeeld met header, twee kolommen en een footer (bekijk best <a href="https://codepen.io/rogiervanderlinde/pen/NEMoBQ">op Codepen</a>):</li>
-            <li class="no-style">
-<p data-height="300" data-theme-id="35230" data-slug-hash="NEMoBQ" data-default-tab="css,result" data-user="rogiervanderlinde" data-pen-title="CSS Course 03 page grid" data-editable="true" class="codepen">See the Pen <a href="https://codepen.io/rogiervanderlinde/pen/NEMoBQ/">CSS Course 03 page grid</a> by Rogier van der Linde (<a href="https://codepen.io/rogiervanderlinde">@rogiervanderlinde</a>) on <a href="https://codepen.io">CodePen</a>.</p>
-            </li>
-            <li class="arrow">
-              opmerking: voor de fijnere layout, bv. header logo &amp; menu, werd Flexbox gebruikt
-            </li>
-          </ul>
-        </section>
-        <section>
-          <h2>Pagina layout 2</h2>
-          <ul>
-            <li>Een variant met breed uitgerokken header en footer (bekijk best <a href="https://codepen.io/rogiervanderlinde/pen/NEzWOb">op Codepen</a>):</li>
-            <li class="no-style">
-<p data-height="300" data-theme-id="35230" data-slug-hash="NEzWOb" data-default-tab="css,result" data-user="rogiervanderlinde" data-pen-title="CSS Course 03 grid page layout 2" data-editable="true" class="codepen">See the Pen <a href="https://codepen.io/rogiervanderlinde/pen/NEzWOb/">CSS Course 03 grid page layout 2</a> by Rogier van der Linde (<a href="https://codepen.io/rogiervanderlinde">@rogiervanderlinde</a>) on <a href="https://codepen.io">CodePen</a>.</p>
-            </li>
-            <li class="arrow">
-              note how <code>minmax()</code> was used on the second column to make it flexible
-            </li>
-            <li class="arrow">
-              the full list of ways to define columns is <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template-columns">quite impressive</a>
-            </li>
-          </ul>
-        </section>
-        <section>
-          <h2>Rasterweergave</h2>
-          <ul>
-            <li>Voorbeeld van een rasterweergave met CSS Grid: </li>
-            <li class="no-style">
-<p data-height="300" data-theme-id="35230" data-slug-hash="eQrXBE" data-default-tab="html,result" data-user="rogiervanderlinde" data-pen-title="CSS Course image grid" data-editable="true" class="codepen">See the Pen <a href="https://codepen.io/rogiervanderlinde/pen/eQrXBE/">CSS Course image grid</a> by Rogier van der Linde (<a href="https://codepen.io/rogiervanderlinde">@rogiervanderlinde</a>) on <a href="https://codepen.io">CodePen</a>.</p>
-            </li>
-          </ul>
-        </section>
-        <section>
-          <h2>Wanneer gebruiken</h2>
-          <ul>
-            <li>CSS Grid wordt gebruik voor belangrijke tweedimensionale layouts die gemodelleerd kunnen worden in rijen en kolommen</li>
-            <li>
-              Gebruik CSS Grid:
-              <ul>
-                <li class="v-style">voor algemene pagina layout</li>
-                <li class="v-style">voor items in een rasterweergave</li>
-              </ul>
-            </li>
-            <li>
-              Gebruik CSS Grid niet:
-              <ul>
-                <li class="x-style">voor fluïde designs met floating elementen waar CSS floats beter zijn</li>
-                <li class="x-style">voor ééndimensionale layouts als menus waar Flexbox handiger is</li>
-              </ul>
-            </li>
-            <li>
-              Verder lezen
-              <ul>
-                <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout">CSS Grids on Mozilla.org</a></li>
-                <li>
-                  <a href="https://www.smashingmagazine.com/2017/06/building-production-ready-css-grid-layout/#the-case-for-css-grid">the case for CSS Grid
- on smashingmagazine.com</a>
-                </li>
-                <li><a href="https://css-tricks.com/snippets/css/complete-guide-grid/">complete guide to Grid on css-tricks.com</a></li>
-              </ul>
-            </li>
-          </ul>
-        </section>
-      </section>
+               </div>
+            </section>
+            <section>
+               <h2>Parent herstellen</h2>
+               <ul>
+                  <li>Als je niet wil, kan je de parent herstellen met <em><code>overflow: hidden;</code></em>:</li>
+                  <li class="no-style">
+                     <p data-height="300" data-theme-id="35230" data-slug-hash="ZmoMeV" data-default-tab="css,result" data-user="rogiervanderlinde" data-pen-title="CSS Course 03 float overflow" data-editable="true" class="codepen">See the Pen <a href="https://codepen.io/rogiervanderlinde/pen/ZmoMeV/">CSS Course 03 float overflow</a> by Rogier van der Linde (<a href="https://codepen.io/rogiervanderlinde">@rogiervanderlinde</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+                  </li>
+               </ul>
+            </section>
+            <section>
+               <h2>Clear</h2>
+               <ul>
+                  <li>Je kan vermijden dat bepaalde elementen naast een gefloat element komen met <code><em>clear</em></code> (waarden <code>left</code>, <code>right</code> of <code>both</code>), bv. de tweede titel, die nu onder de afbeelding blijft:</li>
+                  <li class="no-style">
+                     <p data-height="300" data-theme-id="35230" data-slug-hash="zMjJOy" data-default-tab="css,result" data-user="rogiervanderlinde" data-pen-title="CSS Course 03 clear" data-editable="true" class="codepen">See the Pen <a href="https://codepen.io/rogiervanderlinde/pen/zMjJOy/">CSS Course 03 clear</a> by Rogier van der Linde (<a href="https://codepen.io/rogiervanderlinde">@rogiervanderlinde</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+                  </li>
+               </ul>
+            </section>
+            <section>
+               <h2>Wanneer gebruiken</h2>
+               <ul>
+                  <li>
+                     Vóór Flexbox algemeen ondersteund werd (lees: tot Internet Explorer verdween), werd float misbruikt voor alle layout (en velen doen het nog zo), maar vandaag beperk je het gebruik best waarvoor het bedoeld is.
+                  </li>
+                  <li>
+                     Gebruik floating:
+                     <ul>
+                        <li class="v-style">om tekst rond afbeeldingen te laten vloeien</li>
+                        <li class="v-style">voor pull quotes</li>
+                     </ul>
+                  </li>
+                  <li>
+                     Gebruik floating niet:
+                     <ul>
+                        <li class="x-style">voor alle andere layout als pagina layout, menus enz...</li>
+                     </ul>
+                  </li>
+               </ul>
+            </section>
+         </section>
+         <section class="chapter">
+            <section>
+               <h1>CSS Positionering</h1>
+               <h2>[Positionering]</h2>
+               <ul class="chapterlist">
+                  <!-- to be filled by Javascript -->
+               </ul>
+            </section>
+            <section>
+               <h2>Startcode</h2>
+               <ul>
+                  <li>
+                     Positionering bepaalt de plaats van elementen a.h.v. coördinaten. Laat ons starten van volgende code, zonder layout. De natuurlijke positie van de drie blokken is onder elkaar:
+                  </li>
+                  <li class="no-style">
+                     <p data-height="300" data-theme-id="35230" data-slug-hash="KrRNWK" data-default-tab="css,result" data-user="rogiervanderlinde" data-pen-title="CSS Course 03 layout positioning 1" class="codepen">See the Pen <a href="https://codepen.io/rogiervanderlinde/pen/KrRNWK/">CSS Course 03 layout positioning 1</a> by Rogier van der Linde (<a href="https://codepen.io/rogiervanderlinde">@rogiervanderlinde</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+                  </li>
+               </ul>
+            </section>
+            <section>
+               <h2>Relatief</h2>
+               <ul>
+                  <li>
+                     <em>Relatieve positionering</em> verschuift een element uit zijn natuurlijke positie; andere elementen blijven waar ze zijn:
+                  </li>
+                  <li class="no-style">
+                     <p data-height="300" data-theme-id="35230" data-slug-hash="gQzgGp" data-default-tab="css,result" data-user="rogiervanderlinde" data-pen-title="CSS Course 03 relative positioning" data-editable="true" class="codepen">See the Pen <a href="https://codepen.io/rogiervanderlinde/pen/gQzgGp/">CSS Course 03 relative positioning</a> by Rogier van der Linde (<a href="https://codepen.io/rogiervanderlinde">@rogiervanderlinde</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+                  </li>
+                  <li class="arrow warning smallfont">
+                     gebruik nooit relative positionering om foutjes te corrigeren!
+                  </li>
+               </ul>
+            </section>
+            <section data-title="Absoluut">
+               <h2>Absoluut (1)</h2>
+               <ul>
+                  <li>
+                     <em>Absolute positionering</em> neemt een element uit de pagina, en zet het er bovenop (overlapping is mogelijk); andere elementen vullen de ontstane ruimte:
+                  </li>
+                  <li class="no-style">
+                     <p data-height="300" data-theme-id="35230" data-slug-hash="oQdBoO" data-default-tab="css,result" data-user="rogiervanderlinde" data-pen-title="CSS Course 03 layout positioning - absolute 1" data-editable="true" class="codepen">See the Pen <a href="https://codepen.io/rogiervanderlinde/pen/oQdBoO/">CSS Course 03 layout positioning - absolute 1</a> by Rogier van der Linde (<a href="https://codepen.io/rogiervanderlinde">@rogiervanderlinde</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+                  </li>
+               </ul>
+            </section>
+            <section data-title="">
+               <h2>Absoluut (2)</h2>
+               <ul>
+                  <li>
+                     Normaal is de paginarand de referentie voor de coördinaten <code>top</code>, <code>right</code>, <code>bottom</code> en <code>left</code>; als een parent gepositioneerd is (relatief of absoluut), wordt het de <span style="border-bottom: 2px dotted red">nieuwe referentie</span>:
+                  </li>
+                  <li class="no-style">
+                     <p data-height="300" data-theme-id="35230" data-slug-hash="MzGJXQ" data-default-tab="css,result" data-user="rogiervanderlinde" data-pen-title="CSS Course 03 layout positioning - absolute 2" data-editable="true" class="codepen">See the Pen <a href="https://codepen.io/rogiervanderlinde/pen/MzGJXQ/">CSS Course 03 layout positioning - absolute 2</a> by Rogier van der Linde (<a href="https://codepen.io/rogiervanderlinde">@rogiervanderlinde</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+                  </li>
+               </ul>
+            </section>
+            <section>
+               <h2>Fixed</h2>
+               <ul>
+                  <li>
+                     <em>Fixed positionering</em> fixeert een element op de pagina, onafhankelijk van het scrollen:
+                  </li>
+                  <li class="no-style">
+                     <p data-height="300" data-theme-id="35230" data-slug-hash="NEMYYb" data-default-tab="html,result" data-user="rogiervanderlinde" data-pen-title="CSS Course 03 layout positioning 1" data-editable="true" class="codepen">See the Pen <a href="https://codepen.io/rogiervanderlinde/pen/NEMYYb/">CSS Course 03 layout positioning 1</a> by Rogier van der Linde (<a href="https://codepen.io/rogiervanderlinde">@rogiervanderlinde</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+                  </li>
+               </ul>
+            </section>
+            <section id="slidedemorelabs">
+               <h2>Z-index</h2>
+               <ul>
+                  <li>
+                     Neem dit voorbeeld met alle boxen absoluut gepositioneerd:
+                     <ul class="no-style">
+                        <li>→ alle boxen zijn uit hun parent gehaald, die leeg achterblijft</li>
+                        <li>→ de boxen zijn gepositioneerd relatief t.o.v. de parent, zelf gepositioneerd is met <code>position: relative</code></li>
+                        <li>→ gebruik <code><em>z-index</em></code> om de <strong>stapelvolgorde</strong> te bepalen</li>
+                        <li>→ merk op dat je negatieve waarden kan gebruiken voor de coördinaten</li>
+                     </ul>
+                  </li>
+                  <li class="no-style">
+                     <p data-height="300" data-theme-id="35230" data-slug-hash="YRLeVe" data-default-tab="css,result" data-user="rogiervanderlinde" data-pen-title="CSS Course 03 z-index" data-editable="true" class="codepen">See the Pen <a href="https://codepen.io/rogiervanderlinde/pen/YRLeVe/">CSS Course 03 z-index</a> by Rogier van der Linde (<a href="https://codepen.io/rogiervanderlinde">@rogiervanderlinde</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+                  </li>
+               </ul>
+            </section>
+            <section>
+               <h2>Wanneer gebruiken</h2>
+               <ul>
+                  <li>Voor game programming, waar veel gewerkt wordt met layers (denk aan o.a. een bewegend object tegen een achtergrond), wordt positionering nog gebruikt, maar voor al de rest zijn er betere technieken als Flexbox of Grid, dus in deze cursus heb je positionering eigenlijk niet nodig. </li>
+                  <li>
+                     Gebruik positionering:
+                     <ul>
+                        <li class="v-style">voor HTML5 games waar je afbeeldingen moet kunnen stapelen</li>
+                        <li class="v-style">in zeldzame gevallen als een 'back to top' link</li>
+                     </ul>
+                  </li>
+                  <li>
+                     Gebruik positionering niet:
+                     <ul>
+                        <li class="x-style">voor layout</li>
+                        <li class="x-style">om fouten te corrigeren</li>
+                     </ul>
+                  </li>
+               </ul>
+            </section>
+         </section>
+         <section class="chapter">
+            <section>
+               <h1>CSS layout</h1>
+               <h2>[Grid]</h2>
+               <ul class="chapterlist">
+                  <!-- to be filled by Javascript -->
+               </ul>
+            </section>
+            <section>
+               <h2>Grid overzicht</h2>
+               <ul>
+                  <li>
+                     Gebruik Grid voor <em>tweedimensionale layouts</em> als item grids en pagina layout
+                  </li>
+                  <li>De beste tutorial op het web is <a href="https://css-tricks.com/snippets/css/complete-guide-grid/#prop-display">dit overzicht op css-tricks.com</a></li>
+                  <li>
+                     In de meeste gevallen zit je goed met louter deze properties:
+                     <table class="propstable">
+                        <tr class="propstable__section">
+                           <td colspan="2">container properties</td>
+                        </tr>
+                        <tr>
+                           <td><code>display: grid</code></td>
+                           <td>maak deze container een grid</td>
+                        </tr>
+                        <tr>
+                           <td><code>grid-template-columns</code></td>
+                           <td>definieer grid kolombreedtes</td>
+                        </tr>
+                        <tr>
+                           <td><code>grid-template-rows</code></td>
+                           <td>definieer grid rijhoogtes</td>
+                        </tr>
+                        <tr>
+                           <td><code>grid-template-areas</code></td>
+                           <td>creëer een gebied met een naam</td>
+                        </tr>
+                        <tr class="propstable__section">
+                           <td colspan="2">child properties</td>
+                        </tr>
+                        <tr>
+                           <td><code>grid-area: &lt;area name&gt;</code></td>
+                           <td>plaats een child in een gebied</td>
+                        </tr>
+                     </table>
+                  </li>
+               </ul>
+            </section>
+            <section>
+               <h2>Pagina layout 1</h2>
+               <ul>
+                  <li>Een totaalvoorbeeld met header, twee kolommen en een footer (bekijk best <a href="https://codepen.io/rogiervanderlinde/pen/NEMoBQ">op Codepen</a>):</li>
+                  <li class="no-style">
+                     <p data-height="300" data-theme-id="35230" data-slug-hash="NEMoBQ" data-default-tab="css,result" data-user="rogiervanderlinde" data-pen-title="CSS Course 03 page grid" data-editable="true" class="codepen">See the Pen <a href="https://codepen.io/rogiervanderlinde/pen/NEMoBQ/">CSS Course 03 page grid</a> by Rogier van der Linde (<a href="https://codepen.io/rogiervanderlinde">@rogiervanderlinde</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+                  </li>
+                  <li class="arrow">
+                     opmerking: voor de fijnere layout, bv. header logo &amp; menu, werd Flexbox gebruikt
+                  </li>
+               </ul>
+            </section>
+            <section>
+               <h2>Pagina layout 2</h2>
+               <ul>
+                  <li>Een variant met breed uitgerokken header en footer (bekijk best <a href="https://codepen.io/rogiervanderlinde/pen/NEzWOb">op Codepen</a>):</li>
+                  <li class="no-style">
+                     <p data-height="300" data-theme-id="35230" data-slug-hash="NEzWOb" data-default-tab="css,result" data-user="rogiervanderlinde" data-pen-title="CSS Course 03 grid page layout 2" data-editable="true" class="codepen">See the Pen <a href="https://codepen.io/rogiervanderlinde/pen/NEzWOb/">CSS Course 03 grid page layout 2</a> by Rogier van der Linde (<a href="https://codepen.io/rogiervanderlinde">@rogiervanderlinde</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+                  </li>
+                  <li class="arrow">
+                     note how <code>minmax()</code> was used on the second column to make it flexible
+                  </li>
+                  <li class="arrow">
+                     the full list of ways to define columns is <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template-columns">quite impressive</a>
+                  </li>
+               </ul>
+            </section>
+            <section>
+               <h2>Rasterweergave</h2>
+               <ul>
+                  <li>Voorbeeld van een rasterweergave met CSS Grid: </li>
+                  <li class="no-style">
+                     <p data-height="300" data-theme-id="35230" data-slug-hash="eQrXBE" data-default-tab="html,result" data-user="rogiervanderlinde" data-pen-title="CSS Course image grid" data-editable="true" class="codepen">See the Pen <a href="https://codepen.io/rogiervanderlinde/pen/eQrXBE/">CSS Course image grid</a> by Rogier van der Linde (<a href="https://codepen.io/rogiervanderlinde">@rogiervanderlinde</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+                  </li>
+               </ul>
+            </section>
+            <section>
+               <h2>Wanneer gebruiken</h2>
+               <ul>
+                  <li>CSS Grid wordt gebruik voor belangrijke tweedimensionale layouts die gemodelleerd kunnen worden in rijen en kolommen</li>
+                  <li>
+                     Gebruik CSS Grid:
+                     <ul>
+                        <li class="v-style">voor algemene pagina layout</li>
+                        <li class="v-style">voor items in een rasterweergave</li>
+                     </ul>
+                  </li>
+                  <li>
+                     Gebruik CSS Grid niet:
+                     <ul>
+                        <li class="x-style">voor fluïde designs met floating elementen waar CSS floats beter zijn</li>
+                        <li class="x-style">voor ééndimensionale layouts als menus waar Flexbox handiger is</li>
+                     </ul>
+                  </li>
+                  <li>
+                     Verder lezen
+                     <ul>
+                        <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout">CSS Grids on Mozilla.org</a></li>
+                        <li>
+                           <a href="https://www.smashingmagazine.com/2017/06/building-production-ready-css-grid-layout/#the-case-for-css-grid">the case for CSS Grid
+                              on smashingmagazine.com</a>
+                        </li>
+                        <li><a href="https://css-tricks.com/snippets/css/complete-guide-grid/">complete guide to Grid on css-tricks.com</a></li>
+                     </ul>
+                  </li>
+               </ul>
+            </section>
+         </section>
 
 
-    </div>
+      </div>
 
-    <!-- ikdoeict.be Link -->
-    <a href="http://www.odisee.be/" title="odisee.be" id="odisee"><img src="img/odisee.png" alt="Odisee logo"></a>
+      <!-- odisee.be link -->
+      <a href="http://www.odisee.be/" title="odisee.be" id="odisee"><img src="img/odisee.png" alt="Odisee logo"></a>
 
-    <!-- index menu container -->
-    <nav id="navigator"></nav>
+      <!-- index menu container -->
+      <nav id="navigator"></nav>
 
-  </div>
+   </div>
 
-  <script src="vendor/jquery.min.js"></script>
-  <script src="vendor/reveal/lib/js/head.min.js"></script>
-  <script src="vendor/reveal/js/reveal.js"></script>
-  <script src="vendor/highlight/highlight.pack.js"></script>
-  <script src="vendor/incrementable.js"></script>
-  <script src="vendor/prefixfree.js"></script>
-  <script src="vendor/css-snippets.js"></script>
-  <script src="vendor/css-edit.js"></script>
-  <script src="js/main.js"></script>
-  <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+   <script src="vendor/jquery.min.js"></script>
+   <script src="vendor/reveal/lib/js/head.min.js"></script>
+   <script src="vendor/reveal/js/reveal.js"></script>
+   <script src="vendor/highlight/highlight.pack.js"></script>
+   <script src="vendor/incrementable.js"></script>
+   <script src="vendor/prefixfree.js"></script>
+   <script src="vendor/css-snippets.js"></script>
+   <script src="vendor/css-edit.js"></script>
+   <script src="js/main.js"></script>
+   <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
 
 </body>
+
 </html>
