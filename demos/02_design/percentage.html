@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+	<title> Percentage eenheid demo </title>
+	<meta charset="utf-8">
+	<style>
+	body {
+		display: flex;
+		font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	}
+	body > section {
+		padding: 20px;
+		/* alternatief met vaste aside: width: calc(100% - 200px)*/
+		width: 80%;
+	}
+	body > aside {
+		background-color: #ffe;
+		padding: 20px;
+		/* alternatief met vaste aside: width: 200px;*/
+		width: 20%;
+	}
+	img { 
+		width: 500px;
+		max-width: 100%;
+	}
+	blockquote {
+		background-color: #eee;
+		border: 4px dashed #666;
+		margin: 20px auto;
+		padding: 10px;
+		width: 70%;
+	}
+	</style>
+</head>
+<body>
+	<section>
+		<h2>Gouden Buddha</h2>
+		<p>Maak het browservenster smaller en smaller! Merk op:</p>
+		<ul>
+			<li>linkerkolom is 80% breed, rechterkolom is 20% breed</li>
+			<li>afbeelding is 500px breed, maar nooit breder dan 100%</li>
+			<li>de blockquote is altijd 70% breed</li>
+		</ul>
+		<img src="photo.jpg" alt="photo">
+		<blockquote>"Three things cannot be long hidden: the sun, the moon, and the truth." – Buddha</blockquote>
+	</section>
+	<aside>
+		aside content hier...
+	</aside>
+</body>
+</html>

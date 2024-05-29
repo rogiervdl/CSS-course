@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<!-- [html-validate-disable no-trailing-whitespace] -->
+<html lang="nl">
+
+<head>
+   <title>Layout | CSS cursus</title>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="common/styles.css">
+   <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body class="language-html showpro">
+   <div id="mode">
+      <span>n00b</span>
+      <label class="switch">
+         <input type="checkbox" checked>
+         <span class="slider round"></span>
+      </label>
+      <span>pro</span>
+   </div>
+   <nav class="site__nav">
+      <a href="01_syntax.html" class="main__thumb" title="01. syntax">
+         <p class="thumb__title">01. syntax</p>
+         <img class="thumb__visual" src="img/01_syntax/icon.jpg" alt="">
+      </a>
+      <a href="02_design.html" class="main__thumb" title="02. tekst">
+         <p class="thumb__title">02. design</p>
+         <img class="thumb__visual" src="img/02_design/icon.jpg" alt="">
+      </a>
+      <a href="03_boxmodel.html" class="main__thumb" title="03. box model">
+         <p class="thumb__title">03. box model</p>
+         <img class="thumb__visual" src="img/03_boxmodel/icon.png" alt="">
+      </a>
+      <a href="04_layout.html" class="main__thumb active" title="04. layout">
+         <p class="thumb__title">04. layout</p>
+         <img class="thumb__visual" src="img/04_layout/icon.jpg" alt="">
+      </a>
+      <a href="05_responsive.html" class="main__thumb" title="05. responsive">
+         <p class="thumb__title">05. responsive</p>
+         <img class="thumb__visual" src="img/05_responsive/icon.jpg" alt="">
+      </a>
+      <a href="06_professionalisering.html" class="main__thumb" title="06. professionalisering">
+         <p class="thumb__title">06. professionalisering</p>
+         <img class="thumb__visual" src="img/06_professionalisering/icon.png" alt="">
+      </a>
+      <a href="07_samenvatting.html" class="main__thumb" title="07. samenvatting">
+         <p class="thumb__title">07. samenvatting</p>
+         <img class="thumb__visual" src="img/07_samenvatting/icon.png" alt="">
+      </a>
+   </nav>
+   <h1>04. CSS layout</h1>
+   <div id="toc"></div>
+   <main>
+
+      <!-- VIDEO -->
+      <h2>Youtube totaaldemo</h2>
+      <p>Deze video's maken deel uit van een HTML + CSS totaaldemo uit de <a href="https://www.youtube.com/playlist?list=PLYfkd2Gq0ciEFboXQvzR_e__52tZ4OeXh">Basic Web Development playlist</a>, die begint met de video <a href="https://www.youtube.com/watch?v=kIJbahdQqcI&list=PLYfkd2Gq0ciEFboXQvzR_e__52tZ4OeXh&index=12">BWD 01. HTML - deel 8: praktijkdemo</a></p>
+      <h3>pagina layout</h3>
+      <div class="flexcontainer youtubecontainer">
+         <iframe class="youtube" width="600" height="378"
+         src="https://www.youtube.com/embed/JfHd3XhmAdM?si=5LnZdiFzx_Sa9voQ" title="YouTube video player"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen></iframe>
+         <figure class="print">
+            <a href="https://www.youtube.com/watch?v=JfHd3XhmAdM"><img src="img/04_layout/youtube03-layout.png" alt="" class="w-500"></a>
+            <figcaption><a href="https://www.youtube.com/watch?v=JfHd3XhmAdM">https://www.youtube.com/watch?v=JfHd3XhmAdM</a></figcaption>
+         </figure>
+         <div class="youtube_toc">
+            <ul>
+               <li><a href="https://www.youtube.com/watch?v=JfHd3XhmAdM">0:00 centreren pagina</a></li>
+               <li><a href="https://www.youtube.com/watch?v=JfHd3XhmAdM&t=132">2:12 pagina achtergrondafbeelding</a></li>
+               <li><a href="https://www.youtube.com/watch?v=JfHd3XhmAdM&t=207">3:27 paddings header en main</a></li>
+               <li><a href="https://www.youtube.com/watch?v=JfHd3XhmAdM&t=280">4:40 kolommen naast elkaar met flexbox</a></li>
+               <li><a href="https://www.youtube.com/watch?v=JfHd3XhmAdM&t=500">8:20 layout article footers met flexbox</a></li>
+               <li><a href="https://www.youtube.com/watch?v=JfHd3XhmAdM&t=630">10:30 tekst floaten rond een afbeelding</a></li>
+            </ul>
+         </div>
+      </div>
+      <h3>main content</h3>
+      <div class="flexcontainer youtubecontainer">
+         <iframe class="youtube" width="600" height="378"
+         src="https://www.youtube.com/embed/RPXtQXj_kP4?si=lo5wdVM-mP5YCQNn" title="YouTube video player"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen></iframe>
+         <figure class="print">
+            <a href="https://www.youtube.com/watch?v=RPXtQXj_kP4"><img src="img/04_layout/youtube04-main.png" alt="" class="w-500"></a>
+            <figcaption><a href="https://www.youtube.com/watch?v=RPXtQXj_kP4">https://www.youtube.com/watch?v=RPXtQXj_kP4</a></figcaption>
+         </figure>
+         <div class="youtube_toc">
+            <ul>
+               <li><a href="https://www.youtube.com/watch?v=RPXtQXj_kP4">0:00 footer afwerken</a></li>
+               <li>
+                  <a href="https://www.youtube.com/watch?v=RPXtQXj_kP4&t=105">1:45 blogposts afwerken</a>
+                  <ul>
+                     <li><a href="https://www.youtube.com/watch?v=RPXtQXj_kP4&t=105">1:45 margins en paddings</a></li>
+                     <li><a href="https://www.youtube.com/watch?v=RPXtQXj_kP4&t=333">5:33 box shadow</a></li>
+                     <li><a href="https://www.youtube.com/watch?v=RPXtQXj_kP4&t=447">7:27 footer layouten met flexbox</a></li>
+                     <li><a href="https://www.youtube.com/watch?v=RPXtQXj_kP4&t=523">8:43 button opmaken</a></li>
+                  </ul>
+               </li>
+               <li>
+                  <a href="https://www.youtube.com/watch?v=RPXtQXj_kP4&t=741">12:21 rechterkolom afwerken</a>
+                  <ul>
+                     <li><a href="https://www.youtube.com/watch?v=RPXtQXj_kP4&t=741">12:21 zoekformulier</a></li>
+                     <li><a href="https://www.youtube.com/watch?v=RPXtQXj_kP4&t=1098">18:18 recent posts</a></li>
+                     <li><a href="https://www.youtube.com/watch?v=RPXtQXj_kP4&t=1201">20:01 readmore links</a></li>
+                  </ul>
+               </li>
+            </ul>
+         </div>
+      </div>
+      <h3>andere pagina's</h3>
+      <div class="flexcontainer youtubecontainer">
+         <iframe class="youtube" width="600" height="378"
+         src="https://www.youtube.com/embed/GMuXRIdg8_s?si=cDFKKRa5hMi2CIyk" title="YouTube video player"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen></iframe>
+         <figure class="print">
+            <a href="https://www.youtube.com/watch?v=GMuXRIdg8_s"><img src="img/04_layout/youtube05-andere.png" alt="" class="w-500"></a>
+            <figcaption><a href="https://www.youtube.com/watch?v=GMuXRIdg8_s">https://www.youtube.com/watch?v=GMuXRIdg8_s</a></figcaption>
+         </figure>
+         <div class="youtube_toc">
+            <ul>
+               <li><a href="https://www.youtube.com/watch?v=GMuXRIdg8_s">0:00 HTML andere pagina's bijwerken</a></li>
+               <li><a href="https://www.youtube.com/watch?v=GMuXRIdg8_s&t=257">4:17 formulier layouten</a></li>
+            </ul>
+         </div>
+      </div>
+      <h3>carousel</h3>
+      <div class="flexcontainer youtubecontainer">
+         <iframe class="youtube" width="600" height="378"
+         src="https://www.youtube.com/embed/YrYdEKBo7c8?si=IlSAtT4bOan00Ytq" title="YouTube video player"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen></iframe>
+         <figure class="print">
+            <a href="https://www.youtube.com/watch?v=YrYdEKBo7c8"><img src="img/04_layout/youtube06-carousel.png" alt="" class="w-500"></a>
+            <figcaption><a href="https://www.youtube.com/watch?v=YrYdEKBo7c8">https://www.youtube.com/watch?v=YrYdEKBo7c8</a></figcaption>
+         </figure>
+         <div class="youtube_toc">
+            <ul>
+               <li><a href="https://www.youtube.com/watch?v=YrYdEKBo7c8">0:00 intro</a></li>
+               <li><a href="https://www.youtube.com/watch?v=YrYdEKBo7c8&t=25">0:25 downloaden Slick carousel</a></li>
+               <li><a href="https://www.youtube.com/watch?v=YrYdEKBo7c8&t=44">0:44 bestanden kopiëren naar je project</a></li>
+               <li><a href="https://www.youtube.com/watch?v=YrYdEKBo7c8&t=65">1:05 integratie in je code</a></li>
+               <li><a href="https://www.youtube.com/watch?v=YrYdEKBo7c8&t=306">5:06 configuratie</a></li>
+               <li><a href="https://www.youtube.com/watch?v=YrYdEKBo7c8&t=384">6:24 aanpassen met eigen CSS</a></li>
+            </ul>
+         </div>
+      </div>
+
+
+       
+   </main>
+   <footer>
+      <img src="common/img/thats-all.jpg" alt="">
+      <p>@2014, Rogier van der Linde</p>
+   </footer>
+   <a aria-label="up" id="up" href="#top"><span class="fas fa-chevron-circle-up"></span></a>
+   <!-- popup -->
+   <div class="hystmodal dialog" id="diaDemo" aria-hidden="true">
+      <div class="hystmodal__wrap">
+         <div class="hystmodal__window" role="dialog" aria-modal="true">
+            <iframe title="demo"></iframe>
+         </div>
+      </div>
+   </div>
+   <!-- scripts -->
+   <script src="common/vendor/prism/prism.js"></script>
+   <script src="common/vendor/hystmodal/hystmodal.min.js"></script>
+   <script src="common/js/mode.js"></script>
+   <script src="common/js/scripts.js"></script>
+   <!-- Google tag (gtag.js) -->
+   <script async src="https://www.googletagmanager.com/gtag/js?id=G-8XDY8HXTN9"></script>
+   <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-8XDY8HXTN9');
+   </script>
+</body>
+
+</html>

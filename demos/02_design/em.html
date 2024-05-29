@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+   <title> Em eenheid demo </title>
+   <meta charset="utf-8">
+   <style>
+      body {
+         font-size: 16px;
+         /* pas deze waarde aan en de em versie schaalt mee! */
+      }
+
+      /* px versie */
+      .review-px {
+         border: 2px dotted #ccc;
+         font-size: 14px;
+         max-width: 280px;
+         padding: 7px;
+      }
+
+      .review-px .review-title {
+         font-size: 16.8px;
+      }
+
+      .review-px p {
+         font-size: 14px;
+      }
+
+      .review-px img {
+         width: 56px;
+      }
+
+      .review-px footer {
+         font-size: 11.2px;
+      }
+
+      .review-px .date {
+         font-size: 15.68px;
+      }
+
+      /* em versie */
+      .review-em {
+         border: 2px dotted #ccc;
+         font-size: 0.875em;
+         /* 16px * 0.875 = 14px */
+         max-width: 20em;
+         /* 14px * 20 = 280px */
+         padding: 0.5em;
+         /* 14px * 0.5 = 7px */
+      }
+
+      .review-em .review-title {
+         font-size: 1.2em;
+         /* 14px * 1.2 = 16.8px */
+      }
+
+      .review-em p {
+         font-size: 1em;
+         /* 14px * 1 = 14px */
+      }
+
+      .review-em img {
+         width: 4em;
+         /* 14px * 4 = 56px */
+      }
+
+      .review-em footer {
+         font-size: 0.8em;
+         /* 14px * 0.8 = 11.2px */
+      }
+
+      .review-em .date {
+         font-size: 1.4em;
+         /* 11.2px * 1.4 = 15.68px */
+      }
+   </style>
+</head>
+
+<body>
+   <p>Gumbo beet greens corn soko endive gumbo gourd. Parsley shallot ccourgette tatsoi pea sprouts fava bean collard greens dandelion okra wakame tomato. Dandelion cucumber earthnut pea peanut soko zucchini.</p>
+   <div class="review-px">
+      <h3 class="review-title">Great hotel! (px versie)</h3>
+      <p>
+         In friendship diminution instrument so.
+         Son sure paid door with say them. Lorem
+         ipsum dolor sit amet, consectetur
+         adipiscing elit!
+      </p>
+      <img src="mugshot.jpg" alt="avatar">
+      <footer>
+         <p>by John Doe on <span class="date">2019-01-01</span></p>
+      </footer>
+   </div>
+   <p>Gumbo beet greens corn soko endive gumbo gourd. Parsley shallot ccourgette tatsoi pea sprouts fava bean collard greens dandelion okra wakame tomato. Dandelion cucumber earthnut pea peanut soko zucchini.</p>
+   <div class="review-em">
+      <h3 class="review-title">Great hotel! (em versie)</h3>
+      <p>
+         In friendship diminution instrument so.
+         Son sure paid door with say them. Lorem
+         ipsum dolor sit amet, consectetur
+         adipiscing elit!
+      </p>
+      <img src="mugshot.jpg" alt="avatar">
+      <footer>
+         <p>by John Doe on <span class="date">2019-01-01</span></p>
+      </footer>
+   </div>
+</body>
+
+</html>

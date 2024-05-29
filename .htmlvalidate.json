@@ -1,36 +1,30 @@
 {
-   "extends": ["html-validate:recommended"],
+   "extends": [
+      "html-validate:recommended"
+   ],
    "elements": [
       "html5",
       {
-          "b": {
-            "deprecated" : false
-          },
-          "u": {
-            "deprecated" : true
-          },
-          "i": {
-            "deprecated" : false
-          },
          "iframe": {
             "attributes": {
-              "frameborder": {
+               "frameborder": {
                   "deprecated": false
                },
                "title": {
                   "required": false
                }
             }
-          },
-          "th": {
+         },
+         "th": {
             "attributes": {
                "scope": {
                   "required": false
                }
             }
-          }
+         }
       }
-    ],
+   ],
+   "root": true,
    "rules": {
       "allowed-links": [
          "warn",
@@ -39,16 +33,15 @@
             "allowRelative": true,
             "allowAbsolute": false,
             "allowBase": true
-          }
+         }
       ],
       "no-missing-references": "error",
       "no-trailing-whitespace": "off",
       "prefer-button": "off",
-      "no-style-tag": "error",
+      "no-inline-style": "off",
+      "no-style-tag": "off",
       "no-unknown-elements": "error",
-      "prefer-tbody" : "off",
-      "tel-non-breaking": "off",
+      "prefer-tbody": "off",
       "wcag/h30": "off"
-   } 
-
+   }
 }

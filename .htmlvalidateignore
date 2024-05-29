@@ -1,2 +1,3 @@
-# Ignores
-/js/main.js
+/**/*.js
+js/*.js
+*.js
