@@ -10,7 +10,7 @@
    <link rel="stylesheet" href="css/styles.css">
 </head>
 
-<body class="language-html showpro">
+<body class="language-css showpro">
    <div id="mode">
       <span>n00b</span>
       <label class="switch">
@@ -52,6 +52,54 @@
    <h1>03. CSS box model</h1>
    <div id="toc"></div>
    <main>
+
+      <h2>Border, padding &amp; margin</h2>
+      <h3>Definities</h3>
+      <p>Definities (van buiten naar binnen):</p>
+      <ul>
+         <li><strong>margin</strong>: ruimte <i>buiten</i> een element</li>
+         <li><strong>border</strong>: lijnen <i>rondom</i> een element</li>
+         <li><strong>padding</strong>: ruimte <i>binnen</i> een element</li>
+         <li><strong>content</strong>: de inhoud zelf</li>
+      </ul>
+      <p><img src="img/03_boxmodel/boxmodel.png" alt="box model"></p>
+      <p>Gebruik je browser inspector om de waarden te inspecteren (oranje = margin, groen = padding):</p>
+      <p><img src="img/03_boxmodel/box-model-inspector.png" alt="box model" class="bordered shadow w-600"></p>
+      <h3>Voorbeeld</h3>
+      <div class="codecompare">
+         <div class="democontainer">
+            <pre class="prism-default language-html" data-demo><code>&lt;div&gt;
+   &lt;p&gt;In friendship diminution...&lt;/p&gt;
+   &lt;p&gt;Fact are size cold... &lt;/p&gt;
+   &lt;p&gt;Unpacked now declared... &lt;/p&gt;
+&lt;/div&gt;
+</code></pre>
+            <pre class="prism-atom-dark"><code contenteditable data-target="#boxmodel-demo">div {
+   background-color: #eee;
+   border: 5px dotted #900;
+   padding: 20px 40px;
+}
+p {
+   background-color: #ccc;
+   border: 1px solid black;
+   margin: 0;
+   margin-bottom: 10px;
+   padding: 10px;
+}
+/* laatste paragraaf geen margin onder  */
+   p:last-child {
+   margin-bottom: 0;
+}
+            </code></pre>
+         </div>
+         <div id="boxmodel-demo" class="target w-500">
+            <div>
+               <p class="demo">In friendship diminution instrument so. Son sure paid door with say them.</p>
+               <p class="demo">Fact are size cold why had part. If believing or sweetness otherwise in we forfeited. </p>
+               <p class="demo">Unpacked now declared put you confined daughter improved. </p>
+            </div>
+         </div>
+      </div>
 
 
 

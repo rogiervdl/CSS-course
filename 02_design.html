@@ -827,31 +827,6 @@ a:hover {
       <p>Wil je vlot kleurcodes leren lezen? Bekijk dan deze briljante talk op de dotCSS conferentie van 2018 in Parijs:</p>
       <iframe width="560" height="315" src="https://www.youtube.com/embed/eqZqx6lRPe0?si=sEyVdO9EZK4edio_" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-      <h3>Opacity vs. alpha</h3>
-      <p>De <span class="em">opacity</span> maakt een <strong>element transparant</strong>, terwijl het <span class="em">alfakanaal</span> een <strong>kleur transparant</strong> maakt. Volgende vergelijking verduidelijkt het verschil:</p>
-      <div class="codecompare top">
-         <div>
-            <pre class="prism-atom-dark w-600"><code>.banner {
-   background-color: rgb(0, 0, 0);
-   opacity: 0.7;
-}</code></pre>
-            <figure class="w-600">
-               <img src="img/02_design/banner-opacity.png" alt="">
-               <figcaption>met <strong>opacity = 0.7</strong> op de banner: hele blok inclusief tekst en rand vervaagt</figcaption>
-            </figure>
-         </div>
-         <div>
-            <pre class="prism-atom-dark w-600"><code>.banner {
-   background-color: rgba(0, 0, 0, 0.7);
-
-}</code></pre>
-            <figure class="w-600">
-               <img src="img/02_design/banner-alpha1.png" alt="" >
-               <figcaption>met <strong>alpha = 0.7</strong> op achtergrondkleur: tekst en rand vervagen niet</figcaption>
-            </figure>
-         </div>
-      </div>
-
       <h3>Developer tools color picker</h3>
       <p>De ingebouwde tools van browsers hebben een prima color picker met live preview:</p>
       <p><img src="img/02_design/chrome-colorpicker.png" alt="" class="shadow bordered w-500"></p>
@@ -1032,7 +1007,30 @@ img:hover {
       <div class="tips" data-caption="💡OPACITY, OF TOCH ALPHA?">
          <p>Het nadeel van <code>opacity</code> is dat het hele blok vervaagt; vaak gebruik je beter kleuren met alpha, zie <a href="#opacity-vs-alpha">opacity vs. alpha</a></p>
       </div>
+      <h4>Opacity vs. alpha</h4>
+      <p>De <span class="em">opacity</span> maakt een <strong>element transparant</strong>, terwijl het <span class="em">alfakanaal</span> een <strong>kleur transparant</strong> maakt. Volgende vergelijking verduidelijkt het verschil:</p>
+      <div class="codecompare top">
+         <div>
+            <pre class="prism-atom-dark w-600"><code>.banner {
+   background-color: rgb(0, 0, 0);
+   opacity: 0.7;
+}</code></pre>
+            <figure class="w-600">
+               <img src="img/02_design/banner-opacity.png" alt="">
+               <figcaption>met <strong>opacity = 0.7</strong> op de banner: hele blok inclusief tekst en rand vervaagt</figcaption>
+            </figure>
+         </div>
+         <div>
+            <pre class="prism-atom-dark w-600"><code>.banner {
+   background-color: rgba(0, 0, 0, 0.7);
 
+}</code></pre>
+            <figure class="w-600">
+               <img src="img/02_design/banner-alpha1.png" alt="" >
+               <figcaption>met <strong>alpha = 0.7</strong> op achtergrondkleur: tekst en rand vervagen niet</figcaption>
+            </figure>
+         </div>
+      </div>
       <h3>Visibility</h3>
       <p>
          De <code>visibility</code> property heeft twee waarden: <code>visible</code> (de standaardwaarde) en <code>hidden</code>, wat exact hetzelfde is als <code>opacity: 0</code> (volledig transparant).
