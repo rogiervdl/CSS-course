@@ -8,6 +8,7 @@
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <link rel="stylesheet" href="common/styles.css">
    <link rel="stylesheet" href="css/styles.css">
+   <link rel="stylesheet" href="css/03_boxmodel.css">
 </head>
 
 <body class="language-css showpro">
@@ -63,7 +64,7 @@
          <li><strong>content</strong>: de inhoud zelf</li>
       </ul>
       <p><img src="img/03_boxmodel/boxmodel.png" alt="box model"></p>
-      <p>Gebruik je browser inspector om de waarden te inspecteren (oranje = margin, groen = padding):</p>
+      <p>Gebruik je browser inspector om de waarden te inspecteren (oranje = margin, groen = padding, blauw = content):</p>
       <p><img src="img/03_boxmodel/box-model-inspector.png" alt="box model" class="bordered shadow w-600"></p>
       <h3>Voorbeeld</h3>
       <div class="codecompare">
@@ -82,12 +83,11 @@
 p {
    background-color: #ccc;
    border: 1px solid black;
-   margin: 0;
-   margin-bottom: 10px;
+   margin: 0 0 10px 0;
    padding: 10px;
 }
 /* laatste paragraaf geen margin onder  */
-   p:last-child {
+p:last-child {
    margin-bottom: 0;
 }
             </code></pre>
@@ -100,7 +100,124 @@ p {
             </div>
          </div>
       </div>
+      <p>Margins en paddings aangeduid met kleur (groen = padding, oranje = margin, blauw = content):</p>
+      <div class="codecompare top">
+         <div class="boxmodeldemo parent parent1">
+            <div class="container">
+                <div class="pdiv"><p>In friendship diminution instrument so. Son sure paid door with say them.</p></div>
+                <div class="pdiv"><p>Fact are size cold why had part. If believing or sweetness otherwise in we forfeited. </p></div>
+                <div class="pdiv"><p>Unpacked now declared put you confined daughter improved. </p></div>
+            </div>
+         </div>
+      </div>
+      <h3>Margin of padding?</h3>
+      <p>Er zijn nog andere combinaties van margins en paddings mogelijk. Zolang je geen achtergrondkleuren gebruikt, zul je geen verschil zien. Je kan de paddings links en rechts in het buitenste element bijvoorbeeld vervangen door margins van de paragrafen:</p>  
+      <div class="codecompare top">
+         <pre class="prism-atom-dark"><code>div {
+   ...              
+   padding: 20px 0;
+}
+p {
+   ...              
+   margin: 0 40px;
+}
+p + p {
+   margin-top: 10px;
+}
+...
+</code></pre>
+      <div class="boxmodeldemo parent parent3">
+         <div class="container">
+             <div class="pdiv"><p>In friendship diminution instrument so. Son sure paid door with say them.</p></div>
+             <div class="pdiv"><p>Fact are size cold why had part. If believing or sweetness otherwise in we forfeited. </p></div>
+             <div class="pdiv"><p>Unpacked now declared put you confined daughter improved. </p></div>
+         </div>
+      </div>
+   </div>
+   <p>Je kan ook paddings van het buitenste element combineren met margins van de paragrafen:</p>
+   <div class="codecompare top">
+      <pre class="prism-atom-dark"><code>div {
+   ...              
+   padding: 10px 20px;
+}
+p {
+   ...              
+   margin: 10px 20px;
+}
+...
+</code></pre>
+         <div class="boxmodeldemo parent parent4">
+            <div class="container">
+               <div class="pdiv"><p>In friendship diminution instrument so. Son sure paid door with say them.</p></div>
+               <div class="pdiv"><p>Fact are size cold why had part. If believing or sweetness otherwise in we forfeited. </p></div>
+               <div class="pdiv"><p>Unpacked now declared put you confined daughter improved. </p></div>
+            </div>
+         </div>
+      </div>
+      <p>Je ziet, de mogelijkheden zijn schier eindeloos. Eigenlijk maakt het niet zoveel uit wat je kiest, maar om een houvast te geven hanteren we in deze cursus volgende <span class="em">vuistregels</span>:</p>
+      <ol>
+         <li>denk <strong>van buiten naar binnen</strong>: liever margin/padding op de parent, dan margin/padding op de child</li>
+         <li>denk <strong>van linksboven naar rechtsonder</strong>: liever margin bottom/right op een element, dan top/left op het volgende (dit geldt ook voor borders: b.v. liever een border onder dan boven een element)</li>
+         <li>denk <strong>standaard aan margins</strong>, dus ruimte <strong>tussen elementen</strong></li>
+         <li>denk <strong>enkel aan padding</strong> bij ruimte <strong>binnen elementen</strong>, dus tussen rand en de inhoud</li>
+      </ol>
+      <p>Zoals altijd bij vuistregels, zijn er uitzonderingen:</p>
+      <ul>
+         <li>bij een menu (ul &gt; li &gt; a) gebruik je beter padding op de <code>&lt;a&gt;</code> dan op de <code>&lt;li&gt;</code> om het klikgebied te vergroten (overtreding vuistregel 1)</li>
+         <li>bij een "lees meer" knop onderaan een tekst is het makkelijker een margin-top te gebruiken op de knop dan een margin-bottom op de vorige paragraaf (overtreding vuistregel 2)</li>
+         <li>...</li>
+      </ul>
+      <p>
+         &rarr; volg zoveel mogelijk de vuistregels, maar gebruik je gezond verstand
+      </p>
 
+      <h3>Margin bleeding</h3>
+      <p>Eén van de lastig te begrijpen eigenaardigheden van CSS dat zich voordoet bij geneste elementen is <mark>margin bleeding</mark>: als een <strong>parent element geen padding of border heeft, loopt de margin van het child element eruit</strong>. Illustreren we dit met een voorbeeld:</p>
+      <div class="codecompare">
+         <div class="democontainer">
+            <pre class="prism-default language-html h-300" data-demo><code>&lt;div class="review"&gt;
+   &lt;h3&gt;Great hotel!&lt;/h3&gt;
+   &lt;p&gt;
+      In friendship diminution instrument so.
+      Son sure paid door with say them. Lorem
+      ipsum dolor sit amet, consectetur
+      adipiscing elit!
+   &lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="review"&gt;
+   &lt;h3&gt;Great hotel!&lt;/h3&gt;
+   &lt;p&gt;
+      In friendship diminution instrument so.
+      Son sure paid door with say them. Lorem
+      ipsum dolor sit amet, consectetur
+      adipiscing elit!
+   &lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="review"&gt;
+   &lt;h3&gt;Great hotel!&lt;/h3&gt;
+   &lt;p&gt;
+      In friendship diminution instrument so.
+      Son sure paid door with say them. Lorem
+      ipsum dolor sit amet, consectetur
+      adipiscing elit!
+   &lt;/p&gt;
+&lt;/div&gt;</code></pre>
+         </div>
+      </div>
+      <pre class="prism-okaida"><code>.review {
+   background-color: #e0ffe0;
+   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+   font-size: 14px;
+   margin-bottom: 5px;
+   max-width: 280px;
+   padding: 0 20px;
+}
+.review h3 {
+   margin-top: 1em;
+}
+.review p {
+   margin-bottom: 1em;
+}</code></pre>
 
 
 
