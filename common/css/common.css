@@ -70,10 +70,14 @@ figcaption {
 	font-style: italic;
 }
 
-h1,
-h2,
-h3,
-h4 {
+main > h1,
+main > h2,
+main > h3,
+main > h4,
+main > .pro > h1,
+main > .pro > h2,
+main > .pro > h3,
+main > .pro > h4 {
 	font-weight: normal;
 	margin-bottom: 1em;
 	margin-top: 1.3em;
@@ -81,46 +85,54 @@ h4 {
 	width: fit-content;
 }
 
-h1 {
+main > h1,
+main > .pro > h1 {
 	line-height: 1.2;
 	border-bottom-width: 1px;
 	border-bottom-style: solid;
 }
 
-h2 {
+main > h2,
+main > .pro > h2 {
 	border-bottom: 0.4rem double #ccc;
 	counter-reset: subchapter;
 	padding-bottom: 0.5rem;
 }
 
-h2::before {
+main > h2::before,
+main > .pro > h2::before {
 	counter-increment: chapter;
 	content: counter(chapter) ". ";
 }
 
-h3 {
+main > h3,
+main > .pro > h3 {
 	border-bottom: 0.2rem solid #ccc;
 	counter-reset: subsubchapter;
 }
 
-h3::before {
+main > h3::before,
+main > .pro > h3::before {
 	counter-increment: subchapter;
 	content: counter(chapter) "." counter(subchapter) " ";
 }
 
-h4 {
+main > h4,
+main > .pro > h4 {
 	border-bottom: 1px dotted #ccc;
 	counter-reset: subsubsubchapter;
 	font-size: 1.4rem;
 	text-transform: uppercase;
 }
 
-h4::before {
+main > h4::before,
+main > .pro > h4::before {
 	counter-increment: subsubchapter;
 	content: counter(chapter) "." counter(subchapter) "." counter(subsubchapter) " ";
 }
 
-h5::before {
+main > h5::before,
+main > .pro > h5::before {
 	counter-increment: subsubsubchapter;
 	content: counter(chapter) "." counter(subchapter) "." counter(subsubchapter) "." counter(subsubsubchapter) " ";
 }

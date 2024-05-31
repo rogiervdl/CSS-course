@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            padding: 20px;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        .colored {
+            max-width: 280px;
+        }
+
+        .colored p, .colored h2 {
+            background-color: rgb(139, 180, 215, 0.7);
+            margin: 0;
+            padding: 0;
+        }
+
+        .colored .h2wrap {
+            background-color: rgb(243, 198, 151, 0.7);
+            border: 1px dashed #999;
+            font-size: 19.92px;
+            padding: 20px;
+            position: relative;
+            top: 10px;
+        }
+
+        .colored .pwrap {
+            background-color: rgb(243, 198, 151, 0.7);
+            padding: 10px 20px;
+        }
+        .colored .bwrap {
+            background-color: rgb(243, 198, 151, 0.7);
+            border-top: none;
+            padding: 30px 20px;
+            position: relative;
+            width: fit-content;
+        }
+
+        .normal h2 {
+            max-width: 280px;
+            margin: 20px 20px;
+        }
+
+        .normal p {
+            max-width: 280px;
+            margin: 10px 20px;
+        }
+
+        .normal button {
+            margin: 30px 20px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="normal">
+        <h2>Great hotel!</h2>
+        <p>
+            In friendship diminution instrument so.
+            Son sure paid door with say them. Lorem
+            ipsum dolor sit amet, consectetur
+            adipiscing elit!
+        </p>
+        <button>Verzenden</button>
+    </div>
+    <div class="colored">
+        <div class="h2wrap">
+            <h2>Great hotel!</h2>
+        </div>
+        <div class="pwrap">
+            <p>
+                In friendship diminution instrument so.
+                Son sure paid door with say them. Lorem
+                ipsum dolor sit amet, consectetur
+                adipiscing elit!
+            </p>
+        </div>
+        <div class="bwrap">
+            <button>Verzenden</button>
+        </div>
+    </div>
+</body>
+
+</html>
+
+

@@ -3,111 +3,764 @@
 <html lang="nl">
 
 <head>
-   <title>Samenvatting | CSS cursus</title>
-   <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <link rel="stylesheet" href="common/styles.css">
-   <link rel="stylesheet" href="css/styles.css">
+  <title>Samenvatting | CSS cursus</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="common/styles.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/samenvatting.css">
+
 </head>
 
-<body class="language-html showpro">
-   <div id="mode">
-      <span>n00b</span>
-      <label class="switch">
-         <input type="checkbox" checked>
-         <span class="slider round"></span>
-      </label>
-      <span>pro</span>
-   </div>
-   <nav class="site__nav">
-      <a href="01_syntax.html" class="main__thumb" title="01. syntax">
-         <p class="thumb__title">01. syntax</p>
-         <img class="thumb__visual" src="img/01_syntax/icon.jpg" alt="">
-      </a>
-      <a href="02_design.html" class="main__thumb" title="02. tekst">
-         <p class="thumb__title">02. design</p>
-         <img class="thumb__visual" src="img/02_design/icon.jpg" alt="">
-      </a>
-      <a href="03_boxmodel.html" class="main__thumb" title="03. box model">
-         <p class="thumb__title">03. box model</p>
-         <img class="thumb__visual" src="img/03_boxmodel/icon.png" alt="">
-      </a>
-      <a href="04_layout.html" class="main__thumb" title="04. layout">
-         <p class="thumb__title">04. layout</p>
-         <img class="thumb__visual" src="img/04_layout/icon.jpg" alt="">
-      </a>
-      <a href="05_responsive.html" class="main__thumb" title="05. responsive">
-         <p class="thumb__title">05. responsive</p>
-         <img class="thumb__visual" src="img/05_responsive/icon.jpg" alt="">
-      </a>
-      <a href="06_professionalisering.html" class="main__thumb" title="06. professionalisering">
-         <p class="thumb__title">06. professionalisering</p>
-         <img class="thumb__visual" src="img/06_professionalisering/icon.png" alt="">
-      </a>
-      <a href="07_samenvatting.html" class="main__thumb active" title="07. samenvatting">
-         <p class="thumb__title">07. samenvatting</p>
-         <img class="thumb__visual" src="img/07_samenvatting/icon.png" alt="">
-      </a>
-   </nav>
-   <h1>07. CSS samenvatting</h1>
-   <div id="toc"></div>
-   <main>
+<body class="language-css showpro">
+  <div id="mode">
+    <span>n00b</span>
+    <label class="switch">
+      <input type="checkbox" checked>
+      <span class="slider round"></span>
+    </label>
+    <span>pro</span>
+  </div>
+  <nav class="site__nav">
+    <a href="01_syntax.html" class="main__thumb" title="01. syntax">
+      <p class="thumb__title">01. syntax</p>
+      <img class="thumb__visual" src="img/01_syntax/icon.jpg" alt="">
+    </a>
+    <a href="02_design.html" class="main__thumb" title="02. tekst">
+      <p class="thumb__title">02. design</p>
+      <img class="thumb__visual" src="img/02_design/icon.jpg" alt="">
+    </a>
+    <a href="03_boxmodel.html" class="main__thumb" title="03. box model">
+      <p class="thumb__title">03. box model</p>
+      <img class="thumb__visual" src="img/03_boxmodel/icon.png" alt="">
+    </a>
+    <a href="04_layout.html" class="main__thumb" title="04. layout">
+      <p class="thumb__title">04. layout</p>
+      <img class="thumb__visual" src="img/04_layout/icon.jpg" alt="">
+    </a>
+    <a href="05_responsive.html" class="main__thumb" title="05. responsive">
+      <p class="thumb__title">05. responsive</p>
+      <img class="thumb__visual" src="img/05_responsive/icon.jpg" alt="">
+    </a>
+    <a href="06_professionalisering.html" class="main__thumb" title="06. professionalisering">
+      <p class="thumb__title">06. professionalisering</p>
+      <img class="thumb__visual" src="img/06_professionalisering/icon.png" alt="">
+    </a>
+    <a href="07_samenvatting.html" class="main__thumb active" title="07. samenvatting">
+      <p class="thumb__title">07. samenvatting</p>
+      <img class="thumb__visual" src="img/07_samenvatting/icon.png" alt="">
+    </a>
+  </nav>
+  <h1>07. CSS samenvatting</h1>
+  <main>
 
-      <!-- VIDEO -->
-      <h2>Youtube: CSS Syntax</h2>
-      <div class="flexcontainer youtubecontainer">
-         <iframe class="youtube" width="600" height="378"
-         src="https://www.youtube.com/embed/uEcft3oEUkU?si=DNwXXN9z_kNAeV57" title="YouTube video player"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen></iframe>
-         <figure class="print">
-            <a href="https://www.youtube.com/watch?v=uEcft3oEUkU"><img src="img/01_syntax/youtube-syntax.png" alt="" class="w-500"></a>
-            <figcaption><a href="https://www.youtube.com/watch?v=uEcft3oEUkU">https://www.youtube.com/watch?v=uEcft3oEUkU</a></figcaption>
-         </figure>
-         <div class="youtube_toc">
-            <ul>
-               <li><a href="https://www.youtube.com/watch?v=uEcft3oEUkU">0:00 intro</a></li>
-               <li><a href="https://www.youtube.com/watch?v=uEcft3oEUkU&t=65">1:05 hoe begin je aan een oefening</a></li>
-               <li><a href="https://www.youtube.com/watch?v=uEcft3oEUkU&t=167">2:47 HTML bestand aanmaken</a></li>
-               <li><a href="https://www.youtube.com/watch?v=uEcft3oEUkU&t=205">3:25 basisonderdelen van een HTML pagina</a></li>
-               <li><a href="https://www.youtube.com/watch?v=uEcft3oEUkU&t=301">5:01 HTML elementen en attributen</a></li>
-               <li><a href="https://www.youtube.com/watch?v=uEcft3oEUkU&t=485">8:05 code layout</a></li>
-               <li><a href="https://www.youtube.com/watch?v=uEcft3oEUkU&t=623">10:23 code huisregels</a></li>
-               <li><a href="https://www.youtube.com/watch?v=uEcft3oEUkU&t=729">12:09 code commentaar</a></li>
-            </ul>
-         </div>
+    <div id="wrapper">
+      <section>
+        <h3>Selectors</h3>
+        <table>
+          <caption>basic selectors</caption>
+          <tr>
+            <td>div</td>
+            <td>&lt;div&gt;</td>
+          </tr>
+          <tr>
+            <td>#itemid</td>
+            <td>element with id "itemid" </td>
+          </tr>
+          <tr>
+            <td>.class</td>
+            <td>elements with class "­cla­ss"</td>
+          </tr>
+          <tr>
+            <td>div.class</td>
+            <td>&lt;div&gt; with class "­cla­ss"</td>
+          </tr>
+          <tr>
+            <td>div#itemid</td>
+            <td>&lt;div&gt; with id "itemid" </td>
+          </tr>
+          <tr>
+            <td>div span</td>
+            <td>&lt;span&gt; within &lt;div&gt;</td>
+          </tr>
+          <tr>
+            <td>div, span</td>
+            <td>&lt;span&gt; and &lt;div&gt;</td>
+          </tr>
+          <tr>
+            <td>div + span</td>
+            <td>&lt;span&gt; after &lt;div&gt;</td>
+          </tr>
+          <tr>
+            <td>div &gt; span</td>
+            <td>&lt;span&gt; with parent &lt;div&gt;</td>
+          </tr>
+          <tr>
+            <td>*</td>
+            <td>all elements</td>
+          </tr>
+          <tr>
+            <td>a[attr]</td>
+            <td>&lt;a&gt; with attribute "attr"</td>
+          </tr>
+          <tr>
+            <td>a[attr=x]</td>
+            <td>&lt;a&gt; when "attr" is "x"</td>
+          </tr>
+          <tr>
+            <td>a[attr*=x]</td>
+            <td>&lt;a&gt; when "attr" contains "x"</td>
+          </tr>
+          <tr>
+            <td>a[attr^=x]</td>
+            <td>&lt;a&gt; when "attr" starts with "x"</td>
+          </tr>
+          <tr>
+            <td>a[attr$=x]</td>
+            <td>&lt;a&gt; when "attr" ends with "x"</td>
+          </tr>
+        </table>
+        <table>
+          <caption>pseudo class selectors</caption>
+          <tr>
+            <td>a:active</td>
+            <td>&lt;a&gt; when pressed</td>
+          </tr>
+          <tr>
+            <td>a:focus</td>
+            <td>&lt;a&gt; when focussed</td>
+          </tr>
+          <tr>
+            <td>a:hover</td>
+            <td>&lt;a&gt; when hovered</td>
+          </tr>
+          <tr>
+            <td>:first-child</td>
+            <td>first child element</td>
+          </tr>
+          <tr>
+            <td>tr:nth-child(3n+1)</td>
+            <td>&lt;tr&gt; 1, 4, 7...</td>
+          </tr>
+          <tr>
+            <td>tr:nth-child(odd)</td>
+            <td>&lt;tr&gt; 1, 3, 5...</td>
+          </tr>
+        </table>
+        <table>
+          <caption>pseudo element selectors</caption>
+          <tr>
+            <td>::after</td>
+            <td>insert content after element</td>
+          </tr>
+          <tr>
+            <td>::before</td>
+            <td>insert content before element</td>
+          </tr>
+          <tr>
+            <td>::first-letter</td>
+            <td>first letter of element</td>
+          </tr>
+          <tr>
+            <td>::first-line</td>
+            <td>first line of element</td>
+          </tr>
+          <tr>
+            <td>::selection</td>
+            <td>selected part of element</td>
+          </tr>
+        </table>
+        <table>
+          <caption>form pseudo class selectors</caption>
+          <tr>
+            <td>input:checked</td>
+            <td>checked input</td>
+          </tr>
+          <tr>
+            <td>input:disabled</td>
+            <td>disabled input</td>
+          </tr>
+          <tr>
+            <td>input:enabled</td>
+            <td>enabled input</td>
+          </tr>
+          <tr>
+            <td>input:invalid</td>
+            <td>invalid input</td>
+          </tr>
+          <tr>
+            <td>input:required</td>
+            <td>required input</td>
+          </tr>
+          <tr>
+            <td>input:valid</td>
+            <td>valid input</td>
+          </tr>
+        </table>
+      </section>
+      <section>
+        <h3>units</h3>
+        <table>
+          <caption>units</caption>
+          <tr>
+            <td>px</td>
+            <td>a pixel</td>
+          </tr>
+          <tr>
+            <td>em</td>
+            <td>percentage of parent font size</td>
+          </tr>
+          <tr>
+            <td>rem</td>
+            <td>percentage of &lt;html&gt; font size</td>
+          </tr>
+          <tr>
+            <td>%</td>
+            <td>percentage of width</td>
+          </tr>
+        </table>
+
+      </section>
+      <section>
+        <h3>text</h3>
+        <table>
+          <caption>fonts</caption>
+          <tr>
+            <td>color</td>
+            <td>
+              text color, e.g. #9c6
+            </td>
+          </tr>
+          <tr>
+            <td>font-family</td>
+            <td>
+              e.g. Helvetica, Arial, sans-serif
+            </td>
+          </tr>
+          <tr>
+            <td>font-size</td>
+            <td>
+              px, rem, em or %<br>
+              small, smaller, large, larger
+            </td>
+          </tr>
+          <tr>
+            <td>font-style</td>
+            <td>italic | normal</td>
+          </tr>
+          <tr>
+            <td>font-weight</td>
+            <td>
+              bold | normal<br>
+              100, 200, ..., 900
+            </td>
+          </tr>
+        </table>
+        <table>
+          <caption>styling &amp; spacing</caption>
+          <tr>
+            <td>letter-spacing</td>
+            <td>
+              extra letter spacing, e.g. 2px
+            </td>
+          </tr>
+          <tr>
+            <td>line-height</td>
+            <td>
+              e.g. 1.4
+            </td>
+          </tr>
+          <tr>
+            <td>text-align</td>
+            <td>
+              hor. alig: left | center | right
+            </td>
+          </tr>
+          <tr>
+            <td>text-decoration</td>
+            <td>
+              none | underline
+            </td>
+          </tr>
+          <tr>
+            <td>text-transform</td>
+            <td>
+              uppercase | lowercase | capitalize
+            </td>
+          </tr>
+          <tr>
+            <td>white-space</td>
+            <td>
+              nowrap | pre
+            </td>
+          </tr>
+          <tr>
+            <td>word-spacing</td>
+            <td>
+              extra word spacing, e.g. 2px
+            </td>
+          </tr>
+        </table>
+        <table>
+          <caption>lists</caption>
+          <tr>
+            <td>list-style-type</td>
+            <td>
+              none | disc | square | decimal | ...
+            </td>
+          </tr>
+          <tr>
+            <td>list-style-image</td>
+            <td>
+              url(...)
+            </td>
+          </tr>
+          <tr>
+            <td>list-style-position</td>
+            <td>
+              inside | outside
+            </td>
+          </tr>
+        </table>
+      </section>
+      <section>
+        <h3>colors &amp; backgrounds</h3>
+        <table>
+          <caption>colors</caption>
+          <tr>
+            <td>#36f97c</td>
+            <td>hex color: R=36, G=f9, B=7c</td>
+          </tr>
+          <tr>
+            <td>#5c9</td>
+            <td>shorthand for #55cc99</td>
+          </tr>
+          <tr>
+            <td>#36F97C8D</td>
+            <td>hex color with transparency 8D</td>
+          </tr>
+          <tr>
+            <td>rgb(54,249,124)</td>
+            <td>RGB notation</td>
+          </tr>
+          <tr>
+            <td>rgba(54,249,124,0.7)</td>
+            <td>RGB notation, opacity 0.7</td>
+          </tr>
+          <tr>
+            <td>mnemonic</td>
+            <td>e.g. Maroon, Coral... (don't use)</td>
+          </tr>
+        </table>
+        <table>
+          <caption>backgrounds &amp; images</caption>
+          <tr>
+            <td>background-color</td>
+            <td>
+              e.g. #fff
+            </td>
+          </tr>
+          <tr>
+            <td>background-image</td>
+            <td>
+              e.g. url(img/bg.png)<br>
+              e.g. linear-gradient(#0000, #0003);
+            </td>
+          </tr>
+          <tr>
+            <td>background-position</td>
+            <td>
+              e.g. center, top left...
+            </td>
+          </tr>
+          <tr>
+            <td>background-repeat</td>
+            <td>
+              no-repeat | repeat | repeat-x | repeat-y
+            </td>
+          </tr>
+          <tr>
+            <td>background-size</td>
+            <td>
+              % | cover | contain<br>
+            </td>
+          </tr>
+          <tr>
+            <td>background: #fff url(img_tree.png) no-repeat right top;</td>
+            <td>
+              background-color: #fff;<br>
+              background-image: url(img_tree.png);<br>
+              background-repeat: no-repeat;<br>
+              background-position: right top;<br>
+            </td>
+          </tr>
+        </table>
+
+      </section>
+      <section>
+        <h3>box model</h3>
+        <table>
+          <caption>margins, paddings, border</caption>
+          <tr>
+            <td>
+              border-color
+            </td>
+            <td>
+              e.g. #ccc
+            </td>
+          </tr>
+          <tr>
+            <td>
+              border-radius
+            </td>
+            <td>
+              e.g. 3px
+            </td>
+          </tr>
+          <tr>
+            <td>
+              border-style
+            </td>
+            <td>
+              none | solid | dashed | dotted
+            </td>
+          </tr>
+          <tr>
+            <td>
+              border-width
+            </td>
+            <td>
+              px, rem, em or %
+            </td>
+          </tr>
+          <tr>
+            <td>border: 2px solid #900;</td>
+            <td>
+              border-width: 2px;<br>
+              border-style: solid;<br>
+              border-color: #900;<br>
+            </td>
+          </tr>
+          <tr>
+            <td>margin: 10px<br>(same for padding)</td>
+            <td>
+              margin-top: 10px;<br>
+              margin-right: 10px;<br>
+              margin-bottom: 10px;<br>
+              margin-left: 10px;<br>
+            </td>
+          </tr>
+          <tr>
+            <td>margin: 5px 10px<br>(same for padding)</td>
+            <td>
+              margin-top: 5px;<br>
+              margin-right: 10px;<br>
+              margin-bottom: 5px;<br>
+              margin-left: 10px;<br>
+            </td>
+          </tr>
+          <tr>
+            <td>margin: 5px 10px 15px 20px<br>(same for padding)</td>
+            <td>
+              margin-top: 5px;<br>
+              margin-right: 10px;<br>
+              margin-bottom: 15px;<br>
+              margin-left: 20px;<br>
+            </td>
+          </tr>
+        </table>
+        <table>
+          <caption>dimensions <span>(doesn't work on inline elements!)</span></caption>
+          <tr>
+            <td>box-sizing</td>
+            <td>border-box | content-box <br> (include | exclude padding and border)</td>
+          </tr>
+          <tr>
+            <td>height</td>
+            <td>px, rem, em or %</td>
+          </tr>
+          <tr>
+            <td>max-width</td>
+            <td>px, rem, em or %</td>
+          </tr>
+          <tr>
+            <td>min-width</td>
+            <td>px, rem, em or %</td>
+          </tr>
+          <tr>
+            <td>width</td>
+            <td>px, rem, em, %, fit-content</td>
+          </tr>
+        </table>
+        <table>
+          <caption>other</caption>
+          <tr>
+            <td>box-shadow</td>
+            <td>e.g. 10px 10px 5px #888;<br>(left, top, blur, color)</td>
+          </tr>
+        </table>
+      </section>
+      <section>
+        <h3>other</h3>
+        <table>
+          <caption>transitions</caption>
+          <tr>
+            <td>transition-property</td>
+            <td>all | css property</td>
+          </tr>
+          <tr>
+            <td>transition-duration</td>
+            <td>number of seconds</td>
+          </tr>
+          <tr>
+            <td>transition: background 0.3s; </td>
+            <td>
+              transition-property: background; <br>
+              transition-duration: 0.3s;
+            </td>
+          </tr>
+        </table>
+        <table>
+          <caption>animation</caption>
+          <tr>
+            <td>@keyframes</td>
+            <td><pre>@keyframes my-animation {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+#my-el {
+  my-animation 3s infinite ease-in-out;
+}</pre></td>
+          </tr>
+          <tr>
+            <td>transform</td>
+            <td>rotate, skew, scale, rotate... <br>e.g. rotate(8deg) skewY(15deg);</td>
+          </tr>
+        </table>
+        <table>
+          <caption>image editing</caption>
+          <tr>
+            <td>filter</td>
+            <td>blur, hue, sepia, brightness, contrast... <br>e.g. grayscale(70%);</td>
+          </tr>
+          <tr>
+            <td>transform</td>
+            <td>rotate, skew, scale, rotate... <br>e.g. rotate(8deg) skewY(15deg);</td>
+          </tr>
+        </table>
+        <table>
+          <caption>transforms</caption>
+          <tr>
+            <td>filter</td>
+            <td>blur, hue, sepia, brightness, contrast... <br>e.g. grayscale(70%);</td>
+          </tr>
+        </table>
+        <table>
+          <caption>miscellaneous</caption>
+          <tr>
+            <td>cursor</td>
+            <td>auto | pointer | help | not-allowed</td>
+          </tr>
+          <tr>
+            <td>calc()</td>
+            <td>e.g. width: calc((100% - 250px) / 3)</td>
+          </tr>
+          <tr>
+            <td>var()</td>
+            <td>
+              <pre>:root {
+   --primary-color: #655;
+   --secondary-color: #855;
+}
+a {
+   color: var(--secondary-color);
+}</pre>
+
+            </td>
+          </tr>
+          <tr>
+            <td>@media()</td>
+            <td>
+              <pre>@media (min-width: 600px) {
+   .mobile-only {
+      display: none;
+   }
+}</pre>
+            </td>
+          </tr>
+
+        </table>
+
+      </section>
+      <section>
+        <h3>layout</h3>
+        <table>
+          <caption>appearance</caption>
+          <tr>
+            <td>display</td>
+            <td>none | block | flex | inline | inline-block </td>
+          </tr>
+          <tr>
+            <td>opacity</td>
+            <td>e.g. 0.7 (70% opaque)</td>
+          </tr>
+          <tr>
+            <td>visibility</td>
+            <td>hidden | visible</td>
+          </tr>
+          <tr>
+            <td>overflow, overflow-x, overflow-y</td>
+            <td>hidden | visible | scroll | auto</td>
+          </tr>
+        </table>
+        <table>
+          <caption>positioning <span>(position element based on coordinates)</span></caption>
+          <tr>
+            <td>position</td>
+            <td>absolute | relative | fixed </td>
+          </tr>
+          <tr>
+            <td>top<br>right<br>bottom<br>left<br></td>
+            <td>
+              px, rem, em or %
+            </td>
+          </tr>
+          <tr>
+            <td>z-index</td>
+            <td>
+              any number (higher is on top)
+            </td>
+          </tr>
+        </table>
+        <table>
+          <caption>float / clear <span>(float / prevent content around element)</span></caption>
+          <tr>
+            <td>float</td>
+            <td>
+              none | left | right
+            </td>
+          </tr>
+          <tr>
+            <td>clear</td>
+            <td>
+              none | left | right | both
+            </td>
+          </tr>
+        </table>
+        <table>
+          <caption>flexbox</caption>
+          <tr>
+            <td>align-items</td>
+            <td>
+              flex-start | flex-end | center<br>
+              <span>(positioning items across flex direction)</span>
+            </td>
+          </tr>
+          <tr>
+            <td>gap, column-gap, row-gap</td>
+            <td>
+              px, rem, em or %
+            </td>
+          </tr>
+          <tr>
+            <td>display: flex</td>
+            <td>
+              create flex container
+            </td>
+          </tr>
+          <tr>
+            <td>flex-direction</td>
+            <td>
+              row | row-reverse | column | column-reverse
+            </td>
+          </tr>
+          <tr>
+            <td>flex-wrap</td>
+            <td>
+              wrap | nowrap
+            </td>
+          </tr>
+          <tr>
+            <td>flex-flow: row nowrap</td>
+            <td>
+              flex-direction: row;<br>
+              flex-wrap: nowrap;
+            </td>
+          </tr>
+          <tr>
+            <td>justify-content</td>
+            <td>
+              flex-start | flex-end | center | space-between<br>
+              <span>(positioning items along flex direction)</span>
+            </td>
+          </tr>
+        </table>
+        <table>
+          <caption>grid</caption>
+          <tr>
+            <td>display: grid</td>
+            <td>
+              create grid container
+            </td>
+          </tr>
+          <tr>
+            <td>grid-template-columns</td>
+            <td>
+              e.g. 150px minmax(150px,650px) auto
+            </td>
+          </tr>
+          <tr>
+            <td>grid-template-rows</td>
+            <td>
+              e.g. 50px auto
+            </td>
+          </tr>
+          <tr>
+            <td>grid-template-areas</td>
+            <td>
+              e.g. grid-template-areas:
+              "topleft . topright"<br>
+              "contentleft bottom contentright";<br>
+            </td>
+          </tr>
+          <tr>
+            <td>grid-area</td>
+            <td>
+              e.g. grid-area: contentleft;
+            </td>
+          </tr>
+        </table>
+
+      </section>
+    </div>
+  </main>
+  <footer>
+    <img src="common/img/thats-all.jpg" alt="">
+    <p>@2014, Rogier van der Linde</p>
+  </footer>
+  <a aria-label="up" id="up" href="#top"><span class="fas fa-chevron-circle-up"></span></a>
+  <!-- popup -->
+  <div class="hystmodal dialog" id="diaDemo" aria-hidden="true">
+    <div class="hystmodal__wrap">
+      <div class="hystmodal__window" role="dialog" aria-modal="true">
+        <iframe title="demo"></iframe>
       </div>
+    </div>
+  </div>
+  <!-- scripts -->
+  <script src="common/vendor/prism/prism.js"></script>
+  <script src="common/vendor/hystmodal/hystmodal.min.js"></script>
+  <script src="common/js/mode.js"></script>
+  <script src="common/js/scripts.js"></script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-8XDY8HXTN9"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
 
-
-       
-   </main>
-   <footer>
-      <img src="common/img/thats-all.jpg" alt="">
-      <p>@2014, Rogier van der Linde</p>
-   </footer>
-   <a aria-label="up" id="up" href="#top"><span class="fas fa-chevron-circle-up"></span></a>
-   <!-- popup -->
-   <div class="hystmodal dialog" id="diaDemo" aria-hidden="true">
-      <div class="hystmodal__wrap">
-         <div class="hystmodal__window" role="dialog" aria-modal="true">
-            <iframe title="demo"></iframe>
-         </div>
-      </div>
-   </div>
-   <!-- scripts -->
-   <script src="common/vendor/prism/prism.js"></script>
-   <script src="common/vendor/hystmodal/hystmodal.min.js"></script>
-   <script src="common/js/mode.js"></script>
-   <script src="common/js/scripts.js"></script>
-   <!-- Google tag (gtag.js) -->
-   <script async src="https://www.googletagmanager.com/gtag/js?id=G-8XDY8HXTN9"></script>
-   <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'G-8XDY8HXTN9');
-   </script>
+    gtag('config', 'G-8XDY8HXTN9');
+  </script>
 </body>
 
 </html>

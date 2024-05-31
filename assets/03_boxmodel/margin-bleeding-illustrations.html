@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            padding: 20px;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        .review {
+            background-color: #eee;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 14px;
+            max-width: 280px;
+        }
+
+        .reviewwrap {
+            background-color: rgb(187, 214, 175);
+            padding: 0 20px;
+            max-width: 280px;
+        }
+
+        .colored h1 {
+            font-size: 21.44px;
+        }
+
+        .colored .review .h2wrap {
+            background-color: rgb(243, 198, 151, 0.7);
+            font-size: 19.92px;
+            padding: 1em 0;
+        }
+
+        .colored .review h2 {
+            background-color: rgb(139, 180, 215, 0.7);
+            font-size: 19.92px;
+            margin: 0;
+            padding: 0;
+        }
+
+        .colored .review p {
+            background-color: rgb(139, 180, 215, 0.7);
+            margin: 0;
+            padding: 0;
+        }
+
+        .colored .review .pwrap {
+            background-color: rgb(243, 198, 151, 0.7);
+            padding-bottom: 1em;
+        }
+
+        h1 {
+            margin-top: 50px;
+        }
+
+        #withbleeding h1 {
+            margin-bottom: calc(19.92px + 1em);
+        }
+
+        #withbleeding .review {
+            height: 121px;
+        }
+
+        #withbleeding .h2wrap {
+            padding-bottom: 19.92px;
+        }
+
+        #withbleeding .h2wrap {
+            position: relative;
+            top: -19.92px;
+        }
+
+        #withbleeding .pwrap {
+            position: relative;
+            top: -19.92px;
+        }
+
+        #withborder .reviewwrap {
+            border: 2px solid
+        }
+
+        #withpadding .reviewwrap {
+            padding: 5px 20px 5px 20px;
+        }
+
+        #normal .review {
+            padding: 0 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="normal">
+        <h1>Normal</h1>
+        <div class="review">
+            <h2>Great hotel!</h2>
+            <p>
+                In friendship diminution instrument so.
+                Son sure paid door with say them. Lorem
+                ipsum dolor sit amet, consectetur
+                adipiscing elit!
+            </p>
+        </div>
+    </div>
+    <div id="withbleeding" class="colored">
+        <h1>With Bleeding</h1>
+        <div class="reviewwrap">
+            <div class="review">
+                <div class="h2wrap">
+                    <h2>Great hotel!</h2>
+                </div>
+                <div class="pwrap">
+                    <p>
+                        In friendship diminution instrument so.
+                        Son sure paid door with say them. Lorem
+                        ipsum dolor sit amet, consectetur
+                        adipiscing elit!
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div id="withborder" class="colored">
+        <h1>Border</h1>
+        <div class="reviewwrap">
+            <div class="review">
+                <div class="h2wrap">
+                    <h2>Great hotel!</h2>
+                </div>
+                <div class="pwrap">
+                    <p>
+                        In friendship diminution instrument so.
+                        Son sure paid door with say them. Lorem
+                        ipsum dolor sit amet, consectetur
+                        adipiscing elit!
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div id="withpadding" class="colored">
+        <h1>Padding</h1>
+        <div class="reviewwrap">
+            <div class="review">
+                <div class="h2wrap">
+                    <h2>Great hotel!</h2>
+                </div>
+                <div class="pwrap">
+                    <p>
+                        In friendship diminution instrument so.
+                        Son sure paid door with say them. Lorem
+                        ipsum dolor sit amet, consectetur
+                        adipiscing elit!
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div id="withoverflow" class="colored">
+        <h1>Overflow: hidden</h1>
+        <div class="reviewwrap">
+            <div class="review">
+                <div class="h2wrap">
+                    <h2>Great hotel!</h2>
+                </div>
+                <div class="pwrap">
+                    <p>
+                        In friendship diminution instrument so.
+                        Son sure paid door with say them. Lorem
+                        ipsum dolor sit amet, consectetur
+                        adipiscing elit!
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>

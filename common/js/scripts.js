@@ -7,7 +7,7 @@ const DOM = {
 	diaDemoWindow: document.querySelector('#diaDemo .hystmodal__window'),
 	nav: document.querySelector('nav'),
 	tips: [...document.querySelectorAll('.tips')],
-	titles: [...document.querySelectorAll('h2,h3,h4,h5')],
+	titles: [...document.querySelectorAll('main > h2, main > h3, main > h4, main > h5, main > .pre > h2, main > .pre > h3, main > .pre > h4, main > .pre > h5')],
 	toc: document.querySelector('#toc')
 };
 const myHistModal = typeof HystModal === 'undefined' ? undefined : new HystModal({});
