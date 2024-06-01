@@ -206,7 +206,7 @@ table {
 }
 
 .notice {
-	color: #009900 !important;
+	color: #008800 !important;
 }
 
 .x-scroll {
@@ -911,6 +911,7 @@ figure.console pre {
 	border: 1px solid #ccc;
 	border-radius: 5px;
 	margin-bottom: 1em;
+	position: relative;
 }
 
 .target > p {
