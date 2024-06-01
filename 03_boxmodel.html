@@ -66,7 +66,7 @@
       <p><img src="img/03_boxmodel/boxmodel.png" alt="box model"></p>
       <p>Gebruik je browser inspector om de waarden te inspecteren (oranje = margin, groen = padding, blauw = content):</p>
       <p><img src="img/03_boxmodel/box-model-inspector.png" alt="box model" class="bordered shadow w-600"></p>
-      <h3>Voorbeeld</h3>
+      <p>Een voorbeeld:</p>
       <div class="codecompare">
          <div class="democontainer">
             <pre class="prism-default language-html" data-demo><code>&lt;div&gt;
@@ -112,18 +112,106 @@ p:last-child {
       </div>
       <h3>Box-sizing</h3>
       <p>
-         Standaard wordt de <strong>width en height van een element berekend zonder padding en border</strong>. 
-         Dit is compleet onlogisch: het gezond verstand zegt dat afmetingen van border tot border zijn. Gelukkig kan je dit standaardgedrag wijzigen door de <code>box-sizing</code> property te veranderen van <code>content-box</code> (de standaardwaarde) naar <code>border-box</code>. Je doet dit best altijd voor alle elementen:
+         CSS heeft een vreemde interpretatie van de <strong>width en height</strong> properties: ze stellen de afmetingen in, maar <strong>exclusief borders of paddings</strong>.  enkel betrekking op de content, zonder borders and paddings. Die worden er achteraf nog bijgeteld. 
+         Neem volgend voorbeeld met twee boxen, allebei ingesteld op dezelfde breedte van 300px, de eerste zonder padding en border, de tweede met:
       </p>
-         <pre class="prism-atom-dark"><code>* {
-   box-sizing: border-box; /* doe dit altijd! */
-}</code></pre>
-      <div class="codecompare">
+      <div class="codecompare top">
+         <div class="democontainer">
+            <pre class="prism-default language-html w-600 h-300" data-demo><code>&lt;div class="box" id="box1"&gt;
+   &lt;h2&gt;box 1&lt;/h2&gt;
+   &lt;ul&gt;
+      &lt;li&gt;height: 300px&lt;/li&gt;
+      &lt;li&gt;width: 300px&lt;/li&gt;
+      &lt;li&gt;geen border&lt;/li&gt;
+      &lt;li&gt;geen padding&lt;/li&gt;
+   &lt;/ul&gt;
+   &lt;p&gt;Totaal: 300px + 0 + 0 = &lt;mark&gt;300px&lt;/mark&gt; &lt;/p&gt;
+   &lt;p&gt;Een mislukking men bijzondere primitieve. Doodende tusschen er voorziet vroegere allerlei bezetten te. Reeds sinds jaren onder wilde te na. &lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="box" id="box2"&gt;
+   &lt;h2&gt;box 1&lt;/h2&gt;
+   &lt;ul&gt;
+      &lt;li&gt;height: 300px&lt;/li&gt;
+      &lt;li&gt;width: 300px&lt;/li&gt;
+      &lt;li&gt;border: 10px links/rechts&lt;/li&gt;
+      &lt;li&gt;padding: 50px links/rechts&lt;/li&gt;
+   &lt;/ul&gt;
+   &lt;p&gt;Totaal: 300px + 2 * 50px + 2 * 10px = &lt;mark&gt;420px&lt;/mark&gt; &lt;/p&gt;
+   &lt;p&gt;Een mislukking men bijzondere primitieve. Doodende tusschen er voorziet vroegere allerlei bezetten te. Reeds sinds jaren onder wilde te na. &lt;/p&gt;
+&lt;/div&gt;
+</code></pre>
+
+<pre class="prism-atom-dark"><code>.box {
+   background-color: #eee;
+   height: 300px;
+   width: 300px;
+}
+#box2 {
+   border-left: 10px solid #666;
+   border-right: 10px solid #666;
+   padding: 0 50px;
+}
+</code></pre>
+         </div>
          <figure>
-            <img src="img/03_boxmodel/boxmodel2.png" alt="" class="w-300">
-            <figcaption></figcaption>
+            <img src="img/03_boxmodel/boxsizing1.png" alt="" class="w-400">
          </figure>
       </div>
+      <p>Dit is totaal onlogisch! Gelukkig kan dit eenvoudig opgelost worden met de <code>box-sizing</code> property:</p>
+      
+      <pre class="prism-atom-dark"><code>* {
+   box-sizing: border-box; /* standaardwaarde is content-box */
+}</code></pre>
+      <p>Het voorbeeldfragment wordt dan:</p>
+      <div class="codecompare top">
+         <div class="democontainer">
+            <pre class="prism-default language-html w-600 h-300" data-demo><code>&lt;div class="box" id="box1"&gt;
+   &lt;h2&gt;box 1&lt;/h2&gt;
+   &lt;ul&gt;
+      &lt;li&gt;height: 300px&lt;/li&gt;
+      &lt;li&gt;width: 300px&lt;/li&gt;
+      &lt;li&gt;geen border&lt;/li&gt;
+      &lt;li&gt;geen padding&lt;/li&gt;
+   &lt;/ul&gt;
+   &lt;p&gt;Totaal: 300px + 0 + 0 = &lt;mark&gt;300px&lt;/mark&gt; &lt;/p&gt;
+   &lt;p&gt;Een mislukking men bijzondere primitieve. Doodende tusschen er voorziet vroegere allerlei bezetten te. Reeds sinds jaren onder wilde te na. &lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="box" id="box2"&gt;
+   &lt;h2&gt;box 1&lt;/h2&gt;
+   &lt;ul&gt;
+      &lt;li&gt;height: 300px&lt;/li&gt;
+      &lt;li&gt;width: 300px&lt;/li&gt;
+      &lt;li&gt;border: 10px links/rechts&lt;/li&gt;
+      &lt;li&gt;padding: 50px links/rechts&lt;/li&gt;
+   &lt;/ul&gt;
+   &lt;p&gt;Totaal: 300px + 2 * 50px + 2 * 10px = &lt;mark&gt;420px&lt;/mark&gt; &lt;/p&gt;
+   &lt;p&gt;Een mislukking men bijzondere primitieve. Doodende tusschen er voorziet vroegere allerlei bezetten te. Reeds sinds jaren onder wilde te na. &lt;/p&gt;
+&lt;/div&gt;
+</code></pre>
+
+<pre class="prism-atom-dark"><code>* {
+   box-sizing: border-box; /* breedte is van border tot border */
+}
+.box {
+   background-color: #eee;
+   height: 300px;
+   width: 300px;
+}
+#box2 {
+   border-left: 10px solid #666;
+   border-right: 10px solid #666;
+   padding: 0 50px;
+}
+</code></pre>
+         </div>
+         <figure>
+            <img src="img/03_boxmodel/boxsizing2.png" alt="" class="w-300">
+         </figure>
+      </div>
+      <div class="tips" data-caption="💡TIP">
+         <p>Zet altijd <code>* { box-sizing: border-box; }</code> aan het begin van je CSS! Zo is een <code>width</code> gewoon een breedte, mét borders en paddings.</p>
+      </div>
+
 
       <h3>Margin of padding?</h3>
       <p>Er zijn nog andere combinaties van margins en paddings mogelijk. Zolang je geen achtergrondkleuren gebruikt, zul je geen verschil zien. Je kan de paddings links en rechts in het buitenste element bijvoorbeeld vervangen door margins van de paragrafen:</p>  
@@ -364,7 +452,7 @@ button {
             </div>
          </div>
       </div>
-      <p>Je kan natuurlijk ook paddings gebruiken in plaats van <code>width</code> en <code>height</code>, maar ook dan kan je beter de <code>display</code> veranderen naar <code>inline-block</code>, of anders krijg je overlappingen zoals <a href="#paddings">hierboven beschreven</a>.</p>
+      <p>Je kan natuurlijk ook paddings gebruiken in plaats van <code>width</code> en <code>height</code> om de button wat groter te maken, maar ook dan kan je beter de <code>display</code> veranderen naar <code>inline-block</code>, of anders krijg je overlappingen zoals <a href="#paddings">hierboven beschreven</a>.</p>
       <div class="codecompare top">
          <div class="democontainer">
             <pre class="prism-default language-html" data-demo><code>&lt;div&gt;
@@ -395,7 +483,8 @@ button {
 
       <h2>De draad kwijt..?</h2>
       <div class="tips" data-caption="💡TIP">
-         <p>Zoals je ziet, gedragen margins en paddings gedragen zich heel verschillend naargelang het type element. De beste tip die we je kunnen geven: <strong>gebruik je inspector tool</strong> om de margins, paddings en afmetingen te inspecteren!</p>
+         <p>Zoals je ziet, gedragen margins en paddings gedragen zich heel verschillend naargelang het type element. De beste tip die we je kunnen geven: <strong>gebruik je inspector tool</strong> om de margins, paddings en afmetingen te inspecteren en problemen op te lossen!</p>
+         <p><img src="img/03_boxmodel/box-model-inspector.png" alt="box model" class="bordered shadow w-400"></p>
       </div>
 
 

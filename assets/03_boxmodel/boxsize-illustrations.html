@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            padding: 20px;
+        }
+
+        .box {
+            background-color: #eee;
+            height: 300px;
+            width: 300px;
+        }
+
+        #box2 {
+            background-color: rgb(187, 214, 175);
+            border-left: 10px solid #666;
+            border-right: 10px solid #666;
+            width: 400px;
+        }
+
+        #box2 > div {
+            background-color: #eee;
+            height: 300px;
+            margin: 0 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box" id="box1">
+        <h2>box 1</h2>
+        <ul>
+            <li>height: 300px</li>
+            <li>width: 300px</li>
+            <li>geen border</li>
+            <li>geen padding</li>
+        </ul>
+        <p>Totaal: 300px + 0 + 0 = <mark>300px</mark> </p>
+        <p>Een mislukking men bijzondere primitieve. Doodende tusschen er voorziet vroegere allerlei bezetten te. Reeds sinds jaren onder wilde te na. Inlandsche ze gomsoorten de op besproeien losgemaakt. </p>
+    </div>
+    <div class="box" id="box2">
+        <div>
+            <h2>box 2</h2>
+            <ul>
+                <li>height: 300px</li>
+                <li>width: 300px</li>
+                <li>border: 10px links/rechts</li>
+                <li>padding: 50px links/rechts</li>
+            </ul>
+            <p>Totaal: 300px + 20px + 100px = <mark>420px</mark> </p>
+            <p>Een mislukking men bijzondere primitieve. Doodende tusschen er voorziet vroegere allerlei bezetten te. Reeds sinds jaren onder wilde te na. Inlandsche ze gomsoorten de op besproeien losgemaakt. </p>
+        </div>
+    </div>
+</body>
+
+</html>
