@@ -10,7 +10,7 @@
    <link rel="stylesheet" href="css/styles.css">
 </head>
 
-<body class="language-html showpro">
+<body class="language-css showpro">
    <div id="mode">
       <span>n00b</span>
       <label class="switch">
@@ -34,7 +34,7 @@
       </a>
       <a href="04_layout.html" class="main__thumb" title="04. layout">
          <p class="thumb__title">04. layout</p>
-         <img class="thumb__visual" src="img/04_layout/icon.jpg" alt="">
+         <img class="thumb__visual" src="img/04_layout/icon.png" alt="">
       </a>
       <a href="05_responsive.html" class="main__thumb active" title="05. responsive">
          <p class="thumb__title">05. responsive</p>
@@ -80,9 +80,708 @@
             </ul>
          </div>
       </div>
+      <h2>Definitie</h2>
+      <blockquote class="greenbig">Responsive design is gericht op het bieden van een optimale gebruikservaring over een breed gamma aan schermresoluties en toestellen met <strong>één enkele code</strong>.</blockquote>
+      <p>De site moet zich dus optimaal aanpassen ('respond') aan <strong>elke schermbreedte</strong>. Je kan in de browser inspector verschillende toestellen testen met de <em>device toggle</em>:</p>
+      <div class="flexcontainer">
+         <figure>
+            <img src="img/05_responsive/ss-desktop.png" alt="" class="bordered shadow w-600">
+            <figcaption>desktop</figcaption>
+         </figure>
+         <figure>
+            <img src="img/05_responsive/ss-tablet.png" alt="" class="bordered shadow w-600">
+            <figcaption>tablet</figcaption>
+         </figure>
+         <figure>
+            <img src="img/05_responsive/ss-phone.png" alt="" class="bordered shadow w-600">
+            <figcaption>mobiel</figcaption>
+         </figure>
+      </div>
+      <p>&rarr; het is dus één site, één code die er op alle toestellen geven goed moet uitzien</p>
+      <h2>Content choreografie</h2>
+      <p>Bij smaller wordende schermen zullen elementen (teksten, afbeeldingen, kaders, kolommen...) moeten herschalen / verspringen / verdwijnen. Dit noemt men de <span class="em">content choreografie</span>:</p>
+      <ul>
+         <li>elementen uitrekken / platduwen &rarr; <span class="em">flexibiliteit</span></li>
+         <li>elementen herschikken &rarr; <span class="em">fluïditeit</span></li>
+         <li>elementen toevoegen / verwijderen</li>
+         <li>...</li>
+      </ul>
+      <p>
+         Er zijn <strong>geen echte regels</strong> over wat precies wanneer moet gebeuren; dit is geheel aan jou. Probeer bredere / smallere schermen, en kijk wat goed voelt.
+      </p>
+      <h2>Responsive in 3 stappen</h2>
+      <ul class="right">
+         <li>
+            stap 1: controleer of de <strong>viewport meta</strong> aanwezig is in de <code>&lt;head&gt;</code>
+         </li>
+         <li>
+            stap 2: maak de <strong>layout flexibel</strong> (wrapper, kolommen, foto's, boxen...)
+            <ul class="lower-latin">
+               <li>gebruik zoveel mogelijk <strong>flexbox</strong> voor layout</li>
+               <li>maak de eventuele <strong>wrapper</strong> flexibel: vervang <strong><code>width</code></strong> door <strong><code>min-width</code></strong> en <strong><code>max-width</code></strong></li>
+               <li>maak eventuele <strong>kolommen</strong> flexibel: zet <strong>breedtes in percentages</strong> in plaats van vaste waarden</li>
+               <li>maak de hoogte van <strong>container elementen</strong> flexibel: <strong>verwijder <strong>height</strong></strong></li>
+               <li>maak <strong>kaders en foto's</strong> flexibel: stel <strong><code>width</code> op 100%</strong> en stel eventueel <strong><code>max-width</code></strong> in</li>
+            </ul>
+         </li>
+         <li>
+            stap 3: voeg <strong>media queries</strong> toe
+            <ul class="lower-latin">
+               <li>versmal/verbreed het browservenster en <strong>kies een breekpunt</strong></li>
+               <li><strong>voeg een media query toe</strong> voor dit breekpunt (gebruik altijd <code>min-width</code>)</li>
+               <li><strong>voeg responsive CSS toe</strong> aan de media query en verander/verwijder eventueel andere CSS</li>
+               <li><strong>controleer het resultaat</strong> en keer terug naar punt a tot je tevreden bent</li>
+            </ul>
+         </li>
+      </ul>
+      <h3>Stap 1: viewport metatag</h3>
+      <p>Laat je mobiel toestel weten dat de site responsive is, zoniet zal het proberen de desktopversie van de site te herschalen en persen in het kleine scherm. Het is niet meer dan één <span class="em">viewport metatag</span> toevoegen aan je HTML:</p>
+      <pre class="prism-default language-html right notoolbar"><code>&lt;head&gt;
+   ...
+   &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+   ...
+&lt;/head&gt;</code></pre>
+      <p>Irritant genoeg kom je soms ook deze versie tegen, maar die laat de gebruiker niet inzoomen:</p>
+      <pre class="prism-default language-html wrong notoolbar"><code>&lt;meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0"&gt;</code></pre>
+      <h3>Stap 2: flexibele layout</h3>
+      <h4>2A: gebruik flexbox</h4>
+      <p>Gebruik voor layout zoveel mogelijk flexbox, zeker geen positionering, bv.:</p>
+      <div class="codecompare">
+         <pre class="prism-atom-dark wrong"><code>header #logo {
+   position: absolute;
+   top: 20px;
+   left: 10px;
+}
+
+header #login {
+   position: absolute;
+   top: 20px;
+   right: 10px;
+}</code></pre>
+<pre class="prism-atom-dark right"><code>header {
+   align-items: flex-start;
+   display: flex;
+   justify-content: space-between;
+   padding: 20px 10px;
+}
 
 
-       
+
+
+
+</code></pre>
+      </div>
+      <span>&rarr; zou normaal gezien al ok moeten zijn</span>
+      <h4>2B: flexibele wrapper</h4>
+      <p>Stel flexibele <code>min-width</code> en <code>max-width</code> in op wrappers in plaats van vaste <code>width</code>:</p>
+      <div class="codecompare">
+         <pre class="prism-atom-dark wrong"><code>.wrapper {
+   width: 960px;
+}
+
+</code></pre>
+         <pre class="prism-atom-dark right"><code>.wrapper {
+   max-width: 960px;
+   min-width: 320px;
+}</code></pre>
+      </div>
+      <h4>2C: flexibele kolommen</h4>
+      <p>Gebruik geen vaste <code>width: ...px</code> kolombreedtes, maar <code>flex</code>:</p>
+      <div class="codecompare">
+         <pre class="prism-atom-dark wrong"><code>.leftcol {
+   width: 640px;
+}
+.rightcol {
+   width: 280px;
+}</code></pre>
+         <pre class="prism-atom-dark right"><code>.leftcol {
+   flex: 1 1 640px; 
+}
+.rightcol {
+   flex: 0 0 280px;
+}</code></pre>
+      </div>
+      <h4>2D: flexibele hoogtes</h4>
+      <p>Elementen moeten zich verticaal in hoogte kunnen aanpassen naargelang de herschikking van de content. Verwijder daarom <code>height</code> van verticaal flexibele elementen, bv. de header:</p>
+      <div class="codecompare">
+         <pre class="prism-atom-dark"><code>header {
+   <del>height: 250px;</del> /* geen vaste hoogte */
+}</code></pre>
+      </div>
+      <h4>2E: flexible blokken</h4>
+      <p>Stel voor afbeeldingen en andere flexibele blokken met een maximum breedte de <code>width</code> en <code>max-width</code> properties in:</p>
+      <pre class="prism-atom-dark right"><code>main img {
+   max-width: 100%; /* mag nooit breder dan de parent zijn */
+   width: 450px; /* natuurlijke breedte */
+}</code></pre>
+      <h3>Stap 3: media queries</h3>
+      <h4>3A: bepaal breekpunt</h4>
+      <p>Een <span class="em">breekpunt</span> is de browserbreedte vanaf waar veranderingen aan de CSS nodig zijn. Een breekpunt bepalen is makkelijk:</p>
+      <ul>
+         <li>open je pagina in de browser</li>
+         <li>maak je browservenster smaller (het zou al flexibel moeten zijn)</li>
+         <li>de breedte waar het design er niet meer goed uitziet, is je breekpunt</li>
+      </ul>
+      <figure>
+         <img src="img/05_responsive/resize.gif" alt="" class="w-400">
+         <figcaption>Er zijn geen 'aanbevolen' breekpunten; kies wat past bij je design.</figcaption>
+      </figure>
+      <h4>2B: voeg media query toe</h4>
+      <p>Stel dat je een overgang wil op 800px, dan komt er onderaan je CSS dit blok bij:</p>
+      <pre class="prism-atom-dark"><code>/* CSS voor smalste schermen *
+...
+
+/* ===============
+Media queries
+=============== */
+
+@media (min-width: 800px) { /* deze CSS wordt uitgevoerd vanaf 800px */
+
+}
+</code></pre>
+
+      <h4>2C: responsive CSS</h4>
+      <p>Voeg nu CSS toe aan de media query en pas eventueel andere CSS aan. Wil je bijvoorbeeld een groter lettertype en wat meer ondermarge voor <code>&lt;h2&gt;</code> vanaf 800px?</p>
+      <pre class="prism-atom-dark"><code>/* standaardinstelling */
+h2 {
+   font-size: 16px;
+   margin: 10px 0;
+}
+
+/* vanaf 800px */
+@media (min-width: 800px) { 
+   h2 {
+      font-size: 20px; /* iets groter lettertype */
+      margin-bottom: 15px; /* wat meer ondermarge */
+   }
+}</code></pre>
+      <p>
+         &rarr; meer dan dat is het niet! het is even wennen, maar daarna gaat het vanzelf
+      </p>
+      <h4>2D: meer breekpunten</h4>
+      <p>Controleer je resultaat, en voeg eventueel meer breekpunten toe, van klein naar groot:</p>
+      <pre class="prism-atom-dark"><code>/* CSS voor smalste schermen */
+...
+
+/* ===============
+  Media queries
+  =============== */
+
+/* vanaf 600px */
+@media (min-width: 600px) { 
+   ...
+}
+
+/* vanaf 800px */
+@media (min-width: 800px) { 
+   ...
+}
+
+/* vanaf 1000px */
+@media (min-width: 1000px) { 
+   ...
+}</code></pre>
+
+      <div class="tips" data-caption="☝🏼REGELS">
+         <ul class="right">
+            <li>zet je media queries <strong>op het einde</strong> van je CSS</li>
+            <li>sorteer je breekpunten <strong>van klein naar groot</strong></li>
+            <li>gebruik enkel <strong><code>min-width</code></strong>, geen <code>max-width</code> of een combinatie, of het wordt een soep!</li>
+         </ul>
+      </div>
+
+      <h2>Stap voor stap demo</h2>
+      <h3>Gewenst resultaat</h3>
+      <p>We willen deze pagina responsive maken:</p>
+      <div class="flexcontainer">
+         <figure>
+            <img src="img/05_responsive/demo-desktop.png" alt="" class="shadow bordered w-400">
+            <figcaption>desktop</figcaption>
+         </figure>
+         <figure>
+            <img src="img/05_responsive/demo-tablet.png" alt="" class="shadow bordered w-200">
+            <figcaption>tablet</figcaption>
+         </figure>
+         <figure>
+            <img src="img/05_responsive/demo-mobile.png" alt="" class="shadow bordered w-150">
+            <figcaption>gsm</figcaption>
+         </figure>
+      </div>
+      <h3>Stap 1: viewport meta</h3>
+      <p>De HTML code, mét viewport metatag in de <code>&lt;head&gt;</code>, en de niet-flexibele, niet-responsive CSS code:</p>
+      <div class="codecompare">
+         <div>
+            <pre class="prism-default language-html h-400 w-700" data-demo="demos/05_responsive/static/index.html" data-demo-target="_blank"><code>&lt;!DOCTYPE html&gt;
+  &lt;html lang="en"&gt;
+  &lt;head&gt;
+    &lt;title&gt;Classical Page Layout&lt;/title&gt;
+    &lt;meta charset="utf-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;link rel="stylesheet" href="css/styles.css"&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;div id="wrapper"&gt;
+      &lt;header&gt;
+        &lt;h1&gt;&lt;a href="#"&gt;My Blog&lt;/a&gt;&lt;/h1&gt;
+        &lt;p class="header_login"&gt;You are not logged in &ndash; &lt;a href="#"&gt;login&lt;/a&gt;&lt;/p&gt;
+      &lt;/header&gt;
+      &lt;nav id="mainmenu"&gt;
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href="#"&gt;home&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href="#"&gt;link1&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href="#"&gt;link2&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/nav&gt;
+      &lt;main&gt;
+        &lt;nav id="leftmenu"&gt;
+          &lt;h3&gt;Submenu&lt;/h3&gt;
+          &lt;ul&gt;
+            &lt;li&gt;&lt;a href="#"&gt;item1&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#"&gt;item2&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#"&gt;item3&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#"&gt;item4&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#"&gt;item5&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#"&gt;item6&lt;/a&gt;&lt;/li&gt;
+          &lt;/ul&gt;
+        &lt;/nav&gt;
+        &lt;section id="content"&gt;
+          &lt;h3&gt;Lorem Ipsum&lt;/h3&gt;
+          &lt;aside&gt;
+            &lt;section&gt;
+              &lt;p&gt;
+                For further reading, see also this
+                &lt;a href="#"&gt;more detailed article&lt;/a&gt;
+              &lt;/p&gt;
+            &lt;/section&gt;
+            &lt;article class="ad"&gt;
+              &lt;h1&gt;Advertisement&lt;/h1&gt;
+              &lt;p&gt;Buy our &lt;a href="#"&gt;brand new T-shirt&lt;/a&gt; today!&lt;/p&gt;
+              &lt;img src="img/shirt.png" alt="shirt" class="article_visual"&gt;
+              &lt;p&gt;&copy; &lt;a href="#"&gt;someCompany&lt;/a&gt;&lt;/p&gt;
+            &lt;/article&gt;
+          &lt;/aside&gt;
+          &lt;p class="content_header"&gt;Posted on 2018-11-03 by Bobby Peru&lt;/p&gt;
+          &lt;h4&gt;Part 1&lt;/h4&gt;
+          &lt;p&gt;
+            But I must explain to you how all this mistaken idea of denouncing pleasure
+            and praising pain was born and I will give you a complete account of the
+            system, and expound the actual teachings of the great explorer of the truth,
+            the master-builder of human happiness. No one rejects, dislikes, or avoids
+            pleasure itself, because it is pleasure, but because those who do not know.
+          &lt;/p&gt;
+          &lt;h4&gt;Part 2&lt;/h4&gt;
+          &lt;p&gt;
+            Nor again is there anyone who loves or pursues or desires to obtain pain of
+            itself, because it is pain, but because occasionally circumstances occur in
+            which toil and pain can procure him some great pleasure. To take a trivial
+            example, which of us ever undertakes laborious physical exercise, except to
+            obtain some advantage from it? But who has any right to find fault with a
+            man who chooses to enjoy a pleasure that has no annoying consequences, or
+            one who avoids a pain that produces no resultant pleasure?
+          &lt;/p&gt;
+          &lt;p&gt;
+            &lt;img src="img/picture.jpg" alt="just some picture" class="content_picture"&gt;
+          &lt;/p&gt;
+          &lt;h4&gt;Part 3&lt;/h4&gt;
+          &lt;p&gt;
+            On the other hand, we denounce with righteous indignation and dislike men who
+            are so beguiled and demoralized by the charms of pleasure of the moment, so
+            blinded by desire, that they cannot foresee the pain and trouble that are
+            bound to ensue; and equal blame belongs to those who fail in their duty
+            through weakness of will, which is the same as saying through shrinking from
+            toil and pain.
+          &lt;/p&gt;
+          &lt;section id="comments"&gt;
+            &lt;h4&gt;Comments&lt;/h4&gt;
+            &lt;article class="comment"&gt;
+              &lt;h5 class="comment_title"&gt;
+                I love Lorem Ipsum &lt;span class="comment_author"&gt;
+                &mdash; Alice, 3 hours ago&lt;/span&gt;
+                &lt;/h5&gt;
+              &lt;p&gt;
+                &ldquo;I personally believe Lorem Ipsum is the most sensitive poem ever
+                written&rdquo;. As it so contrasted oh estimating instrument. Size like
+                body some one had. Are conduct viewing boy minutes warrant expense.
+              &lt;/p&gt;
+            &lt;/article&gt;
+            &lt;article class="comment"&gt;
+              &lt;h5 class="comment_title"
+                &gt;Lorem Ipsum Sucks &lt;span class="comment_author"&gt;
+                &mdash; Bob, 2 hours ago&lt;/span&gt;
+              &lt;/h5&gt;
+              &lt;p&gt;&ldquo;Tolerably behaviour may admitting daughters offending her ask own.
+              Praise effect wishes change way and any wanted. There, I said it!&rdquo;&lt;/p&gt;
+            &lt;/article&gt;
+          &lt;/section&gt;
+        &lt;/section&gt;
+      &lt;/main&gt;
+      &lt;footer&gt;
+        &lt;p&gt;&copy; Rogier van der Linde, 2010&lt;/p&gt;
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href="#"&gt;disclaimer&lt;/a&gt;
+          &lt;li&gt;&lt;a href="#"&gt;sitemap&lt;/a&gt;
+          &lt;li&gt;&lt;a href="#"&gt;contact&lt;/a&gt;
+        &lt;/ul&gt;
+      &lt;/footer&gt;
+    &lt;/div&gt;
+  &lt;/body&gt;
+  &lt;/html&gt;</code></pre>
+            <pre class="prism-atom-dark h-400 w-700"><code>/**
+   *
+   * Styles
+   * @author Rogier van der Linde
+   *
+   */
+  
+  
+  /* Reset
+  /* ============== */
+  
+  * {
+     box-sizing: border-box; /* corrigeer het box model */
+     margin: 0; /* wis verschillen tussen browsers uit */
+     padding: 0; /* wis verschillen tussen browsers uit */
+  }
+  
+  img {
+     border: 0;
+  }
+  
+  /* General
+  /* ============== */
+  
+  body {
+    background-color: #999;
+    font-family: Verdana;
+    font-size: 16px;
+  }
+  h2, h3, h4, h5 {
+    margin: 1em 0;
+  }
+  h3 {
+    font-size: 16px;
+    font-weight: normal;
+  }
+  h4 {
+    font-size: 14px;
+  }
+  h5 {
+    font-size: 12px;
+    font-weight: normal;
+  }
+  
+  /* site wrapper */
+  #wrapper {
+    width: 900px;
+    margin: 0 auto;
+    background-color: white;
+  }
+  
+  
+  /* Header
+  /* ============== */
+  
+  header {
+    align-items: flex-start;
+    background-color: #333;
+    color: #ccc;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    height: 100px;
+    padding: 20px;
+    position: relative;
+  }
+  header h1 a {
+    font-weight: normal;
+    text-decoration: none;
+  }
+  header a {
+    color: #ddd;
+  }
+  .header_login {
+    text-align: right;
+  }
+  .header_login a:hover {
+    color: white;
+  }
+  
+  
+  /* Menu
+  /* ============== */
+  
+  /* top menu */
+  nav {
+    background-color: #666;
+    padding: 10px 20px;
+  }
+  #mainmenu {
+    display: block;
+  }
+  #mainmenu li {
+    display: inline-block;
+  }
+  #mainmenu a {
+    color: #ccc;
+    display: inline-block;
+    height: 28px;
+    line-height: 24px;
+    padding: 2px 5px;
+    text-align: center;
+    width: 50px;
+  }
+  #mainmenu li + li:before {
+    color: #999;
+    content: '|';
+  }
+  
+  
+  /* Main
+  /* ============== */
+  
+  main {
+    display: flex;
+    flex-flow: row nowrap;
+  }
+  
+  /* sub menu */
+  #leftmenu {
+    background-color: #FEFF99;
+    padding: 10px 20px;
+    width: 190px;
+  }
+  #leftmenu ul {
+    list-style: none;
+  }
+  
+  /* content */
+  #content {
+    padding: 10px 20px;
+    width: 710px;
+  }
+  .content_header {
+    font-size: smaller;
+    font-style: italic;
+    margin-bottom: 15px;
+    margin-top: 25px;
+  }
+  .content_picture {
+    margin: 20px 0;
+    width: 450px;
+  }
+  
+  /* aside */
+  main aside {
+    border: 1px solid gray;
+    float: right;
+    font-size: smaller;
+    margin: 15px 0 10px 10px;
+    padding: 10px;
+    width: 160px;
+  }
+  main aside article {
+    font-size: 12px;
+    margin-top: 10px;
+    text-align: justify;
+  }
+  .article_visual {
+    display: block;
+    margin: 0 auto;
+    width: 80%;
+  }
+  main aside article p:last-child {
+    margin-top: 5px;
+  }
+  main aside article h1 {
+    margin: 10px 0;
+  }
+  
+  /* comments */
+  
+  #comments {
+    border-top: 1px dotted #ccc;
+    font-size: 12px;
+    margin-top: 40px;
+  }
+  .comment {
+    width: 500px;
+  }
+  .comment_title {
+    margin-bottom: 0.5em;
+    font-weight: 600;
+  }
+  .comment::after {
+    border-top: 1px solid #ccc;
+    content: "";
+    display: block;
+    margin: 10px 0;
+    width: 100px;
+  }
+  .comment_author {
+    font-style: italic;
+  }
+  
+  /* Footer
+  /* ============== */
+  
+  footer {
+    background-color: #666;
+    color: #eee;
+    font-size: smaller;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  footer a {
+    color: #ccc;
+  }
+  
+  footer p, footer ul  {
+    margin: 10px 0;
+  }
+  
+  footer ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  footer li {
+    display: inline-block;
+  }
+  
+  footer ul a {
+    display: inline;
+    line-height: 24px;
+    padding: 2px 5px;
+  }
+  footer li + li:before {
+    content: ' | ';
+    color: #999;
+  }</code></pre>
+         </div>
+         <figure>
+            <img src="img/05_responsive/fixed.png" alt="" class="w-300 bordered shadow">
+            <figcaption>niet flexibel of responsive: horizontale scrollbar verschijnt</figcaption>
+         </figure>
+      </div>
+      <h3>Stap 2: flexibel maken</h3>
+      <p>Aanpassingen:</p>
+      <ul>
+         <li><strong>wrapper</strong>: <code>max-width</code> en <code>min-width</code> gebruikt i.p.v.<code>width</code></li>
+         <li><strong>header</strong>: <code>height</code> verwijderd, vervangen door <code>padding-bottom</code> </li>
+         <li><strong>main kolommen</strong>: absolute breedtes vervangen door <code>flex</code></li>
+         <li><strong>content foto en comments</strong>: <code>width</code> veranderd naar 100%, <code>max-width</code> ingesteld</li>
+      </ul>
+      <div class="codecompare">
+         <div>
+            <pre class="prism-atom-dark h-400 w-700" data-demo="demos/05_responsive/flexible/index.html" data-demo-target="_blank"><code>...
+#wrapper {
+   <del>width: 900px;</del>
+   max-width: 900px;
+   min-width: 240px;
+   ...
+}
+
+header {
+   <del>height: 100px;</del>
+   padding-bottom: 40px;
+}
+  
+#leftmenu {
+   <del>width: 190px;</del>
+   flex: 0 0 190px; 
+}
+
+#content {
+   <del>width: 710px;</del>
+   flex: 1 1 710px;
+}
+
+.content_picture {
+   <del>width: 450px;</del>
+   max-width: 450px;
+   width: 100%;
+}
+
+.comment {
+   <del>width: 500px;</del>
+   width: 100%;
+}</code></pre>
+         </div>
+         <figure>
+            <img src="img/05_responsive/flexible.png" alt="" class="w-300 bordered shadow">
+            <figcaption>flexibel: geen horizontale scrollbar meer, maar nog niet responsive: content verschuift niet</figcaption>
+         </figure>
+      </div>
+      <h3>Stap 3: media queries</h3>
+      <p>Aanpassingen:</p>
+      <ul>
+         <li><strong>media queries</strong> toegevoegd voor 480px en 600px</li>
+         <li><strong>header</strong> property <code>display: flex</code> verhuisd naar eerste media query (actief vanaf 480px)</li>
+         <li><strong>aside</strong> properties <code>float</code>, <code>width</code> en linkermargin verhuisd naar eerste media query (actief vanaf 480px)</li>
+         <li><strong>main</strong> property <code>display: flex</code> verhuisd naar tweede media query (actief vanaf 600px)</li>
+      </ul>
+      <div class="codecompare">
+         <div>
+            <pre class="prism-atom-dark h-400 w-700" data-demo="demos/05_responsive/responsive/index.html" data-demo-target="_blank"><code>...
+header {
+   ...
+   <del>display: flex;</del>
+}
+
+main {
+   ...
+   <del>display: flex;</del>
+}
+
+main aside {
+   ...
+   <del>float: right;</del>
+   <del>margin: 15px 0 10px 10px;</del>
+   <del>width: 160px;</del>
+   margin: 15px 0 10px 0;
+}
+/* Media queries
+/* ============== */
+
+@media (min-width: 480px) {
+   main aside {
+      float: right;
+      margin-left: 10px;
+      width: 160px;
+   }
+   header {
+      display: flex;
+   }
+}
+@media (min-width: 600px) {
+   main {
+      display: flex;
+   }
+}
+</code></pre>
+         </div>
+         <figure>
+            <img src="img/05_responsive/responsive.png" alt="" class="w-300 bordered shadow">
+            <figcaption>responsive: geen horizontale scrollbar meer, en content herschikt naargelang schermbreedte</figcaption>
+         </figure>
+      </div>
+
+      <h2>Best practices (belangrijk!)</h2>
+      <div class="tips" data-caption="☝🏼RICHTLIJNEN">
+         <ul class="right">
+            <li>zet je media queries <strong>altijd op het einde</strong> van je CSS</li>
+            <li>gebruik <strong>alleen <code>min-width</code></strong>, geen <code>max-width</code> en zeker niet beiden</li>
+            <li>sorteer je breekpunten <strong>van smal naar breed</strong></li>
+            <li>voorzie <strong>2 tot 3 breekpunten</strong> voor een goede choreografie; één is te weinig, meer is overkill</li>
+         </ul>
+         <ul class="wrong">
+            <li>er mag <strong>geen horizontale scrollbar</strong> meer verschijnen, anders heb je een fout gemaakt</li>
+            <li><strong>vermijd dubbele code</strong>; CSS staat ofwel in een media query, ofwel daarbuiten &mdash; niet in beiden</li>
+            <li>zet in media queries <strong>niet meer dan strikt nodig</strong>; properties als <code>justify-content</code> kunnen vaak erbuiten blijven staan</li>
+         </ul>
+      </div>
+
    </main>
    <footer>
       <img src="common/img/thats-all.jpg" alt="">

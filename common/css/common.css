@@ -514,18 +514,26 @@ iframe.youtube {
 }
 
 ul ul {
-	list-style: none;
    margin: 0;
+}
+
+ul ul:not(.lower-latin) {
+	list-style: none;
 	padding-left: 0;
 }
 
-ul ul li::before {
+ul ul:not(.lower-latin) li::before {
 	content: '— ';
-	margin-left: 30px;;
+	margin-left: 30px;
 }
 
 ul ul li {
 	font-size: 0.9em;
+}
+
+ul.lower-latin {
+	padding-left: 4em;
+	list-style: lower-latin;
 }
 
 #toc ul ul li::before {
@@ -577,6 +585,10 @@ html body .small {
 	padding: 3rem 5rem 1rem 2rem;
 	position: relative;
 	width: fit-content;
+}
+
+.tips > :first-child {
+	margin-top: 1em;
 }
 
 .tips::before {

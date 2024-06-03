@@ -1,9 +1,10 @@
 /**
- *
- * Styles 
- * @author Rogier van der Linde
- *
- */
+*
+* Styles 
+* @author Rogier van der Linde
+*
+*/
+
 
 /* Reset
 /* ============== */
@@ -11,89 +12,102 @@
 * {
    box-sizing: border-box; /* corrigeer het box model */
    margin: 0; /* wis verschillen tussen browsers uit */
-   padding: 0; /* wis verschillen tussen browsers uit */ 
- }
- 
- img {
+   padding: 0; /* wis verschillen tussen browsers uit */
+}
+
+img {
    border: 0;
- }
- 
- /* General
- /* ============== */
- 
- body {
+}
+
+/* General
+/* ============== */
+
+body {
    background-color: #999;
    font-family: Verdana;
    font-size: 16px;
- }
- h2, h3, h4, h5 {
-   margin: 10px 0;
- }
- h3 {
+}
+
+h2,
+h3,
+h4,
+h5 {
+   margin: 1em 0;
+}
+
+h3 {
    font-size: 16px;
    font-weight: normal;
- }
- h4 {
+}
+
+h4 {
    font-size: 14px;
- }
- h5 {
+}
+
+h5 {
    font-size: 12px;
    font-weight: normal;
- }
- 
- /* site wrapper */
- #wrapper {
-   max-width: 900px;
-   min-width: 240px;
+}
+
+/* site wrapper */
+#wrapper {
+   width: 900px;
    margin: 0 auto;
    background-color: white;
- }
- 
- 
- /* Header
- /* ============== */
- 
- header {
+}
+
+
+/* Header
+/* ============== */
+
+header {
    align-items: flex-start;
    background-color: #333;
    color: #ccc;
    display: flex;
    flex-flow: row nowrap;
    justify-content: space-between;
+   height: 100px;
    padding: 20px;
-   padding-bottom: 40px;
    position: relative;
- }
- header h1 a {
+}
+
+header h1 a {
    font-weight: normal;
    text-decoration: none;
- }
- header a {
+}
+
+header a {
    color: #ddd;
- }
- .header_login {
+}
+
+.header_login {
    text-align: right;
- }
- .header_login a:hover {
+}
+
+.header_login a:hover {
    color: white;
- }
- 
- 
- /* Menu
- /* ============== */
- 
- /* top menu */
- header + nav {
+}
+
+
+/* Menu
+/* ============== */
+
+/* top menu */
+header+nav {
    background-color: #666;
    padding: 10px 20px;
- }
- #mainmenu {
+}
+
+#mainmenu {
    display: block;
- }
- #mainmenu li {
+}
+
+#mainmenu li {
    display: inline-block;
- }
- #mainmenu a {
+}
+
+#mainmenu a {
    color: #ccc;
    display: inline-block;
    height: 28px;
@@ -101,136 +115,147 @@
    padding: 2px 5px;
    text-align: center;
    width: 50px;
- }
- #mainmenu li + li:before {
+}
+
+#mainmenu li+li:before {
    color: #999;
    content: '|';
- }
- 
- 
- /* Main
- /* ============== */
- 
- main {
+}
+
+
+/* Main
+/* ============== */
+
+main {
    display: flex;
    flex-flow: row nowrap;
- }
- 
- /* sub menu */
- #leftmenu {
+}
+
+/* sub menu */
+#leftmenu {
    background-color: #FEFF99;
    padding: 10px 20px;
-   width: 21%;
- }
- #leftmenu ul {
+   width: 190px;
+}
+
+#leftmenu ul {
    list-style: none;
- }
- 
- /* content */
- #content {
+}
+
+/* content */
+#content {
    padding: 10px 20px;
-   width: 79%;
- }
- .content_header {
+   width: 710px;
+}
+
+.content_header {
    font-size: smaller;
    font-style: italic;
    margin-bottom: 15px;
    margin-top: 25px;
- }
- .content_picture {
+}
+
+.content_picture {
    margin: 20px 0;
-   max-width: 450px;
-   width: 100%;
- }
- 
- 
- /* aside */
- main aside {
+   width: 450px;
+}
+
+/* aside */
+main aside {
    border: 1px solid gray;
    float: right;
    font-size: smaller;
    margin: 15px 0 10px 10px;
    padding: 10px;
    width: 160px;
- }
- main aside article {
+}
+
+main aside article {
    font-size: 12px;
    margin-top: 10px;
    text-align: justify;
- }
- .article_visual {
+}
+
+.article_visual {
    display: block;
    margin: 0 auto;
    width: 80%;
- }
- main aside article p:last-child {
+}
+
+main aside article p:last-child {
    margin-top: 5px;
- }
- main aside article h1 {
+}
+
+main aside article h1 {
    margin: 10px 0;
- }
- 
- /* comments */
- 
- #comments {
+}
+
+/* comments */
+
+#comments {
    border-top: 1px dotted #ccc;
    font-size: 12px;
    margin-top: 40px;
- }
- .comment {
-   max-width: 500px;
-   width: 100%;
- }
- .comment_title {
+}
+
+.comment {
+   width: 500px;
+}
+
+.comment_title {
    margin-bottom: 0.5em;
    font-weight: 600;
- }
- .comment::after {
+}
+
+.comment::after {
    border-top: 1px solid #ccc;
    content: "";
    display: block;
    margin: 10px 0;
    width: 100px;
- }
- .comment_author {
+}
+
+.comment_author {
    font-style: italic;
- }
- 
- 
- /* Footer
- /* ============== */
- 
- footer {
+}
+
+
+/* Footer
+/* ============== */
+
+footer {
    background-color: #666;
    color: #eee;
    font-size: smaller;
    padding: 10px;
    text-align: center;
- }
- 
- footer a {
+}
+
+footer a {
    color: #ccc;
- }
- 
- footer p, footer ul  {
+}
+
+footer p,
+footer ul {
    margin: 10px 0;
- }
- 
- footer ul {
+}
+
+footer ul {
    list-style: none;
    padding: 0;
- }
- 
- footer li {
+}
+
+footer li {
    display: inline-block;
- }
- 
- footer ul a {
+}
+
+footer ul a {
    display: inline;
    line-height: 24px;
    padding: 2px 5px;
- }
- footer li + li:before {
+}
+
+footer li+li:before {
    content: ' | ';
    color: #999;
- }
+}

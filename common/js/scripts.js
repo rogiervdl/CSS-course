@@ -262,9 +262,14 @@ window.addEventListener('load', function () {
 		const button = document.createElement('button');
 		button.textContent = 'Demo';
 		button.onclick = function () {
-			DOM.diaDemoWindow.innerHTML = '<iframe title="demo"></iframe>';
 			const src = env.element.parentNode.dataset.demo;
 			if (src === undefined) return;
+			if (env.element.parentNode.dataset.demoTarget == '_blank') {
+				const specs = 'width=1200,height=900,menubar=no,toolbar=no,location=no,status=no,scrollbars=yes,resizable=yes';
+				window.open(src, '_blank', specs);
+				return;
+			}
+			DOM.diaDemoWindow.innerHTML = '<iframe title="demo"></iframe>';
 			myHistModal.open('#diaDemo');
 			const diaDemoIframe = document.querySelector('#diaDemo iframe');
 			if (src == '') {
