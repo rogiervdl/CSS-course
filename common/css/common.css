@@ -201,6 +201,10 @@ table {
 	color: #C00 !important;
 }
 
+.prism-atom-dark .error {
+	color: #F44 !important;
+}
+
 .warning {
 	color: #996600 !important;
 }
@@ -475,21 +479,21 @@ ul.wrong {
 	padding: 0;
 }
 
-ul.right li::before,
-ul.wrong li::before,
+ul.right > li::before,
+ul.wrong > li::before,
 ul li.right::before,
 ul li.wrong::before {
 	font-weight: bold;
 	margin-right: 1rem;
 }
 
-ul.right li::before,
+ul.right > li::before,
 ul li.right::before {
 	color: #0c0;
 	content: "✓";
 }
 
-ul.wrong li::before,
+ul.wrong > li::before,
 ul li.wrong::before {
 	color: #c00;
 	content: "✗";
@@ -517,10 +521,20 @@ ul ul {
 
 ul ul li::before {
 	content: '— ';
+	margin-left: 30px;;
+}
+
+ul ul li {
+	font-size: 0.9em;
 }
 
 #toc ul ul li::before {
 	content: '';
+	margin-left: inherit;
+}
+
+#toc ul ul li {
+	font-size: 1em;
 }
 
 /* flex containers */

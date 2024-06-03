@@ -10,7 +10,7 @@
    <link rel="stylesheet" href="css/styles.css">
 </head>
 
-<body class="language-html showpro">
+<body class="language-css showpro">
    <div id="mode">
       <span>n00b</span>
       <label class="switch">
@@ -55,7 +55,7 @@
 
       <h2>Youtube totaaldemo</h2>
       <p>Deze video's maken deel uit van een HTML + CSS totaaldemo uit de <a href="https://www.youtube.com/playlist?list=PLYfkd2Gq0ciEFboXQvzR_e__52tZ4OeXh">Basic Web Development playlist</a>, die begint met de video <a href="https://www.youtube.com/watch?v=kIJbahdQqcI&list=PLYfkd2Gq0ciEFboXQvzR_e__52tZ4OeXh&index=12">BWD 01. HTML - deel 8: praktijkdemo</a></p>
-      <h3>CSS organisatie</h3>
+      <h3>CSS organisatie en CSS variabelen</h3>
       <div class="flexcontainer youtubecontainer">
          <iframe class="youtube" width="600" height="378"
          src="https://www.youtube.com/embed/9Pa9sBPpsuo?si=s1Qq8bwBtVvGw_oI" title="YouTube video player"
@@ -70,28 +70,6 @@
                <li><a href="https://www.youtube.com/watch?v=9Pa9sBPpsuo">0:00 probleemstelling</a></li>
                <li><a href="https://www.youtube.com/watch?v=9Pa9sBPpsuo&t=21">0:21 reorganisatie met styles.css en @import</a></li>
                <li><a href="https://www.youtube.com/watch?v=9Pa9sBPpsuo&t=965">16:05 CSS variabelen</a></li>
-            </ul>
-         </div>
-      </div>
-      <h3>eenheden</h3>
-      <div class="flexcontainer youtubecontainer">
-         <iframe class="youtube" width="600" height="378"
-         src="https://www.youtube.com/embed/BiOo4lv_6Ag?si=gItG2ybHL7k2G4Yq" title="YouTube video player"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen></iframe>
-         <figure class="print">
-            <a href="https://www.youtube.com/watch?v=BiOo4lv_6Ag"><img src="img/06_professionalisering/youtube09-eenheden.png" alt="" class="w-500"></a>
-            <figcaption><a href="https://www.youtube.com/watch?v=BiOo4lv_6Ag">https://www.youtube.com/watch?v=BiOo4lv_6Ag</a></figcaption>
-         </figure>
-         <div class="youtube_toc">
-            <ul>
-               <li><a href="https://www.youtube.com/watch?v=BiOo4lv_6Ag">0:00 intro</a></li>
-               <li><a href="https://www.youtube.com/watch?v=BiOo4lv_6Ag&t=21">0:22 rem eenheid</a></li>
-               <li><a href="https://www.youtube.com/watch?v=BiOo4lv_6Ag&t=99">1:39 rem in praktijk</a></li>
-               <li><a href="https://www.youtube.com/watch?v=BiOo4lv_6Ag&t=472">7:52 demo</a></li>
-               <li><a href="https://www.youtube.com/watch?v=BiOo4lv_6Ag&t=563">9:23 em eenheid</a></li>
-               <li><a href="https://www.youtube.com/watch?v=BiOo4lv_6Ag&t=588">9:48 em in praktijk</a></li>
-               <li><a href="https://www.youtube.com/watch?v=BiOo4lv_6Ag&t=719">11:59 demo</a></li>
             </ul>
          </div>
       </div>
@@ -114,8 +92,463 @@
          </div>
       </div>
 
+      <h2>Selector best practices</h2>
+      <h3>sorteer je properties</h3>
+      <p>Sorteer je properties alfabetisch:</p>
+      <pre class="prism-atom-dark"><code>.some-element {
+  /* kijk nog niet teveel naar de CSS; merk op hoe de properties gesorteerd zijn van a-z */
+  background-color: #A2C355;
+  border: 2px solid #A2C355;
+  border-radius: 2px;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 14px;
+  line-height: 18px;
+  padding: 9px 24px;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: background 0.15s, color 0.15s ease-in-out;
+}
+</code></pre>
+      <p>
+         &rarr; dit helpt je properties sneller terug te vinden en maakt de code leesbaarder
+      </p>
+      <h3>beperk selector lengte</h3>
+      <p>
+         Zoals gezien, heeft selector lengte een invloed op de specificiteit en dus prioriteit. Hoe langer de selector, hoe moeilijker het is de CSS regel te overschrijven met een andere stijl (b.v. in een CSS themabestand). Hou daarom je <strong>selectors zo kort</strong> mogelijk.
+      </p>
+      <div class="codecompare">
+         <pre class="prism-atom-dark wrong"><code>body header &gt; nav.top ul li a {
+  ...
+}
+div#wrapper {
+  ...
+}
+</code></pre>
+<pre class="prism-atom-dark right"><code>header &gt; nav a {
+  ...
+}
+#wrapper {
+  ...
+}</code></pre>
+      </div>
+      <p>
+         &rarr; betere leesbaarheid<br>
+         &rarr; lager gewicht = makkelijk later te overschrijven met een zwaardere selector indien nodig (b.v. thema)
+      </p>
 
-       
+      <h2>Organisatie in meerdere stylesheets</h2>
+      <p>Naarmate je website groeit, wordt het steeds onhandelbaarder alle CSS in één bestand te steken. Splits daarom je CSS over meerdere bestanden. Een suggestie (maar denk gerust na over andere opdelingen):</p>
+      <ul>
+         <li><strong>start.css</strong>: alle CSS gemeenschappelijk voor alle sites</li>
+         <li><strong>common.css</strong>: alle CSS gemeenschappelijk voor alle pagina's van deze site</li>
+         <li><strong>index.css, contact.css...</strong>: alle pagina-specifieke CSS</li>
+      </ul>
+      <p>De opdeling voor b.v. een pagina <em>products.html</em> wordt dan</p>
+      <pre class="prism-default language-html" data-caption="index.html"><code>...
+&lt;head&gt;
+  ...
+  &lt;link rel="stylesheet" href="css/start.css"&gt;
+  &lt;link rel="stylesheet" href="css/common.css"&gt;
+  &lt;link rel="stylesheet" href="css/products.css"&gt;
+  ...
+&lt;/head&gt;
+...</code></pre>
+         <p>
+            &rarr; één groot CSS bestand voor een hele site is op termijn echt geen optie!
+            <br>&rarr; vermijd dubbele CSS in de verschillende CSS bestanden!
+         </p>
+         <h3>start.css</h3>
+         <p><span class="em">start.css</span> (of <em>reset.css</em> mag ook) bevat dan alle universeel herbruikbare CSS; een voorbeeld:</p>
+      <pre class="prism-atom-dark"><code>/**
+* Generic styles
+*
+* @author Rogier van der Linde &lt;rogier.vanderlinde@odisee.be&gt;
+*
+*/
+
+/* nuttig voor alle sites */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+}</code></pre>
+         <h3>common.css</h3>
+         <p><span class="em">common.css</span> (of <em>general.css</em> mag ook) bevat alle CSS gemeenschappelijk voor alle pagina's:</p>
+         <ul>
+            <li>opmaak voor links, tekst, titels...</li>
+            <li>header met logo, menu...</li>
+            <li>footer</li>
+            <li>algemene media queries</li>
+         </ul>
+         <p>Structureer je stylesheet met commentaar op een consistente manier; voorbeeld:</p>
+         <pre class="prism-atom-dark h-500"><code>/**
+* Common styles for site &lt;site-name&gt;
+*
+* @author Rogier van der Linde &lt;rogier.vanderlinde@odisee.be&gt;
+*
+*/
+
+/* ===========================================
+   General
+   =========================================== */
+
+/* general layout */
+
+.wrapper {
+   margin: 0 auto;
+   min-width: 320px;
+   max-width: 960px;
+   padding: 0 10px;
+}
+
+/* element styles */
+
+body {
+   font-size: 13px; /* standard font size */
+   font-family: verdana, Arial, Helvetica, sans-serif;
+   /* ... */
+}
+
+a {
+   /* ... */
+}
+
+p {
+   /* ... */
+}
+
+h1, h2, h3, h4 {
+   /* ... */
+}
+
+/* class styles */
+
+.more {
+   /* ... */
+}
+
+.bigger {
+   /* ... */
+}
+
+/* ===========================================
+   Header
+   =========================================== */
+
+/* general */
+/* ... */
+
+/* logo */
+/* ... */
+
+/* main menu */
+/* ... */
+
+/* ===========================================
+   Content
+   =========================================== */
+
+/* ...content styles... */
+
+/* ===========================================
+   Doormat
+   =========================================== */
+
+/* general */
+/* ... */
+
+/* left column */
+/* ... */
+
+/* middle column */
+/* ... */
+
+/* right column */
+/* ... */
+
+/* ===========================================
+   Footer
+   =========================================== */
+
+/* ...footer styles... */
+
+/* ===========================================
+   Media queries
+   =========================================== */
+
+@media (min-width: 30em) { /* 30 * 16 = 480px */
+   /* your media queries here */
+   /* ... */
+}
+
+@media (min-width: 50em) { /* 50 * 16 = 800px */
+   /* your media queries here */
+   /* ... */
+}</code></pre>
+      <h3>somepage.css</h3>
+      <p>Voor de pagina-specifieke stylesheet, bv. <span class="em">products.css</span>, gebruik je dezelfde structuur</p>
+         <pre class="prism-atom-dark h-500"><code>/**
+* Page-specific styles for the products page
+*
+* @author Rogier van der Linde &lt;rogier.vanderlinde@odisee.be&gt;
+*
+*/
+
+/* ===========================================
+  General
+  =========================================== */
+
+/* general layout */
+/* ... */
+
+/* element styles */
+/* ... */
+
+/* class styles */
+/* ... */
+
+/* ===========================================
+  Content
+  =========================================== */
+
+/* ...content styles... */
+
+/* ===========================================
+  Media queries
+  =========================================== */
+
+@media (min-width: 30em) { /* 30 * 16 = 480px */
+ /* your media queries here */
+ /* ... */
+}
+
+@media (min-width: 50em) { /* 50 * 16 = 800px */
+ /* your media queries here */
+ /* ... */
+}</code></pre>
+      <h3>verdere opdeling common.css</h3>
+      <p>Bij grotere sites is het nuttig <span class="em">common.css</span> nog verder op te splitsen, b.v. voor header, navigatie, thema...:</p>
+      <pre class="prism-default language-html" data-caption="index.html"><code>...
+&lt;head&gt;
+   ...
+   &lt;link rel="stylesheet" href="css/start.css"&gt;
+   &lt;!-- begin common styles --&gt;
+   &lt;link rel="stylesheet" href="css/theme.css"&gt;
+   &lt;link rel="stylesheet" href="css/layout.css"&gt;
+   &lt;link rel="stylesheet" href="css/header.css"&gt;
+   &lt;link rel="stylesheet" href="css/menus.css"&gt;
+   &lt;link rel="stylesheet" href="css/footer.css"&gt;
+   &lt;!-- end common styles --&gt;
+   &lt;link rel="stylesheet" href="css/index.css"&gt;
+   ...
+&lt;/head&gt;
+...</code></pre>
+      <p>
+         &rarr; voordeel: je vindt de CSS van de verschillende onderdelen veel makkelijker terug
+         <br>&rarr; (klein) nadeel: er staan nu wel heel veel stylesheet links in de <code>&lt;head&gt;</code>
+      </p>
+      <h3>one rules them all: @import</h3>
+      <p>Je kan de <code>&lt;head&gt;</code> verlichten door één gemeenschappelijk <code>styles.css</code> te gebruiken, van waaruit je linkt naar de deelbestanden <code>start.css</code>, <code>layout.css</code>, <code>header.css</code> enz... De HTML code wordt veel lichter:</p>
+      <pre class="prism-default language-html" data-caption="index.html"><code>...
+&lt;head&gt;
+   ...
+   &lt;link rel="stylesheet" href="css/styles.css"&gt;
+   &lt;link rel="stylesheet" href="css/index.css"&gt;
+&lt;/head&gt;
+...</code></pre>
+      <p><code>styles.css</code> wordt dan:</p>
+      <pre class="prism-atom-dark" data-caption="styles.css"><code>@import "start.css";
+@import "theme.css";
+@import "layout.css";
+@import "header.css";
+@import "menus.css";
+@import "footer.css";
+...</code></pre>
+         <h2>BEM notatie</h2>
+         <p>De <span class="em">BEM</span> of <mark>Block-Element-Modifier</mark> notatie biedt een gestructureerde en uniforme manier om met selectoren om te gaan. </p>
+         <h3>problemen met klassieke notatie</h3>
+         <p>Vertrekken we van volgend typisch HTML fragment:</p>
+         <pre class="language-html"><code>&lt;main&gt;
+  ...
+  &lt;section&gt;
+    &lt;h3&gt;Onze producten&lt;/h3&gt;
+    &lt;div id="products"&gt;
+      &lt;div class="product"&gt;
+        &lt;h4&gt;Bijzettafel&lt;/h3&gt;
+        &lt;img src="img/prod1.jpg" class="visual" alt="..."&gt;
+        &lt;p&gt;price: &euro;499,-&lt;/p&gt;
+        &lt;p class="description"&gt;...beschrijving hier...&lt;/p&gt;
+      &lt;/div&gt;
+      &lt;div class="product"&gt;
+        ...
+      &lt;/div&gt;
+      ...
+    &lt;/div&gt;
+  &lt;/section&gt;
+&lt;/main&gt;
+</code></pre>
+      <p>Aan de typische manier waarop vervolgens CSS selectors gebruikt worden hangen toch wel wat nadelen:</p>
+         <pre class="prism-atom-dark"><code>main &gt; section { <span class="error">/* als je een div in de HTML tussenvoegt, klopt deze regel niet meer */</span>
+  ...
+}
+#products { <span class="error">/* waar staat dit element? main content, sidebar...? */</span>
+  ...
+}
+.product h4 { <span class="error">/* als we een h5 gebruiken i.p.v. een h4, klopt deze regel niet meer */</span>
+  ...
+}
+.description { <span class="error">/* te algemeen; andere elementen zouden ook de class="description" kunnen hebben */</span>
+  ...
+}
+#products .visual + p { <span class="error">/* specifiek geneog, maar lange en zware selector */</span>
+  ...
+}</code></pre>
+      <p>De meeste CSS die vandaag geschreven wordt, lijdt aan deze problemen</p>
+      <ul class="wrong">
+         <li>
+            de CSS is te <strong>afhankelijk</strong> van de precieze <strong>HTML structuur</strong>
+         </li>
+         <li>
+            de selectors <strong>missen betekenis</strong> en context
+         </li>
+         <li>
+            de selectors zijn <strong>niet uniek genoeg</strong>, en kunnen onbedoeld conflicteren met andere elementen
+         </li>
+         <li>
+            als de selectors specifiek genoeg zijn, worden ze snel <strong>te lang, zwaar en complex</strong>
+         </li>
+      </ul>
+      <h3>BEM notatie oplossing</h3>
+      <p>De <em>BEM</em> (Block-Element-Modifier) naamgeving techniek lost al deze problemen op:</p>
+      <ul class="right">
+         <li>
+            gebruik altijd standaard class selectors; vermijd andere selectors als id, tag, attribuut, ...</li>
+         <li>
+            gebruik <b><code>block__element--modifier</code></b> conventie:
+            <ul>
+               <li>
+                  <b>block</b>: de parent of context van het element
+               </li>
+               <li>
+                  <b>element</b>: beschrijving van het element
+               </li>
+               <li>
+                  <b>modifier</b> (optioneel): toestand (b.v. open/dicht) of thema (b.v. groen/blauw)
+               </li>
+            </ul>
+         </li>
+      </ul>
+      <p>Onze BEM-verbeterde HTML:</p>
+      <pre class="language-html"><code>&lt;main&gt;
+  ...
+  &lt;section class="main__products"&gt;
+    &lt;h3 class="products__title"&gt;Our products&lt;/h3&gt;
+    &lt;div class="products__wrapper"&gt;
+      &lt;div class="products__product"&gt;
+        &lt;h4 class="product__title"&gt;Magazine table&lt;/h3&gt;
+        &lt;img class="product__visual" src="img/prod1.jpg" alt="..."&gt;
+        &lt;p class="product__price"&gt;price: &euro;499,-&lt;/p&gt;
+        &lt;p class="product__description"&gt;...description here...&lt;/p&gt;
+      &lt;/div&gt;
+      &lt;div class="products__product products__product--highlighted"&gt;
+        ...
+      &lt;/div&gt;
+      ...
+    &lt;/div&gt;
+  &lt;/section&gt;
+&lt;/main&gt;
+</code></pre>
+   <p>De BEM CSS:</p>
+      <pre class="prism-atom-dark"><code>.main__products {
+  ...
+}
+.products__wrapper {
+  ...
+}
+.products__product {
+  ...
+}
+.product__title {
+  ...
+}
+.product__visual {
+  ...
+}
+.product__description {
+  ...
+}
+.product__price {
+  ...
+}
+.products__product--highlighted {
+  ...
+}</code></pre>
+      <p>
+         &rarr; mooie vlakke CSS<br>
+         &rarr; <br>
+      </p>
+      <div class="tips" data-caption="☝🏼TIP">
+         <p>Wees geen BEM nazi! Het is oké BEM te gebruiken wanneer het uitkomt, en het te mixen met klassieke CSS selectors.</p>
+      </div>
+
+      <h2>CSS variabelen</h2>
+      <p>CSS variabelen laten toe een aantal veel gebruikte kleuren, lettergrootttes e.d. aan variabelen toe te wijzen, die je dan overal in je CSS kan gebruiken. Typisch breng je ze onder in een bestand <span class="em">colors.css</span>; voorbeeld:</p>
+      <pre class="prism-atom-dark" data-caption="colors.css"><code>:root {
+   /* kleur variabelen */
+   --primary-color: #3498db;
+   --secondary-color: #2ecc71;
+   --accent-color: #e74c3c;
+   --background-color: #ecf0f1;
+   --text-color: #2c3e50;
+   
+   /* font variabelen */
+   --primary-font: 'Helvetica Neue', sans-serif;
+   --secondary-font: 'Georgia', serif;
+}</code></pre>
+      <p>Gebruiksvoorbeeld:</p>
+      <pre class="prism-atom-dark h-500"><code>/* variabelen gebruiken */
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  font-family: var(--primary-font);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--primary-color);
+  font-family: var(--secondary-font);
+}
+
+a {
+  color: var(--accent-color);
+}
+
+button {
+  background-color: var(--secondary-color);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-family: var(--primary-font);
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: var(--primary-color);
+}
+
+.footer {
+  background-color: var(--primary-color);
+  color: white;
+  text-align: center;
+  padding: 20px;
+}</code></pre>
+        
    </main>
    <footer>
       <img src="common/img/thats-all.jpg" alt="">

@@ -54,7 +54,7 @@
    <main>
 
       <!-- VIDEO -->
-      <h2>Youtube: totaaldemo &dash; CSS intro en tekstopmaak</h2>
+      <h2>Youtube totaaldemo &dash; CSS intro en tekstopmaak</h2>
       <p>Deze video maakt deel uit van een HTML + CSS totaaldemo uit de <a href="https://www.youtube.com/playlist?list=PLYfkd2Gq0ciEFboXQvzR_e__52tZ4OeXh">Basic Web Development playlist</a>, die begint met de video <a href="https://www.youtube.com/watch?v=kIJbahdQqcI&list=PLYfkd2Gq0ciEFboXQvzR_e__52tZ4OeXh&index=12">BWD 01. HTML - deel 8: praktijkdemo</a></p>
       <div class="flexcontainer youtubecontainer">
          <iframe class="youtube" width="600" height="378"
@@ -757,51 +757,6 @@ nav li.active a {
          <img src="img/01_syntax/ss10b.png" class="shadow w-400" alt="">
       </div>
 
-      <h2>Best practices</h2>
-      <h3>tip 1: sorteer je properties</h3>
-      <p>Sorteer je properties alfabetisch:</p>
-      <pre class="prism-atom-dark"><code>.some-element {
-  /* kijk nog niet teveel naar de CSS; merk op hoe de properties gesorteerd zijn van a-z */
-  background-color: #A2C355;
-  border: 2px solid #A2C355;
-  border-radius: 2px;
-  color: #fff;
-  cursor: pointer;
-  display: inline-block;
-  font-size: 14px;
-  line-height: 18px;
-  padding: 9px 24px;
-  text-decoration: none;
-  text-transform: uppercase;
-  transition: background 0.15s, color 0.15s ease-in-out;
-}
-</code></pre>
-      <p>
-         &rarr; dit helpt je properties sneller terug te vinden en maakt de code leesbaarder
-      </p>
-      <h3>tip 2: beperk selector lengte</h3>
-      <p>
-         Zoals gezien, heeft selector lengte een invloed op de specificiteit en dus prioriteit. Hoe langer de selector, hoe moeilijker het is de CSS regel te overschrijven met een andere stijl (b.v. in een CSS themabestand). Hou daarom je <strong>selectors zo kort</strong> mogelijk.
-      </p>
-      <div class="codecompare">
-         <pre class="prism-atom-dark wrong"><code>body header &gt; nav.top ul li a {
-  ...
-}
-div#wrapper {
-  ...
-}
-</code></pre>
-<pre class="prism-atom-dark right"><code>header &gt; nav a {
-  ...
-}
-#wrapper {
-  ...
-}</code></pre>
-      </div>
-      <p>
-         &rarr; betere leesbaarheid<br>
-         &rarr; lager gewicht = makkelijk later te overschrijven met een zwaardere selector indien nodig (b.v. thema)
-      </p>
 
 
    </main>
