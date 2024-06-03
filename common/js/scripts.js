@@ -209,6 +209,24 @@ function startApp() {
 			cssApplySnippet(targetId, this.innerText);
 		});
 	});
+
+	// part 7: container range slider
+	document.querySelectorAll('.range-container-width').forEach(rcw => {
+		const container = rcw.parentNode.querySelector('.container');
+		const btnReset = rcw.parentNode.querySelector('.range-reset');
+		const min = parseInt(rcw.min ?? 0);
+		const max = parseInt(rcw.max ?? 9999);
+		const width = parseInt(container.offsetWidth);
+		rcw.value = width < min ? min : width > max ? max : width;
+		btnReset.dataset.initvalue = rcw.value;
+		rcw.addEventListener('input', () => {
+			container.style.width = `${rcw.value}px`;
+		});
+		btnReset.addEventListener('click', () => {
+			rcw.value = btnReset.dataset.initvalue;
+			container.style.width = `${rcw.value}px`;
+		});
+	});
 }
 
 /**

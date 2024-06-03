@@ -149,7 +149,7 @@
          </div>
       </div>
 
-      <h2>Layout technieken</h2>
+      <h2>Layout technieken overzicht</h2>
       <p>
          CSS heeft een lange weg afgelegd; pas met het verdwijnen van oude browsers konden <a href="https://caniuse.com/flexbox">Flexbox</a> en <a href="https://caniuse.com/grid">Grid</a> gebruikt worden, de eerste echte layout technieken in CSS.
       </p>
@@ -157,442 +157,942 @@
          Je kan layouttechnieken onderverdelen in ruwweg 5 groepen:
       </p>
       <ul>
-         <li><span class="em">positionering</span> (absoluut, relatief, fixed): positionering op basis van coördinaten; enkel geschikt voor <strong>Javascript games</strong> en enkele uitzonderlijke gevallen</li>
-         <li><span class="em">alignering</span>: verzamelnaam voor reeks losse technieken voor <strong>horizontale en verticale alignering</strong></li>
          <li><span class="em">flexbox</span>: bedoeld voor allerhande <strong>horizontale en verticale layouts</strong></li>
+         <li><span class="em">alignering</span>: verzamelnaam voor reeks losse technieken voor <strong>horizontale en verticale alignering</strong></li>
          <li><span class="em">floating</span>: gebruikt om content links of rechts <strong>rond een blok doen vloeien</strong> (bv. foto) </li>
-         <li><span class="em">[grid]</span>: iets complexere methode voor <strong>grid-achtige layout</strong> in rijen en kolommen</li>
+         <li><span class="em">positionering</span> (absoluut, relatief, fixed): positionering op basis van coördinaten; enkel geschikt voor <strong>Javascript games</strong> en enkele uitzonderlijke gevallen</li>
+         <li><span class="em">grid</span>: iets complexere methode voor <strong>grid-achtige layout</strong> in rijen en kolommen</li>
       </ul>
       <p>
          &rarr; je kan layouts vaak met verschillende technieken oplossen, maar <span class="notice">Flexbox is je standaardtechniek</span>
          <br>&rarr; bestudeer zeker nog eerst grondig de <a href="02_design.html#display">display property</a> in vorig deel; veel kleine layoutproblemen kan je daar al mee oplossen
       </p>
 
-      <h2>Positionering</h2>
-      <h3>Standaard weergave</h3>
-      <p>Positionering bepaalt de plaats van elementen a.h.v. <strong>coördinaten</strong> <code>top</code>, <code>right</code>, <code>bottom</code> en/of <code>left</code>. Laat ons starten van volgende code, zonder layout. Aangezien het blocklevel elementen zijn, is de natuurlijke positie van de drie blokken onder elkaar:</p>
-      <div class="codecompare">
-         <div class="democontainer">
-            <pre class="prism-default language-html" data-demo><code>&lt;div class="demowrapper"&gt;
-   &lt;div class="demobox demobox1"&gt;1&lt;/div&gt;
-   &lt;div class="demobox demobox2"&gt;2&lt;/div&gt;
-   &lt;div class="demobox demobox3"&gt;3&lt;/div&gt;
-&lt;/div&gt;</code></pre>
-            <pre class="prism-atom-dark h-200"><code contenteditable data-target="#positioning-demo1">/* add borders and colors */
-.demobox {
-   border: 2px solid black;
-   width: 80px;
-   height: 40px;
-   margin-bottom: 10px;
-   padding: 5px;
-}
-
-.demowrapper {
-   border: 1px dotted black;
-   margin: 50px;
-   max-width: 500px;
-   padding: 20px;
-}
-.demobox1 {
-     background-color: #ddd;
-}
-.demobox2 {
-   background-color: #888;
-}
-.demobox3 {
-   background-color: #333;
-}</code></pre>
-         </div>
-         <div id="positioning-demo1" class="w-500 target">
-            <div class="demowrapper">
-               <div class="demobox demobox1">1</div>
-               <div class="demobox demobox2">2</div>
-               <div class="demobox demobox3">3</div>
-             </div>
-         </div>
-      </div>
-
-      <h3>Relatief</h3>
-      <p>Met <mark>relatieve positionering</mark> wordt het element <strong>uit zijn natuurlijke positie verschoven</strong>; andere elementen blijven waar ze zijn:</p>
-      <div class="codecompare">
-         <div class="democontainer">
-            <pre class="prism-default language-html" data-demo><code>&lt;div class="demowrapper"&gt;
-   &lt;div class="demobox demobox1"&gt;1&lt;/div&gt;
-   &lt;div class="demobox demobox2"&gt;2&lt;/div&gt;
-   &lt;div class="demobox demobox3"&gt;3&lt;/div&gt;
-&lt;/div&gt;
-            </code></pre>
-            <pre class="prism-atom-dark h-200"><code contenteditable data-target="#positioning-demo2">/* relative positioning */
-.demobox2 {
-   position: relative;
-   left: 10px; /* verschuif 10px naar rechts */
-   top: 20px; /* verschuif 20px naar beneden */
-}
-
-/* add borders and colors */
-.demobox {
-   border: 2px solid black;
-   height: 40px;
-   margin-bottom: 10px;
-   padding: 5px;
-   width: 80px;
-}
-
-.demowrapper {
-   background-color: #fafafa;
-   border: 1px dotted black;
-   margin: 50px;
-   max-width: 500px;
-   padding: 20px;
-}
-.demobox1 {
-     background-color: #ddd;
-}
-.demobox2 {
-   background-color: #888;
-}
-.demobox3 {
-   background-color: #333;
-}</code></pre>
-         </div>
-         <div id="positioning-demo2" class="w-500 target">
-            <div class="demowrapper">
-               <div class="demobox demobox1">1</div>
-               <div class="demobox demobox2">2</div>
-               <div class="demobox demobox3">3</div>
-             </div>
-         </div>
-      </div>
-
-      <h3>Absoluut</h3>
-      <p>Met <mark>absolute positionering</mark> neem je een element uit de pagina, en positioneer je het <strong>ten opzichte van de paginaranden</strong> (overlapping is mogelijk); andere elementen vullen de ontstane ruimte. </p>
-      <div class="codecompare">
-         <div class="democontainer">
-            <pre class="prism-default language-html" data-demo><code>&lt;div class="demowrapper"&gt;
-   &lt;div class="demobox demobox1"&gt;1&lt;/div&gt;
-   &lt;div class="demobox demobox2"&gt;2&lt;/div&gt;
-   &lt;div class="demobox demobox3"&gt;3&lt;/div&gt;
-&lt;/div&gt;
-            </code></pre>
-            <pre class="prism-atom-dark h-200"><code contenteditable data-target="#positioning-demo3">/* relative positioning */
-.demobox2 {
-   position: absolute;
-   left: 5px; /* 5px vanaf links */
-   top: 5px; /* 5px vanaf boven */
-}
-
-/* add borders and colors */
-.demobox {
-   border: 2px solid black;
-   height: 40px;
-   margin-bottom: 10px;
-   padding: 5px;
-   width: 80px;
-}
-
-.demowrapper {
-   background-color: #fafafa;
-   border: 1px dotted black;
-   margin: 50px;
-   max-width: 500px;
-   padding: 20px;
-}
-.demobox1 {
-  background-color: #ddd;
-}
-.demobox2 {
-  background-color: #888;
-}
-.demobox3 {
-  background-color: #333;
-}</code></pre>
-         </div>
-         <div id="positioning-demo3" class="w-500 target">
-            <div class="demowrapper">
-               <div class="demobox demobox1">1</div>
-               <div class="demobox demobox2">2</div>
-               <div class="demobox demobox3">3</div>
-             </div>
-         </div>
-      </div>      
+      <h2>Alignering</h2>
+      <h3>Content horizontaal centreren</h3>
       <p>
-         Je kan het ook rechtsonder plaatsen, b.v. met <code>right: 10px; bottom: 10px;</code>
+         Om tekst, afbeeldingen enz... horizontaal te aligneren, gebruik <code><span class="em">text-align</span></code> op de parent:
       </p>
       <div class="codecompare">
          <div class="democontainer">
-            <pre class="prism-default language-html" data-demo><code>&lt;div class="demowrapper"&gt;
-   &lt;div class="demobox demobox1"&gt;1&lt;/div&gt;
-   &lt;div class="demobox demobox2"&gt;2&lt;/div&gt;
-   &lt;div class="demobox demobox3"&gt;3&lt;/div&gt;
-&lt;/div&gt;
-            </code></pre>
-            <pre class="prism-atom-dark h-200"><code contenteditable data-target="#positioning-demo4">/* relative positioning */
-.demobox2 {
-   position: absolute;
-   bottom: 10px; /* 10px vanaf beneden */
-   right: 10px; /* 10px vanaf rechts */
+            <pre class="prism-default language-html w-500" data-demo><code>&lt;div id="parent"&gt;
+    &lt;img src="img/04_layout/spongebob.webp" alt=""&gt;
+    &lt;p&gt;parmesan cheese slices when the cheese comes out everybody's happy cow cheese and wine cheese and biscuits. Roquefort when the cheese comes out...&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+            <pre class="prism-atom-dark h-300"><code contenteditable data-target="#alignment-demo1">/* alignering content */
+.container {
+  text-align: center; /* probeer ook left, right */
 }
 
-/* add borders and colors */
-.demobox {
-   border: 2px solid black;
-   height: 40px;
-   margin-bottom: 10px;
+/* andere stijlen */
+.container {
+   background-color: #fdd; 
+   padding: 20px;  
+   height: 350px;
+}
+.visual {
    width: 80px;
-   padding: 5px;
 }
-
-.demowrapper {
-   background-color: #fafafa;
-   border: 1px dotted black;
-   margin: 50px;
-   max-width: 500px;
-   padding: 20px;
+p {
+   background-color: #fff9;   
+   border: 1px solid #ccc; 
+   padding: 5px; 
 }
-.demobox1 {
-  background-color: #ddd;
-}
-.demobox2 {
-  background-color: #888;
-}
-.demobox3 {
-  background-color: #333;
-}</code></pre>
+</code></pre>
          </div>
-         <div id="positioning-demo4" class="w-500 target">
+         <div id="alignment-demo1" class="w-500">
             <div class="demowrapper">
-               <div class="demobox demobox1">1</div>
-               <div class="demobox demobox2">2</div>
-               <div class="demobox demobox3">3</div>
-             </div>
+               <div class="container">
+                  <img src="img/04_layout/spongebob.webp" class="visual" alt="">
+                  <p>
+                     parmesan cheese slices when the cheese comes out everybody's happy cow cheese and wine cheese and biscuits. Roquefort when the cheese comes out...
+                  </p>
+               </div>
+            </div>
          </div>
       </div>
 
-      <h4>absoluut-relatief</h4>
-      <p>De coördinaten zijn standaard t.o.v. de pagina. Als je wil positioneren <strong>ten opzichte van de parent</strong>, stel je die in op <code>position: relative</code>; dit heet <mark>absoluut-relatieve positionering</mark>.</p>
+      <h3>Block horizontaal centreren</h3>
+      <p>
+         Om blocklevel content (<code>&lt;div&gt;</code>, <code>&lt;p&gt;</code>...) horizontaal te aligneren, gebruik je de waarde <code>auto</code> voor <code><span class="em">margin-left</span></code> en/of <code><span class="em">margin-right</span></code> op het element zelf:
+      </p>
       <div class="codecompare">
          <div class="democontainer">
-            <pre class="prism-default language-html" data-demo><code>&lt;div class="demowrapper"&gt;
-   &lt;div class="demobox demobox1"&gt;1&lt;/div&gt;
-   &lt;div class="demobox demobox2"&gt;2&lt;/div&gt;
-   &lt;div class="demobox demobox3"&gt;3&lt;/div&gt;
+            <pre class="prism-default language-html w-500" data-demo><code>&lt;div id="parent"&gt;
+   &lt;p&gt;parmesan cheese slices when the cheese comes out everybody's happy cow cheese and wine cheese and biscuits. Roquefort when the cheese comes out...&lt;/p&gt;
 &lt;/div&gt;</code></pre>
-            <pre class="prism-atom-dark h-200"><code contenteditable data-target="#positioning-demo8">/* absoluut-relative positioning */
-.demowrapper {
-   position: relative; /* nieuwe referentie voor coördinaten */
+            <pre class="prism-atom-dark h-300"><code contenteditable data-target="#alignment-demo2">/* horizontale alignering blok */
+p {
+   margin-left: auto;
+   margin-right: auto; /* probeer ook 0px */
+   width: 300px;
 }
 
-.demobox2 {
-   position: absolute;
-   left: 5px; /* 5px vanaf links */
-   top: 5px; /* 5px vanaf boven */
+/* andere stijlen */
+.container {
+   background-color: #fdd; 
+   height: 350px;
+   padding: 20px;  
 }
-
-/* add borders and colors */
-.demobox {
-   border: 2px solid black;
-   height: 40px;
-   margin-bottom: 10px;
-   padding: 5px;
-   width: 80px;
-}
-
-.demowrapper {
-   background-color: #fafafa;
-   border: 1px dotted black;
-   margin: 50px;
-   max-width: 500px;
-   padding: 20px;
-}
-.demobox1 {
-  background-color: #ddd;
-}
-.demobox2 {
-  background-color: #888;
-}
-.demobox3 {
-  background-color: #333;
+p {
+   background-color: #fff9;   
+   border: 1px solid #ccc; 
+   padding: 5px; 
 }</code></pre>
          </div>
-         <div id="positioning-demo8" class="w-500 target">
+         <div id="alignment-demo2" class="w-500">
             <div class="demowrapper">
-               <div class="demobox demobox1">1</div>
-               <div class="demobox demobox2">2</div>
-               <div class="demobox demobox3">3</div>
-             </div>
+               <div class="container">
+                  <p>
+                     parmesan cheese slices when the cheese comes out everybody's happy cow cheese and wine cheese and biscuits. Roquefort when the cheese comes out...
+                  </p>
+               </div>
+            </div>
          </div>
-      </div>   
-      <h4>overlay voorbeeld</h4>
-      <p>Als je vier coördinaten opgeeft (en <code>width</code> en <code>height</code> weghaalt) wordt het element over de hele pagina uitgerokken (en bedekt het de andere blokken). Met een gedeeltelijk transparante achtergrond kan je dan een overlay maken:</p>
+      </div>
+
+      <h3>Regel verticaal centreren</h3>
+      <p>Een oud trukje om één regel verticaal te centreren is <code><span class="em">height</span></code> en <code><span class="em">line-height</span></code> dezelfde waarde geven:</p>
       <div class="codecompare">
          <div class="democontainer">
-            <pre class="prism-default language-html w-500" data-demo><code>
-&lt;div class="overlay"&gt;&lt;h2&gt;OVERLAY CONTENT HIER&lt;/h2&gt;&lt;/div&gt;
-&lt;p&gt;Wij zin rijken ruimer zekere. Loopbaan een district bordeaux mag bevreesd heb. Inkomsten op af singapore behoeften. Het brengen den gedaald menigte markten evenals javanen. Ontwouding middellijn nu geruineerd ptolomaeus denzelfden in handelaars. Vrij in nu kilo west. Wieschen vermengd verbouwd zou was die verschil het geheelen voorzien. &lt;/p&gt;
-&lt;p&gt;Gebrek loopen kan zee zit andere ton levert zeggen zonder. Rook zoo twee zee hen maal. Wantrouwen ons tot inboorling nog doorzoeken.&lt;/p&gt;</code></pre>
-            <pre class="prism-atom-dark h-200"><code contenteditable data-target="#positioning-demo5">/* absolute positioning */
-.overlay {
-   /* maak overlay */
-   background-color: #888c;
-   position: absolute;
-   bottom: 20px; /* 10px vanaf beneden */
-   left: 30px; /* 10px vanaf links */
-   right: 30px; /* 10px vanaf rechts */
-   top: 20px; /* 10px vanaf boven */
+            <pre class="prism-default language-html w-500" data-demo><code>&lt;a href=""&gt;button tekst &lt;/a&gt;</code></pre>
+            <pre class="prism-atom-dark h-300"><code contenteditable data-target="#alignment-demo3">/* button layout */
+.button {
+   display: inline-block; /* anders kan je geen hoogte instellen */
+   height: 60px; /* zelfde waarde */
+   line-height: 60px; /* zelfde waarde */
+   text-align: center; /* centreer horizontaal */
+   white-space: nowrap; /* vermijd line breaks */
+   width: 120px;
 }
-.overlay  h2 {
-   color: white;
-   padding: 20px;
+
+/* button styling */
+.button {
+   background-color: beige; 
+   border: 2px solid #ccc; 
+   cursor: pointer;
+   display: inline-block;
+}</code></pre>
+         </div>
+         <div id="alignment-demo3" class="w-500">
+            <div class="demowrapper">
+               <a href="" class="button">button tekst</a>
+            </div>
+         </div>
+      </div>
+
+      <h3>Blok verticaal centreren</h3>
+      <p>Als de hoogte van de container flexibel is en er maar één blok is, kan je verticaal centreren met <code><span class="em">padding</span></code> op de parent:</p>
+      <div class="codecompare">
+         <div class="democontainer">
+            <pre class="prism-default language-html w-500" data-demo><code>&lt;div id="parent"&gt;
+   &lt;p&gt;parmesan cheese slices when the cheese comes out everybody's happy cow cheese and wine cheese and biscuits. Roquefort when the cheese comes out...&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+            <pre class="prism-atom-dark h-300"><code contenteditable data-target="#alignment-demo4">/* verticale alignering blok */
+.container {
+   padding: 50px 20px; /* verticaal horizontaal */
+}
+
+/* andere stijlen */
+.container {
+   background-color: #fdd; 
+}
+p {
+   background-color: #fff9;   
+   border: 1px solid #ccc; 
+   padding: 5px; 
+}</code></pre>
+         </div>
+         <div id="alignment-demo4" class="w-500">
+            <div class="demowrapper">
+               <div class="container">
+                  <p>
+                     parmesan cheese slices when the cheese comes out everybody's happy cow cheese and wine cheese and biscuits. Roquefort when the cheese comes out...
+                  </p>
+               </div>
+            </div>
+         </div>
+      </div>
+      <p>Je ziet, de mogelijkheden zijn beperkt: verticaal centreren van meerdere blokken of wanneer de container een vaste hoogte heeft, is enkel mogelijk met <span class="em">flexbox</span>.</p>
+
+      <h2>Flexbox</h2>
+      <p>
+         Met <mark>flexbox</mark> kan je een reeks children, de <span class="em">flex items</span>, schikken in een parent, de <span class="em">flex container</span>.
+         Het meest complete overzicht op het net vind je op <a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/">https://css-tricks.com/snippets/css/a-guide-to-flexbox/</a>.
+      </p>
+      <h3>Flexbox properties overzicht</h3>
+      <p>De CSS properties voor de flex container:</p>
+      <table class="light">
+         <thead>
+            <tr>
+               <th scope="col">eigenschap</th>
+               <th scope="col">waarden</th>
+               <th scope="col">betekenis</th>
+            </tr>
+         </thead>
+         <tbody>
+            <tr>
+               <td colspan="3"><em>stapelen</em></td>
+            </tr>
+            <tr>
+               <td><code>flex-direction</code></td>
+               <td><code>row|column|row-reverse|column-reverse</code></td>
+               <td>stapelen in rijen of kolommen, al dan niet in omgekeerde richting</td>
+            </tr>
+            <tr>
+               <td><code>flex-wrap</code></td>
+               <td><code>wrap|nowrap</code></td>
+               <td>items op één lijn of meerdere lijnen</td>
+            </tr>
+            <tr>
+               <td><code>flex-flow</code></td>
+               <td colspan="2">combinatie van <code>flex-direction</code> en <code>flex-wrap</code>, b.v.  <code>flex-flow: row nowrap;</code></td>
+            </tr>
+            <tr>
+               <td colspan="3"><em>uitlijnen</em></td>
+            </tr>
+            <tr>
+               <td><code>align-content</code></td>
+               <td><code>flex-start|center|space-between|flex-end|stretch|...</code></td>
+               <td>schikking van de flex lijnen in de flex container</td>
+            </tr>
+            <tr>
+               <td><code>align-items</code></td>
+               <td><code>flex-start|center|space-between|flex-end|stretch|...</code></td>
+               <td>schikking van items dwars op de lijnen</td>
+            </tr>
+            <tr>
+               <td><code>justify-content</code></td>
+               <td><code>flex-start|center|space-between|flex-end|stretch|...</code></td>
+               <td>schikking van items langs de lijnen</td>
+            </tr>
+            <tr>
+               <td colspan="3"><em>tussenruimte</em></td>
+            </tr>
+            <tr>
+               <td><code>gap</code>, <code>column-gap</code>, <code>row-gap</code></td>
+               <td><code>px|%|...</code></td>
+               <td>ruimte tussen items/lijnen</td>
+            </tr>
+         </tbody>
+      </table>      
+      <p>De CSS properties voor de flex item:</p>
+      <table class="light">
+         <thead>
+            <tr>
+               <th scope="col">eigenschap</th>
+               <th scope="col">waarden</th>
+               <th scope="col">betekenis</th>
+            </tr>
+         </thead>
+         <tbody>
+            <tr>
+               <td><code>align-self</code></td>
+               <td><code>flex-start|center|space-between|flex-end|stretch|...</code></td>
+               <td>overschrijft <code>align-items</code> property voor dit item</td>
+            </tr>
+            <tr>
+               <td><code>order</code></td>
+               <td><code>geheel getal</code></td>
+               <td>volgorde van het item in de lijn</td>
+            </tr>
+            <tr>
+               <td><code>flex-grow</code></td>
+               <td><code>geheel getal</code></td>
+               <td>hoeveel het item groeit (indien nodig) proportioneel t.o.v. andere items</td>
+            </tr>
+            <tr>
+               <td><code>flex-shrink</code></td>
+               <td><code>geheel getal</code></td>
+               <td>hoeveel het item krimpt (indien nodig) proportioneel t.o.v. andere items</td>
+            </tr>
+            <tr>
+               <td><code>flex-basis</code></td>
+               <td><code>px|%|...</code></td>
+               <td>initiële afmeting van het item</td>
+            </tr>
+            <tr>
+               <td><code>flex</code></td>
+               <td colspan="2">combinatie van <code>flex-grow</code>, <code>flex-shrink</code> en <code>flex-basis</code>, b.v. <code>flex: 1 1 200px;</code></td>
+            </tr>
+         </tbody>
+      </table>     
+      <h3>Flex container</h3>
+      <h4>startvoorbeeld</h4>
+      <p>
+         We starten van een container met 10 items van afwisselende afmetingen. De standaard weergave, zonder layout:
+      </p>
+      <div class="codecompare">
+         <div class="democontainer">
+            <pre class="prism-default language-html w-500 h-200"><code>&lt;div class="flex-container"&gt;
+   &lt;div class="flex-item"&gt;01&lt;/div&gt;
+   &lt;div class="flex-item"&gt;02&lt;/div&gt;
+   &lt;div class="flex-item"&gt;03&lt;/div&gt;
+   &lt;div class="flex-item"&gt;04&lt;/div&gt;
+   &lt;div class="flex-item"&gt;05&lt;/div&gt;
+   &lt;div class="flex-item"&gt;06&lt;/div&gt;
+   &lt;div class="flex-item"&gt;07&lt;/div&gt;
+   &lt;div class="flex-item"&gt;08&lt;/div&gt;
+   &lt;div class="flex-item"&gt;09&lt;/div&gt;
+   &lt;div class="flex-item"&gt;10&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+            <pre class="prism-atom-dark w-500 h-200"><code contenteditable data-target="#flex-containerdemo1">.flex-item {
+   background-color: #ddd;
+   border: 2px solid black;
+   padding: 5px;
    text-align: center;
 }
-</code></pre>
-         </div>
-         <div id="positioning-demo5" class="w-500 target">
-            <div class="overlay"><h2>OVERLAY CONTENT HIER</h2></div>
-            <p>Wij zin rijken ruimer zekere. Loopbaan een district bordeaux mag bevreesd heb. Inkomsten op af singapore behoeften. Het brengen den gedaald menigte markten evenals javanen. Ontwouding middellijn nu geruineerd ptolomaeus denzelfden in handelaars. Vrij in nu kilo west. Wieschen vermengd verbouwd zou was die verschil het geheelen voorzien. </p>
-            <p>Gebrek loopen kan zee zit andere ton levert zeggen zonder. Rook zoo twee zee hen maal. Wantrouwen ons tot inboorling nog doorzoeken.</p>
-         </div>
-      </div>
-      <h4>z-index</h4>
 
-      <p>Je kan de stapelvolgorde van gepositioneerde elementen altijd aanpassen met <mark>z-index</mark>, een willekeurig geheel getal:</p>
-      <ul>
-         <li>een <strong>negatieve z-index</strong> plaatst het element <strong>onder</strong> normale content</li>
-         <li>een <strong>positieve z-index</strong> plaatst het element <strong>boven</strong> normale content, hoe hoger de index, hoe meer bovenaan</li>
-      </ul>
-      <p>Een voorbeeld met drie absoluut gepositioneerde blokken:</p>
-      <div class="codecompare">
-         <div class="democontainer">
-            <pre class="prism-default language-html w-500" data-demo><code>&lt;div class="demobox demobox1"&gt;1&lt;/div&gt;
-&lt;div class="demobox demobox2"&gt;2&lt;/div&gt;
-&lt;div class="demobox demobox3"&gt;3&lt;/div&gt;
-&lt;p&gt;Wij zin rijken ruimer zekere. Loopbaan een district bordeaux mag bevreesd heb. Inkomsten op af singapore behoeften. Het brengen den gedaald menigte markten evenals javanen. Ontwouding middellijn nu geruineerd ptolomaeus denzelfden in handelaars. Vrij in nu kilo west. Wieschen vermengd verbouwd zou was die verschil het geheelen voorzien. &lt;/p&gt;
-&lt;p&gt;Gebrek loopen kan zee zit andere ton levert zeggen zonder. Rook zoo twee zee hen maal. Wantrouwen ons tot inboorling nog doorzoeken.&lt;/p&gt;</code></pre>
-            <pre class="prism-atom-dark h-300"><code contenteditable data-target="#positioning-demo7">/* stapelvolgorde */
-.demobox1 {
-   z-index: 4; /* probeer een ook 20, 1 en -1 */
-}
-.demobox2 {
-   z-index: 10;
-}
-.demobox3 {
-   z-index: 2;
+.flex-item:nth-child(even) {
+   height: 60px;
+   line-height: 45px;
+   width: 100px;
 }
 
-/* absolute positionering */
-.demobox1 {
-   position: absolute;
-   left: 25px; 
-   top: -15px; 
-}
-.demobox2 {
-   position: absolute;
-   left: 65px; 
-   top: 15px; 
-}
-.demobox3 {
-   left: 45px; 
-   top: 35px; 
-   position: absolute;
+.flex-item:nth-child(odd) {
+   height: 40px;
+   line-height: 25px;
+   width: 60px;
 }
 
-/* add borders and colors */
-.demobox {
-   border: 2px solid black;
-   margin-bottom: 10px;
-   padding: 5px;
-   width: 160px;
-   height: 80px;
-}
-
-.demowrapper {
-   background-color: #fafafa;
+.flex-container {
+   background-color: #ddf;
    border: 1px dotted black;
-   margin: 50px;
    max-width: 500px;
    padding: 20px;
-}
-.demobox1 {
-  background-color: #ddd;
-}
-.demobox2 {
-  background-color: #888;
-}
-.demobox3 {
-  background-color: #333;
 }</code></pre>
          </div>
-         <div id="positioning-demo7" class="w-500 target">
-            <p>Wij zin rijken ruimer zekere. Loopbaan een district bordeaux mag bevreesd heb. Inkomsten op af singapore behoeften. Het brengen den gedaald menigte markten evenals javanen. Ontwouding middellijn nu geruineerd ptolomaeus denzelfden in handelaars. Vrij in nu kilo west. Wieschen vermengd verbouwd zou was die verschil het geheelen voorzien. </p>
-            <p>Gebrek loopen kan zee zit andere ton levert zeggen zonder. Rook zoo twee zee hen maal. Wantrouwen ons tot inboorling nog doorzoeken.</p>
-            <div class="demobox demobox1">1</div>
-            <div class="demobox demobox2">2</div>
-            <div class="demobox demobox3">3</div>
+         <div id="flex-containerdemo1" class="w-500" style="height: 415px; overflow-y: auto;">
+            <div class="flex-container">
+               <div class="flex-item">01</div>
+               <div class="flex-item">02</div>
+               <div class="flex-item">03</div>
+               <div class="flex-item">04</div>
+               <div class="flex-item">05</div>
+               <div class="flex-item">06</div>
+               <div class="flex-item">07</div>
+               <div class="flex-item">08</div>
+               <div class="flex-item">09</div>
+               <div class="flex-item">10</div>
+            </div>
+         </div>
+      </div>
+      <h4>display: flex</h4>
+      <p>Met <code>display: flex</code> maak je van de container een <mark>flex container</mark>. Ze komen <strong>standaard op één rij, samengeperst</strong> indien nodig:</p>
+      <div class="codecompare">
+         <pre class="prism-atom-dark w-500" style="height: 335px; overflow-y: auto;"><code contenteditable data-target="#flex-containerdemo2">.flex-container {
+   display: flex; /* maak flex container */
+}
+
+/* box styles */
+.flex-item {
+   background-color: #ddd;
+   border: 2px solid black;
+   padding: 5px;
+   text-align: center;
+}
+
+.flex-item:nth-child(even) {
+   height: 60px;
+   line-height: 45px;
+   width: 100px;
+}
+
+.flex-item:nth-child(odd) {
+   height: 40px;
+   line-height: 25px;
+   width: 60px;
+}
+
+.flex-container {
+   background-color: #ddf;
+   border: 1px dotted black;
+   height: 335px;
+   max-width: 500px;
+   padding: 20px;
+}</code></pre>
+         <div id="flex-containerdemo2" class="w-500">
+            <div class="flex-container">
+               <div class="flex-item">01</div>
+               <div class="flex-item">02</div>
+               <div class="flex-item">03</div>
+               <div class="flex-item">04</div>
+               <div class="flex-item">05</div>
+               <div class="flex-item">06</div>
+               <div class="flex-item">07</div>
+               <div class="flex-item">08</div>
+               <div class="flex-item">09</div>
+               <div class="flex-item">10</div>
+            </div>
          </div>
       </div>
 
-      <h3>Fixed</h3>
-      <p>De <mark>fixed positionering</mark> fixeert een element op de pagina, onafhankelijk van het scrollen:</p>
+      <h4>gap</h4>
+      <p>Geef ruimte tussen kolommen/rijen met <code>gap</code>:</p>
       <div class="codecompare">
-         <div class="democontainer">
-            <pre class="prism-default language-html w-500"><code>&lt;p&gt;(scroll this page)&lt;/p&gt;
-&lt;p&gt;Folly words widow one downs few age every seven. If miss part by fact he park just shew. Discovered had get considered projection who favourable. Necessary up knowledge it tolerably. Unwilling departure education is be dashwoods or an. Use off agreeable law unwilling sir deficient curiosity instantly. Easy mind life fact with see has bore ten. Parish any chatty can elinor direct for former. Up as meant widow equal an share least. &lt;/p&gt;
-&lt;p&gt;Examine she brother prudent add day ham. Far stairs now coming bed oppose hunted become his. You zealously departure had procuring suspicion. Books whose front would purse if be do decay. Quitting you way formerly disposed perceive ladyship are. Common turned boy direct and yet. &lt;/p&gt;
-&lt;p&gt;Ye on properly handsome returned throwing am no whatever. In without wishing he of picture no exposed talking minutes. Curiosity continual belonging offending so explained it exquisite. Do remember to followed yourself material mr recurred carriage. High drew west we no or at john. About or given on witty event. Or sociable up material bachelor bringing landlord confined. Busy so many in hung easy find well up. So of exquisite my an explained remainder. Dashwood denoting securing be on perceive my laughing so.&lt;/p&gt;
-&lt;a id="toplink" href="#top"&gt;back to top ↑&lt;/a&gt;</code></pre>
-            <pre class="prism-atom-dark"><code>#toplink {
-  /* add fixed top link */
-  position: fixed;
-  right: 10px;
-  bottom: 10px;
-  /* colors &amp; borders */
-  background-color: #ddd;
-  border: 2px solid black;
-  padding: 5px 10px;
+         <pre class="prism-atom-dark w-500" style="height: 335px; overflow-y: auto;"><code contenteditable data-target="#flex-containerdemo3">.flex-container {
+   display: flex; 
+   gap: 10px; /* ruimte tussen kolommen en rijen */
+}
+
+/* box styles */
+.flex-item {
+   background-color: #ddd;
+   border: 2px solid black;
+   padding: 5px;
+   text-align: center;
+}
+
+.flex-item:nth-child(even) {
+   height: 60px;
+   line-height: 45px;
+   width: 100px;
+}
+
+.flex-item:nth-child(odd) {
+   height: 40px;
+   line-height: 25px;
+   width: 60px;
+}
+
+.flex-container {
+   background-color: #ddf;
+   border: 1px dotted black;
+   height: 335px;
+   max-width: 500px;
+   padding: 20px;
 }</code></pre>
+         <div id="flex-containerdemo3" class="w-500">
+            <div class="flex-container">
+               <div class="flex-item">01</div>
+               <div class="flex-item">02</div>
+               <div class="flex-item">03</div>
+               <div class="flex-item">04</div>
+               <div class="flex-item">05</div>
+               <div class="flex-item">06</div>
+               <div class="flex-item">07</div>
+               <div class="flex-item">08</div>
+               <div class="flex-item">09</div>
+            </div>
          </div>
-         <iframe src="demos/04_layout/fixed.html" class="w-400"></iframe>
       </div>
 
-      <h3>Sticky</h3>
-      <p>De <mark>sticky positionering</mark> scrollt tot een gegeven offset bereikt is, waarna het blijft plakken.</p>
+      <h4>flex-wrap</h4>
+      <p>Sta meerdere lijnen toe met <code>flex-wrap</code> (en dan hoeven ze niet meer samengeperst te worden):</p>
       <div class="codecompare">
-         <div class="democontainer">
-            <pre class="prism-default language-html w-500"><code>&lt;p&gt;(scroll this page)&lt;/p&gt;
-&lt;div id="sticky"&gt;I am sticky!&lt;/div&gt;               
-&lt;p&gt;Folly words widow one downs few age every seven. If miss part by fact he park just shew. Discovered had get considered projection who favourable. Necessary up knowledge it tolerably. Unwilling departure education is be dashwoods or an. Use off agreeable law unwilling sir deficient curiosity instantly. Easy mind life fact with see has bore ten. Parish any chatty can elinor direct for former. Up as meant widow equal an share least. &lt;/p&gt;
-&lt;p&gt;Examine she brother prudent add day ham. Far stairs now coming bed oppose hunted become his. You zealously departure had procuring suspicion. Books whose front would purse if be do decay. Quitting you way formerly disposed perceive ladyship are. Common turned boy direct and yet. &lt;/p&gt;
-&lt;p&gt;Ye on properly handsome returned throwing am no whatever. In without wishing he of picture no exposed talking minutes. Curiosity continual belonging offending so explained it exquisite. Do remember to followed yourself material mr recurred carriage. High drew west we no or at john. About or given on witty event. Or sociable up material bachelor bringing landlord confined. Busy so many in hung easy find well up. So of exquisite my an explained remainder. Dashwood denoting securing be on perceive my laughing so.&lt;/p&gt;
-</code></pre>
-            <pre class="prism-atom-dark"><code>#sticky {
-   /* make sticky */
-   position: sticky;
-   top: 0; /* stick to top */
-   /* colors &amp; borders */
-   background-color: #cae8ca;
-   border: 2px solid #4CAF50;
-   color: inherit;
-   padding: 5px 10px;
-   text-decoration: none;
+         <pre class="prism-atom-dark w-500" style="height: 335px; overflow-y: auto;"><code contenteditable data-target="#flex-containerdemo4">.flex-container {
+   display: flex; 
+   flex-wrap: wrap; /* items op meerdere lijnen */
+   gap: 10px; 
+}
+
+/* box styles */
+.flex-item {
+   background-color: #ddd;
+   border: 2px solid black;
+   padding: 5px;
+   text-align: center;
+}
+
+.flex-item:nth-child(even) {
+   height: 60px;
+   line-height: 45px;
+   width: 100px;
+}
+
+.flex-item:nth-child(odd) {
+   height: 40px;
+   line-height: 25px;
+   width: 60px;
+}
+
+.flex-container {
+   background-color: #ddf;
+   border: 1px dotted black;
+   height: 335px;
+   max-width: 500px;
+   padding: 20px;
 }</code></pre>
+         <div id="flex-containerdemo4" class="w-500">
+            <div class="flex-container">
+               <div class="flex-item">01</div>
+               <div class="flex-item">02</div>
+               <div class="flex-item">03</div>
+               <div class="flex-item">04</div>
+               <div class="flex-item">05</div>
+               <div class="flex-item">06</div>
+               <div class="flex-item">07</div>
+               <div class="flex-item">08</div>
+               <div class="flex-item">09</div>
+            </div>
          </div>
-         <iframe src="demos/04_layout/sticky.html" class="w-400"></iframe>
       </div>
-      <h3>Wanneer gebruiken</h3>
-      <p>Studenten hebben vaak de neiging positionering veel te snel terug te grijpen naar positionering. Eigenlijk wordt het <em>zeer weinig gebruikt</em>. Wanneer wel:</p>
-      <ul class="right">
-         <li>gebruik <strong>sticky</strong> of <strong>fixed</strong> voor "back to top links", sticky notes e.d.</li>
-         <li>gebruik <strong>absolute positionering</strong> voor game programming om layers te maken, zie b.v. <a href="demos/02_design/animations2.html">deze uitgebreide demo</a></li>
-      </ul>
-      <p>Gebruik positionering zeker niet voor:</p>
-      <ul class="wrong">
-         <li>gebruik <strong>geen relatieve positionering</strong> om foutjes in de layout te corrigeren</li>
-         <li>gebruik <strong>geen absolute positionering</strong> om elementen binnen een parent te positioneren; dat doen we met flexbox en margins/paddings</li>
-         <li>gebruik <strong>geen positionering</strong> technieken voor pagina layout; dat doen we met flexbox en margins/paddings</li>
-      </ul>
-      <div class="tips" data-caption="☝🏼TIP">
-         <p>De vuistregel is: <strong>als het anders kan</strong> (b.v. met flexbox), <strong>gebruik dan geen positionering</strong></p>
+
+      <h4>align-content</h4>
+      <p>Zet de volledige content aan het begin, het midden, einde, uitgespreid e.d. met <code>align-content</code>:</p>
+      <div class="codecompare">
+         <pre class="prism-atom-dark w-500" style="height: 335px; overflow-y: auto;"><code contenteditable data-target="#flex-containerdemo5">.flex-container {
+   align-content: center; /* probeer ook flex-start, flex-end... */         
+   display: flex; 
+   flex-wrap: wrap; 
+   gap: 10px; 
+}
+
+/* box styles */
+.flex-item {
+   background-color: #ddd;
+   border: 2px solid black;
+   padding: 5px;
+   text-align: center;
+}
+
+.flex-item:nth-child(even) {
+   height: 60px;
+   line-height: 45px;
+   width: 100px;
+}
+
+.flex-item:nth-child(odd) {
+   height: 40px;
+   line-height: 25px;
+   width: 60px;
+}
+
+.flex-container {
+   background-color: #ddf;
+   border: 1px dotted black;
+   height: 335px;
+   max-width: 500px;
+   padding: 20px;
+}</code></pre>
+         <div id="flex-containerdemo5" class="w-500">
+            <div class="flex-container">
+               <div class="flex-item">01</div>
+               <div class="flex-item">02</div>
+               <div class="flex-item">03</div>
+               <div class="flex-item">04</div>
+               <div class="flex-item">05</div>
+               <div class="flex-item">06</div>
+               <div class="flex-item">07</div>
+               <div class="flex-item">08</div>
+               <div class="flex-item">09</div>
+            </div>
+         </div>
       </div>
+   
+      <h4>align-items</h4>
+      <p>Aligneer items op hun lijnen met <code>align-items</code>:</p>
+      <div class="codecompare">
+         <pre class="prism-atom-dark w-500" style="height: 335px; overflow-y: auto;"><code contenteditable data-target="#flex-containerdemo6">.flex-container {
+   align-content: center;          
+   align-items: center; /* probeer ook flex-start, flex-end... */         
+   display: flex; 
+   flex-wrap: wrap; 
+   gap: 10px; 
+}
+
+/* box styles */
+.flex-item {
+   background-color: #ddd;
+   border: 2px solid black;
+   padding: 5px;
+   text-align: center;
+}
+
+.flex-item:nth-child(even) {
+   height: 60px;
+   line-height: 45px;
+   width: 100px;
+}
+
+.flex-item:nth-child(odd) {
+   height: 40px;
+   line-height: 25px;
+   width: 60px;
+}
+
+.flex-container {
+   background-color: #ddf;
+   border: 1px dotted black;
+   height: 335px;
+   max-width: 500px;
+   padding: 20px;
+}</code></pre>
+         <div id="flex-containerdemo6" class="w-500">
+            <div class="flex-container">
+               <div class="flex-item">01</div>
+               <div class="flex-item">02</div>
+               <div class="flex-item">03</div>
+               <div class="flex-item">04</div>
+               <div class="flex-item">05</div>
+               <div class="flex-item">06</div>
+               <div class="flex-item">07</div>
+               <div class="flex-item">08</div>
+               <div class="flex-item">09</div>
+            </div>
+         </div>
+      </div>     
+
+      <h4>justify-content</h4>
+      <p>Bepaal de spreiding langs de lijnen: aan het begin, in het midden, op het einde, zo ver mogelijk uit elkaar... met <code>justify-content</code>:</p>
+      <div class="codecompare">
+         <pre class="prism-atom-dark w-500" style="height: 335px; overflow-y: auto;"><code contenteditable data-target="#flex-containerdemo7">.flex-container {
+   align-content: center;          
+   align-items: center; 
+   display: flex; 
+   flex-wrap: wrap; 
+   justify-content: space-between; /* zo ver mogelijk uit elkaar */
+   gap: 10px; 
+}
+
+/* box styles */
+.flex-item {
+   background-color: #ddd;
+   border: 2px solid black;
+   padding: 5px;
+   text-align: center;
+}
+
+.flex-item:nth-child(even) {
+   height: 60px;
+   line-height: 45px;
+   width: 100px;
+}
+
+.flex-item:nth-child(odd) {
+   height: 40px;
+   line-height: 25px;
+   width: 60px;
+}
+
+.flex-container {
+   background-color: #ddf;
+   border: 1px dotted black;
+   height: 335px;
+   max-width: 500px;
+   padding: 20px;
+}</code></pre>
+         <div id="flex-containerdemo7" class="w-500">
+            <div class="flex-container">
+               <div class="flex-item">01</div>
+               <div class="flex-item">02</div>
+               <div class="flex-item">03</div>
+               <div class="flex-item">04</div>
+               <div class="flex-item">05</div>
+               <div class="flex-item">06</div>
+               <div class="flex-item">07</div>
+               <div class="flex-item">08</div>
+               <div class="flex-item">09</div>
+            </div>
+         </div>
+      </div>   
+      
+      <h4>flex-direction</h4>
+      <p>Zet items in kolommen i.p.v. rijen met <code>flex-direction</code>:</p>
+      <div class="codecompare">
+         <pre class="prism-atom-dark" style="height: 350px; overflow-y: auto;"><code contenteditable data-target="#flex-containerdemo8">.flex-container {
+   align-content: center; 
+   align-items: center;          
+   display: flex; 
+   flex-direction: column; /* row (default) of column */
+   flex-wrap: wrap; 
+   gap: 20px 5px; 
+}
+
+/* box styles */
+.flex-item {
+   background-color: #ddd;
+   border: 2px solid black;
+   padding: 5px;
+   text-align: center;
+}
+
+.flex-item:nth-child(even) {
+   height: 60px;
+   line-height: 45px;
+   width: 100px;
+}
+
+.flex-item:nth-child(odd) {
+   height: 40px;
+   line-height: 25px;
+   width: 60px;
+}
+
+.flex-container {
+   background-color: #ddf;
+   border: 1px dotted black;
+   height: 350px;
+   max-width: 500px;
+   padding: 20px;
+}</code></pre>
+         <div id="flex-containerdemo8" class="w-500">
+            <div class="flex-container">
+               <div class="flex-item">01</div>
+               <div class="flex-item">02</div>
+               <div class="flex-item">03</div>
+               <div class="flex-item">04</div>
+               <div class="flex-item">05</div>
+               <div class="flex-item">06</div>
+               <div class="flex-item">07</div>
+               <div class="flex-item">08</div>
+               <div class="flex-item">09</div>
+            </div>
+         </div>
+      </div>
+
+      <h3>Flex item</h3>
+      <h4>startvoorbeeld</h4>
+      <p>We starten van een flex container, met items op één rij, bovenaan de container geplaatst met <code>align-items: flex-start</code>:</p>
+      <div class="codecompare">
+         <pre class="prism-atom-dark" style="height: 200px; overflow-y: auto;"><code contenteditable data-target="#flex-itemdemo1">.flex-container {
+   align-items: flex-start;          
+   display: flex; 
+   gap: 10px; 
+}
+
+/* box styles */
+.flex-item {
+   background-color: #ddd;
+   border: 2px solid black;
+   padding: 15px 25px;
+   text-align: center;
+}
+
+.flex-container {
+   background-color: #ddf;
+   border: 1px dotted black;
+   height: 200px;
+   max-width: 500px;
+   padding: 20px;
+}</code></pre>
+         <div id="flex-itemdemo1" class="w-500">
+            <div class="flex-container">
+               <div class="flex-item">01</div>
+               <div class="flex-item">02</div>
+               <div class="flex-item">03</div>
+               <div class="flex-item">04</div>
+               <div class="flex-item">05</div>
+            </div>
+         </div>
+      </div>
+      <h4>order</h4>
+      <p>Met <code>order</code> kan je de volgorde bepalen:</p>
+      <ul>
+         <li>eerst komen items met negatieve <code>order</code></li>
+         <li>dan komen items zonder <code>order</code></li>
+         <li>tenslotte komen items met positieve <code>order</code>, hoogste als laatste</li>
+      </ul>
+      <div class="codecompare">
+         <pre class="prism-atom-dark" style="height: 200px; overflow-y: auto;"><code contenteditable data-target="#flex-itemdemo2">.flex-item:nth-child(2) {
+   order: 2; /* zet tweede item als laatste */
+}
+.flex-item:nth-child(3) {
+   order: -1; /* zet derde item aan het begin */
+}
+.flex-item:nth-child(4) {
+   order: 1; /* zet vierde item als voorlaatste */
+}
+
+.flex-container {
+   align-items: flex-start;          
+   display: flex; 
+   gap: 10px; 
+}
+
+/* box styles */
+.flex-item {
+   background-color: #ddd;
+   border: 2px solid black;
+   padding: 15px 25px;
+   text-align: center;
+}
+
+.flex-container {
+   background-color: #ddf;
+   border: 1px dotted black;
+   height: 200px;
+   max-width: 500px;
+   padding: 20px;
+}</code></pre>
+         <div id="flex-itemdemo2" class="w-500">
+            <div class="flex-container">
+               <div class="flex-item">01</div>
+               <div class="flex-item">02</div>
+               <div class="flex-item">03</div>
+               <div class="flex-item">04</div>
+               <div class="flex-item">05</div>
+            </div>
+         </div>
+      </div>
+      <h4>align-self</h4>
+      <p>Verander de positie ingesteld door <code>align-items</code> voor individuele items met <code>align-self</code>:</p>
+      <div class="codecompare">
+         <pre class="prism-atom-dark" style="height: 200px; overflow-y: auto;"><code contenteditable data-target="#flex-itemdemo3">.flex-item:last-child {
+   align-self: flex-end; /* overschrijft align-items */
+}
+
+.flex-container {
+   align-items: flex-start;          
+   display: flex; 
+   gap: 10px; 
+}
+
+/* box styles */
+.flex-item {
+   background-color: #ddd;
+   border: 2px solid black;
+   padding: 15px 25px;
+   text-align: center;
+}
+
+.flex-container {
+   background-color: #ddf;
+   border: 1px dotted black;
+   height: 200px;
+   max-width: 500px;
+   padding: 20px;
+}</code></pre>
+         <div id="flex-itemdemo3" class="w-500">
+            <div class="flex-container">
+               <div class="flex-item">01</div>
+               <div class="flex-item">02</div>
+               <div class="flex-item">03</div>
+               <div class="flex-item">04</div>
+               <div class="flex-item">05</div>
+            </div>
+         </div>
+      </div>
+      <h4>flex (flex-grow, flex-shrink en flex-basis)</h4>
+      <p>
+         Deze property combineert <code>flex-grow</code>, <code>flex-shrink</code> en <code>flex-basis</code>. 
+         Het is vooral van belang bij kolommen, en zegt wat hun initiële breedte is, en hoe ze groeien en krimpen naargelang de breedte van de container.
+         Enkele voorbeelden:
+      </p>
+      <table class="light">
+         <thead>
+            <tr>
+               <th scope="col">voorbeeld</th>
+               <th scope="col">uitleg</th>
+               <th scope="col">betekenis</th>
+            </tr>
+         </thead>
+         <tbody>
+            <tr>
+               <td><code>flex: 0 0 200px;</code></td>
+               <td>groeit of krimpt niet, initieel 200px breed</td>
+               <td>vaste kolom van 200px breed</td>
+            </tr>
+            <tr>
+               <td><code>flex: 1 0 200px;</code></td>
+               <td>groeit normaal, krimpt niet, initieel 200px breed</td>
+               <td>kolom van minstens 200px breed</td>
+            </tr>
+            <tr>
+               <td><code>flex: 0 1 200px;</code></td>
+               <td>groeit niet, krimpt normaal, initieel 200px breed</td>
+               <td>kolom van maximaal 200px breed</td>
+            </tr>
+            <tr>
+               <td><code>flex: 1 1 200px;</code></td>
+               <td>groeit normaal, krimpt normaal, initieel 200px breed</td>
+               <td>flexibele kolom van initieel 200px breed</td>
+            </tr>
+            <tr>
+               <td><code>flex: 2 1 200px;</code></td>
+               <td>groeit dubbel zo snel, krimpt normaal, initieel 200px breed</td>
+               <td>flexibele kolom van initieel 200px breed</td>
+            </tr>
+            <tr>
+               <td><code>flex: 1 2 200px;</code></td>
+               <td>groeit normaal, krimpt dubbel zo snel, initieel 200px breed</td>
+               <td>flexibele kolom van initieel 200px breed</td>
+            </tr>
+            <tr>
+               <td><code>flex: 1 1 0;</code></td>
+               <td>groeit normaal, krimpt normaal, initieel 0px breed<br><span class="smaller">(maar nooit smaller dan de content)</span></td>
+               <td>flexibele kolom, zo smal mogelijk</td>
+            </tr>
+            <tr>
+               <td><code>flex: 1 1 auto;</code></td>
+               <td>groeit normaal, krimpt normaal, initieel natuurlijke breedte<br><span class="smaller">(bepaald door content of, indien ingesteld, <code>width</code> property)</span></td>
+               <td>flexibele kolom, natuurlijke breedte</td>
+            </tr>
+         </tbody>
+      </table>      
+      <p>Voorbeeld 1: vaste kolommen links en rechts, flexibele kolom in het midden</p>   
+      <div class="codecompare">
+         <pre class="prism-atom-dark" style="height: 200px; overflow-y: auto;"><code contenteditable data-target="#flex-itemdemo4">.flex-item:nth-child(1) { flex: 0 0 150px; }
+.flex-item:nth-child(2) { flex: 1 1 auto; }            
+.flex-item:nth-child(3) { flex: 0 0 150px; }            
+.flex-container {
+   display: flex; 
+   gap: 10px; 
+}
+
+/* box styles */
+.flex-item {
+   background-color: #ddd;
+   border: 2px solid black;
+   font-size: 10px;
+   text-align: center;
+}
+
+.flex-container {
+   background-color: #ddf;
+   border: 1px dotted black;
+   height: 200px;
+   padding: 20px;
+   width: 450px;
+}</code></pre>
+      </div>
+      <div id="flex-itemdemo4" class="w-1200">
+         <div class="flex-container container">
+            <div class="flex-item">flex: 0 0 150px;</div>
+            <div class="flex-item">flex: 1 1 auto;</div>
+            <div class="flex-item">flex: 0 0 150px;</div>
+         </div>
+         <input type="range" min="400" max="1200" step="1" class="range-container-width w-500"><button type="button" class="range-reset">↻</button> 
+         <em class="smaller" style="display: block;">gebruik de slider om de containerbreedte te veranderen</em>
+      </div>
+      <p>Voorbeeld 2: flexibele kolommen, zelfde initiële breedte, krimpen alledrie even veel, middelste kolom groeit drie keer zo veel</p>   
+      <div class="codecompare">
+         <pre class="prism-atom-dark" style="height: 200px; overflow-y: auto;"><code contenteditable data-target="#flex-itemdemo5">.flex-item:nth-child(1) { flex: 1 1 150px; }
+.flex-item:nth-child(2) { flex: 3 1 150px; }            
+.flex-item:nth-child(3) { flex: 1 1 150px; }            
+.flex-container {
+   display: flex; 
+   gap: 10px; 
+}
+
+/* box styles */
+.flex-item {
+   background-color: #ddd;
+   border: 2px solid black;
+   font-size: 10px;
+   text-align: center;
+}
+
+.flex-container {
+   background-color: #ddf;
+   border: 1px dotted black;
+   height: 200px;
+   padding: 20px;
+   width: 510px;
+}</code></pre>
+      </div>
+      <div id="flex-itemdemo5" class="w-1200">
+         <div class="flex-container container">
+            <div class="flex-item">flex: 1 1 150px</div>
+            <div class="flex-item">flex: 3 1 150px</div>
+            <div class="flex-item">flex: 1 1 150px</div>
+         </div>
+         <input type="range" min="200" max="1200" step="1" class="range-container-width w-500"><button type="button" class="range-reset">↻</button> 
+         <em class="smaller" style="display: block;">gebruik de slider om de containerbreedte te veranderen</em>
+      </div>
+
+
 
       <h2>Floating</h2>
       <h3>Standaard weergave</h3>
@@ -645,7 +1145,7 @@ h3 {
              </div>
          </div>
       </div>
-      <h3>Gefloat</h3>
+      <h3>Floaten</h3>
       <p>Met <span class="em"><code>float: left;</code></span> kan je blocklevel elementen rond een afbeelding laten vloeien:</p>
       <div class="codecompare">
          <div class="democontainer">
@@ -938,6 +1438,592 @@ h3, p {
       <div class="tips" data-caption="☝🏼TIP">
          <p>De vuistregel is: <strong>als het anders kan</strong> (b.v. met flexbox), <strong>gebruik dan geen floating</strong></p>
       </div>
+
+      <h2>Positionering</h2>
+      <h3>Standaard weergave</h3>
+      <p>Positionering bepaalt de plaats van elementen a.h.v. <strong>coördinaten</strong> <code>top</code>, <code>right</code>, <code>bottom</code> en/of <code>left</code>. Laat ons starten van volgende code, zonder layout. Aangezien het blocklevel elementen zijn, is de natuurlijke positie van de drie blokken onder elkaar:</p>
+      <div class="codecompare">
+         <div class="democontainer">
+            <pre class="prism-default language-html" data-demo><code>&lt;div class="demowrapper"&gt;
+   &lt;div class="demobox demobox1"&gt;1&lt;/div&gt;
+   &lt;div class="demobox demobox2"&gt;2&lt;/div&gt;
+   &lt;div class="demobox demobox3"&gt;3&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+            <pre class="prism-atom-dark h-200"><code contenteditable data-target="#positioning-demo1">/* box styles */
+.demobox {
+   border: 2px solid black;
+   width: 80px;
+   height: 40px;
+   margin-bottom: 10px;
+   padding: 5px;
+}
+
+.demowrapper {
+   border: 1px dotted black;
+   margin: 50px;
+   max-width: 500px;
+   padding: 20px;
+}
+.demobox1 {
+     background-color: #ddd;
+}
+.demobox2 {
+   background-color: #888;
+}
+.demobox3 {
+   background-color: #333;
+}</code></pre>
+         </div>
+         <div id="positioning-demo1" class="w-500 target">
+            <div class="demowrapper">
+               <div class="demobox demobox1">1</div>
+               <div class="demobox demobox2">2</div>
+               <div class="demobox demobox3">3</div>
+             </div>
+         </div>
+      </div>
+
+      <h3>Relatief</h3>
+      <p>Met <mark>relatieve positionering</mark> wordt het element <strong>uit zijn natuurlijke positie verschoven</strong>; andere elementen blijven waar ze zijn:</p>
+      <div class="codecompare">
+         <div class="democontainer">
+            <pre class="prism-default language-html" data-demo><code>&lt;div class="demowrapper"&gt;
+   &lt;div class="demobox demobox1"&gt;1&lt;/div&gt;
+   &lt;div class="demobox demobox2"&gt;2&lt;/div&gt;
+   &lt;div class="demobox demobox3"&gt;3&lt;/div&gt;
+&lt;/div&gt;
+            </code></pre>
+            <pre class="prism-atom-dark h-200"><code contenteditable data-target="#positioning-demo2">/* relative positioning */
+.demobox2 {
+   position: relative;
+   left: 10px; /* verschuif 10px naar rechts */
+   top: 20px; /* verschuif 20px naar beneden */
+}
+
+/* box styles */
+.demobox {
+   border: 2px solid black;
+   height: 40px;
+   margin-bottom: 10px;
+   padding: 5px;
+   width: 80px;
+}
+
+.demowrapper {
+   background-color: #fafafa;
+   border: 1px dotted black;
+   margin: 50px;
+   max-width: 500px;
+   padding: 20px;
+}
+.demobox1 {
+     background-color: #ddd;
+}
+.demobox2 {
+   background-color: #888;
+}
+.demobox3 {
+   background-color: #333;
+}</code></pre>
+         </div>
+         <div id="positioning-demo2" class="w-500 target">
+            <div class="demowrapper">
+               <div class="demobox demobox1">1</div>
+               <div class="demobox demobox2">2</div>
+               <div class="demobox demobox3">3</div>
+             </div>
+         </div>
+      </div>
+
+      <h3>Absoluut</h3>
+      <p>Met <mark>absolute positionering</mark> neem je een element uit de pagina, en positioneer je het <strong>ten opzichte van de paginaranden</strong> (overlapping is mogelijk); andere elementen vullen de ontstane ruimte. </p>
+      <div class="codecompare">
+         <div class="democontainer">
+            <pre class="prism-default language-html" data-demo><code>&lt;div class="demowrapper"&gt;
+   &lt;div class="demobox demobox1"&gt;1&lt;/div&gt;
+   &lt;div class="demobox demobox2"&gt;2&lt;/div&gt;
+   &lt;div class="demobox demobox3"&gt;3&lt;/div&gt;
+&lt;/div&gt;
+            </code></pre>
+            <pre class="prism-atom-dark h-200"><code contenteditable data-target="#positioning-demo3">/* relative positioning */
+.demobox2 {
+   position: absolute;
+   left: 5px; /* 5px vanaf links */
+   top: 5px; /* 5px vanaf boven */
+}
+
+/* box styles */
+.demobox {
+   border: 2px solid black;
+   height: 40px;
+   margin-bottom: 10px;
+   padding: 5px;
+   width: 80px;
+}
+
+.demowrapper {
+   background-color: #fafafa;
+   border: 1px dotted black;
+   margin: 50px;
+   max-width: 500px;
+   padding: 20px;
+}
+.demobox1 {
+  background-color: #ddd;
+}
+.demobox2 {
+  background-color: #888;
+}
+.demobox3 {
+  background-color: #333;
+}</code></pre>
+         </div>
+         <div id="positioning-demo3" class="w-500 target">
+            <div class="demowrapper">
+               <div class="demobox demobox1">1</div>
+               <div class="demobox demobox2">2</div>
+               <div class="demobox demobox3">3</div>
+             </div>
+         </div>
+      </div>      
+      <p>
+         Je kan het ook rechtsonder plaatsen, b.v. met <code>right: 10px; bottom: 10px;</code>
+      </p>
+      <div class="codecompare">
+         <div class="democontainer">
+            <pre class="prism-default language-html" data-demo><code>&lt;div class="demowrapper"&gt;
+   &lt;div class="demobox demobox1"&gt;1&lt;/div&gt;
+   &lt;div class="demobox demobox2"&gt;2&lt;/div&gt;
+   &lt;div class="demobox demobox3"&gt;3&lt;/div&gt;
+&lt;/div&gt;
+            </code></pre>
+            <pre class="prism-atom-dark h-200"><code contenteditable data-target="#positioning-demo4">/* relative positioning */
+.demobox2 {
+   position: absolute;
+   bottom: 10px; /* 10px vanaf beneden */
+   right: 10px; /* 10px vanaf rechts */
+}
+
+/* box styles */
+.demobox {
+   border: 2px solid black;
+   height: 40px;
+   margin-bottom: 10px;
+   width: 80px;
+   padding: 5px;
+}
+
+.demowrapper {
+   background-color: #fafafa;
+   border: 1px dotted black;
+   margin: 50px;
+   max-width: 500px;
+   padding: 20px;
+}
+.demobox1 {
+  background-color: #ddd;
+}
+.demobox2 {
+  background-color: #888;
+}
+.demobox3 {
+  background-color: #333;
+}</code></pre>
+         </div>
+         <div id="positioning-demo4" class="w-500 target">
+            <div class="demowrapper">
+               <div class="demobox demobox1">1</div>
+               <div class="demobox demobox2">2</div>
+               <div class="demobox demobox3">3</div>
+             </div>
+         </div>
+      </div>
+
+      <h4>absoluut-relatief</h4>
+      <p>De coördinaten zijn standaard t.o.v. de pagina. Als je wil positioneren <strong>ten opzichte van de parent</strong>, stel je die in op <code>position: relative</code>; dit heet <mark>absoluut-relatieve positionering</mark>.</p>
+      <div class="codecompare">
+         <div class="democontainer">
+            <pre class="prism-default language-html" data-demo><code>&lt;div class="demowrapper"&gt;
+   &lt;div class="demobox demobox1"&gt;1&lt;/div&gt;
+   &lt;div class="demobox demobox2"&gt;2&lt;/div&gt;
+   &lt;div class="demobox demobox3"&gt;3&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+            <pre class="prism-atom-dark h-200"><code contenteditable data-target="#positioning-demo8">/* absoluut-relative positioning */
+.demowrapper {
+   position: relative; /* nieuwe referentie voor coördinaten */
+}
+
+.demobox2 {
+   position: absolute;
+   left: 5px; /* 5px vanaf links */
+   top: 5px; /* 5px vanaf boven */
+}
+
+/* box styles */
+.demobox {
+   border: 2px solid black;
+   height: 40px;
+   margin-bottom: 10px;
+   padding: 5px;
+   width: 80px;
+}
+
+.demowrapper {
+   background-color: #fafafa;
+   border: 1px dotted black;
+   margin: 50px;
+   max-width: 500px;
+   padding: 20px;
+}
+.demobox1 {
+  background-color: #ddd;
+}
+.demobox2 {
+  background-color: #888;
+}
+.demobox3 {
+  background-color: #333;
+}</code></pre>
+         </div>
+         <div id="positioning-demo8" class="w-500 target">
+            <div class="demowrapper">
+               <div class="demobox demobox1">1</div>
+               <div class="demobox demobox2">2</div>
+               <div class="demobox demobox3">3</div>
+             </div>
+         </div>
+      </div>   
+      <h4>overlay voorbeeld</h4>
+      <p>Als je vier coördinaten opgeeft (en <code>width</code> en <code>height</code> weghaalt) wordt het element over de hele pagina uitgerokken (en bedekt het de andere blokken). Met een gedeeltelijk transparante achtergrond kan je dan een overlay maken:</p>
+      <div class="codecompare">
+         <div class="democontainer">
+            <pre class="prism-default language-html w-500" data-demo><code>
+&lt;div class="overlay"&gt;&lt;h2&gt;OVERLAY CONTENT HIER&lt;/h2&gt;&lt;/div&gt;
+&lt;p&gt;Wij zin rijken ruimer zekere. Loopbaan een district bordeaux mag bevreesd heb. Inkomsten op af singapore behoeften. Het brengen den gedaald menigte markten evenals javanen. Ontwouding middellijn nu geruineerd ptolomaeus denzelfden in handelaars. Vrij in nu kilo west. Wieschen vermengd verbouwd zou was die verschil het geheelen voorzien. &lt;/p&gt;
+&lt;p&gt;Gebrek loopen kan zee zit andere ton levert zeggen zonder. Rook zoo twee zee hen maal. Wantrouwen ons tot inboorling nog doorzoeken.&lt;/p&gt;</code></pre>
+            <pre class="prism-atom-dark h-200"><code contenteditable data-target="#positioning-demo5">/* absolute positioning */
+.overlay {
+   /* maak overlay */
+   background-color: #888c;
+   position: absolute;
+   bottom: 20px; /* 10px vanaf beneden */
+   left: 30px; /* 10px vanaf links */
+   right: 30px; /* 10px vanaf rechts */
+   top: 20px; /* 10px vanaf boven */
+}
+.overlay  h2 {
+   color: white;
+   padding: 20px;
+   text-align: center;
+}
+</code></pre>
+         </div>
+         <div id="positioning-demo5" class="w-500 target">
+            <div class="overlay"><h2>OVERLAY CONTENT HIER</h2></div>
+            <p>Wij zin rijken ruimer zekere. Loopbaan een district bordeaux mag bevreesd heb. Inkomsten op af singapore behoeften. Het brengen den gedaald menigte markten evenals javanen. Ontwouding middellijn nu geruineerd ptolomaeus denzelfden in handelaars. Vrij in nu kilo west. Wieschen vermengd verbouwd zou was die verschil het geheelen voorzien. </p>
+            <p>Gebrek loopen kan zee zit andere ton levert zeggen zonder. Rook zoo twee zee hen maal. Wantrouwen ons tot inboorling nog doorzoeken.</p>
+         </div>
+      </div>
+      <h4>z-index</h4>
+
+      <p>Je kan de stapelvolgorde van gepositioneerde elementen altijd aanpassen met <mark>z-index</mark>, een willekeurig geheel getal:</p>
+      <ul>
+         <li>een <strong>negatieve z-index</strong> plaatst het element <strong>onder</strong> normale content</li>
+         <li>een <strong>positieve z-index</strong> plaatst het element <strong>boven</strong> normale content, hoe hoger de index, hoe meer bovenaan</li>
+      </ul>
+      <p>Een voorbeeld met drie absoluut gepositioneerde blokken:</p>
+      <div class="codecompare">
+         <div class="democontainer">
+            <pre class="prism-default language-html w-500" data-demo><code>&lt;div class="demobox demobox1"&gt;1&lt;/div&gt;
+&lt;div class="demobox demobox2"&gt;2&lt;/div&gt;
+&lt;div class="demobox demobox3"&gt;3&lt;/div&gt;
+&lt;p&gt;Wij zin rijken ruimer zekere. Loopbaan een district bordeaux mag bevreesd heb. Inkomsten op af singapore behoeften. Het brengen den gedaald menigte markten evenals javanen. Ontwouding middellijn nu geruineerd ptolomaeus denzelfden in handelaars. Vrij in nu kilo west. Wieschen vermengd verbouwd zou was die verschil het geheelen voorzien. &lt;/p&gt;
+&lt;p&gt;Gebrek loopen kan zee zit andere ton levert zeggen zonder. Rook zoo twee zee hen maal. Wantrouwen ons tot inboorling nog doorzoeken.&lt;/p&gt;</code></pre>
+            <pre class="prism-atom-dark h-300"><code contenteditable data-target="#positioning-demo7">/* stapelvolgorde */
+.demobox1 {
+   z-index: 4; /* probeer een ook 20, 1 en -1 */
+}
+.demobox2 {
+   z-index: 10;
+}
+.demobox3 {
+   z-index: 2;
+}
+
+/* absolute positionering */
+.demobox1 {
+   position: absolute;
+   left: 25px; 
+   top: -15px; 
+}
+.demobox2 {
+   position: absolute;
+   left: 65px; 
+   top: 15px; 
+}
+.demobox3 {
+   left: 45px; 
+   top: 35px; 
+   position: absolute;
+}
+
+/* box styles */
+.demobox {
+   border: 2px solid black;
+   margin-bottom: 10px;
+   padding: 5px;
+   width: 160px;
+   height: 80px;
+}
+
+.demowrapper {
+   background-color: #fafafa;
+   border: 1px dotted black;
+   margin: 50px;
+   max-width: 500px;
+   padding: 20px;
+}
+.demobox1 {
+  background-color: #ddd;
+}
+.demobox2 {
+  background-color: #888;
+}
+.demobox3 {
+  background-color: #333;
+}</code></pre>
+         </div>
+         <div id="positioning-demo7" class="w-500 target">
+            <p>Wij zin rijken ruimer zekere. Loopbaan een district bordeaux mag bevreesd heb. Inkomsten op af singapore behoeften. Het brengen den gedaald menigte markten evenals javanen. Ontwouding middellijn nu geruineerd ptolomaeus denzelfden in handelaars. Vrij in nu kilo west. Wieschen vermengd verbouwd zou was die verschil het geheelen voorzien. </p>
+            <p>Gebrek loopen kan zee zit andere ton levert zeggen zonder. Rook zoo twee zee hen maal. Wantrouwen ons tot inboorling nog doorzoeken.</p>
+            <div class="demobox demobox1">1</div>
+            <div class="demobox demobox2">2</div>
+            <div class="demobox demobox3">3</div>
+         </div>
+      </div>
+
+      <h3>Fixed</h3>
+      <p>De <mark>fixed positionering</mark> fixeert een element op de pagina, onafhankelijk van het scrollen:</p>
+      <div class="codecompare">
+         <div class="democontainer">
+            <pre class="prism-default language-html w-500"><code>&lt;p&gt;(scroll this page)&lt;/p&gt;
+&lt;p&gt;Folly words widow one downs few age every seven. If miss part by fact he park just shew. Discovered had get considered projection who favourable. Necessary up knowledge it tolerably. Unwilling departure education is be dashwoods or an. Use off agreeable law unwilling sir deficient curiosity instantly. Easy mind life fact with see has bore ten. Parish any chatty can elinor direct for former. Up as meant widow equal an share least. &lt;/p&gt;
+&lt;p&gt;Examine she brother prudent add day ham. Far stairs now coming bed oppose hunted become his. You zealously departure had procuring suspicion. Books whose front would purse if be do decay. Quitting you way formerly disposed perceive ladyship are. Common turned boy direct and yet. &lt;/p&gt;
+&lt;p&gt;Ye on properly handsome returned throwing am no whatever. In without wishing he of picture no exposed talking minutes. Curiosity continual belonging offending so explained it exquisite. Do remember to followed yourself material mr recurred carriage. High drew west we no or at john. About or given on witty event. Or sociable up material bachelor bringing landlord confined. Busy so many in hung easy find well up. So of exquisite my an explained remainder. Dashwood denoting securing be on perceive my laughing so.&lt;/p&gt;
+&lt;a id="toplink" href="#top"&gt;back to top ↑&lt;/a&gt;</code></pre>
+            <pre class="prism-atom-dark"><code>#toplink {
+  /* add fixed top link */
+  position: fixed;
+  right: 10px;
+  bottom: 10px;
+  /* colors &amp; borders */
+  background-color: #ddd;
+  border: 2px solid black;
+  padding: 5px 10px;
+}</code></pre>
+         </div>
+         <iframe src="demos/04_layout/fixed.html" class="w-400"></iframe>
+      </div>
+
+      <h3>Sticky</h3>
+      <p>De <mark>sticky positionering</mark> scrollt tot een gegeven offset bereikt is, waarna het blijft plakken.</p>
+      <div class="codecompare">
+         <div class="democontainer">
+            <pre class="prism-default language-html w-500"><code>&lt;p&gt;(scroll this page)&lt;/p&gt;
+&lt;div id="sticky"&gt;I am sticky!&lt;/div&gt;               
+&lt;p&gt;Folly words widow one downs few age every seven. If miss part by fact he park just shew. Discovered had get considered projection who favourable. Necessary up knowledge it tolerably. Unwilling departure education is be dashwoods or an. Use off agreeable law unwilling sir deficient curiosity instantly. Easy mind life fact with see has bore ten. Parish any chatty can elinor direct for former. Up as meant widow equal an share least. &lt;/p&gt;
+&lt;p&gt;Examine she brother prudent add day ham. Far stairs now coming bed oppose hunted become his. You zealously departure had procuring suspicion. Books whose front would purse if be do decay. Quitting you way formerly disposed perceive ladyship are. Common turned boy direct and yet. &lt;/p&gt;
+&lt;p&gt;Ye on properly handsome returned throwing am no whatever. In without wishing he of picture no exposed talking minutes. Curiosity continual belonging offending so explained it exquisite. Do remember to followed yourself material mr recurred carriage. High drew west we no or at john. About or given on witty event. Or sociable up material bachelor bringing landlord confined. Busy so many in hung easy find well up. So of exquisite my an explained remainder. Dashwood denoting securing be on perceive my laughing so.&lt;/p&gt;
+</code></pre>
+            <pre class="prism-atom-dark"><code>#sticky {
+   /* make sticky */
+   position: sticky;
+   top: 0; /* stick to top */
+   /* colors &amp; borders */
+   background-color: #cae8ca;
+   border: 2px solid #4CAF50;
+   color: inherit;
+   padding: 5px 10px;
+   text-decoration: none;
+}</code></pre>
+         </div>
+         <iframe src="demos/04_layout/sticky.html" class="w-400"></iframe>
+      </div>
+      <h3>Wanneer gebruiken</h3>
+      <p>Studenten hebben vaak de neiging positionering veel te snel terug te grijpen naar positionering. Eigenlijk wordt het <em>zeer weinig gebruikt</em>. Wanneer wel:</p>
+      <ul class="right">
+         <li>gebruik <strong>sticky</strong> of <strong>fixed</strong> voor "back to top links", sticky notes e.d.</li>
+         <li>gebruik <strong>absolute positionering</strong> voor game programming om layers te maken, zie b.v. <a href="demos/02_design/animations2.html">deze uitgebreide demo</a></li>
+      </ul>
+      <p>Gebruik positionering zeker niet voor:</p>
+      <ul class="wrong">
+         <li>gebruik <strong>geen relatieve positionering</strong> om foutjes in de layout te corrigeren</li>
+         <li>gebruik <strong>geen absolute positionering</strong> om elementen binnen een parent te positioneren; dat doen we met flexbox en margins/paddings</li>
+         <li>gebruik <strong>geen positionering</strong> technieken voor pagina layout; dat doen we met flexbox en margins/paddings</li>
+      </ul>
+      <div class="tips" data-caption="☝🏼TIP">
+         <p>De vuistregel is: <strong>als het anders kan</strong> (b.v. met flexbox), <strong>gebruik dan geen positionering</strong></p>
+      </div>
+
+      <h2>Grid</h2>
+      <p>CSS Grid is niet eenvoudig en mag <strong>in deze cursus niet gebruikt</strong> worden. Mocht je het buiten de cursus willen gebruiken, dan vind je een uitstekende uitleg en overzicht op <a href="https://css-tricks.com/snippets/css/complete-guide-grid/">https://css-tricks.com/snippets/css/complete-guide-grid/</a></p>
+
+      <h2>Layout case study</h2>
+      <p>Een samenvattend voorbeeld:</p>
+      <div class="codecompare">
+      <pre class="prism-default language-html h-500" data-demo="demos/04_layout/casestudy.html"><code>&lt;body&gt;
+   &lt;header&gt;
+      &lt;h1 class="header_logo"&gt;Logo&lt;/h1&gt;
+      &lt;p class="header_tagline"&gt;some great tagline&lt;/p&gt;
+      &lt;form class="header_search"&gt;
+         &lt;label&gt;&lt;input type="search" placeholder="search for something"&gt;&lt;/label&gt;
+         &lt;button type="submit"&gt;🔍&lt;/button&gt;
+      &lt;/form&gt;
+   &lt;/header&gt;
+   &lt;nav&gt;
+      &lt;ul&gt;
+         &lt;li&gt;&lt;a href=""&gt;home&lt;/a&gt;&lt;/li&gt;
+         &lt;li&gt;&lt;a href=""&gt;about&lt;/a&gt;&lt;/li&gt;
+         &lt;li&gt;&lt;a href=""&gt;contact&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+   &lt;/nav&gt;
+   &lt;main&gt;
+      &lt;div id="content"&gt;
+         content here...
+      &lt;/div&gt;
+      &lt;aside&gt;
+         aside here...
+      &lt;/aside&gt;
+   &lt;/main&gt;
+   &lt;footer&gt;
+      &lt;p&gt;&copy; 2024&lt;/p&gt;
+   &lt;/footer&gt;
+&lt;/body&gt;</code></pre>
+         <pre class="prism-atom-dark h-500"><code>/* body layout */
+body {
+   display: flex;
+   flex-direction: column; /* plaats header, nav, main, footer onder elkaar */
+   margin: 0 auto; /* centreer body in &lt;html&gt; */
+   max-width: 1000px; /* maximaal 1000px breed */  
+   min-height: 100vh; /* bedek minstens hele viewport */
+}
+main {
+   flex: 1 1 auto; /* auto: stretch om resterende ruimte te vullen */
+}
+
+/* header layout */
+header {
+   align-items: center; /* items verticaal centreren */
+   display: flex;
+   justify-content: space-between; /* zo ver mogelijk uit elkaar */
+   min-height: 150px;
+}
+.header_logo {
+   flex: 0 0 100px; /* vaste breedte */
+}
+.header_search {
+   align-self: flex-end; /* zet zichzelf beneden */
+   flex: 0 0 220px; /* vaste breedte */
+}
+
+/* nav layout */
+nav ul {
+   display: flex;
+   gap: 10px; /* ruimte tussen items */
+   justify-content: center; /* items in het midden */
+}
+
+/* main layout */
+main {
+   display: flex;
+}
+#content {
+   flex: 1 1 auto;
+}
+aside {
+   flex: 0 0 200px;
+}
+
+/* footer layout */
+footer {
+   text-align: center;
+}
+
+/* algemene stijlen */
+* {
+   box-sizing: border-box;
+}
+body {
+   border-left: 2px solid #ccc;
+   border-right: 2px solid #ccc;
+   padding: 0;
+}
+header, nav, footer, #content, aside {
+   padding: 10px 20px;
+}
+nav {
+   background-color: #eee; 
+}
+nav ul {
+   list-style: none;
+   margin: 0;
+}
+header, footer {
+   background-color: #ddd; 
+   padding: 10px 20px;
+}
+aside {
+   background-color: #bcd;
+}</code></pre>
+      </div>
+      <p>Je herkent volgende technieken:</p>
+      <ul>
+         <li>
+            <strong>body</strong>
+            <ul>
+               <li>verticale layout met <code> display: flex; flex-direction: column</code></li>
+               <li>de <code>&lt;main&gt;</code> vult zoveel mogelijk verticale ruimte met <code>flex: 1 1 auto</code></li>
+               <li>horizontaal gecentreerd in de pagina met <code>max-width: 1000px; margin: 0 auto;</code></li>
+               <li>verticaal over de browser viewport uitgerokken met <code>min-height: 100vh</code></li>
+            </ul>
+         </li>
+         <li>
+            <strong>header</strong> 
+            <ul>
+               <li>horizontale layout met <code>display: flex</code></li>
+               <li>items verticaal gecentreerd met <code>align-items: center</code></li>
+               <li>items zo ver mogelijk uit elkaar met <code>justify-content: space-between</code></li>
+               <li>logo vaste breedte met <code>flex: 0 0 100px</code></li>
+               <li>zoekformulier vaste breedte met <code>flex: 0 0 220px</code></li>
+               <li>zoekformulier onderaan geplaatst met <code>align-self: flex-end</code></li>
+            </ul>
+         </li>
+         <li>
+            <strong>nav</strong>
+            <ul>
+               <li>horizontale layout met <code>display: flex</code></li>
+               <li>items gecentreerd met <code>justify-content: center</code></li>
+               <li>ruimte tussen items met <code>gap: 10px</code></li>
+            </ul>
+         </li>
+         <li>
+            <strong>main</strong>
+            <ul>
+               <li>horizontale layout met <code>display: flex</code></li>
+               <li>content flexibele breedte met <code>flex: 1 1 auto</code></li>
+               <li>aside vaste breedte met <code>flex: 0 0 100px</code></li>
+            </ul>
+         </li>
+         <li>
+            <strong>footer</strong>
+            <ul>
+               <li>tekst gecentreerd met <code>text-align: center</code></li>
+            </ul>
+         </li>
+      </ul>
+      <p>Resultaat:</p>
+      <img src="img/04_layout/casestudy.png" alt="" class="w-800 bordered shadow">
+
 
    </main>
    <footer>

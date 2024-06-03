@@ -259,106 +259,127 @@ span.indent {
 
 body main .w-50 {
 	max-width: 100%;
+	overflow-x: auto;
 	width: 5rem;
 }
 
 body main .w-100 {
 	max-width: 100%;
+	overflow-x: auto;
 	width: 10rem;
 }
 
 body main .w-150 {
 	max-width: 100%;
+	overflow-x: auto;
 	width: 15rem;
 }
 
 body main .w-200 {
 	max-width: 100%;
+	overflow-x: auto;
 	width: 20rem;
 }
 
 body main .w-220 {
 	max-width: 100%;
+	overflow-x: auto;
 	width: 22rem;
 }
 
 body main .w-250 {
 	max-width: 100%;
+	overflow-x: auto;
 	width: 25rem;
 }
 
 body main .w-300 {
 	max-width: 100%;
+	overflow-x: auto;
 	width: 30rem;
 }
 
 body main .w-350 {
 	max-width: 100%;
+	overflow-x: auto;
 	width: 35rem;
 }
 
 body main .w-400 {
 	max-width: 100%;
+	overflow-x: auto;
 	width: 40rem;
 }
 
 body main .w-450 {
 	max-width: 100%;
+	overflow-x: auto;
 	width: 45rem;
 }
 
 body main .w-500 {
 	max-width: 100%;
+	overflow-x: auto;
 	width: 50rem;
 }
 
 body main .w-550 {
 	max-width: 100%;
+	overflow-x: auto;
 	width: 55rem;
 }
 
 body main .w-600 {
 	max-width: 100%;
+	overflow-x: auto;
 	width: 60rem;
 }
 
 body main .w-650 {
 	max-width: 100%;
+	overflow-x: auto;
 	width: 65rem;
 }
 
 body main .w-700 {
 	max-width: 100%;
+	overflow-x: auto;
 	width: 70rem;
 }
 
 body main .w-750 {
 	max-width: 100%;
+	overflow-x: auto;
 	width: 75rem;
 }
 
 body main .w-800 {
 	max-width: 100%;
+	overflow-x: auto;
 	width: 80rem;
 }
 
 body main .w-900 {
 	max-width: 100%;
+	overflow-x: auto;
 	width: 90rem;
 }
 
 body main .w-1000 {
 	max-width: 100%;
+	overflow-x: auto;
 	width: 100rem;
 }
 
 body main .w-1100 {
 	max-width: 100%;
+	overflow-x: auto;
 	width: 110rem;
 }
 
 body main .w-1200 {
 	max-width: 100%;
+	overflow-x: auto;
 	width: 120rem;
 }
 
@@ -366,37 +387,37 @@ body main .w-1200 {
 
 .h-200 {
 	height: 200px;
-	overflow-y: scroll;
+	overflow-y: auto;
 }
 
 .h-300 {
 	height: 300px;
-	overflow-y: scroll;
+	overflow-y: auto;
 }
 
 .h-400 {
 	height: 400px;
-	overflow-y: scroll;
+	overflow-y: auto;
 }
 
 .h-500 {
 	height: 500px;
-	overflow-y: scroll;
+	overflow-y: auto;
 }
 
 .h-600 {
 	height: 600px;
-	overflow-y: scroll;
+	overflow-y: auto;
 }
 
 .h-700 {
 	height: 700px;
-	overflow-y: scroll;
+	overflow-y: auto;
 }
 
 .h-800 {
 	height: 800px;
-	overflow-y: scroll;
+	overflow-y: auto;
 }
 
 /* TAG-CLASSES */
@@ -481,20 +502,25 @@ iframe.youtube {
 	box-shadow: 0 0 10px #0009;
 }
 
-.youtube_toc ul {
+.youtube_toc > ul {
 	font-size: 14px;
 	list-style: square;
    margin: 0;
 	padding-left: 2em;
 }
 
-.youtube_toc ul ul {
+ul ul {
 	list-style: none;
+   margin: 0;
 	padding-left: 0;
 }
 
-.youtube_toc ul ul li::before {
+ul ul li::before {
 	content: '— ';
+}
+
+#toc ul ul li::before {
+	content: '';
 }
 
 /* flex containers */
@@ -887,7 +913,6 @@ pre {
 	margin-bottom: 1em;
 	margin-top: 0;
 	max-width: 100%;
-	overflow: auto;
 	padding: 1em;
    position: relative;
 	white-space: pre;
@@ -923,6 +948,19 @@ figure.console pre {
 	margin-top: 1em;
 }
 
+.range-container-width {
+	-webkit-appearance: none !important;
+	background:#999;
+	height:7px;
+	margin-top: 10px;
+	width: 100%;
+}
+.range-container-width::-webkit-slider-thumb {
+	-webkit-appearance: none !important;
+	background:#333;
+	height:10px;
+	width:10px;
+}
 /* FOOTER */
 
 footer {
