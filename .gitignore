@@ -1,5 +1,6 @@
 # Ignores
 .DS_Store
+.vscode
 /_old/*
 node_modules
 .gitignore
