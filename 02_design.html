@@ -167,7 +167,7 @@
          </thead>
          <tbody>
             <tr>
-               <td>px</td>
+               <td><code>px</code></td>
                <td>absoluut</td>
                <td>
                   <strong>pixel</strong> op het scherm 
@@ -186,7 +186,7 @@ main &gt; p {
                </td>
             </tr>
             <tr>
-               <td>%</td>
+               <td><code>%</code></td>
                <td>relatief</td>
                <td>percentage van <strong>parent</strong> waarde</td>
                <td>
@@ -198,7 +198,7 @@ main &gt; p {
                </td>
             </tr>
             <tr>
-               <td>em</td>
+               <td><code>em</code></td>
                <td>relatief</td>
                <td>
                   <em>bij afmetingen</em>: aantal keer fontsize van het <strong>element</strong> zelf
@@ -213,7 +213,7 @@ main &gt; p {
                </td>
             </tr>
             <tr>
-               <td>rem</td>
+               <td><code>rem</code></td>
                <td>relatief</td>
                <td>
                   "root em": aantal keer fontsize van het <strong>root</strong> element <code>&lt;html&gt;</code> (standaard 16px)
@@ -274,7 +274,7 @@ img.hamburger_icon {
    &lt;/aside&gt;
 &lt;/body&gt;</code></pre>
             <pre class="prism-atom-dark"><code>body {
-   display: flex;
+   display: flex; /* zie onderdeel 04. layout */
    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 body &gt; section {
@@ -320,10 +320,8 @@ blockquote {
    &lt;div class="review-px"&gt;
       &lt;h3 class="review-title"&gt;Great hotel! (px versie)&lt;/h3&gt;
       &lt;p&gt;
-         In friendship diminution instrument so.
-         Son sure paid door with say them. Lorem
-         ipsum dolor sit amet, consectetur
-         adipiscing elit!
+         In friendship diminution instrument so. Son sure paid door with 
+         say them. Lorem ipsum dolor sit amet, consectetur adipiscing elit!
       &lt;/p&gt;
       &lt;img src="mugshot.jpg" alt="avatar"&gt;
       &lt;footer&gt;
@@ -334,10 +332,8 @@ blockquote {
    &lt;div class="review-em"&gt;
       &lt;h3 class="review-title"&gt;Great hotel! (em versie)&lt;/h3&gt;
       &lt;p&gt;
-         In friendship diminution instrument so.
-         Son sure paid door with say them. Lorem
-         ipsum dolor sit amet, consectetur
-         adipiscing elit!
+         In friendship diminution instrument so. Son sure paid door with 
+         say them. Lorem ipsum dolor sit amet, consectetur adipiscing elit!
       &lt;/p&gt;
       &lt;img src="mugshot.jpg" alt="avatar"&gt;
       &lt;footer&gt;
@@ -430,7 +426,7 @@ body { font-size: 14px; }
 h1 { font-size: 20px; }
 footer { font-size: 11px; }
 footer a { font-size: 12px; }</code></pre>
-<pre><code>html { font-size: 10px; } /* 1rem = 10px */
+<pre><code>html { font-size: 10px; } /* dan is 1rem = 10px */
 body { font-size: 1.4rem; }
 h1 { font-size: 2rem; }
 footer { font-size: 1.1rem; }
@@ -452,7 +448,7 @@ footer a { font-size: 1.2rem;  }</code></pre>
          </thead>
          <tbody>
             <tr>
-               <td>vh, vw</td>
+               <td><code>vh</code>, <code>vw</code></td>
                <td>relatief</td>
                <td>
                   percentage van de <strong>viewport</strong> hoogte resp. breedte
@@ -465,7 +461,7 @@ footer a { font-size: 1.2rem;  }</code></pre>
                </td>
             </tr>
             <tr>
-               <td>vmin, vmax</td>
+               <td><code>vmin</code>, <code>vmax</code></td>
                <td>relatief</td>
                <td>idem, waarbij <strong>kleinste resp. grootste</strong> waarde van breedte en hoogte genomen wordt</td>
                <td>
@@ -480,7 +476,7 @@ footer a { font-size: 1.2rem;  }</code></pre>
       </table>
 
       <img src="img/02_design/units-vw-vh.png" alt="" class="bordered shadow w-500">
-      <p>Deze eenheden moet je kennen, maar mag je <strong>niet gebruiken in deze cursus</strong>.</p>
+      <p>Deze eenheden moet je kennen, maar mag je <strong>niet gebruiken in deze cursus</strong>, tenzij uitzonderlijk om de pagina verticaal uit te rekken met <code>body { min-height: 100vh; }</code>.</p>
 
       <h3>andere eenheden</h3>
       <p>
@@ -496,42 +492,42 @@ footer a { font-size: 1.2rem;  }</code></pre>
          </thead>
          <tbody>
             <tr>
-               <td>ch</td>
+               <td><code>ch</code></td>
                <td>relatief</td>
                <td>
                   <code>1ch</code> is de breedte van het '0' karakter
                </td>
             </tr>
             <tr>
-               <td>ex</td>
+               <td><code>ex</code></td>
                <td>relatief</td>
                <td>
                   <code>1ex</code> is de breedte van het 'x' karakter
                </td>
             </tr>
             <tr>
-               <td>mm</td>
+               <td><code>mm</code></td>
                <td>absoluut</td>
                <td>
                   millimeter (gebruikt in drukwerk)
                </td>
             </tr>
             <tr>
-               <td>cm</td>
+               <td><code>cm</code></td>
                <td>absoluut</td>
                <td>
                   centimeter (gebruikt in drukwerk)
                </td>
             </tr>
             <tr>
-               <td>pt</td>
+               <td><code>pt</code></td>
                <td>absoluut</td>
                <td>
                   punt (gebruikt in drukwerk)
                </td>
             </tr>
             <tr>
-               <td>pc</td>
+               <td><code>pc</code></td>
                <td>absoluut</td>
                <td>
                   pica (gebruikt in drukwerk)
@@ -806,7 +802,7 @@ a:hover {
                <td><code>mnemonisch</code></td>
                <td>soms <sup>(*)</sup></td>
                <td><code>color: blue</code></td>
-               <td>kleurnaam: blue, aqua, coral, beige...</td>
+               <td>kleurnaam: <code>blue</code>, <code>aqua</code>, <code>coral</code>, <code>beige</code>...</td>
             </tr>
             <tr>
                <td><code>hsla(h, s%, l%, a)</code></td>
@@ -859,11 +855,11 @@ a:hover {
       <div class="codecompare top">
          <figure>
             <pre class="prism-atom-dark"><code contenteditable data-target="#background-images-demo">div {
-  background-color: #ccc; /* achtergrondkleur */
-  background-image: url(img/02_design/grass.png); /* link naar de afbeelding */
-  background-position: left bottom; /* ook: center, waarde(n) in px of %... */
-  background-repeat: no-repeat; /* ook: repeat, repeat-x, repeat-y */
-  background-size: 100% 100%; /* ook: cover, contain, waarde(n) in px of %... */
+   background-color: #ccc; /* achtergrondkleur */
+   background-image: url(img/02_design/grass.png); /* link naar de afbeelding */
+   background-position: left bottom; /* ook: center, waarde(n) in px of %... */
+   background-repeat: no-repeat; /* ook: repeat, repeat-x, repeat-y */
+   background-size: 100% 100%; /* ook: cover, contain, waarde(n) in px of %... */
 }</code></pre>
             <figcaption>deze CSS code is aanpasbaar &mdash; probeer zelf andere waarden uit!</figcaption>
          </figure>
@@ -876,15 +872,15 @@ a:hover {
       <p>Maak CSS overgangen geleidelijk, &ldquo;smooth&rdquo;, met de <span class="em"><code>transition</code></span> property:</p>
       <div class="codecompare top">
          <pre class="prism-atom-dark"><code contenteditable data-target="#transition-demo">div {
-  background-color: #ccc;
-  transition: background 0.5s, width 1s; /* transities */
-  width: 200px;
+   background-color: #ccc;
+   transition: background 0.5s, width 1s; /* transities */
+   width: 200px;
 }
 div:hover {
-  background-color: #ee3c87;
-  border-radius: 0 15px 15px 0;
-  color: white;
-  width: 300px;
+   background-color: #ee3c87;
+   border-radius: 0 15px 15px 0;
+   color: white;
+   width: 300px;
 }
 </code></pre>
          <div id="transition-demo" class="target w-500">
@@ -897,13 +893,13 @@ div:hover {
       <p>Gebruik een gradiënt als achtergrond met <span class="em"><code>linear-gradient</code></span>:</p>
       <div class="codecompare top">
          <pre class="prism-atom-dark"><code contenteditable data-target="#gradient-demo">p {
-  background: linear-gradient(
-     to bottom,
-     #0ae 10%, /* lightblue */
-     #fff 30%, /* white */
-     #ff0 50%, /* yellow */
-     #6c0 70% /* green */
-  )
+   background: linear-gradient(
+      to bottom,
+      #0ae 10%, /* lightblue */
+      #fff 30%, /* white */
+      #ff0 50%, /* yellow */
+      #6c0 70% /* green */
+   )
 }</code></pre>
          <div id="gradient-demo" class="target w-500">
             <p style="line-height: 80px; text-align: center; font-size: 24px;">GRADIENT EXAMPLE</p>
@@ -914,12 +910,12 @@ div:hover {
       <p>CSS biedt met de <span class="em"><code>filter</code></span> property een <a href="https://www.w3schools.com/cssref/css3_pr_filter.asp">aantal basisfilters</a> als blur, grayscale, brightness, contrast, sepia. Een voorbeeld met grayscale (hover over de afbeelding):</p>
       <div class="codecompare top">
          <pre class="prism-atom-dark"><code contenteditable data-target="#filter-demo">img {
-  cursor: pointer;
-  filter: grayscale(100%);
-  transition: filter 0.5s;
+   cursor: pointer;
+   filter: grayscale(100%);
+   transition: filter 0.5s;
 }
 img:hover {
-  filter: grayscale(0%);
+   filter: grayscale(0%);
 }
 </code></pre>
          <figure>
@@ -953,42 +949,39 @@ img:hover {
 
          <h3>Animaties</h3>
          <p>Definieer keyframes, properties en easing (= animatiecurve) met <span class="em"><code>@keyframes</code></span>:</p>
-         <pre class="prism-default language-html" data-demo><code>&lt;!DOCTYPE html&gt;
-&lt;html lang="en"&gt;
-&lt;head&gt;
-   &lt;meta charset="utf-8"&gt;
-   &lt;title&gt;Css animations demo&lt;/title&gt;
-   &lt;style&gt;
-      #scene {
-         max-width: 800px;
-         border: 2px solid #999;
-         height: 200px;
-         overflow: hidden;
-      }
-      #bus {
-         margin-left: -300px;
-         margin-top: 50px;
-         animation: bus-animation 3s infinite ease-in-out;
-      }
-      @keyframes bus-animation {
-         0% { margin-left: -300px; }
-         50% { margin-left: 70px; }
-         100% { margin-left: 2000px; }
-      }
-   &lt;/style&gt;
-&lt;/head&gt;
-&lt;body&gt;
-   &lt;div id="scene"&gt;
-      &lt;img src="img/bus.png" alt="" id="bus"&gt;
-   &lt;/div&gt;
-&lt;/body&gt;
-&lt;/html&gt;</code></pre>
-         <iframe src="demos/02_design/animations1.html" frameborder="0" style="width: 800px; height: 220px;"></iframe>
+         <div class="democontainer">
+            <pre class="prism-default language-html" data-demo><code>&lt;div id="scene"&gt;
+   &lt;img src="img/bus.png" alt="" id="bus"&gt;
+&lt;/div&gt;
+</code></pre>
+            <pre class="prism-atom-dark"><code contenteditable data-target="#animation-demo">#scene {
+   max-width: 800px;
+   border: 2px solid #999;
+   height: 200px;
+   overflow: hidden;
+}
+#bus {
+   margin-left: -300px;
+   margin-top: 50px;
+   animation: bus-animation 3s infinite ease-in-out;
+}
+@keyframes bus-animation {
+   0% { margin-left: -300px; }
+   50% { margin-left: 70px; }
+   100% { margin-left: 2000px; }
+}
+</code></pre>
+         </div>
+         <div id="animation-demo" class="target w-800">
+            <div id="scene">
+               <img src="img/02_design/bus.png" alt="" id="bus">
+            </div>
+         </div>         
 
       </div>   
       <p>Nog meer CSS animatiedemo's:</p>
       <ul>
-         <li><a href="demos/02_design/animations2.html">CSS stadsleven</a></li>
+         <li><a href="demos/02_design/tweehuizen.html">CSS stadsleven</a></li>
          <li><a href="demos/02_design/cube.html">CSS roterende kubus</a></li>
          <li><a href="http://jsfiddle.net/fULTJ/7/embedded/result/">CSS stopwatch demo</a></li>
          <li><a href="https://codepen.io/M_J_Robbins/">CSS experimenten door Mark Robbins</a></li>
@@ -1004,7 +997,7 @@ img:hover {
       your great tagline here
    &lt;/div&gt;
 &lt;/div&gt;</code></pre>
-            <pre class="prism-atom-dark"><code contenteditable data-target="#opacity-demo" data-step="0.1">
+            <pre class="prism-atom-dark"><code contenteditable data-target="#opacity-demo">
 .banner {
    background-image: url(img/02_design/lapland.jpg);
    background-position: center;
@@ -1027,9 +1020,6 @@ img:hover {
             </div>
          </div>
       </div>   
-      <div class="tips" data-caption="💡OPACITY, OF TOCH ALPHA?">
-         <p>Het nadeel van <code>opacity</code> is dat het hele blok vervaagt; vaak gebruik je beter kleuren met alpha, zie <a href="#opacity-vs-alpha">opacity vs. alpha</a></p>
-      </div>
       <h4>Opacity vs. alpha</h4>
       <p>De <span class="em">opacity</span> maakt een <strong>element transparant</strong>, terwijl het <span class="em">alfakanaal</span> een <strong>kleur transparant</strong> maakt. Volgende vergelijking verduidelijkt het verschil:</p>
       <div class="codecompare top">
@@ -1053,6 +1043,9 @@ img:hover {
                <figcaption>met <strong>alpha = 0.7</strong> op achtergrondkleur: tekst en rand vervagen niet</figcaption>
             </figure>
          </div>
+      </div>
+      <div class="tips" data-caption="💡OPACITY OF ALPHA?">
+         <p>Het nadeel van <code>opacity</code> is dat het hele blok vervaagt; met kleuren gebruik je beter alpha</p>
       </div>
       <h3>Visibility</h3>
       <p>
@@ -1094,12 +1087,6 @@ img:hover {
                <td><code>flex</code></td>
                <td>
                   als flexlayout container, zie <a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/">flexbox</a>
-               </td>
-            </tr>
-            <tr>
-               <td><code>grid</code></td>
-               <td>
-                  als gridlayout container, zie <a href="https://css-tricks.com/snippets/css/a-guide-to-grid/">grid</a>
                </td>
             </tr>
             <tr>
@@ -1216,7 +1203,7 @@ li {
 
       </div>
       <p>
-         &rarr; in praktijk wordt tegenwoordig flexbox gebruikt voor layouts als deze 
+         &rarr; in praktijk wordt tegenwoordig <a href="04_layout.html#flexbox">flexbox</a> gebruikt voor layouts als deze 
       </p>
 
 
@@ -1237,6 +1224,7 @@ li {
    <!-- scripts -->
    <script src="common/vendor/prism/prism.js"></script>
    <script src="common/vendor/hystmodal/hystmodal.min.js"></script>
+   <script src="common/vendor/css.min.js"></script>
    <script src="common/js/mode.js"></script>
    <script src="common/js/scripts.js"></script>
    <!-- Google tag (gtag.js) -->

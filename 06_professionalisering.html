@@ -96,19 +96,19 @@
       <h3>sorteer je properties</h3>
       <p>Sorteer je properties alfabetisch:</p>
       <pre class="prism-atom-dark"><code>.some-element {
-  /* kijk nog niet teveel naar de CSS; merk op hoe de properties gesorteerd zijn van a-z */
-  background-color: #A2C355;
-  border: 2px solid #A2C355;
-  border-radius: 2px;
-  color: #fff;
-  cursor: pointer;
-  display: inline-block;
-  font-size: 14px;
-  line-height: 18px;
-  padding: 9px 24px;
-  text-decoration: none;
-  text-transform: uppercase;
-  transition: background 0.15s, color 0.15s ease-in-out;
+   /* merk op hoe de properties gesorteerd zijn van a-z */
+   background-color: #A2C355;
+   border: 2px solid #A2C355;
+   border-radius: 2px;
+   color: #fff;
+   cursor: pointer;
+   display: inline-block;
+   font-size: 14px;
+   line-height: 18px;
+   padding: 9px 24px;
+   text-decoration: none;
+   text-transform: uppercase;
+   transition: background 0.15s, color 0.15s ease-in-out;
 }
 </code></pre>
       <p>
@@ -120,17 +120,17 @@
       </p>
       <div class="codecompare">
          <pre class="prism-atom-dark wrong"><code>body header &gt; nav.top ul li a {
-  ...
+   ...
 }
 div#wrapper {
-  ...
+   ...
 }
 </code></pre>
 <pre class="prism-atom-dark right"><code>header &gt; nav a {
-  ...
+   ...
 }
 #wrapper {
-  ...
+   ...
 }</code></pre>
       </div>
       <p>
@@ -148,11 +148,11 @@ div#wrapper {
       <p>De opdeling voor b.v. een pagina <em>products.html</em> wordt dan</p>
       <pre class="prism-default language-html" data-caption="index.html"><code>...
 &lt;head&gt;
-  ...
-  &lt;link rel="stylesheet" href="css/start.css"&gt;
-  &lt;link rel="stylesheet" href="css/common.css"&gt;
-  &lt;link rel="stylesheet" href="css/products.css"&gt;
-  ...
+   ...
+   &lt;link rel="stylesheet" href="css/start.css"&gt;
+   &lt;link rel="stylesheet" href="css/common.css"&gt;
+   &lt;link rel="stylesheet" href="css/products.css"&gt;
+   ...
 &lt;/head&gt;
 ...</code></pre>
          <p>
@@ -171,13 +171,13 @@ div#wrapper {
 /* nuttig voor alle sites */
 
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
 }
 
 img {
-  max-width: 100%;
+   max-width: 100%;
 }</code></pre>
          <h3>common.css</h3>
          <p><span class="em">common.css</span> (of <em>general.css</em> mag ook) bevat alle CSS gemeenschappelijk voor alle pagina's:</p>
@@ -325,13 +325,13 @@ h1, h2, h3, h4 {
   =========================================== */
 
 @media (min-width: 30em) { /* 30 * 16 = 480px */
- /* your media queries here */
- /* ... */
+   /* your media queries here */
+   /* ... */
 }
 
 @media (min-width: 50em) { /* 50 * 16 = 800px */
- /* your media queries here */
- /* ... */
+   /* your media queries here */
+   /* ... */
 }</code></pre>
       <h3>verdere opdeling common.css</h3>
       <p>Bij grotere sites is het nuttig <span class="em">common.css</span> nog verder op te splitsen, b.v. voor header, navigatie, thema...:</p>
@@ -377,38 +377,38 @@ h1, h2, h3, h4 {
          <p>Vertrekken we van volgend typisch HTML fragment:</p>
          <pre class="language-html"><code>&lt;main&gt;
   ...
-  &lt;section&gt;
-    &lt;h3&gt;Onze producten&lt;/h3&gt;
-    &lt;div id="products"&gt;
-      &lt;div class="product"&gt;
-        &lt;h4&gt;Bijzettafel&lt;/h3&gt;
-        &lt;img src="img/prod1.jpg" class="visual" alt="..."&gt;
-        &lt;p&gt;price: &euro;499,-&lt;/p&gt;
-        &lt;p class="description"&gt;...beschrijving hier...&lt;/p&gt;
+   &lt;section&gt;
+      &lt;h3&gt;Onze producten&lt;/h3&gt;
+      &lt;div id="products"&gt;
+         &lt;div class="product"&gt;
+            &lt;h4&gt;Bijzettafel&lt;/h3&gt;
+            &lt;img src="img/prod1.jpg" class="visual" alt="..."&gt;
+            &lt;p&gt;price: &euro;499,-&lt;/p&gt;
+            &lt;p class="description"&gt;...beschrijving hier...&lt;/p&gt;
+         &lt;/div&gt;
+         &lt;div class="product"&gt;
+            ...
+         &lt;/div&gt;
+         ...
       &lt;/div&gt;
-      &lt;div class="product"&gt;
-        ...
-      &lt;/div&gt;
-      ...
-    &lt;/div&gt;
-  &lt;/section&gt;
+   &lt;/section&gt;
 &lt;/main&gt;
 </code></pre>
       <p>Aan de typische manier waarop vervolgens CSS selectors gebruikt worden hangen toch wel wat nadelen:</p>
          <pre class="prism-atom-dark"><code>main &gt; section { <span class="error">/* als je een div in de HTML tussenvoegt, klopt deze regel niet meer */</span>
-  ...
+   ...
 }
 #products { <span class="error">/* waar staat dit element? main content, sidebar...? */</span>
-  ...
+   ...
 }
 .product h4 { <span class="error">/* als we een h5 gebruiken i.p.v. een h4, klopt deze regel niet meer */</span>
-  ...
+   ...
 }
 .description { <span class="error">/* te algemeen; andere elementen zouden ook de class="description" kunnen hebben */</span>
-  ...
+   ...
 }
-#products .visual + p { <span class="error">/* specifiek geneog, maar lange en zware selector */</span>
-  ...
+#products .visual + p { <span class="error">/* specifiek genoeg, maar lange en zware selector */</span>
+   ...
 }</code></pre>
       <p>De meeste CSS die vandaag geschreven wordt, lijdt aan deze problemen</p>
       <ul class="wrong">
@@ -447,52 +447,52 @@ h1, h2, h3, h4 {
       </ul>
       <p>Onze BEM-verbeterde HTML:</p>
       <pre class="language-html"><code>&lt;main&gt;
-  ...
-  &lt;section class="main__products"&gt;
-    &lt;h3 class="products__title"&gt;Our products&lt;/h3&gt;
-    &lt;div class="products__wrapper"&gt;
-      &lt;div class="products__product"&gt;
-        &lt;h4 class="product__title"&gt;Magazine table&lt;/h3&gt;
-        &lt;img class="product__visual" src="img/prod1.jpg" alt="..."&gt;
-        &lt;p class="product__price"&gt;price: &euro;499,-&lt;/p&gt;
-        &lt;p class="product__description"&gt;...description here...&lt;/p&gt;
+   ...
+   &lt;section class="main__products"&gt;
+      &lt;h3 class="products__title"&gt;Our products&lt;/h3&gt;
+      &lt;div class="products__wrapper"&gt;
+         &lt;div class="products__product"&gt;
+            &lt;h4 class="product__title"&gt;Magazine table&lt;/h3&gt;
+            &lt;img class="product__visual" src="img/prod1.jpg" alt="..."&gt;
+            &lt;p class="product__price"&gt;price: &euro;499,-&lt;/p&gt;
+            &lt;p class="product__description"&gt;...description here...&lt;/p&gt;
+         &lt;/div&gt;
+         &lt;div class="products__product products__product--highlighted"&gt;
+            ...
+         &lt;/div&gt;
+         ...
       &lt;/div&gt;
-      &lt;div class="products__product products__product--highlighted"&gt;
-        ...
-      &lt;/div&gt;
-      ...
-    &lt;/div&gt;
-  &lt;/section&gt;
+   &lt;/section&gt;
 &lt;/main&gt;
 </code></pre>
    <p>De BEM CSS:</p>
       <pre class="prism-atom-dark"><code>.main__products {
-  ...
+   ...
 }
 .products__wrapper {
-  ...
+   ...
 }
 .products__product {
-  ...
+   ...
 }
 .product__title {
-  ...
+   ...
 }
 .product__visual {
-  ...
+   ...
 }
 .product__description {
-  ...
+   ...
 }
 .product__price {
-  ...
+   ...
 }
 .products__product--highlighted {
-  ...
+   ...
 }</code></pre>
       <p>
          &rarr; mooie vlakke CSS<br>
-         &rarr; <br>
+         &rarr; iets meer code in de HTML, maar het maakt je CSS zo veel makkelijker<br>
       </p>
       <div class="tips" data-caption="☝🏼TIP">
          <p>Wees geen BEM nazi! Het is oké BEM te gebruiken wanneer het uitkomt, en het te mixen met klassieke CSS selectors.</p>
@@ -515,38 +515,38 @@ h1, h2, h3, h4 {
       <p>Gebruiksvoorbeeld:</p>
       <pre class="prism-atom-dark h-500"><code>/* variabelen gebruiken */
 body {
-  background-color: var(--background-color);
-  color: var(--text-color);
-  font-family: var(--primary-font);
+   background-color: var(--background-color);
+   color: var(--text-color);
+   font-family: var(--primary-font);
 }
 
 h1, h2, h3, h4, h5, h6 {
-  color: var(--primary-color);
-  font-family: var(--secondary-font);
+   color: var(--primary-color);
+   font-family: var(--secondary-font);
 }
 
 a {
-  color: var(--accent-color);
+   color: var(--accent-color);
 }
 
 button {
-  background-color: var(--secondary-color);
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  font-family: var(--primary-font);
-  cursor: pointer;
+   background-color: var(--secondary-color);
+   color: white;
+   border: none;
+   padding: 10px 20px;
+   font-family: var(--primary-font);
+   cursor: pointer;
 }
 
 button:hover {
-  background-color: var(--primary-color);
+   background-color: var(--primary-color);
 }
 
 .footer {
-  background-color: var(--primary-color);
-  color: white;
-  text-align: center;
-  padding: 20px;
+   background-color: var(--primary-color);
+   color: white;
+   text-align: center;
+   padding: 20px;
 }</code></pre>
         
    </main>
@@ -566,6 +566,7 @@ button:hover {
    <!-- scripts -->
    <script src="common/vendor/prism/prism.js"></script>
    <script src="common/vendor/hystmodal/hystmodal.min.js"></script>
+   <script src="common/vendor/css.min.js"></script>
    <script src="common/js/mode.js"></script>
    <script src="common/js/scripts.js"></script>
    <!-- Google tag (gtag.js) -->

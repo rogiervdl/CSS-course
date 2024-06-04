@@ -7,7 +7,7 @@ const DOM = {
 	diaDemoWindow: document.querySelector('#diaDemo .hystmodal__window'),
 	nav: document.querySelector('nav'),
 	tips: [...document.querySelectorAll('.tips')],
-	titles: [...document.querySelectorAll('main > h2, main > h3, main > h4, main > h5, main > .pre > h2, main > .pre > h3, main > .pre > h4, main > .pre > h5')],
+	titles: [...document.querySelectorAll('main > h2, main > h3, main > h4, main > h5, main > .pre > h2, main > .pre > h3, main > .pre > h4, main > .pre > h5, .pro > h2, .pro > h3, .pro > h4, .pro > h5')],
 	toc: document.querySelector('#toc')
 };
 const myHistModal = typeof HystModal === 'undefined' ? undefined : new HystModal({});
@@ -98,6 +98,7 @@ function minimizeCss(strCss) {
  * @param {str} strCss string containing CSS snippet
  */
 function cssApplySnippet(strSelector, strCss) {
+	// create <style> block
    let demostyles = document.querySelector('#demostyles');
    if (!demostyles) {
       demostyles = document.createElement('style');
@@ -105,27 +106,32 @@ function cssApplySnippet(strSelector, strCss) {
       document.head.appendChild(demostyles);
    }
 
-   // minimize css
-   strCss = minimizeCss(strCss);
+	// parse css
+	const parser = new cssjs();
+	strCss = parser.stripComments(strCss);
+	const parsed = parser.parseCSS(strCss);
 
-   // split
-   if (strCss.indexOf('}') == -1) return;
-   const ruleBlocks = strCss.split('}').filter(b => b.indexOf('{') != -1);
-   for (let i = 0; i < ruleBlocks.length; i++) {
-      const ruleBlockParts = ruleBlocks[i].split('{');
-      ruleBlocks[i] = ruleBlockParts[0].trim().split(',').map(s => `${strSelector} ${s}`).join(',') + ' { ' + ruleBlockParts[1];
-   }
-   const strInjectCss = `/* ${strSelector} */
-${ruleBlocks.join('}\n')}}
-/* /${strSelector} */
+	// prefix rules
+	const prefixed = [];
+	for (let style of parsed) {
+		if (style.styles) {
+			prefixed.push(style.styles);
+		} else {
+			prefixed.push(`${strSelector} ${style.selector} { ${parser.getCSSOfRules(style.rules)} }`);
+		}
+	}
 
-`;
-
-   // remove existing style
+   // remove existing style block
    const rex = new RegExp(`\\s*\\/\\* ${strSelector} \\*\\/[^\\/]*\\/\\* \\/${strSelector} \\*\\/\\s*`, 'm');
    demostyles.innerHTML = demostyles.innerHTML.replace(rex, '\n\n');
 
-   // append updated style
+   // inject new style block
+   const strPrefixed = minimizeCss(prefixed.join(' '));
+   const strInjectCss = `/* ${strSelector} */
+${strPrefixed}
+/* /${strSelector} */
+
+`;
    demostyles.innerHTML += strInjectCss;
 }
 

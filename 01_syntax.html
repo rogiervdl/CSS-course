@@ -104,7 +104,7 @@
       </p>
       <h4>intern</h4>
       <p>Je kan stijlen in theorie ook <span class="em">intern</span> toevoegen in een <code>&lt;style&gt;</code> blok in de <code>&lt;head&gt;</code>:</p>
-      <pre class="prism-default language-html wrong"><code>...
+      <pre class="prism-default language-html wrong notoolbar"><code>...
 &lt;head&gt;
   ...
   &lt;style&gt;
@@ -123,7 +123,7 @@
          <br><span class="error">&rarr; gebruik interne stijlen is <strong>verboden</strong> in deze cursus!</span>
       </p>   
       <h4>extern</h4>
-      <p>beste methode is een apart CSS bestand of <span class="em">stylesheet</span> linken aan je HTML document:</p>
+      <p>De beste methode is een apart CSS bestand of <span class="em">stylesheet</span> linken aan je HTML document:</p>
       <pre class="prism-default language-html right" data-caption="index.html" data-demo="demos/01_syntax/extern.html"><code>...
 &lt;head&gt;
   ...
@@ -366,8 +366,8 @@ p {
   }
 }</code></pre>
       </div>
-      <div class="tips" data-caption="💡W3C QUOTES">
-         <p>tip: om de code correct te layouten in VS Code, gebruik <strong>Shift-Alt-F</strong> (installeer de <a href="hhttps://marketplace.visualstudio.com/items?itemName=aeschli.vscode-css-formatter">CSS formatter extensie</a>)</p>
+      <div class="tips" data-caption="💡TIP">
+         <p>Om de code correct te layouten in VS Code, gebruik <strong>Shift-Alt-F</strong> (installeer de <a href="hhttps://marketplace.visualstudio.com/items?itemName=aeschli.vscode-css-formatter">CSS formatter extensie</a>)</p>
       </div>
 
       <h2>Selectors</h2>
@@ -378,34 +378,34 @@ p {
   /* <strong>tag</strong> selector; selecteert &lt;p&gt; */
 }
 .message {
-  /* <strong>class</strong> selector; selecteert &lt;... class="message"&gt; */
+   /* <strong>class</strong> selector; selecteert &lt;... class="message"&gt; */
 }
 .message.error {
-  /* <strong>multiple class</strong> selector; selecteert &lt;... class="message error"&gt; */
+   /* <strong>multiple class</strong> selector; selecteert &lt;... class="message error"&gt; */
 }
 #lnk-login {
-  /* <strong>id</strong> selector; selecteert &lt;... id="lnk-login"&gt; */
+   /* <strong>id</strong> selector; selecteert &lt;... id="lnk-login"&gt; */
 }
 * {
-  /* universele selector; selecteert <strong>alle elementen</strong> */
+   /* universele selector; selecteert <strong>alle elementen</strong> */
 }</code></pre>
       <p>
-         &rarr; een <code>id</code> attribuut moet uniek zijn, dus een id selector kan maar één element selecteren
-         <br>&rarr; een <code>class</code> attribuut hoeft niet uniek te zijn, dus deze selector kan meerdere elementen selecteren
+         &rarr; een <strong><code>id</code></strong> attribuut moet <strong>uniek</strong> zijn, dus een id selector kan maar één element selecteren
+         <br>&rarr; een <strong><code>class</code></strong> attribuut hoeft <strong>niet uniek</strong> te zijn, dus deze selector kan meerdere elementen selecteren
       </p>
       <h3>element toestand</h3>
       <p>Selecteer elementen in een bepaalde <strong>toestand</strong>:</p>
       <pre class="prism-atom-dark"><code>a:hover {
-  /* selecteert <strong>hovered</strong> link */
+   /* selecteert <strong>hovered</strong> link */
 }
 textarea:focus {
-  /* selecteert <strong>focused</strong> &lt;textarea&gt; */
+   /* selecteert <strong>focused</strong> &lt;textarea&gt; */
 }
 input[type=email]:invalid {
-  /* selecteert <strong>invalid</strong> &lt;input type="email"&gt; */
+   /* selecteert <strong>invalid</strong> &lt;input type="email"&gt; */
 }
 input:disabled {
-  /* selecteert <strong>disabled</strong> &lt;input&gt; */
+   /* selecteert <strong>disabled</strong> &lt;input&gt; */
 }</code></pre>
       <p>
          &rarr; men noemt dit ook <mark>pseudo-class</mark> selectoren; ze selecteren een <strong>heel element</strong> en worden voorafgegaan door een <strong>enkele dubbelpunt &lsquo;:&rsquo;</strong>
@@ -460,19 +460,19 @@ li::after {
       <h3>element positie</h3>
       <p>Specifieer de <strong>positie</strong> van een element:</p>
       <pre class="prism-atom-dark notoolbar"><code>h1 + p {
-  /* selecteert &lt;p&gt; <strong>direct volgend op</strong> een &lt;h1&gt; */
+   /* selecteert &lt;p&gt; <strong>direct volgend op</strong> een &lt;h1&gt; */
 }
 li:first-child {
-  /* selecteert een &lt;li&gt; die de <strong>eerste child</strong> is van zijn parent */
+   /* selecteert een &lt;li&gt; die de <strong>eerste child</strong> is van zijn parent */
 }
 #content &gt; section {
-  /* selecteert &lt;section&gt; <strong>direct genest</strong> in &lt;... id="content"&gt; */
+   /* selecteert &lt;section&gt; <strong>direct genest</strong> in &lt;... id="content"&gt; */
 }
 tr:nth-child(odd) {
-  /* selecteert <strong>oneven</strong> &lt;tr&gt;'s */
+   /* selecteert <strong>oneven</strong> &lt;tr&gt;'s */
 }
 section:nth-child(3n+1) {
-  /* selecteert &lt;section&gt;'s <strong>nummer 1, 4, 7</strong>... */
+   /* selecteert &lt;section&gt;'s <strong>nummer 1, 4, 7</strong>... */
 }</code></pre>
 
       <h3>element attribuut</h3>
@@ -486,35 +486,35 @@ a[href$=".pdf"] { ... }     /* <strong>"eindigt met"</strong>, b.v. &lt;a href="
       <h3>selectors combineren</h3>
       <p><strong>Combineer</strong> selectors:</p>
       <pre class="prism-atom-dark notoolbar"><code>p.message {
-  /* <strong>tag-class</strong> selector; selecteert &lt;p class="message"&gt; */
+   /* <strong>tag-class</strong> selector; selecteert &lt;p class="message"&gt; */
 }
 nav#mainmenu {
-  /* <strong>tag-id</strong> selector; selecteert &lt;nav id="mainmenu"&gt; */
+   /* <strong>tag-id</strong> selector; selecteert &lt;nav id="mainmenu"&gt; */
 }
 #mainmenu.open {
-  /* <strong>id-class</strong> selector; selecteert &lt;... id="mainmenu" class="open"&gt; */
+   /* <strong>id-class</strong> selector; selecteert &lt;... id="mainmenu" class="open"&gt; */
 }</code></pre>
       <h3>selectors groeperen</h3>
       <p><strong>Groepeer</strong> verschillende selectors met dezelfde stijlen in een komma-lijst:</p>
       <div class="codecompare">
          <pre class="prism-atom-dark notoolbar wrong"><code>input {
-  color: blue;
+   color: blue;
 }
 #mainmenu a:hover {
-  color: blue;
+   color: blue;
 }
 p.formpar {
-  color: blue;
+   color: blue;
 }</code></pre>
          <pre class="prism-atom-dark notoolbar right"><code>input, #mainmenu a:hover, p.formpar {
-  color: blue;
+   color: blue;
 }</code></pre>
       </div>
 
       <h3>selectors nesten</h3>
       <p>Een spatie betekent <strong>genest in</strong> (lees van rechts naar links):</p>
       <pre class="prism-atom-dark notoolbar"><code>#leftcol p { 
-  /* paragrafen <strong>genest in</strong> het element met id="leftcol" */
+   /* paragrafen <strong>genest in</strong> het element met id="leftcol" */
 }
 nav li.active a { 
    /* links <strong>genest in</strong> list items met class="active" <strong>genest in</strong> nav element */
@@ -523,10 +523,10 @@ nav li.active a {
       <h3>Property lijst</h3>
       <p>Stijlen bestaan uit lijsten <em>property</em> - <em>waarde</em> paren:</p>
       <pre class="prism-atom-dark"><code><i>selector</i> {
-  <i>property_1</i>: <i>waarde_1</i>;
-  <i>property_2</i>: <i>waarde_2</i>;
-  <i>property_3</i>: <i>waarde_3</i>;
-  ...
+   <i>property_1</i>: <i>waarde_1</i>;
+   <i>property_2</i>: <i>waarde_2</i>;
+   <i>property_3</i>: <i>waarde_3</i>;
+   ...
 }</code></pre>
       <p>Voorbeeld:</p>
       <pre class="prism-atom-dark"><code>p {
@@ -539,34 +539,34 @@ nav li.active a {
       <div class="codecompare">
 
          <pre class="prism-atom-dark"><code>body {
-  background-image: url(../img/bg.jpg);
-  background-position: right;
-  background-repeat: repeat-y;
+   background-image: url(../img/bg.jpg);
+   background-position: right;
+   background-repeat: repeat-y;
 }
 .box {
-  margin-top: 6px;
-  margin-right: 15px;
-  margin-bottom: 6px;
-  margin-left: 15px;
+   margin-top: 6px;
+   margin-right: 15px;
+   margin-bottom: 6px;
+   margin-left: 15px;
 }
 </code></pre>
          <pre class="prism-atom-dark"><code>body {
-  background: url(../img/bg.jpg) repeat-y right; /* image, repeat, position */
+   background: url(../img/bg.jpg) repeat-y right; /* image, repeat, position */
 }
 .box {
-  margin: 6px 150x 6px 150x; /* top, right, bottom, left */
+   margin: 6px 150x 6px 150x; /* top, right, bottom, left */
 }
 </code></pre>
       </div>
       <h3>propertywaarden met spaties</h3>
       <p>Rond propertywaarden met spaties moeten quotes staan om verwarring te vermijden:</p>
       <pre class="prism-atom-dark"><code>p {
-  font-family: Arial, Verdana, "sans serif";
+   font-family: Arial, Verdana, "sans serif";
 }</code></pre>
 
       <p>&rarr; rond andere waarden zijn quotes niet nodig:</p>
       <pre class="prism-atom-dark"><code>body {
-  background-image: url(img/bg.jpg);
+   background-image: url(img/bg.jpg);
 }</code></pre>
 
       <h3>Prioriteit, specificiteit en overerving</h3>
@@ -776,6 +776,7 @@ nav li.active a {
    <!-- scripts -->
    <script src="common/vendor/prism/prism.js"></script>
    <script src="common/vendor/hystmodal/hystmodal.min.js"></script>
+   <script src="common/vendor/css.min.js"></script>
    <script src="common/js/mode.js"></script>
    <script src="common/js/scripts.js"></script>
    <!-- Google tag (gtag.js) -->
