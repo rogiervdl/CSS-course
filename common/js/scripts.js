@@ -287,10 +287,14 @@ window.addEventListener('load', function () {
 				}
 				else if (env.language == 'html' && !html.includes('<html')) {
 					const demoContainer = pre.closest('.democontainer');
-					const demoCss = demoContainer?.querySelector('pre.language-css')?.innerText ?? '';
-					const demoJs = demoContainer?.querySelector('pre.language-javascript')?.innerText ?? '';
-					const demoHtml = demoContainer?.querySelector('pre.language-html')?.innerText ?? '';
-					html = `<html><head><style>${demoCss}</style></head><body>${demoHtml}</body><script>${demoJs}</script></html>`;
+					if (demoContainer) {
+						const demoCss = demoContainer?.querySelector('pre.language-css')?.innerText ?? '';
+						const demoJs = demoContainer?.querySelector('pre.language-javascript')?.innerText ?? '';
+						const demoHtml = demoContainer?.querySelector('pre.language-html')?.innerText ?? '';
+						html = `<html><head><style>${demoCss}</style></head><body>${demoHtml}</body><script>${demoJs}</script></html>`;
+					} else {
+						html = `<html><body>${html}</body></html>`;
+					}
 				}
 				oDoc.write(html);
 			} else {

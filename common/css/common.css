@@ -451,6 +451,32 @@ ul {
 	list-style: square;
 }
 
+ul ul {
+   margin: 0;
+}
+
+ul ul:not(.lower-latin) {
+	list-style: none;
+	padding-left: 0;
+}
+
+ul ul:not(.lower-latin) li::before {
+	content: '— ';
+}
+
+ul:not(.arrow) ul:not(.lower-latin) li::before {
+	margin-left: 30px;
+}
+
+ul ul li {
+	font-size: 0.9em;
+}
+
+ul.lower-latin {
+	padding-left: 4em;
+	list-style: lower-latin;
+}
+
 ul.arrow,
 li.arrow {
 	list-style-type: none;
@@ -479,22 +505,32 @@ ul.wrong {
 	padding: 0;
 }
 
+ul ul li.right,
+ul ul li.wrong,
+ul ul.right,
+ul ul.wrong {
+	margin-left: 0;
+}
+
 ul.right > li::before,
 ul.wrong > li::before,
 ul li.right::before,
 ul li.wrong::before {
-	font-weight: bold;
 	margin-right: 1rem;
 }
 
 ul.right > li::before,
-ul li.right::before {
+ul ul.right > li::before,
+ul li.right::before,
+ul ul li.right::before {
 	color: #0c0;
 	content: "✓";
 }
 
 ul.wrong > li::before,
-ul li.wrong::before {
+ul ul.wrong > li::before,
+ul li.wrong::before,
+ul ul li.wrong::before {
 	color: #c00;
 	content: "✗";
 }
@@ -511,29 +547,6 @@ iframe.youtube {
 	list-style: square;
    margin: 0;
 	padding-left: 2em;
-}
-
-ul ul {
-   margin: 0;
-}
-
-ul ul:not(.lower-latin) {
-	list-style: none;
-	padding-left: 0;
-}
-
-ul ul:not(.lower-latin) li::before {
-	content: '— ';
-	margin-left: 30px;
-}
-
-ul ul li {
-	font-size: 0.9em;
-}
-
-ul.lower-latin {
-	padding-left: 4em;
-	list-style: lower-latin;
 }
 
 #toc ul ul li::before {
