@@ -1,6 +1,7 @@
 # Ignores
 .DS_Store
 /_old/*
+node_modules
 .gitignore
 .gitattributes
 LICENSE
