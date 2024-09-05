@@ -12,6 +12,10 @@ code[class*="language-"] {
 	background-color: transparent !important;
 }
 
+.token.comment * {
+	color: inherit !important;
+}
+
 /* toolbar mods */
 
 div.code-toolbar {
