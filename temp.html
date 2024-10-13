@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+   <style>
+      /* general */
+      * {
+         box-sizing: border-box;
+         padding: 0;
+      }
+      body {
+         font-family: monospace;
+         font-size: 10px;
+         padding: 40px;
+      }
+      table {
+         border-collapse: collapse;
+         width: 458px;
+      }
+      caption {
+         color: #c00;
+         font-size: 16px;
+         font-weight: 700;
+         margin-left: -20px;
+         padding: 5px 0;
+      }
+      td {
+         height: 50px;
+         position: relative;
+         text-align: left;
+         vertical-align: top;
+         width: 90px;
+      }
+      pre {
+         font-size: 8px;
+         margin: 0;
+         padding: 5px;
+      }
+
+      /* item */
+      .item {
+         align-items: center;
+         display: flex;
+         left: 0;
+         position: absolute;
+         top: 0;
+      }
+      #area {
+         border: 2px solid rgb(0, 192, 150);
+         height: 107px;
+         left: -5px;
+         top: -5px;
+         width: 207px;
+      }
+      #area-caption {
+         bottom: 0;
+         color: rgb(0, 192, 150);
+         font-size: 12px;
+         font-weight: 700;
+         padding-left: 5px;
+      }
+      #line-caption {
+         bottom: 0;
+         color: #c0c;
+         font-size: 12px;
+         font-weight: 700;
+         padding-left: 5px;
+      }
+      #item {
+         background-color: yellow;
+         border: 2px solid purple;
+         color: purple;
+         font-size: 12px;
+         font-weight: 700;
+         padding: 20px;
+      }
+      #cell-caption {
+         color: blue;
+         font-size: 12px;
+         font-weight: 700;
+         padding: 10px;
+         text-align: right;
+      }
+
+      /* row heights */
+      tr:nth-child(1) td {
+         height: 30px;
+      }
+      tr:nth-last-child(2) td {
+         height: 5px;
+      }
+
+      /* column widths */
+      td:nth-child(1) {
+         width: 30px;
+      }
+      td:nth-child(2) {
+         width: 40px;
+      }
+      td:nth-child(3) {
+         width: 180px;
+      }
+      td:nth-last-child(2) {
+         width: 15px;
+      }
+
+      /* grey borders */
+      tr:not(:last-child):not(:nth-last-child(2)) td:not(:last-child):not(:nth-last-child(2)) {
+         border: 2px dotted gray;
+      }
+
+      /* brown border */
+      tr:not(:last-child):not(:nth-last-child(2)) td:first-child {
+         border-left: 4px solid #c00 !important;
+      }
+      tr:first-child td:not(:last-child):not(:nth-last-child(2)) {
+         border-top: 4px solid #c00 !important;
+      }
+      tr:not(:last-child):not(:nth-last-child(2)) td:nth-last-child(3) {
+         border-right: 4px solid #c00 !important;
+      }
+      tr:nth-last-child(3) td:not(:last-child):not(:nth-last-child(2)) {
+         border-bottom: 4px solid #c00 !important;
+      }
+
+      /* line border */
+      tr:not(:last-child):not(:nth-last-child(2)) td:nth-child(4) {
+         border-right: 2px solid #c0c !important;
+      }
+
+      /* cell border */
+      #grid tr:nth-child(2) td:nth-child(3) {
+         border: 2px dashed blue !important;
+      }
+
+      /* line markers */
+      tr:nth-last-child(2) td:not(:last-child) {
+         border-left: 1px solid #999;
+      }
+
+      /* column numbers */
+      td:last-child {
+         padding-left: 5px;
+         width: 60px;
+      }
+      tr:not(:last-child) td:nth-last-child(2) {
+         border-top: 1px solid #999;
+      }
+      tr:last-child td {
+         padding-top: 5px;
+      }
+
+      /* row numbers */
+      tr:last-child td {
+         position: relative;
+         left: -3px;
+      }
+
+      /* column numbers */
+      td:last-child {
+         position: relative;
+         top: -6px;
+      }
+
+   </style>
+</head>
+
+<body>
+   <table id="grid">
+      <caption>grid container</caption>
+      <tr>
+         <td></td>
+         <td></td>
+         <td></td>
+         <td></td>
+         <td></td>
+         <td></td>
+         <td>1</td>
+      </tr>
+      <tr>
+         <td></td>
+         <td><div id="area" class="item"><div id="item">grid item</div></div></td>
+         <td id="cell-caption">grid cell</td>
+         <td><div id="area-caption" class="item">grid area</div></td>
+         <td></td>
+         <td></td>
+         <td>2</td>
+      </tr>
+      <tr>
+         <td></td>
+         <td></td>
+         <td></td>
+         <td></td>
+         <td><div id="line-caption" class="item">grid line</div></td>
+         <td></td>
+         <td>3</td>
+      </tr>
+      <tr>
+         <td></td>
+         <td></td>
+         <td></td>
+         <td></td>
+         <td></td>
+         <td></td>
+         <td>4</td>
+      </tr>
+      <tr>
+         <td></td>
+         <td></td>
+         <td></td>
+         <td></td>
+         <td></td>
+         <td></td>
+         <td>5</td>
+      </tr>
+      <tr>
+         <td>1</td>
+         <td>2</td>
+         <td>3</td>
+         <td>4</td>
+         <td>5</td>
+         <td>6</td>
+         <td></td>
+      </tr>
+   </table>
+
+</body>
+
+</html>

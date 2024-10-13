@@ -1,0 +1,29 @@
+#grid-containerdemo9 {
+   position: relative;
+}
+
+#grid-containerdemo9 .underlayer {
+   display: grid; /* maak grid container */
+   gap: 10px;
+   grid-template-columns: repeat(4, 1fr); /* 4 kolommen, elk 1 fractie */
+   grid-template-rows: repeat(3, 1fr); /* 3 rijen, elk 1 fractie */
+   padding: 20px;
+}
+
+#grid-containerdemo9 .underlayer {
+   display: grid; 
+   position: absolute;
+   left: 0; 
+   right: 0; 
+   top: 0; 
+   bottom: 0; 
+   opacity: 0.5
+}
+
+.underlayer .grid-area {
+   border: 2px dashed black;
+   line-height: 25px;
+   padding: 5px;
+   text-align: center;
+}
+

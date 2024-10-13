@@ -602,6 +602,10 @@ body:not(.showpro) .pro {
 	display: none !important;
 }
 
+body.showpro .noob {
+	display: none !important;
+}
+
 html body .em {
 	background-color: #ddd;
 	color: #564826;
