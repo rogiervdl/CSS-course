@@ -1543,11 +1543,12 @@ p {
       </ul>
 
       <h4>align-items, justify-content</h4>
-      <p>Deze properties aligneren een item binnen de grid area. We beperken de afmetingen van de items:</p>
+      <p>Deze properties aligneren een item binnen de grid area:</p>
       <div class="codecompare">
-         <pre class="prism-atom-dark w-500" style="height: 335px; overflow-y: auto;"><code contenteditable data-target="#grid-containerdemo9">.grid-item-small {
-   height: 50px;
-   max-width: 75px;
+         <pre class="prism-atom-dark w-500" style="height: 335px; overflow-y: auto;"><code contenteditable data-target="#grid-containerdemo9">/* alignering */
+.grid-container {
+   align-items: center; 
+   justify-items: start; 
 }            
 
 /* items */
@@ -1570,13 +1571,13 @@ p {
    gap: 10px;
    grid-template-columns: repeat(4, 1fr); /* 4 kolommen, elk 1 fractie */
    grid-template-rows: repeat(3, 1fr); /* 3 rijen, elk 1 fractie */
-   align-items: center;
 }
 
 /* box styles */
 .grid-item {
    background-color: #ddd;
    border: 2px solid black;
+   display: inline-block;
    line-height: 25px;
    padding: 5px;
    text-align: center;
@@ -1591,11 +1592,11 @@ p {
 }</code></pre>
          <div id="grid-containerdemo9" class="w-500">
             <div class="underlayer">
-               <div class="grid-area item1"></div>
-               <div class="grid-area item2"></div>
-               <div class="grid-area item3"></div>
-               <div class="grid-area item4"></div>
-               <div class="grid-area item5"></div>
+               <div class="grid-area item-small1"></div>
+               <div class="grid-area item-small2"></div>
+               <div class="grid-area item-small3"></div>
+               <div class="grid-area item-small4"></div>
+               <div class="grid-area item-small5"></div>
             </div>
             <div class="grid-container">
                <div class="grid-item grid-item-small item1">01</div>
@@ -1606,6 +1607,31 @@ p {
             </div>
          </div>
       </div>
+      <p>Probeer de verschillende waarden uit (<code>align-self</code> en <code>justify-self</code> worden in deze demo op item1 uitgevoerd):</p>
+      <div class="grid-containerdemo9-controls">
+         <div>
+            <label><code>justify-content</code>:</label>
+            <label><input type="radio" name="grp-justify-items" value="start" checked><code>start</code></label>
+            <label><input type="radio" name="grp-justify-items" value="center"><code>center</code></label>
+            <label><input type="radio" name="grp-justify-items" value="end"><code>end</code></label>
+            <label><input type="radio" name="grp-justify-items" value="stretch"><code>stretch</code></label>
+         </div>
+         <div>
+            <label><code>align-items</code>:</label>
+            <label><input type="radio" name="grp-align-items" value="start"><code>start</code></label>
+            <label><input type="radio" name="grp-align-items" value="center" checked><code>center</code></label>
+            <label><input type="radio" name="grp-align-items" value="end"><code>end</code></label>
+            <label><input type="radio" name="grp-align-items" value="stretch"><code>stretch</code></label>
+         </div>
+      </div>
+      <p>Met <code>align-self</code> en <code>justify-self</code> kan je deze waarden overschrijven voor individuele items.</p>
+      <script>
+         document.querySelector('.grid-containerdemo9-controls').addEventListener('click', () => {
+            const gridContainer9 = document.querySelector('#grid-containerdemo9 .grid-container');
+            gridContainer9.style.alignItems = document.querySelector('[name=grp-align-items]:checked').value;
+            gridContainer9.style.justifyItems = document.querySelector('[name=grp-justify-items]:checked').value;
+         });
+      </script>
       <h2>Floating</h2>
       <h3>Standaard weergave</h3>
       <p>Blocklevel elementen als <code>&lt;h3&gt;</code> en <code>&lt;p&gt;</code> starten standaard op een nieuwe regel:</p>
