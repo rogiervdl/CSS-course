@@ -776,8 +776,8 @@ a:hover {
          </thead>
          <tbody>
             <tr>
-               <td><code>#rrggbbaa</code></td>
-               <td><span class="right"></span></td>
+               <td><code>#rrggbb<br>#rrggbbaa</code></td>
+               <td><span class="right"></span><br><span class="right"></span></td>
                <td>
                   <code>color: #CC4420</code>
                   <br><code>color: #CC442077</code>
@@ -788,11 +788,11 @@ a:hover {
                </td>
             </tr>
             <tr>
-               <td><code>rgba(r, g, b, a)</code></td>
-               <td><span class="right"></span></td>
+               <td><code>rgb(r, g, b)<br>rgba(r, g, b, a)</code></td>
+               <td><span class="right"></span><br><span class="right"></span></td>
                <td>
-                  <code>color: rgb(192, 68, 32)</code>
-                  <br><code>color: rgb(192, 68, 32, 0.7)</code>
+                  <code>color: rgb(204, 68, 32)</code>
+                  <br><code>color: rgba(204, 68, 32, 0.7)</code>
                </td>
                <td>
                   <code>r, g en b: waarden tussen 0-255</code>
@@ -801,16 +801,16 @@ a:hover {
             </tr>
             <tr>
                <td><code>mnemonisch</code></td>
-               <td>soms <sup>(*)</sup></td>
+               <td>bijna nooit <sup>(*)</sup></td>
                <td><code>color: blue</code></td>
                <td>kleurnaam: <code>blue</code>, <code>aqua</code>, <code>coral</code>, <code>beige</code>...</td>
             </tr>
-            <tr>
+            <tr class="pro">
                <td><code>hsla(h, s%, l%, a)</code></td>
                <td><span class="wrong"></span></td>
                <td>
                   <code>color: hsl(128, 50%, 25%)</code>
-                  <br><code>color: hsl(128, 50%, 25%, 0.7)</code>
+                  <br><code>color: hsla(128, 50%, 25%, 0.7)</code>
                </td>
                <td>
                   <code>h</code>: hue (tint), <code>s</code>: saturatie, <code>l</code>: lightness
@@ -819,7 +819,7 @@ a:hover {
             </tr>
          </tbody>
       </table>
-      <p><em><sup>(*)</sup> enkel basic kleuren waar geen verwarring over kan bestaan <code>white</code>, <code>black</code>, <code>blue</code>..., maar b.v. geen <code>silver</code>, <code>fuchsia</code>, <code>maroon</code>...</em></p>
+      <p><em><sup>(*)</sup> gebruik het enkel voor <code>white</code> en <code>black</code>, maar b.v. geen <code>silver</code>, <code>fuchsia</code>, <code>maroon</code>...</em></p>
       <p>Er bestaan nog twee notaties, <code>lab(l, a, b)</code> en <code>lch(l, c, h)</code> gebaseerd op lichtheid, saturatie, tint enz... maar die laten we buiten beschouwing.</p>
 
       <h3>Hexadecimale notatie</h3>
@@ -978,15 +978,15 @@ img:hover {
                <img src="img/02_design/bus.png" alt="" id="bus">
             </div>
          </div>         
-
+         <p>Nog meer CSS animatiedemo's:</p>
+         <ul>
+            <li><a href="demos/02_design/tweehuizen.html">CSS stadsleven</a></li>
+            <li><a href="demos/02_design/cube.html">CSS roterende kubus</a></li>
+            <li><a href="http://jsfiddle.net/fULTJ/7/embedded/result/">CSS stopwatch demo</a></li>
+            <li><a href="https://codepen.io/M_J_Robbins/">CSS experimenten door Mark Robbins</a></li>
+         </ul>
+   
       </div>   
-      <p>Nog meer CSS animatiedemo's:</p>
-      <ul>
-         <li><a href="demos/02_design/tweehuizen.html">CSS stadsleven</a></li>
-         <li><a href="demos/02_design/cube.html">CSS roterende kubus</a></li>
-         <li><a href="http://jsfiddle.net/fULTJ/7/embedded/result/">CSS stopwatch demo</a></li>
-         <li><a href="https://codepen.io/M_J_Robbins/">CSS experimenten door Mark Robbins</a></li>
-      </ul>
 
       <h2>Weergave</h2>
       <h3>Opacity</h3>
