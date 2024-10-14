@@ -99,11 +99,12 @@
       </div>
 
       <h2>Eenheden</h2>
-      <p>CSS eenheden worden gebruikt voor afmetingen, margins, paddings, randdiktes en andere CSS properties. Een korte samenvatting van het gebruik in deze cursus:</p>
+      <p>CSS eenheden worden gebruikt voor afmetingen, margins, paddings, randdiktes en andere CSS properties.</p>
       <table class="light">
          <thead>
             <tr>
                <th scope="col">eenheid</th>
+               <th scope="col">type</th>
                <th scope="col">kennen</th>
                <th scope="col">gebruiken</th>
                <th scope="col">wordt gebruikt voor</th>
@@ -112,125 +113,109 @@
          <tbody>
             <tr>
                <td><code>px</code></td>
+               <td>absoluut</td>
                <td><span class="right"></span></td>
                <td><span class="right"></span></td>
                <td>vaste afmeting; gebruik standaard deze eenheid</td>
             </tr>
-            <tr>
-               <td><code>%</code></td>
-               <td><span class="right"></span></td>
-               <td><span class="right"></span></td>
-               <td>kolommen, grote afbeeldingen en andere flexibele elementen</td>
-            </tr>
-            <tr>
-               <td><code>em</code></td>
-               <td><span class="right"></span></td>
-               <td>optioneel</td>
-               <td>herschaalbare componenten</td>
-            </tr>
-            <tr>
-               <td><code>rem</code></td>
-               <td><span class="right"></span></td>
-               <td>optioneel</td>
-               <td>herschaalbare pagina</td>
-            </tr>
-            <tr>
-               <td><code>vw / vh / vmin / vmax</code></td>
-               <td><span class="right"></span></td>
-               <td>uitzonderlijk</td>
-               <td>vooral gebruikt in mobiele toepassingen</td>
-            </tr>
-            <tr>
-               <td><code>ch / ex</code></td>
-               <td><span class="right"></span></td>
-               <td><span class="wrong"></span></td>
-               <td>relatief t.ov. '0' resp 'x' karakter &mdash; weinig gebruikt</td>
-            </tr>
-            <tr>
-               <td><code>cm / mm / in / pt / pc</code></td>
-               <td><span class="right"></span></td>
-               <td><span class="wrong"></span></td>
-               <td>centimeter, millimeter, inch, punt, pica; enkel relevant in drukwerk</td>
-            </tr>
-         </tbody>
-      </table>
-      
-      <h3>gebruikt in de cursus</h3>
-      <p>Beschrijving van eenheden <strong>gebruikt in deze cursus</strong>:</p>
-      <table class="blue">
-         <thead>
-            <tr>
-               <th scope="col">eenheid</th>
-               <th scope="col">type</th>
-               <th scope="col">beschrijving</th>
-               <th scope="col">voorbeeld</th>
-            </tr>
-         </thead>
-         <tbody>
-            <tr>
-               <td><code>px</code></td>
+            <tr class="pro">
+               <td><code>cm / mm / in / pt / pc / Q</code></td>
                <td>absoluut</td>
-               <td>
-                  <strong>pixel</strong> op het scherm 
-                  <br><em class="smaller">let op: bij hoge resolutieschermen zoals MAC retina worden soms 4 schermpixels gebruikt per px</em>
-               </td>
-               <td>
-                  <pre class="notoolbar"><code>main { 
-   font-size: 24px; 
-   width: 900px; 
-}
-main &gt; p { 
-   font-size: 12px; 
-   width: 720px; 
-}
-</code></pre>
-               </td>
+               <td><span class="wrong"></span></td>
+               <td><span class="wrong"></span></td>
+               <td>centimeter, millimeter, inch, punt, pica, kwart mm; enkel relevant in drukwerk</td>
             </tr>
             <tr>
                <td><code>%</code></td>
-               <td>relatief</td>
-               <td>percentage van <strong>parent</strong> waarde</td>
-               <td>
-                  <pre class="notoolbar"><code>main &gt; p { 
-   font-size: 50%;  /* 24px * 50% = 12px */
-   width: 80%; /* 900px * 80% = 720px */
-}
-</code></pre>
-               </td>
+               <td>relatief tov. parent</td>
+               <td><span class="right"></span></td>
+               <td><span class="right"></span></td>
+               <td>percentage van parent waarde</td>
+            </tr>
+            <tr>
+               <td><code>fr</code></td>
+               <td>fractie</td>
+               <td><span class="right"></span></td>
+               <td><span class="right"></span></td>
+               <td>fractie van beschikbare ruimte (gebruikt in <a href="04_layout.html#grid">CSS Grid</a>)</td>
             </tr>
             <tr>
                <td><code>em</code></td>
-               <td>relatief</td>
-               <td>
-                  <em>bij afmetingen</em>: aantal keer fontsize van het <strong>element</strong> zelf
-                  <br><em>bij tekstgroottes</em>: aantal keer fontsize van het <strong>parent</strong> element
-               </td>
-               <td>
-                  <pre class="notoolbar"><code>main &gt; p { 
-   font-size: 0.5em;  /* 24px * 0.5 = 12px */
-   width: 60em; /* 60 * 12px = 720px */
-}
-</code></pre>
-               </td>
+               <td>relatief tov. font</td>
+               <td><span class="right"></span></td>
+               <td><span class="wrong"></span></td>
+               <td>relatief t.o.v. element font-size; herschaalbare componenten</td>
             </tr>
             <tr>
-               <td><code>rem</code></td>
-               <td>relatief</td>
-               <td>
-                  "root em": aantal keer fontsize van het <strong>root</strong> element <code>&lt;html&gt;</code> (standaard 16px)
-               </td>
-               <td>
-                  <pre class="notoolbar"><code>main &gt; p { 
-   font-size: 0.75rem;  /* 16px * 0.75 = 12px */
-   width: 45rem; /* 16px * 45 = 720px */
-}
-</code></pre>
-               </td>
+               <td><code>rem</code> (root em)</td>
+               <td>relatief tov. font</td>
+               <td><span class="right"></span></td>
+               <td><span class="wrong"></span></td>
+               <td>relatief t.o.v. <code>&lt;html&gt;</code> font-size; herschaalbare componenten</td>
+            </tr>
+            <tr class="pro">
+               <td><code>ch / ex / cap / ic / lh / lrh</code></td>
+               <td>relatief tov. font</td>
+               <td><span class="wrong"></span></td>
+               <td><span class="wrong"></span></td>
+               <td>relatief t.ov. '0' / 'x' / hoofdletter / '水' / regelhoogte / <code>&lt;html&gt;</code> regelhoogte </td>
+            </tr>
+            <tr>
+               <td><code>vw / vh</code></td>
+               <td>relatief tov. viewport</td>
+               <td><span class="right"></span></td>
+               <td><span class="wrong"></span></td>
+               <td>percentage viewport breedte / hoogte <sup>*</sup></td>
+            </tr>
+            <tr class="pro">
+               <td><code>svw / svh, lvw / lvh, dvw / dvh</code></td>
+               <td>relatief tov. viewport</td>
+               <td><span class="wrong"></span></td>
+               <td><span class="wrong"></span></td>
+               <td>percentage small, large, dynamic viewport breedte / hoogte <sup>*</sup></td>
+            </tr>
+            <tr class="pro">
+               <td><code>vmin / vmax</code></td>
+               <td>relatief tov. viewport</td>
+               <td><span class="wrong"></span></td>
+               <td><span class="wrong"></span></td>
+               <td>kleinste / grootste waarde van vw en vh <sup>*</sup></td>
+            </tr>
+            <tr class="pro">
+               <td><code>svmin / svmax , lvmin / lvmax, dvmmin / dvmax</code></td>
+               <td>relatief tov. viewport</td>
+               <td><span class="wrong"></span></td>
+               <td><span class="wrong"></span></td>
+               <td>kleinste / grootste waarde van svw en svh / lvw en lvh / dvw en dvh <sup>*</sup></td>
+            </tr>
+            <tr class="pro">
+               <td><code>w / h / i / b / min / max</code></td>
+               <td>relatief tov. element</td>
+               <td><span class="wrong"></span></td>
+               <td><span class="wrong"></span></td>
+               <td>percentage element breedte / hoogte / inline afmeting / ...</td>
+            </tr>
+            <tr class="pro">
+               <td><code>vw-i / vh-i / vi-i / vb-i / vmin-i / vmax-i</code></td>
+               <td>logisch</td>
+               <td><span class="wrong"></span></td>
+               <td><span class="wrong"></span></td>
+               <td>relatief t.o.v. de inline (of lees-) richting</td>
+            </tr>
+            <tr class="pro">
+               <td><code>vw-b / vh-b / vi-b / vb-b / vmin-b / vmax-b</code></td>
+               <td>logisch</td>
+               <td><span class="wrong"></span></td>
+               <td><span class="wrong"></span></td>
+               <td>relatief t.o.v. de block (of stapel-) richting</td>
             </tr>
          </tbody>
       </table>
+      <p class="pro">
+         <sup>*</sup> Voor het onderscheid tussen smallest / largest / dynamic viewport afmetingen, zie o.a. <a href="https://www.bram.us/2021/07/08/the-large-small-and-dynamic-viewports/">deze pagina</a>. 
+      </p>
 
-      <h4><code>px</code></h4>
+      <h3><code>px</code></h3>
       <p>De <mark>px</mark> wordt gebruikt voor <strong>vaste afmetingen</strong>, zoals borders, kleine afbeeldingen, knoppen...:</p>
       <pre class="prism-atom-dark"><code>input[type=submit] {
    border: 2px solid #666;
@@ -246,7 +231,7 @@ img.hamburger_icon {
       <p>
          &rarr; dit is je standaard gebruikte eenheid
       </p>
-      <h4><code>%</code></h4>
+      <h3><code>%</code></h3>
       <p>
          De <mark>%</mark> betekent <strong>percentage van parent</strong>. Typische use cases zijn:
       </p>
@@ -307,7 +292,7 @@ blockquote {
          <br>&rarr; gebruik <code>%</code> in deze cursus dus enkel voor afmetingen!
       </p>
 
-      <h4><code>em</code></h4>
+      <h3><code>em</code></h3>
       <p>In CSS heeft <mark>em</mark> twee betekenissen:</p>
       <ul>
          <li>gebruikt bij <strong>tekstgroottes</strong>: aantal keer <code>font-size</code> van de <strong>parent</strong></li>
@@ -413,7 +398,7 @@ blockquote {
       </figure>
       <p>Zoals je ziet uit de voorbeelden, heeft <code>em</code> voordelen, maar is het redelijk complex om mee te werken.</p>
 
-      <h4><code>rem</code></h4>
+      <h3><code>rem</code></h3>
       <p>De <mark>rem</mark> of "root em" betekent <em>aantal keren de tekstgrootte van <code>&lt;html&gt;</code></em>. Meestal wordt het als volgt gebruikt:</p>
       <ul>
          <li>standaard is de <code>font-size</code> van <code>&lt;html&gt;</code> gelijk aan <code>16px</code>, dus <code>1rem = 16px</code></li>
@@ -436,106 +421,10 @@ footer a { font-size: 1.2rem;  }</code></pre>
       </div>
       <p>Wat hebben we daarmee gewonnen? Niet veel, behalve dat je door aanpassen van de tekstgrootte van <code>&lt;html&gt;</code> makkelijk de hele pagina kan herschalen. Je hoeft het niet te gebruiken in de cursus, maar aangezien je het in de praktijk wel eens tegenkomt, moet je het wel kennen.</p>
 
-      <h3>viewport eenheden</h3>
-      <p>Deze eenheden zijn relatief t.o.v. de viewport (i.e. het zichtbare gedeelte van de pagina in de browser). Ze komen courant voor, maar vooral in mobiele toepassingen. Je moet ze wel <strong>kennen</strong> maar <strong>niet kunnen gebruiken</strong>:</p>
-      <table class="blue">
-         <thead>
-            <tr>
-               <th scope="col">eenheid</th>
-               <th scope="col">type</th>
-               <th scope="col">beschrijving</th>
-               <th scope="col">voorbeeld</th>
-            </tr>
-         </thead>
-         <tbody>
-            <tr>
-               <td><code>vh</code>, <code>vw</code></td>
-               <td>relatief</td>
-               <td>
-                  percentage van de <strong>viewport</strong> hoogte resp. breedte
-               </td>
-               <td>
-                  <pre class="notoolbar"><code>.dialog { 
-   height: 60vw; /* 60% van de breedte */ 
-   width: 80vw; /* 80% van de hoogte */ 
-}</code></pre>
-               </td>
-            </tr>
-            <tr>
-               <td><code>vmin</code>, <code>vmax</code></td>
-               <td>relatief</td>
-               <td>idem, waarbij <strong>kleinste resp. grootste</strong> waarde van breedte en hoogte genomen wordt</td>
-               <td>
-                  <pre class="notoolbar"><code>.dialog { 
-   height: 80vmin; /* 80% van min(breedte, hoogte)  */ 
-   width: 80vmin; /* 80% van min(breedte, hoogte) */ 
-}
-</code></pre>
-               </td>
-            </tr>
-         </tbody>
-      </table>
-
+      <h3><code>vw / vh</code></h3>
+      <p>De <mark>vw / vh</mark> eenheden betekenen <span class="em">percentage van de viewport breedte / hoogte</span>. De <mark>viewport</mark> is het zichtbare gedeelte van de pagina in de browser. Deze eenheden komen courant voor, vooral in mobiele toepassingen. </p>
       <img src="img/02_design/units-vw-vh.png" alt="" class="bordered shadow w-500">
-      <p>Deze eenheden moet je kennen, maar mag je <strong>niet gebruiken in deze cursus</strong>, tenzij uitzonderlijk om de pagina verticaal uit te rekken met <code>body { min-height: 100vh; }</code>.</p>
-
-      <h3>andere eenheden</h3>
-      <p>
-         Tenslotte bestaan nog deze weinig gebruikte eenheden. Ze worden niet gebruikt in de cursus, maar je moet wel <strong>weten wat ze betekenen</strong>:
-      </p>
-      <table class="blue">
-         <thead>
-            <tr>
-               <th scope="col">eenheid</th>
-               <th scope="col">type</th>
-               <th scope="col">beschrijving</th>
-            </tr>
-         </thead>
-         <tbody>
-            <tr>
-               <td><code>ch</code></td>
-               <td>relatief</td>
-               <td>
-                  <code>1ch</code> is de breedte van het '0' karakter
-               </td>
-            </tr>
-            <tr>
-               <td><code>ex</code></td>
-               <td>relatief</td>
-               <td>
-                  <code>1ex</code> is de breedte van het 'x' karakter
-               </td>
-            </tr>
-            <tr>
-               <td><code>mm</code></td>
-               <td>absoluut</td>
-               <td>
-                  millimeter (gebruikt in drukwerk)
-               </td>
-            </tr>
-            <tr>
-               <td><code>cm</code></td>
-               <td>absoluut</td>
-               <td>
-                  centimeter (gebruikt in drukwerk)
-               </td>
-            </tr>
-            <tr>
-               <td><code>pt</code></td>
-               <td>absoluut</td>
-               <td>
-                  punt (gebruikt in drukwerk)
-               </td>
-            </tr>
-            <tr>
-               <td><code>pc</code></td>
-               <td>absoluut</td>
-               <td>
-                  pica (gebruikt in drukwerk)
-               </td>
-            </tr>
-         </tbody>
-      </table>
+      <p class="pro">De definitie van viewport is iets ingewikkelder dan het lijkt, zie <a href="https://www.bram.us/2021/07/08/the-large-small-and-dynamic-viewports/">deze pagina</a>.</p>
 
       <h2>Fonts</h2>
       <h3>Wat is een font</h3> 
