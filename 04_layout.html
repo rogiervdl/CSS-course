@@ -1608,7 +1608,7 @@ p {
          </div>
       </div>
       <p>Probeer de verschillende waarden uit (<code>align-self</code> en <code>justify-self</code> worden in deze demo op item1 uitgevoerd):</p>
-      <div class="grid-containerdemo9-controls">
+      <div class="grid-containerdemo9-controls" id="grid-containerdemo9-controls1">
          <div>
             <label><code>justify-content</code>:</label>
             <label><input type="radio" name="grp-justify-items" value="start" checked><code>start</code></label>
@@ -1624,12 +1624,38 @@ p {
             <label><input type="radio" name="grp-align-items" value="stretch"><code>stretch</code></label>
          </div>
       </div>
-      <p>Met <code>align-self</code> en <code>justify-self</code> kan je deze waarden overschrijven voor individuele items.</p>
+      <p>Met <code>align-self</code> en <code>justify-self</code> kan je deze waarden overschrijven voor individuele items, b.v. het eerste item:</p>
+      <div class="grid-containerdemo9-controls" id="grid-containerdemo9-controls2">
+         <div>
+            <label><code>justify-self</code>:</label>
+            <label><input type="radio" name="grp-justify-self" value="auto" checked><code>auto</code></label>
+            <label><input type="radio" name="grp-justify-self" value="start"><code>start</code></label>
+            <label><input type="radio" name="grp-justify-self" value="center"><code>center</code></label>
+            <label><input type="radio" name="grp-justify-self" value="end"><code>end</code></label>
+            <label><input type="radio" name="grp-justify-self" value="stretch"><code>stretch</code></label>
+         </div>
+         <div>
+            <label><code>align-items</code>:</label>
+            <label><input type="radio" name="grp-align-self" value="start" checked><code>auto</code></label>
+            <label><input type="radio" name="grp-align-self" value="start"><code>start</code></label>
+            <label><input type="radio" name="grp-align-self" value="center"><code>center</code></label>
+            <label><input type="radio" name="grp-align-self" value="end"><code>end</code></label>
+            <label><input type="radio" name="grp-align-self" value="stretch"><code>stretch</code></label>
+         </div>
+      </div>
+      <p>
+         &rarr; de waarde <code>auto</code> betekent: hetzelfde als de container
+      </p>
       <script>
-         document.querySelector('.grid-containerdemo9-controls').addEventListener('click', () => {
-            const gridContainer9 = document.querySelector('#grid-containerdemo9 .grid-container');
+         const gridContainer9 = document.querySelector('#grid-containerdemo9 .grid-container');
+         const gridContainer9Item1 = document.querySelector('#grid-containerdemo9 .grid-container .item1');
+         document.querySelector('#grid-containerdemo9-controls1').addEventListener('click', () => {
             gridContainer9.style.alignItems = document.querySelector('[name=grp-align-items]:checked').value;
             gridContainer9.style.justifyItems = document.querySelector('[name=grp-justify-items]:checked').value;
+         });
+         document.querySelector('#grid-containerdemo9-controls2').addEventListener('click', () => {
+            gridContainer9Item1.style.alignSelf = document.querySelector('[name=grp-align-self]:checked').value;
+            gridContainer9Item1.style.justifySelf = document.querySelector('[name=grp-justify-self]:checked').value;
          });
       </script>
       <h2>Floating</h2>
