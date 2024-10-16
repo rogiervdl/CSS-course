@@ -150,7 +150,7 @@
       <li><span class="em">flexbox</span>: bedoeld voor allerhande <strong>horizontale en verticale layouts</strong></li>
       <li><span class="em">alignering</span>: verzamelnaam voor reeks losse technieken voor <strong>horizontale en verticale alignering</strong></li>
       <li><span class="em">floating</span>: gebruikt om content links of rechts <strong>rond een blok doen vloeien</strong> (bv. foto) </li>
-      <li><span class="em">positionering</span> (absoluut, relatief, fixed): positionering op basis van coördinaten; enkel geschikt voor <strong>Javascript games</strong> en enkele uitzonderlijke gevallen</li>
+      <li><span class="em">positionering</span> (absoluut, relatief, fixed, sticky): positionering in lagen op basis van coördinaten; vooral geschikt voor <strong>Javascript games</strong> en enkele uitzonderlijke gevallen</li>
       <li><span class="em">grid</span>: iets complexere methode voor <strong>grid-achtige layout</strong> in rijen en kolommen</li>
     </ul>
     <p>
@@ -2161,9 +2161,9 @@ button[type=submit] {
 
 
 
+    <h2>Positionering</h2>
     <div class="pro">
 
-      <h2>Positionering</h2>
       <h3>Standaard weergave</h3>
       <p>Positionering bepaalt de plaats van elementen a.h.v. <strong>coördinaten</strong> <code>top</code>, <code>right</code>, <code>bottom</code> en/of <code>left</code>. Laat ons starten van volgende code, zonder layout. Aangezien het blocklevel elementen zijn, is de natuurlijke positie van de drie blokken onder elkaar:</p>
       <div class="codecompare">
@@ -2527,17 +2527,18 @@ button[type=submit] {
           <div class="demobox demobox3">3</div>
         </div>
       </div>
+    </div>
 
-      <h3>Fixed</h3>
-      <p>De <mark>fixed positionering</mark> fixeert een element op de pagina, onafhankelijk van het scrollen:</p>
-      <div class="codecompare">
-        <div class="democontainer">
-          <pre class="prism-default language-html w-500"><code>&lt;p&gt;(scroll this page)&lt;/p&gt;
+    <h3>Fixed</h3>
+    <p>De <mark>fixed positionering</mark> fixeert een element op de pagina, onafhankelijk van het scrollen:</p>
+    <div class="codecompare">
+      <div class="democontainer">
+        <pre class="prism-default language-html w-500"><code>&lt;p&gt;(scroll this page)&lt;/p&gt;
 &lt;p&gt;Folly words widow one downs few age every seven. If miss part by fact he park just shew. Discovered had get considered projection who favourable. Necessary up knowledge it tolerably. Unwilling departure education is be dashwoods or an. Use off agreeable law unwilling sir deficient curiosity instantly. Easy mind life fact with see has bore ten. Parish any chatty can elinor direct for former. Up as meant widow equal an share least. &lt;/p&gt;
 &lt;p&gt;Examine she brother prudent add day ham. Far stairs now coming bed oppose hunted become his. You zealously departure had procuring suspicion. Books whose front would purse if be do decay. Quitting you way formerly disposed perceive ladyship are. Common turned boy direct and yet. &lt;/p&gt;
 &lt;p&gt;Ye on properly handsome returned throwing am no whatever. In without wishing he of picture no exposed talking minutes. Curiosity continual belonging offending so explained it exquisite. Do remember to followed yourself material mr recurred carriage. High drew west we no or at john. About or given on witty event. Or sociable up material bachelor bringing landlord confined. Busy so many in hung easy find well up. So of exquisite my an explained remainder. Dashwood denoting securing be on perceive my laughing so.&lt;/p&gt;
 &lt;a id="toplink" href="#top"&gt;back to top ↑&lt;/a&gt;</code></pre>
-          <pre class="prism-atom-dark"><code>#toplink {
+        <pre class="prism-atom-dark"><code>#toplink {
   /* add fixed top link */
   position: fixed;
   right: 10px;
@@ -2547,21 +2548,21 @@ button[type=submit] {
   border: 2px solid black;
   padding: 5px 10px;
 }</code></pre>
-        </div>
-        <iframe src="demos/04_layout/fixed.html" class="w-400"></iframe>
       </div>
+      <iframe src="demos/04_layout/fixed.html" class="w-400"></iframe>
+    </div>
 
-      <h3>Sticky</h3>
-      <p>De <mark>sticky positionering</mark> scrollt tot een gegeven offset bereikt is, waarna het blijft plakken.</p>
-      <div class="codecompare">
-        <div class="democontainer">
-          <pre class="prism-default language-html w-500"><code>&lt;p&gt;(scroll this page)&lt;/p&gt;
+    <h3>Sticky</h3>
+    <p>De <mark>sticky positionering</mark> scrollt tot een gegeven offset bereikt is, waarna het blijft plakken.</p>
+    <div class="codecompare">
+      <div class="democontainer">
+        <pre class="prism-default language-html w-500"><code>&lt;p&gt;(scroll this page)&lt;/p&gt;
 &lt;div id="sticky"&gt;I am sticky!&lt;/div&gt;
 &lt;p&gt;Folly words widow one downs few age every seven. If miss part by fact he park just shew. Discovered had get considered projection who favourable. Necessary up knowledge it tolerably. Unwilling departure education is be dashwoods or an. Use off agreeable law unwilling sir deficient curiosity instantly. Easy mind life fact with see has bore ten. Parish any chatty can elinor direct for former. Up as meant widow equal an share least. &lt;/p&gt;
 &lt;p&gt;Examine she brother prudent add day ham. Far stairs now coming bed oppose hunted become his. You zealously departure had procuring suspicion. Books whose front would purse if be do decay. Quitting you way formerly disposed perceive ladyship are. Common turned boy direct and yet. &lt;/p&gt;
 &lt;p&gt;Ye on properly handsome returned throwing am no whatever. In without wishing he of picture no exposed talking minutes. Curiosity continual belonging offending so explained it exquisite. Do remember to followed yourself material mr recurred carriage. High drew west we no or at john. About or given on witty event. Or sociable up material bachelor bringing landlord confined. Busy so many in hung easy find well up. So of exquisite my an explained remainder. Dashwood denoting securing be on perceive my laughing so.&lt;/p&gt;
 </code></pre>
-          <pre class="prism-atom-dark"><code>#sticky {
+        <pre class="prism-atom-dark"><code>#sticky {
    /* make sticky */
    position: sticky;
    top: 0; /* stick to top */
@@ -2572,9 +2573,11 @@ button[type=submit] {
    padding: 5px 10px;
    text-decoration: none;
 }</code></pre>
-        </div>
-        <iframe src="demos/04_layout/sticky.html" class="w-400"></iframe>
       </div>
+      <iframe src="demos/04_layout/sticky.html" class="w-400"></iframe>
+    </div>
+    <div class="pro">
+
       <h3>Wanneer gebruiken</h3>
       <p>Studenten hebben vaak de neiging positionering veel te snel terug te grijpen naar positionering. Eigenlijk wordt het <em>zeer weinig gebruikt</em>. Wanneer wel:</p>
       <ul class="right">
