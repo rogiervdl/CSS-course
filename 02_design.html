@@ -212,7 +212,7 @@
          </tbody>
       </table>
       <p class="pro">
-         <sup>*</sup> Voor het onderscheid tussen smallest / largest / dynamic viewport afmetingen, zie o.a. <a href="https://www.bram.us/2021/07/08/the-large-small-and-dynamic-viewports/">deze pagina</a>. 
+         <sup>*</sup> Voor het onderscheid tussen smallest / largest / dynamic viewport afmetingen, zie o.a. <a href="https://www.bram.us/2021/07/08/the-large-small-and-dynamic-viewports/">deze pagina</a>.
       </p>
 
       <h3><code>px</code></h3>
@@ -272,7 +272,7 @@ body &gt; aside {
    padding: 20px;
    width: 20%;
 }
-img { 
+img {
    max-width: 500px;
    width: 100%;
 }
@@ -283,7 +283,7 @@ blockquote {
    padding: 10px;
    width: 70%;
 }</code></pre>
- 
+
          </div>
          <img src="img/02_design/units-percentage.png" alt="" class="bordered shadow w-500">
       </div>
@@ -306,7 +306,7 @@ blockquote {
    &lt;div class="review-px"&gt;
       &lt;h3 class="review-title"&gt;Great hotel! (px versie)&lt;/h3&gt;
       &lt;p&gt;
-         In friendship diminution instrument so. Son sure paid door with 
+         In friendship diminution instrument so. Son sure paid door with
          say them. Lorem ipsum dolor sit amet, consectetur adipiscing elit!
       &lt;/p&gt;
       &lt;img src="mugshot.jpg" alt="avatar"&gt;
@@ -318,7 +318,7 @@ blockquote {
    &lt;div class="review-em"&gt;
       &lt;h3 class="review-title"&gt;Great hotel! (em versie)&lt;/h3&gt;
       &lt;p&gt;
-         In friendship diminution instrument so. Son sure paid door with 
+         In friendship diminution instrument so. Son sure paid door with
          say them. Lorem ipsum dolor sit amet, consectetur adipiscing elit!
       &lt;/p&gt;
       &lt;img src="mugshot.jpg" alt="avatar"&gt;
@@ -378,8 +378,8 @@ blockquote {
    font-size: 1.4em; /* 11.2px * 1.4 = 15.68px */
 }
 </code></pre>
- 
-         </div>   
+
+         </div>
          <div>
             <figure>
                <img src="img/02_design/units-em.gif" alt="" class="bordered shadow w-600">
@@ -407,17 +407,17 @@ blockquote {
       </ul>
       <p>Volgende fragmenten zijn dus gelijkwaardig:</p>
       <div class="codecompare">
-         <pre><code>html { }
+         <pre class="prism-atom-dark language-css"><code>html { }
 body { font-size: 14px; }
 h1 { font-size: 20px; }
 footer { font-size: 11px; }
 footer a { font-size: 12px; }</code></pre>
-<pre><code>html { font-size: 10px; } /* dan is 1rem = 10px */
+<pre class="prism-atom-dark language-css"><code>html { font-size: 10px; } /* dan is 1rem = 10px */
 body { font-size: 1.4rem; }
 h1 { font-size: 2rem; }
 footer { font-size: 1.1rem; }
 footer a { font-size: 1.2rem;  }</code></pre>
-   
+
       </div>
       <p>Wat hebben we daarmee gewonnen? Niet veel, behalve dat je door aanpassen van de tekstgrootte van <code>&lt;html&gt;</code> makkelijk de hele pagina kan herschalen. Je hoeft het niet te gebruiken in de cursus, maar aangezien je het in de praktijk wel eens tegenkomt, moet je het wel kennen.</p>
 
@@ -427,7 +427,7 @@ footer a { font-size: 1.2rem;  }</code></pre>
       <p class="pro">De definitie van viewport is iets ingewikkelder dan het lijkt, zie <a href="https://www.bram.us/2021/07/08/the-large-small-and-dynamic-viewports/">deze pagina</a>.</p>
 
       <h2>Fonts</h2>
-      <h3>Wat is een font</h3> 
+      <h3>Wat is een font</h3>
       <p>Een <em>font</em> is een grafische weergave van tekst. De belangrijkste CSS properties:</p>
       <ul>
          <li><strong>font-family</strong>: <span style="font-family: Arial">Arial</span>, <span style="font-family: Courier New">Courier New</span>, <span style="font-family: Times New Roman">Times New Roman</span>...</li>
@@ -491,9 +491,9 @@ a:hover {
 &lt;/head&gt;
 &lt;body&gt;
    &lt;p&gt;
-      Wie werkten meestal men menigte bersawa. Om monopolies ad nu mislukking 
-      interesten verscholen smeltovens. Brandhout mee snelleren geschiedt bezorgden 
-      aandeelen den are. Dat treffen gomboom zekeren tot fortuin gelaten stellen. 
+      Wie werkten meestal men menigte bersawa. Om monopolies ad nu mislukking
+      interesten verscholen smeltovens. Brandhout mee snelleren geschiedt bezorgden
+      aandeelen den are. Dat treffen gomboom zekeren tot fortuin gelaten stellen.
       Het ziet niet lage deze het per zes ipoh.
    &lt;/p&gt;
 &lt;/body&gt;
@@ -534,7 +534,7 @@ a:hover {
          margin: 10px;
       }
       #text {
-         border: 2px ridge; 
+         border: 2px ridge;
          font-family: Decovar;
          font-size: 50px;
          font-variation-setting: 'SKLD' 0, 'TRML' 0, 'SKLA' 0;
@@ -596,7 +596,7 @@ a:hover {
          margin: 10px;
       }
       #text {
-         border: 2px ridge; 
+         border: 2px ridge;
          font-family: Zycon;
          font-size: 42px;
          padding: 20px;
@@ -756,8 +756,8 @@ a:hover {
          <div id="background-images-demo" class="target">
             <div  style="width: 500px; height: 150px; padding: 0"></div>
          </div>
-      </div>   
-      
+      </div>
+
       <h3>Transities</h3>
       <p>Maak CSS overgangen geleidelijk, &ldquo;smooth&rdquo;, met de <span class="em"><code>transition</code></span> property:</p>
       <div class="codecompare top">
@@ -777,7 +777,7 @@ div:hover {
             <div style="padding: 10px; margin: 10px 30px 30px 0; border: 1px dotted #999">hover me!
             </div>
          </div>
-      </div>   
+      </div>
 
       <h3>Gradiënten</h3>
       <p>Gebruik een gradiënt als achtergrond met <span class="em"><code>linear-gradient</code></span>:</p>
@@ -794,7 +794,7 @@ div:hover {
          <div id="gradient-demo" class="target w-500">
             <p style="line-height: 80px; text-align: center; font-size: 24px;">GRADIENT EXAMPLE</p>
          </div>
-      </div>   
+      </div>
 
       <h3>Filters</h3>
       <p>CSS biedt met de <span class="em"><code>filter</code></span> property een <a href="https://www.w3schools.com/cssref/css3_pr_filter.asp">aantal basisfilters</a> als blur, grayscale, brightness, contrast, sepia. Een voorbeeld met grayscale (hover over de afbeelding):</p>
@@ -814,7 +814,7 @@ img:hover {
             </div>
             <figcaption>hover over de afbeelding</figcaption>
          </figure>
-      </div>   
+      </div>
 
       <div class="pro">
          <h3>Transformaties</h3>
@@ -835,7 +835,7 @@ img:hover {
                   </div>
                </div>
             </div>
-         </div>   
+         </div>
 
          <h3>Animaties</h3>
          <p>Definieer keyframes, properties en easing (= animatiecurve) met <span class="em"><code>@keyframes</code></span>:</p>
@@ -866,7 +866,7 @@ img:hover {
             <div id="scene">
                <img src="img/02_design/bus.png" alt="" id="bus">
             </div>
-         </div>         
+         </div>
          <p>Nog meer CSS animatiedemo's:</p>
          <ul>
             <li><a href="demos/02_design/tweehuizen.html">CSS stadsleven</a></li>
@@ -874,8 +874,8 @@ img:hover {
             <li><a href="http://jsfiddle.net/fULTJ/7/embedded/result/">CSS stopwatch demo</a></li>
             <li><a href="https://codepen.io/M_J_Robbins/">CSS experimenten door Mark Robbins</a></li>
          </ul>
-   
-      </div>   
+
+      </div>
 
       <h2>Weergave</h2>
       <h3>Opacity</h3>
@@ -893,7 +893,7 @@ img:hover {
    background-position: center;
    background-size: cover;
    padding: 150px 100px 50px 10px;
-} 
+}
 .tagline {
    background-color: black;
    border: 5px solid #747738;
@@ -909,7 +909,7 @@ img:hover {
                </div>
             </div>
          </div>
-      </div>   
+      </div>
       <h4>Opacity vs. alpha</h4>
       <p>De <span class="em">opacity</span> maakt een <strong>element transparant</strong>, terwijl het <span class="em">alfakanaal</span> een <strong>kleur transparant</strong> maakt. Volgende vergelijking verduidelijkt het verschil:</p>
       <div class="codecompare top">
@@ -997,7 +997,7 @@ img:hover {
          &rarr; er zijn nog een hoop andere waarden als <code>contents</code>, <code>run-in</code>, <code>inline-flex</code> enz... maar die <strong>mag je niet gebruiken</strong> en hoef je ook niet te kennen.
       </p>
       <p>
-         HTML elementen hebben een standaardwaarde voor <code>display</code>: voor <code>&lt;p&gt;</code> of <code>&lt;h1&gt;</code> is dat <code>block</code>, voor <code>&lt;span&gt;</code> of <code>&lt;a&gt;</code> is dat <code>inline</code> enz... 
+         HTML elementen hebben een standaardwaarde voor <code>display</code>: voor <code>&lt;p&gt;</code> of <code>&lt;h1&gt;</code> is dat <code>block</code>, voor <code>&lt;span&gt;</code> of <code>&lt;a&gt;</code> is dat <code>inline</code> enz...
          Er kunnen goede redenen zijn om de standaardweergave te veranderen. We geven een paar typische voorbeelden.
       </p>
       <h4>voorbeeld 1: knop maken van een link met <code>display: block</code></h4>
@@ -1007,7 +1007,7 @@ img:hover {
             <pre class="prism-default language-html" data-demo><code>&lt;a class="button" href="#"&gt;Verzend&lt;/a&gt;</code></pre>
             <pre class="prism-atom-dark"><code contenteditable data-target="#display-button-demo">a.button {
    background-color: beige;
-   border: 2px solid #ccc;   
+   border: 2px solid #ccc;
    color: #333;
    display: block; /* verwijder dit en kijk wat gebeurt */
    height: 40px; /* werkt enkel bij blocklevel */
@@ -1026,7 +1026,7 @@ img:hover {
 
       <h4>voorbeeld 2: labels verbergen met <code>display: none</code></h4>
       <p>
-         Zoals <a href="https://rogiervdl.github.io/HTML-course/06_formulieren.html#verborgen-labels">hier uitgelegd</a>, moet in de HTML voor elke control een <code>&lt;label&gt;</code> gecodeerd zijn, ook als ze in het finale design niet zichtbaar zijn.  
+         Zoals <a href="https://rogiervdl.github.io/HTML-course/06_formulieren.html#verborgen-labels">hier uitgelegd</a>, moet in de HTML voor elke control een <code>&lt;label&gt;</code> gecodeerd zijn, ook als ze in het finale design niet zichtbaar zijn.
       </p>
       <div class="codecompare">
          <div class="democontainer">
@@ -1047,7 +1047,7 @@ input, button {
    border: 1px solid #ccc;
    margin: 5px;
    padding: 5px;
-}               
+}
 label {
    display: none; /* verwijder dit en kijk wat gebeurt */
 }</code></pre>
@@ -1069,7 +1069,7 @@ label {
 
       <h4>voorbeeld 3: menu horizontaal maken met <code>display: inline-block</code></h4>
       <p>
-         Een al wat oudere manier om een horizontaal menu te maken is met <code>display: inline-block</code>: 
+         Een al wat oudere manier om een horizontaal menu te maken is met <code>display: inline-block</code>:
       </p>
       <div class="codecompare">
          <div class="democontainer">
@@ -1084,7 +1084,7 @@ ul {
 }
 li + li::before {
    content: " | ";
-}  
+}
 li {
    display: inline-block; /* verwijder dit en kijk wat gebeurt */
 }</code></pre>
@@ -1099,7 +1099,7 @@ li {
 
       </div>
       <p>
-         &rarr; in praktijk wordt tegenwoordig <a href="04_layout.html#flexbox">flexbox</a> gebruikt voor layouts als deze 
+         &rarr; in praktijk wordt tegenwoordig <a href="04_layout.html#flexbox">flexbox</a> gebruikt voor layouts als deze
       </p>
 
 

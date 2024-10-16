@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS flexbox gallery</title>
+  <style>
+    html {
+      background-color: #eee;
+    }
+    body {
+      background-color: #fff;
+      margin: 0 auto;
+      max-width: 800px;
+      padding: 20px;
+    }
+    #gallery {
+      display: flex;
+      column-gap: calc(8% / 3);
+      flex-wrap: wrap;
+      row-gap: 10px;
+    }
+
+    #gallery img {
+      display: block;
+      width: 23%;
+    }
+  </style>
+</head>
+
+<body>
+  <figure id="gallery">
+    <img src="img/foto01.jpg" alt="">
+    <img src="img/foto02.jpg" alt="">
+    <img src="img/foto03.jpg" alt="">
+    <img src="img/foto04.jpg" alt="">
+    <img src="img/foto05.jpg" alt="">
+    <img src="img/foto06.jpg" alt="">
+    <img src="img/foto07.jpg" alt="">
+  </figure>
+</body>
+
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS grid form</title>
+  <style>
+    html {
+      background-color: #eee;
+    }
+    body {
+      background-color: #fff;
+      margin: 0 auto;
+      max-width: 800px;
+      padding: 20px;
+    }
+    form {
+      margin: 0 auto;
+      max-width: 400px;
+    }
+
+    form {
+      display: grid;
+      gap: 10px;
+      grid-template-columns: 120px 1fr;
+    }
+
+    button[type=submit] {
+      justify-self: start;
+      grid-column: 1 / 3;
+    }
+  </style>
+</head>
+
+<body>
+  <form>
+    <label for="login">Login:</label>
+    <input type="text" id="login" required>
+    <label for="pw">Password:</label>
+    <input type="password" id="pw" required>
+    <button type="submit">Submit</button>
+  </form>
+</body>
+
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS flexbox header</title>
+  <style>
+    html {
+      background-color: #eee;
+    }
+    body {
+      background-color: #fff;
+      margin: 0 auto;
+      max-width: 800px;
+      padding: 20px;
+    }
+    ul {
+      list-style: none;
+    }
+    .logo {
+      width: 150px;
+    }
+    header {
+      align-items: center;
+      background-color: #eee;;
+      display: flex;
+      justify-content: space-between;
+      padding: 20px 40px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <a href=""><img src="img/logo.png" alt="" class="logo"></a>
+    <nav>
+      <ul class="hormenu">
+        <li><a href="#">home</a></li>
+        <li><a href="#">products</a></li>
+        <li><a href="#">about</a></li>
+        <li><a href="#">contact</a></li>
+      </ul>
+    </nav>
+  </header>
+</body>
+</html>
