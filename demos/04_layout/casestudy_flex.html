@@ -11,7 +11,7 @@
          display: flex;
          flex-direction: column; /* plaats header, nav, main, footer onder elkaar */
          margin: 0 auto; /* centreer body in <html> */
-         max-width: 1000px; /* maximaal 1000px breed */  
+         max-width: 1000px; /* maximaal 1000px breed */
          min-height: 100vh; /* bedek minstens hele viewport */
       }
       main {
@@ -42,13 +42,8 @@
 
       /* main layout */
       main {
-         display: flex;
-      }
-      #content {
-         flex: 1 1 auto;
-      }
-      aside {
-         flex: 0 0 200px;
+         display: grid;
+         grid-template-columns: 1fr 200px;
       }
 
       /* footer layout */
@@ -69,14 +64,14 @@
          padding: 10px 20px;
       }
       nav {
-         background-color: #eee; 
+         background-color: #eee;
       }
       nav ul {
          list-style: none;
          margin: 0;
       }
       header, footer {
-         background-color: #ddd; 
+         background-color: #ddd;
          padding: 10px 20px;
       }
       aside {

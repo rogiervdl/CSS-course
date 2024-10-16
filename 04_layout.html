@@ -305,6 +305,354 @@ p {
     </div>
     <p>Je ziet, de mogelijkheden zijn beperkt: verticaal centreren van meerdere blokken of wanneer de container een vaste hoogte heeft, is enkel mogelijk met <span class="em">flexbox</span>.</p>
 
+    <h2>Floating</h2>
+    <h3>Standaard weergave</h3>
+    <p>Blocklevel elementen als <code>&lt;h3&gt;</code> en <code>&lt;p&gt;</code> starten standaard op een nieuwe regel:</p>
+    <div class="codecompare">
+      <div class="democontainer">
+        <pre class="prism-default language-html w-500" data-demo><code>&lt;div id="wrapper"&gt;
+  &lt;section&gt;
+    &lt;img src="img/04_layout/portrait.jpg" alt="foto"&gt;
+    &lt;h3&gt;Procured&lt;/h3&gt;
+    &lt;p&gt;Civility not absolute put continue. Overcame breeding or my concerns removing desirous so absolute. My melancholy unpleasing imprudence considered in advantages so impression. Almost unable put piqued talked likely houses her met.&lt;/p&gt;
+  &lt;/section&gt;
+  &lt;section&gt;
+    &lt;h3&gt;Finished&lt;/h3&gt;
+    &lt;p&gt;Her are its honoured drawings nor. Pretty see mutual thrown all not edward ten. Particular an boisterous up he reasonably frequently. Several any had enjoyed shewing studied two. Up intention remainder sportsmen behaviour ye happiness. Few again any alone style added abode ask.&lt;/p&gt;
+  &lt;/section&gt;
+&lt;/div&gt;</code></pre>
+        <pre class="prism-atom-dark h-300"><code contenteditable data-target="#floating-demo1">img {
+   width: 70px;
+}
+section {
+   border: 1px dotted;
+   margin-bottom: 10px;
+   padding: 5px
+}
+h3 {
+   margin: 0;
+   margin-bottom: 0.5rem
+}
+.demowrapper {
+   font-family: 'Roboto', sans-serif;
+   max-width: 400px;
+}</code></pre>
+      </div>
+      <div id="floating-demo1" class="w-500">
+        <div class="demowrapper">
+          <section>
+            <img src="img/04_layout/portrait.jpg" alt="foto">
+            <h3>Procured</h3>
+            <p>
+              Civility not absolute put continue. Overcame breeding or my concerns removing desirous so absolute. My melancholy unpleasing imprudence considered in advantages so impression. Almost unable put piqued talked likely houses her met.
+            </p>
+          </section>
+          <section>
+            <h3>Finished</h3>
+            <p>
+              Her are its honoured drawings nor. Pretty see mutual thrown all not edward ten. Particular an boisterous up he reasonably frequently. Several any had enjoyed shewing studied two. Up intention remainder sportsmen behaviour ye happiness. Few again any alone style added abode ask.
+            </p>
+          </section>
+        </div>
+      </div>
+    </div>
+    <h3>Floaten</h3>
+    <p>Met <span class="em"><code>float: left;</code></span> kan je blocklevel elementen rond een afbeelding laten vloeien:</p>
+    <div class="codecompare">
+      <div class="democontainer">
+        <pre class="prism-default language-html w-500" data-demo><code>&lt;div id="wrapper"&gt;
+  &lt;section&gt;
+    &lt;img src="img/04_layout/portrait.jpg" alt="foto"&gt;
+    &lt;h3&gt;Procured&lt;/h3&gt;
+    &lt;p&gt;Civility not absolute put continue. Overcame breeding or my concerns removing desirous so absolute. My melancholy unpleasing imprudence considered in advantages so impression. Almost unable put piqued talked likely houses her met.&lt;/p&gt;
+  &lt;/section&gt;
+  &lt;section&gt;
+    &lt;h3&gt;Finished&lt;/h3&gt;
+    &lt;p&gt;Her are its honoured drawings nor. Pretty see mutual thrown all not edward ten. Particular an boisterous up he reasonably frequently. Several any had enjoyed shewing studied two. Up intention remainder sportsmen behaviour ye happiness. Few again any alone style added abode ask.&lt;/p&gt;
+  &lt;/section&gt;
+&lt;/div&gt;</code></pre>
+        <pre class="prism-atom-dark h-300"><code contenteditable data-target="#floating-demo2">img {
+   float: left; /* probeer ook float: right; */
+   margin-right: 10px;
+   width: 70px;
+}
+section {
+   border: 1px dotted;
+   margin-bottom: 10px;
+   padding: 5px
+}
+h3 {
+   margin: 0;
+   margin-bottom: 0.5rem
+}
+.demowrapper {
+   max-width: 400px;
+   font-family: 'Roboto', sans-serif;
+}</code></pre>
+      </div>
+      <div id="floating-demo2" class="w-500">
+        <div class="demowrapper">
+          <section>
+            <img src="img/04_layout/portrait.jpg" alt="foto">
+            <h3>Procured</h3>
+            <p>
+              Civility not absolute put continue. Overcame breeding or my concerns removing desirous so absolute. My melancholy unpleasing imprudence considered in advantages so impression. Almost unable put piqued talked likely houses her met.
+            </p>
+          </section>
+          <section>
+            <h3>Finished</h3>
+            <p>
+              Her are its honoured drawings nor. Pretty see mutual thrown all not edward ten. Particular an boisterous up he reasonably frequently. Several any had enjoyed shewing studied two. Up intention remainder sportsmen behaviour ye happiness. Few again any alone style added abode ask.
+            </p>
+          </section>
+        </div>
+      </div>
+    </div>
+    <p>Dit werkt ook met andere block-elementen als pullquotes:</p>
+    <div class="codecompare">
+      <div class="democontainer">
+        <pre class="prism-default language-html w-500" data-demo><code>&lt;section&gt;
+  &lt;h3&gt;Procured&lt;/h3&gt;
+  &lt;p&gt; Civility not absolute put continue. Overcame breeding or my concerns removing desirous so absolute. My melancholy unpleasing imprudence considered in advantages so impression. My melancholy unpleasing imprudence considered in advantages so impression.&lt;/p&gt;
+  &lt;aside&gt;
+    spoke as as other again ye; Hard on to roof he drew
+  &lt;/aside&gt;
+  &lt;p&gt;Her are its honoured drawings nor. Pretty see mutual thrown all not edward ten. Particular an boisterous up he reasonably frequently. Several any had enjoyed shewing studied two. Up intention remainder sportsmen behaviour ye happiness. Few again any alone style added abode ask. Nay projecting unpleasing boisterous eat discovered solicitude. Own six moments produce elderly pasture far arrival. Hold our year they ten upon. Gentleman contained so intention sweetness in on resolving.&lt;/p&gt;
+&lt;/section&gt;
+</code></pre>
+        <pre class="prism-atom-dark h-300"><code contenteditable data-target="#floating-demo3">/* float pull quote right */
+aside {
+   float: right;
+   margin: 10px 0 10px 10px;
+   width: 130px;
+}
+
+/* rest of CSS */
+aside {
+   background-color: #eee;
+   font-size: 1.2em;
+   font-style: italic;
+   padding: 10px;
+}
+
+h3, p {
+   margin: 0;
+   margin-bottom: 0.5rem
+}
+section {
+   max-width: 400px;
+   font-family: 'Roboto', sans-serif;
+   border: 1px dotted;
+   padding: 5px
+}</code></pre>
+      </div>
+      <div id="floating-demo3" class="w-500">
+        <div class="demowrapper">
+          <section>
+            <h3>Procured</h3>
+            <p>
+              Civility not absolute put continue. Overcame breeding or my concerns removing desirous so absolute. My melancholy unpleasing imprudence considered in advantages so impression. My melancholy unpleasing imprudence considered in advantages so impression.
+            </p>
+            <aside>
+              spoke as as other again ye; Hard on to roof he drew
+            </aside>
+            <p>
+              Her are its honoured drawings nor. Pretty see mutual thrown all not edward ten. Particular an boisterous up he reasonably frequently. Several any had enjoyed shewing studied two. Up intention remainder sportsmen behaviour ye happiness. Few again any alone style added abode ask. Nay projecting unpleasing boisterous eat discovered solicitude. Own six moments produce elderly pasture far arrival. Hold our year they ten upon. Gentleman contained so intention sweetness in on resolving.
+            </p>
+          </section>
+        </div>
+      </div>
+    </div>
+    <div class="pro">
+
+      <h3>Parent bleeding</h3>
+      <p>Als een gefloat element niet meer in de parent past, zal het eruit lekken en de content van het volgende blok wegdrukken:</p>
+      <div class="codecompare">
+        <div class="democontainer">
+          <pre class="prism-default language-html w-500" data-demo><code>&lt;div id="wrapper"&gt;
+  &lt;section&gt;
+    &lt;img src="img/04_layout/portrait.jpg" alt="foto"&gt;
+    &lt;h3&gt;Procured&lt;/h3&gt;
+    &lt;p&gt;Civility not absolute put continue. Overcame breeding or my concerns removing desirous so absolute. &lt;/p&gt;
+  &lt;/section&gt;
+  &lt;section&gt;
+    &lt;h3&gt;Finished&lt;/h3&gt;
+    &lt;p&gt;Her are its honoured drawings nor. Pretty see mutual thrown all not edward ten. Particular an boisterous up he reasonably frequently. Several any had enjoyed shewing studied two. Up intention remainder sportsmen behaviour ye happiness. Few again any alone style added abode ask.&lt;/p&gt;
+  &lt;/section&gt;
+&lt;/div&gt;</code></pre>
+          <pre class="prism-atom-dark h-300"><code contenteditable data-target="#floating-demo4">/* float image links */
+img {
+  float: left;
+  margin-right: 10px;
+  width: 160px;
+}
+
+/* rest van de CSS */
+section {
+  margin: 10px;
+  border: 1px dotted;
+  padding: 5px;
+}
+h3, p {
+  margin: 0;
+  margin-bottom: 0.5rem
+}
+#wrapper {
+  max-width: 500px;
+  font-family: 'Roboto', sans-serif;
+}</code></pre>
+        </div>
+        <div id="floating-demo4" class="w-500">
+          <div class="demowrapper">
+            <section>
+              <img src="img/04_layout/portrait.jpg" alt="foto">
+              <h3>Procured</h3>
+              <p>
+                Civility not absolute put continue. Overcame breeding or my concerns removing desirous so absolute.
+              </p>
+            </section>
+            <section>
+              <h3>Finished</h3>
+              <p>
+                Her are its honoured drawings nor. Pretty see mutual thrown all not edward ten. Particular an boisterous up he reasonably frequently. Several any had enjoyed shewing studied two. Up intention remainder sportsmen behaviour ye happiness. Few again any alone style added abode ask.
+              </p>
+            </section>
+          </div>
+        </div>
+      </div>
+      <p>Dit lijkt vreemd, maar eigenlijk is het niet onlogisch voor waar floating voor bedoeld is: tekst laten vloeien rond afbeeldingen. Het alternatief is een grote leegte tussen de twee paragrafen.</p>
+      <h3>Parent herstellen</h3>
+      <p>Als je niet wil, kan je de parent herstellen met <span class="em"><code>overflow: hidden;</code></span>:</p>
+      <div class="codecompare">
+        <div class="democontainer">
+          <pre class="prism-default language-html w-500" data-demo><code>&lt;div id="wrapper"&gt;
+  &lt;section&gt;
+    &lt;img src="img/04_layout/portrait.jpg" alt="foto"&gt;
+    &lt;h3&gt;Procured&lt;/h3&gt;
+    &lt;p&gt;Civility not absolute put continue. Overcame breeding or my concerns removing desirous so absolute. &lt;/p&gt;
+  &lt;/section&gt;
+  &lt;section&gt;
+    &lt;h3&gt;Finished&lt;/h3&gt;
+    &lt;p&gt;Her are its honoured drawings nor. Pretty see mutual thrown all not edward ten. Particular an boisterous up he reasonably frequently. Several any had enjoyed shewing studied two. Up intention remainder sportsmen behaviour ye happiness. Few again any alone style added abode ask.&lt;/p&gt;
+  &lt;/section&gt;
+&lt;/div&gt;</code></pre>
+          <pre class="prism-atom-dark h-300"><code contenteditable data-target="#floating-demo5">/* vermijd parent bleeding */
+section {
+   overflow: hidden;
+}
+
+/* float image links */
+img {
+  float: left;
+  margin-right: 10px;
+  width: 160px;
+}
+
+/* rest of CSS */
+section {
+  margin: 10px;
+  border: 1px dotted;
+  padding: 5px;
+}
+h3, p {
+  margin: 0;
+  margin-bottom: 0.5rem
+}
+#wrapper {
+  max-width: 500px;
+  font-family: 'Roboto', sans-serif;
+}</code></pre>
+        </div>
+        <div id="floating-demo5" class="w-500">
+          <div class="demowrapper">
+            <section>
+              <img src="img/04_layout/portrait.jpg" alt="foto">
+              <h3>Procured</h3>
+              <p>
+                Civility not absolute put continue. Overcame breeding or my concerns removing desirous so absolute.
+              </p>
+            </section>
+            <section>
+              <h3>Finished</h3>
+              <p>
+                Her are its honoured drawings nor. Pretty see mutual thrown all not edward ten. Particular an boisterous up he reasonably frequently. Several any had enjoyed shewing studied two. Up intention remainder sportsmen behaviour ye happiness. Few again any alone style added abode ask.
+              </p>
+            </section>
+          </div>
+        </div>
+      </div>
+      <h3>Clear</h3>
+      <p>Je kan vermijden dat bepaalde elementen naast een gefloat element komen met <span class="em"><code>clear</code></span> (waarden <code>left</code>, <code>right</code> of <code>both</code>), bv. de tweede titel, die nu onder de afbeelding blijft:</p>
+      <div class="codecompare">
+        <div class="democontainer">
+          <pre class="prism-default language-html w-500" data-demo><code>&lt;div id="wrapper"&gt;
+  &lt;section id="sect1"&gt;
+    &lt;img src="img/04_layout/portrait.jpg" alt="foto"&gt;
+    &lt;h3&gt;Procured&lt;/h3&gt;
+    &lt;p&gt;Civility not absolute put continue. Overcame breeding or my concerns removing desirous so absolute. &lt;/p&gt;
+  &lt;/section&gt;
+  &lt;section id="sect2"&gt;
+    &lt;h3&gt;Finished&lt;/h3&gt;
+    &lt;p&gt;Her are its honoured drawings nor. Pretty see mutual thrown all not edward ten. Particular an boisterous up he reasonably frequently. Several any had enjoyed shewing studied two. Up intention remainder sportsmen behaviour ye happiness. Few again any alone style added abode ask.&lt;/p&gt;
+  &lt;/section&gt;
+&lt;/div&gt;</code></pre>
+          <pre class="prism-atom-dark h-300"><code contenteditable data-target="#floating-demo6">/* clear tweede titel */
+#sect2 h3 {
+  clear: left;
+}
+
+/* float image links */
+img {
+  float: left;
+  margin-right: 10px;
+  width: 160px;
+}
+
+/* rest of CSS */
+section {
+  margin: 10px;
+  border: 1px dotted;
+  padding: 5px;
+}
+h3, p {
+  margin: 0;
+  margin-bottom: 0.5rem
+}
+#wrapper {
+  max-width: 500px;
+  font-family: 'Roboto', sans-serif;
+}</code></pre>
+        </div>
+        <div id="floating-demo6" class="w-500">
+          <div class="demowrapper">
+            <section id="sect1">
+              <img src="img/04_layout/portrait.jpg" alt="foto">
+              <h3>Procured</h3>
+              <p>Civility not absolute put continue. Overcame breeding or my concerns removing desirous so absolute.</p>
+            </section>
+            <section id="sect2">
+              <h3>Finished</h3>
+              <p>Her are its honoured drawings nor. Pretty see mutual thrown all not edward ten. Particular an boisterous up he reasonably frequently. Several any had enjoyed shewing studied two. Up intention remainder sportsmen behaviour ye happiness. Few again any alone style added abode ask. </p>
+            </section>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <h3>Wanneer gebruiken</h3>
+    <p>Vóór Flexbox algemeen ondersteund werd, werd float misbruikt voor alle layout (en soms kom je het nog tegen), maar vandaag beperk je het gebruik best waarvoor het bedoeld is. Gebruik floating:</p>
+    <ul class="right">
+      <li>om tekst rond afbeeldingen te laten vloeien</li>
+      <li>voor pull quotes</li>
+    </ul>
+    <p>Gebruik floating niet:</p>
+    <ul class="wrong">
+      <li>voor alle andere layout als pagina layout, menus enz...</li>
+    </ul>
+    <div class="tips" data-caption="☝🏼REGEL">
+      <p>De vuistregel is: <strong>als het anders kan</strong> (b.v. met flexbox), <strong>gebruik dan geen floating</strong></p>
+    </div>
+
     <h2>Flexbox</h2>
     <p>
       Met <mark>flexbox</mark> kan je een reeks children, de <span class="em">flex items</span>, schikken in een parent, de <span class="em">flex container</span>.
@@ -1611,7 +1959,7 @@ p {
         <label><input type="radio" name="grp-justify-self" value="stretch"><code>stretch</code></label>
       </div>
       <div>
-        <label><code>align-items</code>:</label>
+        <label><code>align-self</code>:</label>
         <label><input type="radio" name="grp-align-self" value="start" checked><code>auto</code></label>
         <label><input type="radio" name="grp-align-self" value="start"><code>start</code></label>
         <label><input type="radio" name="grp-align-self" value="center"><code>center</code></label>
@@ -1721,7 +2069,7 @@ aside {
     <p>Nemen we een eenvoudig loginformulier. HTML en CSS voor flexbox vs grid:</p>
     <div class="codecompare">
       <div>
-    <pre class="prism-default language-html wrong" data-caption="Flexbox"><code>&lt;form&gt;
+        <pre class="prism-default language-html wrong" data-caption="Flexbox"><code>&lt;form&gt;
    &lt;div class="form__control"&gt;
       &lt;label for="login"&gt;Login:&lt;/label&gt;
       &lt;input type="text" id="login" required&gt;
@@ -1746,7 +2094,7 @@ input {
 </code></pre>
       </div>
       <div>
-    <pre class="prism-default language-html right"><code>&lt;form&gt;
+        <pre class="prism-default language-html right"><code>&lt;form&gt;
     &lt;label for="login"&gt;Login:&lt;/label&gt;
     &lt;input type="text" id="login" required&gt;
     &lt;label for="pw"&gt;Password:&lt;/label&gt;
@@ -1769,7 +2117,6 @@ button[type=submit] {
   justify-self: start;
 }
 
-
 </code></pre>
       </div>
     </div>
@@ -1786,8 +2133,8 @@ button[type=submit] {
    &lt;img src="img/foto07.jpg" alt=""&gt;
 &lt;/figure&gt;
 </code></pre>
-       <div class="codecompare">
-         <pre class="prism-atom-dark language-css wrong" data-caption="Flexbox" data-demo="demos/04_layout/gallery_flexbox.html"><code>#gallery {
+    <div class="codecompare">
+      <pre class="prism-atom-dark language-css wrong" data-caption="Flexbox" data-demo="demos/04_layout/gallery_flexbox.html"><code>#gallery {
    display: flex;
    column-gap: calc(8% / 3);
    flex-wrap: wrap;
@@ -1797,7 +2144,7 @@ button[type=submit] {
    display: block;
    width: 23%; /* 4 kolommen */
 }</code></pre>
-         <pre class="prism-atom-dark language-css right" data-caption="Grid" data-demo="demos/04_layout/gallery_grid.html"><code>#gallery {
+      <pre class="prism-atom-dark language-css right" data-caption="Grid" data-demo="demos/04_layout/gallery_grid.html"><code>#gallery {
    display: grid;
    gap: 10px;
    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
@@ -1808,366 +2155,25 @@ button[type=submit] {
 
 
 </code></pre>
-       </div>
-
-
-
-    <h2>Floating</h2>
-    <h3>Standaard weergave</h3>
-    <p>Blocklevel elementen als <code>&lt;h3&gt;</code> en <code>&lt;p&gt;</code> starten standaard op een nieuwe regel:</p>
-    <div class="codecompare">
-      <div class="democontainer">
-        <pre class="prism-default language-html w-500" data-demo><code>&lt;div id="wrapper"&gt;
-  &lt;section&gt;
-    &lt;img src="img/04_layout/portrait.jpg" alt="foto"&gt;
-    &lt;h3&gt;Procured&lt;/h3&gt;
-    &lt;p&gt;Civility not absolute put continue. Overcame breeding or my concerns removing desirous so absolute. My melancholy unpleasing imprudence considered in advantages so impression. Almost unable put piqued talked likely houses her met.&lt;/p&gt;
-  &lt;/section&gt;
-  &lt;section&gt;
-    &lt;h3&gt;Finished&lt;/h3&gt;
-    &lt;p&gt;Her are its honoured drawings nor. Pretty see mutual thrown all not edward ten. Particular an boisterous up he reasonably frequently. Several any had enjoyed shewing studied two. Up intention remainder sportsmen behaviour ye happiness. Few again any alone style added abode ask.&lt;/p&gt;
-  &lt;/section&gt;
-&lt;/div&gt;</code></pre>
-        <pre class="prism-atom-dark h-300"><code contenteditable data-target="#floating-demo1">img {
-   width: 70px;
-}
-section {
-   border: 1px dotted;
-   margin-bottom: 10px;
-   padding: 5px
-}
-h3 {
-   margin: 0;
-   margin-bottom: 0.5rem
-}
-.demowrapper {
-   font-family: 'Roboto', sans-serif;
-   max-width: 400px;
-}</code></pre>
-      </div>
-      <div id="floating-demo1" class="w-500">
-        <div class="demowrapper">
-          <section>
-            <img src="img/04_layout/portrait.jpg" alt="foto">
-            <h3>Procured</h3>
-            <p>
-              Civility not absolute put continue. Overcame breeding or my concerns removing desirous so absolute. My melancholy unpleasing imprudence considered in advantages so impression. Almost unable put piqued talked likely houses her met.
-            </p>
-          </section>
-          <section>
-            <h3>Finished</h3>
-            <p>
-              Her are its honoured drawings nor. Pretty see mutual thrown all not edward ten. Particular an boisterous up he reasonably frequently. Several any had enjoyed shewing studied two. Up intention remainder sportsmen behaviour ye happiness. Few again any alone style added abode ask.
-            </p>
-          </section>
-        </div>
-      </div>
-    </div>
-    <h3>Floaten</h3>
-    <p>Met <span class="em"><code>float: left;</code></span> kan je blocklevel elementen rond een afbeelding laten vloeien:</p>
-    <div class="codecompare">
-      <div class="democontainer">
-        <pre class="prism-default language-html w-500" data-demo><code>&lt;div id="wrapper"&gt;
-  &lt;section&gt;
-    &lt;img src="img/04_layout/portrait.jpg" alt="foto"&gt;
-    &lt;h3&gt;Procured&lt;/h3&gt;
-    &lt;p&gt;Civility not absolute put continue. Overcame breeding or my concerns removing desirous so absolute. My melancholy unpleasing imprudence considered in advantages so impression. Almost unable put piqued talked likely houses her met.&lt;/p&gt;
-  &lt;/section&gt;
-  &lt;section&gt;
-    &lt;h3&gt;Finished&lt;/h3&gt;
-    &lt;p&gt;Her are its honoured drawings nor. Pretty see mutual thrown all not edward ten. Particular an boisterous up he reasonably frequently. Several any had enjoyed shewing studied two. Up intention remainder sportsmen behaviour ye happiness. Few again any alone style added abode ask.&lt;/p&gt;
-  &lt;/section&gt;
-&lt;/div&gt;</code></pre>
-        <pre class="prism-atom-dark h-300"><code contenteditable data-target="#floating-demo2">img {
-   float: left; /* probeer ook float: right; */
-   margin-right: 10px;
-   width: 70px;
-}
-section {
-   border: 1px dotted;
-   margin-bottom: 10px;
-   padding: 5px
-}
-h3 {
-   margin: 0;
-   margin-bottom: 0.5rem
-}
-.demowrapper {
-   max-width: 400px;
-   font-family: 'Roboto', sans-serif;
-}</code></pre>
-      </div>
-      <div id="floating-demo2" class="w-500">
-        <div class="demowrapper">
-          <section>
-            <img src="img/04_layout/portrait.jpg" alt="foto">
-            <h3>Procured</h3>
-            <p>
-              Civility not absolute put continue. Overcame breeding or my concerns removing desirous so absolute. My melancholy unpleasing imprudence considered in advantages so impression. Almost unable put piqued talked likely houses her met.
-            </p>
-          </section>
-          <section>
-            <h3>Finished</h3>
-            <p>
-              Her are its honoured drawings nor. Pretty see mutual thrown all not edward ten. Particular an boisterous up he reasonably frequently. Several any had enjoyed shewing studied two. Up intention remainder sportsmen behaviour ye happiness. Few again any alone style added abode ask.
-            </p>
-          </section>
-        </div>
-      </div>
-    </div>
-    <p>Dit werkt ook met andere block-elementen als pullquotes:</p>
-    <div class="codecompare">
-      <div class="democontainer">
-        <pre class="prism-default language-html w-500" data-demo><code>&lt;section&gt;
-  &lt;h3&gt;Procured&lt;/h3&gt;
-  &lt;p&gt; Civility not absolute put continue. Overcame breeding or my concerns removing desirous so absolute. My melancholy unpleasing imprudence considered in advantages so impression. My melancholy unpleasing imprudence considered in advantages so impression.&lt;/p&gt;
-  &lt;aside&gt;
-    spoke as as other again ye; Hard on to roof he drew
-  &lt;/aside&gt;
-  &lt;p&gt;Her are its honoured drawings nor. Pretty see mutual thrown all not edward ten. Particular an boisterous up he reasonably frequently. Several any had enjoyed shewing studied two. Up intention remainder sportsmen behaviour ye happiness. Few again any alone style added abode ask. Nay projecting unpleasing boisterous eat discovered solicitude. Own six moments produce elderly pasture far arrival. Hold our year they ten upon. Gentleman contained so intention sweetness in on resolving.&lt;/p&gt;
-&lt;/section&gt;
-</code></pre>
-        <pre class="prism-atom-dark h-300"><code contenteditable data-target="#floating-demo3">/* float pull quote right */
-aside {
-   float: right;
-   margin: 10px 0 10px 10px;
-   width: 130px;
-}
-
-/* rest of CSS */
-aside {
-   background-color: #eee;
-   font-size: 1.2em;
-   font-style: italic;
-   padding: 10px;
-}
-
-h3, p {
-   margin: 0;
-   margin-bottom: 0.5rem
-}
-section {
-   max-width: 400px;
-   font-family: 'Roboto', sans-serif;
-   border: 1px dotted;
-   padding: 5px
-}</code></pre>
-      </div>
-      <div id="floating-demo3" class="w-500">
-        <div class="demowrapper">
-          <section>
-            <h3>Procured</h3>
-            <p>
-              Civility not absolute put continue. Overcame breeding or my concerns removing desirous so absolute. My melancholy unpleasing imprudence considered in advantages so impression. My melancholy unpleasing imprudence considered in advantages so impression.
-            </p>
-            <aside>
-              spoke as as other again ye; Hard on to roof he drew
-            </aside>
-            <p>
-              Her are its honoured drawings nor. Pretty see mutual thrown all not edward ten. Particular an boisterous up he reasonably frequently. Several any had enjoyed shewing studied two. Up intention remainder sportsmen behaviour ye happiness. Few again any alone style added abode ask. Nay projecting unpleasing boisterous eat discovered solicitude. Own six moments produce elderly pasture far arrival. Hold our year they ten upon. Gentleman contained so intention sweetness in on resolving.
-            </p>
-          </section>
-        </div>
-      </div>
-    </div>
-    <h3>Parent bleeding</h3>
-    <p>Als een gefloat element niet meer in de parent past, zal het eruit lekken en de content van het volgende blok wegdrukken:</p>
-    <div class="codecompare">
-      <div class="democontainer">
-        <pre class="prism-default language-html w-500" data-demo><code>&lt;div id="wrapper"&gt;
-  &lt;section&gt;
-    &lt;img src="img/04_layout/portrait.jpg" alt="foto"&gt;
-    &lt;h3&gt;Procured&lt;/h3&gt;
-    &lt;p&gt;Civility not absolute put continue. Overcame breeding or my concerns removing desirous so absolute. &lt;/p&gt;
-  &lt;/section&gt;
-  &lt;section&gt;
-    &lt;h3&gt;Finished&lt;/h3&gt;
-    &lt;p&gt;Her are its honoured drawings nor. Pretty see mutual thrown all not edward ten. Particular an boisterous up he reasonably frequently. Several any had enjoyed shewing studied two. Up intention remainder sportsmen behaviour ye happiness. Few again any alone style added abode ask.&lt;/p&gt;
-  &lt;/section&gt;
-&lt;/div&gt;</code></pre>
-        <pre class="prism-atom-dark h-300"><code contenteditable data-target="#floating-demo4">/* float image links */
-img {
-  float: left;
-  margin-right: 10px;
-  width: 160px;
-}
-
-/* rest van de CSS */
-section {
-  margin: 10px;
-  border: 1px dotted;
-  padding: 5px;
-}
-h3, p {
-  margin: 0;
-  margin-bottom: 0.5rem
-}
-#wrapper {
-  max-width: 500px;
-  font-family: 'Roboto', sans-serif;
-}</code></pre>
-      </div>
-      <div id="floating-demo4" class="w-500">
-        <div class="demowrapper">
-          <section>
-            <img src="img/04_layout/portrait.jpg" alt="foto">
-            <h3>Procured</h3>
-            <p>
-              Civility not absolute put continue. Overcame breeding or my concerns removing desirous so absolute.
-            </p>
-          </section>
-          <section>
-            <h3>Finished</h3>
-            <p>
-              Her are its honoured drawings nor. Pretty see mutual thrown all not edward ten. Particular an boisterous up he reasonably frequently. Several any had enjoyed shewing studied two. Up intention remainder sportsmen behaviour ye happiness. Few again any alone style added abode ask.
-            </p>
-          </section>
-        </div>
-      </div>
-    </div>
-    <p>Dit lijkt vreemd, maar eigenlijk is het niet onlogisch voor waar floating voor bedoeld is: tekst laten vloeien rond afbeeldingen. Het alternatief is een grote leegte tussen de twee paragrafen.</p>
-    <h3>Parent herstellen</h3>
-    <p>Als je niet wil, kan je de parent herstellen met <span class="em"><code>overflow: hidden;</code></span>:</p>
-    <div class="codecompare">
-      <div class="democontainer">
-        <pre class="prism-default language-html w-500" data-demo><code>&lt;div id="wrapper"&gt;
-  &lt;section&gt;
-    &lt;img src="img/04_layout/portrait.jpg" alt="foto"&gt;
-    &lt;h3&gt;Procured&lt;/h3&gt;
-    &lt;p&gt;Civility not absolute put continue. Overcame breeding or my concerns removing desirous so absolute. &lt;/p&gt;
-  &lt;/section&gt;
-  &lt;section&gt;
-    &lt;h3&gt;Finished&lt;/h3&gt;
-    &lt;p&gt;Her are its honoured drawings nor. Pretty see mutual thrown all not edward ten. Particular an boisterous up he reasonably frequently. Several any had enjoyed shewing studied two. Up intention remainder sportsmen behaviour ye happiness. Few again any alone style added abode ask.&lt;/p&gt;
-  &lt;/section&gt;
-&lt;/div&gt;</code></pre>
-        <pre class="prism-atom-dark h-300"><code contenteditable data-target="#floating-demo5">/* vermijd parent bleeding */
-section {
-   overflow: hidden;
-}
-
-/* float image links */
-img {
-  float: left;
-  margin-right: 10px;
-  width: 160px;
-}
-
-/* rest of CSS */
-section {
-  margin: 10px;
-  border: 1px dotted;
-  padding: 5px;
-}
-h3, p {
-  margin: 0;
-  margin-bottom: 0.5rem
-}
-#wrapper {
-  max-width: 500px;
-  font-family: 'Roboto', sans-serif;
-}</code></pre>
-      </div>
-      <div id="floating-demo5" class="w-500">
-        <div class="demowrapper">
-          <section>
-            <img src="img/04_layout/portrait.jpg" alt="foto">
-            <h3>Procured</h3>
-            <p>
-              Civility not absolute put continue. Overcame breeding or my concerns removing desirous so absolute.
-            </p>
-          </section>
-          <section>
-            <h3>Finished</h3>
-            <p>
-              Her are its honoured drawings nor. Pretty see mutual thrown all not edward ten. Particular an boisterous up he reasonably frequently. Several any had enjoyed shewing studied two. Up intention remainder sportsmen behaviour ye happiness. Few again any alone style added abode ask.
-            </p>
-          </section>
-        </div>
-      </div>
-    </div>
-    <h3>Clear</h3>
-    <p>Je kan vermijden dat bepaalde elementen naast een gefloat element komen met <span class="em"><code>clear</code></span> (waarden <code>left</code>, <code>right</code> of <code>both</code>), bv. de tweede titel, die nu onder de afbeelding blijft:</p>
-    <div class="codecompare">
-      <div class="democontainer">
-        <pre class="prism-default language-html w-500" data-demo><code>&lt;div id="wrapper"&gt;
-  &lt;section id="sect1"&gt;
-    &lt;img src="img/04_layout/portrait.jpg" alt="foto"&gt;
-    &lt;h3&gt;Procured&lt;/h3&gt;
-    &lt;p&gt;Civility not absolute put continue. Overcame breeding or my concerns removing desirous so absolute. &lt;/p&gt;
-  &lt;/section&gt;
-  &lt;section id="sect2"&gt;
-    &lt;h3&gt;Finished&lt;/h3&gt;
-    &lt;p&gt;Her are its honoured drawings nor. Pretty see mutual thrown all not edward ten. Particular an boisterous up he reasonably frequently. Several any had enjoyed shewing studied two. Up intention remainder sportsmen behaviour ye happiness. Few again any alone style added abode ask.&lt;/p&gt;
-  &lt;/section&gt;
-&lt;/div&gt;</code></pre>
-        <pre class="prism-atom-dark h-300"><code contenteditable data-target="#floating-demo6">/* clear tweede titel */
-#sect2 h3 {
-  clear: left;
-}
-
-/* float image links */
-img {
-  float: left;
-  margin-right: 10px;
-  width: 160px;
-}
-
-/* rest of CSS */
-section {
-  margin: 10px;
-  border: 1px dotted;
-  padding: 5px;
-}
-h3, p {
-  margin: 0;
-  margin-bottom: 0.5rem
-}
-#wrapper {
-  max-width: 500px;
-  font-family: 'Roboto', sans-serif;
-}</code></pre>
-      </div>
-      <div id="floating-demo6" class="w-500">
-        <div class="demowrapper">
-          <section id="sect1">
-            <img src="img/04_layout/portrait.jpg" alt="foto">
-            <h3>Procured</h3>
-            <p>Civility not absolute put continue. Overcame breeding or my concerns removing desirous so absolute.</p>
-          </section>
-          <section id="sect2">
-            <h3>Finished</h3>
-            <p>Her are its honoured drawings nor. Pretty see mutual thrown all not edward ten. Particular an boisterous up he reasonably frequently. Several any had enjoyed shewing studied two. Up intention remainder sportsmen behaviour ye happiness. Few again any alone style added abode ask. </p>
-          </section>
-        </div>
-      </div>
     </div>
 
-    <h3>Wanneer gebruiken</h3>
-    <p>Vóór Flexbox algemeen ondersteund werd, werd float misbruikt voor alle layout (en soms kom je het nog tegen), maar vandaag beperk je het gebruik best waarvoor het bedoeld is. Gebruik floating:</p>
-    <ul class="right">
-      <li>om tekst rond afbeeldingen te laten vloeien</li>
-      <li>voor pull quotes</li>
-    </ul>
-    <p>Gebruik floating niet:</p>
-    <ul class="wrong">
-      <li>voor alle andere layout als pagina layout, menus enz...</li>
-    </ul>
-    <div class="tips" data-caption="☝🏼REGEL">
-      <p>De vuistregel is: <strong>als het anders kan</strong> (b.v. met flexbox), <strong>gebruik dan geen floating</strong></p>
-    </div>
 
-    <h2>Positionering</h2>
-    <h3>Standaard weergave</h3>
-    <p>Positionering bepaalt de plaats van elementen a.h.v. <strong>coördinaten</strong> <code>top</code>, <code>right</code>, <code>bottom</code> en/of <code>left</code>. Laat ons starten van volgende code, zonder layout. Aangezien het blocklevel elementen zijn, is de natuurlijke positie van de drie blokken onder elkaar:</p>
-    <div class="codecompare">
-      <div class="democontainer">
-        <pre class="prism-default language-html" data-demo><code>&lt;div class="demowrapper"&gt;
+
+
+
+    <div class="pro">
+
+      <h2>Positionering</h2>
+      <h3>Standaard weergave</h3>
+      <p>Positionering bepaalt de plaats van elementen a.h.v. <strong>coördinaten</strong> <code>top</code>, <code>right</code>, <code>bottom</code> en/of <code>left</code>. Laat ons starten van volgende code, zonder layout. Aangezien het blocklevel elementen zijn, is de natuurlijke positie van de drie blokken onder elkaar:</p>
+      <div class="codecompare">
+        <div class="democontainer">
+          <pre class="prism-default language-html" data-demo><code>&lt;div class="demowrapper"&gt;
    &lt;div class="demobox demobox1"&gt;1&lt;/div&gt;
    &lt;div class="demobox demobox2"&gt;2&lt;/div&gt;
    &lt;div class="demobox demobox3"&gt;3&lt;/div&gt;
 &lt;/div&gt;</code></pre>
-        <pre class="prism-atom-dark h-200"><code contenteditable data-target="#positioning-demo1">/* box styles */
+          <pre class="prism-atom-dark h-200"><code contenteditable data-target="#positioning-demo1">/* box styles */
 .demobox {
    border: 2px solid black;
    width: 80px;
@@ -2191,27 +2197,27 @@ h3, p {
 .demobox3 {
    background-color: #333;
 }</code></pre>
-      </div>
-      <div id="positioning-demo1" class="w-500 target">
-        <div class="demowrapper">
-          <div class="demobox demobox1">1</div>
-          <div class="demobox demobox2">2</div>
-          <div class="demobox demobox3">3</div>
+        </div>
+        <div id="positioning-demo1" class="w-500 target">
+          <div class="demowrapper">
+            <div class="demobox demobox1">1</div>
+            <div class="demobox demobox2">2</div>
+            <div class="demobox demobox3">3</div>
+          </div>
         </div>
       </div>
-    </div>
 
-    <h3>Relatief</h3>
-    <p>Met <mark>relatieve positionering</mark> wordt het element <strong>uit zijn natuurlijke positie verschoven</strong>; andere elementen blijven waar ze zijn:</p>
-    <div class="codecompare">
-      <div class="democontainer">
-        <pre class="prism-default language-html" data-demo><code>&lt;div class="demowrapper"&gt;
+      <h3>Relatief</h3>
+      <p>Met <mark>relatieve positionering</mark> wordt het element <strong>uit zijn natuurlijke positie verschoven</strong>; andere elementen blijven waar ze zijn:</p>
+      <div class="codecompare">
+        <div class="democontainer">
+          <pre class="prism-default language-html" data-demo><code>&lt;div class="demowrapper"&gt;
    &lt;div class="demobox demobox1"&gt;1&lt;/div&gt;
    &lt;div class="demobox demobox2"&gt;2&lt;/div&gt;
    &lt;div class="demobox demobox3"&gt;3&lt;/div&gt;
 &lt;/div&gt;
             </code></pre>
-        <pre class="prism-atom-dark h-200"><code contenteditable data-target="#positioning-demo2">/* relative positioning */
+          <pre class="prism-atom-dark h-200"><code contenteditable data-target="#positioning-demo2">/* relative positioning */
 .demobox2 {
    position: relative;
    left: 10px; /* verschuif 10px naar rechts */
@@ -2243,27 +2249,27 @@ h3, p {
 .demobox3 {
    background-color: #333;
 }</code></pre>
-      </div>
-      <div id="positioning-demo2" class="w-500 target">
-        <div class="demowrapper">
-          <div class="demobox demobox1">1</div>
-          <div class="demobox demobox2">2</div>
-          <div class="demobox demobox3">3</div>
+        </div>
+        <div id="positioning-demo2" class="w-500 target">
+          <div class="demowrapper">
+            <div class="demobox demobox1">1</div>
+            <div class="demobox demobox2">2</div>
+            <div class="demobox demobox3">3</div>
+          </div>
         </div>
       </div>
-    </div>
 
-    <h3>Absoluut</h3>
-    <p>Met <mark>absolute positionering</mark> neem je een element uit de pagina, en positioneer je het <strong>ten opzichte van de paginaranden</strong> (overlapping is mogelijk); andere elementen vullen de ontstane ruimte. </p>
-    <div class="codecompare">
-      <div class="democontainer">
-        <pre class="prism-default language-html" data-demo><code>&lt;div class="demowrapper"&gt;
+      <h3>Absoluut</h3>
+      <p>Met <mark>absolute positionering</mark> neem je een element uit de pagina, en positioneer je het <strong>ten opzichte van de paginaranden</strong> (overlapping is mogelijk); andere elementen vullen de ontstane ruimte. </p>
+      <div class="codecompare">
+        <div class="democontainer">
+          <pre class="prism-default language-html" data-demo><code>&lt;div class="demowrapper"&gt;
    &lt;div class="demobox demobox1"&gt;1&lt;/div&gt;
    &lt;div class="demobox demobox2"&gt;2&lt;/div&gt;
    &lt;div class="demobox demobox3"&gt;3&lt;/div&gt;
 &lt;/div&gt;
             </code></pre>
-        <pre class="prism-atom-dark h-200"><code contenteditable data-target="#positioning-demo3">/* relative positioning */
+          <pre class="prism-atom-dark h-200"><code contenteditable data-target="#positioning-demo3">/* relative positioning */
 .demobox2 {
    position: absolute;
    left: 5px; /* 5px vanaf links */
@@ -2295,27 +2301,27 @@ h3, p {
 .demobox3 {
   background-color: #333;
 }</code></pre>
-      </div>
-      <div id="positioning-demo3" class="w-500 target">
-        <div class="demowrapper">
-          <div class="demobox demobox1">1</div>
-          <div class="demobox demobox2">2</div>
-          <div class="demobox demobox3">3</div>
+        </div>
+        <div id="positioning-demo3" class="w-500 target">
+          <div class="demowrapper">
+            <div class="demobox demobox1">1</div>
+            <div class="demobox demobox2">2</div>
+            <div class="demobox demobox3">3</div>
+          </div>
         </div>
       </div>
-    </div>
-    <p>
-      Je kan het ook rechtsonder plaatsen, b.v. met <code>right: 10px; bottom: 10px;</code>
-    </p>
-    <div class="codecompare">
-      <div class="democontainer">
-        <pre class="prism-default language-html" data-demo><code>&lt;div class="demowrapper"&gt;
+      <p>
+        Je kan het ook rechtsonder plaatsen, b.v. met <code>right: 10px; bottom: 10px;</code>
+      </p>
+      <div class="codecompare">
+        <div class="democontainer">
+          <pre class="prism-default language-html" data-demo><code>&lt;div class="demowrapper"&gt;
    &lt;div class="demobox demobox1"&gt;1&lt;/div&gt;
    &lt;div class="demobox demobox2"&gt;2&lt;/div&gt;
    &lt;div class="demobox demobox3"&gt;3&lt;/div&gt;
 &lt;/div&gt;
             </code></pre>
-        <pre class="prism-atom-dark h-200"><code contenteditable data-target="#positioning-demo4">/* relative positioning */
+          <pre class="prism-atom-dark h-200"><code contenteditable data-target="#positioning-demo4">/* relative positioning */
 .demobox2 {
    position: absolute;
    bottom: 10px; /* 10px vanaf beneden */
@@ -2347,26 +2353,26 @@ h3, p {
 .demobox3 {
   background-color: #333;
 }</code></pre>
-      </div>
-      <div id="positioning-demo4" class="w-500 target">
-        <div class="demowrapper">
-          <div class="demobox demobox1">1</div>
-          <div class="demobox demobox2">2</div>
-          <div class="demobox demobox3">3</div>
+        </div>
+        <div id="positioning-demo4" class="w-500 target">
+          <div class="demowrapper">
+            <div class="demobox demobox1">1</div>
+            <div class="demobox demobox2">2</div>
+            <div class="demobox demobox3">3</div>
+          </div>
         </div>
       </div>
-    </div>
 
-    <h4>absoluut-relatief</h4>
-    <p>De coördinaten zijn standaard t.o.v. de pagina. Als je wil positioneren <strong>ten opzichte van de parent</strong>, stel je die in op <code>position: relative</code>; dit heet <mark>absoluut-relatieve positionering</mark>.</p>
-    <div class="codecompare">
-      <div class="democontainer">
-        <pre class="prism-default language-html" data-demo><code>&lt;div class="demowrapper"&gt;
+      <h4>absoluut-relatief</h4>
+      <p>De coördinaten zijn standaard t.o.v. de pagina. Als je wil positioneren <strong>ten opzichte van de parent</strong>, stel je die in op <code>position: relative</code>; dit heet <mark>absoluut-relatieve positionering</mark>.</p>
+      <div class="codecompare">
+        <div class="democontainer">
+          <pre class="prism-default language-html" data-demo><code>&lt;div class="demowrapper"&gt;
    &lt;div class="demobox demobox1"&gt;1&lt;/div&gt;
    &lt;div class="demobox demobox2"&gt;2&lt;/div&gt;
    &lt;div class="demobox demobox3"&gt;3&lt;/div&gt;
 &lt;/div&gt;</code></pre>
-        <pre class="prism-atom-dark h-200"><code contenteditable data-target="#positioning-demo8">/* absoluut-relative positioning */
+          <pre class="prism-atom-dark h-200"><code contenteditable data-target="#positioning-demo8">/* absoluut-relative positioning */
 .demowrapper {
    position: relative; /* nieuwe referentie voor coördinaten */
 }
@@ -2402,24 +2408,24 @@ h3, p {
 .demobox3 {
   background-color: #333;
 }</code></pre>
-      </div>
-      <div id="positioning-demo8" class="w-500 target">
-        <div class="demowrapper">
-          <div class="demobox demobox1">1</div>
-          <div class="demobox demobox2">2</div>
-          <div class="demobox demobox3">3</div>
+        </div>
+        <div id="positioning-demo8" class="w-500 target">
+          <div class="demowrapper">
+            <div class="demobox demobox1">1</div>
+            <div class="demobox demobox2">2</div>
+            <div class="demobox demobox3">3</div>
+          </div>
         </div>
       </div>
-    </div>
-    <h4>overlay voorbeeld</h4>
-    <p>Als je vier coördinaten opgeeft (en <code>width</code> en <code>height</code> weghaalt) wordt het element over de hele pagina uitgerokken (en bedekt het de andere blokken). Met een gedeeltelijk transparante achtergrond kan je dan een overlay maken:</p>
-    <div class="codecompare">
-      <div class="democontainer">
-        <pre class="prism-default language-html w-500" data-demo><code>
+      <h4>overlay voorbeeld</h4>
+      <p>Als je vier coördinaten opgeeft (en <code>width</code> en <code>height</code> weghaalt) wordt het element over de hele pagina uitgerokken (en bedekt het de andere blokken). Met een gedeeltelijk transparante achtergrond kan je dan een overlay maken:</p>
+      <div class="codecompare">
+        <div class="democontainer">
+          <pre class="prism-default language-html w-500" data-demo><code>
 &lt;div class="overlay"&gt;&lt;h2&gt;OVERLAY CONTENT HIER&lt;/h2&gt;&lt;/div&gt;
 &lt;p&gt;Wij zin rijken ruimer zekere. Loopbaan een district bordeaux mag bevreesd heb. Inkomsten op af singapore behoeften. Het brengen den gedaald menigte markten evenals javanen. Ontwouding middellijn nu geruineerd ptolomaeus denzelfden in handelaars. Vrij in nu kilo west. Wieschen vermengd verbouwd zou was die verschil het geheelen voorzien. &lt;/p&gt;
 &lt;p&gt;Gebrek loopen kan zee zit andere ton levert zeggen zonder. Rook zoo twee zee hen maal. Wantrouwen ons tot inboorling nog doorzoeken.&lt;/p&gt;</code></pre>
-        <pre class="prism-atom-dark h-200"><code contenteditable data-target="#positioning-demo5">/* absolute positioning */
+          <pre class="prism-atom-dark h-200"><code contenteditable data-target="#positioning-demo5">/* absolute positioning */
 .overlay {
    /* maak overlay */
    background-color: #888c;
@@ -2435,31 +2441,31 @@ h3, p {
    text-align: center;
 }
 </code></pre>
-      </div>
-      <div id="positioning-demo5" class="w-500 target">
-        <div class="overlay">
-          <h2>OVERLAY CONTENT HIER</h2>
         </div>
-        <p>Wij zin rijken ruimer zekere. Loopbaan een district bordeaux mag bevreesd heb. Inkomsten op af singapore behoeften. Het brengen den gedaald menigte markten evenals javanen. Ontwouding middellijn nu geruineerd ptolomaeus denzelfden in handelaars. Vrij in nu kilo west. Wieschen vermengd verbouwd zou was die verschil het geheelen voorzien. </p>
-        <p>Gebrek loopen kan zee zit andere ton levert zeggen zonder. Rook zoo twee zee hen maal. Wantrouwen ons tot inboorling nog doorzoeken.</p>
+        <div id="positioning-demo5" class="w-500 target">
+          <div class="overlay">
+            <h2>OVERLAY CONTENT HIER</h2>
+          </div>
+          <p>Wij zin rijken ruimer zekere. Loopbaan een district bordeaux mag bevreesd heb. Inkomsten op af singapore behoeften. Het brengen den gedaald menigte markten evenals javanen. Ontwouding middellijn nu geruineerd ptolomaeus denzelfden in handelaars. Vrij in nu kilo west. Wieschen vermengd verbouwd zou was die verschil het geheelen voorzien. </p>
+          <p>Gebrek loopen kan zee zit andere ton levert zeggen zonder. Rook zoo twee zee hen maal. Wantrouwen ons tot inboorling nog doorzoeken.</p>
+        </div>
       </div>
-    </div>
-    <h4>z-index</h4>
+      <h4>z-index</h4>
 
-    <p>Je kan de stapelvolgorde van gepositioneerde elementen altijd aanpassen met <mark>z-index</mark>, een willekeurig geheel getal:</p>
-    <ul>
-      <li>een <strong>negatieve z-index</strong> plaatst het element <strong>onder</strong> normale content</li>
-      <li>een <strong>positieve z-index</strong> plaatst het element <strong>boven</strong> normale content, hoe hoger de index, hoe meer bovenaan</li>
-    </ul>
-    <p>Een voorbeeld met drie absoluut gepositioneerde blokken:</p>
-    <div class="codecompare">
-      <div class="democontainer">
-        <pre class="prism-default language-html w-500" data-demo><code>&lt;div class="demobox demobox1"&gt;1&lt;/div&gt;
+      <p>Je kan de stapelvolgorde van gepositioneerde elementen altijd aanpassen met <mark>z-index</mark>, een willekeurig geheel getal:</p>
+      <ul>
+        <li>een <strong>negatieve z-index</strong> plaatst het element <strong>onder</strong> normale content</li>
+        <li>een <strong>positieve z-index</strong> plaatst het element <strong>boven</strong> normale content, hoe hoger de index, hoe meer bovenaan</li>
+      </ul>
+      <p>Een voorbeeld met drie absoluut gepositioneerde blokken:</p>
+      <div class="codecompare">
+        <div class="democontainer">
+          <pre class="prism-default language-html w-500" data-demo><code>&lt;div class="demobox demobox1"&gt;1&lt;/div&gt;
 &lt;div class="demobox demobox2"&gt;2&lt;/div&gt;
 &lt;div class="demobox demobox3"&gt;3&lt;/div&gt;
 &lt;p&gt;Wij zin rijken ruimer zekere. Loopbaan een district bordeaux mag bevreesd heb. Inkomsten op af singapore behoeften. Het brengen den gedaald menigte markten evenals javanen. Ontwouding middellijn nu geruineerd ptolomaeus denzelfden in handelaars. Vrij in nu kilo west. Wieschen vermengd verbouwd zou was die verschil het geheelen voorzien. &lt;/p&gt;
 &lt;p&gt;Gebrek loopen kan zee zit andere ton levert zeggen zonder. Rook zoo twee zee hen maal. Wantrouwen ons tot inboorling nog doorzoeken.&lt;/p&gt;</code></pre>
-        <pre class="prism-atom-dark h-300"><code contenteditable data-target="#positioning-demo7">/* stapelvolgorde */
+          <pre class="prism-atom-dark h-300"><code contenteditable data-target="#positioning-demo7">/* stapelvolgorde */
 .demobox1 {
    z-index: 4; /* probeer een ook 20, 1 en -1 */
 }
@@ -2512,26 +2518,26 @@ h3, p {
 .demobox3 {
   background-color: #333;
 }</code></pre>
+        </div>
+        <div id="positioning-demo7" class="w-500 target">
+          <p>Wij zin rijken ruimer zekere. Loopbaan een district bordeaux mag bevreesd heb. Inkomsten op af singapore behoeften. Het brengen den gedaald menigte markten evenals javanen. Ontwouding middellijn nu geruineerd ptolomaeus denzelfden in handelaars. Vrij in nu kilo west. Wieschen vermengd verbouwd zou was die verschil het geheelen voorzien. </p>
+          <p>Gebrek loopen kan zee zit andere ton levert zeggen zonder. Rook zoo twee zee hen maal. Wantrouwen ons tot inboorling nog doorzoeken.</p>
+          <div class="demobox demobox1">1</div>
+          <div class="demobox demobox2">2</div>
+          <div class="demobox demobox3">3</div>
+        </div>
       </div>
-      <div id="positioning-demo7" class="w-500 target">
-        <p>Wij zin rijken ruimer zekere. Loopbaan een district bordeaux mag bevreesd heb. Inkomsten op af singapore behoeften. Het brengen den gedaald menigte markten evenals javanen. Ontwouding middellijn nu geruineerd ptolomaeus denzelfden in handelaars. Vrij in nu kilo west. Wieschen vermengd verbouwd zou was die verschil het geheelen voorzien. </p>
-        <p>Gebrek loopen kan zee zit andere ton levert zeggen zonder. Rook zoo twee zee hen maal. Wantrouwen ons tot inboorling nog doorzoeken.</p>
-        <div class="demobox demobox1">1</div>
-        <div class="demobox demobox2">2</div>
-        <div class="demobox demobox3">3</div>
-      </div>
-    </div>
 
-    <h3>Fixed</h3>
-    <p>De <mark>fixed positionering</mark> fixeert een element op de pagina, onafhankelijk van het scrollen:</p>
-    <div class="codecompare">
-      <div class="democontainer">
-        <pre class="prism-default language-html w-500"><code>&lt;p&gt;(scroll this page)&lt;/p&gt;
+      <h3>Fixed</h3>
+      <p>De <mark>fixed positionering</mark> fixeert een element op de pagina, onafhankelijk van het scrollen:</p>
+      <div class="codecompare">
+        <div class="democontainer">
+          <pre class="prism-default language-html w-500"><code>&lt;p&gt;(scroll this page)&lt;/p&gt;
 &lt;p&gt;Folly words widow one downs few age every seven. If miss part by fact he park just shew. Discovered had get considered projection who favourable. Necessary up knowledge it tolerably. Unwilling departure education is be dashwoods or an. Use off agreeable law unwilling sir deficient curiosity instantly. Easy mind life fact with see has bore ten. Parish any chatty can elinor direct for former. Up as meant widow equal an share least. &lt;/p&gt;
 &lt;p&gt;Examine she brother prudent add day ham. Far stairs now coming bed oppose hunted become his. You zealously departure had procuring suspicion. Books whose front would purse if be do decay. Quitting you way formerly disposed perceive ladyship are. Common turned boy direct and yet. &lt;/p&gt;
 &lt;p&gt;Ye on properly handsome returned throwing am no whatever. In without wishing he of picture no exposed talking minutes. Curiosity continual belonging offending so explained it exquisite. Do remember to followed yourself material mr recurred carriage. High drew west we no or at john. About or given on witty event. Or sociable up material bachelor bringing landlord confined. Busy so many in hung easy find well up. So of exquisite my an explained remainder. Dashwood denoting securing be on perceive my laughing so.&lt;/p&gt;
 &lt;a id="toplink" href="#top"&gt;back to top ↑&lt;/a&gt;</code></pre>
-        <pre class="prism-atom-dark"><code>#toplink {
+          <pre class="prism-atom-dark"><code>#toplink {
   /* add fixed top link */
   position: fixed;
   right: 10px;
@@ -2541,21 +2547,21 @@ h3, p {
   border: 2px solid black;
   padding: 5px 10px;
 }</code></pre>
+        </div>
+        <iframe src="demos/04_layout/fixed.html" class="w-400"></iframe>
       </div>
-      <iframe src="demos/04_layout/fixed.html" class="w-400"></iframe>
-    </div>
 
-    <h3>Sticky</h3>
-    <p>De <mark>sticky positionering</mark> scrollt tot een gegeven offset bereikt is, waarna het blijft plakken.</p>
-    <div class="codecompare">
-      <div class="democontainer">
-        <pre class="prism-default language-html w-500"><code>&lt;p&gt;(scroll this page)&lt;/p&gt;
+      <h3>Sticky</h3>
+      <p>De <mark>sticky positionering</mark> scrollt tot een gegeven offset bereikt is, waarna het blijft plakken.</p>
+      <div class="codecompare">
+        <div class="democontainer">
+          <pre class="prism-default language-html w-500"><code>&lt;p&gt;(scroll this page)&lt;/p&gt;
 &lt;div id="sticky"&gt;I am sticky!&lt;/div&gt;
 &lt;p&gt;Folly words widow one downs few age every seven. If miss part by fact he park just shew. Discovered had get considered projection who favourable. Necessary up knowledge it tolerably. Unwilling departure education is be dashwoods or an. Use off agreeable law unwilling sir deficient curiosity instantly. Easy mind life fact with see has bore ten. Parish any chatty can elinor direct for former. Up as meant widow equal an share least. &lt;/p&gt;
 &lt;p&gt;Examine she brother prudent add day ham. Far stairs now coming bed oppose hunted become his. You zealously departure had procuring suspicion. Books whose front would purse if be do decay. Quitting you way formerly disposed perceive ladyship are. Common turned boy direct and yet. &lt;/p&gt;
 &lt;p&gt;Ye on properly handsome returned throwing am no whatever. In without wishing he of picture no exposed talking minutes. Curiosity continual belonging offending so explained it exquisite. Do remember to followed yourself material mr recurred carriage. High drew west we no or at john. About or given on witty event. Or sociable up material bachelor bringing landlord confined. Busy so many in hung easy find well up. So of exquisite my an explained remainder. Dashwood denoting securing be on perceive my laughing so.&lt;/p&gt;
 </code></pre>
-        <pre class="prism-atom-dark"><code>#sticky {
+          <pre class="prism-atom-dark"><code>#sticky {
    /* make sticky */
    position: sticky;
    top: 0; /* stick to top */
@@ -2566,29 +2572,33 @@ h3, p {
    padding: 5px 10px;
    text-decoration: none;
 }</code></pre>
+        </div>
+        <iframe src="demos/04_layout/sticky.html" class="w-400"></iframe>
       </div>
-      <iframe src="demos/04_layout/sticky.html" class="w-400"></iframe>
-    </div>
-    <h3>Wanneer gebruiken</h3>
-    <p>Studenten hebben vaak de neiging positionering veel te snel terug te grijpen naar positionering. Eigenlijk wordt het <em>zeer weinig gebruikt</em>. Wanneer wel:</p>
-    <ul class="right">
-      <li>gebruik <strong>sticky</strong> of <strong>fixed</strong> voor "back to top links", sticky notes e.d.</li>
-      <li>gebruik <strong>absolute positionering</strong> voor game programming om layers te maken, zie b.v. <a href="demos/02_design/animations2.html">deze uitgebreide demo</a></li>
-    </ul>
-    <p>Gebruik positionering zeker niet voor:</p>
-    <ul class="wrong">
-      <li>gebruik <strong>geen relatieve positionering</strong> om foutjes in de layout te corrigeren</li>
-      <li>gebruik <strong>geen absolute positionering</strong> om elementen binnen een parent te positioneren; dat doen we met flexbox en margins/paddings</li>
-      <li>gebruik <strong>geen positionering</strong> technieken voor pagina layout; dat doen we met flexbox en margins/paddings</li>
-    </ul>
-    <div class="tips" data-caption="☝🏼REGEL">
-      <p>De vuistregel is: <strong>als het anders kan</strong> (b.v. met flexbox), <strong>gebruik dan geen positionering</strong></p>
+      <h3>Wanneer gebruiken</h3>
+      <p>Studenten hebben vaak de neiging positionering veel te snel terug te grijpen naar positionering. Eigenlijk wordt het <em>zeer weinig gebruikt</em>. Wanneer wel:</p>
+      <ul class="right">
+        <li>gebruik <strong>sticky</strong> of <strong>fixed</strong> voor "back to top links", sticky notes e.d.</li>
+        <li>gebruik <strong>absolute positionering</strong> voor game programming om layers te maken, zie b.v. <a href="demos/02_design/animations2.html">deze uitgebreide demo</a></li>
+      </ul>
+      <p>Gebruik positionering zeker niet voor:</p>
+      <ul class="wrong">
+        <li>gebruik <strong>geen relatieve positionering</strong> om foutjes in de layout te corrigeren</li>
+        <li>gebruik <strong>geen absolute positionering</strong> om elementen binnen een parent te positioneren; dat doen we met flexbox en margins/paddings</li>
+        <li>gebruik <strong>geen positionering</strong> technieken voor pagina layout; dat doen we met flexbox en margins/paddings</li>
+      </ul>
+      <div class="tips" data-caption="☝🏼REGEL">
+        <p>De vuistregel is: <strong>als het anders kan</strong> (b.v. met flexbox), <strong>gebruik dan geen positionering</strong></p>
+      </div>
     </div>
 
     <h2>Layout case study</h2>
-    <p>Een samenvattend voorbeeld:</p>
+    <p>We bekijken een samenvattend voorbeeld, in twee versies. Resultaat:</p>
+    <p><img src="img/04_layout/casestudy.png" alt="" class="w-800 bordered shadow"></p>
+    <h3>Versie met hoofdzakelijk Flexbox</h3>
+    <p>In deze versie is enkel Grid gebruikt voor de twee kolommen van de main, de rest is met Flexbox.</p>
     <div class="codecompare">
-      <pre class="prism-default language-html h-500" data-demo="demos/04_layout/casestudy.html"><code>&lt;body&gt;
+      <pre class="prism-default language-html h-500" data-demo="demos/04_layout/casestudy_flex.html"><code>&lt;body&gt;
    &lt;header&gt;
       &lt;h1 class="header_logo"&gt;Logo&lt;/h1&gt;
       &lt;p class="header_tagline"&gt;some great tagline&lt;/p&gt;
@@ -2726,9 +2736,8 @@ aside {
       <li>
         <strong>main</strong>
         <ul>
-          <li>horizontale layout met <code>display: flex</code></li>
-          <li>content flexibele breedte met <code>flex: 1 1 auto</code></li>
-          <li>aside vaste breedte met <code>flex: 0 0 100px</code></li>
+          <li>grid layout met <code>display: grid</code></li>
+          <li>twee kolommen met <code>grid-template-columns: 1fr 100px</code></li>
         </ul>
       </li>
       <li>
@@ -2738,9 +2747,161 @@ aside {
         </ul>
       </li>
     </ul>
-    <p>Resultaat:</p>
-    <img src="img/04_layout/casestudy.png" alt="" class="w-800 bordered shadow">
+    <h3>Versie met hoofdzakelijk Grid</h3>
+    <p>De HTML code is gelijk, maar we geven het voor de duidelijkheid nog eens weer, samen met de CSS code:</p>
+    <div class="codecompare">
+      <pre class="prism-default language-html h-500" data-demo="demos/04_layout/casestudy_grid.html"><code>&lt;body&gt;
+   &lt;header&gt;
+      &lt;h1 class="header_logo"&gt;Logo&lt;/h1&gt;
+      &lt;p class="header_tagline"&gt;some great tagline&lt;/p&gt;
+      &lt;form class="header_search"&gt;
+         &lt;label&gt;&lt;input type="search" placeholder="search for something"&gt;&lt;/label&gt;
+         &lt;button type="submit"&gt;🔍&lt;/button&gt;
+      &lt;/form&gt;
+   &lt;/header&gt;
+   &lt;nav&gt;
+      &lt;ul&gt;
+         &lt;li&gt;&lt;a href=""&gt;home&lt;/a&gt;&lt;/li&gt;
+         &lt;li&gt;&lt;a href=""&gt;about&lt;/a&gt;&lt;/li&gt;
+         &lt;li&gt;&lt;a href=""&gt;contact&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+   &lt;/nav&gt;
+   &lt;main&gt;
+      &lt;div id="content"&gt;
+         content here...
+      &lt;/div&gt;
+      &lt;aside&gt;
+         aside here...
+      &lt;/aside&gt;
+   &lt;/main&gt;
+   &lt;footer&gt;
+      &lt;p&gt;&copy; 2024&lt;/p&gt;
+   &lt;/footer&gt;
+&lt;/body&gt;</code></pre>
+      <pre class="prism-atom-dark h-500"><code>/* body layout */
+body {
+   display: grid; /* maak grid */
+   grid-template-rows: auto auto 1fr auto; /* vier rijen */
+   margin: 0 auto; /* centreer body in &lt;html&lt; */
+   max-width: 1000px; /* maximaal 1000px breed */
+   min-height: 100vh; /* bedek minstens hele viewport */
+}
 
+/* header layout */
+header {
+   align-items: center; /* items verticaal centreren */
+   display: grid; /* maak grid */
+   grid-template-columns: auto 1fr auto; /* drie kolommen */
+   justify-items: center;
+   min-height: 150px;
+}
+
+.header_search {
+   align-self: end; /* zet zichzelf beneden */
+}
+
+/* nav layout */
+nav ul {
+   display: flex;
+   gap: 10px; /* ruimte tussen items */
+   justify-content: center; /* items in het midden */
+}
+
+/* main layout */
+main {
+   display: grid;
+   grid-template-columns: 1fr 200px;
+}
+
+/* footer layout */
+footer {
+   text-align: center;
+}
+
+/* main layout */
+main {
+   display: flex;
+}
+#content {
+   flex: 1 1 auto;
+}
+aside {
+   flex: 0 0 200px;
+}
+
+/* footer layout */
+footer {
+   text-align: center;
+}
+
+/* algemene stijlen */
+* {
+   box-sizing: border-box;
+}
+body {
+   border-left: 2px solid #ccc;
+   border-right: 2px solid #ccc;
+   padding: 0;
+}
+header, nav, footer, #content, aside {
+   padding: 10px 20px;
+}
+nav {
+   background-color: #eee;
+}
+nav ul {
+   list-style: none;
+   margin: 0;
+}
+header, footer {
+   background-color: #ddd;
+   padding: 10px 20px;
+}
+aside {
+   background-color: #bcd;
+}</code></pre>
+    </div>
+    <p>Je herkent volgende technieken:</p>
+    <ul>
+      <li>
+        <strong>body</strong>
+        <ul>
+          <li>vier rijen met <code>display: grid; grid-template-rows: auto auto 1fr auto;</code></li>
+          <li>horizontaal gecentreerd in de pagina met <code>max-width: 1000px; margin: 0 auto;</code></li>
+          <li>verticaal over de browser viewport uitgerokken met <code>min-height: 100vh</code></li>
+        </ul>
+      </li>
+      <li>
+        <strong>header</strong>
+        <ul>
+          <li>horizontale layout met <code>display: grid; grid-template-columns: auto 1fr auto</code></li>
+          <li>items verticaal gecentreerd met <code>align-items: center</code></li>
+          <li>items horizontaal gecentreerd met <code>justify-content: center</code></li>
+          <li>zoekformulier onderaan geplaatst met <code>align-self: end</code></li>
+        </ul>
+      </li>
+      <li>
+        <strong>nav</strong>
+        <ul>
+          <li>horizontale layout met <code>display: flex</code></li>
+          <li>items gecentreerd met <code>justify-content: center</code></li>
+          <li>ruimte tussen items met <code>gap: 10px</code></li>
+        </ul>
+      </li>
+      <li>
+        <strong>main</strong>
+        <ul>
+          <li>grid layout met <code>display: grid</code></li>
+          <li>twee kolommen met <code>grid-template-columns: 1fr 100px</code></li>
+        </ul>
+      </li>
+      <li>
+        <strong>footer</strong>
+        <ul>
+          <li>tekst gecentreerd met <code>text-align: center</code></li>
+        </ul>
+      </li>
+    </ul>
 
   </main>
   <footer>
