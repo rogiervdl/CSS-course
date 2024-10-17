@@ -102,9 +102,9 @@
       <h2>Content choreografie</h2>
       <p>Bij smaller wordende schermen zullen elementen (teksten, afbeeldingen, kaders, kolommen...) moeten herschalen / verspringen / verdwijnen. Dit noemt men de <span class="em">content choreografie</span>:</p>
       <ul>
-         <li>elementen uitrekken / platduwen &rarr; <span class="em">flexibiliteit</span></li>
-         <li>elementen herschikken &rarr; <span class="em">fluïditeit</span></li>
-         <li>elementen toevoegen / verwijderen</li>
+         <li>elementen uitrekken / platduwen &rarr; <span class="em">flexibel</span></li>
+         <li>elementen herschikken &rarr; <span class="em">fluïde</span></li>
+         <li>elementen toevoegen / verwijderen &rarr; <span class="em">dynamisch</span></li>
          <li>...</li>
       </ul>
       <p>
@@ -116,13 +116,11 @@
             stap 1: controleer of de <strong>viewport meta</strong> aanwezig is in de <code>&lt;head&gt;</code>
          </li>
          <li>
-            stap 2: maak de <strong>layout flexibel</strong> (wrapper, kolommen, foto's, boxen...)
+            stap 2: controleer of de layout <strong>flexibel</strong> is
             <ul class="lower-latin">
-               <li>gebruik zoveel mogelijk <strong>flexbox</strong> voor layout</li>
-               <li>maak de eventuele <strong>wrapper</strong> flexibel: vervang <strong><code>width</code></strong> door <strong><code>min-width</code></strong> en <strong><code>max-width</code></strong></li>
-               <li>maak eventuele <strong>kolommen</strong> flexibel: zet <strong>breedtes in percentages</strong> in plaats van vaste waarden</li>
-               <li>maak de hoogte van <strong>container elementen</strong> flexibel: <strong>verwijder <strong>height</strong></strong></li>
-               <li>maak <strong>kaders en foto's</strong> flexibel: stel <strong><code>width</code> op 100%</strong> en stel eventueel <strong><code>max-width</code></strong> in</li>
+               <li><strong>grote contentblokken</strong>: vermijd vaste afmetingen; gebruik <code>max-width</code> in plaats van <code>width</code>, vermijd <code>height</code>...</li>
+               <li><strong>kolommen</strong> (flexbox, grid): minstens één kolom moet een flexibel zijn (<code>fr</code>, <code>auto</code>, <code>%</code>...)</li>
+               <li><strong>afbeeldingen, iframes</strong>: zet <code>width</code> op 100% en stel eventueel <strong><code>max-width</code></strong> in</li>
             </ul>
          </li>
          <li>
@@ -145,35 +143,7 @@
       <p>Irritant genoeg kom je soms ook deze versie tegen, maar die laat de gebruiker niet inzoomen:</p>
       <pre class="prism-default language-html wrong notoolbar"><code>&lt;meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0"&gt;</code></pre>
       <h3>Stap 2: flexibele layout</h3>
-      <h4>2A: gebruik flexbox</h4>
-      <p>Gebruik voor layout zoveel mogelijk flexbox, zeker geen positionering, bv.:</p>
-      <div class="codecompare">
-         <pre class="prism-atom-dark wrong"><code>header #logo {
-   position: absolute;
-   top: 20px;
-   left: 10px;
-}
-
-header #login {
-   position: absolute;
-   top: 20px;
-   right: 10px;
-}</code></pre>
-<pre class="prism-atom-dark right"><code>header {
-   align-items: flex-start;
-   display: flex;
-   justify-content: space-between;
-   padding: 20px 10px;
-}
-
-
-
-
-
-</code></pre>
-      </div>
-      <span>&rarr; zou normaal gezien al ok moeten zijn</span>
-      <h4>2B: flexibele wrapper</h4>
+      <h4>2A: flexibele wrapper</h4>
       <p>Stel flexibele <code>min-width</code> en <code>max-width</code> in op wrappers in plaats van vaste <code>width</code>:</p>
       <div class="codecompare">
          <pre class="prism-atom-dark wrong"><code>.wrapper {
@@ -183,11 +153,11 @@ header #login {
 </code></pre>
          <pre class="prism-atom-dark right"><code>.wrapper {
    max-width: 960px;
-   min-width: 320px;
+   min-width: 320px; /* optioneel */
 }</code></pre>
       </div>
-      <h4>2C: flexibele kolommen</h4>
-      <p>Gebruik geen vaste <code>width: ...px</code> kolombreedtes, maar <code>flex</code>:</p>
+      <h4>2B: flexibele kolommen</h4>
+      <p>Minstens één kolom moet flexibel zijn; gebruik <code>fr</code>, <code>%</code>, <code>flex: 1 1 0</code>...</p>
       <div class="codecompare">
          <pre class="prism-atom-dark wrong"><code>.leftcol {
    width: 640px;
@@ -196,10 +166,10 @@ header #login {
    width: 280px;
 }</code></pre>
          <pre class="prism-atom-dark right"><code>.leftcol {
-   flex: 1 1 640px; 
+   flex: 1 1 0; /* neemt resterende ruimte */
 }
 .rightcol {
-   flex: 0 0 280px;
+   flex: 0 0 280px; /* 280px vast */
 }</code></pre>
       </div>
       <h4>2D: flexibele hoogtes</h4>
@@ -250,7 +220,7 @@ h2 {
 }
 
 /* vanaf 800px */
-@media (min-width: 800px) { 
+@media (min-width: 800px) {
    h2 {
       font-size: 20px; /* iets groter lettertype */
       margin-bottom: 15px; /* wat meer ondermarge */
@@ -269,17 +239,17 @@ h2 {
   =============== */
 
 /* vanaf 600px */
-@media (min-width: 600px) { 
+@media (min-width: 600px) {
    ...
 }
 
 /* vanaf 800px */
-@media (min-width: 800px) { 
+@media (min-width: 800px) {
    ...
 }
 
 /* vanaf 1000px */
-@media (min-width: 1000px) { 
+@media (min-width: 1000px) {
    ...
 }</code></pre>
 
@@ -431,8 +401,8 @@ h2 {
  * @author Rogier van der Linde
  *
 **/
-  
-  
+
+
 /* Reset
 /* ============== */
 
@@ -685,15 +655,15 @@ header {
    <del>height: 100px;</del>
    padding-bottom: 40px;
 }
-  
+
 #leftmenu {
    <del>width: 190px;</del>
-   flex: 0 0 190px; 
+   flex: 0 0 190px;
 }
 
 #content {
    <del>width: 710px;</del>
-   flex: 1 1 710px;
+   flex: 1 1 0;
 }
 
 .content_picture {

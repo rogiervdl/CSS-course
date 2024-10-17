@@ -1309,8 +1309,8 @@ h3, p {
     <h4>flex<span class="pro"> (flex-grow, flex-shrink en flex-basis)</span></h4>
     <p>
       Deze property <span class="pro">combineert <code>flex-grow</code>, <code>flex-shrink</code> en <code>flex-basis</code>. Het</span> is vooral van belang bij kolommen, en zegt wat hun initiële breedte is, en hoe snel ze groeien en krimpen naargelang de breedte van de container.
-      Enkele voorbeelden:
     </p>
+    <p>De meest voorkomende waarden (te onthouden!):</p>
     <table class="light">
       <thead>
         <tr>
@@ -1323,49 +1323,62 @@ h3, p {
         <tr>
           <td><code>flex: 0 0 200px;</code></td>
           <td>groeit of krimpt niet, initieel 200px breed</td>
-          <td>vaste kolom van 200px breed</td>
+          <td>vaste afmeting van 200px</td>
         </tr>
         <tr>
+          <td><code>flex: 1 1 0;</code></td>
+          <td>groeit normaal, krimpt normaal, initieel 0px breed</td>
+          <td>flexibel, neemt beschikbare ruimte in</td>
+        </tr>
+        <tr>
+          <td><code>flex: 0 1 auto;</code></td>
+          <td>groeit niet, kan krimpen, initieel natuurlijke breedte<br><span class="smaller">(bepaald door content of, indien ingesteld, <code>width</code> property)</span></td>
+          <td>niet groter dan de content</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>Nog andere voorbeelden:</p>
+    <table class="light">
+      <thead>
+        <tr>
+          <th scope="col">voorbeeld</th>
+          <th scope="col">uitleg</th>
+          <th scope="col">betekenis</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
           <td><code>flex: 1 0 200px;</code></td>
-          <td>groeit normaal, krimpt niet, initieel 200px breed</td>
-          <td>kolom van minstens 200px breed</td>
+          <td>groeit normaal, krimpt niet, initieel 200px</td>
+          <td>minstens 200px</td>
         </tr>
         <tr>
           <td><code>flex: 0 1 200px;</code></td>
-          <td>groeit niet, krimpt normaal, initieel 200px breed</td>
-          <td>kolom van maximaal 200px breed</td>
+          <td>groeit niet, krimpt normaal, initieel 200px</td>
+          <td>maximaal 200px</td>
         </tr>
         <tr>
           <td><code>flex: 1 1 200px;</code></td>
-          <td>groeit normaal, krimpt normaal, initieel 200px breed</td>
-          <td>flexibele kolom van initieel 200px breed</td>
+          <td>groeit normaal, krimpt normaal, initieel 200px</td>
+          <td>flexibel, initieel 200px</td>
         </tr>
         <tr>
           <td><code>flex: 2 1 200px;</code></td>
-          <td>groeit dubbel zo snel, krimpt normaal, initieel 200px breed</td>
-          <td>flexibele kolom van initieel 200px breed</td>
+          <td>groeit dubbel zo snel, krimpt normaal, initieel 200px</td>
+          <td>flexibel, initieel 200px, groeit sneller</td>
         </tr>
         <tr>
           <td><code>flex: 1 2 200px;</code></td>
           <td>groeit normaal, krimpt dubbel zo snel, initieel 200px breed</td>
-          <td>flexibele kolom van initieel 200px breed</td>
-        </tr>
-        <tr>
-          <td><code>flex: 1 1 0;</code></td>
-          <td>groeit normaal, krimpt normaal, initieel 0px breed<br><span class="smaller">(maar nooit smaller dan de content)</span></td>
-          <td>flexibele kolom, zo smal mogelijk</td>
-        </tr>
-        <tr>
-          <td><code>flex: 1 1 auto;</code></td>
-          <td>groeit normaal, krimpt normaal, initieel natuurlijke breedte<br><span class="smaller">(bepaald door content of, indien ingesteld, <code>width</code> property)</span></td>
-          <td>flexibele kolom, natuurlijke breedte</td>
+          <td>flexibel, initieel 200px, krimpt sneller</td>
         </tr>
       </tbody>
     </table>
+
     <p>Voorbeeld 1: vaste kolommen links en rechts, flexibele kolom in het midden</p>
     <div class="codecompare">
       <pre class="prism-atom-dark" style="height: 200px; overflow-y: auto;"><code contenteditable data-target="#flex-itemdemo4">.flex-item:nth-child(1) { flex: 0 0 150px; }
-.flex-item:nth-child(2) { flex: 1 1 auto; }
+.flex-item:nth-child(2) { flex: 1 1 0; }
 .flex-item:nth-child(3) { flex: 0 0 150px; }
 .flex-container {
    display: flex;
@@ -1391,7 +1404,7 @@ h3, p {
     <div id="flex-itemdemo4" class="w-1200">
       <div class="flex-container container">
         <div class="flex-item">flex: 0 0 150px;</div>
-        <div class="flex-item">flex: 1 1 auto;</div>
+        <div class="flex-item">flex: 1 1 0;</div>
         <div class="flex-item">flex: 0 0 150px;</div>
       </div>
       <input type="range" min="400" max="1200" step="1" class="range-container-width w-500"><button type="button" class="range-reset">↻</button>
@@ -2637,9 +2650,6 @@ body {
    max-width: 1000px; /* maximaal 1000px breed */
    min-height: 100vh; /* bedek minstens hele viewport */
 }
-main {
-   flex: 1 1 auto; /* auto: stretch om resterende ruimte te vullen */
-}
 
 /* header layout */
 header {
@@ -2656,6 +2666,11 @@ header {
    flex: 0 0 220px; /* vaste breedte */
 }
 
+/* main */
+main {
+   flex: 1 1 0; /* zal resterende hoogte vullen */
+}
+
 /* nav layout */
 nav ul {
    display: flex;
@@ -2668,15 +2683,15 @@ main {
    display: flex;
 }
 #content {
-   flex: 1 1 auto;
+   flex: 1 1 0; /* zal resterende breedte vullen */
 }
 aside {
-   flex: 0 0 200px;
+   flex: 0 0 200px; /* 200px vast */
 }
 
 /* footer layout */
 footer {
-   text-align: center;
+  text-align: center;
 }
 
 /* algemene stijlen */
@@ -2712,7 +2727,8 @@ aside {
         <strong>body</strong>
         <ul>
           <li>verticale layout met <code> display: flex; flex-direction: column</code></li>
-          <li>de <code>&lt;main&gt;</code> vult zoveel mogelijk verticale ruimte met <code>flex: 1 1 auto</code></li>
+          <li>de <code>&lt;main&gt;</code> vult resterende verticale ruimte met <code>flex: 1 1 0</code></li>
+          <li>de <code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code> en <code>&lt;footer&gt;</code> nemen niet meer ruimte in dan nodig (standaardwaarde is <code>flex: 0 1 auto</code>)</li>
           <li>horizontaal gecentreerd in de pagina met <code>max-width: 1000px; margin: 0 auto;</code></li>
           <li>verticaal over de browser viewport uitgerokken met <code>min-height: 100vh</code></li>
         </ul>
