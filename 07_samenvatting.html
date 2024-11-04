@@ -108,15 +108,15 @@
             <td>a[attr=x]</td>
             <td>&lt;a&gt; when "attr" is "x"</td>
           </tr>
-          <tr>
+          <tr class="pro">
             <td>a[attr*=x]</td>
             <td>&lt;a&gt; when "attr" contains "x"</td>
           </tr>
-          <tr>
+          <tr class="pro">
             <td>a[attr^=x]</td>
             <td>&lt;a&gt; when "attr" starts with "x"</td>
           </tr>
-          <tr>
+          <tr class="pro">
             <td>a[attr$=x]</td>
             <td>&lt;a&gt; when "attr" ends with "x"</td>
           </tr>
@@ -140,10 +140,14 @@
             <td>first child element</td>
           </tr>
           <tr>
+            <td>:last-child</td>
+            <td>last child element</td>
+          </tr>
+          <tr class="pro">
             <td>tr:nth-child(3n+1)</td>
             <td>&lt;tr&gt; 1, 4, 7...</td>
           </tr>
-          <tr>
+          <tr class="pro">
             <td>tr:nth-child(odd)</td>
             <td>&lt;tr&gt; 1, 3, 5...</td>
           </tr>
@@ -177,11 +181,11 @@
             <td>input:checked</td>
             <td>checked input</td>
           </tr>
-          <tr>
+          <tr class="pro">
             <td>input:disabled</td>
             <td>disabled input</td>
           </tr>
-          <tr>
+          <tr class="pro">
             <td>input:enabled</td>
             <td>enabled input</td>
           </tr>
@@ -218,6 +222,14 @@
           <tr>
             <td>%</td>
             <td>percentage of width</td>
+          </tr>
+          <tr>
+            <td>fr</td>
+            <td>fraction of available width</td>
+          </tr>
+          <tr>
+            <td>vw/vh</td>
+            <td>viewport width / viewport height</td>
           </tr>
         </table>
 
@@ -305,7 +317,7 @@
         <table>
           <caption>lists</caption>
           <tr>
-            <td>list-style-type</td>
+            <td>list-style</td>
             <td>
               none | disc | square | decimal | ...
             </td>
@@ -403,6 +415,14 @@
         <table>
           <caption>margins, paddings, border</caption>
           <tr>
+            <td>border: 2px solid #900;</td>
+            <td>
+              border-width: 2px;<br>
+              border-style: solid;<br>
+              border-color: #900;<br>
+            </td>
+          </tr>
+          <tr>
             <td>
               border-color
             </td>
@@ -432,14 +452,6 @@
             </td>
             <td>
               px, rem, em or %
-            </td>
-          </tr>
-          <tr>
-            <td>border: 2px solid #900;</td>
-            <td>
-              border-width: 2px;<br>
-              border-style: solid;<br>
-              border-color: #900;<br>
             </td>
           </tr>
           <tr>
@@ -506,6 +518,13 @@
         <table>
           <caption>transitions</caption>
           <tr>
+            <td>transition: background 0.3s; </td>
+            <td>
+              transition-property: background; <br>
+              transition-duration: 0.3s;
+            </td>
+          </tr>
+          <tr>
             <td>transition-property</td>
             <td>all | css property</td>
           </tr>
@@ -513,15 +532,8 @@
             <td>transition-duration</td>
             <td>number of seconds</td>
           </tr>
-          <tr>
-            <td>transition: background 0.3s; </td>
-            <td>
-              transition-property: background; <br>
-              transition-duration: 0.3s;
-            </td>
-          </tr>
         </table>
-        <table>
+        <table class="pro">
           <caption>animation</caption>
           <tr>
             <td>@keyframes</td>
@@ -538,7 +550,7 @@
             <td>rotate, skew, scale, rotate... <br>e.g. rotate(8deg) skewY(15deg);</td>
           </tr>
         </table>
-        <table>
+        <table class="pro">
           <caption>image editing</caption>
           <tr>
             <td>filter</td>
@@ -618,7 +630,7 @@ a {
           <caption>positioning <span>(position element based on coordinates)</span></caption>
           <tr>
             <td>position</td>
-            <td>absolute | relative | fixed </td>
+            <td>absolute | relative | fixed | sticky </td>
           </tr>
           <tr>
             <td>top<br>right<br>bottom<br>left<br></td>
@@ -626,7 +638,7 @@ a {
               px, rem, em or %
             </td>
           </tr>
-          <tr>
+          <tr class="pro">
             <td>z-index</td>
             <td>
               any number (higher is on top)
@@ -634,14 +646,14 @@ a {
           </tr>
         </table>
         <table>
-          <caption>float / clear <span>(float / prevent content around element)</span></caption>
+          <caption>floating</caption>
           <tr>
             <td>float</td>
             <td>
               none | left | right
             </td>
           </tr>
-          <tr>
+          <tr class="pro">
             <td>clear</td>
             <td>
               none | left | right | both
@@ -653,7 +665,7 @@ a {
           <tr>
             <td>align-items</td>
             <td>
-              flex-start | flex-end | center<br>
+              flex-start | flex-end | center | stretch<br>
               <span>(positioning items across flex direction)</span>
             </td>
           </tr>
@@ -699,9 +711,34 @@ a {
         <table>
           <caption>grid</caption>
           <tr>
+            <td>align-items</td>
+            <td>
+              start | end | center | stretch<br>
+              <span>(positioning items vertically)</span>
+            </td>
+          </tr>
+          <tr>
             <td>display: grid</td>
             <td>
               create grid container
+            </td>
+          </tr>
+          <tr class="pro">
+            <td>grid-area</td>
+            <td>
+              e.g. grid-area: contentleft;
+            </td>
+          </tr>
+          <tr>
+            <td>grid-column</td>
+            <td>
+              column span, e.g. 2 / 4
+            </td>
+          </tr>
+          <tr>
+            <td>grid-row</td>
+            <td>
+              row span, e.g. 1 / 3
             </td>
           </tr>
           <tr>
@@ -716,7 +753,7 @@ a {
               e.g. 50px auto
             </td>
           </tr>
-          <tr>
+          <tr class="pro">
             <td>grid-template-areas</td>
             <td>
               e.g. grid-template-areas:
@@ -725,9 +762,10 @@ a {
             </td>
           </tr>
           <tr>
-            <td>grid-area</td>
+            <td>justify-items</td>
             <td>
-              e.g. grid-area: contentleft;
+              start | end | center | stretch<br>
+              <span>(positioning items horizontally)</span>
             </td>
           </tr>
         </table>
