@@ -77,10 +77,6 @@ figcaption {
 	font-style: italic;
 }
 
-figure:not(.console) figcaption {
-	margin-top: -5px;
-}
-
 main>h1,
 main>h2,
 main>h3,

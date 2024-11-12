@@ -113,7 +113,7 @@ p:last-child {
       </div>
       <h3>Box-sizing</h3>
       <p>
-         CSS heeft een vreemde interpretatie van de <strong>width en height</strong> properties: ze stellen de afmetingen in, maar <strong>exclusief borders of paddings</strong>.  enkel betrekking op de content, zonder borders and paddings. Die worden er achteraf nog bijgeteld. 
+         CSS heeft een vreemde interpretatie van de <strong>width en height</strong> properties: ze stellen de afmetingen in, maar <strong>exclusief borders of paddings</strong>.  enkel betrekking op de content, zonder borders and paddings. Die worden er achteraf nog bijgeteld.
          Neem volgend voorbeeld met twee boxen, allebei ingesteld op dezelfde breedte van 300px, de eerste zonder padding en border, de tweede met:
       </p>
       <div class="codecompare top">
@@ -159,7 +159,7 @@ p:last-child {
          </figure>
       </div>
       <p>Dit is totaal onlogisch! Gelukkig kan dit eenvoudig opgelost worden met de <code>box-sizing</code> property:</p>
-      
+
       <pre class="prism-atom-dark"><code>* {
    box-sizing: border-box; /* standaardwaarde is content-box */
 }</code></pre>
@@ -215,14 +215,14 @@ p:last-child {
 
 
       <h3>Margin of padding?</h3>
-      <p>Er zijn nog andere combinaties van margins en paddings mogelijk. Zolang je geen achtergrondkleuren gebruikt, zul je geen verschil zien. Je kan de paddings links en rechts in het buitenste element bijvoorbeeld vervangen door margins van de paragrafen:</p>  
+      <p>Er zijn nog andere combinaties van margins en paddings mogelijk. Zolang je geen achtergrondkleuren gebruikt, zul je geen verschil zien. Je kan de paddings links en rechts in het buitenste element bijvoorbeeld vervangen door margins van de paragrafen:</p>
       <div class="codecompare top">
          <pre class="prism-atom-dark"><code>div {
-   ...              
+   ...
    padding: 20px 0;
 }
 p {
-   ...              
+   ...
    margin: 0 40px;
 }
 p + p {
@@ -241,11 +241,11 @@ p + p {
    <p>Je kan ook paddings van het buitenste element combineren met margins van de paragrafen:</p>
    <div class="codecompare top">
       <pre class="prism-atom-dark"><code>div {
-   ...              
+   ...
    padding: 10px 20px;
 }
 p {
-   ...              
+   ...
    margin: 10px 20px;
 }
 ...
@@ -274,6 +274,27 @@ p {
       <p>
          &rarr; volg zoveel mogelijk de vuistregels, maar gebruik je gezond verstand
       </p>
+
+      <h2>Box properties</h2>
+      <p>Voorbeeld met enkele typische properties:</p>
+      <div class="codecompare top">
+        <figure>
+           <pre class="prism-atom-dark"><code contenteditable data-target="#box-properties-demo">div {
+  border: 4px double #090; /* double green border  */
+  border-radius: 15px;
+  box-shadow: 10px 5px 10px #999; /* hor. offset, vertical offset, blur, color */
+  background-color: #f0ede3;
+  height: 100px;
+  margin: 20px;
+  width: 300px;
+}
+</code></pre>
+           <figcaption>deze CSS code is aanpasbaar &mdash; probeer zelf andere waarden uit!</figcaption>
+        </figure>
+        <div id="box-properties-demo" class="target w-500" style="padding: 20px;">
+           <div></div>
+        </div>
+     </div>
 
       <h2>Margins</h2>
       <h3>Margin bleeding</h3>
@@ -393,10 +414,10 @@ button {
       <p>Voor dit deel vertrekken we van volgende HTML, een tekst met twee aaneengrenzede links:</p>
       <pre class="prism-default language-html"><code>&lt;p&gt;
    Er de inkomsten af gewijzigd bewegende ze. Zoon diep zal mont zelf rang far een men lage.
-   Mogelijk cultures pyrieten interest ik rivieren nu de geschikt. Ook dien tot toe heft komt sago 
-   stad zijn kan. Aangaan enclave elk ziedaar als &lt;a href=""&gt;zwijnen&lt;/a&gt;&lt;a href=""&gt;stal&lt;/a&gt; mee metalen. Elkander wie 
-   heerlijk nog oog getracht staatjes kan verbrand. Inboorling vergrooten tinprijzen mislukking 
-   zoo wel zij. Een sap cultures schijnen boringen wat mijnbouw bij plaatsen. Far vruchtbaar 
+   Mogelijk cultures pyrieten interest ik rivieren nu de geschikt. Ook dien tot toe heft komt sago
+   stad zijn kan. Aangaan enclave elk ziedaar als &lt;a href=""&gt;zwijnen&lt;/a&gt;&lt;a href=""&gt;stal&lt;/a&gt; mee metalen. Elkander wie
+   heerlijk nog oog getracht staatjes kan verbrand. Inboorling vergrooten tinprijzen mislukking
+   zoo wel zij. Een sap cultures schijnen boringen wat mijnbouw bij plaatsen. Far vruchtbaar
    aan interesten gewasschen uitgegeven per met. Moeten andere den missen het succes dag ten.
 &lt;/p&gt;</code></pre>
       <h3>Margins</h3>
@@ -433,8 +454,8 @@ button {
 &lt;/div&gt;
 </code></pre>
             <pre class="prism-atom-dark"><code contenteditable data-target="#button1-demo">a {
-   background-color: #eee;               
-   border: 1px solid #ccc;               
+   background-color: #eee;
+   border: 1px solid #ccc;
    border-radius: 3px;
    color: #333;
    display: inline-block; /* zonder deze regel worden afmetingen genegeerd */
@@ -462,8 +483,8 @@ button {
 &lt;/div&gt;
 </code></pre>
             <pre class="prism-atom-dark"><code contenteditable data-target="#button2-demo">a {
-   background-color: #eee;               
-   border: 1px solid #ccc;               
+   background-color: #eee;
+   border: 1px solid #ccc;
    border-radius: 3px;
    color: #333;
    display: inline-block; /* zonder deze regel werken paddings niet goed */
@@ -490,7 +511,7 @@ button {
 
 
 
-       
+
    </main>
    <footer>
       <img src="common/img/thats-all.jpg" alt="">
