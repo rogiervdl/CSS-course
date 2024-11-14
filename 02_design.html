@@ -503,7 +503,23 @@ a:hover {
          </div>
          <img src="img/02_design/google-font.png" alt="" class="bordered w-400">
       </div>
-
+      <p>Werkwijze voor het verkrijgen van de juiste link:</p>
+      <ol>
+        <li>surf naar <a href="https://fonts.google.com/">https://fonts.google.com/</a></li>
+        <li>zoek naar een lettertype, b.v. "Roboto", of filter op de categorie, b.v. "Handwriting"</li>
+        <li>klik in de lijst op het gewenste lettertype, en klik "Get font"</li>
+        <li>klik vervolgens op "Get embed code"</li>
+      </ol>
+      <p>Je zou een codefragment als dit moeten krijgen:</p>
+      <pre class="prism-default language-html"><code contenteditable>&lt;link rel="preconnect" href="https://fonts.googleapis.com"&gt;
+&lt;link rel="preconnect" href="https://fonts.gstatic.com" crossorigin&gt;
+&lt;link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;...&amp;display=swap" rel="stylesheet"&gt;</code></pre>
+      <p>Je kan dit vereenvoudigen tot één element, dat je in de <code>&lt;head&gt;</code> plaatst:</p>
+      <pre class="prism-default language-html"><code contenteditable>&lt;head&gt;
+  ...
+  &lt;link href="https://fonts.googleapis.com/css2?family=Roboto" rel="stylesheet"&gt;
+  ...
+&lt;/head&gt;</code></pre>
       <h3>Help! Mijn font wordt niet goed weergegeven</h3>
       <p>Zaken die kunnen foutgaan:</p>
       <ul>
