@@ -61,6 +61,10 @@
         <table>
           <caption>basic selectors</caption>
           <tr>
+            <td>*</td>
+            <td>all elements</td>
+          </tr>
+          <tr>
             <td>div</td>
             <td>&lt;div&gt;</td>
           </tr>
@@ -80,6 +84,9 @@
             <td>div#itemid</td>
             <td>&lt;div&gt; with id "itemid" </td>
           </tr>
+        </table>
+        <table>
+          <caption>combinatie selectors</caption>
           <tr>
             <td>div span</td>
             <td>&lt;span&gt; within &lt;div&gt;</td>
@@ -96,10 +103,9 @@
             <td>div &gt; span</td>
             <td>&lt;span&gt; with parent &lt;div&gt;</td>
           </tr>
-          <tr>
-            <td>*</td>
-            <td>all elements</td>
-          </tr>
+        </table>
+        <table>
+          <caption>attribuut selectors</caption>
           <tr>
             <td>a[attr]</td>
             <td>&lt;a&gt; with attribute "attr"</td>
@@ -151,32 +157,6 @@
             <td>tr:nth-child(odd)</td>
             <td>&lt;tr&gt; 1, 3, 5...</td>
           </tr>
-        </table>
-        <table>
-          <caption>pseudo element selectors</caption>
-          <tr>
-            <td>::after</td>
-            <td>insert content after element</td>
-          </tr>
-          <tr>
-            <td>::before</td>
-            <td>insert content before element</td>
-          </tr>
-          <tr>
-            <td>::first-letter</td>
-            <td>first letter of element</td>
-          </tr>
-          <tr>
-            <td>::first-line</td>
-            <td>first line of element</td>
-          </tr>
-          <tr>
-            <td>::selection</td>
-            <td>selected part of element</td>
-          </tr>
-        </table>
-        <table>
-          <caption>form pseudo class selectors</caption>
           <tr>
             <td>input:checked</td>
             <td>checked input</td>
@@ -200,6 +180,29 @@
           <tr>
             <td>input:valid</td>
             <td>valid input</td>
+          </tr>
+        </table>
+        <table>
+          <caption>pseudo element selectors</caption>
+          <tr>
+            <td>::after</td>
+            <td>insert content after element</td>
+          </tr>
+          <tr>
+            <td>::before</td>
+            <td>insert content before element</td>
+          </tr>
+          <tr>
+            <td>::first-letter</td>
+            <td>first letter of element</td>
+          </tr>
+          <tr>
+            <td>::first-line</td>
+            <td>first line of element</td>
+          </tr>
+          <tr>
+            <td>::selection</td>
+            <td>selected part of element</td>
           </tr>
         </table>
       </section>
@@ -574,7 +577,7 @@
             <td>cursor</td>
             <td>auto | pointer | help | not-allowed</td>
           </tr>
-          <tr>
+          <tr class="pro">
             <td>calc()</td>
             <td>e.g. width: calc((100% - 250px) / 3)</td>
           </tr>

@@ -81,7 +81,7 @@
       <h2>Stylesheets</h2>
       <h3>CSS stijlregel</h3>
       <p>
-         CSS of <mark>Cascaded Style Sheets</mark> bestaat in essentie uit een <strong>opsomming van stijlregels</strong> met opmaak en layout. 
+         CSS of <mark>Cascaded Style Sheets</mark> bestaat in essentie uit een <strong>opsomming van stijlregels</strong> met opmaak en layout.
          Elke <span class="em">stijlregel</span> bestaat uit een <span class="em">selector</span>, een <span class="em">property</span> en een <span class="em">waarde</span>:
       </p>
       <pre class="prism-atom-dark notoolbar"><code><i>selector</i> {
@@ -122,7 +122,7 @@
       <p>
          &rarr; de scheiding van HTML en CSS code is al beter, maar ze staan nog steeds in hetzelfde codebestand
          <br><span class="error">&rarr; gebruik interne stijlen is <strong>verboden</strong> in deze cursus!</span>
-      </p>   
+      </p>
       <h4>extern</h4>
       <p>De beste methode is een apart CSS bestand of <span class="em">stylesheet</span> linken aan je HTML document:</p>
       <pre class="prism-default language-html right" data-caption="index.html" data-demo="demos/01_syntax/extern.html"><code>...
@@ -252,7 +252,7 @@ body {
 
       <h4><code>&lt;link media="..."&gt;</code> attribuut</h4>
       <p>
-         Je kan de media specifiëren op niveau van het CSS bestand <code class="language-html">&lt;link media="..."&gt;</code> attribuut. 
+         Je kan de media specifiëren op niveau van het CSS bestand <code class="language-html">&lt;link media="..."&gt;</code> attribuut.
          Voorbeelden:
       </p>
       <pre class="prism-default language-html notoolbar"><code>...
@@ -272,7 +272,7 @@ body {
 ...</code></pre>
       <h4><code>@media</code> CSS blok</h4>
       <p>
-         Je kan de media ook specifiëren op niveau van een blok CSS met <code class="language-html">@media { ... }</code>. De vorige voorbeelden herschreven: 
+         Je kan de media ook specifiëren op niveau van een blok CSS met <code class="language-html">@media { ... }</code>. De vorige voorbeelden herschreven:
       </p>
 
       <pre class="prism-atom-dark notoolbar"><code>@media {
@@ -514,10 +514,10 @@ p.formpar {
 
       <h3>selectors nesten</h3>
       <p>Een spatie betekent <strong>genest in</strong> (lees van rechts naar links):</p>
-      <pre class="prism-atom-dark notoolbar"><code>#leftcol p { 
+      <pre class="prism-atom-dark notoolbar"><code>#leftcol p {
    /* paragrafen <strong>genest in</strong> het element met id="leftcol" */
 }
-nav li.active a { 
+nav li.active a {
    /* links <strong>genest in</strong> list items met class="active" <strong>genest in</strong> nav element */
 }</code></pre>
       <h2>Properties</h2>
@@ -570,7 +570,7 @@ nav li.active a {
    background-image: url(img/bg.jpg);
 }</code></pre>
 
-      <h3>Prioriteit, specificiteit en overerving</h3>
+      <h2>Prioriteit, specificiteit en overerving</h2>
       <p>De uiteindelijke stijl van een element wordt bepaald door verschillende factoren:</p>
       <ul>
          <li>het element kan matchen met <strong>verschillende selectoren</strong></li>
@@ -587,7 +587,7 @@ nav li.active a {
          <li>stijlen <strong>overgeërfd</strong> van de parent (zie verder)</li>
          <li><strong>defaultwaarde</strong> van de browser</li>
       </ol>
-      <h4>Specificiteit berekenen</h4>
+      <h3>specificiteit berekenen</h3>
       <p>De <span class="em">specifiteit</span> wordt berekend als een getal dat de som is van:</p>
       <ul>
          <li>aantal id selectoren x 100</li>
@@ -639,7 +639,7 @@ nav li.active a {
       <p>Je kan de specificiteit trouwens inspecteren met je browser tools:</p>
       <p><img src="img/01_syntax/specificity-browser.png" alt="" class="w-250"></p>
 
-      <h4>Voorbeeld</h4>
+      <h3>voorbeeld</h3>
       <div class="codecompare top">
          <div class="democontainer">
             <pre class="prism-default language-html" data-demo><code>&lt;div class="container"&gt;
@@ -713,7 +713,7 @@ nav li.active a {
          </tbody>
       </table>
 
-      <h4>stijlen inspecteren</h4>
+      <h3>inspecteren in de browser</h3>
       <p>Er zijn twee plaatsen in de inspector waar je kan achterhalen hoe een stijl tot stand gekomen is, n.l. <strong>Styles</strong> en <strong>Computed</strong>. Je vindt telkens de winnende stijl bovenaan:</p>
       <div class="codecompare top">
          <figure>
@@ -725,7 +725,7 @@ nav li.active a {
             <figcaption>Computed tabblad in de inspector</figcaption>
          </figure>
       </div>
-      
+
       <h2>Browser inspector gebruiken</h2>
       <h3>CSS inspecteren</h3>
       <p>Inspecteer een element en bekijk de CSS eigenschappen:</p>
