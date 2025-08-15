@@ -23,7 +23,7 @@ img {
 
 body {
    background-color: #999;
-   font-family: Verdana;
+   font-family: Verdana, sans-serif;
    font-size: 16px;
 }
 
@@ -49,6 +49,7 @@ h5 {
 }
 
 /* site wrapper */
+
 #wrapper {
    max-width: 900px;
    min-width: 240px;
@@ -94,6 +95,7 @@ header a {
  /* ============== */
 
 /* top menu */
+
 header+nav {
    background-color: #666;
    padding: 10px 20px;
@@ -117,7 +119,7 @@ header+nav {
    width: 50px;
 }
 
-#mainmenu li+li:before {
+#mainmenu li+li::before {
    color: #999;
    content: '|';
 }
@@ -132,6 +134,7 @@ main {
 }
 
 /* sub menu */
+
 #leftmenu {
    background-color: #FEFF99;
    flex: 0 0 190px;
@@ -143,6 +146,7 @@ main {
 }
 
 /* content */
+
 #content {
    flex: 1 1 710px;
    padding: 10px 20px;
@@ -163,6 +167,7 @@ main {
 
 
 /* aside */
+
 main aside {
    border: 1px solid gray;
    float: right;
@@ -258,7 +263,7 @@ footer ul a {
    padding: 2px 5px;
 }
 
-footer li+li:before {
+footer li+li::before {
    content: ' | ';
    color: #999;
 }

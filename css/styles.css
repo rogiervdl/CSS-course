@@ -19,7 +19,7 @@ pre.notoolbar + .toolbar .toolbar-item {
 }
 
 blockquote.greenbig {
-   background-color: #eeffee66;
+   background-color: #efe6;
    border: 3px dashed #999;
    font-size: larger;
    margin-bottom: 1em;
@@ -27,6 +27,7 @@ blockquote.greenbig {
    text-align: center;
    width: fit-content;
 }
+
 .xl {
    font-size: 1.5em;
 }

@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <!-- [html-validate-disable no-trailing-whitespace] -->
-<html lang="nl">
+<!-- [html-validate-disable no-inline-style:false] -->
+ <html lang="nl">
 
 <head>
    <title>Design | CSS cursus</title>
@@ -11,7 +12,7 @@
    <link rel="icon" href="favicon.ico" type="image/x-icon">
 </head>
 
-<body class="language-css showpro">
+<body class="prism language-css showpro">
    <div id="mode">
       <span>n00b</span>
       <label class="switch">
@@ -435,7 +436,7 @@ footer a { font-size: 1.2rem;  }</code></pre>
          <li><strong>font-size</strong>: <span style="font-size: 8px">8px</span>, <span style="font-size: 12px">12px</span>, <span style="font-size: 18px">18px</span>...</li>
          <li><strong>font-weight</strong>: <span style="font-weight: 200">lighter</span>, normal, <span style="font-weight: bold">bold</span>...; <span style="font-weight: 100">100</span>, <span style="font-weight: 300">300</span>, <span style="font-weight: 500">500</span>, <span style="font-weight: 700">700</span>, <span style="font-weight: 900">900</span></li>
          <li><strong>font-style</strong>: <span style="font-style: italic;">italic</span>, normal</li>
-         <li><strong>color</strong>: <span style="color:#900">#900</span>, <span style="color:DarkGreen">DarkGreen</span>, <span style="color:rgba(220, 15, 220, 0.727)">rgba(100, 50, 25, 0.7)</span>...</li>
+         <li><strong>color</strong>: <span style="color:#900">#900</span>, <span style="color:DarkGreen">DarkGreen</span>, <span style="color:rgb(220 15 220 / 70%)">rgb(220 15 220 / 70%)</span>...</li>
       </ul>
       <p>Code voorbeeld in CSS:</p>
       <div class="codecompare top">
@@ -694,11 +695,11 @@ a:hover {
                </td>
             </tr>
             <tr>
-               <td><code>rgb(r, g, b)<br>rgba(r, g, b, a)</code></td>
+               <td><code>rgb(r g b)<br>rgb(r g b / a%)</code></td>
                <td><span class="right"></span><br><span class="right"></span></td>
                <td>
-                  <code>color: rgb(204, 68, 32)</code>
-                  <br><code>color: rgba(204, 68, 32, 0.7)</code>
+                  <code>color: rgb(204 68 32)</code>
+                  <br><code>color: rgb(204 68 32 / 70%)</code>
                </td>
                <td>
                   <code>r, g en b: waarden tussen 0-255</code>
@@ -712,11 +713,14 @@ a:hover {
                <td>kleurnaam: <code>blue</code>, <code>aqua</code>, <code>coral</code>, <code>beige</code>...</td>
             </tr>
             <tr class="pro">
-               <td><code>hsla(h, s%, l%, a)</code></td>
+               <td>
+						<code>hsl(h s% l%)</code>
+						<br><code>hsl(h s% l% / a%)</code>
+					</td>
                <td><span class="wrong"></span></td>
                <td>
-                  <code>color: hsl(128, 50%, 25%)</code>
-                  <br><code>color: hsla(128, 50%, 25%, 0.7)</code>
+                  <code>color: hsl(128 50% 25%)</code>
+                  <br><code>color: hsl(128 50% 25% / 70%)</code>
                </td>
                <td>
                   <code>h</code>: hue (tint), <code>s</code>: saturatie, <code>l</code>: lightness
@@ -726,7 +730,6 @@ a:hover {
          </tbody>
       </table>
       <p><em><sup>(*)</sup> gebruik het enkel voor <code>white</code> en <code>black</code>, maar b.v. geen <code>silver</code>, <code>fuchsia</code>, <code>maroon</code>...</em></p>
-      <p>Er bestaan nog twee notaties, <code>lab(l, a, b)</code> en <code>lch(l, c, h)</code> gebaseerd op lichtheid, saturatie, tint enz... maar die laten we buiten beschouwing.</p>
 
       <h3>Hexadecimale notatie</h3>
       <p>De meest gebruikte kleurnotatie is #rrggbb hexadecimaal:</p>
@@ -941,7 +944,7 @@ img:hover {
       <div class="codecompare top">
          <div>
             <pre class="prism-atom-dark w-600"><code>.banner {
-   background-color: rgb(0, 0, 0);
+   background-color: rgb(0 0 0);
    opacity: 0.7;
 }</code></pre>
             <figure class="w-600">
@@ -951,7 +954,7 @@ img:hover {
          </div>
          <div>
             <pre class="prism-atom-dark w-600"><code>.banner {
-   background-color: rgba(0, 0, 0, 0.7);
+   background-color: rgb(0 0 0 / 70%);
 
 }</code></pre>
             <figure class="w-600">

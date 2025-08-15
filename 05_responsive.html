@@ -11,7 +11,7 @@
    <link rel="icon" href="favicon.ico" type="image/x-icon">
 </head>
 
-<body class="language-css showpro">
+<body class="prism language-css showpro">
    <div id="mode">
       <span>n00b</span>
       <label class="switch">
@@ -119,16 +119,16 @@
          <li>
             stap 2: controleer of de layout <strong>flexibel</strong> is
             <ul class="lower-latin">
-               <li><strong>grote contentblokken</strong>: vermijd vaste afmetingen; gebruik <code>max-width</code> in plaats van <code>width</code>, vermijd <code>height</code>...</li>
+               <li><strong>grote contentblokken</strong>: vermijd vaste afmetingen; stel <em>maximum breedte</em> in, vermijd vaste breedte of hoogte...</li>
                <li><strong>kolommen</strong> (flexbox, grid): minstens één kolom moet een flexibel zijn (<code>fr</code>, <code>auto</code>, <code>%</code>...)</li>
-               <li><strong>afbeeldingen, iframes</strong>: zet <code>width</code> op 100% en stel eventueel <strong><code>max-width</code></strong> in</li>
+               <li><strong>afbeeldingen, iframes</strong>: zet <code>width</code> op 100% en stel eventueel een <em>maximum breedte</em> in</li>
             </ul>
          </li>
          <li>
             stap 3: voeg <strong>media queries</strong> toe
             <ul class="lower-latin">
                <li>versmal/verbreed het browservenster en <strong>kies een breekpunt</strong></li>
-               <li><strong>voeg een media query toe</strong> voor dit breekpunt (gebruik altijd <code>min-width</code>)</li>
+               <li><strong>voeg een media query toe</strong> voor dit breekpunt (gebruik altijd <em>minimum breedte</em>, werk van smalle naar brede schermen toe)</li>
                <li><strong>voeg responsive CSS toe</strong> aan de media query en verander/verwijder eventueel andere CSS</li>
                <li><strong>controleer het resultaat</strong> en keer terug naar punt a tot je tevreden bent</li>
             </ul>
@@ -207,7 +207,7 @@
 Media queries
 =============== */
 
-@media (min-width: 800px) { /* deze CSS wordt uitgevoerd vanaf 800px */
+@media (width &gt;= 800px) { /* deze CSS wordt uitgevoerd vanaf 800px */
 
 }
 </code></pre>
@@ -221,7 +221,7 @@ h2 {
 }
 
 /* vanaf 800px */
-@media (min-width: 800px) {
+@media (width &gt;= 800px) {
    h2 {
       font-size: 20px; /* iets groter lettertype */
       margin-bottom: 15px; /* wat meer ondermarge */
@@ -240,17 +240,17 @@ h2 {
   =============== */
 
 /* vanaf 600px */
-@media (min-width: 600px) {
+@media (width &gt;= 600px) {
    ...
 }
 
 /* vanaf 800px */
-@media (min-width: 800px) {
+@media (width &gt;= 800px) {
    ...
 }
 
 /* vanaf 1000px */
-@media (min-width: 1000px) {
+@media (width &gt;= 1000px) {
    ...
 }</code></pre>
 
@@ -258,7 +258,7 @@ h2 {
          <ul class="right">
             <li>zet je media queries <strong>op het einde</strong> van je CSS</li>
             <li>sorteer je breekpunten <strong>van klein naar groot</strong></li>
-            <li>gebruik enkel <strong><code>min-width</code></strong>, geen <code>max-width</code> of een combinatie, of het wordt een soep!</li>
+            <li>gebruik enkel <strong><code>width &gt;= ...</code></strong>, nooit <code>width &lt;=</code> of een combinatie, of het wordt een soep!</li>
          </ul>
       </div>
 
@@ -714,7 +714,7 @@ main aside {
 /* Media queries
 /* ============== */
 
-@media (min-width: 480px) {
+@media (width &gt;= 480px) {
    main aside {
       float: right;
       margin-left: 10px;
@@ -724,7 +724,7 @@ main aside {
       display: flex;
    }
 }
-@media (min-width: 600px) {
+@media (width &gt;= 600px) {
    main {
       display: flex;
    }
@@ -741,7 +741,7 @@ main aside {
       <div class="tips" data-caption="☝🏼RICHTLIJNEN">
          <ul class="right">
             <li>zet je media queries <strong>altijd op het einde</strong> van je CSS</li>
-            <li>gebruik <strong>alleen <code>min-width</code></strong>, geen <code>max-width</code> en zeker niet beiden</li>
+            <li>gebruik <strong>alleen <code>width &gt;= ...</code></strong>, geen <code>width &lt;= ...</code> en zeker niet beiden</li>
             <li>sorteer je breekpunten <strong>van smal naar breed</strong></li>
             <li>voorzie <strong>2 tot 3 breekpunten</strong> voor een goede choreografie; één is te weinig, meer is overkill</li>
          </ul>

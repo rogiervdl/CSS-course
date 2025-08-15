@@ -8,14 +8,14 @@ html {
 body {
 	border: 1px solid #ccc;
 	background-color: #fff;
-	font-family: Verdana;
+	font-family: Verdana, sans-serif;
 	max-width: 600px;
 	margin: 0 auto;
 	padding: 1rem 2rem;
 }
 
 h1, h2, h3  {
-	font-family: Georgia;
+	font-family: Georgia, serif;
 }
 
 body > h1 a {
@@ -33,9 +33,10 @@ p {
 }
 
 /* Content Section */
+
 #widget_container, #widget_container h1, #widget_container h2 {
 	font-size: 15px;
-	font-family: Verdana;
+	font-family: Verdana, sans-serif;
 }
 
 #widget_container {
@@ -66,11 +67,11 @@ p {
 	display: inline;
 }
 
-#widget blockquote:before {
+#widget blockquote::before {
 	content: '“';
 }
 
-#widget blockquote:after {
+#widget blockquote::after {
 	content: '”';
 }
 
