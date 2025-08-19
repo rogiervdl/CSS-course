@@ -56,7 +56,7 @@
    <main>
 
       <!-- VIDEO -->
-      <h2>Youtube totaaldemo &dash; CSS intro en tekstopmaak</h2>
+      <!-- <h2>Youtube totaaldemo &dash; CSS intro en tekstopmaak</h2>
       <p>Deze video maakt deel uit van een HTML + CSS totaaldemo uit de <a href="https://www.youtube.com/playlist?list=PLYfkd2Gq0ciEFboXQvzR_e__52tZ4OeXh">Basic Web Development playlist</a>, die begint met de video <a href="https://www.youtube.com/watch?v=kIJbahdQqcI&list=PLYfkd2Gq0ciEFboXQvzR_e__52tZ4OeXh&index=12">BWD 01. HTML - deel 8: praktijkdemo</a></p>
       <div class="flexcontainer youtubecontainer">
          <iframe class="youtube" width="600" height="378"
@@ -77,7 +77,7 @@
                <li><a href="https://www.youtube.com/watch?v=5y6QDsi6uVk&t=898">14:58 Google fonts</a></li>
             </ul>
          </div>
-      </div>
+      </div> -->
 
       <h2>Stylesheets</h2>
       <h3>CSS stijlregel</h3>
@@ -163,125 +163,24 @@ body {
       </p>
 
       <h3>media types</h3>
-      <p>Je kan aparte stijlen definiëren voor <strong>verschillende media</strong>, bv. voor schermen of printers, naargelang minimum of maximum hoogtes, breedtes, resoluties, oriëntatie enz... Een overzicht van de belangrijkste sleutelwoorden:</p>
-      <table class="light">
-         <thead>
-            <tr>
-               <th scope="col">toestel</th>
-               <th scope="col">betekenis</th>
-            </tr>
-         </thead>
-         <tbody>
-            <tr>
-               <td><code>all</code></td>
-               <td>standaardwaarde; gebruikt voor alle toestellen</td>
-            </tr>
-            <tr>
-               <td><code>screen</code></td>
-               <td>gebruikt voor schermen</td>
-            </tr>
-            <tr>
-               <td><code>print</code></td>
-               <td>gebruikt voor printers</td>
-            </tr>
-            <tr>
-               <td><code>speech</code></td>
-               <td>gebruikt voor screenreaders voor blinden</td>
-            </tr>
-         </tbody>
-      </table>
-      <table class="light">
-         <thead>
-            <tr>
-               <th scope="col">kenmerk</th>
-               <th scope="col">betekens</th>
-            </tr>
-         </thead>
-         <tbody>
-            <tr>
-               <td><code>aspect-ratio</code></td>
-               <td>hoogte/breedte verhouding</td>
-            </tr>
-            <tr>
-               <td><code>height</code></td>
-               <td>hoogte</td>
-            </tr>
-            <tr>
-               <td><code>orientation</code></td>
-               <td>landscape of portrait</td>
-            </tr>
-            <tr>
-               <td><code>resolution</code></td>
-               <td>resolutie in dpi (dots per inch)</td>
-            </tr>
-            <tr>
-               <td><code>width</code></td>
-               <td>breedte</td>
-            </tr>
-         </tbody>
-      </table>
-      <table class="light">
-         <thead>
-            <tr>
-               <th scope="col">operator/prefix</th>
-               <th scope="col">betekens</th>
-            </tr>
-         </thead>
-         <tbody>
-            <tr>
-               <td><code>and</code></td>
-               <td>AND operator</td>
-            </tr>
-            <tr>
-               <td><code>not</code></td>
-               <td>NOT operator</td>
-            </tr>
-            <tr>
-               <td><code>,</code></td>
-               <td>OF operator</td>
-            </tr>
-            <tr>
-               <td><code>max-</code></td>
-               <td>maximum</td>
-            </tr>
-            <tr>
-               <td><code>min-</code></td>
-               <td>minimum</td>
-            </tr>
-         </tbody>
-      </table>
+      <p>Je kan stijlen definiëren voor <strong>verschillende media</strong>, bv. voor schermen of printers (maar er zijn nog veel andere mogelijkheden: scherm resoluties, oriëntatie, aspect ratio...)</p>
+      <p>Je kan dit doen op twee niveau's: CSS blokken of hele CSS bestanden</p>
 
-      <h4><code>&lt;link media="..."&gt;</code> attribuut</h4>
-      <p>
-         Je kan de media specifiëren op niveau van het CSS bestand <code class="language-html">&lt;link media="..."&gt;</code> attribuut.
-         Voorbeelden:
+      <h4>CSS bestand: <code>&lt;link media="..."&gt;</code> attribuut</h4>
       </p>
       <pre class="prism-default language-html notoolbar"><code>...
 &lt;head&gt;
   ...
   &lt;link rel="stylesheet" href="..."&gt;&lt;!-- alle media types --&gt;
-  &lt;link rel="stylesheet" href="..." media="all"&gt;&lt;!-- ook alle media types; <em>all</em> is de standaardwaarde --&gt;
   &lt;link rel="stylesheet" href="..." media="print"&gt;&lt;!-- enkel printers --&gt;
   &lt;link rel="stylesheet" href="..." media="screen"&gt;&lt;!-- enkel schermen --&gt;
-  &lt;link rel="stylesheet" href="..." media="print and (min-resolution: 300dpi)"&gt;&lt;!-- enkel afgedrukt met min 300dpi --&gt;
-  &lt;link rel="stylesheet" href="..." media="(min-width: 300px) and (max-width: 1200px)"&gt;&lt;!-- enkel breedtes tussen 300 en 1200px --&gt;
-  &lt;link rel="stylesheet" href="..." media="(min-width: 300px) and (max-width: 1200px)"&gt;&lt;!-- enkel breedtes tussen 300 en 1200px --&gt;
-  &lt;link rel="stylesheet" href="..." media="screen and (orientation: portrait)"&gt;&lt;!-- enkel rechtop gehouden schermen --&gt;
-  &lt;link rel="stylesheet" href="..." media="screen and (min-aspect-ratio: 16/9)"&gt;&lt;!-- enkel brede schermen schermen --&gt;
   ...
 &lt;/head&gt;
 ...</code></pre>
-      <h4><code>@media</code> CSS blok</h4>
-      <p>
-         Je kan de media ook specifiëren op niveau van een blok CSS met <code class="language-html">@media { ... }</code>. De vorige voorbeelden herschreven:
-      </p>
+      <h4>CSS blok: <code>@media</code> CSS blok</h4>
 
       <pre class="prism-atom-dark notoolbar"><code>@media {
    /* CSS-regels voor alle mediatypes */
-}
-
-@media all {
-   /* ook CSS-regels voor alle mediatypes (<em>all</em> is standaardwaarde) */
 }
 
 @media print {
@@ -290,22 +189,6 @@ body {
 
 @media screen {
    /* CSS-regels voor schermen */
-}
-
-@media print and (min-resolution: 300dpi) {
-   /* CSS-regels voor printers met een minimale resolutie van 300dpi */
-}
-
-@media (min-width: 300px) and (max-width: 1200px) {
-   /* CSS-regels voor breedtes tussen 300px en 1200px */
-}
-
-@media screen and (orientation: portrait) {
-   /* CSS-regels voor rechtop staande schermen */
-}
-
-@media screen and (min-aspect-ratio: 16/9) {
-   /* CSS-regels voor brede schermen, minimaal 16/9 */
 }</code></pre>
       <p>
          &rarr; media types zullen we in deze cursus enkel gebruiken in het hoofdstuk <a href="05_responsive.html">CSS responsive</a>
@@ -403,11 +286,8 @@ p {
 textarea:focus {
    /* selecteert <strong>focused</strong> &lt;textarea&gt; */
 }
-input[type=email]:invalid {
-   /* selecteert <strong>invalid</strong> &lt;input type="email"&gt; */
-}
-input:disabled {
-   /* selecteert <strong>disabled</strong> &lt;input&gt; */
+input[type=radio]:checked {
+   /* selecteert <strong>checked</strong> radiobuttons */
 }</code></pre>
       <p>
          &rarr; men noemt dit ook <mark>pseudo-class</mark> selectoren; ze selecteren een <strong>heel element</strong> en worden voorafgegaan door een <strong>enkele dubbelpunt &lsquo;:&rsquo;</strong>
@@ -470,20 +350,12 @@ li:first-child {
 #content &gt; section {
    /* selecteert &lt;section&gt; <strong>direct genest</strong> in &lt;... id="content"&gt; */
 }
-tr:nth-child(odd) {
-   /* selecteert <strong>oneven</strong> &lt;tr&gt;'s */
-}
-section:nth-child(3n+1) {
-   /* selecteert &lt;section&gt;'s <strong>nummer 1, 4, 7</strong>... */
-}</code></pre>
+</code></pre>
 
       <h3>element attribuut</h3>
       <p>Selecteer elementen op basis van <strong>attribuut</strong>:</p>
       <pre class="prism-atom-dark notoolbar"><code>select[multiple] { ... }    /* <strong>"heeft"</strong>, b.v. &lt;select multiple&gt; */
-input[type=button] { ... }  /* <strong>"is"</strong>, b.v. &lt;input type="button"&gt; */
-a[title*=flower] { ... }    /* <strong>"bevat"</strong>, b.v. &lt;a title="...flower..."&gt; */
-img[src^=https://] { ... }  /* <strong>"begint met"</strong>, b.v. &lt;img src="https://..."&gt; */
-a[href$=".pdf"] { ... }     /* <strong>"eindigt met"</strong>, b.v. &lt;a href="....pdf"&gt; */</code></pre>
+input[type=button] { ... }  /* <strong>"is"</strong>, b.v. &lt;input type="button"&gt; */</code></pre>
 
       <h3>selectors combineren</h3>
       <p><strong>Combineer</strong> selectors:</p>
@@ -589,11 +461,11 @@ nav li.active a {
          <li><strong>defaultwaarde</strong> van de browser</li>
       </ol>
       <h3>specificiteit berekenen</h3>
-      <p>De <span class="em">specifiteit</span> wordt berekend als een getal dat de som is van:</p>
+      <p>De <span class="em">specifiteit</span> is een getal dat wordt berekend door optelling van de verschillende soorten selectoren. De berekening is redelijk complex, maar als je alleen tag-, class- en id-selectoren hebt is de berekening als volgt:</p>
       <ul>
          <li>aantal id selectoren x 100</li>
-         <li>aantal class, pseudo-class en attribuut selectors x 10</li>
-         <li>aantal elementen and pseudo-elementen x 1</li>
+         <li>aantal class selectoren x 10</li>
+         <li>aantal tag selectoren x 1</li>
       </ul>
       <p>Enkele voorbeelden:</p>
       <table class="light">
@@ -619,16 +491,6 @@ nav li.active a {
                <td><code>p.test1.test2</code></td>
                <td>0 - 2 - 1</td>
                <td>21</td>
-            </tr>
-            <tr>
-               <td><code>#navbar ul li:active</code></td>
-               <td>1 - 1 - 2</td>
-               <td>112</td>
-            </tr>
-            <tr>
-               <td><code>#navbar ul li::before</code></td>
-               <td>1 - 0 - 3</td>
-               <td>103</td>
             </tr>
             <tr>
                <td><code>#navbar p#demo</code></td>

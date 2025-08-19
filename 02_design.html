@@ -57,7 +57,7 @@
    <main>
 
       <!-- VIDEO -->
-      <h2>Youtube totaaldemo</h2>
+      <!-- <h2>Youtube totaaldemo</h2>
       <p>Deze video's maken deel uit van een HTML + CSS totaaldemo uit de <a href="https://www.youtube.com/playlist?list=PLYfkd2Gq0ciEFboXQvzR_e__52tZ4OeXh">Basic Web Development playlist</a>, die begint met de video <a href="https://www.youtube.com/watch?v=kIJbahdQqcI&list=PLYfkd2Gq0ciEFboXQvzR_e__52tZ4OeXh&index=12">BWD 01. HTML - deel 8: praktijkdemo</a></p>
       <h3>Header, footer &amp; menus opmaken</h3>
       <div class="flexcontainer youtubecontainer">
@@ -98,7 +98,7 @@
                <li><a href="https://www.youtube.com/watch?v=BiOo4lv_6Ag&t=719">11:59 demo</a></li>
             </ul>
          </div>
-      </div>
+      </div> -->
 
       <h2>Eenheden</h2>
       <p>CSS eenheden worden gebruikt voor afmetingen, margins, paddings, randdiktes en andere CSS properties.</p>
@@ -107,8 +107,6 @@
             <tr>
                <th scope="col">eenheid</th>
                <th scope="col">type</th>
-               <th scope="col">kennen</th>
-               <th scope="col">gebruiken</th>
                <th scope="col">wordt gebruikt voor</th>
             </tr>
          </thead>
@@ -116,99 +114,71 @@
             <tr>
                <td><code>px</code></td>
                <td>absoluut</td>
-               <td><span class="right"></span></td>
-               <td><span class="right"></span></td>
                <td>vaste afmeting; gebruik standaard deze eenheid</td>
-            </tr>
-            <tr class="pro">
-               <td><code>cm / mm / in / pt / pc / Q</code></td>
-               <td>absoluut</td>
-               <td><span class="wrong"></span></td>
-               <td><span class="wrong"></span></td>
-               <td>centimeter, millimeter, inch, punt, pica, kwart mm; enkel relevant in drukwerk</td>
             </tr>
             <tr>
                <td><code>%</code></td>
                <td>relatief tov. parent</td>
-               <td><span class="right"></span></td>
-               <td><span class="right"></span></td>
                <td>percentage van parent waarde</td>
             </tr>
             <tr>
                <td><code>fr</code></td>
                <td>fractie</td>
-               <td><span class="right"></span></td>
-               <td><span class="right"></span></td>
                <td>fractie van beschikbare ruimte (gebruikt in <a href="04_layout.html#grid">CSS Grid</a>)</td>
             </tr>
-            <tr>
+            <tr class="pro">
+               <td><code>cm / mm / in / pt / pc / Q</code></td>
+               <td>absoluut</td>
+               <td>centimeter, millimeter, inch, punt, pica, kwart mm; enkel relevant in drukwerk</td>
+            </tr>
+            <tr class="pro">
                <td><code>em</code></td>
                <td>relatief tov. font</td>
-               <td><span class="right"></span></td>
-               <td><span class="wrong"></span></td>
                <td>relatief t.o.v. element font-size; herschaalbare componenten</td>
             </tr>
-            <tr>
+            <tr class="pro">
                <td><code>rem</code></td>
                <td>relatief tov. font</td>
-               <td><span class="wrong"></span></td>
-               <td><span class="wrong"></span></td>
                <td>"root em"; relatief t.o.v. <code>&lt;html&gt;</code> font-size; herschaalbare componenten</td>
             </tr>
             <tr class="pro">
                <td><code>ch / ex / cap / ic / lh / lrh</code></td>
                <td>relatief tov. font</td>
-               <td><span class="wrong"></span></td>
-               <td><span class="wrong"></span></td>
                <td>relatief t.ov. '0' / 'x' / hoofdletter / '水' / regelhoogte / <code>&lt;html&gt;</code> regelhoogte </td>
             </tr>
-            <tr>
+            <tr class="pro">
                <td><code>vw / vh</code></td>
                <td>relatief tov. viewport</td>
-               <td><span class="right"></span></td>
-               <td><span class="wrong"></span></td>
                <td>percentage viewport breedte / hoogte <sup>*</sup></td>
             </tr>
             <tr class="pro">
                <td><code>svw / svh, lvw / lvh, dvw / dvh</code></td>
                <td>relatief tov. viewport</td>
-               <td><span class="wrong"></span></td>
-               <td><span class="wrong"></span></td>
                <td>percentage small, large, dynamic viewport breedte / hoogte <sup>*</sup></td>
             </tr>
             <tr class="pro">
                <td><code>vmin / vmax</code></td>
                <td>relatief tov. viewport</td>
-               <td><span class="wrong"></span></td>
-               <td><span class="wrong"></span></td>
                <td>kleinste / grootste waarde van vw en vh <sup>*</sup></td>
             </tr>
             <tr class="pro">
                <td><code>svmin / svmax , lvmin / lvmax, dvmmin / dvmax</code></td>
                <td>relatief tov. viewport</td>
-               <td><span class="wrong"></span></td>
-               <td><span class="wrong"></span></td>
                <td>kleinste / grootste waarde van svw en svh / lvw en lvh / dvw en dvh <sup>*</sup></td>
             </tr>
             <tr class="pro">
                <td><code>w / h / i / b / min / max</code></td>
                <td>relatief tov. element</td>
-               <td><span class="wrong"></span></td>
-               <td><span class="wrong"></span></td>
                <td>percentage element breedte / hoogte / inline afmeting / ...</td>
             </tr>
             <tr class="pro">
                <td><code>vw-i / vh-i / vi-i / vb-i / vmin-i / vmax-i</code></td>
                <td>logisch</td>
-               <td><span class="wrong"></span></td>
-               <td><span class="wrong"></span></td>
                <td>relatief t.o.v. de inline (of lees-) richting</td>
             </tr>
             <tr class="pro">
                <td><code>vw-b / vh-b / vi-b / vb-b / vmin-b / vmax-b</code></td>
                <td>logisch</td>
-               <td><span class="wrong"></span></td>
-               <td><span class="wrong"></span></td>
                <td>relatief t.o.v. de block (of stapel-) richting</td>
             </tr>
          </tbody>
@@ -294,16 +264,18 @@ blockquote {
          <br>&rarr; gebruik <code>%</code> in deze cursus dus enkel voor afmetingen!
       </p>
 
-      <h3><code>em</code></h3>
-      <p>In CSS heeft <mark>em</mark> twee betekenissen:</p>
-      <ul>
-         <li>gebruikt bij <strong>tekstgroottes</strong>: aantal keer <code>font-size</code> van de <strong>parent</strong></li>
-         <li>gebruikt bij <strong>al de rest</strong>: aantal keer <code>font-size</code> van het <strong>element</strong> zelf</li>
-      </ul>
-      <p>Het voordeel van <code>em</code> is dat je componenten kunt laten meeschalen met de tekstgrootte van de parent. Een voorbeeld waarin <code>px</code> en <code>em</code> vergeleken wordt, zie <a href="demos/02_design/em.html">demo</a>:</p>
-      <div class="codecompare top">
-         <div class="democontainer">
-            <pre class="prism-default language-html h-400 w-700" data-demo="demos/02_design/em.html"><code>&lt;body&gt;
+      <div class="pro">
+
+         <h3><code>em</code></h3>
+         <p>In CSS heeft <mark>em</mark> twee betekenissen:</p>
+         <ul>
+            <li>gebruikt bij <strong>tekstgroottes</strong>: aantal keer <code>font-size</code> van de <strong>parent</strong></li>
+            <li>gebruikt bij <strong>al de rest</strong>: aantal keer <code>font-size</code> van het <strong>element</strong> zelf</li>
+         </ul>
+         <p>Het voordeel van <code>em</code> is dat je componenten kunt laten meeschalen met de tekstgrootte van de parent. Een voorbeeld waarin <code>px</code> en <code>em</code> vergeleken wordt, zie <a href="demos/02_design/em.html">demo</a>:</p>
+         <div class="codecompare top">
+            <div class="democontainer">
+               <pre class="prism-default language-html h-400 w-700" data-demo="demos/02_design/em.html"><code>&lt;body&gt;
    &lt;p&gt;Gumbo beet greens corn soko endive gumbo gourd. Parsley ...&lt;/p&gt;
    &lt;div class="review-px"&gt;
       &lt;h3 class="review-title"&gt;Great hotel! (px versie)&lt;/h3&gt;
@@ -330,7 +302,7 @@ blockquote {
    &lt;/div&gt;
 &lt;/body&gt;
 </code></pre>
-            <pre class="prism-atom-dark h-400 w-700"><code>body {
+               <pre class="prism-atom-dark h-400 w-700"><code>body {
    font-size: 16px; /* pas deze waarde aan en de em versie schaalt mee! */
 }
 
@@ -381,35 +353,38 @@ blockquote {
 }
 </code></pre>
 
+            </div>
+            <div>
+               <figure>
+                  <img src="img/02_design/units-em.gif" alt="" class="bordered shadow w-600">
+                  <figcaption>de <code>em</code> versie schaalt mee met body fontsize, de <code>px</code> versie niet</figcaption>
+               </figure>
+               <figure>
+                  <img src="img/02_design/units-em2.gif" alt="" class="bordered shadow w-600">
+                  <figcaption>de <code>em</code> versie schaalt ook mee met de review wrapper fontsize</figcaption>
+               </figure>
+            </div>
          </div>
-         <div>
-            <figure>
-               <img src="img/02_design/units-em.gif" alt="" class="bordered shadow w-600">
-               <figcaption>de <code>em</code> versie schaalt mee met body fontsize, de <code>px</code> versie niet</figcaption>
-            </figure>
-            <figure>
-               <img src="img/02_design/units-em2.gif" alt="" class="bordered shadow w-600">
-               <figcaption>de <code>em</code> versie schaalt ook mee met de review wrapper fontsize</figcaption>
-            </figure>
-         </div>
+         <p>De <code>em</code> is dus ideaal voor schaalbare componenten, zoals widgets. Onderstaande <a href="demos/02_design/em/index.html">demo</a> illustreert nog eens hoe een widget die volledig in <code>em</code> gecodeerd is (inspecteer de code), kan schalen met de tekstgrootte van de widget container:</p>
+         <figure>
+            <img src="img/02_design/widgetdemo.gif" alt="" class="bordered shadow w-600">
+            <figcaption>widget schaalt dankzij <code>em</code> mee met de widget container fontsize</figcaption>
+         </figure>
+         <p>Zoals je ziet uit de voorbeelden, heeft <code>em</code> voordelen, maar is het redelijk complex om mee te werken.</p>
       </div>
-      <p>De <code>em</code> is dus ideaal voor schaalbare componenten, zoals widgets. Onderstaande <a href="demos/02_design/em/index.html">demo</a> illustreert nog eens hoe een widget die volledig in <code>em</code> gecodeerd is (inspecteer de code), kan schalen met de tekstgrootte van de widget container:</p>
-      <figure>
-         <img src="img/02_design/widgetdemo.gif" alt="" class="bordered shadow w-600">
-         <figcaption>widget schaalt dankzij <code>em</code> mee met de widget container fontsize</figcaption>
-      </figure>
-      <p>Zoals je ziet uit de voorbeelden, heeft <code>em</code> voordelen, maar is het redelijk complex om mee te werken.</p>
 
-      <h3><code>rem</code></h3>
-      <p>De <mark>rem</mark> of "root em" betekent <em>aantal keren de tekstgrootte van <code>&lt;html&gt;</code></em>. Meestal wordt het als volgt gebruikt:</p>
-      <ul>
-         <li>standaard is de <code>font-size</code> van <code>&lt;html&gt;</code> gelijk aan <code>16px</code>, dus <code>1rem = 16px</code></li>
-         <li>verander de <code>font-size</code> van <code>&lt;html&gt;</code> naar <code>10px</code>; nu is <code>1rem = 10px</code></li>
-         <li>deel alle <code>px</code> waarden door <code>10</code>, dus <code>128px</code> wordt <code>12.8rem</code>, <code>14px</code> wordt <code>1.4rem</code> enz...</li>
-      </ul>
-      <p>Volgende fragmenten zijn dus gelijkwaardig:</p>
-      <div class="codecompare">
-         <pre class="prism-atom-dark language-css"><code>html { }
+      <div class="pro">
+
+         <h3><code>rem</code></h3>
+         <p>De <mark>rem</mark> of "root em" betekent <em>aantal keren de tekstgrootte van <code>&lt;html&gt;</code></em>. Meestal wordt het als volgt gebruikt:</p>
+         <ul>
+            <li>standaard is de <code>font-size</code> van <code>&lt;html&gt;</code> gelijk aan <code>16px</code>, dus <code>1rem = 16px</code></li>
+            <li>verander de <code>font-size</code> van <code>&lt;html&gt;</code> naar <code>10px</code>; nu is <code>1rem = 10px</code></li>
+            <li>deel alle <code>px</code> waarden door <code>10</code>, dus <code>128px</code> wordt <code>12.8rem</code>, <code>14px</code> wordt <code>1.4rem</code> enz...</li>
+         </ul>
+         <p>Volgende fragmenten zijn dus gelijkwaardig:</p>
+         <div class="codecompare">
+            <pre class="prism-atom-dark language-css"><code>html { }
 body { font-size: 14px; }
 h1 { font-size: 20px; }
 footer { font-size: 11px; }
@@ -420,13 +395,13 @@ h1 { font-size: 2rem; }
 footer { font-size: 1.1rem; }
 footer a { font-size: 1.2rem;  }</code></pre>
 
-      </div>
-      <p>Wat hebben we daarmee gewonnen? Niet veel, behalve dat je door aanpassen van de tekstgrootte van <code>&lt;html&gt;</code> makkelijk de hele pagina kan herschalen. Je hoeft het niet te gebruiken in de cursus, maar aangezien je het in de praktijk wel eens tegenkomt, moet je het wel kennen.</p>
+         </div>
+         <p>Wat hebben we daarmee gewonnen? Niet veel, behalve dat je door aanpassen van de tekstgrootte van <code>&lt;html&gt;</code> makkelijk de hele pagina kan herschalen. Je hoeft het niet te gebruiken in de cursus, maar aangezien je het in de praktijk wel eens tegenkomt, moet je het wel kennen.</p>
 
-      <h3><code>vw / vh</code></h3>
-      <p>De <mark>vw / vh</mark> eenheden betekenen <span class="em">percentage van de viewport breedte / hoogte</span>. De <mark>viewport</mark> is het zichtbare gedeelte van de pagina in de browser. Deze eenheden komen courant voor, vooral in mobiele toepassingen. </p>
-      <img src="img/02_design/units-vw-vh.png" alt="" class="bordered shadow w-500">
-      <p class="pro">De definitie van viewport is iets ingewikkelder dan het lijkt, zie <a href="https://www.bram.us/2021/07/08/the-large-small-and-dynamic-viewports/">deze pagina</a>.</p>
+         <h3><code>vw / vh</code></h3>
+         <p>De <mark>vw / vh</mark> eenheden betekenen <span class="em">percentage van de viewport breedte / hoogte</span>. De <mark>viewport</mark> is het zichtbare gedeelte van de pagina in de browser. Deze eenheden komen courant voor, vooral in mobiele toepassingen. </p>
+         <img src="img/02_design/units-vw-vh.png" alt="" class="bordered shadow w-500">
+      </div>
 
       <h2>Fonts</h2>
       <h3>Wat is een font</h3>
@@ -448,7 +423,6 @@ footer a { font-size: 1.2rem;  }</code></pre>
    font-family: Lato, Arial, sans-serif; /* provide several alternatives */
    font-weight: bold; /* default: normal */
    font-style: normal; /* also try italic */
-   letter-spacing: 2px; /* add 2px extra space between letters */
    line-height: 1.6; /* 160% of character height */
    padding: 5px 10px;
    text-shadow: 2px 2px 15px #666;

@@ -169,15 +169,15 @@
             <td>input:enabled</td>
             <td>enabled input</td>
           </tr>
-          <tr>
+          <tr class="pro">
             <td>input:invalid</td>
             <td>invalid input</td>
           </tr>
-          <tr>
+          <tr class="pro">
             <td>input:required</td>
             <td>required input</td>
           </tr>
-          <tr>
+          <tr class="pro">
             <td>input:valid</td>
             <td>valid input</td>
           </tr>
@@ -196,7 +196,7 @@
             <td>::first-letter</td>
             <td>first letter of element</td>
           </tr>
-          <tr>
+          <tr class="pro">
             <td>::first-line</td>
             <td>first line of element</td>
           </tr>
@@ -214,11 +214,11 @@
             <td>px</td>
             <td>a pixel</td>
           </tr>
-          <tr>
+          <tr class="pro">
             <td>em</td>
             <td>percentage of parent font size</td>
           </tr>
-          <tr>
+          <tr class="pro">
             <td>rem</td>
             <td>percentage of &lt;html&gt; font size</td>
           </tr>
@@ -230,7 +230,7 @@
             <td>fr</td>
             <td>fraction of available width</td>
           </tr>
-          <tr>
+          <tr class="pro">
             <td>vw/vh</td>
             <td>viewport width / viewport height</td>
           </tr>
@@ -256,7 +256,7 @@
           <tr>
             <td>font-size</td>
             <td>
-              px, rem, em or %<br>
+              px, <span class="pro">rem, </span>em or %<br>
               small, smaller, large, larger
             </td>
           </tr>
@@ -274,7 +274,7 @@
         </table>
         <table>
           <caption>styling &amp; spacing</caption>
-          <tr>
+          <tr class="pro">
             <td>letter-spacing</td>
             <td>
               extra letter spacing, e.g. 2px
@@ -304,13 +304,13 @@
               uppercase | lowercase | capitalize
             </td>
           </tr>
-          <tr>
+          <tr class="pro">
             <td>white-space</td>
             <td>
               nowrap | pre
             </td>
           </tr>
-          <tr>
+          <tr class="pro">
             <td>word-spacing</td>
             <td>
               extra word spacing, e.g. 2px
@@ -325,16 +325,10 @@
               none | disc | square | decimal | ...
             </td>
           </tr>
-          <tr>
+          <tr class="pro">
             <td>list-style-image</td>
             <td>
               url(...)
-            </td>
-          </tr>
-          <tr>
-            <td>list-style-position</td>
-            <td>
-              inside | outside
             </td>
           </tr>
         </table>
@@ -401,7 +395,7 @@
               % | cover | contain<br>
             </td>
           </tr>
-          <tr>
+          <tr class="pro">
             <td>background: #fff url(img_tree.png) no-repeat right top;</td>
             <td>
               background-color: #fff;<br>
@@ -454,7 +448,7 @@
               border-width
             </td>
             <td>
-              px, rem, em or %
+              px, <span class="pro">rem, </span>em or %
             </td>
           </tr>
           <tr>
@@ -493,19 +487,19 @@
           </tr>
           <tr>
             <td>height</td>
-            <td>px, rem, em or %</td>
+            <td>px, <span class="pro">rem, </span>em or %</td>
           </tr>
           <tr>
             <td>max-width</td>
-            <td>px, rem, em or %</td>
+            <td>px, <span class="pro">rem, </span>em or %</td>
           </tr>
           <tr>
             <td>min-width</td>
-            <td>px, rem, em or %</td>
+            <td>px, <span class="pro">rem, </span>em or %</td>
           </tr>
           <tr>
             <td>width</td>
-            <td>px, rem, em, %, fit-content</td>
+            <td>px, <span class="pro">rem, </span>em, %, fit-content</td>
           </tr>
         </table>
         <table>
@@ -597,7 +591,7 @@ a {
           <tr>
             <td>@media()</td>
             <td>
-              <pre>@media (min-width: 600px) {
+              <pre>@media (width >= 600px) {
    .mobile-only {
       display: none;
    }
@@ -625,7 +619,7 @@ a {
             <td>hidden | visible</td>
           </tr>
           <tr>
-            <td>overflow, overflow-x, overflow-y</td>
+            <td>overflow<span class="pro">, overflow-x, overflow-y</span></td>
             <td>hidden | visible | scroll | auto</td>
           </tr>
         </table>
@@ -638,7 +632,7 @@ a {
           <tr>
             <td>top<br>right<br>bottom<br>left<br></td>
             <td>
-              px, rem, em or %
+              px, <span class="pro">rem, </span>em or %
             </td>
           </tr>
           <tr class="pro">
@@ -675,7 +669,7 @@ a {
           <tr>
             <td>gap, column-gap, row-gap</td>
             <td>
-              px, rem, em or %
+              px, <span class="pro">rem, </span>em or %
             </td>
           </tr>
           <tr>
@@ -684,7 +678,7 @@ a {
               create flex container
             </td>
           </tr>
-          <tr>
+          <tr class="pro">
             <td>flex-direction</td>
             <td>
               row | row-reverse | column | column-reverse
@@ -696,7 +690,7 @@ a {
               wrap | nowrap
             </td>
           </tr>
-          <tr>
+          <tr class="pro">
             <td>flex-flow: row nowrap</td>
             <td>
               flex-direction: row;<br>
