@@ -122,6 +122,11 @@
                <td>percentage van parent waarde</td>
             </tr>
             <tr>
+               <td><code>em</code></td>
+               <td>relatief tov. font</td>
+               <td>relatief t.o.v. element font-size; herschaalbare componenten</td>
+            </tr>
+            <tr>
                <td><code>fr</code></td>
                <td>fractie</td>
                <td>fractie van beschikbare ruimte (gebruikt in <a href="04_layout.html#grid">CSS Grid</a>)</td>
@@ -130,11 +135,6 @@
                <td><code>cm / mm / in / pt / pc / Q</code></td>
                <td>absoluut</td>
                <td>centimeter, millimeter, inch, punt, pica, kwart mm; enkel relevant in drukwerk</td>
-            </tr>
-            <tr class="pro">
-               <td><code>em</code></td>
-               <td>relatief tov. font</td>
-               <td>relatief t.o.v. element font-size; herschaalbare componenten</td>
             </tr>
             <tr class="pro">
                <td><code>rem</code></td>
@@ -264,18 +264,14 @@ blockquote {
          <br>&rarr; gebruik <code>%</code> in deze cursus dus enkel voor afmetingen!
       </p>
 
-      <div class="pro">
-
-         <h3><code>em</code></h3>
-         <p>In CSS heeft <mark>em</mark> twee betekenissen:</p>
-         <ul>
-            <li>gebruikt bij <strong>tekstgroottes</strong>: aantal keer <code>font-size</code> van de <strong>parent</strong></li>
-            <li>gebruikt bij <strong>al de rest</strong>: aantal keer <code>font-size</code> van het <strong>element</strong> zelf</li>
-         </ul>
-         <p>Het voordeel van <code>em</code> is dat je componenten kunt laten meeschalen met de tekstgrootte van de parent. Een voorbeeld waarin <code>px</code> en <code>em</code> vergeleken wordt, zie <a href="demos/02_design/em.html">demo</a>:</p>
-         <div class="codecompare top">
-            <div class="democontainer">
-               <pre class="prism-default language-html h-400 w-700" data-demo="demos/02_design/em.html"><code>&lt;body&gt;
+      <h3><code>em</code></h3>
+      <p>
+         De <mark>em</mark> eenheid betekent: <strong>aantal keer <code>font-size</code> van het element</strong> (of, indien niet expliciet ingesteld, de <code>font-size</code> overgeërfd van de parent). 
+         Het voordeel van <code>em</code> is dat je hele componenten kunt laten meeschalen met de tekstgrootte. Een voorbeeld waarin <code>px</code> en <code>em</code> vergeleken wordt, zie <a href="demos/02_design/em.html">demo</a>:
+      </p>
+      <div class="codecompare top">
+         <div class="democontainer">
+            <pre class="prism-default language-html h-400 w-700" data-demo="demos/02_design/em.html"><code>&lt;body&gt;
    &lt;p&gt;Gumbo beet greens corn soko endive gumbo gourd. Parsley ...&lt;/p&gt;
    &lt;div class="review-px"&gt;
       &lt;h3 class="review-title"&gt;Great hotel! (px versie)&lt;/h3&gt;
@@ -353,25 +349,20 @@ blockquote {
 }
 </code></pre>
 
-            </div>
-            <div>
-               <figure>
-                  <img src="img/02_design/units-em.gif" alt="" class="bordered shadow w-600">
-                  <figcaption>de <code>em</code> versie schaalt mee met body fontsize, de <code>px</code> versie niet</figcaption>
-               </figure>
-               <figure>
-                  <img src="img/02_design/units-em2.gif" alt="" class="bordered shadow w-600">
-                  <figcaption>de <code>em</code> versie schaalt ook mee met de review wrapper fontsize</figcaption>
-               </figure>
-            </div>
          </div>
-         <p>De <code>em</code> is dus ideaal voor schaalbare componenten, zoals widgets. Onderstaande <a href="demos/02_design/em/index.html">demo</a> illustreert nog eens hoe een widget die volledig in <code>em</code> gecodeerd is (inspecteer de code), kan schalen met de tekstgrootte van de widget container:</p>
-         <figure>
-            <img src="img/02_design/widgetdemo.gif" alt="" class="bordered shadow w-600">
-            <figcaption>widget schaalt dankzij <code>em</code> mee met de widget container fontsize</figcaption>
-         </figure>
-         <p>Zoals je ziet uit de voorbeelden, heeft <code>em</code> voordelen, maar is het redelijk complex om mee te werken.</p>
+         <div>
+            <figure>
+               <img src="img/02_design/units-em.gif" alt="" class="bordered shadow w-600">
+               <figcaption>de <code>em</code> versie schaalt mee met body fontsize, de <code>px</code> versie niet</figcaption>
+            </figure>
+         </div>
       </div>
+      <p>De <code>em</code> is dus ideaal voor schaalbare componenten, zoals widgets. Onderstaande <a href="demos/02_design/em/index.html">demo</a> illustreert nog eens hoe een widget die volledig in <code>em</code> gecodeerd is (inspecteer de code), kan schalen met de tekstgrootte van de widget container:</p>
+      <figure>
+         <img src="img/02_design/widgetdemo.gif" alt="" class="bordered shadow w-600">
+         <figcaption>widget schaalt dankzij <code>em</code> mee met de widget container fontsize</figcaption>
+      </figure>
+      <p>Zoals je ziet uit de voorbeelden, heeft <code>em</code> voordelen, maar is het redelijk complex om mee te werken.</p>
 
       <div class="pro">
 

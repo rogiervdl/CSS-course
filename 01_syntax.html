@@ -163,10 +163,9 @@ body {
       </p>
 
       <h3>media types</h3>
-      <p>Je kan stijlen definiëren voor <strong>verschillende media</strong>, bv. voor schermen of printers (maar er zijn nog veel andere mogelijkheden: scherm resoluties, oriëntatie, aspect ratio...)</p>
-      <p>Je kan dit doen op twee niveau's: CSS blokken of hele CSS bestanden</p>
-
-      <h4>CSS bestand: <code>&lt;link media="..."&gt;</code> attribuut</h4>
+      <p>
+         Je kan stijlen definiëren voor <strong>verschillende media</strong>, bv. voor schermen of printers (maar er zijn nog veel andere mogelijkheden: scherm resoluties, oriëntatie, aspect ratio...)
+         Een typische use case is aparte stijlen voor de printversie, waar b.v. ingewikkelde kleuren, achtergronden e.d. niet gewenst zijn:
       </p>
       <pre class="prism-default language-html notoolbar"><code>...
 &lt;head&gt;
@@ -177,22 +176,6 @@ body {
   ...
 &lt;/head&gt;
 ...</code></pre>
-      <h4>CSS blok: <code>@media</code> CSS blok</h4>
-
-      <pre class="prism-atom-dark notoolbar"><code>@media {
-   /* CSS-regels voor alle mediatypes */
-}
-
-@media print {
-   /* CSS-regels voor printers */
-}
-
-@media screen {
-   /* CSS-regels voor schermen */
-}</code></pre>
-      <p>
-         &rarr; media types zullen we in deze cursus enkel gebruiken in het hoofdstuk <a href="05_responsive.html">CSS responsive</a>
-      </p>
 
       <h3>CSS commentaar</h3>
       <p>Commentaar in CSS wordt tussen <code>/*</code> en <code>*/</code> geplaatst:</p>
