@@ -773,10 +773,12 @@ div:hover {
          </div>
       </div>
 
-      <h3>Gradiënten</h3>
-      <p>Gebruik een gradiënt als achtergrond met <span class="em"><code>linear-gradient</code></span>:</p>
-      <div class="codecompare top">
-         <pre class="prism-atom-dark"><code contenteditable data-target="#gradient-demo">p {
+      <div class="pro">
+
+         <h3>Gradiënten</h3>
+         <p>Gebruik een gradiënt als achtergrond met <span class="em"><code>linear-gradient</code></span>:</p>
+         <div class="codecompare top">
+            <pre class="prism-atom-dark"><code contenteditable data-target="#gradient-demo">p {
    background: linear-gradient(
       to bottom,
       #0ae 10%, /* lightblue */
@@ -785,8 +787,9 @@ div:hover {
       #6c0 70% /* green */
    )
 }</code></pre>
-         <div id="gradient-demo" class="target w-500">
-            <p style="line-height: 80px; text-align: center; font-size: 24px;">GRADIENT EXAMPLE</p>
+            <div id="gradient-demo" class="target w-500">
+               <p style="line-height: 80px; text-align: center; font-size: 24px;">GRADIENT EXAMPLE</p>
+            </div>
          </div>
       </div>
 
@@ -961,7 +964,7 @@ img:hover {
                   als blokken, op aparte regels
                </td>
             </tr>
-            <tr>
+            <tr class="pro">
                <td><code>inline-block</code></td>
                <td>
                   als blokken, maar dan naast elkaar
@@ -1060,41 +1063,6 @@ label {
             </form>
          </div>
       </div>
-
-      <h4>voorbeeld 3: menu horizontaal maken met <code>display: inline-block</code></h4>
-      <p>
-         Een al wat oudere manier om een horizontaal menu te maken is met <code>display: inline-block</code>:
-      </p>
-      <div class="codecompare">
-         <div class="democontainer">
-            <pre class="prism-default language-html" data-demo><code>&lt;ul&gt;
-   &lt;li&gt;&lt;a href=""&gt;Home&lt;/a&gt;&lt;/li&gt;
-   &lt;li&gt;&lt;a href=""&gt;Products&lt;/a&gt;&lt;/li&gt;
-   &lt;li&gt;&lt;a href=""&gt;Contact&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</code></pre>
-            <pre class="prism-atom-dark"><code contenteditable data-target="#display-form-demo">
-ul {
-   list-style: none;
-}
-li + li::before {
-   content: " | ";
-}
-li {
-   display: inline-block; /* verwijder dit en kijk wat gebeurt */
-}</code></pre>
-         </div>
-         <div id="display-form-demo" class="target w-500">
-            <ul>
-               <li><a href="">Home</a></li>
-               <li><a href="">Products</a></li>
-               <li><a href="">Contact</a></li>
-            </ul>
-         </div>
-
-      </div>
-      <p>
-         &rarr; in praktijk wordt tegenwoordig <a href="04_layout.html#flexbox">flexbox</a> gebruikt voor layouts als deze
-      </p>
 
 
    </main>

@@ -373,22 +373,17 @@ p {
    Son sure paid door with say them. Lorem
    ipsum dolor sit amet, consectetur
    adipiscing elit!
-&lt;/p&gt;
-&lt;button&gt;Verzenden&lt;/button&gt;</code></pre>
+&lt;/p&gt;</code></pre>
       <pre class="prism-atom-dark"><code>h2 {
    margin: 20px 20px;
 }
 p {
    margin: 10px 20px;
-}
-button {
-   margin: 30px 20px;
-}
-</code></pre>
+}</code></pre>
          </div>
          <figure>
             <img src="img/03_boxmodel/collapsing1.png" alt="" class="w-300">
-            <figcaption>verticale margins tussen <code>&lt;h2&gt;</code> en <code>&lt;p&gt;</code> collapsen wel, die tussen <code>&lt;p&gt;</code> en <code>&lt;button&gt;</code> niet</figcaption>
+            <figcaption>verticale margins tussen <code>&lt;h2&gt;</code> en <code>&lt;p&gt;</code> collapsen (overlappen)</figcaption>
          </figure>
       </div>
       <p>De voorwaarden voor margin collapsing zijn:</p>
@@ -398,7 +393,6 @@ button {
          <li>de margins <strong>moeten raken</strong>; er mag geen padding, border of andere content tussen liggen</li>
          <li>ze mogen <strong>niet gelayout zijn met float, flexbox of absolute positionering</strong> (zie volgend hoofdstuk)</li>
       </ol>
-      <p>De margins van de button en de paragraaf in ons voorbeeld collapsen bijvoorbeeld niet omdat een button een <em>inline-block</em> element is, geen blocklevel element (voorwaarde 1).</p>
       <p>Verticale margins van aangrenzende blocklevel elementen, schematisch voorgesteld:</p>
       <figure>
          <img src="img/03_boxmodel/verticalmargincollapsing.png" alt="" class="w-400">
@@ -406,10 +400,6 @@ button {
       <p>Margins van geneste elementen kunnen ook verticaal collapsen met die van hun parent:</p>
       <figure>
          <img src="img/03_boxmodel/nestedmargincollapsing.png" alt="" class="w-500">
-      </figure>
-      <p>Ook boven- en ondermargins van lege elementen collapsen:</p>
-      <figure>
-         <img src="img/03_boxmodel/emptymargincollapsing.png" alt="" class="w-400">
       </figure>
 
       <h2>Inline elementen</h2>
@@ -428,26 +418,14 @@ button {
    margin: 10px;
 }</code></pre>
       <p><img src="img/03_boxmodel/inline-margin.png" alt="" class="w-600 bordered"></p>
-      <p>Merk het verschil op bij inline-block elementen, waar verticale margins wel werken:</p>
-      <pre class="prism-atom-dark notoolbar"><code>a {
-   display: inline-block;
-   padding: 15px;
-}</code></pre>
-      <p><img src="img/03_boxmodel/inlineblock-margin.png" alt="" class="w-600 bordered"></p>
       <h3>Paddings</h3>
       <p>Inline elementen met padding <strong>overlappen onderaan</strong>, en <strong>onderlappen bovenaan</strong>:</p>
       <pre class="prism-atom-dark notoolbar"><code>a {
    padding: 15px;
 }</code></pre>
       <p><img src="img/03_boxmodel/inline-padding.png" alt="" class="w-600 bordered"></p>
-      <p>Merk het verschil op bij inline-block elementen:</p>
-      <pre class="prism-atom-dark notoolbar"><code>a {
-   display: inline-block;
-   padding: 15px;
-}</code></pre>
-      <p><img src="img/03_boxmodel/inlineblock-padding.png" alt="" class="w-600 bordered"></p>
       <h3>width/height</h3>
-      <p>Je kan <strong>geen afmetingen instellen op inline elementen</strong>; <code>width</code> en <code>height</code> worden genegeerd. Wil je toch afmetingen instellen, b.v. om van een link een knop te maken, dan moet je eerst de <code>display</code> veranderen naar <code>block</code> of <code>inline-block</code>:</p>
+      <p>Je kan <strong>geen afmetingen instellen op inline elementen</strong>; <code>width</code> en <code>height</code> worden genegeerd. Wil je toch afmetingen instellen, b.v. om van een link een knop te maken, dan moet je eerst de <code>display</code> veranderen naar <code>block</code>:</p>
       <div class="codecompare top">
          <div class="democontainer">
             <pre class="prism-default language-html" data-demo><code>&lt;div&gt;
@@ -460,7 +438,7 @@ button {
    border: 1px solid #ccc;
    border-radius: 3px;
    color: #333;
-   display: inline-block; /* zonder deze regel worden afmetingen genegeerd */
+   display: block; /* zonder deze regel worden afmetingen genegeerd */
    font-size: 12px;
    height: 40px; /* hoogte */
    line-height: 40px;
@@ -476,7 +454,7 @@ button {
             </div>
          </div>
       </div>
-      <p>Je kan natuurlijk ook paddings gebruiken in plaats van <code>width</code> en <code>height</code> om de button wat groter te maken, maar ook dan kan je beter de <code>display</code> veranderen naar <code>inline-block</code>, of anders krijg je overlappingen zoals <a href="#paddings">hierboven beschreven</a>.</p>
+      <p>Je kan natuurlijk ook paddings gebruiken in plaats van <code>width</code> en <code>height</code> om de button wat groter te maken, maar ook dan kan je beter de <code>display</code> veranderen naar <code>block</code>, of anders krijg je overlappingen zoals <a href="#paddings">hierboven beschreven</a>.</p>
       <div class="codecompare top">
          <div class="democontainer">
             <pre class="prism-default language-html" data-demo><code>&lt;div&gt;
@@ -489,7 +467,7 @@ button {
    border: 1px solid #ccc;
    border-radius: 3px;
    color: #333;
-   display: inline-block; /* zonder deze regel werken paddings niet goed */
+   display: block; /* zonder deze regel werken paddings niet goed */
    padding: 12px 25px;
    font-size: 12px;
    text-align: center;
@@ -503,7 +481,7 @@ button {
             </div>
          </div>
       </div>
-      <p>Moraal van het verhaal: als je <strong>afmetingen of verticale paddings of margins</strong> wil, verander de display best naar <strong><code>inline-block</code></strong> of <strong><code>block</code></strong></p>
+      <p>Moraal van het verhaal: als je <strong>afmetingen of verticale paddings of margins</strong> wil, verander de display best naar <strong><code>block</code></strong></p>
 
       <h2>De draad kwijt..?</h2>
       <div class="tips" data-caption="💡TIP">

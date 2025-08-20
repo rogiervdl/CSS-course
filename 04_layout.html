@@ -4,61 +4,61 @@
 <html lang="nl">
 
 <head>
-  <title>Layout | CSS cursus</title>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="common/styles.css">
-  <link rel="stylesheet" href="css/styles.css">
-  <link rel="stylesheet" href="css/04_layout.css">
-  <link rel="icon" href="favicon.ico" type="image/x-icon">
+   <title>Layout | CSS cursus</title>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="common/styles.css">
+   <link rel="stylesheet" href="css/styles.css">
+   <link rel="stylesheet" href="css/04_layout.css">
+   <link rel="icon" href="favicon.ico" type="image/x-icon">
 </head>
 
 <body class="prism language-css showpro">
-  <div id="mode">
-    <span>n00b</span>
-    <label class="switch">
-      <input type="checkbox" checked>
-      <span class="slider round"></span>
-    </label>
-    <span>pro</span>
-  </div>
-  <nav class="site__nav">
-    <a href="01_syntax.html" class="main__thumb" title="01. syntax">
-      <p class="thumb__title">01. syntax</p>
-      <img class="thumb__visual" src="img/01_syntax/icon.jpg" alt="">
-    </a>
-    <a href="02_design.html" class="main__thumb" title="02. tekst">
-      <p class="thumb__title">02. design</p>
-      <img class="thumb__visual" src="img/02_design/icon.jpg" alt="">
-    </a>
-    <a href="03_boxmodel.html" class="main__thumb" title="03. box model">
-      <p class="thumb__title">03. box model</p>
-      <img class="thumb__visual" src="img/03_boxmodel/icon.png" alt="">
-    </a>
-    <a href="04_layout.html" class="main__thumb active" title="04. layout">
-      <p class="thumb__title">04. layout</p>
-      <img class="thumb__visual" src="img/04_layout/icon.png" alt="">
-    </a>
-    <a href="05_responsive.html" class="main__thumb" title="05. responsive">
-      <p class="thumb__title">05. responsive</p>
-      <img class="thumb__visual" src="img/05_responsive/icon.jpg" alt="">
-    </a>
-    <a href="06_professionalisering.html" class="main__thumb" title="06. professionalisering">
-      <p class="thumb__title">06. professionalisering</p>
-      <img class="thumb__visual" src="img/06_professionalisering/icon.png" alt="">
-    </a>
-    <a href="07_samenvatting.html" class="main__thumb" title="07. samenvatting">
-      <p class="thumb__title">07. samenvatting</p>
-      <img class="thumb__visual" src="img/07_samenvatting/icon.png" alt="">
-    </a>
-  </nav>
-  <h1>04. CSS layout</h1>
-  <p class="othercourses"><small>Dit hoofdstuk is onderdeel van de cursus <a href="https://rogiervdl.github.io/CSS-course/">CSS</a>. Andere cursussen in dezelfde reeks: <a href="https://rogiervdl.github.io/HTML-course/">HTML</a>, <a href="https://rogiervdl.github.io/JS-course/">Javascript</a>, <a href="https://rogiervdl.github.io/CS-course/">C#</a>, <a href="https://rogiervdl.github.io/DEVENV-course/">Ontwikkelomgeving</a>.</small></p>
-  <div id="toc"></div>
-  <main>
+   <div id="mode">
+      <span>n00b</span>
+      <label class="switch">
+         <input type="checkbox" checked>
+         <span class="slider round"></span>
+      </label>
+      <span>pro</span>
+   </div>
+   <nav class="site__nav">
+      <a href="01_syntax.html" class="main__thumb" title="01. syntax">
+         <p class="thumb__title">01. syntax</p>
+         <img class="thumb__visual" src="img/01_syntax/icon.jpg" alt="">
+      </a>
+      <a href="02_design.html" class="main__thumb" title="02. tekst">
+         <p class="thumb__title">02. design</p>
+         <img class="thumb__visual" src="img/02_design/icon.jpg" alt="">
+      </a>
+      <a href="03_boxmodel.html" class="main__thumb" title="03. box model">
+         <p class="thumb__title">03. box model</p>
+         <img class="thumb__visual" src="img/03_boxmodel/icon.png" alt="">
+      </a>
+      <a href="04_layout.html" class="main__thumb active" title="04. layout">
+         <p class="thumb__title">04. layout</p>
+         <img class="thumb__visual" src="img/04_layout/icon.png" alt="">
+      </a>
+      <a href="05_responsive.html" class="main__thumb" title="05. responsive">
+         <p class="thumb__title">05. responsive</p>
+         <img class="thumb__visual" src="img/05_responsive/icon.jpg" alt="">
+      </a>
+      <a href="06_professionalisering.html" class="main__thumb" title="06. professionalisering">
+         <p class="thumb__title">06. professionalisering</p>
+         <img class="thumb__visual" src="img/06_professionalisering/icon.png" alt="">
+      </a>
+      <a href="07_samenvatting.html" class="main__thumb" title="07. samenvatting">
+         <p class="thumb__title">07. samenvatting</p>
+         <img class="thumb__visual" src="img/07_samenvatting/icon.png" alt="">
+      </a>
+   </nav>
+   <h1>04. CSS layout</h1>
+   <p class="othercourses"><small>Dit hoofdstuk is onderdeel van de cursus <a href="https://rogiervdl.github.io/CSS-course/">CSS</a>. Andere cursussen in dezelfde reeks: <a href="https://rogiervdl.github.io/HTML-course/">HTML</a>, <a href="https://rogiervdl.github.io/JS-course/">Javascript</a>, <a href="https://rogiervdl.github.io/CS-course/">C#</a>, <a href="https://rogiervdl.github.io/DEVENV-course/">Ontwikkelomgeving</a>.</small></p>
+   <div id="toc"></div>
+   <main>
 
-    <!-- VIDEO -->
-    <!-- <h2>Youtube totaaldemo</h2>
+      <!-- VIDEO -->
+      <!-- <h2>Youtube totaaldemo</h2>
     <p>Deze video's maken deel uit van een HTML + CSS totaaldemo uit de <a href="https://www.youtube.com/playlist?list=PLYfkd2Gq0ciEFboXQvzR_e__52tZ4OeXh">Basic Web Development playlist</a>, die begint met de video <a href="https://www.youtube.com/watch?v=kIJbahdQqcI&list=PLYfkd2Gq0ciEFboXQvzR_e__52tZ4OeXh&index=12">BWD 01. HTML - deel 8: praktijkdemo</a></p>
     <h3>Pagina layout</h3>
     <div class="flexcontainer youtubecontainer">
@@ -141,37 +141,37 @@
       </div>
     </div> -->
 
-    <h2>Layout technieken overzicht</h2>
-    <p>
-      CSS heeft een lange weg afgelegd; pas met het verdwijnen van oude browsers konden <a href="https://caniuse.com/flexbox">Flexbox</a> en <a href="https://caniuse.com/grid">Grid</a> gebruikt worden, de eerste echte layout technieken in CSS.
-    </p>
-    <p>
-      Je kan layouttechnieken onderverdelen in ruwweg 5 groepen:
-    </p>
-    <ul>
-      <li><span class="em">flexbox</span>: bedoeld voor allerhande <strong>horizontale en verticale layouts</strong></li>
-      <li><span class="em">alignering</span>: verzamelnaam voor reeks losse technieken voor <strong>horizontale en verticale alignering</strong></li>
-      <li><span class="em">floating</span>: gebruikt om content links of rechts <strong>rond een blok doen vloeien</strong> (bv. foto) </li>
-      <li><span class="em">positionering</span> (absoluut, relatief, fixed, sticky): positionering in lagen op basis van coördinaten; vooral geschikt voor <strong>Javascript games</strong> en enkele uitzonderlijke gevallen</li>
-      <li><span class="em">grid</span>: iets complexere methode voor <strong>grid-achtige layout</strong> in rijen en kolommen</li>
-    </ul>
-    <p>
-      &rarr; je kan layouts vaak met verschillende technieken oplossen, maar <span class="notice">Flexbox is je standaardtechniek</span>
-      <br>&rarr; bestudeer zeker nog eerst grondig de <a href="02_design.html#display">display property</a> in vorig deel; veel kleine layoutproblemen kan je daar al mee oplossen
-    </p>
+      <h2>Layout technieken overzicht</h2>
+      <p>
+         CSS heeft een lange weg afgelegd; pas met het verdwijnen van oude browsers konden <a href="https://caniuse.com/flexbox">Flexbox</a> en <a href="https://caniuse.com/grid">Grid</a> gebruikt worden, de eerste echte layout technieken in CSS.
+      </p>
+      <p>
+         Je kan layouttechnieken onderverdelen in ruwweg 5 groepen:
+      </p>
+      <ul>
+         <li><span class="em">flexbox</span>: bedoeld voor allerhande <strong>horizontale en verticale layouts</strong></li>
+         <li><span class="em">alignering</span>: verzamelnaam voor reeks losse technieken voor <strong>horizontale en verticale alignering</strong></li>
+         <li><span class="em">floating</span>: gebruikt om content links of rechts <strong>rond een blok doen vloeien</strong> (bv. foto) </li>
+         <li><span class="em">positionering</span> (absoluut, relatief, fixed, sticky): positionering in lagen op basis van coördinaten; vooral geschikt voor <strong>Javascript games</strong> en enkele uitzonderlijke gevallen</li>
+         <li><span class="em">grid</span>: iets complexere methode voor <strong>grid-achtige layout</strong> in rijen en kolommen</li>
+      </ul>
+      <p>
+         &rarr; je kan layouts vaak met verschillende technieken oplossen, maar <span class="notice">Flexbox is je standaardtechniek</span>
+         <br>&rarr; bestudeer zeker nog eerst grondig de <a href="02_design.html#display">display property</a> in vorig deel; veel kleine layoutproblemen kan je daar al mee oplossen
+      </p>
 
-    <h2>Alignering</h2>
-    <h3>Content horizontaal centreren</h3>
-    <p>
-      Om tekst, afbeeldingen enz... horizontaal te aligneren, gebruik <code><span class="em">text-align</span></code> op de parent:
-    </p>
-    <div class="codecompare">
-      <div class="democontainer">
-        <pre class="prism-default language-html w-500" data-demo><code>&lt;div id="parent"&gt;
+      <h2>Alignering</h2>
+      <h3>Content horizontaal centreren</h3>
+      <p>
+         Om tekst, afbeeldingen enz... horizontaal te aligneren, gebruik <code><span class="em">text-align</span></code> op de parent:
+      </p>
+      <div class="codecompare">
+         <div class="democontainer">
+            <pre class="prism-default language-html w-500" data-demo><code>&lt;div id="parent"&gt;
     &lt;img src="img/04_layout/spongebob.webp" alt=""&gt;
     &lt;p&gt;parmesan cheese slices when the cheese comes out everybody's happy cow cheese and wine cheese and biscuits. Roquefort when the cheese comes out...&lt;/p&gt;
 &lt;/div&gt;</code></pre>
-        <pre class="prism-atom-dark h-300"><code contenteditable data-target="#alignment-demo1">/* alignering content */
+            <pre class="prism-atom-dark h-300"><code contenteditable data-target="#alignment-demo1">/* alignering content */
 .container {
   text-align: center; /* probeer ook left, right */
 }
@@ -191,29 +191,29 @@ p {
    padding: 5px;
 }
 </code></pre>
+         </div>
+         <div id="alignment-demo1" class="w-500">
+            <div class="demowrapper">
+               <div class="container">
+                  <img src="img/04_layout/spongebob.webp" class="visual" alt="">
+                  <p>
+                     parmesan cheese slices when the cheese comes out everybody's happy cow cheese and wine cheese and biscuits. Roquefort when the cheese comes out...
+                  </p>
+               </div>
+            </div>
+         </div>
       </div>
-      <div id="alignment-demo1" class="w-500">
-        <div class="demowrapper">
-          <div class="container">
-            <img src="img/04_layout/spongebob.webp" class="visual" alt="">
-            <p>
-              parmesan cheese slices when the cheese comes out everybody's happy cow cheese and wine cheese and biscuits. Roquefort when the cheese comes out...
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
 
-    <h3>Block horizontaal centreren</h3>
-    <p>
-      Om blocklevel content (<code>&lt;div&gt;</code>, <code>&lt;p&gt;</code>...) horizontaal te aligneren, gebruik je de waarde <code>auto</code> voor <code><span class="em">margin-left</span></code> en/of <code><span class="em">margin-right</span></code> op het element zelf:
-    </p>
-    <div class="codecompare">
-      <div class="democontainer">
-        <pre class="prism-default language-html w-500" data-demo><code>&lt;div id="parent"&gt;
+      <h3>Block horizontaal centreren</h3>
+      <p>
+         Om blocklevel content (<code>&lt;div&gt;</code>, <code>&lt;p&gt;</code>...) horizontaal te aligneren, gebruik je de waarde <code>auto</code> voor <code><span class="em">margin-left</span></code> en/of <code><span class="em">margin-right</span></code> op het element zelf:
+      </p>
+      <div class="codecompare">
+         <div class="democontainer">
+            <pre class="prism-default language-html w-500" data-demo><code>&lt;div id="parent"&gt;
    &lt;p&gt;parmesan cheese slices when the cheese comes out everybody's happy cow cheese and wine cheese and biscuits. Roquefort when the cheese comes out...&lt;/p&gt;
 &lt;/div&gt;</code></pre>
-        <pre class="prism-atom-dark h-300"><code contenteditable data-target="#alignment-demo2">/* horizontale alignering blok */
+            <pre class="prism-atom-dark h-300"><code contenteditable data-target="#alignment-demo2">/* horizontale alignering blok */
 p {
    margin-left: auto;
    margin-right: auto; /* probeer ook 0px */
@@ -231,26 +231,28 @@ p {
    border: 1px solid #ccc;
    padding: 5px;
 }</code></pre>
+         </div>
+         <div id="alignment-demo2" class="w-500">
+            <div class="demowrapper">
+               <div class="container">
+                  <p>
+                     parmesan cheese slices when the cheese comes out everybody's happy cow cheese and wine cheese and biscuits. Roquefort when the cheese comes out...
+                  </p>
+               </div>
+            </div>
+         </div>
       </div>
-      <div id="alignment-demo2" class="w-500">
-        <div class="demowrapper">
-          <div class="container">
-            <p>
-              parmesan cheese slices when the cheese comes out everybody's happy cow cheese and wine cheese and biscuits. Roquefort when the cheese comes out...
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
 
-    <h3>Regel verticaal centreren</h3>
-    <p>Een oud trukje om één regel verticaal te centreren is <code><span class="em">height</span></code> en <code><span class="em">line-height</span></code> dezelfde waarde geven:</p>
-    <div class="codecompare">
-      <div class="democontainer">
-        <pre class="prism-default language-html w-500" data-demo><code>&lt;a href=""&gt;button tekst &lt;/a&gt;</code></pre>
-        <pre class="prism-atom-dark h-300"><code contenteditable data-target="#alignment-demo3">/* button layout */
+      <div class="pro">
+
+         <h3>Regel verticaal centreren</h3>
+         <p>Een oud trukje om één regel verticaal te centreren is <code><span class="em">height</span></code> en <code><span class="em">line-height</span></code> dezelfde waarde geven:</p>
+         <div class="codecompare">
+            <div class="democontainer">
+               <pre class="prism-default language-html w-500" data-demo><code>&lt;a href=""&gt;button tekst &lt;/a&gt;</code></pre>
+               <pre class="prism-atom-dark h-300"><code contenteditable data-target="#alignment-demo3">/* button layout */
 .button {
-   display: inline-block; /* anders kan je geen hoogte instellen */
+   display: block; /* anders kan je geen afmetingen instellen */
    height: 60px; /* zelfde waarde */
    line-height: 60px; /* zelfde waarde */
    text-align: center; /* centreer horizontaal */
@@ -263,24 +265,24 @@ p {
    background-color: beige;
    border: 2px solid #ccc;
    cursor: pointer;
-   display: inline-block;
 }</code></pre>
+            </div>
+            <div id="alignment-demo3" class="w-500">
+               <div class="demowrapper">
+                  <a href="" class="button">button tekst</a>
+               </div>
+            </div>
+         </div>
       </div>
-      <div id="alignment-demo3" class="w-500">
-        <div class="demowrapper">
-          <a href="" class="button">button tekst</a>
-        </div>
-      </div>
-    </div>
 
-    <h3>Blok verticaal centreren</h3>
-    <p>Als de hoogte van de container flexibel is en er maar één blok is, kan je verticaal centreren met <code><span class="em">padding</span></code> op de parent:</p>
-    <div class="codecompare">
-      <div class="democontainer">
-        <pre class="prism-default language-html w-500" data-demo><code>&lt;div id="parent"&gt;
+      <h3>Blok verticaal centreren</h3>
+      <p>Als de hoogte van de container flexibel is en er maar één blok is, kan je verticaal centreren met <code><span class="em">padding</span></code> op de parent:</p>
+      <div class="codecompare">
+         <div class="democontainer">
+            <pre class="prism-default language-html w-500" data-demo><code>&lt;div id="parent"&gt;
    &lt;p&gt;parmesan cheese slices when the cheese comes out everybody's happy cow cheese and wine cheese and biscuits. Roquefort when the cheese comes out...&lt;/p&gt;
 &lt;/div&gt;</code></pre>
-        <pre class="prism-atom-dark h-300"><code contenteditable data-target="#alignment-demo4">/* verticale alignering blok */
+            <pre class="prism-atom-dark h-300"><code contenteditable data-target="#alignment-demo4">/* verticale alignering blok */
 .container {
    padding: 50px 20px; /* verticaal horizontaal */
 }
@@ -294,25 +296,25 @@ p {
    border: 1px solid #ccc;
    padding: 5px;
 }</code></pre>
+         </div>
+         <div id="alignment-demo4" class="w-500">
+            <div class="demowrapper">
+               <div class="container">
+                  <p>
+                     parmesan cheese slices when the cheese comes out everybody's happy cow cheese and wine cheese and biscuits. Roquefort when the cheese comes out...
+                  </p>
+               </div>
+            </div>
+         </div>
       </div>
-      <div id="alignment-demo4" class="w-500">
-        <div class="demowrapper">
-          <div class="container">
-            <p>
-              parmesan cheese slices when the cheese comes out everybody's happy cow cheese and wine cheese and biscuits. Roquefort when the cheese comes out...
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <p>Je ziet, de mogelijkheden zijn beperkt: verticaal centreren van meerdere blokken of wanneer de container een vaste hoogte heeft, is enkel mogelijk met <span class="em">flexbox</span>.</p>
+      <p>Je ziet, de mogelijkheden zijn beperkt: verticaal centreren van meerdere blokken of wanneer de container een vaste hoogte heeft, is enkel mogelijk met <span class="em">flexbox</span>.</p>
 
-    <h2>Floating</h2>
-    <h3>Standaard weergave</h3>
-    <p>Blocklevel elementen als <code>&lt;h3&gt;</code> en <code>&lt;p&gt;</code> starten standaard op een nieuwe regel:</p>
-    <div class="codecompare">
-      <div class="democontainer">
-        <pre class="prism-default language-html w-500" data-demo><code>&lt;div id="wrapper"&gt;
+      <h2>Floating</h2>
+      <h3>Standaard weergave</h3>
+      <p>Blocklevel elementen als <code>&lt;h3&gt;</code> en <code>&lt;p&gt;</code> starten standaard op een nieuwe regel:</p>
+      <div class="codecompare">
+         <div class="democontainer">
+            <pre class="prism-default language-html w-500" data-demo><code>&lt;div id="wrapper"&gt;
   &lt;section&gt;
     &lt;img src="img/04_layout/portrait.jpg" alt="foto"&gt;
     &lt;h3&gt;Procured&lt;/h3&gt;
@@ -323,7 +325,7 @@ p {
     &lt;p&gt;Her are its honoured drawings nor. Pretty see mutual thrown all not edward ten. Particular an boisterous up he reasonably frequently. Several any had enjoyed shewing studied two. Up intention remainder sportsmen behaviour ye happiness. Few again any alone style added abode ask.&lt;/p&gt;
   &lt;/section&gt;
 &lt;/div&gt;</code></pre>
-        <pre class="prism-atom-dark h-300"><code contenteditable data-target="#floating-demo1">img {
+            <pre class="prism-atom-dark h-300"><code contenteditable data-target="#floating-demo1">img {
    width: 70px;
 }
 section {
@@ -339,30 +341,30 @@ h3 {
    font-family: 'Roboto', sans-serif;
    max-width: 400px;
 }</code></pre>
+         </div>
+         <div id="floating-demo1" class="w-500">
+            <div class="demowrapper">
+               <section>
+                  <img src="img/04_layout/portrait.jpg" alt="foto">
+                  <h3>Procured</h3>
+                  <p>
+                     Civility not absolute put continue. Overcame breeding or my concerns removing desirous so absolute. My melancholy unpleasing imprudence considered in advantages so impression. Almost unable put piqued talked likely houses her met.
+                  </p>
+               </section>
+               <section>
+                  <h3>Finished</h3>
+                  <p>
+                     Her are its honoured drawings nor. Pretty see mutual thrown all not edward ten. Particular an boisterous up he reasonably frequently. Several any had enjoyed shewing studied two. Up intention remainder sportsmen behaviour ye happiness. Few again any alone style added abode ask.
+                  </p>
+               </section>
+            </div>
+         </div>
       </div>
-      <div id="floating-demo1" class="w-500">
-        <div class="demowrapper">
-          <section>
-            <img src="img/04_layout/portrait.jpg" alt="foto">
-            <h3>Procured</h3>
-            <p>
-              Civility not absolute put continue. Overcame breeding or my concerns removing desirous so absolute. My melancholy unpleasing imprudence considered in advantages so impression. Almost unable put piqued talked likely houses her met.
-            </p>
-          </section>
-          <section>
-            <h3>Finished</h3>
-            <p>
-              Her are its honoured drawings nor. Pretty see mutual thrown all not edward ten. Particular an boisterous up he reasonably frequently. Several any had enjoyed shewing studied two. Up intention remainder sportsmen behaviour ye happiness. Few again any alone style added abode ask.
-            </p>
-          </section>
-        </div>
-      </div>
-    </div>
-    <h3>Floaten</h3>
-    <p>Met <span class="em"><code>float: left;</code></span> kan je blocklevel elementen rond een afbeelding laten vloeien:</p>
-    <div class="codecompare">
-      <div class="democontainer">
-        <pre class="prism-default language-html w-500" data-demo><code>&lt;div id="wrapper"&gt;
+      <h3>Floaten</h3>
+      <p>Met <span class="em"><code>float: left;</code></span> kan je blocklevel elementen rond een afbeelding laten vloeien:</p>
+      <div class="codecompare">
+         <div class="democontainer">
+            <pre class="prism-default language-html w-500" data-demo><code>&lt;div id="wrapper"&gt;
   &lt;section&gt;
     &lt;img src="img/04_layout/portrait.jpg" alt="foto"&gt;
     &lt;h3&gt;Procured&lt;/h3&gt;
@@ -373,7 +375,7 @@ h3 {
     &lt;p&gt;Her are its honoured drawings nor. Pretty see mutual thrown all not edward ten. Particular an boisterous up he reasonably frequently. Several any had enjoyed shewing studied two. Up intention remainder sportsmen behaviour ye happiness. Few again any alone style added abode ask.&lt;/p&gt;
   &lt;/section&gt;
 &lt;/div&gt;</code></pre>
-        <pre class="prism-atom-dark h-300"><code contenteditable data-target="#floating-demo2">img {
+            <pre class="prism-atom-dark h-300"><code contenteditable data-target="#floating-demo2">img {
    float: left; /* probeer ook float: right; */
    margin-right: 10px;
    width: 70px;
@@ -391,29 +393,29 @@ h3 {
    max-width: 400px;
    font-family: 'Roboto', sans-serif;
 }</code></pre>
+         </div>
+         <div id="floating-demo2" class="w-500">
+            <div class="demowrapper">
+               <section>
+                  <img src="img/04_layout/portrait.jpg" alt="foto">
+                  <h3>Procured</h3>
+                  <p>
+                     Civility not absolute put continue. Overcame breeding or my concerns removing desirous so absolute. My melancholy unpleasing imprudence considered in advantages so impression. Almost unable put piqued talked likely houses her met.
+                  </p>
+               </section>
+               <section>
+                  <h3>Finished</h3>
+                  <p>
+                     Her are its honoured drawings nor. Pretty see mutual thrown all not edward ten. Particular an boisterous up he reasonably frequently. Several any had enjoyed shewing studied two. Up intention remainder sportsmen behaviour ye happiness. Few again any alone style added abode ask.
+                  </p>
+               </section>
+            </div>
+         </div>
       </div>
-      <div id="floating-demo2" class="w-500">
-        <div class="demowrapper">
-          <section>
-            <img src="img/04_layout/portrait.jpg" alt="foto">
-            <h3>Procured</h3>
-            <p>
-              Civility not absolute put continue. Overcame breeding or my concerns removing desirous so absolute. My melancholy unpleasing imprudence considered in advantages so impression. Almost unable put piqued talked likely houses her met.
-            </p>
-          </section>
-          <section>
-            <h3>Finished</h3>
-            <p>
-              Her are its honoured drawings nor. Pretty see mutual thrown all not edward ten. Particular an boisterous up he reasonably frequently. Several any had enjoyed shewing studied two. Up intention remainder sportsmen behaviour ye happiness. Few again any alone style added abode ask.
-            </p>
-          </section>
-        </div>
-      </div>
-    </div>
-    <p>Dit werkt ook met andere block-elementen als pullquotes:</p>
-    <div class="codecompare">
-      <div class="democontainer">
-        <pre class="prism-default language-html w-500" data-demo><code>&lt;section&gt;
+      <p>Dit werkt ook met andere block-elementen als pullquotes:</p>
+      <div class="codecompare">
+         <div class="democontainer">
+            <pre class="prism-default language-html w-500" data-demo><code>&lt;section&gt;
   &lt;h3&gt;Procured&lt;/h3&gt;
   &lt;p&gt; Civility not absolute put continue. Overcame breeding or my concerns removing desirous so absolute. My melancholy unpleasing imprudence considered in advantages so impression. My melancholy unpleasing imprudence considered in advantages so impression.&lt;/p&gt;
   &lt;aside&gt;
@@ -422,7 +424,7 @@ h3 {
   &lt;p&gt;Her are its honoured drawings nor. Pretty see mutual thrown all not edward ten. Particular an boisterous up he reasonably frequently. Several any had enjoyed shewing studied two. Up intention remainder sportsmen behaviour ye happiness. Few again any alone style added abode ask. Nay projecting unpleasing boisterous eat discovered solicitude. Own six moments produce elderly pasture far arrival. Hold our year they ten upon. Gentleman contained so intention sweetness in on resolving.&lt;/p&gt;
 &lt;/section&gt;
 </code></pre>
-        <pre class="prism-atom-dark h-300"><code contenteditable data-target="#floating-demo3">/* float pull quote right */
+            <pre class="prism-atom-dark h-300"><code contenteditable data-target="#floating-demo3">/* float pull quote right */
 aside {
    float: right;
    margin: 10px 0 10px 10px;
@@ -447,31 +449,31 @@ section {
    border: 1px dotted;
    padding: 5px
 }</code></pre>
+         </div>
+         <div id="floating-demo3" class="w-500">
+            <div class="demowrapper">
+               <section>
+                  <h3>Procured</h3>
+                  <p>
+                     Civility not absolute put continue. Overcame breeding or my concerns removing desirous so absolute. My melancholy unpleasing imprudence considered in advantages so impression. My melancholy unpleasing imprudence considered in advantages so impression.
+                  </p>
+                  <aside>
+                     spoke as as other again ye; Hard on to roof he drew
+                  </aside>
+                  <p>
+                     Her are its honoured drawings nor. Pretty see mutual thrown all not edward ten. Particular an boisterous up he reasonably frequently. Several any had enjoyed shewing studied two. Up intention remainder sportsmen behaviour ye happiness. Few again any alone style added abode ask. Nay projecting unpleasing boisterous eat discovered solicitude. Own six moments produce elderly pasture far arrival. Hold our year they ten upon. Gentleman contained so intention sweetness in on resolving.
+                  </p>
+               </section>
+            </div>
+         </div>
       </div>
-      <div id="floating-demo3" class="w-500">
-        <div class="demowrapper">
-          <section>
-            <h3>Procured</h3>
-            <p>
-              Civility not absolute put continue. Overcame breeding or my concerns removing desirous so absolute. My melancholy unpleasing imprudence considered in advantages so impression. My melancholy unpleasing imprudence considered in advantages so impression.
-            </p>
-            <aside>
-              spoke as as other again ye; Hard on to roof he drew
-            </aside>
-            <p>
-              Her are its honoured drawings nor. Pretty see mutual thrown all not edward ten. Particular an boisterous up he reasonably frequently. Several any had enjoyed shewing studied two. Up intention remainder sportsmen behaviour ye happiness. Few again any alone style added abode ask. Nay projecting unpleasing boisterous eat discovered solicitude. Own six moments produce elderly pasture far arrival. Hold our year they ten upon. Gentleman contained so intention sweetness in on resolving.
-            </p>
-          </section>
-        </div>
-      </div>
-    </div>
-    <div class="pro">
+      <div class="pro">
 
-      <h3>Parent bleeding</h3>
-      <p>Als een gefloat element niet meer in de parent past, zal het eruit lekken en de content van het volgende blok wegdrukken:</p>
-      <div class="codecompare">
-        <div class="democontainer">
-          <pre class="prism-default language-html w-500" data-demo><code>&lt;div id="wrapper"&gt;
+         <h3>Parent bleeding</h3>
+         <p>Als een gefloat element niet meer in de parent past, zal het eruit lekken en de content van het volgende blok wegdrukken:</p>
+         <div class="codecompare">
+            <div class="democontainer">
+               <pre class="prism-default language-html w-500" data-demo><code>&lt;div id="wrapper"&gt;
   &lt;section&gt;
     &lt;img src="img/04_layout/portrait.jpg" alt="foto"&gt;
     &lt;h3&gt;Procured&lt;/h3&gt;
@@ -482,7 +484,7 @@ section {
     &lt;p&gt;Her are its honoured drawings nor. Pretty see mutual thrown all not edward ten. Particular an boisterous up he reasonably frequently. Several any had enjoyed shewing studied two. Up intention remainder sportsmen behaviour ye happiness. Few again any alone style added abode ask.&lt;/p&gt;
   &lt;/section&gt;
 &lt;/div&gt;</code></pre>
-          <pre class="prism-atom-dark h-300"><code contenteditable data-target="#floating-demo4">/* float image links */
+               <pre class="prism-atom-dark h-300"><code contenteditable data-target="#floating-demo4">/* float image links */
 img {
   float: left;
   margin-right: 10px;
@@ -503,31 +505,31 @@ h3, p {
   max-width: 500px;
   font-family: 'Roboto', sans-serif;
 }</code></pre>
-        </div>
-        <div id="floating-demo4" class="w-500">
-          <div class="demowrapper">
-            <section>
-              <img src="img/04_layout/portrait.jpg" alt="foto">
-              <h3>Procured</h3>
-              <p>
-                Civility not absolute put continue. Overcame breeding or my concerns removing desirous so absolute.
-              </p>
-            </section>
-            <section>
-              <h3>Finished</h3>
-              <p>
-                Her are its honoured drawings nor. Pretty see mutual thrown all not edward ten. Particular an boisterous up he reasonably frequently. Several any had enjoyed shewing studied two. Up intention remainder sportsmen behaviour ye happiness. Few again any alone style added abode ask.
-              </p>
-            </section>
-          </div>
-        </div>
-      </div>
-      <p>Dit lijkt vreemd, maar eigenlijk is het niet onlogisch voor waar floating voor bedoeld is: tekst laten vloeien rond afbeeldingen. Het alternatief is een grote leegte tussen de twee paragrafen.</p>
-      <h3>Parent herstellen</h3>
-      <p>Als je niet wil, kan je de parent herstellen met <span class="em"><code>overflow: hidden;</code></span>:</p>
-      <div class="codecompare">
-        <div class="democontainer">
-          <pre class="prism-default language-html w-500" data-demo><code>&lt;div id="wrapper"&gt;
+            </div>
+            <div id="floating-demo4" class="w-500">
+               <div class="demowrapper">
+                  <section>
+                     <img src="img/04_layout/portrait.jpg" alt="foto">
+                     <h3>Procured</h3>
+                     <p>
+                        Civility not absolute put continue. Overcame breeding or my concerns removing desirous so absolute.
+                     </p>
+                  </section>
+                  <section>
+                     <h3>Finished</h3>
+                     <p>
+                        Her are its honoured drawings nor. Pretty see mutual thrown all not edward ten. Particular an boisterous up he reasonably frequently. Several any had enjoyed shewing studied two. Up intention remainder sportsmen behaviour ye happiness. Few again any alone style added abode ask.
+                     </p>
+                  </section>
+               </div>
+            </div>
+         </div>
+         <p>Dit lijkt vreemd, maar eigenlijk is het niet onlogisch voor waar floating voor bedoeld is: tekst laten vloeien rond afbeeldingen. Het alternatief is een grote leegte tussen de twee paragrafen.</p>
+         <h3>Parent herstellen</h3>
+         <p>Als je niet wil, kan je de parent herstellen met <span class="em"><code>overflow: hidden;</code></span>:</p>
+         <div class="codecompare">
+            <div class="democontainer">
+               <pre class="prism-default language-html w-500" data-demo><code>&lt;div id="wrapper"&gt;
   &lt;section&gt;
     &lt;img src="img/04_layout/portrait.jpg" alt="foto"&gt;
     &lt;h3&gt;Procured&lt;/h3&gt;
@@ -538,7 +540,7 @@ h3, p {
     &lt;p&gt;Her are its honoured drawings nor. Pretty see mutual thrown all not edward ten. Particular an boisterous up he reasonably frequently. Several any had enjoyed shewing studied two. Up intention remainder sportsmen behaviour ye happiness. Few again any alone style added abode ask.&lt;/p&gt;
   &lt;/section&gt;
 &lt;/div&gt;</code></pre>
-          <pre class="prism-atom-dark h-300"><code contenteditable data-target="#floating-demo5">/* vermijd parent bleeding */
+               <pre class="prism-atom-dark h-300"><code contenteditable data-target="#floating-demo5">/* vermijd parent bleeding */
 section {
    overflow: hidden;
 }
@@ -564,30 +566,30 @@ h3, p {
   max-width: 500px;
   font-family: 'Roboto', sans-serif;
 }</code></pre>
-        </div>
-        <div id="floating-demo5" class="w-500">
-          <div class="demowrapper">
-            <section>
-              <img src="img/04_layout/portrait.jpg" alt="foto">
-              <h3>Procured</h3>
-              <p>
-                Civility not absolute put continue. Overcame breeding or my concerns removing desirous so absolute.
-              </p>
-            </section>
-            <section>
-              <h3>Finished</h3>
-              <p>
-                Her are its honoured drawings nor. Pretty see mutual thrown all not edward ten. Particular an boisterous up he reasonably frequently. Several any had enjoyed shewing studied two. Up intention remainder sportsmen behaviour ye happiness. Few again any alone style added abode ask.
-              </p>
-            </section>
-          </div>
-        </div>
-      </div>
-      <h3>Clear</h3>
-      <p>Je kan vermijden dat bepaalde elementen naast een gefloat element komen met <span class="em"><code>clear</code></span> (waarden <code>left</code>, <code>right</code> of <code>both</code>), bv. de tweede titel, die nu onder de afbeelding blijft:</p>
-      <div class="codecompare">
-        <div class="democontainer">
-          <pre class="prism-default language-html w-500" data-demo><code>&lt;div id="wrapper"&gt;
+            </div>
+            <div id="floating-demo5" class="w-500">
+               <div class="demowrapper">
+                  <section>
+                     <img src="img/04_layout/portrait.jpg" alt="foto">
+                     <h3>Procured</h3>
+                     <p>
+                        Civility not absolute put continue. Overcame breeding or my concerns removing desirous so absolute.
+                     </p>
+                  </section>
+                  <section>
+                     <h3>Finished</h3>
+                     <p>
+                        Her are its honoured drawings nor. Pretty see mutual thrown all not edward ten. Particular an boisterous up he reasonably frequently. Several any had enjoyed shewing studied two. Up intention remainder sportsmen behaviour ye happiness. Few again any alone style added abode ask.
+                     </p>
+                  </section>
+               </div>
+            </div>
+         </div>
+         <h3>Clear</h3>
+         <p>Je kan vermijden dat bepaalde elementen naast een gefloat element komen met <span class="em"><code>clear</code></span> (waarden <code>left</code>, <code>right</code> of <code>both</code>), bv. de tweede titel, die nu onder de afbeelding blijft:</p>
+         <div class="codecompare">
+            <div class="democontainer">
+               <pre class="prism-default language-html w-500" data-demo><code>&lt;div id="wrapper"&gt;
   &lt;section id="sect1"&gt;
     &lt;img src="img/04_layout/portrait.jpg" alt="foto"&gt;
     &lt;h3&gt;Procured&lt;/h3&gt;
@@ -598,7 +600,7 @@ h3, p {
     &lt;p&gt;Her are its honoured drawings nor. Pretty see mutual thrown all not edward ten. Particular an boisterous up he reasonably frequently. Several any had enjoyed shewing studied two. Up intention remainder sportsmen behaviour ye happiness. Few again any alone style added abode ask.&lt;/p&gt;
   &lt;/section&gt;
 &lt;/div&gt;</code></pre>
-          <pre class="prism-atom-dark h-300"><code contenteditable data-target="#floating-demo6">/* clear tweede titel */
+               <pre class="prism-atom-dark h-300"><code contenteditable data-target="#floating-demo6">/* clear tweede titel */
 #sect2 h3 {
   clear: left;
 }
@@ -624,148 +626,148 @@ h3, p {
   max-width: 500px;
   font-family: 'Roboto', sans-serif;
 }</code></pre>
-        </div>
-        <div id="floating-demo6" class="w-500">
-          <div class="demowrapper">
-            <section id="sect1">
-              <img src="img/04_layout/portrait.jpg" alt="foto">
-              <h3>Procured</h3>
-              <p>Civility not absolute put continue. Overcame breeding or my concerns removing desirous so absolute.</p>
-            </section>
-            <section id="sect2">
-              <h3>Finished</h3>
-              <p>Her are its honoured drawings nor. Pretty see mutual thrown all not edward ten. Particular an boisterous up he reasonably frequently. Several any had enjoyed shewing studied two. Up intention remainder sportsmen behaviour ye happiness. Few again any alone style added abode ask. </p>
-            </section>
-          </div>
-        </div>
+            </div>
+            <div id="floating-demo6" class="w-500">
+               <div class="demowrapper">
+                  <section id="sect1">
+                     <img src="img/04_layout/portrait.jpg" alt="foto">
+                     <h3>Procured</h3>
+                     <p>Civility not absolute put continue. Overcame breeding or my concerns removing desirous so absolute.</p>
+                  </section>
+                  <section id="sect2">
+                     <h3>Finished</h3>
+                     <p>Her are its honoured drawings nor. Pretty see mutual thrown all not edward ten. Particular an boisterous up he reasonably frequently. Several any had enjoyed shewing studied two. Up intention remainder sportsmen behaviour ye happiness. Few again any alone style added abode ask. </p>
+                  </section>
+               </div>
+            </div>
+         </div>
       </div>
-    </div>
 
-    <h3>Wanneer gebruiken</h3>
-    <p>Vóór Flexbox algemeen ondersteund werd, werd float misbruikt voor alle layout (en soms kom je het nog tegen), maar vandaag beperk je het gebruik best waarvoor het bedoeld is. Gebruik floating:</p>
-    <ul class="right">
-      <li>om tekst rond afbeeldingen te laten vloeien</li>
-      <li>voor pull quotes</li>
-    </ul>
-    <p>Gebruik floating niet:</p>
-    <ul class="wrong">
-      <li>voor alle andere layout als pagina layout, menus enz...</li>
-    </ul>
-    <div class="tips" data-caption="☝🏼REGEL">
-      <p>De vuistregel is: <strong>als het anders kan</strong> (b.v. met flexbox), <strong>gebruik dan geen floating</strong></p>
-    </div>
+      <h3>Wanneer gebruiken</h3>
+      <p>Vóór Flexbox algemeen ondersteund werd, werd float misbruikt voor alle layout (en soms kom je het nog tegen), maar vandaag beperk je het gebruik best waarvoor het bedoeld is. Gebruik floating:</p>
+      <ul class="right">
+         <li>om tekst rond afbeeldingen te laten vloeien</li>
+         <li>voor pull quotes</li>
+      </ul>
+      <p>Gebruik floating niet:</p>
+      <ul class="wrong">
+         <li>voor alle andere layout als pagina layout, menus enz...</li>
+      </ul>
+      <div class="tips" data-caption="☝🏼REGEL">
+         <p>De vuistregel is: <strong>als het anders kan</strong> (b.v. met flexbox), <strong>gebruik dan geen floating</strong></p>
+      </div>
 
-    <h2>Flexbox</h2>
-    <p>
-      Met <mark>flexbox</mark> kan je een reeks children, de <span class="em">flex items</span>, schikken in een parent, de <span class="em">flex container</span>.
-      Het meest complete overzicht op het net vind je op <a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/">https://css-tricks.com/snippets/css/a-guide-to-flexbox/</a>.
-    </p>
-    <h3>Flexbox properties overzicht</h3>
-    <p>De CSS properties voor de flex container:</p>
-    <table class="light">
-      <thead>
-        <tr>
-          <th scope="col">eigenschap</th>
-          <th scope="col">waarden</th>
-          <th scope="col">betekenis</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><code>display</code></td>
-          <td><code>flex<span class="pro">|inline-flex</span></code></td>
-          <td>layouten met flex<span class="pro"> als blockevel of inline element</span></td>
-        </tr>
-        <tr>
-          <td><code>flex-direction</code></td>
-          <td><code>row|column<span class="pro">|row-reverse|column-reverse</span></code></td>
-          <td>stapelen in rijen of kolommen, al dan niet in omgekeerde richting</td>
-        </tr>
-        <tr>
-          <td><code>flex-wrap</code></td>
-          <td><code>wrap|nowrap</code></td>
-          <td>items op één lijn of meerdere lijnen</td>
-        </tr>
-        <tr class="pro">
-          <td><code>flex-flow</code></td>
-          <td colspan="2">combinatie van <code>flex-direction</code> en <code>flex-wrap</code>, b.v. <code>flex-flow: row nowrap;</code></td>
-        </tr>
-        <tr class="pro">
-          <td><code>align-content</code></td>
-          <td><code>flex-start|center|space-between|flex-end|stretch|...</code></td>
-          <td>schikking van de flex lijnen in de flex container</td>
-        </tr>
-        <tr>
-          <td><code>align-items</code></td>
-          <td><code>flex-start|center|space-between|flex-end|stretch|...</code></td>
-          <td>schikking van items dwars op de lijnen</td>
-        </tr>
-        <tr>
-          <td><code>justify-content</code></td>
-          <td><code>flex-start|center|space-between|flex-end|stretch|...</code></td>
-          <td>schikking van items langs de lijnen</td>
-        </tr>
+      <h2>Flexbox</h2>
+      <p>
+         Met <mark>flexbox</mark> kan je een reeks children, de <span class="em">flex items</span>, schikken in een parent, de <span class="em">flex container</span>.
+         Het meest complete overzicht op het net vind je op <a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/">https://css-tricks.com/snippets/css/a-guide-to-flexbox/</a>.
+      </p>
+      <h3>Flexbox properties overzicht</h3>
+      <p>De CSS properties voor de flex container:</p>
+      <table class="light">
+         <thead>
+            <tr>
+               <th scope="col">eigenschap</th>
+               <th scope="col">waarden</th>
+               <th scope="col">betekenis</th>
+            </tr>
+         </thead>
+         <tbody>
+            <tr>
+               <td><code>display</code></td>
+               <td><code>flex<span class="pro">|inline-flex</span></code></td>
+               <td>layouten met flex<span class="pro"> als blockevel of inline element</span></td>
+            </tr>
+            <tr>
+               <td><code>flex-direction</code></td>
+               <td><code>row|column<span class="pro">|row-reverse|column-reverse</span></code></td>
+               <td>stapelen in rijen of kolommen, al dan niet in omgekeerde richting</td>
+            </tr>
+            <tr>
+               <td><code>flex-wrap</code></td>
+               <td><code>wrap|nowrap</code></td>
+               <td>items op één lijn of meerdere lijnen</td>
+            </tr>
+            <tr class="pro">
+               <td><code>flex-flow</code></td>
+               <td colspan="2">combinatie van <code>flex-direction</code> en <code>flex-wrap</code>, b.v. <code>flex-flow: row nowrap;</code></td>
+            </tr>
+            <tr class="pro">
+               <td><code>align-content</code></td>
+               <td><code>flex-start|center|space-between|flex-end|stretch|...</code></td>
+               <td>schikking van de flex lijnen in de flex container</td>
+            </tr>
+            <tr>
+               <td><code>align-items</code></td>
+               <td><code>flex-start|center|space-between|flex-end|stretch|...</code></td>
+               <td>schikking van items dwars op de lijnen</td>
+            </tr>
+            <tr>
+               <td><code>justify-content</code></td>
+               <td><code>flex-start|center|space-between|flex-end|stretch|...</code></td>
+               <td>schikking van items langs de lijnen</td>
+            </tr>
 
-        <tr>
-          <td><code>gap</code>, <code>column-gap</code>, <code>row-gap</code></td>
-          <td><code>px|%|...</code></td>
-          <td>ruimte tussen items/lijnen</td>
-        </tr>
-      </tbody>
-    </table>
-    <p>De CSS properties voor het flex item:</p>
-    <table class="light">
-      <thead>
-        <tr>
-          <th scope="col">eigenschap</th>
-          <th scope="col">waarden</th>
-          <th scope="col">betekenis</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><code>align-self</code></td>
-          <td><code>flex-start|center|space-between|flex-end|stretch|...</code></td>
-          <td>overschrijft <code>align-items</code> property voor dit item</td>
-        </tr>
-        <tr class="pro">
-          <td><code>order</code></td>
-          <td>geheel getal</td>
-          <td>volgorde van het item in de lijn</td>
-        </tr>
-        <tr class="pro">
-          <td><code>flex-grow</code></td>
-          <td>geheel getal</td>
-          <td>hoeveel het item groeit (indien nodig) proportioneel t.o.v. andere items</td>
-        </tr>
-        <tr class="pro">
-          <td><code>flex-shrink</code></td>
-          <td>geheel getal</td>
-          <td>hoeveel het item krimpt (indien nodig) proportioneel t.o.v. andere items</td>
-        </tr>
-        <tr class="pro">
-          <td><code>flex-basis</code></td>
-          <td><code>px|%|...</code></td>
-          <td>initiële afmeting van het item</td>
-        </tr>
-        <tr>
-          <td><code>flex</code></td>
-          <td><code>getal getal px|%|...</code></td>
-          <td colspan="2">
-            <span class="noob">hoe snel een item groeit, krimpt en intiële afmeting</span>
-            <span class="pro">combinatie van <code>flex-grow</code>, <code>flex-shrink</code> en <code>flex-basis</code></span>, b.v. <code>flex: 1 1 200px;</code>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-    <h3>Flex container</h3>
-    <h4>startcode</h4>
-    <p>
-      We starten van een container met 10 items van afwisselende afmetingen. De standaard weergave, zonder layout:
-    </p>
-    <div class="codecompare">
-      <div class="democontainer">
-        <pre class="prism-default language-html w-500 h-200"><code>&lt;div class="flex-container"&gt;
+            <tr>
+               <td><code>gap</code>, <code>column-gap</code>, <code>row-gap</code></td>
+               <td><code>px|%|...</code></td>
+               <td>ruimte tussen items/lijnen</td>
+            </tr>
+         </tbody>
+      </table>
+      <p>De CSS properties voor het flex item:</p>
+      <table class="light">
+         <thead>
+            <tr>
+               <th scope="col">eigenschap</th>
+               <th scope="col">waarden</th>
+               <th scope="col">betekenis</th>
+            </tr>
+         </thead>
+         <tbody>
+            <tr>
+               <td><code>align-self</code></td>
+               <td><code>flex-start|center|space-between|flex-end|stretch|...</code></td>
+               <td>overschrijft <code>align-items</code> property voor dit item</td>
+            </tr>
+            <tr class="pro">
+               <td><code>order</code></td>
+               <td>geheel getal</td>
+               <td>volgorde van het item in de lijn</td>
+            </tr>
+            <tr class="pro">
+               <td><code>flex-grow</code></td>
+               <td>geheel getal</td>
+               <td>hoeveel het item groeit (indien nodig) proportioneel t.o.v. andere items</td>
+            </tr>
+            <tr class="pro">
+               <td><code>flex-shrink</code></td>
+               <td>geheel getal</td>
+               <td>hoeveel het item krimpt (indien nodig) proportioneel t.o.v. andere items</td>
+            </tr>
+            <tr class="pro">
+               <td><code>flex-basis</code></td>
+               <td><code>px|%|...</code></td>
+               <td>initiële afmeting van het item</td>
+            </tr>
+            <tr>
+               <td><code>flex</code></td>
+               <td><code>getal getal px|%|...</code></td>
+               <td colspan="2">
+                  <span class="noob">hoe snel een item groeit, krimpt en intiële afmeting</span>
+                  <span class="pro">combinatie van <code>flex-grow</code>, <code>flex-shrink</code> en <code>flex-basis</code></span>, b.v. <code>flex: 1 1 200px;</code>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+      <h3>Flex container</h3>
+      <h4>startcode</h4>
+      <p>
+         We starten van een container met 10 items van afwisselende afmetingen. De standaard weergave, zonder layout:
+      </p>
+      <div class="codecompare">
+         <div class="democontainer">
+            <pre class="prism-default language-html w-500 h-200"><code>&lt;div class="flex-container"&gt;
    &lt;div class="flex-item"&gt;01&lt;/div&gt;
    &lt;div class="flex-item"&gt;02&lt;/div&gt;
    &lt;div class="flex-item"&gt;03&lt;/div&gt;
@@ -778,7 +780,7 @@ h3, p {
    &lt;div class="flex-item"&gt;10&lt;/div&gt;
 &lt;/div&gt;
 </code></pre>
-        <pre class="prism-atom-dark w-500 h-200"><code contenteditable data-target="#flex-containerdemo1">.flex-item {
+            <pre class="prism-atom-dark w-500 h-200"><code contenteditable data-target="#flex-containerdemo1">.flex-item {
    background-color: #ddd;
    border: 2px solid black;
    padding: 5px;
@@ -803,26 +805,26 @@ h3, p {
    max-width: 500px;
    padding: 20px;
 }</code></pre>
+         </div>
+         <div id="flex-containerdemo1" class="w-500">
+            <div class="flex-container">
+               <div class="flex-item">01</div>
+               <div class="flex-item">02</div>
+               <div class="flex-item">03</div>
+               <div class="flex-item">04</div>
+               <div class="flex-item">05</div>
+               <div class="flex-item">06</div>
+               <div class="flex-item">07</div>
+               <div class="flex-item">08</div>
+               <div class="flex-item">09</div>
+               <div class="flex-item">10</div>
+            </div>
+         </div>
       </div>
-      <div id="flex-containerdemo1" class="w-500">
-        <div class="flex-container">
-          <div class="flex-item">01</div>
-          <div class="flex-item">02</div>
-          <div class="flex-item">03</div>
-          <div class="flex-item">04</div>
-          <div class="flex-item">05</div>
-          <div class="flex-item">06</div>
-          <div class="flex-item">07</div>
-          <div class="flex-item">08</div>
-          <div class="flex-item">09</div>
-          <div class="flex-item">10</div>
-        </div>
-      </div>
-    </div>
-    <h4>display: flex</h4>
-    <p>Met <code>display: flex</code> maak je van de container een <mark>flex container</mark>. Ze komen <strong>standaard op één rij, samengeperst</strong> indien nodig:</p>
-    <div class="codecompare">
-      <pre class="prism-atom-dark w-500" style="height: 335px; overflow-y: auto;"><code contenteditable data-target="#flex-containerdemo2">.flex-container {
+      <h4>display: flex</h4>
+      <p>Met <code>display: flex</code> maak je van de container een <mark>flex container</mark>. Ze komen <strong>standaard op één rij, samengeperst</strong> indien nodig:</p>
+      <div class="codecompare">
+         <pre class="prism-atom-dark w-500" style="height: 335px; overflow-y: auto;"><code contenteditable data-target="#flex-containerdemo2">.flex-container {
    display: flex; /* maak flex container */
 }
 
@@ -853,26 +855,26 @@ h3, p {
    max-width: 500px;
    padding: 20px;
 }</code></pre>
-      <div id="flex-containerdemo2" class="w-500">
-        <div class="flex-container">
-          <div class="flex-item">01</div>
-          <div class="flex-item">02</div>
-          <div class="flex-item">03</div>
-          <div class="flex-item">04</div>
-          <div class="flex-item">05</div>
-          <div class="flex-item">06</div>
-          <div class="flex-item">07</div>
-          <div class="flex-item">08</div>
-          <div class="flex-item">09</div>
-          <div class="flex-item">10</div>
-        </div>
+         <div id="flex-containerdemo2" class="w-500">
+            <div class="flex-container">
+               <div class="flex-item">01</div>
+               <div class="flex-item">02</div>
+               <div class="flex-item">03</div>
+               <div class="flex-item">04</div>
+               <div class="flex-item">05</div>
+               <div class="flex-item">06</div>
+               <div class="flex-item">07</div>
+               <div class="flex-item">08</div>
+               <div class="flex-item">09</div>
+               <div class="flex-item">10</div>
+            </div>
+         </div>
       </div>
-    </div>
 
-    <h4>gap</h4>
-    <p>Geef ruimte tussen kolommen/rijen met <span class="em"><code>gap</code></span>:</p>
-    <div class="codecompare">
-      <pre class="prism-atom-dark w-500" style="height: 335px; overflow-y: auto;"><code contenteditable data-target="#flex-containerdemo3">.flex-container {
+      <h4>gap</h4>
+      <p>Geef ruimte tussen kolommen/rijen met <span class="em"><code>gap</code></span>:</p>
+      <div class="codecompare">
+         <pre class="prism-atom-dark w-500" style="height: 335px; overflow-y: auto;"><code contenteditable data-target="#flex-containerdemo3">.flex-container {
    display: flex;
    gap: 10px; /* ruimte tussen kolommen en rijen */
 }
@@ -904,25 +906,25 @@ h3, p {
    max-width: 500px;
    padding: 20px;
 }</code></pre>
-      <div id="flex-containerdemo3" class="w-500">
-        <div class="flex-container">
-          <div class="flex-item">01</div>
-          <div class="flex-item">02</div>
-          <div class="flex-item">03</div>
-          <div class="flex-item">04</div>
-          <div class="flex-item">05</div>
-          <div class="flex-item">06</div>
-          <div class="flex-item">07</div>
-          <div class="flex-item">08</div>
-          <div class="flex-item">09</div>
-        </div>
+         <div id="flex-containerdemo3" class="w-500">
+            <div class="flex-container">
+               <div class="flex-item">01</div>
+               <div class="flex-item">02</div>
+               <div class="flex-item">03</div>
+               <div class="flex-item">04</div>
+               <div class="flex-item">05</div>
+               <div class="flex-item">06</div>
+               <div class="flex-item">07</div>
+               <div class="flex-item">08</div>
+               <div class="flex-item">09</div>
+            </div>
+         </div>
       </div>
-    </div>
 
-    <h4>flex-wrap</h4>
-    <p>Sta meerdere lijnen toe met <span class="em"><code>flex-wrap</code></span> (en dan hoeven ze niet meer samengeperst te worden):</p>
-    <div class="codecompare">
-      <pre class="prism-atom-dark w-500" style="height: 335px; overflow-y: auto;"><code contenteditable data-target="#flex-containerdemo4">.flex-container {
+      <h4>flex-wrap</h4>
+      <p>Sta meerdere lijnen toe met <span class="em"><code>flex-wrap</code></span> (en dan hoeven ze niet meer samengeperst te worden):</p>
+      <div class="codecompare">
+         <pre class="prism-atom-dark w-500" style="height: 335px; overflow-y: auto;"><code contenteditable data-target="#flex-containerdemo4">.flex-container {
    display: flex;
    flex-wrap: wrap; /* items op meerdere lijnen */
    gap: 10px;
@@ -955,25 +957,25 @@ h3, p {
    max-width: 500px;
    padding: 20px;
 }</code></pre>
-      <div id="flex-containerdemo4" class="w-500">
-        <div class="flex-container">
-          <div class="flex-item">01</div>
-          <div class="flex-item">02</div>
-          <div class="flex-item">03</div>
-          <div class="flex-item">04</div>
-          <div class="flex-item">05</div>
-          <div class="flex-item">06</div>
-          <div class="flex-item">07</div>
-          <div class="flex-item">08</div>
-          <div class="flex-item">09</div>
-        </div>
+         <div id="flex-containerdemo4" class="w-500">
+            <div class="flex-container">
+               <div class="flex-item">01</div>
+               <div class="flex-item">02</div>
+               <div class="flex-item">03</div>
+               <div class="flex-item">04</div>
+               <div class="flex-item">05</div>
+               <div class="flex-item">06</div>
+               <div class="flex-item">07</div>
+               <div class="flex-item">08</div>
+               <div class="flex-item">09</div>
+            </div>
+         </div>
       </div>
-    </div>
-    <div class="pro">
-      <h4>align-content</h4>
-      <p>Zet de volledige content aan het begin, het midden, einde, uitgespreid e.d. met <span class="em"><code>align-content</code></span>:</p>
-      <div class="codecompare">
-        <pre class="prism-atom-dark w-500" style="height: 335px; overflow-y: auto;"><code contenteditable data-target="#flex-containerdemo5">.flex-container {
+      <div class="pro">
+         <h4>align-content</h4>
+         <p>Zet de volledige content aan het begin, het midden, einde, uitgespreid e.d. met <span class="em"><code>align-content</code></span>:</p>
+         <div class="codecompare">
+            <pre class="prism-atom-dark w-500" style="height: 335px; overflow-y: auto;"><code contenteditable data-target="#flex-containerdemo5">.flex-container {
    align-content: center; /* probeer ook flex-start, flex-end... */
    display: flex;
    flex-wrap: wrap;
@@ -1007,26 +1009,26 @@ h3, p {
    max-width: 500px;
    padding: 20px;
 }</code></pre>
-        <div id="flex-containerdemo5" class="w-500">
-          <div class="flex-container">
-            <div class="flex-item">01</div>
-            <div class="flex-item">02</div>
-            <div class="flex-item">03</div>
-            <div class="flex-item">04</div>
-            <div class="flex-item">05</div>
-            <div class="flex-item">06</div>
-            <div class="flex-item">07</div>
-            <div class="flex-item">08</div>
-            <div class="flex-item">09</div>
-          </div>
-        </div>
+            <div id="flex-containerdemo5" class="w-500">
+               <div class="flex-container">
+                  <div class="flex-item">01</div>
+                  <div class="flex-item">02</div>
+                  <div class="flex-item">03</div>
+                  <div class="flex-item">04</div>
+                  <div class="flex-item">05</div>
+                  <div class="flex-item">06</div>
+                  <div class="flex-item">07</div>
+                  <div class="flex-item">08</div>
+                  <div class="flex-item">09</div>
+               </div>
+            </div>
+         </div>
       </div>
-    </div>
 
-    <h4>align-items</h4>
-    <p>Aligneer items op hun lijnen met <span class="em"><code>align-items</code></span>:</p>
-    <div class="codecompare">
-      <pre class="prism-atom-dark w-500" style="height: 335px; overflow-y: auto;"><code contenteditable data-target="#flex-containerdemo6">.flex-container {
+      <h4>align-items</h4>
+      <p>Aligneer items op hun lijnen met <span class="em"><code>align-items</code></span>:</p>
+      <div class="codecompare">
+         <pre class="prism-atom-dark w-500" style="height: 335px; overflow-y: auto;"><code contenteditable data-target="#flex-containerdemo6">.flex-container {
    align-content: center;
    align-items: center; /* probeer ook flex-start, flex-end... */
    display: flex;
@@ -1061,25 +1063,25 @@ h3, p {
    max-width: 500px;
    padding: 20px;
 }</code></pre>
-      <div id="flex-containerdemo6" class="w-500">
-        <div class="flex-container">
-          <div class="flex-item">01</div>
-          <div class="flex-item">02</div>
-          <div class="flex-item">03</div>
-          <div class="flex-item">04</div>
-          <div class="flex-item">05</div>
-          <div class="flex-item">06</div>
-          <div class="flex-item">07</div>
-          <div class="flex-item">08</div>
-          <div class="flex-item">09</div>
-        </div>
+         <div id="flex-containerdemo6" class="w-500">
+            <div class="flex-container">
+               <div class="flex-item">01</div>
+               <div class="flex-item">02</div>
+               <div class="flex-item">03</div>
+               <div class="flex-item">04</div>
+               <div class="flex-item">05</div>
+               <div class="flex-item">06</div>
+               <div class="flex-item">07</div>
+               <div class="flex-item">08</div>
+               <div class="flex-item">09</div>
+            </div>
+         </div>
       </div>
-    </div>
 
-    <h4>justify-content</h4>
-    <p>Bepaal de spreiding langs de lijnen: aan het begin, in het midden, op het einde, zo ver mogelijk uit elkaar... met <span class="em"><code>justify-content</code></span>:</p>
-    <div class="codecompare">
-      <pre class="prism-atom-dark w-500" style="height: 335px; overflow-y: auto;"><code contenteditable data-target="#flex-containerdemo7">.flex-container {
+      <h4>justify-content</h4>
+      <p>Bepaal de spreiding langs de lijnen: aan het begin, in het midden, op het einde, zo ver mogelijk uit elkaar... met <span class="em"><code>justify-content</code></span>:</p>
+      <div class="codecompare">
+         <pre class="prism-atom-dark w-500" style="height: 335px; overflow-y: auto;"><code contenteditable data-target="#flex-containerdemo7">.flex-container {
    align-content: center;
    align-items: center;
    display: flex;
@@ -1115,25 +1117,25 @@ h3, p {
    max-width: 500px;
    padding: 20px;
 }</code></pre>
-      <div id="flex-containerdemo7" class="w-500">
-        <div class="flex-container">
-          <div class="flex-item">01</div>
-          <div class="flex-item">02</div>
-          <div class="flex-item">03</div>
-          <div class="flex-item">04</div>
-          <div class="flex-item">05</div>
-          <div class="flex-item">06</div>
-          <div class="flex-item">07</div>
-          <div class="flex-item">08</div>
-          <div class="flex-item">09</div>
-        </div>
+         <div id="flex-containerdemo7" class="w-500">
+            <div class="flex-container">
+               <div class="flex-item">01</div>
+               <div class="flex-item">02</div>
+               <div class="flex-item">03</div>
+               <div class="flex-item">04</div>
+               <div class="flex-item">05</div>
+               <div class="flex-item">06</div>
+               <div class="flex-item">07</div>
+               <div class="flex-item">08</div>
+               <div class="flex-item">09</div>
+            </div>
+         </div>
       </div>
-    </div>
 
-    <h4>flex-direction</h4>
-    <p>Zet items in kolommen i.p.v. rijen met <span class="em"><code>flex-direction</code></span>:</p>
-    <div class="codecompare">
-      <pre class="prism-atom-dark" style="height: 350px; overflow-y: auto;"><code contenteditable data-target="#flex-containerdemo8">.flex-container {
+      <h4>flex-direction</h4>
+      <p>Zet items in kolommen i.p.v. rijen met <span class="em"><code>flex-direction</code></span>:</p>
+      <div class="codecompare">
+         <pre class="prism-atom-dark" style="height: 350px; overflow-y: auto;"><code contenteditable data-target="#flex-containerdemo8">.flex-container {
    align-content: center;
    align-items: center;
    display: flex;
@@ -1169,26 +1171,26 @@ h3, p {
    max-width: 500px;
    padding: 20px;
 }</code></pre>
-      <div id="flex-containerdemo8" class="w-500">
-        <div class="flex-container">
-          <div class="flex-item">01</div>
-          <div class="flex-item">02</div>
-          <div class="flex-item">03</div>
-          <div class="flex-item">04</div>
-          <div class="flex-item">05</div>
-          <div class="flex-item">06</div>
-          <div class="flex-item">07</div>
-          <div class="flex-item">08</div>
-          <div class="flex-item">09</div>
-        </div>
+         <div id="flex-containerdemo8" class="w-500">
+            <div class="flex-container">
+               <div class="flex-item">01</div>
+               <div class="flex-item">02</div>
+               <div class="flex-item">03</div>
+               <div class="flex-item">04</div>
+               <div class="flex-item">05</div>
+               <div class="flex-item">06</div>
+               <div class="flex-item">07</div>
+               <div class="flex-item">08</div>
+               <div class="flex-item">09</div>
+            </div>
+         </div>
       </div>
-    </div>
 
-    <h3>Flex item</h3>
-    <h4>startcode</h4>
-    <p>We starten van een flex container, met items op één rij, bovenaan de container geplaatst met <span class="em"><code>align-items: flex-start</code></span>:</p>
-    <div class="codecompare">
-      <pre class="prism-atom-dark" style="height: 200px; overflow-y: auto;"><code contenteditable data-target="#flex-itemdemo1">.flex-container {
+      <h3>Flex item</h3>
+      <h4>startcode</h4>
+      <p>We starten van een flex container, met items op één rij, bovenaan de container geplaatst met <span class="em"><code>align-items: flex-start</code></span>:</p>
+      <div class="codecompare">
+         <pre class="prism-atom-dark" style="height: 200px; overflow-y: auto;"><code contenteditable data-target="#flex-itemdemo1">.flex-container {
    align-items: flex-start;
    display: flex;
    gap: 10px;
@@ -1209,26 +1211,26 @@ h3, p {
    max-width: 500px;
    padding: 20px;
 }</code></pre>
-      <div id="flex-itemdemo1" class="w-500">
-        <div class="flex-container">
-          <div class="flex-item">01</div>
-          <div class="flex-item">02</div>
-          <div class="flex-item">03</div>
-          <div class="flex-item">04</div>
-          <div class="flex-item">05</div>
-        </div>
+         <div id="flex-itemdemo1" class="w-500">
+            <div class="flex-container">
+               <div class="flex-item">01</div>
+               <div class="flex-item">02</div>
+               <div class="flex-item">03</div>
+               <div class="flex-item">04</div>
+               <div class="flex-item">05</div>
+            </div>
+         </div>
       </div>
-    </div>
-    <div class="pro">
-      <h4>order</h4>
-      <p>Met <span class="em"><code>order</code></span> kan je de volgorde bepalen:</p>
-      <ul>
-        <li>eerst komen items met negatieve <code>order</code></li>
-        <li>dan komen items zonder <code>order</code></li>
-        <li>tenslotte komen items met positieve <code>order</code>, hoogste als laatste</li>
-      </ul>
-      <div class="codecompare">
-        <pre class="prism-atom-dark" style="height: 200px; overflow-y: auto;"><code contenteditable data-target="#flex-itemdemo2">.flex-item:nth-child(2) {
+      <div class="pro">
+         <h4>order</h4>
+         <p>Met <span class="em"><code>order</code></span> kan je de volgorde bepalen:</p>
+         <ul>
+            <li>eerst komen items met negatieve <code>order</code></li>
+            <li>dan komen items zonder <code>order</code></li>
+            <li>tenslotte komen items met positieve <code>order</code>, hoogste als laatste</li>
+         </ul>
+         <div class="codecompare">
+            <pre class="prism-atom-dark" style="height: 200px; overflow-y: auto;"><code contenteditable data-target="#flex-itemdemo2">.flex-item:nth-child(2) {
    order: 2; /* zet tweede item als laatste */
 }
 .flex-item:nth-child(3) {
@@ -1259,21 +1261,21 @@ h3, p {
    max-width: 500px;
    padding: 20px;
 }</code></pre>
-        <div id="flex-itemdemo2" class="w-500">
-          <div class="flex-container">
-            <div class="flex-item">01</div>
-            <div class="flex-item">02</div>
-            <div class="flex-item">03</div>
-            <div class="flex-item">04</div>
-            <div class="flex-item">05</div>
-          </div>
-        </div>
+            <div id="flex-itemdemo2" class="w-500">
+               <div class="flex-container">
+                  <div class="flex-item">01</div>
+                  <div class="flex-item">02</div>
+                  <div class="flex-item">03</div>
+                  <div class="flex-item">04</div>
+                  <div class="flex-item">05</div>
+               </div>
+            </div>
+         </div>
       </div>
-    </div>
-    <h4>align-self</h4>
-    <p>Verander de positie ingesteld door <code>align-items</code> voor individuele items met <span class="em"><code>align-self</code></span>:</p>
-    <div class="codecompare">
-      <pre class="prism-atom-dark" style="height: 200px; overflow-y: auto;"><code contenteditable data-target="#flex-itemdemo3">.flex-item:last-child {
+      <h4>align-self</h4>
+      <p>Verander de positie ingesteld door <code>align-items</code> voor individuele items met <span class="em"><code>align-self</code></span>:</p>
+      <div class="codecompare">
+         <pre class="prism-atom-dark" style="height: 200px; overflow-y: auto;"><code contenteditable data-target="#flex-itemdemo3">.flex-item:last-child {
    align-self: flex-end; /* overschrijft align-items */
 }
 
@@ -1298,93 +1300,93 @@ h3, p {
    max-width: 500px;
    padding: 20px;
 }</code></pre>
-      <div id="flex-itemdemo3" class="w-500">
-        <div class="flex-container">
-          <div class="flex-item">01</div>
-          <div class="flex-item">02</div>
-          <div class="flex-item">03</div>
-          <div class="flex-item">04</div>
-          <div class="flex-item">05</div>
-        </div>
+         <div id="flex-itemdemo3" class="w-500">
+            <div class="flex-container">
+               <div class="flex-item">01</div>
+               <div class="flex-item">02</div>
+               <div class="flex-item">03</div>
+               <div class="flex-item">04</div>
+               <div class="flex-item">05</div>
+            </div>
+         </div>
       </div>
-    </div>
-    <h4>flex<span class="pro"> (flex-grow, flex-shrink en flex-basis)</span></h4>
-    <p>
-      Deze property <span class="pro">combineert <code>flex-grow</code>, <code>flex-shrink</code> en <code>flex-basis</code>. Het</span> is vooral van belang bij kolommen, en zegt wat hun initiële breedte is, en hoe snel ze groeien en krimpen naargelang de breedte van de container.
-    </p>
-    <p>De meest voorkomende waarden (te onthouden!):</p>
-    <table class="light">
-      <thead>
-        <tr>
-          <th scope="col">voorbeeld</th>
-          <th scope="col">uitleg</th>
-          <th scope="col">betekenis</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><code>flex: 0 0 200px;</code></td>
-          <td>groeit of krimpt niet, initieel 200px breed</td>
-          <td>vaste afmeting van 200px</td>
-        </tr>
-        <tr>
-          <td><code>flex: 1 1 0;</code></td>
-          <td>groeit en krimpt normaal, initieel 0px breed</td>
-          <td>flexibel, neemt beschikbare ruimte in</td>
-        </tr>
-        <tr>
-          <td><code>flex: 2 2 0;</code></td>
-          <td>groeit en krimpt 2x zo snel, initieel 0px breed</td>
-          <td>flexibel, neemt beschikbare ruimte in</td>
-        </tr>
-        <tr>
-          <td><code>flex: 0 1 auto;</code></td>
-          <td>groeit niet, kan krimpen, initieel natuurlijke breedte<br><span class="smaller">(bepaald door content of, indien ingesteld, <code>width</code> property)</span></td>
-          <td>niet groter dan de content</td>
-        </tr>
-      </tbody>
-    </table>
-    <p>Nog andere voorbeelden:</p>
-    <table class="light">
-      <thead>
-        <tr>
-          <th scope="col">voorbeeld</th>
-          <th scope="col">uitleg</th>
-          <th scope="col">betekenis</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><code>flex: 1 0 200px;</code></td>
-          <td>groeit normaal, krimpt niet, initieel 200px</td>
-          <td>minstens 200px</td>
-        </tr>
-        <tr>
-          <td><code>flex: 0 1 200px;</code></td>
-          <td>groeit niet, krimpt normaal, initieel 200px</td>
-          <td>maximaal 200px</td>
-        </tr>
-        <tr>
-          <td><code>flex: 1 1 200px;</code></td>
-          <td>groeit normaal, krimpt normaal, initieel 200px</td>
-          <td>flexibel, initieel 200px</td>
-        </tr>
-        <tr>
-          <td><code>flex: 2 1 200px;</code></td>
-          <td>groeit dubbel zo snel, krimpt normaal, initieel 200px</td>
-          <td>flexibel, initieel 200px, groeit sneller</td>
-        </tr>
-        <tr>
-          <td><code>flex: 1 2 200px;</code></td>
-          <td>groeit normaal, krimpt dubbel zo snel, initieel 200px breed</td>
-          <td>flexibel, initieel 200px, krimpt sneller</td>
-        </tr>
-      </tbody>
-    </table>
+      <h4>flex<span class="pro"> (flex-grow, flex-shrink en flex-basis)</span></h4>
+      <p>
+         Deze property <span class="pro">combineert <code>flex-grow</code>, <code>flex-shrink</code> en <code>flex-basis</code>. Het</span> is vooral van belang bij kolommen, en zegt wat hun initiële breedte is, en hoe snel ze groeien en krimpen naargelang de breedte van de container.
+      </p>
+      <p>De meest voorkomende waarden (te onthouden!):</p>
+      <table class="light">
+         <thead>
+            <tr>
+               <th scope="col">voorbeeld</th>
+               <th scope="col">uitleg</th>
+               <th scope="col">betekenis</th>
+            </tr>
+         </thead>
+         <tbody>
+            <tr>
+               <td><code>flex: 0 0 200px;</code></td>
+               <td>groeit of krimpt niet, initieel 200px breed</td>
+               <td>vaste afmeting van 200px</td>
+            </tr>
+            <tr>
+               <td><code>flex: 1 1 0;</code></td>
+               <td>groeit en krimpt normaal, initieel 0px breed</td>
+               <td>flexibel, neemt beschikbare ruimte in</td>
+            </tr>
+            <tr>
+               <td><code>flex: 2 2 0;</code></td>
+               <td>groeit en krimpt 2x zo snel, initieel 0px breed</td>
+               <td>flexibel, neemt beschikbare ruimte in</td>
+            </tr>
+            <tr>
+               <td><code>flex: 0 1 auto;</code></td>
+               <td>groeit niet, kan krimpen, initieel natuurlijke breedte<br><span class="smaller">(bepaald door content of, indien ingesteld, <code>width</code> property)</span></td>
+               <td>niet groter dan de content</td>
+            </tr>
+         </tbody>
+      </table>
+      <p>Nog andere voorbeelden:</p>
+      <table class="light">
+         <thead>
+            <tr>
+               <th scope="col">voorbeeld</th>
+               <th scope="col">uitleg</th>
+               <th scope="col">betekenis</th>
+            </tr>
+         </thead>
+         <tbody>
+            <tr>
+               <td><code>flex: 1 0 200px;</code></td>
+               <td>groeit normaal, krimpt niet, initieel 200px</td>
+               <td>minstens 200px</td>
+            </tr>
+            <tr>
+               <td><code>flex: 0 1 200px;</code></td>
+               <td>groeit niet, krimpt normaal, initieel 200px</td>
+               <td>maximaal 200px</td>
+            </tr>
+            <tr>
+               <td><code>flex: 1 1 200px;</code></td>
+               <td>groeit normaal, krimpt normaal, initieel 200px</td>
+               <td>flexibel, initieel 200px</td>
+            </tr>
+            <tr>
+               <td><code>flex: 2 1 200px;</code></td>
+               <td>groeit dubbel zo snel, krimpt normaal, initieel 200px</td>
+               <td>flexibel, initieel 200px, groeit sneller</td>
+            </tr>
+            <tr>
+               <td><code>flex: 1 2 200px;</code></td>
+               <td>groeit normaal, krimpt dubbel zo snel, initieel 200px breed</td>
+               <td>flexibel, initieel 200px, krimpt sneller</td>
+            </tr>
+         </tbody>
+      </table>
 
-    <p>Voorbeeld 1: vaste kolommen links en rechts, flexibele kolom in het midden</p>
-    <div class="codecompare">
-      <pre class="prism-atom-dark" style="height: 200px; overflow-y: auto;"><code contenteditable data-target="#flex-itemdemo4">.flex-item:nth-child(1) { flex: 0 0 150px; }
+      <p>Voorbeeld 1: vaste kolommen links en rechts, flexibele kolom in het midden</p>
+      <div class="codecompare">
+         <pre class="prism-atom-dark" style="height: 200px; overflow-y: auto;"><code contenteditable data-target="#flex-itemdemo4">.flex-item:nth-child(1) { flex: 0 0 150px; }
 .flex-item:nth-child(2) { flex: 1 1 0; }
 .flex-item:nth-child(3) { flex: 0 0 150px; }
 .flex-container {
@@ -1407,20 +1409,20 @@ h3, p {
    padding: 20px;
    width: 450px;
 }</code></pre>
-    </div>
-    <div id="flex-itemdemo4" class="w-1200">
-      <div class="flex-container container">
-        <div class="flex-item">flex: 0 0 150px;</div>
-        <div class="flex-item">flex: 1 1 0;</div>
-        <div class="flex-item">flex: 0 0 150px;</div>
       </div>
-      <input type="range" min="400" max="1200" step="1" class="range-container-width w-500"><button type="button" class="range-reset">↻</button>
-      <em class="smaller" style="display: block;">gebruik de slider om de containerbreedte te veranderen</em>
-    </div>
-    <p>&nbsp;</p>
-    <p>Voorbeeld 2: flexibele kolommen, zelfde initiële breedte, krimpen alledrie even veel, middelste kolom groeit drie keer zo veel</p>
-    <div class="codecompare">
-      <pre class="prism-atom-dark" style="height: 200px; overflow-y: auto;"><code contenteditable data-target="#flex-itemdemo5">.flex-item:nth-child(1) { flex: 1 1 150px; }
+      <div id="flex-itemdemo4" class="w-1200">
+         <div class="flex-container container">
+            <div class="flex-item">flex: 0 0 150px;</div>
+            <div class="flex-item">flex: 1 1 0;</div>
+            <div class="flex-item">flex: 0 0 150px;</div>
+         </div>
+         <input type="range" min="400" max="1200" step="1" class="range-container-width w-500"><button type="button" class="range-reset">↻</button>
+         <em class="smaller" style="display: block;">gebruik de slider om de containerbreedte te veranderen</em>
+      </div>
+      <p>&nbsp;</p>
+      <p>Voorbeeld 2: flexibele kolommen, zelfde initiële breedte, krimpen alledrie even veel, middelste kolom groeit drie keer zo veel</p>
+      <div class="codecompare">
+         <pre class="prism-atom-dark" style="height: 200px; overflow-y: auto;"><code contenteditable data-target="#flex-itemdemo5">.flex-item:nth-child(1) { flex: 1 1 150px; }
 .flex-item:nth-child(2) { flex: 3 1 150px; }
 .flex-item:nth-child(3) { flex: 1 1 150px; }
 .flex-container {
@@ -1443,132 +1445,129 @@ h3, p {
    padding: 20px;
    width: 510px;
 }</code></pre>
-    </div>
-    <div id="flex-itemdemo5" class="w-1200">
-      <div class="flex-container container">
-        <div class="flex-item">flex: 1 1 150px</div>
-        <div class="flex-item">flex: 3 1 150px</div>
-        <div class="flex-item">flex: 1 1 150px</div>
       </div>
-      <input type="range" min="200" max="1200" step="1" class="range-container-width w-500"><button type="button" class="range-reset">↻</button>
-      <em class="smaller" style="display: block;">gebruik de slider om de containerbreedte te veranderen</em>
-    </div>
+      <div id="flex-itemdemo5" class="w-1200">
+         <div class="flex-container container">
+            <div class="flex-item">flex: 1 1 150px</div>
+            <div class="flex-item">flex: 3 1 150px</div>
+            <div class="flex-item">flex: 1 1 150px</div>
+         </div>
+         <input type="range" min="200" max="1200" step="1" class="range-container-width w-500"><button type="button" class="range-reset">↻</button>
+         <em class="smaller" style="display: block;">gebruik de slider om de containerbreedte te veranderen</em>
+      </div>
 
-    <h2>Grid</h2>
-    <p>
-      Met <mark>grid</mark> kan je een reeks children, de <span class="em">grid items</span>, schikken met rijen en kolommen in een raster, de <span class="em">grid container</span>.
-      Het meest complete overzicht vind je op <a href="https://css-tricks.com/snippets/css/complete-guide-grid/">https://css-tricks.com/snippets/css/complete-guide-grid/</a>.
-      Om het overzichtelijk te houden behandelen we niet alles van CSS Grid. Dit laten we b.v. weg (als je niet weet waarover het gaat: maakt niet uit, want je moet het dus niet kennen of kunnen):
-    </p>
-    <ul class="wrong">
-      <li>template area's (cfr. properties <code>grid-template-areas</code>, <code>grid-template</code>)</li>
-      <li>automatische rijen of kolommen (cfr. properties <code class="language-css">grid-auto-column</code>, <code class="language-css">grid-auto-row</code>, <code class="language-css">grid-auto-flow</code>)</li>
-      <li>line naming</li>
-    </ul>
-    <p>Dit betekent dus ook dat je dit <strong>niet mag gebruiken</strong> in dit vak.</p>
-    <h3>Grid terminologie</h3>
-    <p><img src="img/04_layout/grid-terminologie.png" alt="" class="w-500"></p>
-    <ul>
-      <li><strong>grid container</strong>: hierbinnen worden rijen en kolommen gedefinieerd</li>
-      <li><strong>grid line</strong>: lijnen tussen rijen en kolommen, genummerd vanaf 1</li>
-      <li><strong>grid area</strong>: rechthoekig gebied begrensd door grid lijnen</li>
-      <li><strong>grid item</strong>: een item gepositioneerd in een grid area</li>
-      <li><strong>grid cell</strong>: één cel binnen de grid</li>
-    </ul>
-    <p>Er zijn online verschillende interactieve CSS Grid generators te vinden, b.v. op <a href="https://grid.layoutit.com/">https://grid.layoutit.com/</a></p>
+      <h2>Grid</h2>
+      <p>
+         Met <mark>grid</mark> kan je een reeks children, de <span class="em">grid items</span>, schikken met rijen en kolommen in een raster, de <span class="em">grid container</span>.
+         Het meest complete overzicht vind je op <a href="https://css-tricks.com/snippets/css/complete-guide-grid/">https://css-tricks.com/snippets/css/complete-guide-grid/</a>.
+         Om het overzichtelijk te houden behandelen we niet alles van CSS Grid. Dit betekent ook dat <strong>wat niet in de cursus staat, mag je niet gebruiken</strong> in dit vak (dit is een algemene regel trouwens).
+      </p>
+      <div class="pro">
+         <h3>Grid terminologie</h3>
+         <p><img src="img/04_layout/grid-terminologie.png" alt="" class="w-500"></p>
+         <ul>
+            <li><strong>grid container</strong>: hierbinnen worden rijen en kolommen gedefinieerd</li>
+            <li><strong>grid line</strong>: lijnen tussen rijen en kolommen, genummerd vanaf 1</li>
+            <li><strong>grid area</strong>: rechthoekig gebied begrensd door grid lijnen</li>
+            <li><strong>grid item</strong>: een item gepositioneerd in een grid area</li>
+            <li><strong>grid cell</strong>: één cel binnen de grid</li>
+         </ul>
 
-    <h3>Grid properties overzicht</h3>
-    <p>De CSS properties voor de grid container:</p>
-    <table class="light">
-      <thead>
-        <tr>
-          <th scope="col">eigenschap</th>
-          <th scope="col">waarden</th>
-          <th scope="col">betekenis</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><code>display</code></td>
-          <td><code>grid<span class="pro">|inline-grid</span></code></td>
-          <td>layouten met grid<span class="pro"> als blockevel of inline element</span></td>
-        </tr>
-        <tr>
-          <td><code>gap</code>, <code>column-gap</code>, <code>row-gap</code></td>
-          <td><code>px|%|...</code></td>
-          <td>ruimte tussen items</td>
-        </tr>
-        <tr>
-          <td><code>grid-template-columns</code></td>
-          <td>kolombreedte (zie verder)</td>
-          <td>definitie kolombreedtes</td>
-        </tr>
-        <tr>
-          <td><code>grid-template-rows</code></td>
-          <td>rijhoogte (zie verder)</td>
-          <td>definitie rijhoogtes</td>
-        </tr>
-        <tr>
-          <td><code>align-items</code></td>
-          <td><code>start|center|end|stretch</code></td>
-          <td>verticale uitlijning van items</td>
-        </tr>
-        <tr>
-          <td><code>justify-items</code></td>
-          <td><code>start|center|end|stretch</code></td>
-          <td>horizontale uitlijning van items</td>
-        </tr>
-        <tr class="pro">
-          <td><code>align-content</code></td>
-          <td><code>start|center|end|space-between|stretch|...</code></td>
-          <td>schikking van de grid rijen in de grid container</td>
-        </tr>
-        <tr class="pro">
-          <td><code>place-items</code></td>
-          <td colspan="2">combinatie van <code>align-items</code> en <code>justify-items</code>, b.v. <code>place-items: center start;</code> </td>
-        </tr>
-      </tbody>
-    </table>
-    <p>De CSS properties voor het grid item:</p>
-    <table class="light">
-      <thead>
-        <tr>
-          <th scope="col">eigenschap</th>
-          <th scope="col">waarden</th>
-          <th scope="col">betekenis</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><code>grid-column</code></td>
-          <td>kolomspan (zie verder)</td>
-          <td>tussen welke verticale lijnen zit het item</td>
-        </tr>
-        <tr>
-          <td><code>grid-row</code></td>
-          <td>rijspan (zie verder)</td>
-          <td>tussen welke horizontale lijnen zit het item</td>
-        </tr>
-        <tr>
-          <td><code>align-self</code></td>
-          <td><code>start|center|end|stretch</code></td>
-          <td>verticale uitlijning van een item in de cel</td>
-        </tr>
-        <tr>
-          <td><code>justify-self</code></td>
-          <td><code>start|center|end|stretch</code></td>
-          <td>horizontale uitlijning van een item in de cel</td>
-        </tr>
-      </tbody>
-    </table>
-    <h3>Grid voorbeeld</h3>
-    <h4>startcode</h4>
-    <p>
-      We starten van een container met 5 items. De standaard weergave, zonder layout:
-    </p>
-    <div class="codecompare">
-      <div class="democontainer">
-        <pre class="prism-default language-html w-500 h-200"><code>&lt;div class="grid-container"&gt;
+      </div>
+      <p>Er zijn online verschillende interactieve CSS Grid generators te vinden, b.v. op <a href="https://grid.layoutit.com/">https://grid.layoutit.com/</a></p>
+
+      <h3>Grid properties overzicht</h3>
+      <p>De CSS properties voor de grid container:</p>
+      <table class="light">
+         <thead>
+            <tr>
+               <th scope="col">eigenschap</th>
+               <th scope="col">waarden</th>
+               <th scope="col">betekenis</th>
+            </tr>
+         </thead>
+         <tbody>
+            <tr>
+               <td><code>display</code></td>
+               <td><code>grid<span class="pro">|inline-grid</span></code></td>
+               <td>layouten met grid<span class="pro"> als blockevel of inline element</span></td>
+            </tr>
+            <tr>
+               <td><code>gap</code>, <code>column-gap</code>, <code>row-gap</code></td>
+               <td><code>px|%|...</code></td>
+               <td>ruimte tussen items</td>
+            </tr>
+            <tr>
+               <td><code>grid-template-columns</code></td>
+               <td>kolombreedte (zie verder)</td>
+               <td>definitie kolombreedtes</td>
+            </tr>
+            <tr>
+               <td><code>grid-template-rows</code></td>
+               <td>rijhoogte (zie verder)</td>
+               <td>definitie rijhoogtes</td>
+            </tr>
+            <tr>
+               <td><code>align-items</code></td>
+               <td><code>start|center|end|stretch</code></td>
+               <td>verticale uitlijning van items</td>
+            </tr>
+            <tr>
+               <td><code>justify-items</code></td>
+               <td><code>start|center|end|stretch</code></td>
+               <td>horizontale uitlijning van items</td>
+            </tr>
+            <tr class="pro">
+               <td><code>align-content</code></td>
+               <td><code>start|center|end|space-between|stretch|...</code></td>
+               <td>schikking van de grid rijen in de grid container</td>
+            </tr>
+            <tr class="pro">
+               <td><code>place-items</code></td>
+               <td colspan="2">combinatie van <code>align-items</code> en <code>justify-items</code>, b.v. <code>place-items: center start;</code> </td>
+            </tr>
+         </tbody>
+      </table>
+      <p>De CSS properties voor het grid item:</p>
+      <table class="light">
+         <thead>
+            <tr>
+               <th scope="col">eigenschap</th>
+               <th scope="col">waarden</th>
+               <th scope="col">betekenis</th>
+            </tr>
+         </thead>
+         <tbody>
+            <tr class="pro">
+               <td><code>grid-column</code></td>
+               <td>kolomspan (zie verder)</td>
+               <td>tussen welke verticale lijnen zit het item</td>
+            </tr>
+            <tr class="pro">
+               <td><code>grid-row</code></td>
+               <td>rijspan (zie verder)</td>
+               <td>tussen welke horizontale lijnen zit het item</td>
+            </tr>
+            <tr>
+               <td><code>align-self</code></td>
+               <td><code>start|center|end|stretch</code></td>
+               <td>verticale uitlijning van een item in de cel</td>
+            </tr>
+            <tr>
+               <td><code>justify-self</code></td>
+               <td><code>start|center|end|stretch</code></td>
+               <td>horizontale uitlijning van een item in de cel</td>
+            </tr>
+         </tbody>
+      </table>
+      <h3>Grid voorbeeld</h3>
+      <h4>startcode</h4>
+      <p>
+         We starten van een container met 5 items. De standaard weergave, zonder layout:
+      </p>
+      <div class="codecompare">
+         <div class="democontainer">
+            <pre class="prism-default language-html w-500 h-200"><code>&lt;div class="grid-container"&gt;
    &lt;div class="grid-item item1"&gt;01&lt;/div&gt;
    &lt;div class="grid-item item2"&gt;02&lt;/div&gt;
    &lt;div class="grid-item item3"&gt;03&lt;/div&gt;
@@ -1576,7 +1575,7 @@ h3, p {
    &lt;div class="grid-item item5"&gt;05&lt;/div&gt;
 &lt;/div&gt;
 </code></pre>
-        <pre class="prism-atom-dark w-500 h-200"><code contenteditable data-target="#grid-containerdemo1">.grid-item {
+            <pre class="prism-atom-dark w-500 h-200"><code contenteditable data-target="#grid-containerdemo1">.grid-item {
    background-color: #ddd;
    border: 2px solid black;
    line-height: 25px;
@@ -1590,21 +1589,21 @@ h3, p {
    max-width: 500px;
    padding: 20px;
 }</code></pre>
+         </div>
+         <div id="grid-containerdemo1" class="w-500" style="height: 415px; overflow-y: auto;">
+            <div class="flex-container">
+               <div class="grid-item item1">01</div>
+               <div class="grid-item item2">02</div>
+               <div class="grid-item item3">03</div>
+               <div class="grid-item item4">04</div>
+               <div class="grid-item item5">05</div>
+            </div>
+         </div>
       </div>
-      <div id="grid-containerdemo1" class="w-500" style="height: 415px; overflow-y: auto;">
-        <div class="flex-container">
-          <div class="grid-item item1">01</div>
-          <div class="grid-item item2">02</div>
-          <div class="grid-item item3">03</div>
-          <div class="grid-item item4">04</div>
-          <div class="grid-item item5">05</div>
-        </div>
-      </div>
-    </div>
-    <h4>display: grid</h4>
-    <p>Met <code>display: grid</code> maak je van de container een <mark>grid container</mark>; rijen en kolommen definieer je met <span class="em"><code>grid-template-rows</code></span> en <span class="em"><code>grid-template-columns</code></span>, b.v. 4 kolommen en 3 rijen. </p>
-    <div class="codecompare">
-      <pre class="prism-atom-dark w-500" style="height: 335px; overflow-y: auto;"><code contenteditable data-target="#grid-containerdemo2">.grid-container {
+      <h4>display: grid</h4>
+      <p>Met <code>display: grid</code> maak je van de container een <mark>grid container</mark>; rijen en kolommen definieer je met <span class="em"><code>grid-template-rows</code></span> en <span class="em"><code>grid-template-columns</code></span>, b.v. 4 kolommen en 3 rijen. </p>
+      <div class="codecompare">
+         <pre class="prism-atom-dark w-500" style="height: 335px; overflow-y: auto;"><code contenteditable data-target="#grid-containerdemo2">.grid-container {
    display: grid; /* maak grid container */
    grid-template-columns: repeat(4, 1fr); /* 4 kolommen, elk 1 fractie */
    grid-template-rows: repeat(3, 1fr); /* 3 rijen, elk 1 fractie */
@@ -1626,21 +1625,21 @@ h3, p {
    width: 500px;
    padding: 20px;
 }</code></pre>
-      <div id="grid-containerdemo2" class="w-500">
-        <div class="grid-container">
-          <div class="grid-item item1">01</div>
-          <div class="grid-item item2">02</div>
-          <div class="grid-item item3">03</div>
-          <div class="grid-item item4">04</div>
-          <div class="grid-item item5">05</div>
-        </div>
+         <div id="grid-containerdemo2" class="w-500">
+            <div class="grid-container">
+               <div class="grid-item item1">01</div>
+               <div class="grid-item item2">02</div>
+               <div class="grid-item item3">03</div>
+               <div class="grid-item item4">04</div>
+               <div class="grid-item item5">05</div>
+            </div>
+         </div>
       </div>
-    </div>
-    <p>Merk op: items worden standaard cel per cel geplaatst in rijen.</p>
-    <h4>gap</h4>
-    <p>Geef ruimte tussen kolommen/rijen met <span class="em"><code>gap</code></span>:</p>
-    <div class="codecompare">
-      <pre class="prism-atom-dark w-500" style="height: 335px; overflow-y: auto;"><code contenteditable data-target="#grid-containerdemo3">.grid-container {
+      <p>Merk op: items worden standaard cel per cel geplaatst in rijen.</p>
+      <h4>gap</h4>
+      <p>Geef ruimte tussen kolommen/rijen met <span class="em"><code>gap</code></span>:</p>
+      <div class="codecompare">
+         <pre class="prism-atom-dark w-500" style="height: 335px; overflow-y: auto;"><code contenteditable data-target="#grid-containerdemo3">.grid-container {
    display: grid; /* maak grid container */
    gap: 10px;
    grid-template-columns: repeat(4, 1fr); /* 4 kolommen, elk 1 fractie */
@@ -1663,58 +1662,58 @@ h3, p {
    width: 500px;
    padding: 20px;
 }</code></pre>
-      <div id="grid-containerdemo3" class="w-500">
-        <div class="grid-container">
-          <div class="grid-item item1">01</div>
-          <div class="grid-item item2">02</div>
-          <div class="grid-item item3">03</div>
-          <div class="grid-item item4">04</div>
-          <div class="grid-item item5">05</div>
-        </div>
+         <div id="grid-containerdemo3" class="w-500">
+            <div class="grid-container">
+               <div class="grid-item item1">01</div>
+               <div class="grid-item item2">02</div>
+               <div class="grid-item item3">03</div>
+               <div class="grid-item item4">04</div>
+               <div class="grid-item item5">05</div>
+            </div>
+         </div>
       </div>
-    </div>
 
-    <h4>grid-template-columns, grid-template-rows</h4>
-    <p>Hiermee definieer je de kolommen en rijen, en hoe ze verdeeld worden over de beschikbare breedte/hoogte. Overzicht van de <strong>belangrijkste gebruikte eenheden</strong> en hun betekenis:</p>
-    <table class="light">
-      <thead>
-        <tr>
-          <th scope="col">voorbeeld</th>
-          <th scope="col">uitleg</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><code>200px</code></td>
-          <td>exacte breedte</td>
-        </tr>
-        <tr>
-          <td><code>2fr</code></td>
-          <td>twee delen van beschikbare ruimte (fr: 'fractie')</td>
-        </tr>
-        <tr>
-          <td><code>minmax(100px, 1fr)</code></td>
-          <td>zelfde als 1fr, maar minstens 100px</td>
-        </tr>
-        <tr>
-          <td><code>auto</code></td>
-          <td>automatisch, naargelang de breedte van de inhoud</td>
-        </tr>
-        <tr>
-          <td><code>repeat(3, 1fr)</code></td>
-          <td>drie gelijke kolommen, dus hetzelfde als <code>1fr 1fr 1fr</code></td>
-        </tr>
-        <tr>
-          <td><code>repeat(auto-fit, minmax(150px, 1fr))</code></td>
-          <td>vul met zoveel kolommen als nodig, maar niet smaller dan 150px</td>
-        </tr>
-      </tbody>
-    </table>
-    <h5>Voorbeeld 1</h5>
-    <p>Voor de duidelijkheid nemen we voorlopig 5 kolommen, evenveel als er items zijn.</p>
-    <p>Een voorbeeld met <code>repeat(3, 1fr) repeat(2, 100px)</code>, dus drie gelijke dynamische kolommen en twee vaste van 100px:</p>
-    <div class="codecompare">
-      <pre class="prism-atom-dark" style="height: 200px; overflow-y: auto;"><code contenteditable data-target="#grid-containerdemo4">.grid-container {
+      <h4>grid-template-columns, grid-template-rows</h4>
+      <p>Hiermee definieer je de kolommen en rijen, en hoe ze verdeeld worden over de beschikbare breedte/hoogte. Overzicht van de <strong>belangrijkste gebruikte eenheden</strong> en hun betekenis:</p>
+      <table class="light">
+         <thead>
+            <tr>
+               <th scope="col">voorbeeld</th>
+               <th scope="col">uitleg</th>
+            </tr>
+         </thead>
+         <tbody>
+            <tr>
+               <td><code>200px</code></td>
+               <td>exacte breedte</td>
+            </tr>
+            <tr>
+               <td><code>2fr</code></td>
+               <td>twee delen van beschikbare ruimte (fr: 'fractie')</td>
+            </tr>
+            <tr>
+               <td><code>minmax(100px, 1fr)</code></td>
+               <td>zelfde als 1fr, maar minstens 100px</td>
+            </tr>
+            <tr>
+               <td><code>auto</code></td>
+               <td>automatisch, naargelang de breedte van de inhoud</td>
+            </tr>
+            <tr>
+               <td><code>repeat(3, 1fr)</code></td>
+               <td>drie gelijke kolommen, dus hetzelfde als <code>1fr 1fr 1fr</code></td>
+            </tr>
+            <tr>
+               <td><code>repeat(auto-fit, minmax(150px, 1fr))</code></td>
+               <td>vul met zoveel kolommen als nodig, maar niet smaller dan 150px</td>
+            </tr>
+         </tbody>
+      </table>
+      <h5>Voorbeeld 1</h5>
+      <p>Voor de duidelijkheid nemen we voorlopig 5 kolommen, evenveel als er items zijn.</p>
+      <p>Een voorbeeld met <code>repeat(3, 1fr) repeat(2, 100px)</code>, dus drie gelijke dynamische kolommen en twee vaste van 100px:</p>
+      <div class="codecompare">
+         <pre class="prism-atom-dark" style="height: 200px; overflow-y: auto;"><code contenteditable data-target="#grid-containerdemo4">.grid-container {
    display: grid; /* maak grid container */
    gap: 10px;
    grid-template-columns: repeat(3, 1fr) repeat(2, 100px); /* of 1fr 1fr 1fr 100px 100px */
@@ -1736,23 +1735,23 @@ h3, p {
    padding: 20px;
    width: 500px;
 }</code></pre>
-    </div>
-    <div id="grid-containerdemo4" class="w-1200">
-      <div class="grid-container container">
-        <div class="grid-item item1">01<br><span class="smaller"><code>1fr</code></span></div>
-        <div class="grid-item item2">02<br><span class="smaller"><code>1fr</code></span></div>
-        <div class="grid-item item3">03<br><span class="smaller"><code>1fr</code></span></div>
-        <div class="grid-item item4">04<br><span class="smaller"><code>100px</code></span></div>
-        <div class="grid-item item5">05<br><span class="smaller"><code>100px</code></span></div>
       </div>
-      <input type="range" min="400" max="1200" step="1" class="range-container-width w-500"><button type="button" class="range-reset">↻</button>
-      <em class="smaller" style="display: block;">gebruik de slider om de containerbreedte te veranderen</em>
-    </div>
-    <p>&nbsp;</p>
-    <h5>Voorbeeld 2</h5>
-    <p>Voorbeeld met <code>100px 2fr 1fr minmax(100px, 1fr) 100px</code>, dus een vaste 100px kolom, één van dubbele breedte, één enkele breedte, een enkele breedte maar niet minder dan 100px, en weer een vaste van 100px:</p>
-    <div class="codecompare">
-      <pre class="prism-atom-dark" style="height: 200px; overflow-y: auto;"><code contenteditable data-target="#grid-containerdemo6">.grid-container {
+      <div id="grid-containerdemo4" class="w-1200">
+         <div class="grid-container container">
+            <div class="grid-item item1">01<br><span class="smaller"><code>1fr</code></span></div>
+            <div class="grid-item item2">02<br><span class="smaller"><code>1fr</code></span></div>
+            <div class="grid-item item3">03<br><span class="smaller"><code>1fr</code></span></div>
+            <div class="grid-item item4">04<br><span class="smaller"><code>100px</code></span></div>
+            <div class="grid-item item5">05<br><span class="smaller"><code>100px</code></span></div>
+         </div>
+         <input type="range" min="400" max="1200" step="1" class="range-container-width w-500"><button type="button" class="range-reset">↻</button>
+         <em class="smaller" style="display: block;">gebruik de slider om de containerbreedte te veranderen</em>
+      </div>
+      <p>&nbsp;</p>
+      <h5>Voorbeeld 2</h5>
+      <p>Voorbeeld met <code>100px 2fr 1fr minmax(100px, 1fr) 100px</code>, dus een vaste 100px kolom, één van dubbele breedte, één enkele breedte, een enkele breedte maar niet minder dan 100px, en weer een vaste van 100px:</p>
+      <div class="codecompare">
+         <pre class="prism-atom-dark" style="height: 200px; overflow-y: auto;"><code contenteditable data-target="#grid-containerdemo6">.grid-container {
    display: grid; /* maak grid container */
    gap: 10px;
    grid-template-columns: 100px 2fr 1fr minmax(100px, 1fr) 100px;
@@ -1774,23 +1773,23 @@ h3, p {
    padding: 20px;
    width: 500px;
 }</code></pre>
-    </div>
-    <div id="grid-containerdemo6" class="w-1200">
-      <div class="grid-container container">
-        <div class="grid-item item1">01<br><span class="smaller"><code>100px</code></span></div>
-        <div class="grid-item item2">02<br><span class="smaller"><code>2fr</code></span></div>
-        <div class="grid-item item3">03<br><span class="smaller"><code>1fr</code></span></div>
-        <div class="grid-item item4">04<br><span class="smaller"><code>minmax(100px, 1fr)</code></span></div>
-        <div class="grid-item item5">05<br><span class="smaller"><code>100px</code></span></div>
       </div>
-      <input type="range" min="400" max="1200" step="1" class="range-container-width w-500"><button type="button" class="range-reset">↻</button>
-      <em class="smaller" style="display: block;">gebruik de slider om de containerbreedte te veranderen; merk op hoe 2fr twee keer zo snel groeit/krimpt als 1fr</em>
-    </div>
-    <p>&nbsp;</p>
-    <h5>Voorbeeld 3</h5>
-    <p>Voorbeeld met <code>repeat(auto-fit, minmax(150px, 1fr))</code>, dus automatisch gevuld met gelijke kolommen, maar niet smaller dan 150px:</p>
-    <div class="codecompare">
-      <pre class="prism-atom-dark" style="height: 200px; overflow-y: auto;"><code contenteditable data-target="#grid-containerdemo7">.grid-container {
+      <div id="grid-containerdemo6" class="w-1200">
+         <div class="grid-container container">
+            <div class="grid-item item1">01<br><span class="smaller"><code>100px</code></span></div>
+            <div class="grid-item item2">02<br><span class="smaller"><code>2fr</code></span></div>
+            <div class="grid-item item3">03<br><span class="smaller"><code>1fr</code></span></div>
+            <div class="grid-item item4">04<br><span class="smaller"><code>minmax(100px, 1fr)</code></span></div>
+            <div class="grid-item item5">05<br><span class="smaller"><code>100px</code></span></div>
+         </div>
+         <input type="range" min="400" max="1200" step="1" class="range-container-width w-500"><button type="button" class="range-reset">↻</button>
+         <em class="smaller" style="display: block;">gebruik de slider om de containerbreedte te veranderen; merk op hoe 2fr twee keer zo snel groeit/krimpt als 1fr</em>
+      </div>
+      <p>&nbsp;</p>
+      <h5>Voorbeeld 3</h5>
+      <p>Voorbeeld met <code>repeat(auto-fit, minmax(150px, 1fr))</code>, dus automatisch gevuld met gelijke kolommen, maar niet smaller dan 150px:</p>
+      <div class="codecompare">
+         <pre class="prism-atom-dark" style="height: 200px; overflow-y: auto;"><code contenteditable data-target="#grid-containerdemo7">.grid-container {
    display: grid; /* maak grid container */
    gap: 10px;
    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
@@ -1812,90 +1811,117 @@ h3, p {
    padding: 20px;
    width: 500px;
 }</code></pre>
-    </div>
-    <div id="grid-containerdemo7" class="w-1200">
-      <div class="grid-container container">
-        <div class="grid-item item1">01<br><span class="smaller"><code>minmax(150px, 1fr)</code></span></div>
-        <div class="grid-item item2">02<br><span class="smaller"><code>minmax(150px, 1fr)</code></span></div>
-        <div class="grid-item item3">03<br><span class="smaller"><code>minmax(150px, 1fr)</code></span></div>
-        <div class="grid-item item4">04<br><span class="smaller"><code>minmax(150px, 1fr)</code></span></div>
-        <div class="grid-item item5">05<br><span class="smaller"><code>minmax(150px, 1fr)</code></span></div>
       </div>
-      <input type="range" min="400" max="1200" step="1" class="range-container-width w-500"><button type="button" class="range-reset">↻</button>
-      <em class="smaller" style="display: block;">gebruik de slider om de containerbreedte te veranderen</em>
-    </div>
-    <p>Dit voorbeeld is ideaal voor b.v. fotogallerijen</p>
-
-    <h4>grid-row, grid-column</h4>
-    <p>We keren terug naar 4 kolommen, met de eerste kolom vast op 100px, de tweede kolom dubbel zo breed als de derde, en de laatste kolom tussen 50 en 75px: </p>
-    <p>Positioneer individuele items in gebieden gedefinieerd door <span class="em"><code>grid-column</code></span> en <span class="em"><code>grid-row</code></span>:</p>
-    <div class="codecompare">
-      <pre class="prism-atom-dark w-500" style="height: 335px; overflow-y: auto;"><code contenteditable data-target="#grid-containerdemo8">/* items */
-.item1 {
-   grid-column: 2 / 4; /* tussen kolomlijnen 2 en 4 */
-   /* geen rij(en) opgegeven, neem eerst beschikbare rij */
-}
-.item2 {
-   grid-column: 4 / 5; /* tussen kolomlijnen 4 en 5 */
-   grid-row: 1 / span 3; /* start bij rijlijn 1, span 3 rijen */
-}
-.item3 {
-   grid-column: 1 / 2; /* tussen kolomlijnen 1 en 2 */
-   grid-row: 1 / 3; /* tussen rijlijnen 1 en 3 */
-}
-
-/* container */
-.grid-container {
-   display: grid; /* maak grid container */
-   gap: 10px;
-   grid-template-columns: repeat(4, 1fr); /* 4 kolommen, elk 1 fractie */
-   grid-template-rows: repeat(3, 1fr); /* 3 rijen, elk 1 fractie */
-}
-
-/* box styles */
-.grid-item {
-   background-color: #ddd;
-   border: 2px solid black;
-   line-height: 25px;
-   padding: 5px;
-   text-align: center;
-}
-
-.grid-container {
-   background-color: #ddf;
-   border: 1px dotted black;
-   height: 335px;
-   max-width: 500px;
-   padding: 20px;
-}</code></pre>
-      <div id="grid-containerdemo8" class="w-500">
-        <div class="grid-container">
-          <div class="grid-item item1">01</div>
-          <div class="grid-item item2">02</div>
-          <div class="grid-item item3">03</div>
-          <div class="grid-item item4">04</div>
-          <div class="grid-item item5">05</div>
-        </div>
+      <div id="grid-containerdemo7" class="w-1200">
+         <div class="grid-container container">
+            <div class="grid-item item1">01<br><span class="smaller"><code>minmax(150px, 1fr)</code></span></div>
+            <div class="grid-item item2">02<br><span class="smaller"><code>minmax(150px, 1fr)</code></span></div>
+            <div class="grid-item item3">03<br><span class="smaller"><code>minmax(150px, 1fr)</code></span></div>
+            <div class="grid-item item4">04<br><span class="smaller"><code>minmax(150px, 1fr)</code></span></div>
+            <div class="grid-item item5">05<br><span class="smaller"><code>minmax(150px, 1fr)</code></span></div>
+         </div>
+         <input type="range" min="400" max="1200" step="1" class="range-container-width w-500"><button type="button" class="range-reset">↻</button>
+         <em class="smaller" style="display: block;">gebruik de slider om de containerbreedte te veranderen</em>
       </div>
-    </div>
-    <p>Merk op:</p>
-    <ul>
-      <li>er zijn twee notaties: <code>grid-row: 3 / 5;</code> (van 3 tot 5) is b.v. hetzelfde als <code>grid-row: 3 / span 2;</code> (van 3 en dan 2 verder)</li>
-      <li>als geen rij of kolom opgegeven is, wordt de eerstvolgende beschikbare genomen</li>
-      <li>als je items plaatst in een grid, maakt hun volgorde in de HTML niet meer uit</li>
-      <li>niet geplaatste items (item 4 en 5) vullen de eerst beschikbare cellen in</li>
-    </ul>
+      <p>Dit voorbeeld is ideaal voor b.v. fotogallerijen</p>
 
-    <h4>align-items, justify-content</h4>
-    <p>Deze properties aligneren een item binnen de grid area:</p>
-    <div class="codecompare">
-      <pre class="prism-atom-dark w-500" style="height: 335px; overflow-y: auto;"><code contenteditable data-target="#grid-containerdemo9">/* alignering */
+      <h4>align-items, justify-content</h4>
+      <p>Deze properties aligneren een item binnen de grid area:</p>
+      <div class="codecompare">
+         <pre class="prism-atom-dark w-500" style="height: 335px; overflow-y: auto;"><code contenteditable data-target="#grid-containerdemo9">/* alignering */
 .grid-container {
    align-items: center;
    justify-items: start;
 }
 
-/* items */
+/* container */
+.grid-container {
+   display: grid; /* maak grid container */
+   gap: 10px;
+   grid-template-columns: repeat(4, 1fr); /* 4 kolommen, elk 1 fractie */
+   grid-template-rows: repeat(3, 1fr); /* 3 rijen, elk 1 fractie */
+}
+
+/* box styles */
+.grid-item {
+   background-color: #ddd;
+   border: 2px solid black;
+   display: block;
+   line-height: 25px;
+   padding: 5px;
+   text-align: center;
+}
+
+.grid-container {
+   background-color: #ddf;
+   border: 1px dotted black;
+   height: 335px;
+   max-width: 500px;
+   padding: 20px;
+}</code></pre>
+         <div id="grid-containerdemo9" class="w-500">
+            <div class="underlayer">
+               <div class="grid-area item-small1"></div>
+               <div class="grid-area item-small2"></div>
+               <div class="grid-area item-small3"></div>
+               <div class="grid-area item-small4"></div>
+               <div class="grid-area item-small5"></div>
+            </div>
+            <div class="grid-container">
+               <div class="grid-item grid-item-small item1">01</div>
+               <div class="grid-item grid-item-small item2">02</div>
+               <div class="grid-item grid-item-small item3">03</div>
+               <div class="grid-item grid-item-small item4">04</div>
+               <div class="grid-item grid-item-small item5">05</div>
+            </div>
+         </div>
+      </div>
+      <p>Probeer de verschillende waarden uit (<code>align-self</code> en <code>justify-self</code> worden in deze demo op item1 uitgevoerd):</p>
+      <div class="grid-containerdemo9-controls" id="grid-containerdemo9-controls1">
+         <div>
+            <label><code>justify-content</code>:</label>
+            <label><input type="radio" name="grp-justify-items" value="start" checked><code>start</code></label>
+            <label><input type="radio" name="grp-justify-items" value="center"><code>center</code></label>
+            <label><input type="radio" name="grp-justify-items" value="end"><code>end</code></label>
+            <label><input type="radio" name="grp-justify-items" value="stretch"><code>stretch</code></label>
+         </div>
+         <div>
+            <label><code>align-items</code>:</label>
+            <label><input type="radio" name="grp-align-items" value="start"><code>start</code></label>
+            <label><input type="radio" name="grp-align-items" value="center" checked><code>center</code></label>
+            <label><input type="radio" name="grp-align-items" value="end"><code>end</code></label>
+            <label><input type="radio" name="grp-align-items" value="stretch"><code>stretch</code></label>
+         </div>
+      </div>
+      <p>Met <code>align-self</code> en <code>justify-self</code> kan je deze waarden overschrijven voor individuele items, b.v. het eerste item:</p>
+      <div class="grid-containerdemo9-controls" id="grid-containerdemo9-controls2">
+         <div>
+            <label><code>justify-self</code>:</label>
+            <label><input type="radio" name="grp-justify-self" value="auto" checked><code>auto</code></label>
+            <label><input type="radio" name="grp-justify-self" value="start"><code>start</code></label>
+            <label><input type="radio" name="grp-justify-self" value="center"><code>center</code></label>
+            <label><input type="radio" name="grp-justify-self" value="end"><code>end</code></label>
+            <label><input type="radio" name="grp-justify-self" value="stretch"><code>stretch</code></label>
+         </div>
+         <div>
+            <label><code>align-self</code>:</label>
+            <label><input type="radio" name="grp-align-self" value="start" checked><code>auto</code></label>
+            <label><input type="radio" name="grp-align-self" value="start"><code>start</code></label>
+            <label><input type="radio" name="grp-align-self" value="center"><code>center</code></label>
+            <label><input type="radio" name="grp-align-self" value="end"><code>end</code></label>
+            <label><input type="radio" name="grp-align-self" value="stretch"><code>stretch</code></label>
+         </div>
+      </div>
+      <p>
+         &rarr; de waarde <code>auto</code> betekent: hetzelfde als de container
+      </p>
+      <div class="pro">
+
+         <h4>grid-row, grid-column</h4>
+         <p>We keren terug naar 4 kolommen, met de eerste kolom vast op 100px, de tweede kolom dubbel zo breed als de derde, en de laatste kolom tussen 50 en 75px: </p>
+         <p>Positioneer individuele items in gebieden gedefinieerd door <span class="em"><code>grid-column</code></span> en <span class="em"><code>grid-row</code></span>:</p>
+         <div class="codecompare">
+            <pre class="prism-atom-dark w-500" style="height: 335px; overflow-y: auto;"><code contenteditable data-target="#grid-containerdemo8">/* items */
 .item1 {
    grid-column: 2 / 4; /* tussen kolomlijnen 2 en 4 */
    /* geen rij(en) opgegeven, neem eerst beschikbare rij */
@@ -1921,7 +1947,6 @@ h3, p {
 .grid-item {
    background-color: #ddd;
    border: 2px solid black;
-   display: inline-block;
    line-height: 25px;
    padding: 5px;
    text-align: center;
@@ -1934,133 +1959,96 @@ h3, p {
    max-width: 500px;
    padding: 20px;
 }</code></pre>
-      <div id="grid-containerdemo9" class="w-500">
-        <div class="underlayer">
-          <div class="grid-area item-small1"></div>
-          <div class="grid-area item-small2"></div>
-          <div class="grid-area item-small3"></div>
-          <div class="grid-area item-small4"></div>
-          <div class="grid-area item-small5"></div>
-        </div>
-        <div class="grid-container">
-          <div class="grid-item grid-item-small item1">01</div>
-          <div class="grid-item grid-item-small item2">02</div>
-          <div class="grid-item grid-item-small item3">03</div>
-          <div class="grid-item grid-item-small item4">04</div>
-          <div class="grid-item grid-item-small item5">05</div>
-        </div>
+            <div id="grid-containerdemo8" class="w-500">
+               <div class="grid-container">
+                  <div class="grid-item item1">01</div>
+                  <div class="grid-item item2">02</div>
+                  <div class="grid-item item3">03</div>
+                  <div class="grid-item item4">04</div>
+                  <div class="grid-item item5">05</div>
+               </div>
+            </div>
+         </div>
+         <p>Merk op:</p>
+         <ul>
+            <li>er zijn twee notaties: <code>grid-row: 3 / 5;</code> (van 3 tot 5) is b.v. hetzelfde als <code>grid-row: 3 / span 2;</code> (van 3 en dan 2 verder)</li>
+            <li>als geen rij of kolom opgegeven is, wordt de eerstvolgende beschikbare genomen</li>
+            <li>als je items plaatst in een grid, maakt hun volgorde in de HTML niet meer uit</li>
+            <li>niet geplaatste items (item 4 en 5) vullen de eerst beschikbare cellen in</li>
+         </ul>
       </div>
-    </div>
-    <p>Probeer de verschillende waarden uit (<code>align-self</code> en <code>justify-self</code> worden in deze demo op item1 uitgevoerd):</p>
-    <div class="grid-containerdemo9-controls" id="grid-containerdemo9-controls1">
-      <div>
-        <label><code>justify-content</code>:</label>
-        <label><input type="radio" name="grp-justify-items" value="start" checked><code>start</code></label>
-        <label><input type="radio" name="grp-justify-items" value="center"><code>center</code></label>
-        <label><input type="radio" name="grp-justify-items" value="end"><code>end</code></label>
-        <label><input type="radio" name="grp-justify-items" value="stretch"><code>stretch</code></label>
-      </div>
-      <div>
-        <label><code>align-items</code>:</label>
-        <label><input type="radio" name="grp-align-items" value="start"><code>start</code></label>
-        <label><input type="radio" name="grp-align-items" value="center" checked><code>center</code></label>
-        <label><input type="radio" name="grp-align-items" value="end"><code>end</code></label>
-        <label><input type="radio" name="grp-align-items" value="stretch"><code>stretch</code></label>
-      </div>
-    </div>
-    <p>Met <code>align-self</code> en <code>justify-self</code> kan je deze waarden overschrijven voor individuele items, b.v. het eerste item:</p>
-    <div class="grid-containerdemo9-controls" id="grid-containerdemo9-controls2">
-      <div>
-        <label><code>justify-self</code>:</label>
-        <label><input type="radio" name="grp-justify-self" value="auto" checked><code>auto</code></label>
-        <label><input type="radio" name="grp-justify-self" value="start"><code>start</code></label>
-        <label><input type="radio" name="grp-justify-self" value="center"><code>center</code></label>
-        <label><input type="radio" name="grp-justify-self" value="end"><code>end</code></label>
-        <label><input type="radio" name="grp-justify-self" value="stretch"><code>stretch</code></label>
-      </div>
-      <div>
-        <label><code>align-self</code>:</label>
-        <label><input type="radio" name="grp-align-self" value="start" checked><code>auto</code></label>
-        <label><input type="radio" name="grp-align-self" value="start"><code>start</code></label>
-        <label><input type="radio" name="grp-align-self" value="center"><code>center</code></label>
-        <label><input type="radio" name="grp-align-self" value="end"><code>end</code></label>
-        <label><input type="radio" name="grp-align-self" value="stretch"><code>stretch</code></label>
-      </div>
-    </div>
-    <p>
-      &rarr; de waarde <code>auto</code> betekent: hetzelfde als de container
-    </p>
-    <script>
-      const gridContainer9 = document.querySelector('#grid-containerdemo9 .grid-container');
-      const gridContainer9Item1 = document.querySelector('#grid-containerdemo9 .grid-container .item1');
-      document.querySelector('#grid-containerdemo9-controls1').addEventListener('click', () => {
-        gridContainer9.style.alignItems = document.querySelector('[name=grp-align-items]:checked').value;
-        gridContainer9.style.justifyItems = document.querySelector('[name=grp-justify-items]:checked').value;
-      });
-      document.querySelector('#grid-containerdemo9-controls2').addEventListener('click', () => {
-        gridContainer9Item1.style.alignSelf = document.querySelector('[name=grp-align-self]:checked').value;
-        gridContainer9Item1.style.justifySelf = document.querySelector('[name=grp-justify-self]:checked').value;
-      });
-    </script>
-    <h3>Flexbox of Grid?</h3>
-    <p>Flexbox en Grid zijn vaak inwisselbaar; meestal kun je een layoutkwestie zowel met het ene als met het andere oplossen. Vuistregel:</p>
-    <ul>
-      <li>is de layout op één lijn (horizontaal menu, verticale sociale media iconen...)? gebruik dan <strong>flexbox</strong></li>
-      <li>is de layout in meerdere kolommen en/of rijen (pagina layout, fotogallerij...)? gebruik dan <strong>grid</strong></li>
-    </ul>
-    <h4>Voorbeeld 1: horizontaal menu</h4>
-    <p>Typische HTML, en CSS fragment voor de horizontale layout met flexbox en grid:</p>
-    <pre class="prism-default language-html w-400"><code>&lt;ul class="hormenu"&gt;
+
+      <script>
+         const gridContainer9 = document.querySelector('#grid-containerdemo9 .grid-container');
+         const gridContainer9Item1 = document.querySelector('#grid-containerdemo9 .grid-container .item1');
+         document.querySelector('#grid-containerdemo9-controls1').addEventListener('click', () => {
+            gridContainer9.style.alignItems = document.querySelector('[name=grp-align-items]:checked').value;
+            gridContainer9.style.justifyItems = document.querySelector('[name=grp-justify-items]:checked').value;
+         });
+         document.querySelector('#grid-containerdemo9-controls2').addEventListener('click', () => {
+            gridContainer9Item1.style.alignSelf = document.querySelector('[name=grp-align-self]:checked').value;
+            gridContainer9Item1.style.justifySelf = document.querySelector('[name=grp-justify-self]:checked').value;
+         });
+      </script>
+      <h3>Flexbox of Grid?</h3>
+      <p>Flexbox en Grid zijn vaak inwisselbaar; meestal kun je een layoutkwestie zowel met het ene als met het andere oplossen. Vuistregel:</p>
+      <ul>
+         <li>is de layout op één lijn (horizontaal menu, verticale sociale media iconen...)? gebruik dan <strong>flexbox</strong></li>
+         <li>is de layout in meerdere kolommen en/of rijen (pagina layout, fotogallerij...)? gebruik dan <strong>grid</strong></li>
+      </ul>
+      <h4>Voorbeeld 1: horizontaal menu</h4>
+      <p>Typische HTML, en CSS fragment voor de horizontale layout met flexbox en grid:</p>
+      <pre class="prism-default language-html w-400"><code>&lt;ul class="hormenu"&gt;
    &lt;li&gt;&lt;a href="#"&gt;home&lt;/a&gt;&lt;/li&gt;
    &lt;li&gt;&lt;a href="#"&gt;products&lt;/a&gt;&lt;/li&gt;
    &lt;li&gt;&lt;a href="#"&gt;about&lt;/a&gt;&lt;/li&gt;
    &lt;li&gt;&lt;a href="#"&gt;contact&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</code></pre>
-    <div class="codecompare">
-      <pre class="prism-atom-dark language-css right" data-caption="Flexbox" data-demo="demos/04_layout/menu_flexbox.html"><code>.hormenu {
+      <div class="codecompare">
+         <pre class="prism-atom-dark language-css right" data-caption="Flexbox" data-demo="demos/04_layout/menu_flexbox.html"><code>.hormenu {
    display: flex;
    gap: 10px;
 }
 
 
 </code></pre>
-      <pre class="prism-atom-dark language-css wrong" data-caption="Grid" data-demo="demos/04_layout/menu_grid.html"><code>.hormenu {
+         <pre class="prism-atom-dark language-css wrong" data-caption="Grid" data-demo="demos/04_layout/menu_grid.html"><code>.hormenu {
    display: grid;
    gap: 10px;
    grid-auto-flow: column; /* hebben we niet gezien */
    grid-auto-columns: max-content;  /* hebben we niet gezien */
 }</code></pre>
-    </div>
-    <p>Winnaar: <strong>Flexbox</strong></p>
-    <h4>Voorbeeld 2: header layout</h4>
-    <p>Typische HTML met logo links en menu rechts, en CSS fragment voor de horizontale layout met flexbox en grid:</p>
-    <pre class="prism-default language-html w-400"><code>&lt;header&gt;
+      </div>
+      <p>Winnaar: <strong>Flexbox</strong></p>
+      <h4>Voorbeeld 2: header layout</h4>
+      <p>Typische HTML met logo links en menu rechts, en CSS fragment voor de horizontale layout met flexbox en grid:</p>
+      <pre class="prism-default language-html w-400"><code>&lt;header&gt;
    &lt;a href=""&gt;&lt;img src="img/logo.jpg" alt="logo"&gt;&lt;/a&gt;
    &lt;nav&gt;...&lt;/nav&gt;
 &lt;/header&gt;</code></pre>
-    <div class="codecompare">
-      <pre class="prism-atom-dark language-css right" data-caption="Flexbox" data-demo="demos/04_layout/header_flexbox.html"><code>header {
+      <div class="codecompare">
+         <pre class="prism-atom-dark language-css right" data-caption="Flexbox" data-demo="demos/04_layout/header_flexbox.html"><code>header {
    display: flex;
    justify-content: space-between;
 }
 
 </code></pre>
-      <pre class="prism-atom-dark language-css wrong" data-caption="Grid" data-demo="demos/04_layout/header_grid.html"><code>header {
+         <pre class="prism-atom-dark language-css wrong" data-caption="Grid" data-demo="demos/04_layout/header_grid.html"><code>header {
    display: grid;
    grid-template-columns: auto auto;
    justify-content: space-between;
 }</code></pre>
-    </div>
-    <p>Winnaar: <strong>Flexbox</strong></p>
-    <h4>Voorbeeld 3: content kolommen</h4>
-    <p>Verdelen we de main in een variabele kolom links, en een 200px kolom rechts:</p>
-    <pre class="prism-default language-html w-400"><code>&lt;main&gt;
+      </div>
+      <p>Winnaar: <strong>Flexbox</strong></p>
+      <h4>Voorbeeld 3: content kolommen</h4>
+      <p>Verdelen we de main in een variabele kolom links, en een 200px kolom rechts:</p>
+      <pre class="prism-default language-html w-400"><code>&lt;main&gt;
    &lt;div class="main__content"&gt;&lt;/div&gt;
    &lt;aside&gt;...&lt;/aside&gt;
 &lt;/main&gt;</code></pre>
-    <p>Kolomlayout met flexbox en grid:</p>
-    <div class="codecompare">
-      <pre class="prism-atom-dark language-css wrong" data-caption="Flexbox" data-demo="demos/04_layout/columns_flexbox.html"><code>main {
+      <p>Kolomlayout met flexbox en grid:</p>
+      <div class="codecompare">
+         <pre class="prism-atom-dark language-css wrong" data-caption="Flexbox" data-demo="demos/04_layout/columns_flexbox.html"><code>main {
    display: flex;
 }
 .main__content {
@@ -2069,7 +2057,7 @@ h3, p {
 aside {
    flex: 0 0 200px;
 }</code></pre>
-      <pre class="prism-atom-dark language-css right" data-caption="Grid" data-demo="demos/04_layout/columns_grid.html"><code>main {
+         <pre class="prism-atom-dark language-css right" data-caption="Grid" data-demo="demos/04_layout/columns_grid.html"><code>main {
    display: grid;
    grid-template-columns: 1fr 200px;
 }
@@ -2079,13 +2067,13 @@ aside {
 
 
 </code></pre>
-    </div>
-    <p>Winnaar: <strong>Grid</strong></p>
-    <h4>Voorbeeld 4: formulier</h4>
-    <p>Nemen we een eenvoudig loginformulier. HTML en CSS voor flexbox vs grid:</p>
-    <div class="codecompare">
-      <div>
-        <pre class="prism-default language-html wrong" data-caption="Flexbox"><code>&lt;form&gt;
+      </div>
+      <p>Winnaar: <strong>Grid</strong></p>
+      <h4>Voorbeeld 4: formulier</h4>
+      <p>Nemen we een eenvoudig loginformulier. HTML en CSS voor flexbox vs grid:</p>
+      <div class="codecompare">
+         <div>
+            <pre class="prism-default language-html wrong" data-caption="Flexbox"><code>&lt;form&gt;
    &lt;div class="form__control"&gt;
       &lt;label for="login"&gt;Login:&lt;/label&gt;
       &lt;input type="text" id="login" required&gt;
@@ -2098,7 +2086,7 @@ aside {
       &lt;button type="submit"&gt;Submit&lt;/button&gt;
    &lt;/div&gt;
 &lt;/form&gt;</code></pre>
-        <pre class="prism-atom-dark language-css wrong" data-caption="Flexbox" data-demo="demos/04_layout/form_flexbox.html"><code>.form__control {
+            <pre class="prism-atom-dark language-css wrong" data-caption="Flexbox" data-demo="demos/04_layout/form_flexbox.html"><code>.form__control {
    display: flex;
 }
 label {
@@ -2108,9 +2096,9 @@ input {
    flex: 1 1 0;
 }
 </code></pre>
-      </div>
-      <div>
-        <pre class="prism-default language-html right"><code>&lt;form&gt;
+         </div>
+         <div>
+            <pre class="prism-default language-html right"><code>&lt;form&gt;
     &lt;label for="login"&gt;Login:&lt;/label&gt;
     &lt;input type="text" id="login" required&gt;
     &lt;label for="pw"&gt;Password:&lt;/label&gt;
@@ -2124,7 +2112,7 @@ input {
 
 
 </code></pre>
-        <pre class="prism-atom-dark language-css right" data-caption="Flexbox" data-demo="demos/04_layout/form_grid.html"><code>form {
+            <pre class="prism-atom-dark language-css right" data-caption="Flexbox" data-demo="demos/04_layout/form_grid.html"><code>form {
    display: grid;
    grid-template-columns: 120px 1fr;
 }
@@ -2133,12 +2121,12 @@ button[type=submit] {
 }
 
 </code></pre>
+         </div>
       </div>
-    </div>
-    <p>Winnaar: <strong>Grid</strong></p>
-    <h4>Voorbeeld 5: foto gallerij</h4>
-    <p>HTML code en CSS voor Flexbox en Grid:</p>
-    <pre class="prism-default language-html w-400"><code>&lt;figure id="gallery"&gt;
+      <p>Winnaar: <strong>Grid</strong></p>
+      <h4>Voorbeeld 5: foto gallerij</h4>
+      <p>HTML code en CSS voor Flexbox en Grid:</p>
+      <pre class="prism-default language-html w-400"><code>&lt;figure id="gallery"&gt;
    &lt;img src="img/foto01.jpg" alt=""&gt;
    &lt;img src="img/foto02.jpg" alt=""&gt;
    &lt;img src="img/foto03.jpg" alt=""&gt;
@@ -2148,8 +2136,8 @@ button[type=submit] {
    &lt;img src="img/foto07.jpg" alt=""&gt;
 &lt;/figure&gt;
 </code></pre>
-    <div class="codecompare">
-      <pre class="prism-atom-dark language-css wrong" data-caption="Flexbox" data-demo="demos/04_layout/gallery_flexbox.html"><code>#gallery {
+      <div class="codecompare">
+         <pre class="prism-atom-dark language-css wrong" data-caption="Flexbox" data-demo="demos/04_layout/gallery_flexbox.html"><code>#gallery {
    display: flex;
    column-gap: calc(8% / 3);
    flex-wrap: wrap;
@@ -2159,7 +2147,7 @@ button[type=submit] {
    display: block;
    width: 23%; /* 4 kolommen */
 }</code></pre>
-      <pre class="prism-atom-dark language-css right" data-caption="Grid" data-demo="demos/04_layout/gallery_grid.html"><code>#gallery {
+         <pre class="prism-atom-dark language-css right" data-caption="Grid" data-demo="demos/04_layout/gallery_grid.html"><code>#gallery {
    display: grid;
    gap: 10px;
    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
@@ -2170,25 +2158,25 @@ button[type=submit] {
 
 
 </code></pre>
-    </div>
+      </div>
 
 
 
 
 
-    <h2>Positionering</h2>
-    <div class="pro">
+      <h2>Positionering</h2>
+      <div class="pro">
 
-      <h3>Standaard weergave</h3>
-      <p>Positionering bepaalt de plaats van elementen a.h.v. <strong>coördinaten</strong> <code>top</code>, <code>right</code>, <code>bottom</code> en/of <code>left</code>. Laat ons starten van volgende code, zonder layout. Aangezien het blocklevel elementen zijn, is de natuurlijke positie van de drie blokken onder elkaar:</p>
-      <div class="codecompare">
-        <div class="democontainer">
-          <pre class="prism-default language-html" data-demo><code>&lt;div class="demowrapper"&gt;
+         <h3>Standaard weergave</h3>
+         <p>Positionering bepaalt de plaats van elementen a.h.v. <strong>coördinaten</strong> <code>top</code>, <code>right</code>, <code>bottom</code> en/of <code>left</code>. Laat ons starten van volgende code, zonder layout. Aangezien het blocklevel elementen zijn, is de natuurlijke positie van de drie blokken onder elkaar:</p>
+         <div class="codecompare">
+            <div class="democontainer">
+               <pre class="prism-default language-html" data-demo><code>&lt;div class="demowrapper"&gt;
    &lt;div class="demobox demobox1"&gt;1&lt;/div&gt;
    &lt;div class="demobox demobox2"&gt;2&lt;/div&gt;
    &lt;div class="demobox demobox3"&gt;3&lt;/div&gt;
 &lt;/div&gt;</code></pre>
-          <pre class="prism-atom-dark h-200"><code contenteditable data-target="#positioning-demo1">/* box styles */
+               <pre class="prism-atom-dark h-200"><code contenteditable data-target="#positioning-demo1">/* box styles */
 .demobox {
    border: 2px solid black;
    width: 80px;
@@ -2212,27 +2200,27 @@ button[type=submit] {
 .demobox3 {
    background-color: #333;
 }</code></pre>
-        </div>
-        <div id="positioning-demo1" class="w-500 target">
-          <div class="demowrapper">
-            <div class="demobox demobox1">1</div>
-            <div class="demobox demobox2">2</div>
-            <div class="demobox demobox3">3</div>
-          </div>
-        </div>
-      </div>
+            </div>
+            <div id="positioning-demo1" class="w-500 target">
+               <div class="demowrapper">
+                  <div class="demobox demobox1">1</div>
+                  <div class="demobox demobox2">2</div>
+                  <div class="demobox demobox3">3</div>
+               </div>
+            </div>
+         </div>
 
-      <h3>Relatief</h3>
-      <p>Met <mark>relatieve positionering</mark> wordt het element <strong>uit zijn natuurlijke positie verschoven</strong>; andere elementen blijven waar ze zijn:</p>
-      <div class="codecompare">
-        <div class="democontainer">
-          <pre class="prism-default language-html" data-demo><code>&lt;div class="demowrapper"&gt;
+         <h3>Relatief</h3>
+         <p>Met <mark>relatieve positionering</mark> wordt het element <strong>uit zijn natuurlijke positie verschoven</strong>; andere elementen blijven waar ze zijn:</p>
+         <div class="codecompare">
+            <div class="democontainer">
+               <pre class="prism-default language-html" data-demo><code>&lt;div class="demowrapper"&gt;
    &lt;div class="demobox demobox1"&gt;1&lt;/div&gt;
    &lt;div class="demobox demobox2"&gt;2&lt;/div&gt;
    &lt;div class="demobox demobox3"&gt;3&lt;/div&gt;
 &lt;/div&gt;
             </code></pre>
-          <pre class="prism-atom-dark h-200"><code contenteditable data-target="#positioning-demo2">/* relative positioning */
+               <pre class="prism-atom-dark h-200"><code contenteditable data-target="#positioning-demo2">/* relative positioning */
 .demobox2 {
    position: relative;
    left: 10px; /* verschuif 10px naar rechts */
@@ -2264,27 +2252,27 @@ button[type=submit] {
 .demobox3 {
    background-color: #333;
 }</code></pre>
-        </div>
-        <div id="positioning-demo2" class="w-500 target">
-          <div class="demowrapper">
-            <div class="demobox demobox1">1</div>
-            <div class="demobox demobox2">2</div>
-            <div class="demobox demobox3">3</div>
-          </div>
-        </div>
-      </div>
+            </div>
+            <div id="positioning-demo2" class="w-500 target">
+               <div class="demowrapper">
+                  <div class="demobox demobox1">1</div>
+                  <div class="demobox demobox2">2</div>
+                  <div class="demobox demobox3">3</div>
+               </div>
+            </div>
+         </div>
 
-      <h3>Absoluut</h3>
-      <p>Met <mark>absolute positionering</mark> neem je een element uit de pagina, en positioneer je het <strong>ten opzichte van de paginaranden</strong> (overlapping is mogelijk); andere elementen vullen de ontstane ruimte. </p>
-      <div class="codecompare">
-        <div class="democontainer">
-          <pre class="prism-default language-html" data-demo><code>&lt;div class="demowrapper"&gt;
+         <h3>Absoluut</h3>
+         <p>Met <mark>absolute positionering</mark> neem je een element uit de pagina, en positioneer je het <strong>ten opzichte van de paginaranden</strong> (overlapping is mogelijk); andere elementen vullen de ontstane ruimte. </p>
+         <div class="codecompare">
+            <div class="democontainer">
+               <pre class="prism-default language-html" data-demo><code>&lt;div class="demowrapper"&gt;
    &lt;div class="demobox demobox1"&gt;1&lt;/div&gt;
    &lt;div class="demobox demobox2"&gt;2&lt;/div&gt;
    &lt;div class="demobox demobox3"&gt;3&lt;/div&gt;
 &lt;/div&gt;
             </code></pre>
-          <pre class="prism-atom-dark h-200"><code contenteditable data-target="#positioning-demo3">/* relative positioning */
+               <pre class="prism-atom-dark h-200"><code contenteditable data-target="#positioning-demo3">/* relative positioning */
 .demobox2 {
    position: absolute;
    left: 5px; /* 5px vanaf links */
@@ -2316,27 +2304,27 @@ button[type=submit] {
 .demobox3 {
   background-color: #333;
 }</code></pre>
-        </div>
-        <div id="positioning-demo3" class="w-500 target">
-          <div class="demowrapper">
-            <div class="demobox demobox1">1</div>
-            <div class="demobox demobox2">2</div>
-            <div class="demobox demobox3">3</div>
-          </div>
-        </div>
-      </div>
-      <p>
-        Je kan het ook rechtsonder plaatsen, b.v. met <code>right: 10px; bottom: 10px;</code>
-      </p>
-      <div class="codecompare">
-        <div class="democontainer">
-          <pre class="prism-default language-html" data-demo><code>&lt;div class="demowrapper"&gt;
+            </div>
+            <div id="positioning-demo3" class="w-500 target">
+               <div class="demowrapper">
+                  <div class="demobox demobox1">1</div>
+                  <div class="demobox demobox2">2</div>
+                  <div class="demobox demobox3">3</div>
+               </div>
+            </div>
+         </div>
+         <p>
+            Je kan het ook rechtsonder plaatsen, b.v. met <code>right: 10px; bottom: 10px;</code>
+         </p>
+         <div class="codecompare">
+            <div class="democontainer">
+               <pre class="prism-default language-html" data-demo><code>&lt;div class="demowrapper"&gt;
    &lt;div class="demobox demobox1"&gt;1&lt;/div&gt;
    &lt;div class="demobox demobox2"&gt;2&lt;/div&gt;
    &lt;div class="demobox demobox3"&gt;3&lt;/div&gt;
 &lt;/div&gt;
             </code></pre>
-          <pre class="prism-atom-dark h-200"><code contenteditable data-target="#positioning-demo4">/* relative positioning */
+               <pre class="prism-atom-dark h-200"><code contenteditable data-target="#positioning-demo4">/* relative positioning */
 .demobox2 {
    position: absolute;
    bottom: 10px; /* 10px vanaf beneden */
@@ -2368,26 +2356,26 @@ button[type=submit] {
 .demobox3 {
   background-color: #333;
 }</code></pre>
-        </div>
-        <div id="positioning-demo4" class="w-500 target">
-          <div class="demowrapper">
-            <div class="demobox demobox1">1</div>
-            <div class="demobox demobox2">2</div>
-            <div class="demobox demobox3">3</div>
-          </div>
-        </div>
-      </div>
+            </div>
+            <div id="positioning-demo4" class="w-500 target">
+               <div class="demowrapper">
+                  <div class="demobox demobox1">1</div>
+                  <div class="demobox demobox2">2</div>
+                  <div class="demobox demobox3">3</div>
+               </div>
+            </div>
+         </div>
 
-      <h4>absoluut-relatief</h4>
-      <p>De coördinaten zijn standaard t.o.v. de pagina. Als je wil positioneren <strong>ten opzichte van de parent</strong>, stel je die in op <code>position: relative</code>; dit heet <mark>absoluut-relatieve positionering</mark>.</p>
-      <div class="codecompare">
-        <div class="democontainer">
-          <pre class="prism-default language-html" data-demo><code>&lt;div class="demowrapper"&gt;
+         <h4>absoluut-relatief</h4>
+         <p>De coördinaten zijn standaard t.o.v. de pagina. Als je wil positioneren <strong>ten opzichte van de parent</strong>, stel je die in op <code>position: relative</code>; dit heet <mark>absoluut-relatieve positionering</mark>.</p>
+         <div class="codecompare">
+            <div class="democontainer">
+               <pre class="prism-default language-html" data-demo><code>&lt;div class="demowrapper"&gt;
    &lt;div class="demobox demobox1"&gt;1&lt;/div&gt;
    &lt;div class="demobox demobox2"&gt;2&lt;/div&gt;
    &lt;div class="demobox demobox3"&gt;3&lt;/div&gt;
 &lt;/div&gt;</code></pre>
-          <pre class="prism-atom-dark h-200"><code contenteditable data-target="#positioning-demo8">/* absoluut-relative positioning */
+               <pre class="prism-atom-dark h-200"><code contenteditable data-target="#positioning-demo8">/* absoluut-relative positioning */
 .demowrapper {
    position: relative; /* nieuwe referentie voor coördinaten */
 }
@@ -2423,24 +2411,24 @@ button[type=submit] {
 .demobox3 {
   background-color: #333;
 }</code></pre>
-        </div>
-        <div id="positioning-demo8" class="w-500 target">
-          <div class="demowrapper">
-            <div class="demobox demobox1">1</div>
-            <div class="demobox demobox2">2</div>
-            <div class="demobox demobox3">3</div>
-          </div>
-        </div>
-      </div>
-      <h4>overlay voorbeeld</h4>
-      <p>Als je vier coördinaten opgeeft (en <code>width</code> en <code>height</code> weghaalt) wordt het element over de hele pagina uitgerokken (en bedekt het de andere blokken). Met een gedeeltelijk transparante achtergrond kan je dan een overlay maken:</p>
-      <div class="codecompare">
-        <div class="democontainer">
-          <pre class="prism-default language-html w-500" data-demo><code>
+            </div>
+            <div id="positioning-demo8" class="w-500 target">
+               <div class="demowrapper">
+                  <div class="demobox demobox1">1</div>
+                  <div class="demobox demobox2">2</div>
+                  <div class="demobox demobox3">3</div>
+               </div>
+            </div>
+         </div>
+         <h4>overlay voorbeeld</h4>
+         <p>Als je vier coördinaten opgeeft (en <code>width</code> en <code>height</code> weghaalt) wordt het element over de hele pagina uitgerokken (en bedekt het de andere blokken). Met een gedeeltelijk transparante achtergrond kan je dan een overlay maken:</p>
+         <div class="codecompare">
+            <div class="democontainer">
+               <pre class="prism-default language-html w-500" data-demo><code>
 &lt;div class="overlay"&gt;&lt;h2&gt;OVERLAY CONTENT HIER&lt;/h2&gt;&lt;/div&gt;
 &lt;p&gt;Wij zin rijken ruimer zekere. Loopbaan een district bordeaux mag bevreesd heb. Inkomsten op af singapore behoeften. Het brengen den gedaald menigte markten evenals javanen. Ontwouding middellijn nu geruineerd ptolomaeus denzelfden in handelaars. Vrij in nu kilo west. Wieschen vermengd verbouwd zou was die verschil het geheelen voorzien. &lt;/p&gt;
 &lt;p&gt;Gebrek loopen kan zee zit andere ton levert zeggen zonder. Rook zoo twee zee hen maal. Wantrouwen ons tot inboorling nog doorzoeken.&lt;/p&gt;</code></pre>
-          <pre class="prism-atom-dark h-200"><code contenteditable data-target="#positioning-demo5">/* absolute positioning */
+               <pre class="prism-atom-dark h-200"><code contenteditable data-target="#positioning-demo5">/* absolute positioning */
 .overlay {
    /* maak overlay */
    background-color: #888c;
@@ -2456,31 +2444,31 @@ button[type=submit] {
    text-align: center;
 }
 </code></pre>
-        </div>
-        <div id="positioning-demo5" class="w-500 target">
-          <div class="overlay">
-            <h2>OVERLAY CONTENT HIER</h2>
-          </div>
-          <p>Wij zin rijken ruimer zekere. Loopbaan een district bordeaux mag bevreesd heb. Inkomsten op af singapore behoeften. Het brengen den gedaald menigte markten evenals javanen. Ontwouding middellijn nu geruineerd ptolomaeus denzelfden in handelaars. Vrij in nu kilo west. Wieschen vermengd verbouwd zou was die verschil het geheelen voorzien. </p>
-          <p>Gebrek loopen kan zee zit andere ton levert zeggen zonder. Rook zoo twee zee hen maal. Wantrouwen ons tot inboorling nog doorzoeken.</p>
-        </div>
-      </div>
-      <h4>z-index</h4>
+            </div>
+            <div id="positioning-demo5" class="w-500 target">
+               <div class="overlay">
+                  <h2>OVERLAY CONTENT HIER</h2>
+               </div>
+               <p>Wij zin rijken ruimer zekere. Loopbaan een district bordeaux mag bevreesd heb. Inkomsten op af singapore behoeften. Het brengen den gedaald menigte markten evenals javanen. Ontwouding middellijn nu geruineerd ptolomaeus denzelfden in handelaars. Vrij in nu kilo west. Wieschen vermengd verbouwd zou was die verschil het geheelen voorzien. </p>
+               <p>Gebrek loopen kan zee zit andere ton levert zeggen zonder. Rook zoo twee zee hen maal. Wantrouwen ons tot inboorling nog doorzoeken.</p>
+            </div>
+         </div>
+         <h4>z-index</h4>
 
-      <p>Je kan de stapelvolgorde van gepositioneerde elementen altijd aanpassen met <mark>z-index</mark>, een willekeurig geheel getal:</p>
-      <ul>
-        <li>een <strong>negatieve z-index</strong> plaatst het element <strong>onder</strong> normale content</li>
-        <li>een <strong>positieve z-index</strong> plaatst het element <strong>boven</strong> normale content, hoe hoger de index, hoe meer bovenaan</li>
-      </ul>
-      <p>Een voorbeeld met drie absoluut gepositioneerde blokken:</p>
-      <div class="codecompare">
-        <div class="democontainer">
-          <pre class="prism-default language-html w-500" data-demo><code>&lt;div class="demobox demobox1"&gt;1&lt;/div&gt;
+         <p>Je kan de stapelvolgorde van gepositioneerde elementen altijd aanpassen met <mark>z-index</mark>, een willekeurig geheel getal:</p>
+         <ul>
+            <li>een <strong>negatieve z-index</strong> plaatst het element <strong>onder</strong> normale content</li>
+            <li>een <strong>positieve z-index</strong> plaatst het element <strong>boven</strong> normale content, hoe hoger de index, hoe meer bovenaan</li>
+         </ul>
+         <p>Een voorbeeld met drie absoluut gepositioneerde blokken:</p>
+         <div class="codecompare">
+            <div class="democontainer">
+               <pre class="prism-default language-html w-500" data-demo><code>&lt;div class="demobox demobox1"&gt;1&lt;/div&gt;
 &lt;div class="demobox demobox2"&gt;2&lt;/div&gt;
 &lt;div class="demobox demobox3"&gt;3&lt;/div&gt;
 &lt;p&gt;Wij zin rijken ruimer zekere. Loopbaan een district bordeaux mag bevreesd heb. Inkomsten op af singapore behoeften. Het brengen den gedaald menigte markten evenals javanen. Ontwouding middellijn nu geruineerd ptolomaeus denzelfden in handelaars. Vrij in nu kilo west. Wieschen vermengd verbouwd zou was die verschil het geheelen voorzien. &lt;/p&gt;
 &lt;p&gt;Gebrek loopen kan zee zit andere ton levert zeggen zonder. Rook zoo twee zee hen maal. Wantrouwen ons tot inboorling nog doorzoeken.&lt;/p&gt;</code></pre>
-          <pre class="prism-atom-dark h-300"><code contenteditable data-target="#positioning-demo7">/* stapelvolgorde */
+               <pre class="prism-atom-dark h-300"><code contenteditable data-target="#positioning-demo7">/* stapelvolgorde */
 .demobox1 {
    z-index: 4; /* probeer een ook 20, 1 en -1 */
 }
@@ -2533,27 +2521,27 @@ button[type=submit] {
 .demobox3 {
   background-color: #333;
 }</code></pre>
-        </div>
-        <div id="positioning-demo7" class="w-500 target">
-          <p>Wij zin rijken ruimer zekere. Loopbaan een district bordeaux mag bevreesd heb. Inkomsten op af singapore behoeften. Het brengen den gedaald menigte markten evenals javanen. Ontwouding middellijn nu geruineerd ptolomaeus denzelfden in handelaars. Vrij in nu kilo west. Wieschen vermengd verbouwd zou was die verschil het geheelen voorzien. </p>
-          <p>Gebrek loopen kan zee zit andere ton levert zeggen zonder. Rook zoo twee zee hen maal. Wantrouwen ons tot inboorling nog doorzoeken.</p>
-          <div class="demobox demobox1">1</div>
-          <div class="demobox demobox2">2</div>
-          <div class="demobox demobox3">3</div>
-        </div>
+            </div>
+            <div id="positioning-demo7" class="w-500 target">
+               <p>Wij zin rijken ruimer zekere. Loopbaan een district bordeaux mag bevreesd heb. Inkomsten op af singapore behoeften. Het brengen den gedaald menigte markten evenals javanen. Ontwouding middellijn nu geruineerd ptolomaeus denzelfden in handelaars. Vrij in nu kilo west. Wieschen vermengd verbouwd zou was die verschil het geheelen voorzien. </p>
+               <p>Gebrek loopen kan zee zit andere ton levert zeggen zonder. Rook zoo twee zee hen maal. Wantrouwen ons tot inboorling nog doorzoeken.</p>
+               <div class="demobox demobox1">1</div>
+               <div class="demobox demobox2">2</div>
+               <div class="demobox demobox3">3</div>
+            </div>
+         </div>
       </div>
-    </div>
 
-    <h3>Fixed</h3>
-    <p>De <mark>fixed positionering</mark> fixeert een element op de pagina, onafhankelijk van het scrollen:</p>
-    <div class="codecompare">
-      <div class="democontainer">
-        <pre class="prism-default language-html w-500"><code>&lt;p&gt;(scroll this page)&lt;/p&gt;
+      <h3>Fixed</h3>
+      <p>De <mark>fixed positionering</mark> fixeert een element op de pagina, onafhankelijk van het scrollen:</p>
+      <div class="codecompare">
+         <div class="democontainer">
+            <pre class="prism-default language-html w-500"><code>&lt;p&gt;(scroll this page)&lt;/p&gt;
 &lt;p&gt;Folly words widow one downs few age every seven. If miss part by fact he park just shew. Discovered had get considered projection who favourable. Necessary up knowledge it tolerably. Unwilling departure education is be dashwoods or an. Use off agreeable law unwilling sir deficient curiosity instantly. Easy mind life fact with see has bore ten. Parish any chatty can elinor direct for former. Up as meant widow equal an share least. &lt;/p&gt;
 &lt;p&gt;Examine she brother prudent add day ham. Far stairs now coming bed oppose hunted become his. You zealously departure had procuring suspicion. Books whose front would purse if be do decay. Quitting you way formerly disposed perceive ladyship are. Common turned boy direct and yet. &lt;/p&gt;
 &lt;p&gt;Ye on properly handsome returned throwing am no whatever. In without wishing he of picture no exposed talking minutes. Curiosity continual belonging offending so explained it exquisite. Do remember to followed yourself material mr recurred carriage. High drew west we no or at john. About or given on witty event. Or sociable up material bachelor bringing landlord confined. Busy so many in hung easy find well up. So of exquisite my an explained remainder. Dashwood denoting securing be on perceive my laughing so.&lt;/p&gt;
 &lt;a id="toplink" href="#top"&gt;back to top ↑&lt;/a&gt;</code></pre>
-        <pre class="prism-atom-dark"><code>#toplink {
+            <pre class="prism-atom-dark"><code>#toplink {
   /* add fixed top link */
   position: fixed;
   right: 10px;
@@ -2563,21 +2551,21 @@ button[type=submit] {
   border: 2px solid black;
   padding: 5px 10px;
 }</code></pre>
+         </div>
+         <iframe src="demos/04_layout/fixed.html" class="w-400"></iframe>
       </div>
-      <iframe src="demos/04_layout/fixed.html" class="w-400"></iframe>
-    </div>
 
-    <h3>Sticky</h3>
-    <p>De <mark>sticky positionering</mark> scrollt tot een gegeven offset bereikt is, waarna het blijft plakken.</p>
-    <div class="codecompare">
-      <div class="democontainer">
-        <pre class="prism-default language-html w-500"><code>&lt;p&gt;(scroll this page)&lt;/p&gt;
+      <h3>Sticky</h3>
+      <p>De <mark>sticky positionering</mark> scrollt tot een gegeven offset bereikt is, waarna het blijft plakken.</p>
+      <div class="codecompare">
+         <div class="democontainer">
+            <pre class="prism-default language-html w-500"><code>&lt;p&gt;(scroll this page)&lt;/p&gt;
 &lt;div id="sticky"&gt;I am sticky!&lt;/div&gt;
 &lt;p&gt;Folly words widow one downs few age every seven. If miss part by fact he park just shew. Discovered had get considered projection who favourable. Necessary up knowledge it tolerably. Unwilling departure education is be dashwoods or an. Use off agreeable law unwilling sir deficient curiosity instantly. Easy mind life fact with see has bore ten. Parish any chatty can elinor direct for former. Up as meant widow equal an share least. &lt;/p&gt;
 &lt;p&gt;Examine she brother prudent add day ham. Far stairs now coming bed oppose hunted become his. You zealously departure had procuring suspicion. Books whose front would purse if be do decay. Quitting you way formerly disposed perceive ladyship are. Common turned boy direct and yet. &lt;/p&gt;
 &lt;p&gt;Ye on properly handsome returned throwing am no whatever. In without wishing he of picture no exposed talking minutes. Curiosity continual belonging offending so explained it exquisite. Do remember to followed yourself material mr recurred carriage. High drew west we no or at john. About or given on witty event. Or sociable up material bachelor bringing landlord confined. Busy so many in hung easy find well up. So of exquisite my an explained remainder. Dashwood denoting securing be on perceive my laughing so.&lt;/p&gt;
 </code></pre>
-        <pre class="prism-atom-dark"><code>#sticky {
+            <pre class="prism-atom-dark"><code>#sticky {
    /* make sticky */
    position: sticky;
    top: 0; /* stick to top */
@@ -2588,35 +2576,35 @@ button[type=submit] {
    padding: 5px 10px;
    text-decoration: none;
 }</code></pre>
+         </div>
+         <iframe src="demos/04_layout/sticky.html" class="w-400"></iframe>
       </div>
-      <iframe src="demos/04_layout/sticky.html" class="w-400"></iframe>
-    </div>
-    <div class="pro">
+      <div class="pro">
 
-      <h3>Wanneer gebruiken</h3>
-      <p>Studenten hebben vaak de neiging positionering veel te snel terug te grijpen naar positionering. Eigenlijk wordt het <em>zeer weinig gebruikt</em>. Wanneer wel:</p>
-      <ul class="right">
-        <li>gebruik <strong>sticky</strong> of <strong>fixed</strong> voor "back to top links", sticky notes e.d.</li>
-        <li>gebruik <strong>absolute positionering</strong> voor game programming om layers te maken, zie b.v. <a href="demos/02_design/animations2.html">deze uitgebreide demo</a></li>
-      </ul>
-      <p>Gebruik positionering zeker niet voor:</p>
-      <ul class="wrong">
-        <li>gebruik <strong>geen relatieve positionering</strong> om foutjes in de layout te corrigeren</li>
-        <li>gebruik <strong>geen absolute positionering</strong> om elementen binnen een parent te positioneren; dat doen we met flexbox en margins/paddings</li>
-        <li>gebruik <strong>geen positionering</strong> technieken voor pagina layout; dat doen we met flexbox en margins/paddings</li>
-      </ul>
-      <div class="tips" data-caption="☝🏼REGEL">
-        <p>De vuistregel is: <strong>als het anders kan</strong> (b.v. met flexbox), <strong>gebruik dan geen positionering</strong></p>
+         <h3>Wanneer gebruiken</h3>
+         <p>Studenten hebben vaak de neiging positionering veel te snel terug te grijpen naar positionering. Eigenlijk wordt het <em>zeer weinig gebruikt</em>. Wanneer wel:</p>
+         <ul class="right">
+            <li>gebruik <strong>sticky</strong> of <strong>fixed</strong> voor "back to top links", sticky notes e.d.</li>
+            <li>gebruik <strong>absolute positionering</strong> voor game programming om layers te maken, zie b.v. <a href="demos/02_design/animations2.html">deze uitgebreide demo</a></li>
+         </ul>
+         <p>Gebruik positionering zeker niet voor:</p>
+         <ul class="wrong">
+            <li>gebruik <strong>geen relatieve positionering</strong> om foutjes in de layout te corrigeren</li>
+            <li>gebruik <strong>geen absolute positionering</strong> om elementen binnen een parent te positioneren; dat doen we met flexbox en margins/paddings</li>
+            <li>gebruik <strong>geen positionering</strong> technieken voor pagina layout; dat doen we met flexbox en margins/paddings</li>
+         </ul>
+         <div class="tips" data-caption="☝🏼REGEL">
+            <p>De vuistregel is: <strong>als het anders kan</strong> (b.v. met flexbox), <strong>gebruik dan geen positionering</strong></p>
+         </div>
       </div>
-    </div>
 
-    <h2>Layout case study</h2>
-    <p>We bekijken een samenvattend voorbeeld, in twee versies. Resultaat:</p>
-    <p><img src="img/04_layout/casestudy.png" alt="" class="w-800 bordered shadow"></p>
-    <h3>Versie met hoofdzakelijk Flexbox</h3>
-    <p>In deze versie is enkel Grid gebruikt voor de twee kolommen van de main, de rest is met Flexbox.</p>
-    <div class="codecompare">
-      <pre class="prism-default language-html h-500" data-demo="demos/04_layout/casestudy_flex.html"><code>&lt;body&gt;
+      <h2>Layout case study</h2>
+      <p>We bekijken een samenvattend voorbeeld, in twee versies. Resultaat:</p>
+      <p><img src="img/04_layout/casestudy.png" alt="" class="w-800 bordered shadow"></p>
+      <h3>Versie met hoofdzakelijk Flexbox</h3>
+      <p>In deze versie is enkel Grid gebruikt voor de twee kolommen van de main, de rest is met Flexbox.</p>
+      <div class="codecompare">
+         <pre class="prism-default language-html h-500" data-demo="demos/04_layout/casestudy_flex.html"><code>&lt;body&gt;
    &lt;header&gt;
       &lt;h1 class="header_logo"&gt;Logo&lt;/h1&gt;
       &lt;p class="header_tagline"&gt;some great tagline&lt;/p&gt;
@@ -2644,7 +2632,7 @@ button[type=submit] {
       &lt;p&gt;&copy; 2024&lt;/p&gt;
    &lt;/footer&gt;
 &lt;/body&gt;</code></pre>
-      <pre class="prism-atom-dark h-500"><code>/* body layout */
+         <pre class="prism-atom-dark h-500"><code>/* body layout */
 body {
    display: flex;
    flex-direction: column; /* plaats header, nav, main, footer onder elkaar */
@@ -2722,56 +2710,56 @@ header, footer {
 aside {
    background-color: #bcd;
 }</code></pre>
-    </div>
-    <p>Je herkent volgende technieken:</p>
-    <ul>
-      <li>
-        <strong>body</strong>
-        <ul>
-          <li>verticale layout met <code> display: flex; flex-direction: column</code></li>
-          <li>de <code>&lt;main&gt;</code> vult resterende verticale ruimte met <code>flex: 1 1 0</code></li>
-          <li>de <code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code> en <code>&lt;footer&gt;</code> nemen niet meer ruimte in dan nodig (standaardwaarde is <code>flex: 0 1 auto</code>)</li>
-          <li>horizontaal gecentreerd in de pagina met <code>max-width: 1000px; margin: 0 auto;</code></li>
-          <li>verticaal over de browser viewport uitgerokken met <code>min-height: 100vh</code></li>
-        </ul>
-      </li>
-      <li>
-        <strong>header</strong>
-        <ul>
-          <li>horizontale layout met <code>display: flex</code></li>
-          <li>items verticaal gecentreerd met <code>align-items: center</code></li>
-          <li>items zo ver mogelijk uit elkaar met <code>justify-content: space-between</code></li>
-          <li>logo vaste breedte met <code>flex: 0 0 100px</code></li>
-          <li>zoekformulier vaste breedte met <code>flex: 0 0 220px</code></li>
-          <li>zoekformulier onderaan geplaatst met <code>align-self: flex-end</code></li>
-        </ul>
-      </li>
-      <li>
-        <strong>nav</strong>
-        <ul>
-          <li>horizontale layout met <code>display: flex</code></li>
-          <li>items gecentreerd met <code>justify-content: center</code></li>
-          <li>ruimte tussen items met <code>gap: 10px</code></li>
-        </ul>
-      </li>
-      <li>
-        <strong>main</strong>
-        <ul>
-          <li>grid layout met <code>display: grid</code></li>
-          <li>twee kolommen met <code>grid-template-columns: 1fr 100px</code></li>
-        </ul>
-      </li>
-      <li>
-        <strong>footer</strong>
-        <ul>
-          <li>tekst gecentreerd met <code>text-align: center</code></li>
-        </ul>
-      </li>
-    </ul>
-    <h3>Versie met hoofdzakelijk Grid</h3>
-    <p>De HTML code is gelijk, maar we geven het voor de duidelijkheid nog eens weer, samen met de CSS code:</p>
-    <div class="codecompare">
-      <pre class="prism-default language-html h-500" data-demo="demos/04_layout/casestudy_grid.html"><code>&lt;body&gt;
+      </div>
+      <p>Je herkent volgende technieken:</p>
+      <ul>
+         <li>
+            <strong>body</strong>
+            <ul>
+               <li>verticale layout met <code> display: flex; flex-direction: column</code></li>
+               <li>de <code>&lt;main&gt;</code> vult resterende verticale ruimte met <code>flex: 1 1 0</code></li>
+               <li>de <code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code> en <code>&lt;footer&gt;</code> nemen niet meer ruimte in dan nodig (standaardwaarde is <code>flex: 0 1 auto</code>)</li>
+               <li>horizontaal gecentreerd in de pagina met <code>max-width: 1000px; margin: 0 auto;</code></li>
+               <li>verticaal over de browser viewport uitgerokken met <code>min-height: 100vh</code></li>
+            </ul>
+         </li>
+         <li>
+            <strong>header</strong>
+            <ul>
+               <li>horizontale layout met <code>display: flex</code></li>
+               <li>items verticaal gecentreerd met <code>align-items: center</code></li>
+               <li>items zo ver mogelijk uit elkaar met <code>justify-content: space-between</code></li>
+               <li>logo vaste breedte met <code>flex: 0 0 100px</code></li>
+               <li>zoekformulier vaste breedte met <code>flex: 0 0 220px</code></li>
+               <li>zoekformulier onderaan geplaatst met <code>align-self: flex-end</code></li>
+            </ul>
+         </li>
+         <li>
+            <strong>nav</strong>
+            <ul>
+               <li>horizontale layout met <code>display: flex</code></li>
+               <li>items gecentreerd met <code>justify-content: center</code></li>
+               <li>ruimte tussen items met <code>gap: 10px</code></li>
+            </ul>
+         </li>
+         <li>
+            <strong>main</strong>
+            <ul>
+               <li>grid layout met <code>display: grid</code></li>
+               <li>twee kolommen met <code>grid-template-columns: 1fr 100px</code></li>
+            </ul>
+         </li>
+         <li>
+            <strong>footer</strong>
+            <ul>
+               <li>tekst gecentreerd met <code>text-align: center</code></li>
+            </ul>
+         </li>
+      </ul>
+      <h3>Versie met hoofdzakelijk Grid</h3>
+      <p>De HTML code is gelijk, maar we geven het voor de duidelijkheid nog eens weer, samen met de CSS code:</p>
+      <div class="codecompare">
+         <pre class="prism-default language-html h-500" data-demo="demos/04_layout/casestudy_grid.html"><code>&lt;body&gt;
    &lt;header&gt;
       &lt;h1 class="header_logo"&gt;Logo&lt;/h1&gt;
       &lt;p class="header_tagline"&gt;some great tagline&lt;/p&gt;
@@ -2799,7 +2787,7 @@ aside {
       &lt;p&gt;&copy; 2024&lt;/p&gt;
    &lt;/footer&gt;
 &lt;/body&gt;</code></pre>
-      <pre class="prism-atom-dark h-500"><code>/* body layout */
+         <pre class="prism-atom-dark h-500"><code>/* body layout */
 body {
    display: grid; /* maak grid */
    grid-template-rows: auto auto 1fr auto; /* vier rijen */
@@ -2881,81 +2869,81 @@ header, footer {
 aside {
    background-color: #bcd;
 }</code></pre>
-    </div>
-    <p>Je herkent volgende technieken:</p>
-    <ul>
-      <li>
-        <strong>body</strong>
-        <ul>
-          <li>vier rijen met <code>display: grid; grid-template-rows: auto auto 1fr auto;</code></li>
-          <li>horizontaal gecentreerd in de pagina met <code>max-width: 1000px; margin: 0 auto;</code></li>
-          <li>verticaal over de browser viewport uitgerokken met <code>min-height: 100vh</code></li>
-        </ul>
-      </li>
-      <li>
-        <strong>header</strong>
-        <ul>
-          <li>horizontale layout met <code>display: grid; grid-template-columns: auto 1fr auto</code></li>
-          <li>items verticaal gecentreerd met <code>align-items: center</code></li>
-          <li>items horizontaal gecentreerd met <code>justify-content: center</code></li>
-          <li>zoekformulier onderaan geplaatst met <code>align-self: end</code></li>
-        </ul>
-      </li>
-      <li>
-        <strong>nav</strong>
-        <ul>
-          <li>horizontale layout met <code>display: flex</code></li>
-          <li>items gecentreerd met <code>justify-content: center</code></li>
-          <li>ruimte tussen items met <code>gap: 10px</code></li>
-        </ul>
-      </li>
-      <li>
-        <strong>main</strong>
-        <ul>
-          <li>grid layout met <code>display: grid</code></li>
-          <li>twee kolommen met <code>grid-template-columns: 1fr 100px</code></li>
-        </ul>
-      </li>
-      <li>
-        <strong>footer</strong>
-        <ul>
-          <li>tekst gecentreerd met <code>text-align: center</code></li>
-        </ul>
-      </li>
-    </ul>
-
-  </main>
-  <footer>
-    <img src="common/img/thats-all.jpg" alt="">
-    <div class="footer__bottom">
-      <p>@2024, Rogier van der Linde</p>
-      <p>cursussen in dezelfde reeks: <a href="https://rogiervdl.github.io/HTML-course/">HTML</a> &mdash; <a href="https://rogiervdl.github.io/JS-course/">Javascript</a> &mdash; <a href="https://rogiervdl.github.io/CS-course/">C#</a> &mdash; <a href="https://rogiervdl.github.io/DEVENV-course/">ontwikkelomgeving</a></p>
-    </div>
-  </footer>
-  <a aria-label="up" id="up" href="#top"><span class="fas fa-chevron-circle-up"></span></a>
-  <!-- popup -->
-  <div class="hystmodal dialog" id="diaDemo" aria-hidden="true">
-    <div class="hystmodal__wrap">
-      <div class="hystmodal__window" role="dialog" aria-modal="true">
-        <iframe title="demo"></iframe>
       </div>
-    </div>
-  </div>
-  <!-- scripts -->
-  <script src="common/vendor/prism/prism.js"></script>
-  <script src="common/vendor/hystmodal/hystmodal.min.js"></script>
-  <script src="common/vendor/css.min.js"></script>
-  <script src="common/js/mode.js"></script>
-  <script src="common/js/scripts.js"></script>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-8XDY8HXTN9"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
+      <p>Je herkent volgende technieken:</p>
+      <ul>
+         <li>
+            <strong>body</strong>
+            <ul>
+               <li>vier rijen met <code>display: grid; grid-template-rows: auto auto 1fr auto;</code></li>
+               <li>horizontaal gecentreerd in de pagina met <code>max-width: 1000px; margin: 0 auto;</code></li>
+               <li>verticaal over de browser viewport uitgerokken met <code>min-height: 100vh</code></li>
+            </ul>
+         </li>
+         <li>
+            <strong>header</strong>
+            <ul>
+               <li>horizontale layout met <code>display: grid; grid-template-columns: auto 1fr auto</code></li>
+               <li>items verticaal gecentreerd met <code>align-items: center</code></li>
+               <li>items horizontaal gecentreerd met <code>justify-content: center</code></li>
+               <li>zoekformulier onderaan geplaatst met <code>align-self: end</code></li>
+            </ul>
+         </li>
+         <li>
+            <strong>nav</strong>
+            <ul>
+               <li>horizontale layout met <code>display: flex</code></li>
+               <li>items gecentreerd met <code>justify-content: center</code></li>
+               <li>ruimte tussen items met <code>gap: 10px</code></li>
+            </ul>
+         </li>
+         <li>
+            <strong>main</strong>
+            <ul>
+               <li>grid layout met <code>display: grid</code></li>
+               <li>twee kolommen met <code>grid-template-columns: 1fr 100px</code></li>
+            </ul>
+         </li>
+         <li>
+            <strong>footer</strong>
+            <ul>
+               <li>tekst gecentreerd met <code>text-align: center</code></li>
+            </ul>
+         </li>
+      </ul>
 
-    gtag('config', 'G-8XDY8HXTN9');
-  </script>
+   </main>
+   <footer>
+      <img src="common/img/thats-all.jpg" alt="">
+      <div class="footer__bottom">
+         <p>@2024, Rogier van der Linde</p>
+         <p>cursussen in dezelfde reeks: <a href="https://rogiervdl.github.io/HTML-course/">HTML</a> &mdash; <a href="https://rogiervdl.github.io/JS-course/">Javascript</a> &mdash; <a href="https://rogiervdl.github.io/CS-course/">C#</a> &mdash; <a href="https://rogiervdl.github.io/DEVENV-course/">ontwikkelomgeving</a></p>
+      </div>
+   </footer>
+   <a aria-label="up" id="up" href="#top"><span class="fas fa-chevron-circle-up"></span></a>
+   <!-- popup -->
+   <div class="hystmodal dialog" id="diaDemo" aria-hidden="true">
+      <div class="hystmodal__wrap">
+         <div class="hystmodal__window" role="dialog" aria-modal="true">
+            <iframe title="demo"></iframe>
+         </div>
+      </div>
+   </div>
+   <!-- scripts -->
+   <script src="common/vendor/prism/prism.js"></script>
+   <script src="common/vendor/hystmodal/hystmodal.min.js"></script>
+   <script src="common/vendor/css.min.js"></script>
+   <script src="common/js/mode.js"></script>
+   <script src="common/js/scripts.js"></script>
+   <!-- Google tag (gtag.js) -->
+   <script async src="https://www.googletagmanager.com/gtag/js?id=G-8XDY8HXTN9"></script>
+   <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag('js', new Date());
+
+      gtag('config', 'G-8XDY8HXTN9');
+   </script>
 </body>
 
 </html>
