@@ -1314,75 +1314,81 @@ h3, p {
       <p>
          Deze property <span class="pro">combineert <code>flex-grow</code>, <code>flex-shrink</code> en <code>flex-basis</code>. Het</span> is vooral van belang bij kolommen, en zegt wat hun initiële breedte is, en hoe snel ze groeien en krimpen naargelang de breedte van de container.
       </p>
-      <p>De meest voorkomende waarden (te onthouden!):</p>
+      <p>Er zijn veel mogelijkheden, maar dit zijn de drie meest voorkomende waarden (te onthouden!):</p>
       <table class="light">
          <thead>
             <tr>
                <th scope="col">voorbeeld</th>
-               <th scope="col">uitleg</th>
+               <th scope="col">shorthand</th>
                <th scope="col">betekenis</th>
+               <th scope="col">uitleg</th>
             </tr>
          </thead>
          <tbody>
             <tr>
                <td><code>flex: 0 0 200px;</code></td>
-               <td>groeit of krimpt niet, initieel 200px breed</td>
+               <td><code>&mdash;</code></td>
                <td>vaste afmeting van 200px</td>
+               <td>groeit of krimpt niet, initieel 200px breed</td>
             </tr>
             <tr>
                <td><code>flex: 1 1 0;</code></td>
+               <td><code>flex: 1;</code></td>
+               <td>flexibel, normale breedte</td>
                <td>groeit en krimpt normaal, initieel 0px breed</td>
-               <td>flexibel, neemt beschikbare ruimte in</td>
             </tr>
             <tr>
                <td><code>flex: 2 2 0;</code></td>
+               <td><code>flex: 2;</code></td>
+               <td>flexibel, dubbele breedte</td>
                <td>groeit en krimpt 2x zo snel, initieel 0px breed</td>
-               <td>flexibel, neemt beschikbare ruimte in</td>
-            </tr>
-            <tr>
-               <td><code>flex: 0 1 auto;</code></td>
-               <td>groeit niet, kan krimpen, initieel natuurlijke breedte<br><span class="smaller">(bepaald door content of, indien ingesteld, <code>width</code> property)</span></td>
-               <td>niet groter dan de content</td>
             </tr>
          </tbody>
       </table>
-      <p>Nog andere voorbeelden:</p>
-      <table class="light">
-         <thead>
-            <tr>
-               <th scope="col">voorbeeld</th>
-               <th scope="col">uitleg</th>
-               <th scope="col">betekenis</th>
-            </tr>
-         </thead>
-         <tbody>
-            <tr>
-               <td><code>flex: 1 0 200px;</code></td>
-               <td>groeit normaal, krimpt niet, initieel 200px</td>
-               <td>minstens 200px</td>
-            </tr>
-            <tr>
-               <td><code>flex: 0 1 200px;</code></td>
-               <td>groeit niet, krimpt normaal, initieel 200px</td>
-               <td>maximaal 200px</td>
-            </tr>
-            <tr>
-               <td><code>flex: 1 1 200px;</code></td>
-               <td>groeit normaal, krimpt normaal, initieel 200px</td>
-               <td>flexibel, initieel 200px</td>
-            </tr>
-            <tr>
-               <td><code>flex: 2 1 200px;</code></td>
-               <td>groeit dubbel zo snel, krimpt normaal, initieel 200px</td>
-               <td>flexibel, initieel 200px, groeit sneller</td>
-            </tr>
-            <tr>
-               <td><code>flex: 1 2 200px;</code></td>
-               <td>groeit normaal, krimpt dubbel zo snel, initieel 200px breed</td>
-               <td>flexibel, initieel 200px, krimpt sneller</td>
-            </tr>
-         </tbody>
-      </table>
+		<div class="pro">
+			<p>Nog andere voorbeelden:</p>
+			<table class="light">
+				<thead>
+					<tr>
+						<th scope="col">voorbeeld</th>
+						<th scope="col">uitleg</th>
+						<th scope="col">betekenis</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td><code>flex: 1 0 200px;</code></td>
+						<td>groeit normaal, krimpt niet, initieel 200px</td>
+						<td>minstens 200px</td>
+					</tr>
+					<tr>
+						<td><code>flex: 0 1 200px;</code></td>
+						<td>groeit niet, krimpt normaal, initieel 200px</td>
+						<td>maximaal 200px</td>
+					</tr>
+					<tr>
+						<td><code>flex: 0 1 auto;</code></td>
+						<td>groeit niet, kan krimpen, initieel natuurlijke breedte<br><span class="smaller">(bepaald door content of, indien ingesteld, <code>width</code> property)</span></td>
+						<td>niet groter dan de content</td>
+					</tr>
+					<tr>
+						<td><code>flex: 1 1 200px;</code></td>
+						<td>groeit normaal, krimpt normaal, initieel 200px</td>
+						<td>flexibel, initieel 200px</td>
+					</tr>
+					<tr>
+						<td><code>flex: 2 1 200px;</code></td>
+						<td>groeit dubbel zo snel, krimpt normaal, initieel 200px</td>
+						<td>flexibel, initieel 200px, groeit sneller</td>
+					</tr>
+					<tr>
+						<td><code>flex: 1 2 200px;</code></td>
+						<td>groeit normaal, krimpt dubbel zo snel, initieel 200px breed</td>
+						<td>flexibel, initieel 200px, krimpt sneller</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
 
       <p>Voorbeeld 1: vaste kolommen links en rechts, flexibele kolom in het midden</p>
       <div class="codecompare">
