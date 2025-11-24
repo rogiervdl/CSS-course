@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<!-- [html-validate-disable no-style-tag] -->
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Layout demo</title>
+   <style>
+/* body layout */
+body {
+	display: grid; /* maak grid */
+	grid-template-rows: auto auto 1fr auto; /* vier rijen */
+	margin: 0 auto; /* centreer body in <html> */
+	max-width: 1000px; /* maximaal 1000px breed */
+	min-height: 100vh; /* bedek minstens hele viewport */
+}
+
+/* header layout */
+header {
+	align-items: center; /* items verticaal centreren */
+	display: flex;
+	justify-content: space-between; /* zo ver mogelijk uit elkaar */
+	min-height: 150px;
+}
+
+.header_logo {
+	flex: 0 0 100px;
+}
+
+.header_tagline {
+	flex: 1 1 0;
+}
+
+.header_search {
+	align-self: end; /* zet zichzelf beneden */
+	flex: 0 0 auto;
+}
+
+/* nav layout */
+nav ul {
+	display: flex;
+	gap: 10px; /* ruimte tussen items */
+	justify-content: center; /* items in het midden */
+}
+
+/* main layout */
+main {
+	display: grid;
+	grid-template-columns: 1fr 200px;
+}
+
+/* footer layout */
+footer {
+	text-align: center;
+}
+
+/* algemene stijlen */
+* {
+	box-sizing: border-box;
+}
+
+body {
+	border-left: 2px solid #ccc;
+	border-right: 2px solid #ccc;
+	padding: 0;
+}
+
+header,
+nav,
+footer,
+#content,
+aside {
+	padding: 10px 20px;
+}
+
+nav {
+	background-color: #eee;
+}
+
+nav ul {
+	list-style: none;
+	margin: 0;
+}
+
+header,
+footer {
+	background-color: #ddd;
+	padding: 10px 20px;
+}
+
+aside {
+	background-color: #bcd;
+}
+
+.header_logo {
+	background-color: #999;
+	padding: 30px;
+}
+
+.header_tagline
+{
+	text-align: center;
+}
+   </style>
+</head>
+
+<body>
+   <header>
+      <h1 class="header_logo">Logo</h1>
+      <p class="header_tagline">some great tagline</p>
+      <form class="header_search">
+         <label><input type="search" placeholder="search for something"></label>
+         <button type="submit">🔍</button>
+      </form>
+   </header>
+   <nav>
+      <ul>
+         <li><a href="">home</a></li>
+         <li><a href="">about</a></li>
+         <li><a href="">contact</a></li>
+      </ul>
+   </nav>
+   <main>
+      <div id="content">
+         content here...
+      </div>
+      <aside>
+         aside here...
+      </aside>
+   </main>
+   <footer>
+      <p>&copy; 2024</p>
+   </footer>
+</body>
+
+</html>

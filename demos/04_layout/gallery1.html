@@ -5,7 +5,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CSS flexbox gallery</title>
+  <title>CSS grid gallery</title>
   <style>
     html {
       background-color: #eee;
@@ -16,16 +16,15 @@
       max-width: 800px;
       padding: 20px;
     }
-    #gallery {
-      display: flex;
-      column-gap: calc(8% / 3);
-      flex-wrap: wrap;
-      row-gap: 10px;
-    }
-
-    #gallery img {
+    img {
       display: block;
-      width: 23%;
+      max-width: 100%;
+      overflow: hidden;
+    }
+    #gallery {
+      display: grid;
+      gap: 10px;
+   	grid-template-columns: repeat(3, 1fr);
     }
   </style>
 </head>
