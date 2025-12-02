@@ -1,33 +1,73 @@
-#grid-containerdemo9 {
-   align-self: flex-start;
-   position: relative;
+/* flexbox demos general setup */
+
+.flex-demo .flex-item {
+	background-color: #ddd;
+	border: 2px solid black;
+	padding: 5px;
+	text-align: center;
 }
 
-#grid-containerdemo9 .underlayer {
-   border: none;
-   bottom: 2px; 
-   box-sizing: border-box;
-   display: grid; 
-   gap: 10px;
-   grid-template-columns: repeat(4, 1fr); /* 4 kolommen, elk 1 fractie */
-   grid-template-rows: repeat(3, 1fr); /* 3 rijen, elk 1 fractie */
-   left: 2px; 
-   opacity: 0.5;
-   padding: 19px;
-   position: absolute;
-   right: 2px; 
-   top: 2px; 
+.flex-demo .flex-item:nth-child(even) {
+	min-height: 60px;
+	line-height: 45px;
+	width: 100px;
 }
 
-.underlayer .grid-area {
-   border: 2px solid #aaa;
+.flex-demo .flex-item:nth-child(odd) {
+	min-height: 40px;
+	line-height: 25px;
+	width: 60px;
 }
 
-.grid-containerdemo9-controls {
-   background-color: beige;
-   margin-bottom: 1em;
-   padding: 10px 20px;
-   width: fit-content;
+.flex-demo .flex-container {
+	background-color: #ddf;
+	border: 1px dotted black;
+	box-sizing: border-box;
+	height: 250px;
+	max-width: 500px;
+	padding: 20px;
 }
 
+/* flexbox demo6 setup */
 
+#flex-demo6 .flex-container {
+	height: 300px;
+}
+
+/* flexbox flex demo general setup */
+
+.flex-flexdemo .flex-item {
+	background-color: #ddd;
+	border: 2px solid black;
+	padding: 15px 25px;
+	text-align: center;
+}
+
+.flex-flexdemo .flex-container {
+	background-color: #ddf;
+	border: 1px dotted black;
+	height: 200px;
+	max-width: 500px;
+	padding: 20px;
+}
+
+/* grid demos general setup */
+
+.grid-item {
+   background-color: #ddd;
+   border: 2px solid black;
+   text-align: center;
+}
+
+.grid-container {
+   background-color: #ddf;
+   border: 1px dotted black;
+   height: 300px;
+   width: 500px;
+   padding: 20px;
+}
+
+.grid-item-dotted {
+	border: 2px dotted #999;
+   text-align: center;
+}

@@ -193,7 +193,7 @@ function startApp() {
 		// add to dom
 		if (DOM.toc) DOM.toc.innerHTML = toc;
 		document.querySelector('h1 .title__anchor').scrollIntoView({
-			behavior: 'smooth', // Optional: makes the scroll smooth
+			// behavior: 'smooth', 
 			block: 'start' // Scrolls to the top of the element
 		});
 	}

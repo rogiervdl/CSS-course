@@ -196,13 +196,13 @@
             <td>::first-letter</td>
             <td>first letter of element</td>
           </tr>
-          <tr class="pro">
-            <td>::first-line</td>
-            <td>first line of element</td>
-          </tr>
           <tr>
             <td>::selection</td>
             <td>selected part of element</td>
+          </tr>
+          <tr class="pro">
+            <td>::first-line</td>
+            <td>first line of element</td>
           </tr>
         </table>
       </section>
@@ -218,10 +218,6 @@
             <td>em</td>
             <td>percentage of parent font size</td>
           </tr>
-          <tr class="pro">
-            <td>rem</td>
-            <td>percentage of &lt;html&gt; font size</td>
-          </tr>
           <tr>
             <td>%</td>
             <td>percentage of width</td>
@@ -229,6 +225,10 @@
           <tr>
             <td>fr</td>
             <td>fraction of available width</td>
+          </tr>
+          <tr class="pro">
+            <td>rem</td>
+            <td>percentage of &lt;html&gt; font size</td>
           </tr>
           <tr class="pro">
             <td>vw/vh</td>
@@ -395,15 +395,6 @@
               % | cover | contain<br>
             </td>
           </tr>
-          <tr class="pro">
-            <td>background: #fff url(img_tree.png) no-repeat right top;</td>
-            <td>
-              background-color: #fff;<br>
-              background-image: url(img_tree.png);<br>
-              background-repeat: no-repeat;<br>
-              background-position: right top;<br>
-            </td>
-          </tr>
         </table>
 
       </section>
@@ -553,10 +544,6 @@
             <td>filter</td>
             <td>blur, hue, sepia, brightness, contrast... <br>e.g. grayscale(70%);</td>
           </tr>
-          <tr>
-            <td>transform</td>
-            <td>rotate, skew, scale, rotate... <br>e.g. rotate(8deg) skewY(15deg);</td>
-          </tr>
         </table>
         <table>
           <caption>transforms</caption>
@@ -570,10 +557,6 @@
           <tr>
             <td>cursor</td>
             <td>auto | pointer | help | not-allowed</td>
-          </tr>
-          <tr class="pro">
-            <td>calc()</td>
-            <td>e.g. width: calc((100% - 250px) / 3)</td>
           </tr>
           <tr>
             <td>var()</td>
@@ -591,12 +574,16 @@ a {
           <tr>
             <td>@media()</td>
             <td>
-              <pre>@media (width >= 600px) {
+              <pre>@media (width &gt;= 600px) {
    .mobile-only {
       display: none;
    }
 }</pre>
             </td>
+          </tr>
+          <tr class="pro">
+            <td>calc()</td>
+            <td>e.g. width: calc((100% - 250px) / 3)</td>
           </tr>
 
         </table>
@@ -627,7 +614,7 @@ a {
           <caption>positioning <span>(position element based on coordinates)</span></caption>
           <tr>
             <td>position</td>
-            <td>absolute | relative | fixed | sticky </td>
+            <td><span class="pro">absolute | relative | </span>fixed | sticky </td>
           </tr>
           <tr>
             <td>top<br>right<br>bottom<br>left<br></td>
@@ -647,23 +634,35 @@ a {
           <tr>
             <td>float</td>
             <td>
-              none | left | right
+              left | right
             </td>
           </tr>
           <tr class="pro">
             <td>clear</td>
             <td>
-              none | left | right | both
+              left | right | both
             </td>
           </tr>
         </table>
         <table>
-          <caption>flexbox</caption>
+          <caption>flexbox, container</caption>
           <tr>
             <td>align-items</td>
             <td>
               flex-start | flex-end | center | stretch<br>
               <span>(positioning items across flex direction)</span>
+            </td>
+          </tr>
+          <tr>
+            <td>display: flex</td>
+            <td>
+              create flex container
+            </td>
+          </tr>
+          <tr>
+            <td>flex-wrap</td>
+            <td>
+              wrap | nowrap
             </td>
           </tr>
           <tr>
@@ -673,21 +672,16 @@ a {
             </td>
           </tr>
           <tr>
-            <td>display: flex</td>
+            <td>justify-content</td>
             <td>
-              create flex container
+              flex-start | flex-end | center | space-between<br>
+              <span>(positioning items along flex direction)</span>
             </td>
           </tr>
           <tr class="pro">
             <td>flex-direction</td>
             <td>
               row | row-reverse | column | column-reverse
-            </td>
-          </tr>
-          <tr>
-            <td>flex-wrap</td>
-            <td>
-              wrap | nowrap
             </td>
           </tr>
           <tr class="pro">
@@ -697,16 +691,26 @@ a {
               flex-wrap: nowrap;
             </td>
           </tr>
+        </table>
+        <table>
+          <caption>flexbox, item</caption>
           <tr>
-            <td>justify-content</td>
+            <td>align-self</td>
             <td>
-              flex-start | flex-end | center | space-between<br>
-              <span>(positioning items along flex direction)</span>
+              flex-start | flex-end | center | stretch<br>
+              <span>(positioning individual item)</span>
+            </td>
+          </tr>
+          <tr>
+            <td>flex</td>
+            <td>
+              e.g. 1 1 0, 0 0 200px...<br>
+              <span>(item width)</span>
             </td>
           </tr>
         </table>
         <table>
-          <caption>grid</caption>
+          <caption>grid, container</caption>
           <tr>
             <td>align-items</td>
             <td>
@@ -718,24 +722,6 @@ a {
             <td>display: grid</td>
             <td>
               create grid container
-            </td>
-          </tr>
-          <tr class="pro">
-            <td>grid-area</td>
-            <td>
-              e.g. grid-area: contentleft;
-            </td>
-          </tr>
-          <tr>
-            <td>grid-column</td>
-            <td>
-              column span, e.g. 2 / 4
-            </td>
-          </tr>
-          <tr>
-            <td>grid-row</td>
-            <td>
-              row span, e.g. 1 / 3
             </td>
           </tr>
           <tr>
@@ -750,12 +736,26 @@ a {
               e.g. 50px auto
             </td>
           </tr>
-          <tr class="pro">
-            <td>grid-template-areas</td>
+          <tr>
+            <td>justify-items</td>
             <td>
-              e.g. grid-template-areas:
-              "topleft . topright"<br>
-              "contentleft bottom contentright";<br>
+              start | end | center | stretch<br>
+              <span>(positioning items horizontally)</span>
+            </td>
+          </tr>
+        </table>
+        <table>
+          <caption>grid, item</caption>
+          <tr>
+            <td>grid-column</td>
+            <td>
+              column span, e.g. 2 / 4
+            </td>
+          </tr>
+          <tr>
+            <td>grid-row</td>
+            <td>
+              row span, e.g. 1 / 3
             </td>
           </tr>
           <tr>
