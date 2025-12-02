@@ -1,3 +1,65 @@
+/* alignment demos general setup */
+
+.alignment-demo .container {
+	background-color: #fdd;
+	padding: 20px;
+}
+
+.alignment-demo .visual {
+	width: 80px;
+}
+
+.alignment-demo p {
+	background-color: #fff9;
+	border: 1px solid #ccc;
+	padding: 5px;
+}
+
+/* floating demos general setup */
+
+.floating-demo img {
+   width: 70px;
+}
+
+.floating-demo section {
+   border: 1px dotted;
+   margin-bottom: 10px;
+   padding: 5px
+}
+
+.floating-demo h3 {
+  margin: 0 0 0.5rem 0;
+}
+
+.floating-demo .demowrapper {
+   font-family: Roboto, sans-serif;
+   max-width: 400px;
+}
+
+/* floating demo aside general setup */
+
+.floating-demo-aside aside {
+   background-color: #eee;
+   font-size: 1.2em;
+   font-style: italic;
+   padding: 10px;
+}
+
+.floating-demo-aside h3 {
+  margin: 0 0 0.5rem 0;
+}
+
+.floating-demo-aside p {
+  margin: 0 0 0.5rem 0;
+}
+
+.floating-demo-aside section {
+   max-width: 400px;
+   font-family: Roboto, sans-serif;
+   border: 1px dotted;
+   padding: 5px
+}
+
 /* flexbox demos general setup */
 
 .flex-demo .flex-item {
@@ -54,20 +116,49 @@
 /* grid demos general setup */
 
 .grid-item {
-   background-color: #ddd;
-   border: 2px solid black;
-   text-align: center;
+	background-color: #ddd;
+	border: 2px solid black;
+	text-align: center;
 }
 
 .grid-container {
-   background-color: #ddf;
-   border: 1px dotted black;
-   height: 300px;
-   width: 500px;
-   padding: 20px;
+	background-color: #ddf;
+	border: 1px dotted black;
+	height: 300px;
+	width: 500px;
+	padding: 20px;
 }
 
 .grid-item-dotted {
 	border: 2px dotted #999;
-   text-align: center;
+	text-align: center;
+}
+
+/* positioning demos general setup */
+
+.positioning-demo .demobox {
+   border: 2px solid black;
+   width: 120px;
+   height: 60px;
+   margin-bottom: 10px;
+   padding: 5px;
+}
+
+.positioning-demo .demowrapper {
+   border: 1px dotted black;
+   margin: 50px;
+   max-width: 500px;
+   padding: 20px;
+}
+
+.positioning-demo .demobox1 {
+	background-color: #ddd;
+}
+
+.positioning-demo .demobox2 {
+   background-color: #999;
+}
+
+.positioning-demo .demobox3 {
+   background-color: #666;
 }

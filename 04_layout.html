@@ -59,56 +59,32 @@
 
       <h2>Layout technieken overzicht</h2>
       <p>
-         CSS heeft een lange weg afgelegd; pas met het verdwijnen van oude browsers konden <a href="https://caniuse.com/flexbox">Flexbox</a> en <a href="https://caniuse.com/grid">Grid</a> gebruikt worden, de eerste echte layout technieken in CSS.
-      </p>
-      <p>
          Je kan layouttechnieken onderverdelen in ruwweg 5 groepen:
       </p>
       <ul>
-         <li><span class="em">flexbox</span>: bedoeld voor allerhande <strong>horizontale en verticale layouts</strong></li>
+         <li><span class="em">flexbox</span>: bedoeld voor <strong>layout op lijnen</strong> (horizontaal of verticaal)</li>
          <li><span class="em">alignering</span>: verzamelnaam voor reeks losse technieken voor <strong>horizontale en verticale alignering</strong></li>
          <li><span class="em">floating</span>: gebruikt om content links of rechts <strong>rond een blok doen vloeien</strong> (bv. foto) </li>
-         <li><span class="em">positionering</span> (absoluut, relatief, fixed, sticky): positionering in lagen op basis van coördinaten; vooral geschikt voor <strong>Javascript games</strong> en enkele uitzonderlijke gevallen</li>
-         <li><span class="em">grid</span>: iets complexere methode voor <strong>grid-achtige layout</strong> in rijen en kolommen</li>
+         <li><span class="em">positionering</span> (fixed, sticky...): positionering in <strong>gestapelde lagen</strong> op basis van coördinaten; vooral geschikt voor Javascript games en enkele uitzonderlijke gevallen</li>
+         <li><span class="em">grid</span>: bedoeld voor <strong>layout op een raster</strong> in rijen en kolommen</li>
       </ul>
-      <p>
-         &rarr; je kan layouts vaak met verschillende technieken oplossen, maar <span class="notice">Flexbox is je standaardtechniek</span>
-         <br>&rarr; bestudeer zeker nog eerst grondig de <a href="02_design.html#display">display property</a> in vorig deel; veel kleine layoutproblemen kan je daar al mee oplossen
-      </p>
 
       <h2>Alignering</h2>
-      <h3>Content horizontaal centreren</h3>
+      <h3>horizontaal uitlijnen</h3>
       <p>
-         Om tekst, afbeeldingen enz... horizontaal te aligneren, gebruik <code><span class="em">text-align</span></code> op de parent:
+         Om tekst, afbeeldingen enz... horizontaal uit te lijnen, gebruik <code><span class="em">text-align</span></code> op de parent:
       </p>
       <div class="codecompare">
          <div class="democontainer">
-            <pre class="prism-default language-html w-500" data-demo><code>&lt;div id="parent"&gt;
-    &lt;img src="img/04_layout/spongebob.webp" alt=""&gt;
-    &lt;p&gt;parmesan cheese slices when the cheese comes out everybody's happy cow cheese and wine cheese and biscuits. Roquefort when the cheese comes out...&lt;/p&gt;
+            <pre class="prism-default language-html w-500"><code>&lt;div class="container"&gt;
+   &lt;img src="img/04_layout/spongebob.webp" alt=""&gt;
+   &lt;p&gt;parmesan cheese slices when the cheese comes out everybody's happy cow cheese and wine cheese and biscuits. Roquefort when the cheese comes out...&lt;/p&gt;
 &lt;/div&gt;</code></pre>
-            <pre class="prism-atom-dark h-300"><code contenteditable data-target="#alignment-demo1">/* alignering content */
-.container {
-  text-align: center; /* probeer ook left, right */
-}
-
-/* andere stijlen */
-.container {
-   background-color: #fdd;
-   padding: 20px;
-   height: 350px;
-}
-.visual {
-   width: 80px;
-}
-p {
-   background-color: #fff9;
-   border: 1px solid #ccc;
-   padding: 5px;
-}
-</code></pre>
+            <pre class="prism-atom-dark"><code contenteditable data-target="#alignment-demo1">.container {
+   text-align: center; /* probeer ook left, right, justify */
+}</code></pre>
          </div>
-         <div id="alignment-demo1" class="w-500">
+         <div id="alignment-demo1" class="alignment-demo w-500">
             <div class="demowrapper">
                <div class="container">
                   <img src="img/04_layout/spongebob.webp" class="visual" alt="">
@@ -120,40 +96,35 @@ p {
          </div>
       </div>
 
-      <h3>Block horizontaal centreren</h3>
+      <h3>centreren of rechts plaatsen</h3>
       <p>
-         Om blocklevel content (<code>&lt;div&gt;</code>, <code>&lt;p&gt;</code>...) horizontaal te aligneren, gebruik je de waarde <code>auto</code> voor <code><span class="em">margin-left</span></code> en/of <code><span class="em">margin-right</span></code> op het element zelf:
+         Om een content in het midden of rechts te plaatsen, zet je het typisch in een <code>&lt;div class="wrapper"&gt;</code>, en gebruik je <code><span class="em">margin-left</span>: auto</code> en/of <code><span class="em">margin-right</span>: auto</code>:
       </p>
       <div class="codecompare">
          <div class="democontainer">
-            <pre class="prism-default language-html w-500" data-demo><code>&lt;div id="parent"&gt;
-   &lt;p&gt;parmesan cheese slices when the cheese comes out everybody's happy cow cheese and wine cheese and biscuits. Roquefort when the cheese comes out...&lt;/p&gt;
+            <pre class="prism-default language-html w-500"><code>&lt;div class="container"&gt;
+   &lt;div class="wrapper"&gt;					
+      &lt;img src="img/04_layout/spongebob.webp" alt=""&gt;
+      &lt;p&gt;parmesan cheese slices when the cheese comes out everybody's happy cow cheese and wine cheese and biscuits. Roquefort when the cheese comes out...&lt;/p&gt;
+   &lt;/div&gt;	  
 &lt;/div&gt;</code></pre>
-            <pre class="prism-atom-dark h-300"><code contenteditable data-target="#alignment-demo2">/* horizontale alignering blok */
-p {
+            <pre class="prism-atom-dark"><code contenteditable data-target="#alignment-demo2">.wrapper {
+   background-color: #cccc;					
    margin-left: auto;
    margin-right: auto; /* probeer ook 0px */
+   padding: 10px;
    width: 300px;
-}
-
-/* andere stijlen */
-.container {
-   background-color: #fdd;
-   height: 350px;
-   padding: 20px;
-}
-p {
-   background-color: #fff9;
-   border: 1px solid #ccc;
-   padding: 5px;
 }</code></pre>
          </div>
-         <div id="alignment-demo2" class="w-500">
+         <div id="alignment-demo2" class="alignment-demo w-500">
             <div class="demowrapper">
                <div class="container">
-                  <p>
-                     parmesan cheese slices when the cheese comes out everybody's happy cow cheese and wine cheese and biscuits. Roquefort when the cheese comes out...
-                  </p>
+						<div class="wrapper">
+                     <img src="img/04_layout/spongebob.webp" class="visual" alt="">
+							<p>
+								parmesan cheese slices when the cheese comes out everybody's happy cow cheese and wine cheese and biscuits. Roquefort when the cheese comes out...
+							</p>
+						</div>
                </div>
             </div>
          </div>
@@ -161,13 +132,14 @@ p {
 
       <div class="pro">
 
-         <h3>Regel verticaal centreren</h3>
+         <h3>één regel verticaal centreren</h3>
          <p>Een oud trukje om één regel verticaal te centreren is <code><span class="em">height</span></code> en <code><span class="em">line-height</span></code> dezelfde waarde geven:</p>
          <div class="codecompare">
             <div class="democontainer">
-               <pre class="prism-default language-html w-500" data-demo><code>&lt;a href=""&gt;button tekst &lt;/a&gt;</code></pre>
+               <pre class="prism-default language-html w-500"><code>&lt;a href=""&gt;button tekst &lt;/a&gt;</code></pre>
                <pre class="prism-atom-dark h-300"><code contenteditable data-target="#alignment-demo3">/* button layout */
 .button {
+   box-sizing: content-box; /* afmetingen zijn voor content bedoeld */
    display: block; /* anders kan je geen afmetingen instellen */
    height: 60px; /* zelfde waarde */
    line-height: 60px; /* zelfde waarde */
@@ -191,29 +163,19 @@ p {
          </div>
       </div>
 
-      <h3>Blok verticaal centreren</h3>
-      <p>Als de hoogte van de container flexibel is en er maar één blok is, kan je verticaal centreren met <code><span class="em">padding</span></code> op de parent:</p>
+      <h3>verticaal centreren</h3>
+      <p>Als de hoogte van de container flexibel is, kan je de content verticaal visueel in het midden krijgen met gelijke <code><span class="em">padding</span></code> boven en onder op de parent:</p>
       <div class="codecompare">
          <div class="democontainer">
-            <pre class="prism-default language-html w-500" data-demo><code>&lt;div id="parent"&gt;
+            <pre class="prism-default language-html w-500"><code>&lt;div id="container"&gt;
    &lt;p&gt;parmesan cheese slices when the cheese comes out everybody's happy cow cheese and wine cheese and biscuits. Roquefort when the cheese comes out...&lt;/p&gt;
 &lt;/div&gt;</code></pre>
-            <pre class="prism-atom-dark h-300"><code contenteditable data-target="#alignment-demo4">/* verticale alignering blok */
-.container {
-   padding: 50px 20px; /* verticaal horizontaal */
-}
-
-/* andere stijlen */
-.container {
-   background-color: #fdd;
-}
-p {
-   background-color: #fff9;
-   border: 1px solid #ccc;
-   padding: 5px;
+            <pre class="prism-atom-dark"><code contenteditable data-target="#alignment-demo4">.container {
+   padding-bottom: 50px; 
+   padding-top: 50px; 
 }</code></pre>
          </div>
-         <div id="alignment-demo4" class="w-500">
+         <div id="alignment-demo4" class="alignment-demo w-500">
             <div class="demowrapper">
                <div class="container">
                   <p>
@@ -223,53 +185,28 @@ p {
             </div>
          </div>
       </div>
-      <p>Je ziet, de mogelijkheden zijn beperkt: verticaal centreren van meerdere blokken of wanneer de container een vaste hoogte heeft, is enkel mogelijk met <span class="em">flexbox</span>.</p>
+      <p>De mogelijkheden zijn beperkt: voor verfijndere layouts gebruik je <span class="em">flexbox</span> of <span class="em">grid</span>.</p>
 
       <h2>Floating</h2>
       <h3>Standaard weergave</h3>
       <p>Blocklevel elementen als <code>&lt;h3&gt;</code> en <code>&lt;p&gt;</code> starten standaard op een nieuwe regel:</p>
       <div class="codecompare">
          <div class="democontainer">
-            <pre class="prism-default language-html w-500" data-demo><code>&lt;div id="wrapper"&gt;
+            <pre class="prism-default language-html w-500"><code>&lt;div id="wrapper"&gt;
   &lt;section&gt;
     &lt;img src="img/04_layout/portrait.jpg" alt="foto"&gt;
     &lt;h3&gt;Procured&lt;/h3&gt;
     &lt;p&gt;Civility not absolute put continue. Overcame breeding or my concerns removing desirous so absolute. My melancholy unpleasing imprudence considered in advantages so impression. Almost unable put piqued talked likely houses her met.&lt;/p&gt;
   &lt;/section&gt;
-  &lt;section&gt;
-    &lt;h3&gt;Finished&lt;/h3&gt;
-    &lt;p&gt;Her are its honoured drawings nor. Pretty see mutual thrown all not edward ten. Particular an boisterous up he reasonably frequently. Several any had enjoyed shewing studied two. Up intention remainder sportsmen behaviour ye happiness. Few again any alone style added abode ask.&lt;/p&gt;
-  &lt;/section&gt;
 &lt;/div&gt;</code></pre>
-            <pre class="prism-atom-dark h-300"><code contenteditable data-target="#floating-demo1">img {
-   width: 70px;
-}
-section {
-   border: 1px dotted;
-   margin-bottom: 10px;
-   padding: 5px
-}
-h3 {
-  margin: 0 0 0.5rem 0;
-}
-.demowrapper {
-   font-family: 'Roboto', sans-serif;
-   max-width: 400px;
-}</code></pre>
          </div>
-         <div id="floating-demo1" class="w-500">
+         <div id="floating-demo1" class="floating-demo w-500">
             <div class="demowrapper">
                <section>
                   <img src="img/04_layout/portrait.jpg" alt="foto">
                   <h3>Procured</h3>
                   <p>
                      Civility not absolute put continue. Overcame breeding or my concerns removing desirous so absolute. My melancholy unpleasing imprudence considered in advantages so impression. Almost unable put piqued talked likely houses her met.
-                  </p>
-               </section>
-               <section>
-                  <h3>Finished</h3>
-                  <p>
-                     Her are its honoured drawings nor. Pretty see mutual thrown all not edward ten. Particular an boisterous up he reasonably frequently. Several any had enjoyed shewing studied two. Up intention remainder sportsmen behaviour ye happiness. Few again any alone style added abode ask.
                   </p>
                </section>
             </div>
@@ -279,36 +216,12 @@ h3 {
       <p>Met <span class="em"><code>float: left;</code></span> kan je blocklevel elementen rond een afbeelding laten vloeien:</p>
       <div class="codecompare">
          <div class="democontainer">
-            <pre class="prism-default language-html w-500" data-demo><code>&lt;div id="wrapper"&gt;
-  &lt;section&gt;
-    &lt;img src="img/04_layout/portrait.jpg" alt="foto"&gt;
-    &lt;h3&gt;Procured&lt;/h3&gt;
-    &lt;p&gt;Civility not absolute put continue. Overcame breeding or my concerns removing desirous so absolute. My melancholy unpleasing imprudence considered in advantages so impression. Almost unable put piqued talked likely houses her met.&lt;/p&gt;
-  &lt;/section&gt;
-  &lt;section&gt;
-    &lt;h3&gt;Finished&lt;/h3&gt;
-    &lt;p&gt;Her are its honoured drawings nor. Pretty see mutual thrown all not edward ten. Particular an boisterous up he reasonably frequently. Several any had enjoyed shewing studied two. Up intention remainder sportsmen behaviour ye happiness. Few again any alone style added abode ask.&lt;/p&gt;
-  &lt;/section&gt;
-&lt;/div&gt;</code></pre>
-            <pre class="prism-atom-dark h-300"><code contenteditable data-target="#floating-demo2">img {
+            <pre class="prism-atom-dark"><code contenteditable data-target="#floating-demo2">img {
    float: left; /* probeer ook float: right; */
-   margin-right: 10px;
-   width: 70px;
-}
-section {
-   border: 1px dotted;
-   margin-bottom: 10px;
-   padding: 5px
-}
-h3 {
-  margin: 0 0 0.5rem 0;
-}
-.demowrapper {
-   max-width: 400px;
-   font-family: 'Roboto', sans-serif;
+   margin: 0 10px 10px 0; /* werk af met margin rechtsonder */
 }</code></pre>
          </div>
-         <div id="floating-demo2" class="w-500">
+         <div id="floating-demo2" class="floating-demo w-500">
             <div class="demowrapper">
                <section>
                   <img src="img/04_layout/portrait.jpg" alt="foto">
@@ -317,19 +230,13 @@ h3 {
                      Civility not absolute put continue. Overcame breeding or my concerns removing desirous so absolute. My melancholy unpleasing imprudence considered in advantages so impression. Almost unable put piqued talked likely houses her met.
                   </p>
                </section>
-               <section>
-                  <h3>Finished</h3>
-                  <p>
-                     Her are its honoured drawings nor. Pretty see mutual thrown all not edward ten. Particular an boisterous up he reasonably frequently. Several any had enjoyed shewing studied two. Up intention remainder sportsmen behaviour ye happiness. Few again any alone style added abode ask.
-                  </p>
-               </section>
             </div>
          </div>
       </div>
       <p>Dit werkt ook met andere block-elementen als pullquotes:</p>
       <div class="codecompare">
          <div class="democontainer">
-            <pre class="prism-default language-html w-500" data-demo><code>&lt;section&gt;
+            <pre class="prism-default language-html w-500"><code>&lt;section&gt;
   &lt;h3&gt;Procured&lt;/h3&gt;
   &lt;p&gt; Civility not absolute put continue. Overcame breeding or my concerns removing desirous so absolute. My melancholy unpleasing imprudence considered in advantages so impression. My melancholy unpleasing imprudence considered in advantages so impression.&lt;/p&gt;
   &lt;aside&gt;
@@ -338,34 +245,14 @@ h3 {
   &lt;p&gt;Her are its honoured drawings nor. Pretty see mutual thrown all not edward ten. Particular an boisterous up he reasonably frequently. Several any had enjoyed shewing studied two. Up intention remainder sportsmen behaviour ye happiness. Few again any alone style added abode ask. Nay projecting unpleasing boisterous eat discovered solicitude. Own six moments produce elderly pasture far arrival. Hold our year they ten upon. Gentleman contained so intention sweetness in on resolving.&lt;/p&gt;
 &lt;/section&gt;
 </code></pre>
-            <pre class="prism-atom-dark h-300"><code contenteditable data-target="#floating-demo3">/* float pull quote right */
+            <pre class="prism-atom-dark"><code contenteditable data-target="#floating-demo3">/* float pull quote right */
 aside {
    float: right;
    margin: 10px 0 10px 10px;
    width: 130px;
-}
-
-/* rest of CSS */
-aside {
-   background-color: #eee;
-   font-size: 1.2em;
-   font-style: italic;
-   padding: 10px;
-}
-h3 {
-  margin: 0 0 0.5rem 0;
-}
-p {
-  margin: 0 0 0.5rem 0;
-}
-section {
-   max-width: 400px;
-   font-family: 'Roboto', sans-serif;
-   border: 1px dotted;
-   padding: 5px
 }</code></pre>
          </div>
-         <div id="floating-demo3" class="w-500">
+         <div id="floating-demo3" class="floating-demo-aside w-500">
             <div class="demowrapper">
                <section>
                   <h3>Procured</h3>
@@ -388,7 +275,7 @@ section {
          <p>Als een gefloat element niet meer in de parent past, zal het eruit lekken en de content van het volgende blok wegdrukken:</p>
          <div class="codecompare">
             <div class="democontainer">
-               <pre class="prism-default language-html w-500" data-demo><code>&lt;div id="wrapper"&gt;
+               <pre class="prism-default language-html w-500"><code>&lt;div id="wrapper"&gt;
   &lt;section&gt;
     &lt;img src="img/04_layout/portrait.jpg" alt="foto"&gt;
     &lt;h3&gt;Procured&lt;/h3&gt;
@@ -399,31 +286,13 @@ section {
     &lt;p&gt;Her are its honoured drawings nor. Pretty see mutual thrown all not edward ten. Particular an boisterous up he reasonably frequently. Several any had enjoyed shewing studied two. Up intention remainder sportsmen behaviour ye happiness. Few again any alone style added abode ask.&lt;/p&gt;
   &lt;/section&gt;
 &lt;/div&gt;</code></pre>
-               <pre class="prism-atom-dark h-300"><code contenteditable data-target="#floating-demo4">/* float image links */
-img {
+               <pre class="prism-atom-dark"><code contenteditable data-target="#floating-demo4">img {
   float: left;
   margin-right: 10px;
   width: 160px;
-}
-
-/* rest van de CSS */
-section {
-  margin: 10px;
-  border: 1px dotted;
-  padding: 5px;
-}
-h3 {
-  margin: 0 0 0.5rem 0;
-}
-p {
-  margin: 0 0 0.5rem 0;
-}
-#wrapper {
-  max-width: 500px;
-  font-family: 'Roboto', sans-serif;
 }</code></pre>
             </div>
-            <div id="floating-demo4" class="w-500">
+            <div id="floating-demo4" class="floating-demo w-500">
                <div class="demowrapper">
                   <section>
                      <img src="img/04_layout/portrait.jpg" alt="foto">
@@ -441,52 +310,24 @@ p {
                </div>
             </div>
          </div>
-         <p>Dit lijkt vreemd, maar eigenlijk is het niet onlogisch voor waar floating voor bedoeld is: tekst laten vloeien rond afbeeldingen. Het alternatief is een grote leegte tussen de twee paragrafen.</p>
-         <h3>Parent herstellen</h3>
-         <p>Als je niet wil, kan je de parent herstellen met <span class="em"><code>overflow: hidden;</code></span>:</p>
+         <p>
+				Dit lijkt vreemd, maar eigenlijk is het niet onlogisch voor waar floating voor bedoeld is: tekst laten vloeien rond afbeeldingen. Het alternatief is een grote leegte tussen de twee paragrafen.
+            Als je niet wil, kan je de parent herstellen met <span class="em"><code>overflow: hidden;</code></span>:
+		   </p>
          <div class="codecompare">
             <div class="democontainer">
-               <pre class="prism-default language-html w-500" data-demo><code>&lt;div id="wrapper"&gt;
-  &lt;section&gt;
-    &lt;img src="img/04_layout/portrait.jpg" alt="foto"&gt;
-    &lt;h3&gt;Procured&lt;/h3&gt;
-    &lt;p&gt;Civility not absolute put continue. Overcame breeding or my concerns removing desirous so absolute. &lt;/p&gt;
-  &lt;/section&gt;
-  &lt;section&gt;
-    &lt;h3&gt;Finished&lt;/h3&gt;
-    &lt;p&gt;Her are its honoured drawings nor. Pretty see mutual thrown all not edward ten. Particular an boisterous up he reasonably frequently. Several any had enjoyed shewing studied two. Up intention remainder sportsmen behaviour ye happiness. Few again any alone style added abode ask.&lt;/p&gt;
-  &lt;/section&gt;
-&lt;/div&gt;</code></pre>
-               <pre class="prism-atom-dark h-300"><code contenteditable data-target="#floating-demo5">/* vermijd parent bleeding */
+               <pre class="prism-atom-dark"><code contenteditable data-target="#floating-demo5">/* vermijd parent bleeding */
 section {
    overflow: hidden;
 }
 
-/* float image links */
 img {
   float: left;
   margin-right: 10px;
   width: 160px;
-}
-
-/* rest of CSS */
-section {
-  margin: 10px;
-  border: 1px dotted;
-  padding: 5px;
-}
-h3 {
-  margin: 0 0 0.5rem 0;
-}
-p {
-  margin: 0 0 0.5rem 0;
-}
-#wrapper {
-  max-width: 500px;
-  font-family: 'Roboto', sans-serif;
 }</code></pre>
             </div>
-            <div id="floating-demo5" class="w-500">
+            <div id="floating-demo5" class="floating-demo w-500">
                <div class="demowrapper">
                   <section>
                      <img src="img/04_layout/portrait.jpg" alt="foto">
@@ -508,47 +349,18 @@ p {
          <p>Je kan vermijden dat bepaalde elementen naast een gefloat element komen met <span class="em"><code>clear</code></span> (waarden <code>left</code>, <code>right</code> of <code>both</code>), bv. de tweede titel, die nu onder de afbeelding blijft:</p>
          <div class="codecompare">
             <div class="democontainer">
-               <pre class="prism-default language-html w-500" data-demo><code>&lt;div id="wrapper"&gt;
-  &lt;section id="sect1"&gt;
-    &lt;img src="img/04_layout/portrait.jpg" alt="foto"&gt;
-    &lt;h3&gt;Procured&lt;/h3&gt;
-    &lt;p&gt;Civility not absolute put continue. Overcame breeding or my concerns removing desirous so absolute. &lt;/p&gt;
-  &lt;/section&gt;
-  &lt;section id="sect2"&gt;
-    &lt;h3&gt;Finished&lt;/h3&gt;
-    &lt;p&gt;Her are its honoured drawings nor. Pretty see mutual thrown all not edward ten. Particular an boisterous up he reasonably frequently. Several any had enjoyed shewing studied two. Up intention remainder sportsmen behaviour ye happiness. Few again any alone style added abode ask.&lt;/p&gt;
-  &lt;/section&gt;
-&lt;/div&gt;</code></pre>
-               <pre class="prism-atom-dark h-300"><code contenteditable data-target="#floating-demo6">/* clear tweede titel */
+               <pre class="prism-atom-dark"><code contenteditable data-target="#floating-demo6">/* clear tweede titel */
 #sect2 h3 {
   clear: left;
 }
 
-/* float image links */
 img {
   float: left;
   margin-right: 10px;
   width: 160px;
-}
-
-/* rest of CSS */
-section {
-  margin: 10px;
-  border: 1px dotted;
-  padding: 5px;
-}
-h3 {
-  margin: 0 0 0.5rem 0;
-}
-p {
-  margin: 0 0 0.5rem 0;
-}
-#wrapper {
-  max-width: 500px;
-  font-family: 'Roboto', sans-serif;
 }</code></pre>
             </div>
-            <div id="floating-demo6" class="w-500">
+            <div id="floating-demo6" class="floating-demo w-500">
                <div class="demowrapper">
                   <section id="sect1">
                      <img src="img/04_layout/portrait.jpg" alt="foto">
@@ -574,9 +386,6 @@ p {
       <ul class="wrong">
          <li>voor alle andere layout als pagina layout, menus enz...</li>
       </ul>
-      <div class="tips" data-caption="☝🏼REGEL">
-         <p>De vuistregel is: <strong>als het anders kan</strong> (b.v. met flexbox), <strong>gebruik dan geen floating</strong></p>
-      </div>
 
       <h2>Flexbox</h2>
       <p>
@@ -675,32 +484,6 @@ p {
    &lt;div class="flex-item"&gt;04&lt;/div&gt;
 &lt;/div&gt;
 </code></pre>
-         <!-- <pre class="prism-atom-dark w-500 h-200"><code>/* box styles */
-.flex-item {
-   background-color: #ddd;
-   border: 2px solid black;
-   padding: 5px;
-   text-align: center;
-}
-.flex-item:nth-child(even) {
-   min-height: 60px;
-   line-height: 45px;
-   width: 100px;
-}
-.flex-item:nth-child(odd) {
-   min-height: 40px;
-   line-height: 25px;
-   width: 60px;
-}
-.flex-container {
-   background-color: #ddf;
-   border: 1px dotted black;
-   box-sizing: border-box;
-   height: 250px;
-   max-width: 500px;
-   padding: 20px;
-}
-</code></pre> -->
          </div>
          <div id="flex-demo1" class="flex-demo w-500">
             <div class="flex-container">
@@ -1100,7 +883,7 @@ p {
       <h3>grid-row, grid-column</h3>
       <p>
          We kunnen individuele items over meerdere rijen en/of kolommen spannen met <span class="em"><code>grid-column</code></span> en <span class="em"><code>grid-row</code></span>. 
-			Daarbij wordt gewerkt met lijnnummers, als volgt bepaald:</p>
+         Daarbij wordt gewerkt met lijnnummers, als volgt bepaald:</p>
       <p><img src="img/04_layout/grid-lijnen.png" class="w-400" alt=""></p>		
       <p>
          Zetten we b.v. het vijfde item tussen kolomlijnen 2 en 4:
@@ -1154,8 +937,8 @@ p {
                <div class="grid-item item3">03</div>
                <div class="grid-item item4">04</div>
                <div class="grid-item-dotted" style="grid-column: 2 / 4; display: flex; justify-content: flex-end;">
-	               <div class="grid-item item5">05</div>
-					</div>
+                  <div class="grid-item item5">05</div>
+               </div>
                <div class="grid-item-dotted"></div>
                <div class="grid-item-dotted" style="position: absolute; left: 100px;"></div>
                <div class="grid-item-dotted"></div>
@@ -1164,7 +947,7 @@ p {
          </div>
       </div>
 
-		<h3>Eenheden px, fr, auto</h3>
+      <h3>Eenheden px, fr, auto</h3>
       <p>Overzicht van de <strong>belangrijkste gebruikte eenheden</strong> en hun betekenis:</p>
 
       <table class="light">
@@ -1377,37 +1160,13 @@ button[type=submit] {
          <p>Positionering bepaalt de plaats van elementen a.h.v. <strong>coördinaten</strong> <code>top</code>, <code>right</code>, <code>bottom</code> en/of <code>left</code>. Laat ons starten van volgende code, zonder layout. Aangezien het blocklevel elementen zijn, is de natuurlijke positie van de drie blokken onder elkaar:</p>
          <div class="codecompare">
             <div class="democontainer">
-               <pre class="prism-default language-html" data-demo><code>&lt;div class="demowrapper"&gt;
+               <pre class="prism-default language-html"><code>&lt;div class="demowrapper"&gt;
    &lt;div class="demobox demobox1"&gt;1&lt;/div&gt;
    &lt;div class="demobox demobox2"&gt;2&lt;/div&gt;
    &lt;div class="demobox demobox3"&gt;3&lt;/div&gt;
 &lt;/div&gt;</code></pre>
-               <pre class="prism-atom-dark h-200"><code contenteditable data-target="#positioning-demo1">/* box styles */
-.demobox {
-   border: 2px solid black;
-   width: 80px;
-   height: 40px;
-   margin-bottom: 10px;
-   padding: 5px;
-}
-
-.demowrapper {
-   border: 1px dotted black;
-   margin: 50px;
-   max-width: 500px;
-   padding: 20px;
-}
-.demobox1 {
-     background-color: #ddd;
-}
-.demobox2 {
-   background-color: #888;
-}
-.demobox3 {
-   background-color: #333;
-}</code></pre>
             </div>
-            <div id="positioning-demo1" class="w-500 target">
+            <div id="positioning-demo1" class="positioning-demo w-500 target">
                <div class="demowrapper">
                   <div class="demobox demobox1">1</div>
                   <div class="demobox demobox2">2</div>
@@ -1420,46 +1179,18 @@ button[type=submit] {
          <p>Met <mark>relatieve positionering</mark> wordt het element <strong>uit zijn natuurlijke positie verschoven</strong>; andere elementen blijven waar ze zijn:</p>
          <div class="codecompare">
             <div class="democontainer">
-               <pre class="prism-default language-html" data-demo><code>&lt;div class="demowrapper"&gt;
+               <pre class="prism-default language-html"><code>&lt;div class="demowrapper"&gt;
    &lt;div class="demobox demobox1"&gt;1&lt;/div&gt;
    &lt;div class="demobox demobox2"&gt;2&lt;/div&gt;
    &lt;div class="demobox demobox3"&gt;3&lt;/div&gt;
-&lt;/div&gt;
-            </code></pre>
-               <pre class="prism-atom-dark h-200"><code contenteditable data-target="#positioning-demo2">/* relative positioning */
-.demobox2 {
+&lt;/div&gt;</code></pre>
+               <pre class="prism-atom-dark"><code contenteditable data-target="#positioning-demo2">.demobox2 {
    position: relative;
    left: 10px; /* verschuif 10px naar rechts */
    top: 20px; /* verschuif 20px naar beneden */
-}
-
-/* box styles */
-.demobox {
-   border: 2px solid black;
-   height: 40px;
-   margin-bottom: 10px;
-   padding: 5px;
-   width: 80px;
-}
-
-.demowrapper {
-   background-color: #fafafa;
-   border: 1px dotted black;
-   margin: 50px;
-   max-width: 500px;
-   padding: 20px;
-}
-.demobox1 {
-     background-color: #ddd;
-}
-.demobox2 {
-   background-color: #888;
-}
-.demobox3 {
-   background-color: #333;
 }</code></pre>
             </div>
-            <div id="positioning-demo2" class="w-500 target">
+            <div id="positioning-demo2" class="positioning-demo w-500 target">
                <div class="demowrapper">
                   <div class="demobox demobox1">1</div>
                   <div class="demobox demobox2">2</div>
@@ -1472,46 +1203,19 @@ button[type=submit] {
          <p>Met <mark>absolute positionering</mark> neem je een element uit de pagina, en positioneer je het <strong>ten opzichte van de paginaranden</strong> (overlapping is mogelijk); andere elementen vullen de ontstane ruimte. </p>
          <div class="codecompare">
             <div class="democontainer">
-               <pre class="prism-default language-html" data-demo><code>&lt;div class="demowrapper"&gt;
+               <pre class="prism-default language-html"><code>&lt;div class="demowrapper"&gt;
    &lt;div class="demobox demobox1"&gt;1&lt;/div&gt;
    &lt;div class="demobox demobox2"&gt;2&lt;/div&gt;
    &lt;div class="demobox demobox3"&gt;3&lt;/div&gt;
 &lt;/div&gt;
             </code></pre>
-               <pre class="prism-atom-dark h-200"><code contenteditable data-target="#positioning-demo3">/* relative positioning */
-.demobox2 {
+               <pre class="prism-atom-dark"><code contenteditable data-target="#positioning-demo3">.demobox2 {
    position: absolute;
    left: 5px; /* 5px vanaf links */
    top: 5px; /* 5px vanaf boven */
-}
-
-/* box styles */
-.demobox {
-   border: 2px solid black;
-   height: 40px;
-   margin-bottom: 10px;
-   padding: 5px;
-   width: 80px;
-}
-
-.demowrapper {
-   background-color: #fafafa;
-   border: 1px dotted black;
-   margin: 50px;
-   max-width: 500px;
-   padding: 20px;
-}
-.demobox1 {
-  background-color: #ddd;
-}
-.demobox2 {
-  background-color: #888;
-}
-.demobox3 {
-  background-color: #333;
 }</code></pre>
             </div>
-            <div id="positioning-demo3" class="w-500 target">
+            <div id="positioning-demo3" class="positioning-demo w-500 target">
                <div class="demowrapper">
                   <div class="demobox demobox1">1</div>
                   <div class="demobox demobox2">2</div>
@@ -1524,46 +1228,20 @@ button[type=submit] {
          </p>
          <div class="codecompare">
             <div class="democontainer">
-               <pre class="prism-default language-html" data-demo><code>&lt;div class="demowrapper"&gt;
+               <pre class="prism-default language-html"><code>&lt;div class="demowrapper"&gt;
    &lt;div class="demobox demobox1"&gt;1&lt;/div&gt;
    &lt;div class="demobox demobox2"&gt;2&lt;/div&gt;
    &lt;div class="demobox demobox3"&gt;3&lt;/div&gt;
 &lt;/div&gt;
             </code></pre>
-               <pre class="prism-atom-dark h-200"><code contenteditable data-target="#positioning-demo4">/* relative positioning */
+               <pre class="prism-atom-dark"><code contenteditable data-target="#positioning-demo4">/* relative positioning */
 .demobox2 {
    position: absolute;
    bottom: 10px; /* 10px vanaf beneden */
    right: 10px; /* 10px vanaf rechts */
-}
-
-/* box styles */
-.demobox {
-   border: 2px solid black;
-   height: 40px;
-   margin-bottom: 10px;
-   width: 80px;
-   padding: 5px;
-}
-
-.demowrapper {
-   background-color: #fafafa;
-   border: 1px dotted black;
-   margin: 50px;
-   max-width: 500px;
-   padding: 20px;
-}
-.demobox1 {
-  background-color: #ddd;
-}
-.demobox2 {
-  background-color: #888;
-}
-.demobox3 {
-  background-color: #333;
 }</code></pre>
             </div>
-            <div id="positioning-demo4" class="w-500 target">
+            <div id="positioning-demo4" class="positioning-demo w-500 target">
                <div class="demowrapper">
                   <div class="demobox demobox1">1</div>
                   <div class="demobox demobox2">2</div>
@@ -1576,12 +1254,12 @@ button[type=submit] {
          <p>De coördinaten zijn standaard t.o.v. de pagina. Als je wil positioneren <strong>ten opzichte van de parent</strong>, stel je die in op <code>position: relative</code>; dit heet <mark>absoluut-relatieve positionering</mark>.</p>
          <div class="codecompare">
             <div class="democontainer">
-               <pre class="prism-default language-html" data-demo><code>&lt;div class="demowrapper"&gt;
+               <pre class="prism-default language-html"><code>&lt;div class="demowrapper"&gt;
    &lt;div class="demobox demobox1"&gt;1&lt;/div&gt;
    &lt;div class="demobox demobox2"&gt;2&lt;/div&gt;
    &lt;div class="demobox demobox3"&gt;3&lt;/div&gt;
 &lt;/div&gt;</code></pre>
-               <pre class="prism-atom-dark h-200"><code contenteditable data-target="#positioning-demo8">/* absoluut-relative positioning */
+               <pre class="prism-atom-dark"><code contenteditable data-target="#positioning-demo8">/* absoluut-relative positioning */
 .demowrapper {
    position: relative; /* nieuwe referentie voor coördinaten */
 }
@@ -1590,35 +1268,9 @@ button[type=submit] {
    position: absolute;
    left: 5px; /* 5px vanaf links */
    top: 5px; /* 5px vanaf boven */
-}
-
-/* box styles */
-.demobox {
-   border: 2px solid black;
-   height: 40px;
-   margin-bottom: 10px;
-   padding: 5px;
-   width: 80px;
-}
-
-.demowrapper {
-   background-color: #fafafa;
-   border: 1px dotted black;
-   margin: 50px;
-   max-width: 500px;
-   padding: 20px;
-}
-.demobox1 {
-  background-color: #ddd;
-}
-.demobox2 {
-  background-color: #888;
-}
-.demobox3 {
-  background-color: #333;
 }</code></pre>
             </div>
-            <div id="positioning-demo8" class="w-500 target">
+            <div id="positioning-demo8" class="positioning-demo w-500 target">
                <div class="demowrapper">
                   <div class="demobox demobox1">1</div>
                   <div class="demobox demobox2">2</div>
@@ -1630,7 +1282,7 @@ button[type=submit] {
          <p>Als je vier coördinaten opgeeft (en <code>width</code> en <code>height</code> weghaalt) wordt het element over de hele pagina uitgerokken (en bedekt het de andere blokken). Met een gedeeltelijk transparante achtergrond kan je dan een overlay maken:</p>
          <div class="codecompare">
             <div class="democontainer">
-               <pre class="prism-default language-html w-500" data-demo><code>
+               <pre class="prism-default language-html w-500"><code>
 &lt;div class="overlay"&gt;&lt;h2&gt;OVERLAY CONTENT HIER&lt;/h2&gt;&lt;/div&gt;
 &lt;p&gt;Wij zin rijken ruimer zekere. Loopbaan een district bordeaux mag bevreesd heb. Inkomsten op af singapore behoeften. Het brengen den gedaald menigte markten evenals javanen. Ontwouding middellijn nu geruineerd ptolomaeus denzelfden in handelaars. Vrij in nu kilo west. Wieschen vermengd verbouwd zou was die verschil het geheelen voorzien. &lt;/p&gt;
 &lt;p&gt;Gebrek loopen kan zee zit andere ton levert zeggen zonder. Rook zoo twee zee hen maal. Wantrouwen ons tot inboorling nog doorzoeken.&lt;/p&gt;</code></pre>
@@ -1669,71 +1321,50 @@ button[type=submit] {
          <p>Een voorbeeld met drie absoluut gepositioneerde blokken:</p>
          <div class="codecompare">
             <div class="democontainer">
-               <pre class="prism-default language-html w-500" data-demo><code>&lt;div class="demobox demobox1"&gt;1&lt;/div&gt;
+               <pre class="prism-default language-html w-500"><code>&lt;div class="demobox demobox1"&gt;1&lt;/div&gt;
 &lt;div class="demobox demobox2"&gt;2&lt;/div&gt;
 &lt;div class="demobox demobox3"&gt;3&lt;/div&gt;
 &lt;p&gt;Wij zin rijken ruimer zekere. Loopbaan een district bordeaux mag bevreesd heb. Inkomsten op af singapore behoeften. Het brengen den gedaald menigte markten evenals javanen. Ontwouding middellijn nu geruineerd ptolomaeus denzelfden in handelaars. Vrij in nu kilo west. Wieschen vermengd verbouwd zou was die verschil het geheelen voorzien. &lt;/p&gt;
 &lt;p&gt;Gebrek loopen kan zee zit andere ton levert zeggen zonder. Rook zoo twee zee hen maal. Wantrouwen ons tot inboorling nog doorzoeken.&lt;/p&gt;</code></pre>
                <pre class="prism-atom-dark h-300"><code contenteditable data-target="#positioning-demo7">/* stapelvolgorde */
 .demobox1 {
-   z-index: 4; /* probeer een ook 20, 1 en -1 */
+   z-index: 2; 
 }
 .demobox2 {
-   z-index: 10;
+   z-index: -3; /* negatief: onder normale content */
 }
 .demobox3 {
-   z-index: 2;
+   z-index: 4;
 }
 
-/* absolute positionering */
+/* absoluut-relatieve positionering */
+.demowrapper {
+   position: relative;
+}
 .demobox1 {
    position: absolute;
    left: 25px;
-   top: -15px;
+   top: 60px;
 }
 .demobox2 {
    position: absolute;
    left: 65px;
-   top: 15px;
+   top: 65px;
 }
 .demobox3 {
    left: 45px;
    top: 35px;
    position: absolute;
-}
-
-/* box styles */
-.demobox {
-   border: 2px solid black;
-   margin-bottom: 10px;
-   padding: 5px;
-   width: 160px;
-   height: 80px;
-}
-
-.demowrapper {
-   background-color: #fafafa;
-   border: 1px dotted black;
-   margin: 50px;
-   max-width: 500px;
-   padding: 20px;
-}
-.demobox1 {
-  background-color: #ddd;
-}
-.demobox2 {
-  background-color: #888;
-}
-.demobox3 {
-  background-color: #333;
 }</code></pre>
             </div>
-            <div id="positioning-demo7" class="w-500 target">
+            <div id="positioning-demo7" class="positioning-demo w-500 target">
+               <div class="demowrapper">
                <p>Wij zin rijken ruimer zekere. Loopbaan een district bordeaux mag bevreesd heb. Inkomsten op af singapore behoeften. Het brengen den gedaald menigte markten evenals javanen. Ontwouding middellijn nu geruineerd ptolomaeus denzelfden in handelaars. Vrij in nu kilo west. Wieschen vermengd verbouwd zou was die verschil het geheelen voorzien. </p>
                <p>Gebrek loopen kan zee zit andere ton levert zeggen zonder. Rook zoo twee zee hen maal. Wantrouwen ons tot inboorling nog doorzoeken.</p>
                <div class="demobox demobox1">1</div>
                <div class="demobox demobox2">2</div>
                <div class="demobox demobox3">3</div>
+            </div>
             </div>
          </div>
       </div>
