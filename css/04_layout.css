@@ -2,11 +2,16 @@
 
 .alignment-demo .container {
 	background-color: #fdd;
+	height: 300px;
 	padding: 20px;
 }
 
+#alignment-demo4 .container {
+	height: auto;
+}
+
 .alignment-demo .visual {
-	width: 80px;
+	width: 60px;
 }
 
 .alignment-demo p {

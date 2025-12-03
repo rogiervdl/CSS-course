@@ -595,7 +595,7 @@ a {
           <caption>appearance</caption>
           <tr>
             <td>display</td>
-            <td>none | inline | block | flex | grid </td>
+            <td>none | inline | inline-block | block | flex | grid </td>
           </tr>
           <tr>
             <td>opacity</td>
@@ -650,7 +650,7 @@ a {
             <td>align-items</td>
             <td>
               flex-start | flex-end | center | stretch<br>
-              <span>(positioning items across flex direction)</span>
+              <span>align all items vertically</span>
             </td>
           </tr>
           <tr>
@@ -660,13 +660,7 @@ a {
             </td>
           </tr>
           <tr>
-            <td>flex-wrap</td>
-            <td>
-              wrap | nowrap
-            </td>
-          </tr>
-          <tr>
-            <td>gap, column-gap, row-gap</td>
+            <td>gap</td>
             <td>
               px, <span class="pro">rem, </span>em or %
             </td>
@@ -675,7 +669,13 @@ a {
             <td>justify-content</td>
             <td>
               flex-start | flex-end | center | space-between<br>
-              <span>(positioning items along flex direction)</span>
+              <span>distribute all items horizontally</span>
+            </td>
+          </tr>
+          <tr class="pro">
+            <td>flex-wrap</td>
+            <td>
+              wrap | nowrap
             </td>
           </tr>
           <tr class="pro">
@@ -698,30 +698,29 @@ a {
             <td>align-self</td>
             <td>
               flex-start | flex-end | center | stretch<br>
-              <span>(positioning individual item)</span>
+              <span>align individual item vertically</span>
             </td>
           </tr>
           <tr>
             <td>flex</td>
             <td>
               e.g. 1 1 0, 0 0 200px...<br>
-              <span>(item width)</span>
+              <span>item width</span>
             </td>
           </tr>
         </table>
         <table>
           <caption>grid, container</caption>
           <tr>
-            <td>align-items</td>
-            <td>
-              start | end | center | stretch<br>
-              <span>(positioning items vertically)</span>
-            </td>
-          </tr>
-          <tr>
             <td>display: grid</td>
             <td>
               create grid container
+            </td>
+          </tr>
+          <tr>
+            <td>gap</td>
+            <td>
+              px, <span class="pro">rem, </span>em or %
             </td>
           </tr>
           <tr>
@@ -736,7 +735,14 @@ a {
               e.g. 50px auto
             </td>
           </tr>
-          <tr>
+          <tr class="pro">
+            <td>align-items</td>
+            <td>
+              start | end | center | stretch<br>
+              <span>(positioning items vertically)</span>
+            </td>
+          </tr>
+          <tr class="pro">
             <td>justify-items</td>
             <td>
               start | end | center | stretch<br>
@@ -759,7 +765,14 @@ a {
             </td>
           </tr>
           <tr>
-            <td>justify-items</td>
+            <td>align-self</td>
+            <td>
+              start | end | center | stretch<br>
+              <span>(positioning individual item)</span>
+            </td>
+          </tr>
+          <tr>
+            <td>justify-self</td>
             <td>
               start | end | center | stretch<br>
               <span>(positioning items horizontally)</span>

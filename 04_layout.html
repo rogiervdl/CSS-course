@@ -62,17 +62,38 @@
          Je kan layouttechnieken onderverdelen in ruwweg 5 groepen:
       </p>
       <ul>
-         <li><span class="em">flexbox</span>: bedoeld voor <strong>layout op lijnen</strong> (horizontaal of verticaal)</li>
          <li><span class="em">alignering</span>: verzamelnaam voor reeks losse technieken voor <strong>horizontale en verticale alignering</strong></li>
          <li><span class="em">floating</span>: gebruikt om content links of rechts <strong>rond een blok doen vloeien</strong> (bv. foto) </li>
-         <li><span class="em">positionering</span> (fixed, sticky...): positionering in <strong>gestapelde lagen</strong> op basis van coördinaten; vooral geschikt voor Javascript games en enkele uitzonderlijke gevallen</li>
+         <li><span class="em">flexbox</span>: bedoeld voor <strong>layout op lijnen</strong> (horizontaal of verticaal)</li>
          <li><span class="em">grid</span>: bedoeld voor <strong>layout op een raster</strong> in rijen en kolommen</li>
+         <li><span class="em">positionering</span> (fixed, sticky...): positionering in <strong>gestapelde lagen</strong> op basis van coördinaten; vooral geschikt voor Javascript games en enkele uitzonderlijke gevallen</li>
       </ul>
 
       <h2>Alignering</h2>
+      <p>
+         Standaard staat content linksboven gealigneerd:
+      </p>
+      <div class="codecompare">
+         <div class="democontainer">
+            <pre class="prism-default language-html w-500"><code>&lt;div class="container"&gt;
+   &lt;img src="img/04_layout/spongebob.webp" alt=""&gt;
+   &lt;p&gt;parmesan cheese slices when the cheese comes out everybody's happy cow cheese and wine cheese and biscuits. Roquefort when the cheese comes out...&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+         </div>
+         <div id="alignment-demo0" class="alignment-demo w-500">
+            <div class="demowrapper">
+               <div class="container">
+                  <img src="img/04_layout/spongebob.webp" class="visual" alt="">
+                  <p>
+                     parmesan cheese slices when the cheese comes out everybody's happy cow cheese and wine cheese and biscuits. Roquefort when the cheese comes out...
+                  </p>
+               </div>
+            </div>
+         </div>
+      </div>
       <h3>horizontaal uitlijnen</h3>
       <p>
-         Om tekst, afbeeldingen enz... horizontaal uit te lijnen, gebruik <code><span class="em">text-align</span></code> op de parent:
+         Om inhoud (tekst, afbeeldingen enz...) horizontaal uit te lijnen, gebruik <code><span class="em">text-align</span></code> op de parent:
       </p>
       <div class="codecompare">
          <div class="democontainer">
@@ -130,6 +151,32 @@
          </div>
       </div>
 
+      <h3>verticaal centreren</h3>
+      <p>Als de hoogte van de container flexibel is, kan je de alle content verticaal visueel in het midden krijgen met gelijke <code><span class="em">padding</span></code> boven en onder op de parent:</p>
+      <div class="codecompare">
+         <div class="democontainer">
+            <pre class="prism-default language-html w-500"><code>&lt;div id="container"&gt;
+   &lt;img src="img/04_layout/spongebob.webp" alt=""&gt;
+   &lt;p&gt;parmesan cheese slices when the cheese comes out everybody's happy cow cheese and wine cheese and biscuits. Roquefort when the cheese comes out...&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+            <pre class="prism-atom-dark"><code contenteditable data-target="#alignment-demo4">.container {
+   padding-bottom: 50px; 
+   padding-top: 50px; 
+}</code></pre>
+         </div>
+         <div id="alignment-demo4" class="alignment-demo w-500">
+            <div class="demowrapper">
+               <div class="container">
+						<img src="img/04_layout/spongebob.webp" class="visual" alt="">
+                  <p>
+                     parmesan cheese slices when the cheese comes out everybody's happy cow cheese and wine cheese and biscuits. Roquefort when the cheese comes out...
+                  </p>
+               </div>
+            </div>
+         </div>
+      </div>
+      <p>Dit lukt uiteraard niet als de container een vaste hoogte heeft. De mogelijkheden zijn dus beperkt: voor verfijndere layouts gebruik je <span class="em">flexbox</span> of <span class="em">grid</span>.</p>
+
       <div class="pro">
 
          <h3>één regel verticaal centreren</h3>
@@ -162,30 +209,6 @@
             </div>
          </div>
       </div>
-
-      <h3>verticaal centreren</h3>
-      <p>Als de hoogte van de container flexibel is, kan je de content verticaal visueel in het midden krijgen met gelijke <code><span class="em">padding</span></code> boven en onder op de parent:</p>
-      <div class="codecompare">
-         <div class="democontainer">
-            <pre class="prism-default language-html w-500"><code>&lt;div id="container"&gt;
-   &lt;p&gt;parmesan cheese slices when the cheese comes out everybody's happy cow cheese and wine cheese and biscuits. Roquefort when the cheese comes out...&lt;/p&gt;
-&lt;/div&gt;</code></pre>
-            <pre class="prism-atom-dark"><code contenteditable data-target="#alignment-demo4">.container {
-   padding-bottom: 50px; 
-   padding-top: 50px; 
-}</code></pre>
-         </div>
-         <div id="alignment-demo4" class="alignment-demo w-500">
-            <div class="demowrapper">
-               <div class="container">
-                  <p>
-                     parmesan cheese slices when the cheese comes out everybody's happy cow cheese and wine cheese and biscuits. Roquefort when the cheese comes out...
-                  </p>
-               </div>
-            </div>
-         </div>
-      </div>
-      <p>De mogelijkheden zijn beperkt: voor verfijndere layouts gebruik je <span class="em">flexbox</span> of <span class="em">grid</span>.</p>
 
       <h2>Floating</h2>
       <h3>Standaard weergave</h3>
@@ -245,8 +268,7 @@
   &lt;p&gt;Her are its honoured drawings nor. Pretty see mutual thrown all not edward ten. Particular an boisterous up he reasonably frequently. Several any had enjoyed shewing studied two. Up intention remainder sportsmen behaviour ye happiness. Few again any alone style added abode ask. Nay projecting unpleasing boisterous eat discovered solicitude. Own six moments produce elderly pasture far arrival. Hold our year they ten upon. Gentleman contained so intention sweetness in on resolving.&lt;/p&gt;
 &lt;/section&gt;
 </code></pre>
-            <pre class="prism-atom-dark"><code contenteditable data-target="#floating-demo3">/* float pull quote right */
-aside {
+            <pre class="prism-atom-dark"><code contenteditable data-target="#floating-demo3">aside {
    float: right;
    margin: 10px 0 10px 10px;
    width: 130px;
@@ -375,17 +397,6 @@ img {
             </div>
          </div>
       </div>
-
-      <h3>Wanneer gebruiken</h3>
-      <p>Vóór Flexbox algemeen ondersteund werd, werd float misbruikt voor alle layout (en soms kom je het nog tegen), maar vandaag beperk je het gebruik best waarvoor het bedoeld is. Gebruik floating:</p>
-      <ul class="right">
-         <li>om tekst rond afbeeldingen te laten vloeien</li>
-         <li>voor pull quotes</li>
-      </ul>
-      <p>Gebruik floating niet:</p>
-      <ul class="wrong">
-         <li>voor alle andere layout als pagina layout, menus enz...</li>
-      </ul>
 
       <h2>Flexbox</h2>
       <p>
@@ -1062,6 +1073,9 @@ img {
          <li>is de layout in <strong>kolommen en/of rijen</strong> (pagina layout, fotogallerij...)? gebruik dan <strong>grid</strong></li>
       </ul>
       <h3>Voorbeeld 1: horizontaal menu &mdash; Flexbox</h3>
+		<p>
+			<img src="img/04_layout/case1.png" alt="" class="bordered w-500">
+		</p>
       <p>Een typisch menu is een layout op één lijn, dus flexbox:</p>
       <pre class="prism-default language-html w-400"><code>&lt;ul class="hormenu"&gt;
    &lt;li&gt;&lt;a href="#"&gt;home&lt;/a&gt;&lt;/li&gt;
@@ -1072,8 +1086,16 @@ img {
          <pre class="prism-atom-dark language-css right" data-caption="Flexbox" data-demo="demos/04_layout/menu.html"><code>.hormenu {
    display: flex;
    gap: 10px;
-}</code></pre>
+   list-style: none;
+}
+</code></pre>
+		<p>
+			<img src="img/04_layout/case1b.png" alt="" class="bordered w-500">
+		</p>
       <h3>Voorbeeld 2: header layout &mdash; Flexbox</h3>
+		<p>
+			<img src="img/04_layout/case2.png" alt="" class="bordered w-500">
+		</p>
       <p>Een typische header layout heeft logo links en menu rechts, op één lijn, dus flexbox:</p>
       <pre class="prism-default language-html w-400"><code>&lt;header&gt;
    &lt;a href=""&gt;&lt;img src="img/logo.jpg" alt="logo"&gt;&lt;/a&gt;
@@ -1083,7 +1105,14 @@ img {
    display: flex;
    justify-content: space-between;
 }</code></pre>
+		<p>
+			<img src="img/04_layout/case2b.png" alt="" class="bordered w-500">
+		</p>
+
       <h3>Voorbeeld 3: content kolommen &mdash; grid</h3>
+		<p>
+			<img src="img/04_layout/case3.png" alt="" class="bordered w-500">
+		</p>
       <p>Kolommen staat naast elkaar, op één lijn, dus technisch kan flexbox:</p>
       <pre class="prism-default language-html w-400"><code>&lt;main&gt;
    &lt;div class="main__content"&gt;&lt;/div&gt;
@@ -1091,6 +1120,7 @@ img {
 &lt;/main&gt;</code></pre>
       <pre class="prism-atom-dark language-css wrong" data-caption="Flexbox" data-demo="demos/04_layout/columns_flexbox.html"><code>main {
    display: flex;
+   gap: 20px;
 }
 .main__content {
    flex: 1;
@@ -1101,10 +1131,17 @@ aside {
       <p>In praktijk is kolommen met grid maken makkelijker:</p>
          <pre class="prism-atom-dark language-css right" data-caption="Grid" data-demo="demos/04_layout/columns_grid.html"><code>main {
    display: grid;
+   gap: 20px;
    grid-template-columns: 1fr 200px;
 }
 </code></pre>
+		<p>
+			<img src="img/04_layout/case3b.png" alt="" class="bordered w-400">
+		</p>
       <h3>Voorbeeld 4: formulier &mdash; Grid</h3>
+		<p>
+			<img src="img/04_layout/case4.png" alt="" class="bordered w-400">
+		</p>
       <p>Een formulier heeft rijen en kolommen, dus grid is aangewezen. De HTML en CSS:</p>
       <div class="codecompare">
          <div>
@@ -1119,8 +1156,9 @@ aside {
 &lt;/form&gt;</code></pre>
             <pre class="prism-atom-dark language-css right" data-caption="Grid" data-demo="demos/04_layout/form.html"><code>form {
    display: grid;
+   gap: 10px;
    grid-template-columns: 120px 1fr;
-   grid-template-rows: 1fr 1fr 100px;
+   grid-template-rows: auto auto 100px 1fr;
 }
 /* button rechstonder plaatsen */
 button[type=submit] {  
@@ -1129,7 +1167,13 @@ button[type=submit] {
 }</code></pre>
          </div>
       </div>
+		<p>
+			<img src="img/04_layout/case4b.png" alt="" class="bordered w-400">
+		</p>
       <h3>Voorbeeld 5: foto gallerij &mdash; Grid</h3>
+		<p>
+			<img src="img/04_layout/case5.png" alt="" class="bordered w-500">
+		</p>
       <pre class="prism-default language-html w-400"><code>&lt;figure id="gallery"&gt;
    &lt;img src="img/foto01.jpg" alt=""&gt;
    &lt;img src="img/foto02.jpg" alt=""&gt;
@@ -1146,6 +1190,9 @@ button[type=submit] {
    gap: 10px;
    grid-template-columns: 1fr 1fr 1fr;
 }</code></pre>
+		<p>
+			<img src="img/04_layout/case5b.png" alt="" class="bordered w-400">
+		</p>
          <p>Je kan zelfs een volledig responsive gallery maken met deze CSS grid code (hoef je niet van buiten te kennen):</p>
          <pre class="prism-atom-dark language-css" data-caption="Grid" data-demo="demos/04_layout/gallery2.html"><code>#gallery {
    display: grid;
