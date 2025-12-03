@@ -60,7 +60,7 @@ h5 {
 /* ============== */
 
 header {
-   align-items: flex-start;
+   align-items: start;
    background-color: #333;
    color: #ccc;
    flex-flow: row nowrap;

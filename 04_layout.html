@@ -435,17 +435,17 @@ img {
             </tr>
             <tr class="pro">
                <td><code>align-content</code></td>
-               <td><code>flex-start|center|space-between|flex-end|stretch|...</code></td>
+               <td><code>start|center|space-between|end|stretch|...</code></td>
                <td>schikking van de flex lijnen in de flex container</td>
             </tr>
             <tr>
                <td><code>align-items</code></td>
-               <td><code>flex-start|center|space-between|flex-end|stretch|...</code></td>
+               <td><code>start|center|space-between|end|stretch|...</code></td>
                <td>schikking van items dwars op de lijnen</td>
             </tr>
             <tr>
                <td><code>justify-content</code></td>
-               <td><code>flex-start|center|space-between|flex-end|stretch|...</code></td>
+               <td><code>start|center|space-between|end|stretch|...</code></td>
                <td>schikking van items langs de lijnen</td>
             </tr>
 
@@ -468,7 +468,7 @@ img {
          <tbody>
             <tr>
                <td><code>align-self</code></td>
-               <td><code>flex-start|center|space-between|flex-end|stretch|...</code></td>
+               <td><code>start|center|space-between|end|stretch|...</code></td>
                <td>overschrijft <code>align-items</code> property voor dit item</td>
             </tr>
             <tr class="pro">
@@ -526,7 +526,7 @@ img {
       <div class="codecompare">
          <pre class="prism-atom-dark w-500"><code contenteditable data-target="#flex-demo3">.flex-container {
    display: flex;
-   align-items: center; /* probeer ook flex-start, flex-end... */
+   align-items: center; /* probeer ook start, end... */
 }</code></pre>
          <div id="flex-demo3" class="flex-demo w-500">
             <div class="flex-container">
@@ -563,7 +563,7 @@ img {
    align-items: center;
    display: flex;
    /* gap: 10px; -&gt; dit heeft geen effect meer */
-   justify-content: space-between; /* probeer ook flex-end, ... */
+   justify-content: space-between; /* probeer ook end, ... */
 }</code></pre>
          <div id="flex-demo5" class="flex-demo w-500">
             <div class="flex-container">
@@ -947,7 +947,7 @@ img {
                <div class="grid-item item2">02</div>
                <div class="grid-item item3">03</div>
                <div class="grid-item item4">04</div>
-               <div class="grid-item-dotted" style="grid-column: 2 / 4; display: flex; justify-content: flex-end;">
+               <div class="grid-item-dotted" style="grid-column: 2 / 4; display: flex; justify-content: end;">
                   <div class="grid-item item5">05</div>
                </div>
                <div class="grid-item-dotted"></div>
@@ -1589,7 +1589,7 @@ footer {
                <li>logo vaste breedte met <code>flex: 0 0 100px</code></li>
                <li>tagline variabele breedte met <code>flex: 1</code></li>
                <li>zoekformulier vaste breedte met <code>flex: 0 0 220px</code></li>
-               <li>zoekformulier onderaan geplaatst met <code>align-self: flex-end</code></li>
+               <li>zoekformulier onderaan geplaatst met <code>align-self: end</code></li>
             </ul>
          </li>
          <li>
