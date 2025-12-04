@@ -949,13 +949,13 @@ img {
 
       <h3>align-self, justify-self</h3>
       <p>
-         We kunnen individuele items verticaal of horizontaal plaatsen in hun cel met <span class="em"><code>align-self</code></span> resp. <span class="em"><code>justify-self</code></span>. Het item neemt dan niet meer de hele cel in.
+         We kunnen individuele items verticaal of horizontaal uitlijnen (centreren, uitrekken, aan het einde...) in hun cel met <span class="em"><code>align-self</code></span> resp. <span class="em"><code>justify-self</code></span>. Het item neemt dan niet meer de hele cel in.
          Zetten we b.v. het vijfde item rechts midden:
       </p>
       <div class="codecompare">
          <pre class="prism-atom-dark w-500"><code contenteditable data-target="#grid-demo7">.item5 {
-   align-self: center; /* verticaal gecentreerd */				
-   justify-self: end; /* horizontaal rechts */					
+   align-self: center; /* probeer ook end, start, stretch */				
+   justify-self: end; /* center, start, stretch */					
    grid-column: 2 / 4; /* tussen kolomlijnen 2 en 4 */
    padding: 5px 10px;
 }
