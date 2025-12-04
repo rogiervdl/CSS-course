@@ -325,12 +325,6 @@
               none | disc | square | decimal | ...
             </td>
           </tr>
-          <tr class="pro">
-            <td>list-style-image</td>
-            <td>
-              url(...)
-            </td>
-          </tr>
         </table>
       </section>
       <section>
@@ -346,8 +340,8 @@
             <td>shorthand for #55cc99</td>
           </tr>
           <tr>
-            <td>#36F97C8D</td>
-            <td>hex color with transparency 8D</td>
+            <td>#36f97c8d</td>
+            <td>hex color with transparency 8d</td>
           </tr>
           <tr>
             <td>rgb(54 249 124)</td>
@@ -396,6 +390,22 @@
             </td>
           </tr>
         </table>
+        <table>
+          <caption>transitions</caption>
+          <tr>
+            <td>transition</td>
+            <td>
+               e.g. background 0.3s, color 0.5s; 
+            </td>
+          </tr>
+        </table>
+        <table class="pro">
+          <caption>filters</caption>
+          <tr>
+            <td>filter</td>
+            <td>blur, hue, sepia, brightness, contrast... <br>e.g. grayscale(70%);</td>
+          </tr>
+        </table>
 
       </section>
       <section>
@@ -403,19 +413,12 @@
         <table>
           <caption>margins, paddings, border</caption>
           <tr>
-            <td>border: 2px solid #900;</td>
             <td>
-              border-width: 2px;<br>
-              border-style: solid;<br>
-              border-color: #900;<br>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              border-color
+               border
+               <br><br><span class="small">also: border-top, border-right, border-bottom, border-left</span>
             </td>
             <td>
-              e.g. #ccc
+               e.g; 2px solid #900
             </td>
           </tr>
           <tr>
@@ -428,45 +431,24 @@
           </tr>
           <tr>
             <td>
-              border-style
+               margin
+               <br><br><span class="small">also: margin-top, margin-right, margin-bottom, margin-left</span>
             </td>
             <td>
-              none | solid | dashed | dotted
-            </td>
-          </tr>
-          <tr>
-            <td>
-              border-width
-            </td>
-            <td>
-              px, <span class="pro">rem, </span>em or %
+               e.g. 10px; /* all sides */
+               <br>e.g. 5px 10px; /* vertical-horizontal */
+               <br>e.g. 5px 10px 15px 20px; /* top-right-bottom-left */
             </td>
           </tr>
           <tr>
-            <td>margin: 10px<br>(same for padding)</td>
             <td>
-              margin-top: 10px;<br>
-              margin-right: 10px;<br>
-              margin-bottom: 10px;<br>
-              margin-left: 10px;<br>
+               padding
+               <br><br><span class="small">also: padding-top, padding-right, padding-bottom, padding-left</span>
             </td>
-          </tr>
-          <tr>
-            <td>margin: 5px 10px<br>(same for padding)</td>
             <td>
-              margin-top: 5px;<br>
-              margin-right: 10px;<br>
-              margin-bottom: 5px;<br>
-              margin-left: 10px;<br>
-            </td>
-          </tr>
-          <tr>
-            <td>margin: 5px 10px 15px 20px<br>(same for padding)</td>
-            <td>
-              margin-top: 5px;<br>
-              margin-right: 10px;<br>
-              margin-bottom: 15px;<br>
-              margin-left: 20px;<br>
+               e.g. 10px; /* all sides */
+               <br>e.g. 5px 10px; /* vertical-horizontal */
+               <br>e.g. 5px 10px 15px 20px; /* top-right-bottom-left */
             </td>
           </tr>
         </table>
@@ -500,94 +482,6 @@
             <td>e.g. 10px 10px 5px #888;<br>(left, top, blur, color)</td>
           </tr>
         </table>
-      </section>
-      <section>
-        <h3>other</h3>
-        <table>
-          <caption>transitions</caption>
-          <tr>
-            <td>transition: background 0.3s; </td>
-            <td>
-              transition-property: background; <br>
-              transition-duration: 0.3s;
-            </td>
-          </tr>
-          <tr>
-            <td>transition-property</td>
-            <td>all | css property</td>
-          </tr>
-          <tr>
-            <td>transition-duration</td>
-            <td>number of seconds</td>
-          </tr>
-        </table>
-        <table class="pro">
-          <caption>animation</caption>
-          <tr>
-            <td>@keyframes</td>
-            <td><pre>@keyframes my-animation {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
-#my-el {
-  my-animation 3s infinite ease-in-out;
-}</pre></td>
-          </tr>
-          <tr>
-            <td>transform</td>
-            <td>rotate, skew, scale, rotate... <br>e.g. rotate(8deg) skewY(15deg);</td>
-          </tr>
-        </table>
-        <table class="pro">
-          <caption>image editing</caption>
-          <tr>
-            <td>filter</td>
-            <td>blur, hue, sepia, brightness, contrast... <br>e.g. grayscale(70%);</td>
-          </tr>
-        </table>
-        <table>
-          <caption>transforms</caption>
-          <tr>
-            <td>filter</td>
-            <td>blur, hue, sepia, brightness, contrast... <br>e.g. grayscale(70%);</td>
-          </tr>
-        </table>
-        <table>
-          <caption>miscellaneous</caption>
-          <tr>
-            <td>cursor</td>
-            <td>auto | pointer | help | not-allowed</td>
-          </tr>
-          <tr>
-            <td>var()</td>
-            <td>
-              <pre>:root {
-   --primary-color: #655;
-   --secondary-color: #855;
-}
-a {
-   color: var(--secondary-color);
-}</pre>
-
-            </td>
-          </tr>
-          <tr>
-            <td>@media()</td>
-            <td>
-              <pre>@media (width &gt;= 600px) {
-   .mobile-only {
-      display: none;
-   }
-}</pre>
-            </td>
-          </tr>
-          <tr class="pro">
-            <td>calc()</td>
-            <td>e.g. width: calc((100% - 250px) / 3)</td>
-          </tr>
-
-        </table>
-
       </section>
       <section>
         <h3>layout</h3>
@@ -660,6 +554,18 @@ a {
             </td>
           </tr>
           <tr>
+            <td>flex-direction</td>
+            <td>
+              row | row-reverse | column | column-reverse
+            </td>
+          </tr>
+          <tr>
+            <td>flex-wrap</td>
+            <td>
+              wrap | nowrap
+            </td>
+          </tr>
+          <tr>
             <td>gap</td>
             <td>
               px, <span class="pro">rem, </span>em or %
@@ -670,25 +576,6 @@ a {
             <td>
               start | end | center | space-between<br>
               <span>distribute all items horizontally</span>
-            </td>
-          </tr>
-          <tr class="pro">
-            <td>flex-wrap</td>
-            <td>
-              wrap | nowrap
-            </td>
-          </tr>
-          <tr class="pro">
-            <td>flex-direction</td>
-            <td>
-              row | row-reverse | column | column-reverse
-            </td>
-          </tr>
-          <tr class="pro">
-            <td>flex-flow: row nowrap</td>
-            <td>
-              flex-direction: row;<br>
-              flex-wrap: nowrap;
             </td>
           </tr>
         </table>
@@ -753,6 +640,13 @@ a {
         <table>
           <caption>grid, item</caption>
           <tr>
+            <td>align-self</td>
+            <td>
+              start | end | center | stretch<br>
+              <span>(positioning individual item)</span>
+            </td>
+          </tr>
+          <tr>
             <td>grid-column</td>
             <td>
               column span, e.g. 2 / 4
@@ -765,13 +659,6 @@ a {
             </td>
           </tr>
           <tr>
-            <td>align-self</td>
-            <td>
-              start | end | center | stretch<br>
-              <span>(positioning individual item)</span>
-            </td>
-          </tr>
-          <tr>
             <td>justify-self</td>
             <td>
               start | end | center | stretch<br>
@@ -781,7 +668,47 @@ a {
         </table>
 
       </section>
-    </div>
+      <section>
+        <h3>responsive</h3>
+        <table>
+          <caption>media queries</caption>
+          <tr>
+            <td>@media()</td>
+            <td>
+              <pre>@media (width &gt;= 600px) {
+   .mobile-only {
+      display: none;
+   }
+}</pre>
+            </td>
+          </tr>
+
+        </table>
+
+      </section>
+      <section class="pro">
+        <h3>pro</h3>
+        <table>
+          <caption>CSS variables</caption>
+          <tr>
+            <td>var()</td>
+            <td>
+              <pre>:root {
+   --primary-color: #655;
+   --secondary-color: #855;
+}
+a {
+   color: var(--secondary-color);
+}</pre>
+
+            </td>
+          </tr>
+
+        </table>
+
+      </section>
+
+	</div>
   </main>
   <footer>
     <img src="common/img/thats-all.jpg" alt="">
