@@ -419,12 +419,27 @@ img {
                <td><code>flex</code></td>
                <td>layouten met flex</td>
             </tr>
-            <tr class="pro">
+            <tr>
+               <td><code>align-items</code></td>
+               <td><code>start|center|space-between|end|stretch|...</code></td>
+               <td>schikking van items dwars op de lijnen</td>
+            </tr>
+            <tr>
+               <td><code>gap</code>, <code>column-gap</code>, <code>row-gap</code></td>
+               <td><code>px|%|...</code></td>
+               <td>ruimte tussen items/lijnen</td>
+            </tr>
+            <tr>
+               <td><code>justify-content</code></td>
+               <td><code>start|center|space-between|end|stretch|...</code></td>
+               <td>schikking van items langs de lijnen</td>
+            </tr>
+            <tr>
                <td><code>flex-direction</code></td>
                <td><code>row|column<span class="pro">|row-reverse|column-reverse</span></code></td>
                <td>stapelen in rijen of kolommen, al dan niet in omgekeerde richting</td>
             </tr>
-            <tr class="pro">
+            <tr>
                <td><code>flex-wrap</code></td>
                <td><code>wrap|nowrap</code></td>
                <td>items op één lijn of meerdere lijnen</td>
@@ -437,22 +452,6 @@ img {
                <td><code>align-content</code></td>
                <td><code>start|center|space-between|end|stretch|...</code></td>
                <td>schikking van de flex lijnen in de flex container</td>
-            </tr>
-            <tr>
-               <td><code>align-items</code></td>
-               <td><code>start|center|space-between|end|stretch|...</code></td>
-               <td>schikking van items dwars op de lijnen</td>
-            </tr>
-            <tr>
-               <td><code>justify-content</code></td>
-               <td><code>start|center|space-between|end|stretch|...</code></td>
-               <td>schikking van items langs de lijnen</td>
-            </tr>
-
-            <tr>
-               <td><code>gap</code>, <code>column-gap</code>, <code>row-gap</code></td>
-               <td><code>px|%|...</code></td>
-               <td>ruimte tussen items/lijnen</td>
             </tr>
          </tbody>
       </table>
@@ -471,15 +470,15 @@ img {
                <td><code>start|center|space-between|end|stretch|...</code></td>
                <td>overschrijft <code>align-items</code> property voor dit item</td>
             </tr>
-            <tr class="pro">
-               <td><code>order</code></td>
-               <td>geheel getal</td>
-               <td>volgorde van het item in de lijn</td>
-            </tr>
             <tr>
                <td><code>flex</code></td>
                <td><code>getal|0 0 px|0 0 auto</code></td>
                <td>breedte van de kolom (vast|flexibel|passend)</td>
+            </tr>
+            <tr class="pro">
+               <td><code>order</code></td>
+               <td>geheel getal</td>
+               <td>volgorde van het item in de lijn</td>
             </tr>
          </tbody>
       </table>
@@ -590,6 +589,31 @@ img {
                <div class="flex-item">02</div>
                <div class="flex-item">03</div>
                <div class="flex-item">04</div>
+            </div>
+         </div>
+      </div>
+
+      <h3>flex-wrap</h3>
+      <p>Heb je veel items, dan kan je ze in meerdere rijen (of kolommen) zetten met <code><span class="em">flex-wrap</span>: wrap</code>:</p>
+      <div class="codecompare">
+         <pre class="prism-atom-dark"><code contenteditable data-target="#flex-demo7">.flex-container {
+   align-items: center;
+   display: flex;
+   gap: 10px;
+   flex-wrap: wrap; /* meerdere rijen */
+}</code></pre>
+         <div id="flex-demo7" class="flex-demo w-500">
+            <div class="flex-container">
+               <div class="flex-item">01</div>
+               <div class="flex-item">02</div>
+               <div class="flex-item">03</div>
+               <div class="flex-item">04</div>
+               <div class="flex-item">05</div>
+               <div class="flex-item">06</div>
+               <div class="flex-item">07</div>
+               <div class="flex-item">08</div>
+               <div class="flex-item">09</div>
+               <div class="flex-item">10</div>
             </div>
          </div>
       </div>
