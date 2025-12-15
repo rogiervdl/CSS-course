@@ -618,6 +618,28 @@ img {
          </div>
       </div>
 
+      <h3>align-self</h3>
+      <p>Aligneer een individueel item met <code><span class="em">align-self</span></code>:</p>
+      <div class="codecompare">
+         <pre class="prism-atom-dark w-500"><code contenteditable data-target="#flex-demo8">.flex-container {
+   align-items: center;
+   display: flex;
+   gap: 10px;
+}
+.flex-item:nth-child(3) {
+   align-self: start; /* plaats het derde item bovenaan */
+}
+</code></pre>
+         <div id="flex-demo8" class="flex-demo w-500">
+            <div class="flex-container">
+               <div class="flex-item">01</div>
+               <div class="flex-item">02</div>
+               <div class="flex-item">03</div>
+               <div class="flex-item">04</div>
+            </div>
+         </div>
+      </div>
+
       <h3>flex</h3>
       <p>
          De <code><span class="em">flex</span></code> property duidt de breedte van een item aan. De vorm is <code>flex: <em>flex-grow flex-shrink flex-basis</em></code>. 
