@@ -808,13 +808,13 @@ img {
          <tbody>
             <tr>
                <td><code>grid-column</code></td>
-               <td>kolomspan (zie verder)</td>
-               <td>tussen welke verticale lijnen zit het item</td>
+               <td><code>span</code> <em>n</em><span class="pro"> | <em>n1</em> / <em>n1</em></span></td>
+               <td>overspan <em>n</em> kolommen<span class="pro">, of tussen lijn <em>n1</em> en <em>n2</em></span></td>
             </tr>
             <tr>
                <td><code>grid-row</code></td>
-               <td>rijspan (zie verder)</td>
-               <td>tussen welke horizontale lijnen zit het item</td>
+               <td><code>span</code> <em>n</em><span class="pro"> | <em>n1</em> / <em>n1</em></span></td>
+               <td>overspan <em>n</em> rijen<span class="pro">, of tussen lijn <em>n1</em> en <em>n2</em></span></td>
             </tr>
             <tr>
                <td><code>align-self</code></td>
@@ -917,15 +917,14 @@ img {
       <p>Items worden rij per rij worden. De laatste rij is leeg omdat er geen items meer over zijn.</p>
       <h3>grid-row, grid-column</h3>
       <p>
-         We kunnen individuele items over meerdere rijen en/of kolommen spannen met <span class="em"><code>grid-column</code></span> en <span class="em"><code>grid-row</code></span>. 
-         Daarbij wordt gewerkt met lijnnummers, als volgt bepaald:</p>
-      <p><img src="img/04_layout/grid-lijnen.png" class="w-400" alt=""></p>		
-      <p>
-         Zetten we b.v. het vijfde item tussen kolomlijnen 2 en 4:
-      </p>
+         We kunnen individuele items over n1 rijen en/of n2 kolommen spannen met <code><span class="em">grid-column</span>: span n1</code> en/of <code><span class="em">grid-row</span>: span n2</code>. 
+		</p>
       <div class="codecompare">
-         <pre class="prism-atom-dark w-500"><code contenteditable data-target="#grid-demo5">.item5 {
-   grid-column: 2 / 4; /* tussen kolomlijnen 2 en 4 */
+         <pre class="prism-atom-dark w-500"><code contenteditable data-target="#grid-demo5">.item4 {
+   grid-row: span 2; /* twee kolommen */
+}
+.item5 {
+   grid-column: span 2; /* twee rijen */
 }
 .grid-container {
    display: grid; 
@@ -942,10 +941,41 @@ img {
                <div class="grid-item item5">05</div>
                <div class="grid-item-dotted"></div>
                <div class="grid-item-dotted"></div>
-               <div class="grid-item-dotted"></div>
             </div>
          </div>
       </div>
+
+		<div class="pro">
+         <p>
+            Alternatief kan je werken met lijnnummers, als volgt bepaald:</p>
+         <p><img src="img/04_layout/grid-lijnen.png" class="w-400" alt=""></p>		
+         <div class="codecompare">
+            <pre class="prism-atom-dark w-500"><code contenteditable data-target="#grid-demo5b">.item4 {
+   grid-row: 2 / 4; /* tussen rijlijnen 2 en 4 */
+}
+.item5 {
+   grid-column: 2 / 4; /* tussen kolomlijnen 2 en 4 */
+}
+.grid-container {
+   display: grid; 
+   gap: 10px;
+   grid-template-columns: 100px 2fr 1fr;  /* drie kolommen */
+   grid-template-rows: 50px 1fr 1fr;  /* drie rijen */
+}</code></pre>
+            <div id="grid-demo5b" class="w-500">
+               <div class="grid-container">
+                  <div class="grid-item item1">01</div>
+                  <div class="grid-item item2">02</div>
+                  <div class="grid-item item3">03</div>
+                  <div class="grid-item item4">04</div>
+                  <div class="grid-item item5">05</div>
+                  <div class="grid-item-dotted"></div>
+                  <div class="grid-item-dotted"></div>
+               </div>
+            </div>
+         </div>
+
+		</div>
 
       <h3>align-self, justify-self</h3>
       <p>
@@ -956,7 +986,7 @@ img {
          <pre class="prism-atom-dark w-500"><code contenteditable data-target="#grid-demo7">.item5 {
    align-self: center; /* probeer ook end, start, stretch */				
    justify-self: end; /* probeer ook center, start, stretch */					
-   grid-column: 2 / 4; /* tussen kolomlijnen 2 en 4 */
+   grid-column: span 2; /* overspan twee kolommen */
    padding: 5px 10px;
 }
 .grid-container {
@@ -1186,7 +1216,7 @@ aside {
 }
 /* button rechstonder plaatsen */
 button[type=submit] {  
-   grid-column: 1 / 3;
+   grid-column: span 2;
    justify-self: end; 
 }</code></pre>
          </div>
