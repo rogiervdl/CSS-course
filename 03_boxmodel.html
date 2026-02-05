@@ -27,7 +27,7 @@
          <p class="thumb__title">01. syntax</p>
          <img class="thumb__visual" src="img/01_syntax/icon.jpg" alt="">
       </a>
-      <a href="02_design.html" class="main__thumb" title="02. tekst">
+      <a href="02_design.html" class="main__thumb" title="02. design">
          <p class="thumb__title">02. design</p>
          <img class="thumb__visual" src="img/02_design/icon.jpg" alt="">
       </a>
@@ -115,7 +115,7 @@ p:last-child {
       </div>
       <h3>Box-sizing</h3>
       <p>
-         CSS heeft een vreemde interpretatie van de <strong>width en height</strong> properties: ze stellen de afmetingen in, maar <strong>exclusief borders of paddings</strong>.  enkel betrekking op de content, zonder borders and paddings. Die worden er achteraf nog bijgeteld.
+         CSS heeft een vreemde interpretatie van de <strong>width en height</strong> properties: ze hebben enkel betrekking op de content, zonder borders en paddings. Die worden er achteraf nog bijgeteld.
          Neem volgend voorbeeld met twee boxen, allebei ingesteld op dezelfde breedte van 300px, de eerste zonder padding en border, de tweede met:
       </p>
       <div class="codecompare top">
@@ -132,7 +132,7 @@ p:last-child {
    &lt;p&gt;Een mislukking men bijzondere primitieve. Doodende tusschen er voorziet vroegere allerlei bezetten te. Reeds sinds jaren onder wilde te na. &lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="box" id="box2"&gt;
-   &lt;h2&gt;box 1&lt;/h2&gt;
+   &lt;h2&gt;box 2&lt;/h2&gt;
    &lt;ul&gt;
       &lt;li&gt;height: 300px&lt;/li&gt;
       &lt;li&gt;width: 300px&lt;/li&gt;
@@ -180,7 +180,7 @@ p:last-child {
    &lt;p&gt;Een mislukking men bijzondere primitieve. Doodende tusschen er voorziet vroegere allerlei bezetten te. Reeds sinds jaren onder wilde te na. &lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="box" id="box2"&gt;
-   &lt;h2&gt;box 1&lt;/h2&gt;
+   &lt;h2&gt;box 2&lt;/h2&gt;
    &lt;ul&gt;
       &lt;li&gt;height: 300px&lt;/li&gt;
       &lt;li&gt;width: 300px&lt;/li&gt;
@@ -319,7 +319,7 @@ p {
    max-width: 280px;
    padding: 0 20px;
 }
-.h3 {
+.review-title {
    margin-top: 1em; /* lijkt niet te werken? */
 }
 .review p {
@@ -367,7 +367,7 @@ p {
       <p>Nog een eigenaardigheid is <mark>margin collapsing</mark>: waar <strong>verticale margins raken</strong>, worden margins onder bepaalde omstandigheden niet opgeteld maar wordt de <strong>grootste margin genomen</strong> van de twee. Bij horizontale margins bestaat dat niet; daar worden ze altijd opgeteld.</p>
       <div class="codecompare top">
          <div class="democontainer">
-            <pre class="prism-default language-html" data-demo><code>&lt;h2&gt;Great hotel!&lt;/h3&gt;
+            <pre class="prism-default language-html" data-demo><code>&lt;h2&gt;Great hotel!&lt;/h2&gt;
 &lt;p&gt;
    In friendship diminution instrument so.
    Son sure paid door with say them. Lorem
@@ -485,7 +485,7 @@ p {
 
       <h2>De draad kwijt..?</h2>
       <div class="tips" data-caption="💡TIP">
-         <p>Zoals je ziet, gedragen margins en paddings gedragen zich heel verschillend naargelang het type element. De beste tip die we je kunnen geven: <strong>gebruik je inspector tool</strong> om de margins, paddings en afmetingen te inspecteren en problemen op te lossen!</p>
+         <p>Zoals je ziet, gedragen margins en paddings zich heel verschillend naargelang het type element. De beste tip die we je kunnen geven: <strong>gebruik je inspector tool</strong> om de margins, paddings en afmetingen te inspecteren en problemen op te lossen!</p>
          <p><img src="img/03_boxmodel/box-model-inspector.png" alt="box model" class="bordered shadow w-400"></p>
       </div>
 

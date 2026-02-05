@@ -27,7 +27,7 @@
          <p class="thumb__title">01. syntax</p>
          <img class="thumb__visual" src="img/01_syntax/icon.jpg" alt="">
       </a>
-      <a href="02_design.html" class="main__thumb" title="02. tekst">
+      <a href="02_design.html" class="main__thumb" title="02. design">
          <p class="thumb__title">02. design</p>
          <img class="thumb__visual" src="img/02_design/icon.jpg" alt="">
       </a>
@@ -784,7 +784,7 @@ img {
             <tr>
                <td><code>display</code></td>
                <td><code>grid<span class="pro">|inline-grid</span></code></td>
-               <td>layouten met grid<span class="pro"> als blockevel of inline element</span></td>
+               <td>layouten met grid<span class="pro"> als blocklevel of inline element</span></td>
             </tr>
             <tr>
                <td><code>gap</code>, <code>column-gap</code>, <code>row-gap</code></td>
@@ -943,10 +943,10 @@ img {
 		</p>
       <div class="codecompare">
          <pre class="prism-atom-dark w-500"><code contenteditable data-target="#grid-demo5">.item4 {
-   grid-row: span 2; /* twee kolommen */
+   grid-row: span 2; /* twee rijen */
 }
 .item5 {
-   grid-column: span 2; /* twee rijen */
+   grid-column: span 2; /* twee kolommen */
 }
 .grid-container {
    display: grid; 
@@ -1545,7 +1545,7 @@ button[type=submit] {
          <p>Studenten hebben vaak de neiging positionering veel te snel terug te grijpen naar positionering. Eigenlijk wordt het <em>zeer weinig gebruikt</em>. Wanneer wel:</p>
          <ul class="right">
             <li>gebruik <strong>sticky</strong> of <strong>fixed</strong> voor "back to top links", sticky notes e.d.</li>
-            <li>gebruik <strong>absolute positionering</strong> voor game programming om layers te maken, zie b.v. <a href="demos/02_design/animations2.html">deze uitgebreide demo</a></li>
+            <li>gebruik <strong>absolute positionering</strong> voor game programming om layers te maken, zie b.v. <a href="demos/02_design/tweehuizen.html">deze uitgebreide demo</a></li>
          </ul>
          <p>Gebruik positionering zeker niet voor:</p>
          <ul class="wrong">
@@ -1623,7 +1623,7 @@ header {
 
 .header_search {
    align-self: end; /* zet zichzelf beneden */
-   flex: 0 0 auto;
+   flex: 0 0 220px;
 }
 
 /* nav layout */
@@ -1680,7 +1680,7 @@ footer {
             <strong>main</strong>
             <ul>
                <li>grid layout met <code>display: grid</code></li>
-               <li>twee kolommen met <code>grid-template-columns: 1fr 100px</code></li>
+               <li>twee kolommen met <code>grid-template-columns: 1fr 200px</code></li>
             </ul>
          </li>
          <li>

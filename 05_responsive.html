@@ -25,7 +25,7 @@
          <p class="thumb__title">01. syntax</p>
          <img class="thumb__visual" src="img/01_syntax/icon.jpg" alt="">
       </a>
-      <a href="02_design.html" class="main__thumb" title="02. tekst">
+      <a href="02_design.html" class="main__thumb" title="02. design">
          <p class="thumb__title">02. design</p>
          <img class="thumb__visual" src="img/02_design/icon.jpg" alt="">
       </a>
@@ -74,7 +74,7 @@
                   <a href="https://www.youtube.com/watch?v=ruw_w5PB4Rc&t=120">2:00 responsive in 4 stappen</a>
                   <ul>
                      <li><a href="https://www.youtube.com/watch?v=ruw_w5PB4Rc&t=146">2:26 stap 1: pagina flexibel maken</a></li>
-                     <li><a href="https://www.youtube.com/watch?v=ruw_w5PB4Rc&t=207">3:27 stap 2: carousel responisve maken</a></li>
+                     <li><a href="https://www.youtube.com/watch?v=ruw_w5PB4Rc&t=207">3:27 stap 2: carousel responsive maken</a></li>
                      <li><a href="https://www.youtube.com/watch?v=ruw_w5PB4Rc&t=290">4:50 stap 3: media queries</a></li>
                      <li><a href="https://www.youtube.com/watch?v=ruw_w5PB4Rc&t=875">14:35 stap 4: hamburger menu</a></li>
                   </ul>
@@ -99,7 +99,7 @@
             <figcaption>mobiel</figcaption>
          </figure>
       </div>
-      <p>&rarr; het is dus één site, één code die er op alle toestellen geven goed moet uitzien</p>
+      <p>&rarr; het is dus één site, één code die er op alle toestellen even goed moet uitzien</p>
       <h2>Content choreografie</h2>
       <p>Bij smaller wordende schermen zullen elementen (teksten, afbeeldingen, kaders, kolommen...) moeten herschalen / verspringen / verdwijnen. Dit noemt men de <span class="em">content choreografie</span>:</p>
       <ul>
@@ -198,9 +198,9 @@
          <img src="img/05_responsive/resize.gif" alt="" class="w-400">
          <figcaption>Er zijn geen 'aanbevolen' breekpunten; kies wat past bij je design.</figcaption>
       </figure>
-      <h4>2B: voeg media query toe</h4>
+      <h4>3B: voeg media query toe</h4>
       <p>Stel dat je een overgang wil op 800px, dan komt er onderaan je CSS dit blok bij:</p>
-      <pre class="prism-atom-dark"><code>/* CSS voor smalste schermen *
+      <pre class="prism-atom-dark"><code>/* CSS voor smalste schermen */
 ...
 
 /* ===============
@@ -212,7 +212,7 @@ Media queries
 }
 </code></pre>
 
-      <h4>2C: responsive CSS</h4>
+      <h4>3C: responsive CSS</h4>
       <p>Voeg nu CSS toe aan de media query en pas eventueel andere CSS aan. Wil je bijvoorbeeld een groter lettertype en wat meer ondermarge voor <code>&lt;h2&gt;</code> vanaf 800px?</p>
       <pre class="prism-atom-dark"><code>/* standaardinstelling */
 h2 {
@@ -230,7 +230,7 @@ h2 {
       <p>
          &rarr; meer dan dat is het niet! het is even wennen, maar daarna gaat het vanzelf
       </p>
-      <h4>2D: meer breekpunten</h4>
+      <h4>3D: meer breekpunten</h4>
       <p>Controleer je resultaat, en voeg eventueel meer breekpunten toe, van klein naar groot:</p>
       <pre class="prism-atom-dark"><code>/* CSS voor smalste schermen */
 ...
@@ -388,9 +388,9 @@ h2 {
       &lt;footer&gt;
          &lt;p&gt;&copy; Rogier van der Linde, 2010&lt;/p&gt;
          &lt;ul&gt;
-            &lt;li&gt;&lt;a href="#"&gt;disclaimer&lt;/a&gt;
-            &lt;li&gt;&lt;a href="#"&gt;sitemap&lt;/a&gt;
-            &lt;li&gt;&lt;a href="#"&gt;contact&lt;/a&gt;
+            &lt;li&gt;&lt;a href="#"&gt;disclaimer&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#"&gt;sitemap&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#"&gt;contact&lt;/a&gt;&lt;/li&gt;
          &lt;/ul&gt;
       &lt;/footer&gt;
    &lt;/div&gt;
